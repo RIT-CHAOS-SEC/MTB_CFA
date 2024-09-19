@@ -1,0 +1,11 @@
+{
+    "cmsis-csolution.actions": [
+        {
+            "path": "IOTKit_CM33_s_ns.csolution.yml",
+            "target": "V2MMPS2",
+            "config": {
+                "debug": "Arm Debugger"
+            }
+        }
+    ]
+}
