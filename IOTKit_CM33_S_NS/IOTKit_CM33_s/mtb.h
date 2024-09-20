@@ -13,7 +13,7 @@
 #define MTB_MASTER_TSTARTEN_MASK 	1<<5
 #define MTB_MASTER_HALTREQ_MASK 	1<<9
 #define MTB_MASTER_MASK_MASK 			0b1111
-#define MTB_FLOW_WATERMARK_MASK 	~(0b111)
+#define MTB_FLOW_WATERMARK_MASK 	~(0b1111)
 #define MTB_FLOW_AUTOHALT_MASK 	0b10
 #define MTB_FLOW_AUTOSTOP_MASK 	0b01
 
@@ -29,10 +29,5 @@ typedef struct MTB_struct{
 	uint32_t MTB_TSTOP;
 	uint32_t MTB_SECURE;	
 } MTB_struct;
-
-
-
-
-
 
 #endif

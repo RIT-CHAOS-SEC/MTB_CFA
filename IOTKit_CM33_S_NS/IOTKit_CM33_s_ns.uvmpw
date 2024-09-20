@@ -5,7 +5,7 @@
 
   <Header>### uVision Project, (C) Keil Software</Header>
 
-  <WorkspaceName>C:\Users\nneto\Desktop\MTBTest\Boards\ARM\V2M-MPS2\IOTKit_CM33\IOTKit_CM33_S_NS\IOTKit_CM33_s_ns.uvmpw</WorkspaceName>
+  <WorkspaceName>P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\IOTKit_CM33_s_ns.uvmpw</WorkspaceName>
 
   <project>
     <PathAndName>.\IOTKit_CM33_s\IOTKit_CM33_s.uvprojx</PathAndName>
