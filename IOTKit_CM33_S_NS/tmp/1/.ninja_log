@@ -1,0 +1,11 @@
+# ninja log v6
+12	131	7485069713305313	CMakeFiles/Keil_Board_Support_V2M-MPS2_IOT-Kit_Graphic_LCD_2_0_0.dir/86e35b8dcd78f5c08298065c15d5cf91/1.5.2/Boards/ARM/V2M-MPS2/Common/GLCD_Fonts.o	f9a9492f3c5fdecc
+8	136	7485069713255271	CMakeFiles/Group_Source_Group_1.dir/C_/Users/nneto/Desktop/MTBTest/Boards/ARM/V2M-MPS2/IOTKit_CM33/IOTKit_CM33_S_NS/IOTKit_CM33_s/stdout_USART.o	89ecb903bac2a861
+19	159	7485069713366762	CMakeFiles/Keil_Board_Support_V2M-MPS2_IOT-Kit_LED_2_0_0.dir/7c8be1d4d2e1a41b1cc9fd92f871b754/V2M-MPS2_IOTKit_BSP/1.5.2/Boards/ARM/V2M-MPS2/Common/LED_V2M-MPS2.o	b4d1f274d68ab4f1
+28	166	7485069713461868	CMakeFiles/Keil_Compiler_ARM_Compiler_I_O_STDOUT_User_1_2_0.dir/C_/Users/nneto/AppData/Local/arm/packs/Keil/ARM_Compiler/1.7.2/Source/retarget_io.o	fe410bc2f3a86acb
+4	168	7485069713215206	CMakeFiles/Group_Source_Group_1.dir/C_/Users/nneto/Desktop/MTBTest/Boards/ARM/V2M-MPS2/IOTKit_CM33/IOTKit_CM33_S_NS/IOTKit_CM33_s/main_s.o	4a1d24ffbb2d23d0
+33	173	7485069713511876	CMakeFiles/Keil_Device_Startup_C_Startup_1_2_0.dir/9f1522f578d3dbacd9a7616696ad8c02/IOTKit_CM33_S_NS/IOTKit_CM33_s/RTE/Device/IOTKit_CM33_FP/startup_IOTKit_CM33.o	e1031c2902d44de4
+39	177	7485069713567020	CMakeFiles/Keil_Device_Startup_C_Startup_1_2_0.dir/9f1522f578d3dbacd9a7616696ad8c02/IOTKit_CM33_S_NS/IOTKit_CM33_s/RTE/Device/IOTKit_CM33_FP/system_IOTKit_CM33.o	db552a38df6d819c
+23	211	7485069713411783	CMakeFiles/Keil_CMSIS_Driver_USART_1_0_0.dir/C_/Users/nneto/AppData/Local/arm/packs/Keil/V2M-MPS2_IOTKit_BSP/1.5.2/CMSIS/Driver/USART_V2M-MPS2.o	cadb42e1b82ea446
+16	730	7485069713336708	CMakeFiles/Keil_Board_Support_V2M-MPS2_IOT-Kit_Graphic_LCD_2_0_0.dir/86e35b8dcd78f5c08298065c15d5cf91/1.5.2/Boards/ARM/V2M-MPS2/Common/GLCD_V2M-MPS2.o	d925815c6b9be57b
+731	919	7485069720484958	C:/Users/nneto/Desktop/MTBTest/Boards/ARM/V2M-MPS2/IOTKit_CM33/IOTKit_CM33_S_NS/out/IOTKit_CM33_s/V2MMPS2/IOTKit_CM33_s.axf	cd4d6691832b2ceb
