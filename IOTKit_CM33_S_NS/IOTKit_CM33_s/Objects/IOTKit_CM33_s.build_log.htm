@@ -8,7 +8,7 @@ Copyright (C) 2024 ARM Ltd and ARM Germany GmbH. All rights reserved.
 License Information: Antonio Joia
 Rochester Institute of Technology
 User-based license: Keil MDK Community (non-commercial free of charge)
-Valid until: May 31 2033. Cached until: Sep 26 2024
+Valid until: May 31 2033. Cached until: Sep 27 2024
  
 Tool Versions:
 Toolchain:       Keil MDK Community (non-commercial free of charge  Version: 5.41.0.0
@@ -20,20 +20,36 @@ Library Manager: ArmAr.exe V6.22
 Hex Converter:   FromElf.exe V6.22
 CPU DLL:         
 Dialog DLL:      
-Target DLL:      DbgFMv8M.DLL V1.3.42.1
+Target DLL:      CMSIS_AGDI_V8M.DLL V1.8.5.0
 Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\IOTKit_CM33_s\IOTKit_CM33_s.uvprojx
-Project File Date:  09/20/2024
+Project File Date:  09/27/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.22', folder: 'C:\Users\aj4775\AppData\Local\Keil_v5\ARM\ARMCLANG\Bin'
-Build Project 'IOTKit_CM33_s' - Target 'FVP'
-compiling main_s.c...
+Rebuild Project 'IOTKit_CM33_s' - Target 'V2M-MPS2+'
 creating list file for main_s.c...
+compiling main_s.c...
+creating list file for stdout_USART.c...
+compiling stdout_USART.c...
+creating list file for GLCD_Fonts.c...
+compiling GLCD_Fonts.c...
+creating list file for GLCD_V2M-MPS2.c...
+compiling GLCD_V2M-MPS2.c...
+creating list file for LED_V2M-MPS2.c...
+compiling LED_V2M-MPS2.c...
+creating list file for USART_V2M-MPS2.c...
+compiling USART_V2M-MPS2.c...
+creating list file for retarget_io.c...
+compiling retarget_io.c...
+creating list file for startup_IOTKit_CM33.c...
+compiling startup_IOTKit_CM33.c...
+creating list file for system_IOTKit_CM33.c...
+compiling system_IOTKit_CM33.c...
 linking...
-Program Size: Code=14652 RO-data=6532 RW-data=48 ZI-data=5088  
+Program Size: Code=16200 RO-data=7260 RW-data=64 ZI-data=5076  
 ".\Objects\IOTKit_CM33_s.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
@@ -69,7 +85,7 @@ Package Vendor: Keil
 
 <h2>Collection of Component include folders:</h2>
   ./RTE/Device/IOTKit_CM33_FP
-  ./RTE/_FVP
+  ./RTE/_V2M-MPS2_
   C:/Users/aj4775/AppData/Local/arm/packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include
   C:/Users/aj4775/AppData/Local/arm/packs/ARM/CMSIS/6.1.0/CMSIS/Driver/Include
   C:/Users/aj4775/AppData/Local/arm/packs/Keil/MDK-Middleware/7.17.0/Board
@@ -90,12 +106,12 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE@6.1.0
       Source file:   CMSIS/Core/Template/ARMv8-M/tz_context.c
-      Source file:   CMSIS/Core/Template/ARMv8-M/main_s.c
       Include file:  CMSIS/Core/Include/tz_context.h
+      Source file:   CMSIS/Core/Template/ARMv8-M/main_s.c
 
    * Component: Keil::Board Support&V2M-MPS2 IOT-Kit:Graphic LCD@2.0.0
-      Include file:  Boards/ARM/V2M-MPS2/Common/GLCD_Config.h
       Source file:   Boards/ARM/V2M-MPS2/Common/GLCD_V2M-MPS2.c
+      Include file:  Boards/ARM/V2M-MPS2/Common/GLCD_Config.h
       Source file:   Boards/ARM/V2M-MPS2/Common/GLCD_Fonts.c
 
    * Component: Keil::Board Support&V2M-MPS2 IOT-Kit:LED@2.0.0
@@ -105,18 +121,18 @@ Package Vendor: Keil
       Source file:   CMSIS/Driver/USART_V2M-MPS2.c
 
    * Component: Keil::Compiler&ARM Compiler:I/O:STDOUT&User@1.2.0
-      Source file:   Template/stdout_display.c
-      Source file:   Template/stdout_USART.c
-      Source file:   Template/stdout_user.c
       Source file:   Source/retarget_io.c
+      Source file:   Template/stdout_user.c
+      Source file:   Template/stdout_USART.c
+      Source file:   Template/stdout_display.c
 
    * Component: Keil::Device:Startup&C Startup@1.2.0
-      Source file:   Device/IOTKit_CM33/Source/startup_IOTKit_CM33.c
       Source file:   Device/IOTKit_CM33/Source/system_IOTKit_CM33.c
+      Source file:   Device/IOTKit_CM33/Source/startup_IOTKit_CM33.c
       Include file:  Device/IOTKit_CM33/Include/Template/partition_IOTKit_CM33.h
       Include file:  CMSIS/Config/RTE_Device.h
       Include file:  Device/Common/Include/SMM_MPS2.h
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:05
 </pre>
 </body>
 </html>

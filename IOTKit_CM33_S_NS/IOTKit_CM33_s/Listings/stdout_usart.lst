@@ -40,76 +40,129 @@ stdout_init:
 	.cfi_sections .debug_frame
 	.cfi_startproc
 @ %bb.0:
-	.save	{r4, lr}
-	push	{r4, lr}
+	.save	{r7, lr}
+	push	{r7, lr}
 	.cfi_def_cfa_offset 8
 	.cfi_offset lr, -4
-	.cfi_offset r4, -8
+	.cfi_offset r7, -8
+	.pad	#8
+	sub	sp, #8
+	.cfi_def_cfa_offset 16
 .Ltmp0:
 	.loc	3 66 22 prologue_end            @ stdout_USART.c:66:22
-	movw	r4, :lower16:Driver_USART0
-	movt	r4, :upper16:Driver_USART0
-	ldr	r1, [r4, #8]
-	.loc	3 66 12 is_stmt 0               @ stdout_USART.c:66:12
+	movw	r0, :lower16:Driver_USART0
+	movt	r0, :upper16:Driver_USART0
+	ldr	r1, [r0, #8]
 	movs	r0, #0
+	.loc	3 66 12 is_stmt 0               @ stdout_USART.c:66:12
 	blx	r1
+	.loc	3 66 10                         @ stdout_USART.c:66:10
+	str	r0, [sp]
 .Ltmp1:
-	@DEBUG_VALUE: stdout_init:status <- $r0
 	.loc	3 67 7 is_stmt 1                @ stdout_USART.c:67:7
-	cbnz	r0, .LBB0_3
+	ldr	r0, [sp]
 .Ltmp2:
-@ %bb.1:
-	@DEBUG_VALUE: stdout_init:status <- $r0
-	.loc	3 69 22                         @ stdout_USART.c:69:22
-	ldr	r1, [r4, #16]
-	.loc	3 69 12 is_stmt 0               @ stdout_USART.c:69:12
-	movs	r0, #2
-.Ltmp3:
-	blx	r1
-.Ltmp4:
-	@DEBUG_VALUE: stdout_init:status <- $r0
-	.loc	3 70 7 is_stmt 1                @ stdout_USART.c:70:7
-	cbnz	r0, .LBB0_3
-.Ltmp5:
-@ %bb.2:
-	@DEBUG_VALUE: stdout_init:status <- $r0
-	.loc	3 72 22                         @ stdout_USART.c:72:22
-	ldr	r4, [r4, #40]
-	.loc	3 72 12 is_stmt 0               @ stdout_USART.c:72:12
-	movs	r0, #1
-.Ltmp6:
-	mov.w	r1, #115200
-	blx	r4
-.Ltmp7:
-	@DEBUG_VALUE: stdout_init:status <- $r0
-	.loc	3 78 7 is_stmt 1                @ stdout_USART.c:78:7
-	cbz	r0, .LBB0_4
-.Ltmp8:
-.LBB0_3:
-	@DEBUG_VALUE: stdout_init:status <- $r0
-	.loc	3 0 7 is_stmt 0                 @ stdout_USART.c:0:7
+	.loc	3 67 7 is_stmt 0                @ stdout_USART.c:67:7
+	cbz	r0, .LBB0_2
+	b	.LBB0_1
+.LBB0_1:
+	.loc	3 0 7                           @ stdout_USART.c:0:7
 	mov.w	r0, #-1
-.Ltmp9:
-	.loc	3 84 1 epilogue_begin is_stmt 1 @ stdout_USART.c:84:1
-	pop	{r4, pc}
+.Ltmp3:
+	.loc	3 67 32                         @ stdout_USART.c:67:32
+	str	r0, [sp, #4]
+	b	.LBB0_9
+.Ltmp4:
+.LBB0_2:
+	.loc	3 69 22 is_stmt 1               @ stdout_USART.c:69:22
+	movw	r0, :lower16:Driver_USART0
+	movt	r0, :upper16:Driver_USART0
+	ldr	r1, [r0, #16]
+	movs	r0, #2
+	.loc	3 69 12 is_stmt 0               @ stdout_USART.c:69:12
+	blx	r1
+	.loc	3 69 10                         @ stdout_USART.c:69:10
+	str	r0, [sp]
+.Ltmp5:
+	.loc	3 70 7 is_stmt 1                @ stdout_USART.c:70:7
+	ldr	r0, [sp]
+.Ltmp6:
+	.loc	3 70 7 is_stmt 0                @ stdout_USART.c:70:7
+	cbz	r0, .LBB0_4
+	b	.LBB0_3
+.LBB0_3:
+	.loc	3 0 7                           @ stdout_USART.c:0:7
+	mov.w	r0, #-1
+.Ltmp7:
+	.loc	3 70 32                         @ stdout_USART.c:70:32
+	str	r0, [sp, #4]
+	b	.LBB0_9
+.Ltmp8:
 .LBB0_4:
+	.loc	3 72 22 is_stmt 1               @ stdout_USART.c:72:22
+	movw	r0, :lower16:Driver_USART0
+	movt	r0, :upper16:Driver_USART0
+	ldr	r2, [r0, #40]
+	movs	r0, #1
+	mov.w	r1, #115200
+	.loc	3 72 12 is_stmt 0               @ stdout_USART.c:72:12
+	blx	r2
+	.loc	3 72 10                         @ stdout_USART.c:72:10
+	str	r0, [sp]
+.Ltmp9:
+	.loc	3 78 7 is_stmt 1                @ stdout_USART.c:78:7
+	ldr	r0, [sp]
 .Ltmp10:
-	@DEBUG_VALUE: stdout_init:status <- $r0
-	.loc	3 80 12                         @ stdout_USART.c:80:12
-	movs	r0, #21
+	.loc	3 78 7 is_stmt 0                @ stdout_USART.c:78:7
+	cbz	r0, .LBB0_6
+	b	.LBB0_5
+.LBB0_5:
+	.loc	3 0 7                           @ stdout_USART.c:0:7
+	mov.w	r0, #-1
 .Ltmp11:
-	movs	r1, #1
-	blx	r4
+	.loc	3 78 32                         @ stdout_USART.c:78:32
+	str	r0, [sp, #4]
+	b	.LBB0_9
 .Ltmp12:
-	@DEBUG_VALUE: stdout_init:status <- $r0
-	.loc	3 0 0 is_stmt 0                 @ stdout_USART.c:0:0
-	cmp	r0, #0
-	it	ne
-	movne.w	r0, #-1
+.LBB0_6:
+	.loc	3 80 22 is_stmt 1               @ stdout_USART.c:80:22
+	movw	r0, :lower16:Driver_USART0
+	movt	r0, :upper16:Driver_USART0
+	ldr	r2, [r0, #40]
+	movs	r0, #21
+	movs	r1, #1
+	.loc	3 80 12 is_stmt 0               @ stdout_USART.c:80:12
+	blx	r2
+	.loc	3 80 10                         @ stdout_USART.c:80:10
+	str	r0, [sp]
 .Ltmp13:
-	.loc	3 84 1 epilogue_begin is_stmt 1 @ stdout_USART.c:84:1
-	pop	{r4, pc}
+	.loc	3 81 7 is_stmt 1                @ stdout_USART.c:81:7
+	ldr	r0, [sp]
 .Ltmp14:
+	.loc	3 81 7 is_stmt 0                @ stdout_USART.c:81:7
+	cbz	r0, .LBB0_8
+	b	.LBB0_7
+.LBB0_7:
+	.loc	3 0 7                           @ stdout_USART.c:0:7
+	mov.w	r0, #-1
+.Ltmp15:
+	.loc	3 81 32                         @ stdout_USART.c:81:32
+	str	r0, [sp, #4]
+	b	.LBB0_9
+.Ltmp16:
+.LBB0_8:
+	.loc	3 0 32                          @ stdout_USART.c:0:32
+	movs	r0, #0
+	.loc	3 83 3 is_stmt 1                @ stdout_USART.c:83:3
+	str	r0, [sp, #4]
+	b	.LBB0_9
+.LBB0_9:
+	.loc	3 84 1                          @ stdout_USART.c:84:1
+	ldr	r0, [sp, #4]
+	.loc	3 84 1 epilogue_begin is_stmt 0 @ stdout_USART.c:84:1
+	add	sp, #8
+	pop	{r7, pc}
+.Ltmp17:
 .Lfunc_end0:
 	.size	stdout_init, .Lfunc_end0-stdout_init
 	.cfi_endproc
@@ -125,108 +178,80 @@ stdout_init:
 	.thumb_func
 stdout_putchar:
 .Lfunc_begin1:
-	.loc	3 94 0                          @ stdout_USART.c:94:0
+	.loc	3 94 0 is_stmt 1                @ stdout_USART.c:94:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
-	@DEBUG_VALUE: stdout_putchar:ch <- $r0
-	.save	{r4, r5, r7, lr}
-	push	{r4, r5, r7, lr}
-	.cfi_def_cfa_offset 16
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
 	.cfi_offset lr, -4
 	.cfi_offset r7, -8
-	.cfi_offset r5, -12
-	.cfi_offset r4, -16
-	.pad	#8
-	sub	sp, #8
+	.pad	#16
+	sub	sp, #16
 	.cfi_def_cfa_offset 24
-.Ltmp15:
-	.loc	3 98 17 prologue_end            @ stdout_USART.c:98:17
-	movw	r5, :lower16:Driver_USART0
-	movt	r5, :upper16:Driver_USART0
-	ldr	r2, [r5, #20]
-	mov	r4, r0
-.Ltmp16:
-	@DEBUG_VALUE: stdout_putchar:ch <- $r4
-	.loc	3 97 10                         @ stdout_USART.c:97:10
-	strb.w	r0, [sp, #7]
-	add.w	r0, sp, #7
-.Ltmp17:
-	.loc	3 98 7                          @ stdout_USART.c:98:7
-	movs	r1, #1
-	blx	r2
+	str	r0, [sp, #8]
 .Ltmp18:
-	.loc	3 98 7 is_stmt 0                @ stdout_USART.c:98:7
-	cmp	r0, #0
-	ittt	ne
-	movne.w	r0, #-1
-	.loc	3 103 1 epilogue_begin is_stmt 1 @ stdout_USART.c:103:1
-	addne	sp, #8
-	popne	{r4, r5, r7, pc}
+	.loc	3 97 21 prologue_end            @ stdout_USART.c:97:21
+	ldr	r0, [sp, #8]
+	.loc	3 97 10 is_stmt 0               @ stdout_USART.c:97:10
+	strb.w	r0, [sp, #7]
 .Ltmp19:
-.LBB1_1:
-	.loc	3 0 1 is_stmt 0                 @ stdout_USART.c:0:1
-	ldr	r5, [r5, #32]
-	.p2align	2
-.LBB1_2:                                @ =>This Inner Loop Header: Depth=1
-	.loc	3 101 10 is_stmt 1              @ stdout_USART.c:101:10
-	blx	r5
+	.loc	3 98 17 is_stmt 1               @ stdout_USART.c:98:17
+	movw	r0, :lower16:Driver_USART0
+	movt	r0, :upper16:Driver_USART0
+	ldr	r2, [r0, #20]
+	add.w	r0, sp, #7
+	movs	r1, #1
+	.loc	3 98 7 is_stmt 0                @ stdout_USART.c:98:7
+	blx	r2
 .Ltmp20:
-	.loc	3 101 3 is_stmt 0               @ stdout_USART.c:101:3
-	cmp	r0, #1
-	bne	.LBB1_2
-@ %bb.3:
-	.loc	3 0 3                           @ stdout_USART.c:0:3
-	mov	r0, r4
-	.loc	3 103 1 epilogue_begin is_stmt 1 @ stdout_USART.c:103:1
-	add	sp, #8
-	pop	{r4, r5, r7, pc}
+	.loc	3 98 7                          @ stdout_USART.c:98:7
+	cbz	r0, .LBB1_2
+	b	.LBB1_1
+.LBB1_1:
+	.loc	3 0 7                           @ stdout_USART.c:0:7
+	mov.w	r0, #-1
 .Ltmp21:
+	.loc	3 99 5 is_stmt 1                @ stdout_USART.c:99:5
+	str	r0, [sp, #12]
+	b	.LBB1_6
+.Ltmp22:
+.LBB1_2:
+	.loc	3 101 3                         @ stdout_USART.c:101:3
+	b	.LBB1_3
+.LBB1_3:                                @ =>This Inner Loop Header: Depth=1
+	.loc	3 101 20 is_stmt 0              @ stdout_USART.c:101:20
+	movw	r0, :lower16:Driver_USART0
+	movt	r0, :upper16:Driver_USART0
+	ldr	r0, [r0, #32]
+	.loc	3 101 10                        @ stdout_USART.c:101:10
+	blx	r0
+	.loc	3 101 3                         @ stdout_USART.c:101:3
+	cmp	r0, #1
+	beq	.LBB1_5
+	b	.LBB1_4
+.LBB1_4:                                @   in Loop: Header=BB1_3 Depth=1
+	b	.LBB1_3
+.LBB1_5:
+	.loc	3 102 11 is_stmt 1              @ stdout_USART.c:102:11
+	ldr	r0, [sp, #8]
+	.loc	3 102 3 is_stmt 0               @ stdout_USART.c:102:3
+	str	r0, [sp, #12]
+	b	.LBB1_6
+.LBB1_6:
+	.loc	3 103 1 is_stmt 1               @ stdout_USART.c:103:1
+	ldr	r0, [sp, #12]
+	.loc	3 103 1 epilogue_begin is_stmt 0 @ stdout_USART.c:103:1
+	add	sp, #16
+	pop	{r7, pc}
+.Ltmp23:
 .Lfunc_end1:
 	.size	stdout_putchar, .Lfunc_end1-stdout_putchar
 	.cfi_endproc
 	.cantunwind
 	.fnend
                                         @ -- End function
-	.section	.debug_loc,"",%progbits
-.Ldebug_loc0:
-	.long	-1
-	.long	.Lfunc_begin0                   @   base address
-	.long	.Ltmp1-.Lfunc_begin0
-	.long	.Ltmp3-.Lfunc_begin0
-	.short	1                               @ Loc expr size
-	.byte	80                              @ DW_OP_reg0
-	.long	.Ltmp4-.Lfunc_begin0
-	.long	.Ltmp6-.Lfunc_begin0
-	.short	1                               @ Loc expr size
-	.byte	80                              @ DW_OP_reg0
-	.long	.Ltmp7-.Lfunc_begin0
-	.long	.Ltmp9-.Lfunc_begin0
-	.short	1                               @ Loc expr size
-	.byte	80                              @ DW_OP_reg0
-	.long	.Ltmp10-.Lfunc_begin0
-	.long	.Ltmp11-.Lfunc_begin0
-	.short	1                               @ Loc expr size
-	.byte	80                              @ DW_OP_reg0
-	.long	.Ltmp12-.Lfunc_begin0
-	.long	.Ltmp13-.Lfunc_begin0
-	.short	1                               @ Loc expr size
-	.byte	80                              @ DW_OP_reg0
-	.long	0
-	.long	0
-.Ldebug_loc1:
-	.long	-1
-	.long	.Lfunc_begin1                   @   base address
-	.long	.Lfunc_begin1-.Lfunc_begin1
-	.long	.Ltmp16-.Lfunc_begin1
-	.short	1                               @ Loc expr size
-	.byte	80                              @ DW_OP_reg0
-	.long	.Ltmp16-.Lfunc_begin1
-	.long	.Ltmp19-.Lfunc_begin1
-	.short	1                               @ Loc expr size
-	.byte	84                              @ DW_OP_reg4
-	.long	0
-	.long	0
 	.section	.debug_abbrev,"",%progbits
 	.byte	1                               @ Abbreviation Code
 	.byte	17                              @ DW_TAG_compile_unit
@@ -304,8 +329,6 @@ stdout_putchar:
 	.byte	6                               @ DW_FORM_data4
 	.byte	64                              @ DW_AT_frame_base
 	.byte	24                              @ DW_FORM_exprloc
-	.ascii	"\227B"                         @ DW_AT_GNU_all_call_sites
-	.byte	25                              @ DW_FORM_flag_present
 	.byte	3                               @ DW_AT_name
 	.byte	14                              @ DW_FORM_strp
 	.byte	58                              @ DW_AT_decl_file
@@ -324,7 +347,7 @@ stdout_putchar:
 	.byte	52                              @ DW_TAG_variable
 	.byte	0                               @ DW_CHILDREN_no
 	.byte	2                               @ DW_AT_location
-	.byte	23                              @ DW_FORM_sec_offset
+	.byte	24                              @ DW_FORM_exprloc
 	.byte	3                               @ DW_AT_name
 	.byte	14                              @ DW_FORM_strp
 	.byte	58                              @ DW_AT_decl_file
@@ -339,21 +362,6 @@ stdout_putchar:
 	.byte	5                               @ DW_TAG_formal_parameter
 	.byte	0                               @ DW_CHILDREN_no
 	.byte	2                               @ DW_AT_location
-	.byte	23                              @ DW_FORM_sec_offset
-	.byte	3                               @ DW_AT_name
-	.byte	14                              @ DW_FORM_strp
-	.byte	58                              @ DW_AT_decl_file
-	.byte	11                              @ DW_FORM_data1
-	.byte	59                              @ DW_AT_decl_line
-	.byte	11                              @ DW_FORM_data1
-	.byte	73                              @ DW_AT_type
-	.byte	19                              @ DW_FORM_ref4
-	.byte	0                               @ EOM(1)
-	.byte	0                               @ EOM(2)
-	.byte	9                               @ Abbreviation Code
-	.byte	52                              @ DW_TAG_variable
-	.byte	0                               @ DW_CHILDREN_no
-	.byte	2                               @ DW_AT_location
 	.byte	24                              @ DW_FORM_exprloc
 	.byte	3                               @ DW_AT_name
 	.byte	14                              @ DW_FORM_strp
@@ -365,14 +373,14 @@ stdout_putchar:
 	.byte	19                              @ DW_FORM_ref4
 	.byte	0                               @ EOM(1)
 	.byte	0                               @ EOM(2)
-	.byte	10                              @ Abbreviation Code
+	.byte	9                               @ Abbreviation Code
 	.byte	1                               @ DW_TAG_array_type
 	.byte	1                               @ DW_CHILDREN_yes
 	.byte	73                              @ DW_AT_type
 	.byte	19                              @ DW_FORM_ref4
 	.byte	0                               @ EOM(1)
 	.byte	0                               @ EOM(2)
-	.byte	11                              @ Abbreviation Code
+	.byte	10                              @ Abbreviation Code
 	.byte	33                              @ DW_TAG_subrange_type
 	.byte	0                               @ DW_CHILDREN_no
 	.byte	73                              @ DW_AT_type
@@ -381,7 +389,7 @@ stdout_putchar:
 	.byte	11                              @ DW_FORM_data1
 	.byte	0                               @ EOM(1)
 	.byte	0                               @ EOM(2)
-	.byte	12                              @ Abbreviation Code
+	.byte	11                              @ Abbreviation Code
 	.byte	36                              @ DW_TAG_base_type
 	.byte	0                               @ DW_CHILDREN_no
 	.byte	3                               @ DW_AT_name
@@ -400,9 +408,9 @@ stdout_putchar:
 	.short	4                               @ DWARF version number
 	.long	.debug_abbrev                   @ Offset Into Abbrev. Section
 	.byte	4                               @ Address Size (in bytes)
-	.byte	1                               @ Abbrev [1] 0xb:0xca DW_TAG_compile_unit
+	.byte	1                               @ Abbrev [1] 0xb:0xc8 DW_TAG_compile_unit
 	.long	.Linfo_string0                  @ DW_AT_producer
-	.short	12                              @ DW_AT_language
+	.short	29                              @ DW_AT_language
 	.long	.Linfo_string1                  @ DW_AT_name
 	.long	.Lline_table_start0             @ DW_AT_stmt_list
 	.long	.Linfo_string2                  @ DW_AT_comp_dir
@@ -433,69 +441,71 @@ stdout_putchar:
 	.long	.Linfo_string8                  @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
 	.byte	62                              @ DW_AT_decl_line
-	.byte	6                               @ Abbrev [6] 0x57:0x25 DW_TAG_subprogram
+	.byte	6                               @ Abbrev [6] 0x57:0x24 DW_TAG_subprogram
 	.long	.Lfunc_begin0                   @ DW_AT_low_pc
 	.long	.Lfunc_end0-.Lfunc_begin0       @ DW_AT_high_pc
 	.byte	1                               @ DW_AT_frame_base
 	.byte	93
-                                        @ DW_AT_GNU_all_call_sites
 	.long	.Linfo_string9                  @ DW_AT_name
 	.byte	3                               @ DW_AT_decl_file
 	.byte	63                              @ DW_AT_decl_line
                                         @ DW_AT_prototyped
-	.long	175                             @ DW_AT_type
+	.long	173                             @ DW_AT_type
                                         @ DW_AT_external
-	.byte	7                               @ Abbrev [7] 0x6c:0xf DW_TAG_variable
-	.long	.Ldebug_loc0                    @ DW_AT_location
+	.byte	7                               @ Abbrev [7] 0x6c:0xe DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	0
 	.long	.Linfo_string12                 @ DW_AT_name
 	.byte	3                               @ DW_AT_decl_file
 	.byte	64                              @ DW_AT_decl_line
-	.long	182                             @ DW_AT_type
+	.long	180                             @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
-	.byte	6                               @ Abbrev [6] 0x7c:0x33 DW_TAG_subprogram
+	.byte	6                               @ Abbrev [6] 0x7b:0x32 DW_TAG_subprogram
 	.long	.Lfunc_begin1                   @ DW_AT_low_pc
 	.long	.Lfunc_end1-.Lfunc_begin1       @ DW_AT_high_pc
 	.byte	1                               @ DW_AT_frame_base
 	.byte	93
-                                        @ DW_AT_GNU_all_call_sites
 	.long	.Linfo_string11                 @ DW_AT_name
 	.byte	3                               @ DW_AT_decl_file
 	.byte	94                              @ DW_AT_decl_line
                                         @ DW_AT_prototyped
-	.long	175                             @ DW_AT_type
+	.long	173                             @ DW_AT_type
                                         @ DW_AT_external
-	.byte	8                               @ Abbrev [8] 0x91:0xf DW_TAG_formal_parameter
-	.long	.Ldebug_loc1                    @ DW_AT_location
-	.long	.Linfo_string16                 @ DW_AT_name
+	.byte	8                               @ Abbrev [8] 0x90:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	8
+	.long	.Linfo_string14                 @ DW_AT_name
 	.byte	3                               @ DW_AT_decl_file
 	.byte	94                              @ DW_AT_decl_line
-	.long	175                             @ DW_AT_type
-	.byte	9                               @ Abbrev [9] 0xa0:0xe DW_TAG_variable
+	.long	173                             @ DW_AT_type
+	.byte	7                               @ Abbrev [7] 0x9e:0xe DW_TAG_variable
 	.byte	2                               @ DW_AT_location
 	.byte	145
 	.byte	7
-	.long	.Linfo_string14                 @ DW_AT_name
+	.long	.Linfo_string15                 @ DW_AT_name
 	.byte	3                               @ DW_AT_decl_file
 	.byte	95                              @ DW_AT_decl_line
-	.long	193                             @ DW_AT_type
+	.long	191                             @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
-	.byte	4                               @ Abbrev [4] 0xaf:0x7 DW_TAG_base_type
+	.byte	4                               @ Abbrev [4] 0xad:0x7 DW_TAG_base_type
 	.long	.Linfo_string10                 @ DW_AT_name
 	.byte	5                               @ DW_AT_encoding
 	.byte	4                               @ DW_AT_byte_size
-	.byte	5                               @ Abbrev [5] 0xb6:0xb DW_TAG_typedef
-	.long	175                             @ DW_AT_type
+	.byte	5                               @ Abbrev [5] 0xb4:0xb DW_TAG_typedef
+	.long	173                             @ DW_AT_type
 	.long	.Linfo_string13                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
 	.byte	58                              @ DW_AT_decl_line
-	.byte	10                              @ Abbrev [10] 0xc1:0xc DW_TAG_array_type
+	.byte	9                               @ Abbrev [9] 0xbf:0xc DW_TAG_array_type
 	.long	76                              @ DW_AT_type
-	.byte	11                              @ Abbrev [11] 0xc6:0x6 DW_TAG_subrange_type
-	.long	205                             @ DW_AT_type
+	.byte	10                              @ Abbrev [10] 0xc4:0x6 DW_TAG_subrange_type
+	.long	203                             @ DW_AT_type
 	.byte	1                               @ DW_AT_count
 	.byte	0                               @ End Of Children Mark
-	.byte	12                              @ Abbrev [12] 0xcd:0x7 DW_TAG_base_type
-	.long	.Linfo_string15                 @ DW_AT_name
+	.byte	11                              @ Abbrev [11] 0xcb:0x7 DW_TAG_base_type
+	.long	.Linfo_string16                 @ DW_AT_name
 	.byte	8                               @ DW_AT_byte_size
 	.byte	7                               @ DW_AT_encoding
 	.byte	0                               @ End Of Children Mark
@@ -538,14 +548,14 @@ stdout_putchar:
 .Linfo_string13:
 	.asciz	"int32_t"                       @ string offset=259
 .Linfo_string14:
-	.asciz	"buf"                           @ string offset=267
+	.asciz	"ch"                            @ string offset=267
 .Linfo_string15:
-	.asciz	"__ARRAY_SIZE_TYPE__"           @ string offset=271
+	.asciz	"buf"                           @ string offset=270
 .Linfo_string16:
-	.asciz	"ch"                            @ string offset=291
+	.asciz	"__ARRAY_SIZE_TYPE__"           @ string offset=274
 	.ident	"Component: Arm Compiler for Embedded 6.22 Tool: armclang [5ee92100]"
 	.section	".note.GNU-stack","",%progbits
-	.eabi_attribute	30, 1	@ Tag_ABI_optimization_goals
+	.eabi_attribute	30, 6	@ Tag_ABI_optimization_goals
 	.ARM_attribute	16, 1	@ Tag_AV_eba
 	.section	.debug_line,"",%progbits
 .Lline_table_start0:

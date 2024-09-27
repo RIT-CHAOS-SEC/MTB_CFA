@@ -4,19 +4,19 @@
 cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
-  "C:/Users/nneto/Desktop/MTBTest/Boards/ARM/V2M-MPS2/IOTKit_CM33/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2"
-  "C:/Users/nneto/Desktop/MTBTest/Boards/ARM/V2M-MPS2/IOTKit_CM33/IOTKit_CM33_S_NS/tmp/1"
-  "C:/Users/nneto/Desktop/MTBTest/Boards/ARM/V2M-MPS2/IOTKit_CM33/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2"
-  "C:/Users/nneto/Desktop/MTBTest/Boards/ARM/V2M-MPS2/IOTKit_CM33/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/tmp"
-  "C:/Users/nneto/Desktop/MTBTest/Boards/ARM/V2M-MPS2/IOTKit_CM33/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp"
-  "C:/Users/nneto/Desktop/MTBTest/Boards/ARM/V2M-MPS2/IOTKit_CM33/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src"
-  "C:/Users/nneto/Desktop/MTBTest/Boards/ARM/V2M-MPS2/IOTKit_CM33/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp"
+  "P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2"
+  "P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/1"
+  "P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2"
+  "P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/tmp"
+  "P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp"
+  "P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src"
+  "P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "C:/Users/nneto/Desktop/MTBTest/Boards/ARM/V2M-MPS2/IOTKit_CM33/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/${subDir}")
+    file(MAKE_DIRECTORY "P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "C:/Users/nneto/Desktop/MTBTest/Boards/ARM/V2M-MPS2/IOTKit_CM33/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp${cfgdir}") # cfgdir has leading slash
 endif()

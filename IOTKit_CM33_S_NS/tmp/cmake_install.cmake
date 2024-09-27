@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/nneto/Desktop/MTBTest/Boards/ARM/V2M-MPS2/IOTKit_CM33/IOTKit_CM33_S_NS/tmp
+# Install script for directory: P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/nneto/Desktop/MTBTest/Boards/ARM/V2M-MPS2/IOTKit_CM33/IOTKit_CM33_S_NS/tmp/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

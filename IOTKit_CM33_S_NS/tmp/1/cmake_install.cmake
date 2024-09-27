@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/nneto/Desktop/MTBTest/Boards/ARM/V2M-MPS2/IOTKit_CM33/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2
+# Install script for directory: P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Strawberry/c/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "P:/Strawberry/c/bin/objdump.exe")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/nneto/Desktop/MTBTest/Boards/ARM/V2M-MPS2/IOTKit_CM33/IOTKit_CM33_S_NS/tmp/1/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/1/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

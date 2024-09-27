@@ -9,17 +9,22 @@ include("roots.cmake")
 # Context specific lists
 set(CONTEXTS
   "IOTKit_CM33_s+V2MMPS2"
+  "IOTKit_CM33_ns+V2MMPS2"
 )
 list(LENGTH CONTEXTS CONTEXTS_LENGTH)
 math(EXPR CONTEXTS_LENGTH "${CONTEXTS_LENGTH}-1")
 
 set(DIRS
   "${CMAKE_CURRENT_SOURCE_DIR}/IOTKit_CM33_s+V2MMPS2"
+  "${CMAKE_CURRENT_SOURCE_DIR}/IOTKit_CM33_ns+V2MMPS2"
 )
 
 set(OUTPUTS_1
   "${SOLUTION_ROOT}/out/IOTKit_CM33_s/V2MMPS2/IOTKit_CM33_s.axf"
   "${SOLUTION_ROOT}/out/IOTKit_CM33_s/V2MMPS2/IOTKit_CM33_s_CMSE_Lib.o"
+)
+set(OUTPUTS_2
+  "${SOLUTION_ROOT}/out/IOTKit_CM33_ns/V2MMPS2/IOTKit_CM33_ns.axf"
 )
 
 
@@ -67,3 +72,8 @@ foreach(INDEX RANGE ${CONTEXTS_LENGTH})
   ExternalProject_Add_StepTargets(${CONTEXT} database)
 
 endforeach()
+
+# Build dependencies
+add_dependencies(IOTKit_CM33_ns+V2MMPS2-build
+  IOTKit_CM33_s+V2MMPS2-build
+)

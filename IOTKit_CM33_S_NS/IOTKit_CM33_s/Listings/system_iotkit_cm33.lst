@@ -41,11 +41,11 @@ SystemCoreClockUpdate:
 	.cfi_startproc
 @ %bb.0:
 	.loc	2 66 19 prologue_end            @ RTE/Device/IOTKit_CM33_FP/system_IOTKit_CM33.c:66:19
-	movw	r0, :lower16:SystemCoreClock
-	movw	r1, #30784
-	movt	r0, :upper16:SystemCoreClock
-	movt	r1, #381
-	str	r1, [r0]
+	movw	r1, :lower16:SystemCoreClock
+	movt	r1, :upper16:SystemCoreClock
+	movw	r0, #30784
+	movt	r0, #381
+	str	r0, [r1]
 	.loc	2 67 1                          @ RTE/Device/IOTKit_CM33_FP/system_IOTKit_CM33.c:67:1
 	bx	lr
 .Ltmp0:
@@ -64,141 +64,207 @@ SystemCoreClockUpdate:
 	.thumb_func
 SystemInit:
 .Lfunc_begin1:
+	.loc	2 73 0                          @ RTE/Device/IOTKit_CM33_FP/system_IOTKit_CM33.c:73:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+.Ltmp1:
 	.loc	2 79 13 prologue_end            @ RTE/Device/IOTKit_CM33_FP/system_IOTKit_CM33.c:79:13
-	movw	r1, :lower16:__Vectors
-	movw	r0, #60888
-	movt	r1, :upper16:__Vectors
-	movt	r0, #57344
-	str	r1, [r0, #-208]
+	movw	r0, :lower16:__Vectors
+	movt	r0, :upper16:__Vectors
+	movw	r1, #60680
+	movt	r1, #57344
+	str	r0, [r1]
+	movw	r1, #60808
+	movt	r1, #57344
 	.loc	2 83 14                         @ RTE/Device/IOTKit_CM33_FP/system_IOTKit_CM33.c:83:14
-	ldr	r1, [r0, #-80]
-	movs	r3, #0
-	orr	r1, r1, #15728640
-	str	r1, [r0, #-80]
+	ldr	r0, [r1]
+	orr	r0, r0, #15728640
+	str	r0, [r1]
+	movw	r1, #60708
+	movt	r1, #57344
 	.loc	2 95 14                         @ RTE/Device/IOTKit_CM33_FP/system_IOTKit_CM33.c:95:14
-	ldr	r1, [r0, #-180]
-	mov.w	r12, #0
-	orr	r1, r1, #983040
-	str	r1, [r0, #-180]
+	ldr	r0, [r1]
+	orr	r0, r0, #983040
+	str	r0, [r1]
+	movw	r1, #60712
+	movt	r1, #57344
 	.loc	2 101 13                        @ RTE/Device/IOTKit_CM33_FP/system_IOTKit_CM33.c:101:13
-	ldr	r1, [r0, #-176]
-	movt	r3, #65535
-	orr	r1, r1, #512
-	str	r1, [r0, #-176]
+	ldr	r0, [r1]
+	orr	r0, r0, #512
+	str	r0, [r1]
 	movw	r1, #28672
 	movt	r1, #22528
 	.loc	2 112 29                        @ RTE/Device/IOTKit_CM33_FP/system_IOTKit_CM33.c:112:29
-	ldr	r2, [r1]
-	bic	r2, r2, #256
-	str	r2, [r1]
+	ldr	r0, [r1]
+	bic	r0, r0, #256
+	str	r0, [r1]
+	movw	r1, #28696
+	movt	r1, #22528
+	movs	r0, #0
 	.loc	2 113 30                        @ RTE/Device/IOTKit_CM33_FP/system_IOTKit_CM33.c:113:30
-	str.w	r12, [r1, #24]
+	str	r0, [r1]
+	movw	r1, #28700
+	movt	r1, #22528
+	movs	r0, #0
+	movt	r0, #65535
 	.loc	2 114 30                        @ RTE/Device/IOTKit_CM33_FP/system_IOTKit_CM33.c:114:30
-	str	r3, [r1, #28]
-	movw	r3, #36864
-	movt	r3, #22528
+	str	r0, [r1]
+	movw	r1, #36864
+	movt	r1, #22528
 	.loc	2 123 26                        @ RTE/Device/IOTKit_CM33_FP/system_IOTKit_CM33.c:123:26
-	ldr	r1, [r3]
-	mov.w	r2, #-1
-	bic	r1, r1, #256
-	str	r1, [r3]
-	movs	r1, #1
+	ldr	r0, [r1]
+	bic	r0, r0, #256
+	str	r0, [r1]
+	movw	r1, #36888
+	movt	r1, #22528
+	movs	r0, #1
 	.loc	2 124 29                        @ RTE/Device/IOTKit_CM33_FP/system_IOTKit_CM33.c:124:29
-	str	r1, [r3, #24]
+	str	r0, [r1]
+	movw	r1, #36892
+	movt	r1, #22528
+	mov.w	r0, #-1
 	.loc	2 125 29                        @ RTE/Device/IOTKit_CM33_FP/system_IOTKit_CM33.c:125:29
-	str	r2, [r3, #28]
-	movs	r2, #20
-	movt	r2, #20488
+	str	r0, [r1]
+	movs	r1, #20
+	movt	r1, #20488
 	.loc	2 130 22                        @ RTE/Device/IOTKit_CM33_FP/system_IOTKit_CM33.c:130:22
-	ldr	r3, [r2]
-	orr	r3, r3, #1
-	str	r3, [r2]
+	ldr	r0, [r1]
+	orr	r0, r0, #1
+	str	r0, [r1]
+	movs	r1, #136
+	movt	r1, #20488
 	.loc	2 136 31                        @ RTE/Device/IOTKit_CM33_FP/system_IOTKit_CM33.c:136:31
-	ldr	r3, [r2, #116]
-	orr	r3, r3, #5
-	str	r3, [r2, #116]
+	ldr	r0, [r1]
+	orr	r0, r0, #5
+	str	r0, [r1]
+	movs	r1, #132
+	movt	r1, #20488
 	.loc	2 139 31                        @ RTE/Device/IOTKit_CM33_FP/system_IOTKit_CM33.c:139:31
-	ldr	r3, [r2, #112]
-	orr	r3, r3, #34
-	str	r3, [r2, #112]
-	mov.w	r2, #268435456
-.Ltmp1:
-	.file	5 "P:\\Workspace\\Git\\MTB_CFA\\IOTKit_CM33_S_NS\\IOTKit_CM33_s" "RTE/Device/IOTKit_CM33_FP\\partition_IOTKit_CM33.h"
-	.loc	5 552 5                         @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:552:5
-	str.w	r12, [r0]
-	str	r2, [r0, #4]
-	movw	r2, #65507
-	movt	r2, #4127
-	str	r2, [r0, #8]
-	mov.w	r2, #2097152
-	.loc	5 556 5                         @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:556:5
-	str	r1, [r0]
-	str	r2, [r0, #4]
-	movw	r2, #65505
-	movt	r2, #63
-	str	r2, [r0, #8]
-	movs	r2, #2
-	.loc	5 560 5                         @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:560:5
-	str	r2, [r0]
-	movs	r2, #0
-	movt	r2, #10272
-	str	r2, [r0, #4]
-	movw	r2, #65505
-	movt	r2, #10303
-	movs	r3, #3
-	str	r2, [r0, #8]
-	.loc	5 564 5                         @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:564:5
-	str	r3, [r0]
-	mov.w	r3, #1073741824
-	add.w	r2, r2, #402653184
-	str	r3, [r0, #4]
-	str	r2, [r0, #8]
-	.loc	5 589 15                        @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:589:15
-	str	r1, [r0, #-8]
-	.loc	5 594 24                        @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:594:24
-	ldr	r1, [r0, #-200]
-	movw	r2, #40951
-	.loc	5 594 63 is_stmt 0              @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:594:63
-	orr	r1, r1, #8
-	.loc	5 594 16                        @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:594:16
-	str	r1, [r0, #-200]
-	.loc	5 597 24 is_stmt 1              @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:597:24
-	ldr	r1, [r0, #-204]
-	.loc	5 597 30 is_stmt 0              @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:597:30
-	ands	r1, r2
-	.loc	5 600 110 is_stmt 1             @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:600:110
-	orr	r1, r1, #96468992
-	orr	r1, r1, #3817472
-	.loc	5 597 16                        @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:597:16
-	str	r1, [r0, #-204]
-	.loc	5 608 24                        @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:608:24
-	ldr	r1, [r0, #-76]
-	movs	r2, #4
-	.loc	5 608 76 is_stmt 0              @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:608:76
-	orr	r1, r1, #3072
-	.loc	5 608 16                        @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:608:16
-	str	r1, [r0, #-76]
-	.loc	5 611 24 is_stmt 1              @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:611:24
-	ldr.w	r1, [r0, #348]
-	.loc	5 613 101                       @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:613:101
-	bfi	r1, r2, #26, #3
-	.loc	5 611 16                        @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:611:16
-	str.w	r1, [r0, #348]
-.Ltmp2:
+	ldr	r0, [r1]
+	orr	r0, r0, #34
+	str	r0, [r1]
+	.loc	2 145 3                         @ RTE/Device/IOTKit_CM33_FP/system_IOTKit_CM33.c:145:3
+	bl	TZ_SAU_Setup
 	.loc	2 148 19                        @ RTE/Device/IOTKit_CM33_FP/system_IOTKit_CM33.c:148:19
-	movw	r0, :lower16:SystemCoreClock
-	movw	r1, #30784
-	movt	r0, :upper16:SystemCoreClock
-	movt	r1, #381
-	str	r1, [r0]
-	.loc	2 149 1                         @ RTE/Device/IOTKit_CM33_FP/system_IOTKit_CM33.c:149:1
-	bx	lr
-.Ltmp3:
+	movw	r1, :lower16:SystemCoreClock
+	movt	r1, :upper16:SystemCoreClock
+	movw	r0, #30784
+	movt	r0, #381
+	str	r0, [r1]
+	.loc	2 149 1 epilogue_begin          @ RTE/Device/IOTKit_CM33_FP/system_IOTKit_CM33.c:149:1
+	pop	{r7, pc}
+.Ltmp2:
 .Lfunc_end1:
 	.size	SystemInit, .Lfunc_end1-SystemInit
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.TZ_SAU_Setup,"ax",%progbits
+	.p2align	2                               @ -- Begin function TZ_SAU_Setup
+	.type	TZ_SAU_Setup,%function
+	.code	16                              @ @TZ_SAU_Setup
+	.thumb_func
+TZ_SAU_Setup:
+.Lfunc_begin2:
+	.file	5 "P:\\Workspace\\Git\\MTB_CFA\\IOTKit_CM33_S_NS\\IOTKit_CM33_s" "RTE/Device/IOTKit_CM33_FP\\partition_IOTKit_CM33.h"
+	.loc	5 547 0                         @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:547:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	movw	r12, #60888
+	movt	r12, #57344
+	movs	r0, #0
+.Ltmp3:
+	.loc	5 552 5 prologue_end            @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:552:5
+	str.w	r0, [r12]
+	movw	r3, #60892
+	movt	r3, #57344
+	mov.w	r0, #268435456
+	str	r0, [r3]
+	movw	r2, #60896
+	movt	r2, #57344
+	movw	r0, #65507
+	movt	r0, #4127
+	str	r0, [r2]
+	movs	r0, #1
+	.loc	5 556 5                         @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:556:5
+	str.w	r0, [r12]
+	mov.w	r1, #2097152
+	str	r1, [r3]
+	movw	r1, #65505
+	movt	r1, #63
+	str	r1, [r2]
+	movs	r1, #2
+	.loc	5 560 5                         @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:560:5
+	str.w	r1, [r12]
+	movs	r1, #0
+	movt	r1, #10272
+	str	r1, [r3]
+	movw	r1, #65505
+	movt	r1, #10303
+	str	r1, [r2]
+	movs	r1, #3
+	.loc	5 564 5                         @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:564:5
+	str.w	r1, [r12]
+	mov.w	r1, #1073741824
+	str	r1, [r3]
+	movw	r1, #65505
+	movt	r1, #16447
+	str	r1, [r2]
+	movw	r1, #60880
+	movt	r1, #57344
+	.loc	5 589 15                        @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:589:15
+	str	r0, [r1]
+	movw	r1, #60688
+	movt	r1, #57344
+	.loc	5 594 24                        @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:594:24
+	ldr	r0, [r1]
+	.loc	5 594 63 is_stmt 0              @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:594:63
+	orr	r0, r0, #8
+	.loc	5 594 16                        @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:594:16
+	str	r0, [r1]
+	movw	r1, #60684
+	movt	r1, #57344
+	.loc	5 597 24 is_stmt 1              @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:597:24
+	ldr	r0, [r1]
+	movw	r2, #40951
+	.loc	5 597 30 is_stmt 0              @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:597:30
+	ands	r0, r2
+	movw	r2, #16384
+	movt	r2, #1530
+	.loc	5 600 110 is_stmt 1             @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:600:110
+	orrs	r0, r2
+	.loc	5 597 16                        @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:597:16
+	str	r0, [r1]
+	movw	r1, #60812
+	movt	r1, #57344
+	.loc	5 608 24                        @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:608:24
+	ldr	r0, [r1]
+	.loc	5 608 30 is_stmt 0              @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:608:30
+	orr	r0, r0, #3072
+	.loc	5 608 16                        @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:608:16
+	str	r0, [r1]
+	movw	r1, #61236
+	movt	r1, #57344
+	.loc	5 611 24 is_stmt 1              @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:611:24
+	ldr	r0, [r1]
+	movs	r2, #4
+	.loc	5 613 101                       @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:613:101
+	bfi	r0, r2, #26, #3
+	.loc	5 611 16                        @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:611:16
+	str	r0, [r1]
+	.loc	5 635 1                         @ RTE/Device/IOTKit_CM33_FP\partition_IOTKit_CM33.h:635:1
+	bx	lr
+.Ltmp4:
+.Lfunc_end2:
+	.size	TZ_SAU_Setup, .Lfunc_end2-TZ_SAU_Setup
 	.cfi_endproc
 	.cantunwind
 	.fnend
@@ -395,8 +461,6 @@ SystemCoreClock:
 	.byte	6                               @ DW_FORM_data4
 	.byte	64                              @ DW_AT_frame_base
 	.byte	24                              @ DW_FORM_exprloc
-	.ascii	"\227B"                         @ DW_AT_GNU_all_call_sites
-	.byte	25                              @ DW_FORM_flag_present
 	.byte	3                               @ DW_AT_name
 	.byte	14                              @ DW_FORM_strp
 	.byte	58                              @ DW_AT_decl_file
@@ -412,6 +476,12 @@ SystemCoreClock:
 	.byte	17                              @ Abbreviation Code
 	.byte	46                              @ DW_TAG_subprogram
 	.byte	0                               @ DW_CHILDREN_no
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
 	.byte	3                               @ DW_AT_name
 	.byte	14                              @ DW_FORM_strp
 	.byte	58                              @ DW_AT_decl_file
@@ -420,48 +490,6 @@ SystemCoreClock:
 	.byte	5                               @ DW_FORM_data2
 	.byte	39                              @ DW_AT_prototyped
 	.byte	25                              @ DW_FORM_flag_present
-	.byte	32                              @ DW_AT_inline
-	.byte	11                              @ DW_FORM_data1
-	.byte	0                               @ EOM(1)
-	.byte	0                               @ EOM(2)
-	.byte	18                              @ Abbreviation Code
-	.byte	46                              @ DW_TAG_subprogram
-	.byte	1                               @ DW_CHILDREN_yes
-	.byte	17                              @ DW_AT_low_pc
-	.byte	1                               @ DW_FORM_addr
-	.byte	18                              @ DW_AT_high_pc
-	.byte	6                               @ DW_FORM_data4
-	.byte	64                              @ DW_AT_frame_base
-	.byte	24                              @ DW_FORM_exprloc
-	.ascii	"\227B"                         @ DW_AT_GNU_all_call_sites
-	.byte	25                              @ DW_FORM_flag_present
-	.byte	3                               @ DW_AT_name
-	.byte	14                              @ DW_FORM_strp
-	.byte	58                              @ DW_AT_decl_file
-	.byte	11                              @ DW_FORM_data1
-	.byte	59                              @ DW_AT_decl_line
-	.byte	11                              @ DW_FORM_data1
-	.byte	39                              @ DW_AT_prototyped
-	.byte	25                              @ DW_FORM_flag_present
-	.byte	63                              @ DW_AT_external
-	.byte	25                              @ DW_FORM_flag_present
-	.byte	0                               @ EOM(1)
-	.byte	0                               @ EOM(2)
-	.byte	19                              @ Abbreviation Code
-	.byte	29                              @ DW_TAG_inlined_subroutine
-	.byte	0                               @ DW_CHILDREN_no
-	.byte	49                              @ DW_AT_abstract_origin
-	.byte	19                              @ DW_FORM_ref4
-	.byte	17                              @ DW_AT_low_pc
-	.byte	1                               @ DW_FORM_addr
-	.byte	18                              @ DW_AT_high_pc
-	.byte	6                               @ DW_FORM_data4
-	.byte	88                              @ DW_AT_call_file
-	.byte	11                              @ DW_FORM_data1
-	.byte	89                              @ DW_AT_call_line
-	.byte	11                              @ DW_FORM_data1
-	.byte	87                              @ DW_AT_call_column
-	.byte	11                              @ DW_FORM_data1
 	.byte	0                               @ EOM(1)
 	.byte	0                               @ EOM(2)
 	.byte	0                               @ EOM(3)
@@ -472,9 +500,9 @@ SystemCoreClock:
 	.short	4                               @ DWARF version number
 	.long	.debug_abbrev                   @ Offset Into Abbrev. Section
 	.byte	4                               @ Address Size (in bytes)
-	.byte	1                               @ Abbrev [1] 0xb:0x6a6 DW_TAG_compile_unit
+	.byte	1                               @ Abbrev [1] 0xb:0x69e DW_TAG_compile_unit
 	.long	.Linfo_string0                  @ DW_AT_producer
-	.short	12                              @ DW_AT_language
+	.short	29                              @ DW_AT_language
 	.long	.Linfo_string1                  @ DW_AT_name
 	.long	.Lline_table_start0             @ DW_AT_stmt_list
 	.long	.Linfo_string2                  @ DW_AT_comp_dir
@@ -1236,37 +1264,30 @@ SystemCoreClock:
 	.long	.Lfunc_end0-.Lfunc_begin0       @ DW_AT_high_pc
 	.byte	1                               @ DW_AT_frame_base
 	.byte	93
-                                        @ DW_AT_GNU_all_call_sites
-	.long	.Linfo_string103                @ DW_AT_name
+	.long	.Linfo_string102                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
 	.byte	64                              @ DW_AT_decl_line
                                         @ DW_AT_prototyped
                                         @ DW_AT_external
-	.byte	17                              @ Abbrev [17] 0x685:0x9 DW_TAG_subprogram
-	.long	.Linfo_string102                @ DW_AT_name
-	.byte	5                               @ DW_AT_decl_file
-	.short	546                             @ DW_AT_decl_line
-                                        @ DW_AT_prototyped
-	.byte	1                               @ DW_AT_inline
-	.byte	18                              @ Abbrev [18] 0x68e:0x22 DW_TAG_subprogram
+	.byte	16                              @ Abbrev [16] 0x685:0x11 DW_TAG_subprogram
 	.long	.Lfunc_begin1                   @ DW_AT_low_pc
 	.long	.Lfunc_end1-.Lfunc_begin1       @ DW_AT_high_pc
 	.byte	1                               @ DW_AT_frame_base
 	.byte	93
-                                        @ DW_AT_GNU_all_call_sites
-	.long	.Linfo_string104                @ DW_AT_name
+	.long	.Linfo_string103                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
 	.byte	72                              @ DW_AT_decl_line
                                         @ DW_AT_prototyped
                                         @ DW_AT_external
-	.byte	19                              @ Abbrev [19] 0x69f:0x10 DW_TAG_inlined_subroutine
-	.long	1669                            @ DW_AT_abstract_origin
-	.long	.Ltmp1                          @ DW_AT_low_pc
-	.long	.Ltmp2-.Ltmp1                   @ DW_AT_high_pc
-	.byte	2                               @ DW_AT_call_file
-	.byte	145                             @ DW_AT_call_line
-	.byte	3                               @ DW_AT_call_column
-	.byte	0                               @ End Of Children Mark
+	.byte	17                              @ Abbrev [17] 0x696:0x12 DW_TAG_subprogram
+	.long	.Lfunc_begin2                   @ DW_AT_low_pc
+	.long	.Lfunc_end2-.Lfunc_begin2       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string104                @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.short	546                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
 	.byte	0                               @ End Of Children Mark
 .Ldebug_info_end0:
 	.section	.debug_ranges,"",%progbits
@@ -1275,6 +1296,8 @@ SystemCoreClock:
 	.long	.Lfunc_end0
 	.long	.Lfunc_begin1
 	.long	.Lfunc_end1
+	.long	.Lfunc_begin2
+	.long	.Lfunc_end2
 	.long	0
 	.long	0
 	.section	.debug_str,"MS",%progbits,1
@@ -1483,14 +1506,14 @@ SystemCoreClock:
 .Linfo_string101:
 	.asciz	"FPU_Type"                      @ string offset=1004
 .Linfo_string102:
-	.asciz	"TZ_SAU_Setup"                  @ string offset=1013
+	.asciz	"SystemCoreClockUpdate"         @ string offset=1013
 .Linfo_string103:
-	.asciz	"SystemCoreClockUpdate"         @ string offset=1026
+	.asciz	"SystemInit"                    @ string offset=1035
 .Linfo_string104:
-	.asciz	"SystemInit"                    @ string offset=1048
+	.asciz	"TZ_SAU_Setup"                  @ string offset=1046
 	.ident	"Component: Arm Compiler for Embedded 6.22 Tool: armclang [5ee92100]"
 	.section	".note.GNU-stack","",%progbits
-	.eabi_attribute	30, 1	@ Tag_ABI_optimization_goals
+	.eabi_attribute	30, 6	@ Tag_ABI_optimization_goals
 	.ARM_attribute	16, 1	@ Tag_AV_eba
 	.section	.debug_line,"",%progbits
 .Lline_table_start0:

@@ -118,16 +118,25 @@ void SysTick_Handler (void) {
 
 
 
-void matmul(){
+
+ void __attribute__((used)) matmul(){
 	int mat [5][5];
-	int val = 0;
-	
+	int val = 0;	
+	 
+	if (val==1){
+		val++;
+	}
+	else{
+		val +=2;
+	}
+	 
 	for (int x=0; x<5; x++){
 		for (int y=0; y<5; x++){
 			val += mat[x][y] + mat[y][x];
 		}
 	}
-	printf("%d",val);
+	val = val+2;
+	return;
 }
 
 
@@ -138,17 +147,13 @@ uint32_t mtb_buff[128] __attribute__((aligned(64)));
 
 void setup_MTB(){
 	
-
+	mtb->MTB_BASE = (uint32_t) mtb_buff & MTB_BASE_MASK;
 	mtb->MTB_FLOW =  0;
-	
 	mtb->MTB_POSITION = 0;
 
 	mtb->MTB_MASTER = MTB_MASTER_EN_MASK | 
 									  MTB_MASTER_MASK_MASK|
 										MTB_MASTER_TSTARTEN_MASK	;
-	
-	
-	//mtb->MTB_BASE = (uint32_t) mtb->MTB_BASE & MTB_BASE_MASK;
 	
 	matmul();
 	
