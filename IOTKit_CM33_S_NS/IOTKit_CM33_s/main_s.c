@@ -152,9 +152,6 @@ void run(void){
 	exit_point();
 }
 
-
-
-
 MTB_struct *mtb = (MTB_struct *)MTB_BASE_addr;
 DWT_struct *dwt = (DWT_struct *)DWT_BASE_addr;
 
@@ -194,9 +191,9 @@ void setup_MTB()
     mtb->MTB_FLOW = 0;
     mtb->MTB_POSITION = 0;
 
-    mtb->MTB_MASTER = MTB_MASTER_EN_MASK | MTB_MASTER_MASK_MASK | MTB_MASTER_TSTARTEN_MASK;
+    mtb->MTB_MASTER = MTB_MASTER_MASK_MASK | MTB_MASTER_TSTARTEN_MASK;
 
-    matmul();
+    run();
 
     return;
 }
