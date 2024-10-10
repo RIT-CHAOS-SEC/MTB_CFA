@@ -7,6 +7,7 @@
 #include <arm_cmse.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <string.h>
 
 #include CMSIS_device_header
 #include "Board_GLCD.h"  /* ::Board Support:Graphic LCD */
@@ -208,8 +209,7 @@ void setup_DWT()
 	
     // STOP SIGNAL
     DWT->FUNCTION2 &= ~DWT_FUNCTION_MATCH_OFFSET; // disable DWT+CMP2
-    DWT->FUNCTION3 = (DWT->FUNCTION3 & ~DWT_FUNCTION_MODIFY_MASK) | DWT_FUNCTION_MODIFY_VALUE;
-	
+    DWT->FUNCTION3 = (DWT->FUNCTION3 & ~DWT_FUNCTION_MODIFY_MASK) | DWT_FUNCTION_MODIFY_VALUE;	
     return;
 }
 
