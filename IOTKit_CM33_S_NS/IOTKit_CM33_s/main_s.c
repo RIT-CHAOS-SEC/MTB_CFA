@@ -13,6 +13,7 @@
 #include "Board_LED.h"   /* ::Board Support:LED */
 #include "GLCD_Config.h" /* Keil.V2M-MPS2 IOT-Kit::Board Support:Graphic LCD */
 #include "mtb.h"
+#include "core_cm33.h"
 
 /* Start address of non-secure application */
 #define NONSECURE_START (0x00200000u)
@@ -133,7 +134,7 @@ void matmul()
 
     for (int x = 0; x < 2; x++)
     {
-        for (int y = 0; y < 2; x++)
+        for (int y = 0; y < 2; y++)
         {
             val += mat[x][y] + mat[y][x];
         }
@@ -141,6 +142,31 @@ void matmul()
     val = val + 2;
     return;
 }
+
+void matmul2()
+{
+    int mat[5][5];
+    int val = 0;
+    if (val == 1)
+    {
+        val++;
+    }
+    else
+    {
+        val += 4;
+    }
+
+    for (int x = 0; x < 2; x++)
+    {
+        for (int y = 0; y < 2; y++)
+        {
+            val += mat[x][y] + mat[y][x];
+        }
+    }
+    val = val + 2;
+    return;
+}
+
 
 
 void exit_point(void){
@@ -153,49 +179,55 @@ void run(void){
 }
 
 MTB_struct *mtb = (MTB_struct *)MTB_BASE_addr;
-DWT_struct *dwt = (DWT_struct *)DWT_BASE_addr;
+
+CoreDebug_Type * CoreDebug_ = ((CoreDebug_Type *)     CoreDebug_BASE   );
+DWT_Type * DWT_ = ((DWT_Type       *)     DWT_BASE         );
+ITM_Type * ITM_ = ((ITM_Type       *)     ITM_BASE         ) ;
 
 #define DWT_FUNCTION_ACTION_VALUE 0b10 << DWT_FUNCTION_ACTION_OFFSET       // Generate a data trace match
 #define DWT_FUNCTION_DATAVSIZE_VALUE 0b10 << DWT_FUNCTION_DATAVSIZE_OFFSET // word size
 #define DWT_FUNCTION_MATCH_VALUE 0b0011 << DWT_FUNCTION_MATCH_OFFSET       // Generate a match on the data value
 
-#define DWT_FUNCTION_MODIFY_MASK (DWT_FUNCTION_MATCH_OFFSET | DWT_FUNCTION_DATAVSIZE_OFFSET | DWT_FUNCTION_ACTION_OFFSET)
+#define DWT_FUNCTION_MODIFY_MASK (DWT_FUNCTION_MATCH_MASK | DWT_FUNCTION_DATAVSIZE_MASK | DWT_FUNCTION_ACTION_MASK)
 #define DWT_FUNCTION_MODIFY_VALUE (DWT_FUNCTION_MATCH_VALUE | DWT_FUNCTION_DATAVSIZE_VALUE | DWT_FUNCTION_ACTION_VALUE)
 
 void setup_DWT()
 {
-		// START SIGNAL
-    dwt->DWT_FUNCTION0[0] &= ~DWT_FUNCTION_MATCH_OFFSET; // disable DWT+CMP0
-    dwt->DWT_COMP0[0] = (uint32_t) entry_point;  // Initial Address
-    
-    dwt->DWT_FUNCTION1[0] = (dwt->DWT_FUNCTION0[0] & ~DWT_FUNCTION_MODIFY_MASK) | DWT_FUNCTION_MODIFY_VALUE;
-    dwt->DWT_COMP1[0] = (uint32_t) exit_point; // Final Address
+    // Enable DWT
+    CoreDebug->DEMCR |= DEMCR_TRCENA;
+    ITM->TCR |= (ITM_TCR_TXENA|ITM_TCR_ITMENA);
+
+    DWT->COMP0 = (uint32_t) matmul;  // Initial Address
+    DWT->COMP1 = (uint32_t) matmul2; // Final Address
+    DWT->COMP2 = (uint32_t) run;  // Initial Address
+    DWT->COMP3 = (uint32_t) setup_DWT; // Final Address
+
+    // START SIGNAL
+    DWT->FUNCTION0 &= ~DWT_FUNCTION_MATCH_OFFSET; // disable DWT+CMP0
+    DWT->FUNCTION1 = (DWT->FUNCTION1 & ~DWT_FUNCTION_MODIFY_MASK) | DWT_FUNCTION_MODIFY_VALUE;
 	
-	
-		// STOP SIGNAL
-	  dwt->DWT_FUNCTION2[0] &= ~DWT_FUNCTION_MATCH_OFFSET; // disable DWT+CMP2
-    dwt->DWT_COMP2[0] = (uint32_t) run;  // Initial Address
-    
-    dwt->DWT_FUNCTION3[0] = (dwt->DWT_FUNCTION0[0] & ~DWT_FUNCTION_MODIFY_MASK) | DWT_FUNCTION_MODIFY_VALUE;
-    dwt->DWT_COMP3[0] = (uint32_t) setup_DWT; // Final Address
+    // STOP SIGNAL
+    DWT->FUNCTION2 &= ~DWT_FUNCTION_MATCH_OFFSET; // disable DWT+CMP2
+    DWT->FUNCTION3 = (DWT->FUNCTION3 & ~DWT_FUNCTION_MODIFY_MASK) | DWT_FUNCTION_MODIFY_VALUE;
 	
     return;
 }
 
-void setup_MTB()
-{
-		mtb->MTB_TSTART |= 0b10;  // Set to use DWT_COMP1
-	
-		mtb->MTB_TSTOP  |= 0b1000;  // Set to use DWT_COMP3
-		
+void setup_MTB(){
+    mtb->MTB_TSTART |= 0b10;  // Set to use DWT_COMP1
+    mtb->MTB_TSTOP  |= 0b1000;  // Set to use DWT_COMP3
     mtb->MTB_FLOW = 0;
     mtb->MTB_POSITION = 0;
+    mtb->MTB_MASTER |= MTB_MASTER_TSTARTEN_MASK;
+    mtb->MTB_MASTER |= (MTB_MASTER_MASK_MASK);
+		return;
+}
 
-    mtb->MTB_MASTER = MTB_MASTER_MASK_MASK | MTB_MASTER_TSTARTEN_MASK;
-
-    run();
-
-    return;
+void exec(){
+	setup_DWT();
+	setup_MTB();
+	run();
+	return;
 }
 
 static uint32_t x;
@@ -257,7 +289,7 @@ int main(void)
 
     SysTick_Config(SystemCoreClock / 100); /* Generate interrupt each 10 ms */
 
-    setup_MTB();
+    exec();
 
     NonSecure_ResetHandler();
 }
