@@ -63,10 +63,35 @@ static uint32_t x;
 /*----------------------------------------------------------------------------
   Main function
  *----------------------------------------------------------------------------*/
+void matmul2()
+{
+    int mat[5][5];
+    int val = 0;
+    if (val == 1)
+    {
+        val++;
+    }
+    else
+    {
+        val += 4;
+    }
+
+    for (int x = 0; x < 2; x++)
+    {
+        for (int y = 0; y < 2; y++)
+        {
+            val += mat[x][y] + mat[y][x];
+        }
+    }
+    val = val + 2;
+    return;
+}
+
 int main (void)
 {
   uint32_t i;
-
+	matmul2();
+	
   /* exercise some floating point instructions */
   volatile uint32_t fpuType = SCB_GetFPUType(); 
   volatile float  x1 = 12.4567f;

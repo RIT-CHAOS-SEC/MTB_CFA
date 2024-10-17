@@ -393,38 +393,6 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>554</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>46</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>&lt;1&gt;D:/ArmKeil/Arm/Packs/Keil/V2M-MPS2_IOTKit_BSP/1.5.2/Boards/ARM/V2M-MPS2/Common/GLCD_V2M-MPS2.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\IOTKit_CM33_s\GLCD_V2M-MPS2.c\554</Expression>
-        </Bp>
-        <Bp>
-          <Number>1</Number>
-          <Type>0</Type>
-          <LineNumber>389</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>&lt;1&gt;D:/ArmKeil/Arm/Packs/Keil/V2M-MPS2_IOTKit_BSP/1.5.2/Boards/ARM/V2M-MPS2/Common/GLCD_V2M-MPS2.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\IOTKit_CM33_s\GLCD_V2M-MPS2.c\389</Expression>
-        </Bp>
-        <Bp>
-          <Number>2</Number>
-          <Type>0</Type>
           <LineNumber>470</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>18</Address>
@@ -437,6 +405,38 @@
           <Filename>&lt;1&gt;D:/ArmKeil/Arm/Packs/Keil/V2M-MPS2_IOTKit_BSP/1.5.2/Boards/ARM/V2M-MPS2/Common/GLCD_V2M-MPS2.c</Filename>
           <ExecCommand></ExecCommand>
           <Expression>\\IOTKit_CM33_s\GLCD_V2M-MPS2.c\470</Expression>
+        </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
+          <LineNumber>96</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>2099028</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>&lt;2&gt;.\main_ns.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\IOTKit_CM33_ns\main_ns.c\96</Expression>
+        </Bp>
+        <Bp>
+          <Number>2</Number>
+          <Type>0</Type>
+          <LineNumber>68</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>&lt;2&gt;.\main_ns.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>

@@ -189,22 +189,32 @@ ITM_Type * ITM_ = ((ITM_Type       *)     ITM_BASE         ) ;
 #define DWT_FUNCTION_MODIFY_MASK (DWT_FUNCTION_MATCH_MASK | DWT_FUNCTION_DATAVSIZE_MASK | DWT_FUNCTION_ACTION_MASK)
 #define DWT_FUNCTION_MODIFY_VALUE (DWT_FUNCTION_MATCH_VALUE | DWT_FUNCTION_DATAVSIZE_VALUE | DWT_FUNCTION_ACTION_VALUE)
 
+#define START_INIT_MTB_ADDRESS  0x200884
+#define START_END_MTB_ADDRESS   0x200900
+
+#define STOP_INIT_MTB_ADDRESS   0x200750
+#define STOP_END_MTB_ADDRESS    0x2007A8
+
 void setup_DWT()
 {
     // Enable DWT
     CoreDebug_->DEMCR |= DEMCR_TRCENA;
     ITM_->TCR |= (ITM_TCR_TXENA|ITM_TCR_ITMENA);
 
-    DWT_->COMP0 = (uint32_t) matmul;  // Initial Address
+    // DWT_->COMP0 = (uint32_t) matmul;  // Initial Address
+    DWT_->COMP0 = (uint32_t) START_INIT_MTB_ADDRESS;
     SET_BITS(DWT->COMP0,0,0,0b0);
 
-    DWT->COMP1 = (uint32_t) matmul2; // Final Address
+    // DWT->COMP1 = (uint32_t) matmul2; // Final Address
+    DWT_->COMP1 = (uint32_t) START_END_MTB_ADDRESS;
     SET_BITS(DWT->COMP1,0,0,0b0);     
     
-    DWT->COMP2 = (uint32_t) run;  // Initial Address
+    // DWT->COMP2 = (uint32_t) run;  // Initial Address
+    DWT_->COMP2 = (uint32_t) STOP_INIT_MTB_ADDRESS;
     SET_BITS(DWT->COMP2,0,0,0b0);
     
-    DWT->COMP3 = (uint32_t) setup_DWT; // Final Address
+    // DWT->COMP3 = (uint32_t) setup_DWT; // Final Address
+    DWT_->COMP3 = (uint32_t) STOP_END_MTB_ADDRESS;
     SET_BITS(DWT->COMP3,0,0,0b0);
     
     // START SIGNAL
