@@ -34,18 +34,18 @@ include CMakeFiles\rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = P$:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp\
+cmake_ninja_workdir = D$:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp\
 
 #############################################
 # Utility command for IOTKit_CM33_s+V2MMPS2
 
-build IOTKit_CM33_s+V2MMPS2: phony CMakeFiles\IOTKit_CM33_s+V2MMPS2 CMakeFiles\IOTKit_CM33_s+V2MMPS2-complete IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-done IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-build P$:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\out\IOTKit_CM33_s\V2MMPS2\IOTKit_CM33_s.axf P$:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\out\IOTKit_CM33_s\V2MMPS2\IOTKit_CM33_s_CMSE_Lib.o IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-configure IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-download IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-install IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-mkdir IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-patch IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-test IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-update IOTKit_CM33_s+V2MMPS2-build IOTKit_CM33_s+V2MMPS2-configure
+build IOTKit_CM33_s+V2MMPS2: phony CMakeFiles\IOTKit_CM33_s+V2MMPS2 CMakeFiles\IOTKit_CM33_s+V2MMPS2-complete IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-done IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-build D$:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\out\IOTKit_CM33_s\V2MMPS2\IOTKit_CM33_s.axf D$:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\out\IOTKit_CM33_s\V2MMPS2\IOTKit_CM33_s_CMSE_Lib.o IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-configure IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-download IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-install IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-mkdir IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-patch IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-test IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-update IOTKit_CM33_s+V2MMPS2-build IOTKit_CM33_s+V2MMPS2-configure
 
 
 #############################################
 # Utility command for IOTKit_CM33_s+V2MMPS2-build
 
-build IOTKit_CM33_s+V2MMPS2-build: phony CMakeFiles\IOTKit_CM33_s+V2MMPS2-build IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-build P$:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\out\IOTKit_CM33_s\V2MMPS2\IOTKit_CM33_s.axf P$:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\out\IOTKit_CM33_s\V2MMPS2\IOTKit_CM33_s_CMSE_Lib.o IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-configure IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-patch IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-update IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-download IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-mkdir IOTKit_CM33_s+V2MMPS2-configure
+build IOTKit_CM33_s+V2MMPS2-build: phony CMakeFiles\IOTKit_CM33_s+V2MMPS2-build IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-build D$:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\out\IOTKit_CM33_s\V2MMPS2\IOTKit_CM33_s.axf D$:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\out\IOTKit_CM33_s\V2MMPS2\IOTKit_CM33_s_CMSE_Lib.o IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-configure IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-patch IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-update IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-download IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-mkdir IOTKit_CM33_s+V2MMPS2-configure
 
 
 #############################################
@@ -63,13 +63,13 @@ build IOTKit_CM33_s+V2MMPS2-database: phony CMakeFiles\IOTKit_CM33_s+V2MMPS2-dat
 #############################################
 # Utility command for IOTKit_CM33_ns+V2MMPS2
 
-build IOTKit_CM33_ns+V2MMPS2: phony CMakeFiles\IOTKit_CM33_ns+V2MMPS2 CMakeFiles\IOTKit_CM33_ns+V2MMPS2-complete IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-done IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-build P$:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\out\IOTKit_CM33_ns\V2MMPS2\IOTKit_CM33_ns.axf IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-configure IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-download IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-install IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-mkdir IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-patch IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-test IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-update IOTKit_CM33_ns+V2MMPS2-build IOTKit_CM33_ns+V2MMPS2-configure
+build IOTKit_CM33_ns+V2MMPS2: phony CMakeFiles\IOTKit_CM33_ns+V2MMPS2 CMakeFiles\IOTKit_CM33_ns+V2MMPS2-complete IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-done IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-build D$:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\out\IOTKit_CM33_ns\V2MMPS2\IOTKit_CM33_ns.axf IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-configure IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-download IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-install IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-mkdir IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-patch IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-test IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-update IOTKit_CM33_ns+V2MMPS2-build IOTKit_CM33_ns+V2MMPS2-configure
 
 
 #############################################
 # Utility command for IOTKit_CM33_ns+V2MMPS2-build
 
-build IOTKit_CM33_ns+V2MMPS2-build: phony CMakeFiles\IOTKit_CM33_ns+V2MMPS2-build IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-build P$:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\out\IOTKit_CM33_ns\V2MMPS2\IOTKit_CM33_ns.axf IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-configure IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-patch IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-update IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-download IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-mkdir IOTKit_CM33_ns+V2MMPS2-configure IOTKit_CM33_s+V2MMPS2-build
+build IOTKit_CM33_ns+V2MMPS2-build: phony CMakeFiles\IOTKit_CM33_ns+V2MMPS2-build IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-build D$:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\out\IOTKit_CM33_ns\V2MMPS2\IOTKit_CM33_ns.axf IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-configure IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-patch IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-update IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-download IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-mkdir IOTKit_CM33_ns+V2MMPS2-configure IOTKit_CM33_s+V2MMPS2-build
 
 
 #############################################
@@ -88,7 +88,7 @@ build IOTKit_CM33_ns+V2MMPS2-database: phony CMakeFiles\IOTKit_CM33_ns+V2MMPS2-d
 # Utility command for edit_cache
 
 build CMakeFiles\edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake-gui.exe -SP:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp -BP:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake-gui.exe -SD:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp -BD:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp"
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -100,7 +100,7 @@ build edit_cache: phony CMakeFiles\edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe --regenerate-during-build -SP:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp -BP:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe --regenerate-during-build -SD:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp -BD:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -118,7 +118,7 @@ build CMakeFiles\IOTKit_CM33_s+V2MMPS2 | ${cmake_ninja_workdir}CMakeFiles\IOTKit
 # Custom command for CMakeFiles\IOTKit_CM33_s+V2MMPS2-complete
 
 build CMakeFiles\IOTKit_CM33_s+V2MMPS2-complete IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-done | ${cmake_ninja_workdir}CMakeFiles\IOTKit_CM33_s+V2MMPS2-complete ${cmake_ninja_workdir}IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-done: CUSTOM_COMMAND IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-install IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-mkdir IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-download IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-update IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-patch IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-configure IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-build IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-install IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-test || IOTKit_CM33_s+V2MMPS2-build IOTKit_CM33_s+V2MMPS2-configure
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E make_directory P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/CMakeFiles && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/CMakeFiles/IOTKit_CM33_s+V2MMPS2-complete && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/IOTKit_CM33_s+V2MMPS2-done"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E make_directory D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/CMakeFiles && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/CMakeFiles/IOTKit_CM33_s+V2MMPS2-complete && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/IOTKit_CM33_s+V2MMPS2-done"
   DESC = Completed 'IOTKit_CM33_s+V2MMPS2'
   restat = 1
 
@@ -126,8 +126,8 @@ build CMakeFiles\IOTKit_CM33_s+V2MMPS2-complete IOTKit_CM33_s+V2MMPS2\src\IOTKit
 #############################################
 # Custom command for IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-build
 
-build IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-build P$:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\out\IOTKit_CM33_s\V2MMPS2\IOTKit_CM33_s.axf P$:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\out\IOTKit_CM33_s\V2MMPS2\IOTKit_CM33_s_CMSE_Lib.o | ${cmake_ninja_workdir}IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-build: CUSTOM_COMMAND IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-configure || IOTKit_CM33_s+V2MMPS2-configure
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp\1 && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E echo "Building CMake target 'IOTKit_CM33_s+V2MMPS2'" && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe --build P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/1"
+build IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-build D$:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\out\IOTKit_CM33_s\V2MMPS2\IOTKit_CM33_s.axf D$:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\out\IOTKit_CM33_s\V2MMPS2\IOTKit_CM33_s_CMSE_Lib.o | ${cmake_ninja_workdir}IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-build: CUSTOM_COMMAND IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-configure || IOTKit_CM33_s+V2MMPS2-configure
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp\1 && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E echo "Building CMake target 'IOTKit_CM33_s+V2MMPS2'" && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe --build D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/1"
   DESC = Performing build step for 'IOTKit_CM33_s+V2MMPS2'
   pool = console
   restat = 1
@@ -137,7 +137,7 @@ build IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS
 # Custom command for IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-configure
 
 build IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-configure | ${cmake_ninja_workdir}IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-configure: CUSTOM_COMMAND IOTKit_CM33_s+V2MMPS2\tmp\IOTKit_CM33_s+V2MMPS2-cfgcmd.txt IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-patch
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp\1 && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -P P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/IOTKit_CM33_s+V2MMPS2-configure-.cmake && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/IOTKit_CM33_s+V2MMPS2-configure"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp\1 && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -P D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/IOTKit_CM33_s+V2MMPS2-configure-.cmake && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/IOTKit_CM33_s+V2MMPS2-configure"
   DESC = Performing configure step for 'IOTKit_CM33_s+V2MMPS2'
   restat = 1
 
@@ -146,7 +146,7 @@ build IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS
 # Custom command for IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-download
 
 build IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-download | ${cmake_ninja_workdir}IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-download: CUSTOM_COMMAND IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-source_dirinfo.txt IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-mkdir
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E echo_append && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/IOTKit_CM33_s+V2MMPS2-download"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E echo_append && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/IOTKit_CM33_s+V2MMPS2-download"
   DESC = No download step for 'IOTKit_CM33_s+V2MMPS2'
   restat = 1
 
@@ -155,7 +155,7 @@ build IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS
 # Custom command for IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-install
 
 build IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-install | ${cmake_ninja_workdir}IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-install: CUSTOM_COMMAND IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-build || IOTKit_CM33_s+V2MMPS2-build IOTKit_CM33_s+V2MMPS2-configure
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp\1 && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E echo_append"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp\1 && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E echo_append"
   DESC = No install step for 'IOTKit_CM33_s+V2MMPS2'
 
 
@@ -163,7 +163,7 @@ build IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS
 # Custom command for IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-mkdir
 
 build IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-mkdir | ${cmake_ninja_workdir}IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-mkdir: CUSTOM_COMMAND
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -Dcfgdir= -P P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/tmp/IOTKit_CM33_s+V2MMPS2-mkdirs.cmake && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/IOTKit_CM33_s+V2MMPS2-mkdir"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -Dcfgdir= -P D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/tmp/IOTKit_CM33_s+V2MMPS2-mkdirs.cmake && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/IOTKit_CM33_s+V2MMPS2-mkdir"
   DESC = Creating directories for 'IOTKit_CM33_s+V2MMPS2'
   restat = 1
 
@@ -172,7 +172,7 @@ build IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS
 # Custom command for IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-patch
 
 build IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-patch | ${cmake_ninja_workdir}IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-patch: CUSTOM_COMMAND IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-patch-info.txt IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-update
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E echo_append && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/IOTKit_CM33_s+V2MMPS2-patch"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E echo_append && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/IOTKit_CM33_s+V2MMPS2-patch"
   DESC = No patch step for 'IOTKit_CM33_s+V2MMPS2'
   restat = 1
 
@@ -181,7 +181,7 @@ build IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS
 # Custom command for IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-test
 
 build IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-test | ${cmake_ninja_workdir}IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-test: CUSTOM_COMMAND IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-install || IOTKit_CM33_s+V2MMPS2-build IOTKit_CM33_s+V2MMPS2-configure
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp\1 && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E echo_append && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/IOTKit_CM33_s+V2MMPS2-test"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp\1 && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E echo_append && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/IOTKit_CM33_s+V2MMPS2-test"
   DESC = No test step for 'IOTKit_CM33_s+V2MMPS2'
   restat = 1
 
@@ -190,7 +190,7 @@ build IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS
 # Custom command for IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-update
 
 build IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-update | ${cmake_ninja_workdir}IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-update: CUSTOM_COMMAND IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-update-info.txt IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-download
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E echo_append && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/IOTKit_CM33_s+V2MMPS2-update"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E echo_append && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/IOTKit_CM33_s+V2MMPS2-update"
   DESC = No update step for 'IOTKit_CM33_s+V2MMPS2'
   restat = 1
 
@@ -217,7 +217,7 @@ build CMakeFiles\IOTKit_CM33_s+V2MMPS2-database | ${cmake_ninja_workdir}CMakeFil
 # Custom command for IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-database
 
 build IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-database | ${cmake_ninja_workdir}IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-database: CUSTOM_COMMAND IOTKit_CM33_s+V2MMPS2\src\IOTKit_CM33_s+V2MMPS2-stamp\IOTKit_CM33_s+V2MMPS2-configure || IOTKit_CM33_s+V2MMPS2-configure
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe --build P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/1 --target database"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe --build D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/1 --target database"
   DESC = Performing database step for 'IOTKit_CM33_s+V2MMPS2'
 
 
@@ -231,7 +231,7 @@ build CMakeFiles\IOTKit_CM33_ns+V2MMPS2 | ${cmake_ninja_workdir}CMakeFiles\IOTKi
 # Custom command for CMakeFiles\IOTKit_CM33_ns+V2MMPS2-complete
 
 build CMakeFiles\IOTKit_CM33_ns+V2MMPS2-complete IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-done | ${cmake_ninja_workdir}CMakeFiles\IOTKit_CM33_ns+V2MMPS2-complete ${cmake_ninja_workdir}IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-done: CUSTOM_COMMAND IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-install IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-mkdir IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-download IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-update IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-patch IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-configure IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-build IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-install IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-test || IOTKit_CM33_ns+V2MMPS2-build IOTKit_CM33_ns+V2MMPS2-configure IOTKit_CM33_s+V2MMPS2-build IOTKit_CM33_s+V2MMPS2-configure
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E make_directory P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/CMakeFiles && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/CMakeFiles/IOTKit_CM33_ns+V2MMPS2-complete && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_ns+V2MMPS2/src/IOTKit_CM33_ns+V2MMPS2-stamp/IOTKit_CM33_ns+V2MMPS2-done"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E make_directory D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/CMakeFiles && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/CMakeFiles/IOTKit_CM33_ns+V2MMPS2-complete && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_ns+V2MMPS2/src/IOTKit_CM33_ns+V2MMPS2-stamp/IOTKit_CM33_ns+V2MMPS2-done"
   DESC = Completed 'IOTKit_CM33_ns+V2MMPS2'
   restat = 1
 
@@ -239,8 +239,8 @@ build CMakeFiles\IOTKit_CM33_ns+V2MMPS2-complete IOTKit_CM33_ns+V2MMPS2\src\IOTK
 #############################################
 # Custom command for IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-build
 
-build IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-build P$:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\out\IOTKit_CM33_ns\V2MMPS2\IOTKit_CM33_ns.axf | ${cmake_ninja_workdir}IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-build: CUSTOM_COMMAND IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-configure || IOTKit_CM33_ns+V2MMPS2-configure IOTKit_CM33_s+V2MMPS2-build IOTKit_CM33_s+V2MMPS2-configure
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp\2 && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E echo "Building CMake target 'IOTKit_CM33_ns+V2MMPS2'" && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe --build P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/2"
+build IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-build D$:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\out\IOTKit_CM33_ns\V2MMPS2\IOTKit_CM33_ns.axf | ${cmake_ninja_workdir}IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-build: CUSTOM_COMMAND IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-configure || IOTKit_CM33_ns+V2MMPS2-configure IOTKit_CM33_s+V2MMPS2-build IOTKit_CM33_s+V2MMPS2-configure
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp\2 && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E echo "Building CMake target 'IOTKit_CM33_ns+V2MMPS2'" && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe --build D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/2"
   DESC = Performing build step for 'IOTKit_CM33_ns+V2MMPS2'
   pool = console
   restat = 1
@@ -250,7 +250,7 @@ build IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2M
 # Custom command for IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-configure
 
 build IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-configure | ${cmake_ninja_workdir}IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-configure: CUSTOM_COMMAND IOTKit_CM33_ns+V2MMPS2\tmp\IOTKit_CM33_ns+V2MMPS2-cfgcmd.txt IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-patch
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp\2 && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -P P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_ns+V2MMPS2/src/IOTKit_CM33_ns+V2MMPS2-stamp/IOTKit_CM33_ns+V2MMPS2-configure-.cmake && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_ns+V2MMPS2/src/IOTKit_CM33_ns+V2MMPS2-stamp/IOTKit_CM33_ns+V2MMPS2-configure"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp\2 && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -P D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_ns+V2MMPS2/src/IOTKit_CM33_ns+V2MMPS2-stamp/IOTKit_CM33_ns+V2MMPS2-configure-.cmake && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_ns+V2MMPS2/src/IOTKit_CM33_ns+V2MMPS2-stamp/IOTKit_CM33_ns+V2MMPS2-configure"
   DESC = Performing configure step for 'IOTKit_CM33_ns+V2MMPS2'
   restat = 1
 
@@ -259,7 +259,7 @@ build IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2M
 # Custom command for IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-download
 
 build IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-download | ${cmake_ninja_workdir}IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-download: CUSTOM_COMMAND IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-source_dirinfo.txt IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-mkdir
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E echo_append && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_ns+V2MMPS2/src/IOTKit_CM33_ns+V2MMPS2-stamp/IOTKit_CM33_ns+V2MMPS2-download"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E echo_append && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_ns+V2MMPS2/src/IOTKit_CM33_ns+V2MMPS2-stamp/IOTKit_CM33_ns+V2MMPS2-download"
   DESC = No download step for 'IOTKit_CM33_ns+V2MMPS2'
   restat = 1
 
@@ -268,7 +268,7 @@ build IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2M
 # Custom command for IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-install
 
 build IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-install | ${cmake_ninja_workdir}IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-install: CUSTOM_COMMAND IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-build || IOTKit_CM33_ns+V2MMPS2-build IOTKit_CM33_ns+V2MMPS2-configure IOTKit_CM33_s+V2MMPS2-build IOTKit_CM33_s+V2MMPS2-configure
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp\2 && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E echo_append"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp\2 && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E echo_append"
   DESC = No install step for 'IOTKit_CM33_ns+V2MMPS2'
 
 
@@ -276,7 +276,7 @@ build IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2M
 # Custom command for IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-mkdir
 
 build IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-mkdir | ${cmake_ninja_workdir}IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-mkdir: CUSTOM_COMMAND
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -Dcfgdir= -P P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_ns+V2MMPS2/tmp/IOTKit_CM33_ns+V2MMPS2-mkdirs.cmake && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_ns+V2MMPS2/src/IOTKit_CM33_ns+V2MMPS2-stamp/IOTKit_CM33_ns+V2MMPS2-mkdir"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -Dcfgdir= -P D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_ns+V2MMPS2/tmp/IOTKit_CM33_ns+V2MMPS2-mkdirs.cmake && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_ns+V2MMPS2/src/IOTKit_CM33_ns+V2MMPS2-stamp/IOTKit_CM33_ns+V2MMPS2-mkdir"
   DESC = Creating directories for 'IOTKit_CM33_ns+V2MMPS2'
   restat = 1
 
@@ -285,7 +285,7 @@ build IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2M
 # Custom command for IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-patch
 
 build IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-patch | ${cmake_ninja_workdir}IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-patch: CUSTOM_COMMAND IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-patch-info.txt IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-update
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E echo_append && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_ns+V2MMPS2/src/IOTKit_CM33_ns+V2MMPS2-stamp/IOTKit_CM33_ns+V2MMPS2-patch"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E echo_append && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_ns+V2MMPS2/src/IOTKit_CM33_ns+V2MMPS2-stamp/IOTKit_CM33_ns+V2MMPS2-patch"
   DESC = No patch step for 'IOTKit_CM33_ns+V2MMPS2'
   restat = 1
 
@@ -294,7 +294,7 @@ build IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2M
 # Custom command for IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-test
 
 build IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-test | ${cmake_ninja_workdir}IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-test: CUSTOM_COMMAND IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-install || IOTKit_CM33_ns+V2MMPS2-build IOTKit_CM33_ns+V2MMPS2-configure IOTKit_CM33_s+V2MMPS2-build IOTKit_CM33_s+V2MMPS2-configure
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp\2 && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E echo_append && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_ns+V2MMPS2/src/IOTKit_CM33_ns+V2MMPS2-stamp/IOTKit_CM33_ns+V2MMPS2-test"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp\2 && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E echo_append && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_ns+V2MMPS2/src/IOTKit_CM33_ns+V2MMPS2-stamp/IOTKit_CM33_ns+V2MMPS2-test"
   DESC = No test step for 'IOTKit_CM33_ns+V2MMPS2'
   restat = 1
 
@@ -303,7 +303,7 @@ build IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2M
 # Custom command for IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-update
 
 build IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-update | ${cmake_ninja_workdir}IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-update: CUSTOM_COMMAND IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-update-info.txt IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-download
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E echo_append && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_ns+V2MMPS2/src/IOTKit_CM33_ns+V2MMPS2-stamp/IOTKit_CM33_ns+V2MMPS2-update"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E echo_append && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe -E touch D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_ns+V2MMPS2/src/IOTKit_CM33_ns+V2MMPS2-stamp/IOTKit_CM33_ns+V2MMPS2-update"
   DESC = No update step for 'IOTKit_CM33_ns+V2MMPS2'
   restat = 1
 
@@ -330,7 +330,7 @@ build CMakeFiles\IOTKit_CM33_ns+V2MMPS2-database | ${cmake_ninja_workdir}CMakeFi
 # Custom command for IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-database
 
 build IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-database | ${cmake_ninja_workdir}IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-database: CUSTOM_COMMAND IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2MMPS2-configure || IOTKit_CM33_ns+V2MMPS2-configure
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe --build P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/2 --target database"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\tmp && C:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe --build D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/2 --target database"
   DESC = Performing database step for 'IOTKit_CM33_ns+V2MMPS2'
 
 # =============================================================================
@@ -342,7 +342,7 @@ build IOTKit_CM33_ns+V2MMPS2\src\IOTKit_CM33_ns+V2MMPS2-stamp\IOTKit_CM33_ns+V2M
 # =============================================================================
 
 #############################################
-# Folder: P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp
+# Folder: D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp
 
 build all: phony IOTKit_CM33_s+V2MMPS2 IOTKit_CM33_ns+V2MMPS2
 
@@ -353,14 +353,14 @@ build all: phony IOTKit_CM33_s+V2MMPS2 IOTKit_CM33_ns+V2MMPS2
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\CMakeGenericSystem.cmake C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject.cmake C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject\PatchInfo.txt.in C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject\RepositoryInfo.txt.in C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject\UpdateInfo.txt.in C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject\cfgcmd.txt.in C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject\mkdirs.cmake.in C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject\shared_internal_commands.cmake C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\Platform\Windows.cmake C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.28.4\CMakeSystem.cmake CMakeLists.txt IOTKit_CM33_ns+V2MMPS2\tmp\IOTKit_CM33_ns+V2MMPS2-mkdirs.cmake IOTKit_CM33_s+V2MMPS2\tmp\IOTKit_CM33_s+V2MMPS2-mkdirs.cmake roots.cmake
+build build.ninja: RERUN_CMAKE | C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\CMakeGenericSystem.cmake C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject.cmake C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject\PatchInfo.txt.in C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject\RepositoryInfo.txt.in C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject\UpdateInfo.txt.in C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject\cfgcmd.txt.in C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject\mkdirs.cmake.in C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject\shared_internal_commands.cmake C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\Platform\Windows.cmake C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.28.4\CMakeSystem.cmake CMakeLists.txt IOTKit_CM33_ns+V2MMPS2\tmp\IOTKit_CM33_ns+V2MMPS2-mkdirs.cmake IOTKit_CM33_s+V2MMPS2\tmp\IOTKit_CM33_s+V2MMPS2-mkdirs.cmake roots.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\CMakeGenericSystem.cmake C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject.cmake C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject\PatchInfo.txt.in C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject\RepositoryInfo.txt.in C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject\UpdateInfo.txt.in C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject\cfgcmd.txt.in C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject\mkdirs.cmake.in C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject\shared_internal_commands.cmake C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\Platform\Windows.cmake C$:\Users\aj4775\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.28.4\CMakeSystem.cmake CMakeLists.txt IOTKit_CM33_ns+V2MMPS2\tmp\IOTKit_CM33_ns+V2MMPS2-mkdirs.cmake IOTKit_CM33_s+V2MMPS2\tmp\IOTKit_CM33_s+V2MMPS2-mkdirs.cmake roots.cmake: phony
+build C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\CMakeGenericSystem.cmake C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject.cmake C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject\PatchInfo.txt.in C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject\RepositoryInfo.txt.in C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject\UpdateInfo.txt.in C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject\cfgcmd.txt.in C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject\mkdirs.cmake.in C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\ExternalProject\shared_internal_commands.cmake C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\Platform\Windows.cmake C$:\Users\nneto\.vcpkg\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.28.4\CMakeSystem.cmake CMakeLists.txt IOTKit_CM33_ns+V2MMPS2\tmp\IOTKit_CM33_ns+V2MMPS2-mkdirs.cmake IOTKit_CM33_s+V2MMPS2\tmp\IOTKit_CM33_s+V2MMPS2-mkdirs.cmake roots.cmake: phony
 
 
 #############################################

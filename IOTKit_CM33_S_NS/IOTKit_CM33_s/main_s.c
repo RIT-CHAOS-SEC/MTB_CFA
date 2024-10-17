@@ -169,7 +169,6 @@ void matmul2()
 }
 
 
-
 void exit_point(void){
   entry_point();
   matmul();
@@ -179,37 +178,56 @@ void run(void){
 	exit_point();
 }
 
-MTB_struct *mtb = (MTB_struct *)MTB_BASE_addr;
-
-CoreDebug_Type * CoreDebug_ = ((CoreDebug_Type *)     CoreDebug_BASE   );
+MTB_struct *mtb = (MTB_struct *) MTB_BASE_addr;
+CoreDebug_Type * CoreDebug_ = ((CoreDebug_Type *)     DCB_BASE         );
 DWT_Type * DWT_ = ((DWT_Type       *)     DWT_BASE         );
 ITM_Type * ITM_ = ((ITM_Type       *)     ITM_BASE         ) ;
 
 #define DWT_FUNCTION_ACTION_VALUE 0b10 << DWT_FUNCTION_ACTION_OFFSET       // Generate a data trace match
 #define DWT_FUNCTION_DATAVSIZE_VALUE 0b10 << DWT_FUNCTION_DATAVSIZE_OFFSET // word size
 #define DWT_FUNCTION_MATCH_VALUE 0b0011 << DWT_FUNCTION_MATCH_OFFSET       // Generate a match on the data value
-
 #define DWT_FUNCTION_MODIFY_MASK (DWT_FUNCTION_MATCH_MASK | DWT_FUNCTION_DATAVSIZE_MASK | DWT_FUNCTION_ACTION_MASK)
 #define DWT_FUNCTION_MODIFY_VALUE (DWT_FUNCTION_MATCH_VALUE | DWT_FUNCTION_DATAVSIZE_VALUE | DWT_FUNCTION_ACTION_VALUE)
 
 void setup_DWT()
 {
     // Enable DWT
-    CoreDebug->DEMCR |= DEMCR_TRCENA;
-    ITM->TCR |= (ITM_TCR_TXENA|ITM_TCR_ITMENA);
+    CoreDebug_->DEMCR |= DEMCR_TRCENA;
+    ITM_->TCR |= (ITM_TCR_TXENA|ITM_TCR_ITMENA);
 
-    DWT->COMP0 = (uint32_t) matmul;  // Initial Address
+    DWT_->COMP0 = (uint32_t) matmul;  // Initial Address
+    SET_BITS(DWT->COMP0,0,0,0b0);
+
     DWT->COMP1 = (uint32_t) matmul2; // Final Address
+    SET_BITS(DWT->COMP1,0,0,0b0);     
+    
     DWT->COMP2 = (uint32_t) run;  // Initial Address
+    SET_BITS(DWT->COMP2,0,0,0b0);
+    
     DWT->COMP3 = (uint32_t) setup_DWT; // Final Address
-
+    SET_BITS(DWT->COMP3,0,0,0b0);
+    
     // START SIGNAL
-    DWT->FUNCTION0 &= ~DWT_FUNCTION_MATCH_OFFSET; // disable DWT+CMP0
-    DWT->FUNCTION1 = (DWT->FUNCTION1 & ~DWT_FUNCTION_MODIFY_MASK) | DWT_FUNCTION_MODIFY_VALUE;
-	
+    // CMP0
+    SET_BITS(DWT->FUNCTION0,10,11,0b00); // DATAVSIZE
+    SET_BITS(DWT->FUNCTION0,4,5,0b00); // ACTION
+    SET_BITS(DWT->FUNCTION0,0,3,0b0010); // MATCH
+
+    // CMP1
+    SET_BITS(DWT->FUNCTION1,10,11,0b00); // DATAVSIZE
+    SET_BITS(DWT->FUNCTION1,4,5,0b11); // ACTION
+    SET_BITS(DWT->FUNCTION1,0,3,0b0011); // MATCH
+
     // STOP SIGNAL
-    DWT->FUNCTION2 &= ~DWT_FUNCTION_MATCH_OFFSET; // disable DWT+CMP2
-    DWT->FUNCTION3 = (DWT->FUNCTION3 & ~DWT_FUNCTION_MODIFY_MASK) | DWT_FUNCTION_MODIFY_VALUE;	
+    // CMP2
+    SET_BITS(DWT->FUNCTION2,10,11,0b00); // DATAVSIZE
+    SET_BITS(DWT->FUNCTION2,4,5,0b00); // ACTION
+    SET_BITS(DWT->FUNCTION2,0,3,0b0010); // MATCH
+
+    // CMP3
+    SET_BITS(DWT->FUNCTION3,10,11,0b00); // DATAVSIZE
+    SET_BITS(DWT->FUNCTION3,4,5,0b11); // ACTION
+    SET_BITS(DWT->FUNCTION3,0,3,0b0011); // MATCH
     return;
 }
 

@@ -5,12 +5,11 @@
 
   <Header>### uVision Project, (C) Keil Software</Header>
 
-  <WorkspaceName>P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\IOTKit_CM33_s_ns.uvmpw</WorkspaceName>
+  <WorkspaceName>D:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\IOTKit_CM33_s_ns.uvmpw</WorkspaceName>
 
   <project>
     <PathAndName>.\IOTKit_CM33_s\IOTKit_CM33_s.uvprojx</PathAndName>
     <NodeIsActive>1</NodeIsActive>
-    <NodeIsExpanded>1</NodeIsExpanded>
   </project>
 
   <project>

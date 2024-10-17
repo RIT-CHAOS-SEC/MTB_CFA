@@ -13,7 +13,7 @@ build-idx:
         info:
           - IOTKit_CM33_s_ns.cbuild-set.yml - file is already up-to-date
           - IOTKit_CM33_s_ns.cbuild-pack.yml - file is already up-to-date
-          - IOTKit_CM33_s+V2MMPS2.cbuild.yml - file is already up-to-date
+          - IOTKit_CM33_s+V2MMPS2.cbuild.yml - file generated successfully
     - cbuild: IOTKit_CM33_ns/IOTKit_CM33_ns+V2MMPS2.cbuild.yml
       project: IOTKit_CM33_ns
       configuration: +V2MMPS2

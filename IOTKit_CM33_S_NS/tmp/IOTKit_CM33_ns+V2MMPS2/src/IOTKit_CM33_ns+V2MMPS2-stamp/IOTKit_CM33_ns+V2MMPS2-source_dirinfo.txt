@@ -4,6 +4,6 @@
 
 method=source_dir
 command=
-source_dir=P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_ns+V2MMPS2
+source_dir=D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_ns+V2MMPS2
 work_dir=
 

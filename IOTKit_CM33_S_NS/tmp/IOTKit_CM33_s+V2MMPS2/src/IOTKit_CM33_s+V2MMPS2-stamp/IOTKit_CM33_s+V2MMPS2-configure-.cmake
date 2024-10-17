@@ -1,11 +1,11 @@
 
 cmake_minimum_required(VERSION 3.15)
 
-set(command "C:/Users/aj4775/.vcpkg/artifacts/2139c4c6/tools.kitware.cmake/3.28.4/bin/cmake.exe;-G;Ninja;-S;P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2;-B;P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/1;-DSOLUTION_ROOT=P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS;-DCMSIS_PACK_ROOT=C:/Users/aj4775/AppData/Local/arm/packs;-DCMSIS_COMPILER_ROOT=C:/Users/aj4775/.vcpkg/artifacts/2139c4c6/tools.open.cmsis.pack.cmsis.toolbox/2.6.0/etc")
+set(command "C:/Users/nneto/.vcpkg/artifacts/2139c4c6/tools.kitware.cmake/3.28.4/bin/cmake.exe;-G;Ninja;-S;D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2;-B;D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/1;-DSOLUTION_ROOT=D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS;-DCMSIS_PACK_ROOT=C:/Users/nneto/AppData/Local/arm/packs;-DCMSIS_COMPILER_ROOT=C:/Users/nneto/.vcpkg/artifacts/2139c4c6/tools.open.cmsis.pack.cmsis.toolbox/2.6.0/etc")
 set(log_merged "")
 set(log_output_on_failure "ON")
-set(stdout_log "P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/IOTKit_CM33_s+V2MMPS2-configure-out.log")
-set(stderr_log "P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/IOTKit_CM33_s+V2MMPS2-configure-err.log")
+set(stdout_log "D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/IOTKit_CM33_s+V2MMPS2-configure-out.log")
+set(stderr_log "D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/IOTKit_CM33_s+V2MMPS2-configure-err.log")
 execute_process(
   COMMAND ${command}
   RESULT_VARIABLE result
@@ -31,7 +31,7 @@ if(result)
   if (${log_merged})
     set(msg "${msg}\nSee also\n  ${stderr_log}")
   else()
-    set(msg "${msg}\nSee also\n  P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/IOTKit_CM33_s+V2MMPS2-configure-*.log")
+    set(msg "${msg}\nSee also\n  D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/IOTKit_CM33_s+V2MMPS2-configure-*.log")
   endif()
   if (${log_output_on_failure})
     message(SEND_ERROR "${msg}")
@@ -50,7 +50,7 @@ if(result)
   endif()
 else()
   if(NOT "Ninja" MATCHES "Ninja")
-    set(msg "IOTKit_CM33_s+V2MMPS2 configure command succeeded.  See also P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/IOTKit_CM33_s+V2MMPS2-configure-*.log")
+    set(msg "IOTKit_CM33_s+V2MMPS2 configure command succeeded.  See also D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/IOTKit_CM33_s+V2MMPS2/src/IOTKit_CM33_s+V2MMPS2-stamp/IOTKit_CM33_s+V2MMPS2-configure-*.log")
     message(STATUS "${msg}")
   endif()
 endif()
