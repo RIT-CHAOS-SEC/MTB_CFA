@@ -63,9 +63,13 @@ static uint32_t x;
 /*----------------------------------------------------------------------------
   Main function
  *----------------------------------------------------------------------------*/
-void matmul2()
+
+#define MAXX 10
+#define MAXY 5
+void matmul3()
 {
-    int mat[5][5];
+	
+    int mat[MAXX][MAXY];
     int val = 0;
     if (val == 1)
     {
@@ -76,9 +80,9 @@ void matmul2()
         val += 4;
     }
 
-    for (int x = 0; x < 2; x++)
+    for (int x = 0; x < MAXX; x++)
     {
-        for (int y = 0; y < 2; y++)
+        for (int y = 0; y < MAXY; y++)
         {
             val += mat[x][y] + mat[y][x];
         }
@@ -90,7 +94,7 @@ void matmul2()
 int main (void)
 {
   uint32_t i;
-	matmul2();
+	
 	
   /* exercise some floating point instructions */
   volatile uint32_t fpuType = SCB_GetFPUType(); 
@@ -112,8 +116,12 @@ int main (void)
   LED_Initialize ();                      /* already done in Secure part */
 #endif
 
-  SystemCoreClockUpdate();
-  SysTick_Config(SystemCoreClock / 100);  /* Generate interrupt each 10 ms */
+  // SystemCoreClockUpdate();
+  // SysTick_Config(SystemCoreClock / 100);  /* Generate interrupt each 10 ms */
+
+
+	matmul3();
+
 
   while (1) {
     LED_On (5u);

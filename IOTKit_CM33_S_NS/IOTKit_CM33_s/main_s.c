@@ -178,6 +178,8 @@ void run(void){
 	exit_point();
 }
 
+SCB_Type * SCB_ = ((SCB_Type *) SCB_BASE);
+
 MTB_struct *mtb = (MTB_struct *) MTB_BASE_addr;
 CoreDebug_Type * CoreDebug_ = ((CoreDebug_Type *)     DCB_BASE         );
 DWT_Type * DWT_ = ((DWT_Type       *)     DWT_BASE         );
@@ -189,11 +191,16 @@ ITM_Type * ITM_ = ((ITM_Type       *)     ITM_BASE         ) ;
 #define DWT_FUNCTION_MODIFY_MASK (DWT_FUNCTION_MATCH_MASK | DWT_FUNCTION_DATAVSIZE_MASK | DWT_FUNCTION_ACTION_MASK)
 #define DWT_FUNCTION_MODIFY_VALUE (DWT_FUNCTION_MATCH_VALUE | DWT_FUNCTION_DATAVSIZE_VALUE | DWT_FUNCTION_ACTION_VALUE)
 
-#define START_INIT_MTB_ADDRESS  0x200884
-#define START_END_MTB_ADDRESS   0x200900
+#define START_INIT_MTB_ADDRESS  0x2007B8
+#define START_END_MTB_ADDRESS   0x200830
 
 #define STOP_INIT_MTB_ADDRESS   0x200750
 #define STOP_END_MTB_ADDRESS    0x2007A8
+
+
+// compile this function with -O3 flag
+#pragma GCC push_options
+#pragma GCC optimize ("-O3")
 
 void setup_DWT()
 {
@@ -241,20 +248,56 @@ void setup_DWT()
     return;
 }
 
+
+void cleanMTB(){
+    uint32_t * ptr = (uint32_t *) mtb->MTB_BASE;
+    for (int i = 0; i < MTB_BUFFER_SIZE; i++){
+        ptr[i] = 0;
+    }
+}
+
+void secureExceptionHandler(){
+    if (mtb->MTB_FLOW == (MTB_WATERMARK_A)){
+        mtb->MTB_FLOW = (MTB_WATERMARK_B);
+    } else {
+        mtb->MTB_FLOW = MTB_WATERMARK_A;
+    }
+
+    mtb->MTB_MASTER &= ~( 1U << 9 );
+    mtb->MTB_MASTER &= ~( 1U << 31 );
+    // mtb->MTB_FLOW &= ~(MTB_FLOW_AUTOSTOP_MASK|MTB_FLOW_AUTOHALT_MASK);
+    
+    // set last bit of LR to 0
+    
+    return;
+
+}
+
+#pragma GCC pop_options
+
 void setup_MTB(){
+
+    // setup VTOR 
+    uint32_t * VTOR = (uint32_t *) SCB_->VTOR;
+    VTOR[7] = (uint32_t) secureExceptionHandler;
+    SCB_NS->VTOR = (uint32_t) VTOR;
+
+
+    cleanMTB();
     mtb->MTB_TSTART |= 0b10;  // Set to use DWT_COMP1
     mtb->MTB_TSTOP  |= 0b1000;  // Set to use DWT_COMP3
+    //mtb->MTB_FLOW = MTB_WATERMARK_A;
     mtb->MTB_FLOW = 0;
     mtb->MTB_POSITION = 0;
     mtb->MTB_MASTER |= MTB_MASTER_TSTARTEN_MASK;
-    mtb->MTB_MASTER |= (MTB_MASTER_MASK_MASK);
-		return;
+    mtb->MTB_MASTER |= MTB_MASTER_MASK_MASK;
+    return;
 }
 
 void exec(){
 	setup_DWT();
 	setup_MTB();
-	run();
+	// run();
 	return;
 }
 
@@ -315,7 +358,7 @@ int main(void)
         break;
     }
 
-    SysTick_Config(SystemCoreClock / 100); /* Generate interrupt each 10 ms */
+    // SysTick_Config(SystemCoreClock / 100); /* Generate interrupt each 10 ms */
 
     exec();
 

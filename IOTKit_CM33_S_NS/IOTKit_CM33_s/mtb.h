@@ -57,8 +57,14 @@ typedef struct MTB_struct{
 #define DWT_FUNCTION_MATCHED_MASK       0b1 << DWT_FUNCTION_MATCHED_OFFSET
 #define DWT_FUNCTION_MATCH_MASK         0b1111 <<  DWT_FUNCTION_MATCH_OFFSET
 
+#define DWT_A_SIZE 						256
+#define DWT_B_SIZE 						20
+
 #define SET_BITS(D, X, Y, Z) \
     ((D) = ((D) & ~(((1U << ((Y) - (X) + 1)) - 1) << (X))) | ((Z) << (X)))
+
+#define MTB_WATERMARK_A (( (sizeof(uint32_t)* 2 * DWT_A_SIZE) << 3 ) | MTB_FLOW_AUTOHALT_MASK | MTB_FLOW_AUTOSTOP_MASK)
+#define MTB_WATERMARK_B (( (sizeof(uint32_t)* 2 * DWT_A_SIZE * 2) << 3 ) | MTB_FLOW_AUTOHALT_MASK | MTB_FLOW_AUTOSTOP_MASK)
 
 
 
