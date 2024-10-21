@@ -68,7 +68,6 @@ static uint32_t x;
 #define MAXY 5
 void matmul3()
 {
-	
     int mat[MAXX][MAXY];
     int val = 0;
     if (val == 1)

@@ -326,7 +326,7 @@
         <tRmem>1</tRmem>
         <tRfunc>0</tRfunc>
         <tRbox>1</tRbox>
-        <tRtrace>0</tRtrace>
+        <tRtrace>1</tRtrace>
         <sRSysVw>1</sRSysVw>
         <tRSysVw>1</tRSysVw>
         <sRunDeb>0</sRunDeb>
@@ -351,7 +351,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>CMSIS_AGDI_V8M</Key>
-          <Name>-X"Any" -UAny -O718 -S8 -C0 -P00000000 -N00("ARM CoreSight SW-DP") -D00(0BE12477) -L00(0) -TO65554 -TC10000000 -TT10000000 -TP20 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -FO7 -FD38000000 -FC1000 -FN0</Name>
+          <Name>-X"Any" -UAny -O206 -S8 -C0 -P00000000 -N00("ARM CoreSight SW-DP") -D00(0BE12477) -L00(0) -TO65554 -TC10000000 -TT10000000 -TP20 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -FO7 -FD38000000 -FC1000 -FN0</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -366,7 +366,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGTARM</Key>
-          <Name>(6010=824,127,1301,723,0)(6018=673,0,862,364,0)(6019=-1,-1,-1,-1,0)(6008=2278,106,2560,290,0)(6009=2278,292,2560,476,0)(6014=1030,0,1288,731,0)(6015=120,153,378,775,0)(6003=1987,167,2560,702,0)(6000=2107,169,2560,501,0)</Name>
+          <Name>(6010=1982,104,2459,700,1)(6018=-1,-1,-1,-1,0)(6019=-1,-1,-1,-1,0)(6008=2686,106,2968,290,0)(6009=2686,292,2968,476,0)(6014=-1,-1,-1,-1,0)(6015=120,153,378,775,0)(6003=2007,167,2580,702,0)(6000=2190,169,2643,501,0)</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -393,9 +393,57 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
+          <LineNumber>389</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>&lt;1&gt;C:/Users/aj4775/AppData/Local/arm/packs/Keil/V2M-MPS2_IOTKit_BSP/1.5.2/Boards/ARM/V2M-MPS2/Common/GLCD_V2M-MPS2.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\IOTKit_CM33_s\GLCD_V2M-MPS2.c\389</Expression>
+        </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
+          <LineNumber>554</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>46</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>&lt;1&gt;C:/Users/aj4775/AppData/Local/arm/packs/Keil/V2M-MPS2_IOTKit_BSP/1.5.2/Boards/ARM/V2M-MPS2/Common/GLCD_V2M-MPS2.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\IOTKit_CM33_s\GLCD_V2M-MPS2.c\554</Expression>
+        </Bp>
+        <Bp>
+          <Number>2</Number>
+          <Type>0</Type>
+          <LineNumber>470</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>18</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>&lt;1&gt;C:/Users/aj4775/AppData/Local/arm/packs/Keil/V2M-MPS2_IOTKit_BSP/1.5.2/Boards/ARM/V2M-MPS2/Common/GLCD_V2M-MPS2.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\IOTKit_CM33_s\GLCD_V2M-MPS2.c\470</Expression>
+        </Bp>
+        <Bp>
+          <Number>3</Number>
+          <Type>0</Type>
           <LineNumber>126</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>2098968</Address>
+          <Address>2098972</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -405,22 +453,6 @@
           <Filename>&lt;2&gt;.\main_ns.c</Filename>
           <ExecCommand></ExecCommand>
           <Expression>\\IOTKit_CM33_ns\main_ns.c\126</Expression>
-        </Bp>
-        <Bp>
-          <Number>1</Number>
-          <Type>0</Type>
-          <LineNumber>294</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>268450156</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>&lt;1&gt;.\main_s.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\IOTKit_CM33_s\main_s.c\294</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -443,11 +475,6 @@
           <count>3</count>
           <WinNumber>1</WinNumber>
           <ItemText>CoreDebug_</ItemText>
-        </Ww>
-        <Ww>
-          <count>4</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>SCB_</ItemText>
         </Ww>
       </WatchWindow1>
       <MemoryWindow1>
@@ -488,7 +515,7 @@
       <DebugFlag>
         <trace>0</trace>
         <periodic>1</periodic>
-        <aLwin>1</aLwin>
+        <aLwin>0</aLwin>
         <aCover>0</aCover>
         <aSer1>0</aSer1>
         <aSer2>0</aSer2>

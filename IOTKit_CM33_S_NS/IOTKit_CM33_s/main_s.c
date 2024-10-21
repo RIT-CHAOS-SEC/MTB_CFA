@@ -205,7 +205,8 @@ ITM_Type * ITM_ = ((ITM_Type       *)     ITM_BASE         ) ;
 void setup_DWT()
 {
     // Enable DWT
-    CoreDebug_->DEMCR |= DEMCR_TRCENA;
+    CoreDebug_->DEMCR |= (DEMCR_TRCENA | DEMCR_MON_EN ); // Enable Trace and Debug
+    
     ITM_->TCR |= (ITM_TCR_TXENA|ITM_TCR_ITMENA);
 
     // DWT_->COMP0 = (uint32_t) matmul;  // Initial Address
@@ -261,17 +262,25 @@ void secureExceptionHandler(){
         mtb->MTB_FLOW = (MTB_WATERMARK_B);
     } else {
         mtb->MTB_FLOW = MTB_WATERMARK_A;
+        mtb->MTB_POSITION = 0;
     }
-
     mtb->MTB_MASTER &= ~( 1U << 9 );
     mtb->MTB_MASTER &= ~( 1U << 31 );
     // mtb->MTB_FLOW &= ~(MTB_FLOW_AUTOSTOP_MASK|MTB_FLOW_AUTOHALT_MASK);
     
-    // set last bit of LR to 0
-    
+    // while(1){};
+
     return;
 
 }
+
+
+// // Update the vector table entry
+// __attribute__((section(".vectors"))) void (* const vector_table[])(void) = {
+    
+//     [12] = secureExceptionHandler,  // Exception 12: Debug Monitor
+    
+// };
 
 #pragma GCC pop_options
 
@@ -279,10 +288,11 @@ void setup_MTB(){
 
     // setup VTOR 
     uint32_t * VTOR = (uint32_t *) SCB_->VTOR;
-    VTOR[7] = (uint32_t) secureExceptionHandler;
-    SCB_NS->VTOR = (uint32_t) VTOR;
+    // VTOR[7] = (uint32_t) secureExceptionHandler;
+    VTOR[12] = (uint32_t) secureExceptionHandler;
 
 
+    // SCB_NS->VTOR = (uint32_t) VTOR;
     cleanMTB();
     mtb->MTB_TSTART |= 0b10;  // Set to use DWT_COMP1
     mtb->MTB_TSTOP  |= 0b1000;  // Set to use DWT_COMP3
@@ -293,10 +303,12 @@ void setup_MTB(){
     return;
 }
 
+
+
+
 void exec(){
 	setup_DWT();
 	setup_MTB();
-	// run();
 	return;
 }
 
