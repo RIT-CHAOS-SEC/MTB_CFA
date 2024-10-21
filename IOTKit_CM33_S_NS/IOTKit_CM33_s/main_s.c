@@ -286,8 +286,7 @@ void setup_MTB(){
     cleanMTB();
     mtb->MTB_TSTART |= 0b10;  // Set to use DWT_COMP1
     mtb->MTB_TSTOP  |= 0b1000;  // Set to use DWT_COMP3
-    //mtb->MTB_FLOW = MTB_WATERMARK_A;
-    mtb->MTB_FLOW = 0;
+    mtb->MTB_FLOW = MTB_WATERMARK_A;
     mtb->MTB_POSITION = 0;
     mtb->MTB_MASTER |= MTB_MASTER_TSTARTEN_MASK;
     mtb->MTB_MASTER |= MTB_MASTER_MASK_MASK;
