@@ -119,7 +119,7 @@ int main (void)
   // SysTick_Config(SystemCoreClock / 100);  /* Generate interrupt each 10 ms */
 
 
-	matmul3();
+	// matmul3();
 
 
   while (1) {

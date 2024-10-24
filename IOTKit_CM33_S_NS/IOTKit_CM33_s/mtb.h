@@ -69,7 +69,7 @@ typedef struct MTB_struct{
 #define MTB_WATERMARK_A (( (sizeof(uint32_t)* 2 * DWT_A_SIZE) << 3 ) | MTB_FLOW_AUTOHALT_MASK | MTB_FLOW_AUTOSTOP_MASK)
 #define MTB_WATERMARK_B (( (sizeof(uint32_t)* 2 * DWT_A_SIZE * 2) << 3 ) | MTB_FLOW_AUTOHALT_MASK | MTB_FLOW_AUTOSTOP_MASK)
 
-
+void mtb_init();
 
 #endif
 

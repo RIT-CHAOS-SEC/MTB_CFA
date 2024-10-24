@@ -17,7 +17,6 @@ Section Cross References
     main_ns.o(.text.main) refers to main_ns.o(.bss.x) for x
     main_ns.o(.text.main) refers to main_ns.o(.text.NonSecure_LED_On) for NonSecure_LED_On
     main_ns.o(.text.main) refers to main_ns.o(.text.NonSecure_LED_Off) for NonSecure_LED_Off
-    main_ns.o(.text.main) refers to main_ns.o(.text.matmul3) for matmul3
     main_ns.o(.text.main) refers to led_v2m-mps2.o(.text.LED_On) for LED_On
     main_ns.o(.text.main) refers to led_v2m-mps2.o(.text.LED_Off) for LED_Off
     main_ns.o(.text.main) refers to main_ns.o(.data.text) for text
@@ -170,6 +169,7 @@ Removing Unused input sections from the image.
     Removing main_ns.o(.ARM.exidx.text.NonSecure_LED_On), (8 bytes).
     Removing main_ns.o(.ARM.exidx.text.NonSecure_LED_Off), (8 bytes).
     Removing main_ns.o(.ARM.exidx.text.SysTick_Handler), (8 bytes).
+    Removing main_ns.o(.text.matmul3), (126 bytes).
     Removing main_ns.o(.ARM.exidx.text.matmul3), (8 bytes).
     Removing main_ns.o(.ARM.exidx.text.main), (8 bytes).
     Removing main_ns.o(.ARM.exidx.text.SCB_GetFPUType), (8 bytes).
@@ -194,7 +194,7 @@ Removing Unused input sections from the image.
     Removing system_iotkit_cm33.o(.ARM.exidx.text.SystemCoreClockUpdate), (8 bytes).
     Removing system_iotkit_cm33.o(.ARM.exidx.text.SystemInit), (8 bytes).
 
-27 unused section(s) (total 202 bytes) removed from the image.
+28 unused section(s) (total 328 bytes) removed from the image.
 
 ==============================================================================
 
@@ -341,9 +341,8 @@ Image Symbol Table
     [Anonymous Symbol]                       0x002005d8   Section        0  main_ns.o(.text.SysTick_Handler)
     [Anonymous Symbol]                       0x00200664   Section        0  system_iotkit_cm33.o(.text.SystemInit)
     [Anonymous Symbol]                       0x0020069c   Section        0  main_ns.o(.text.main)
-    [Anonymous Symbol]                       0x002007b8   Section        0  main_ns.o(.text.matmul3)
-    $v0                                      0x00200868   Number         0  fpinit.o(x$fpl$fpinit)
-    x$fpl$fpinit                             0x00200868   Section       26  fpinit.o(x$fpl$fpinit)
+    $v0                                      0x002007e6   Number         0  fpinit.o(x$fpl$fpinit)
+    x$fpl$fpinit                             0x002007e6   Section       26  fpinit.o(x$fpl$fpinit)
     SysTick_Handler.ticks                    0x28200020   Data           4  main_ns.o(.bss.SysTick_Handler.ticks)
     [Anonymous Symbol]                       0x28200020   Section        0  main_ns.o(.bss.SysTick_Handler.ticks)
     x                                        0x28200024   Data           4  main_ns.o(.bss.x)
@@ -559,18 +558,17 @@ Image Symbol Table
     Reset_Handler                            0x00200565   Thumb Code    50  startup_iotkit_cm33.o(.text.Reset_Handler)
     SysTick_Handler                          0x002005d9   Thumb Code   140  main_ns.o(.text.SysTick_Handler)
     SystemInit                               0x00200665   Thumb Code    54  system_iotkit_cm33.o(.text.SystemInit)
-    main                                     0x0020069d   Thumb Code   284  main_ns.o(.text.main)
-    matmul3                                  0x002007b9   Thumb Code   126  main_ns.o(.text.matmul3)
-    Long Thumb to Thumb Veneer to Secure_LED_On 0x00200837   Thumb Code    10  anon$$obj.o(Veneer$$Code)
-    Long Thumb to Thumb Veneer to Secure_LED_Off 0x00200841   Thumb Code    10  anon$$obj.o(Veneer$$Code)
-    Long Thumb to Thumb Veneer to Secure_LED_On_callback 0x0020084b   Thumb Code    10  anon$$obj.o(Veneer$$Code)
-    Long Thumb to Thumb Veneer to Secure_LED_Off_callback 0x00200855   Thumb Code    10  anon$$obj.o(Veneer$$Code)
-    Long Thumb to Thumb Veneer to Secure_printf 0x0020085f   Thumb Code    10  anon$$obj.o(Veneer$$Code)
-    _fp_init                                 0x00200869   Thumb Code    26  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x00200881   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x00200881   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    Region$$Table$$Base                      0x00200884   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x002008a4   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x0020069d   Thumb Code   280  main_ns.o(.text.main)
+    Long Thumb to Thumb Veneer to Secure_LED_On 0x002007b5   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to Secure_LED_Off 0x002007bf   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to Secure_LED_On_callback 0x002007c9   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to Secure_LED_Off_callback 0x002007d3   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to Secure_printf 0x002007dd   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    _fp_init                                 0x002007e7   Thumb Code    26  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x002007ff   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x002007ff   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    Region$$Table$$Base                      0x00200800   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00200820   Number         0  anon$$obj.o(Region$$Table)
     Secure_LED_On                            0x101ffe01   Thumb Code     8  IOTKit_CM33_s_CMSE_Lib.o ABSOLUTE
     Secure_LED_Off                           0x101ffe09   Thumb Code     8  IOTKit_CM33_s_CMSE_Lib.o ABSOLUTE
     Secure_printf                            0x101ffe11   Thumb Code     8  IOTKit_CM33_s_CMSE_Lib.o ABSOLUTE
@@ -591,9 +589,9 @@ Memory Map of the image
 
   Image Entry point : 0x00200401
 
-  Load Region LR_ROM (Base: 0x00200000, Size: 0x000008c4, Max: 0x00200000, ABSOLUTE)
+  Load Region LR_ROM (Base: 0x00200000, Size: 0x00000840, Max: 0x00200000, ABSOLUTE)
 
-    Execution Region ER_ROM (Exec base: 0x00200000, Load base: 0x00200000, Size: 0x000008a4, Max: 0x00200000, ABSOLUTE)
+    Execution Region ER_ROM (Exec base: 0x00200000, Load base: 0x00200000, Size: 0x00000820, Max: 0x00200000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -664,37 +662,35 @@ Memory Map of the image
     0x002005d8   0x002005d8   0x0000008c   Code   RO            8    .text.SysTick_Handler  main_ns.o
     0x00200664   0x00200664   0x00000036   Code   RO           62    .text.SystemInit    system_iotkit_cm33.o
     0x0020069a   0x0020069a   0x00000002   PAD
-    0x0020069c   0x0020069c   0x0000011c   Code   RO           12    .text.main          main_ns.o
-    0x002007b8   0x002007b8   0x0000007e   Code   RO           10    .text.matmul3       main_ns.o
-    0x00200836   0x00200836   0x0000000a   Ven    RO          259    Veneer$$Code        anon$$obj.o
-    0x00200840   0x00200840   0x0000000a   Ven    RO          260    Veneer$$Code        anon$$obj.o
-    0x0020084a   0x0020084a   0x0000000a   Ven    RO          261    Veneer$$Code        anon$$obj.o
-    0x00200854   0x00200854   0x0000000a   Ven    RO          262    Veneer$$Code        anon$$obj.o
-    0x0020085e   0x0020085e   0x0000000a   Ven    RO          263    Veneer$$Code        anon$$obj.o
-    0x00200868   0x00200868   0x0000001a   Code   RO          178    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x00200882   0x00200882   0x00000002   PAD
-    0x00200884   0x00200884   0x00000020   Data   RO          250    Region$$Table       anon$$obj.o
+    0x0020069c   0x0020069c   0x00000118   Code   RO           12    .text.main          main_ns.o
+    0x002007b4   0x002007b4   0x0000000a   Ven    RO          259    Veneer$$Code        anon$$obj.o
+    0x002007be   0x002007be   0x0000000a   Ven    RO          260    Veneer$$Code        anon$$obj.o
+    0x002007c8   0x002007c8   0x0000000a   Ven    RO          261    Veneer$$Code        anon$$obj.o
+    0x002007d2   0x002007d2   0x0000000a   Ven    RO          262    Veneer$$Code        anon$$obj.o
+    0x002007dc   0x002007dc   0x0000000a   Ven    RO          263    Veneer$$Code        anon$$obj.o
+    0x002007e6   0x002007e6   0x0000001a   Code   RO          178    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x00200800   0x00200800   0x00000020   Data   RO          250    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_RAM (Exec base: 0x28200000, Load base: 0x002008a4, Size: 0x00000028, Max: 0x001ff000, ABSOLUTE)
+    Execution Region RW_RAM (Exec base: 0x28200000, Load base: 0x00200820, Size: 0x00000028, Max: 0x001ff000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x28200000   0x002008a4   0x00000004   Data   RW           64    .data.SystemCoreClock  system_iotkit_cm33.o
-    0x28200004   0x002008a8   0x0000001b   Data   RW           16    .data.text          main_ns.o
-    0x2820001f   0x002008c3   0x00000001   PAD
+    0x28200000   0x00200820   0x00000004   Data   RW           64    .data.SystemCoreClock  system_iotkit_cm33.o
+    0x28200004   0x00200824   0x0000001b   Data   RW           16    .data.text          main_ns.o
+    0x2820001f   0x0020083f   0x00000001   PAD
     0x28200020        -       0x00000004   Zero   RW           17    .bss.SysTick_Handler.ticks  main_ns.o
     0x28200024        -       0x00000004   Zero   RW           18    .bss.x              main_ns.o
 
 
-    Execution Region ARM_LIB_HEAP (Exec base: 0x28200028, Load base: 0x002008c4, Size: 0x00000c00, Max: 0x00000c00, ABSOLUTE)
+    Execution Region ARM_LIB_HEAP (Exec base: 0x28200028, Load base: 0x00200840, Size: 0x00000c00, Max: 0x00000c00, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x28200028        -       0x00000c00   Zero   RW            1    ARM_LIB_HEAP.bss    anon$$obj.o
 
 
-    Execution Region ARM_LIB_STACK (Exec base: 0x283ffc00, Load base: 0x002008c4, Size: 0x00000400, Max: 0x00000400, ABSOLUTE)
+    Execution Region ARM_LIB_STACK (Exec base: 0x283ffc00, Load base: 0x00200840, Size: 0x00000400, Max: 0x00000400, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -709,12 +705,12 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
         80          0          0          0          0       1968   led_v2m-mps2.o
-       646          0          0         27          8       2680   main_ns.o
+       516          0          0         27          8       2675   main_ns.o
         58          0       1024          0          0       1498   startup_iotkit_cm33.o
         54          0          0          4          0       2048   system_iotkit_cm33.o
 
     ----------------------------------------------------------------------
-       892          0       1056         32       4104       8194   Object Totals
+       762          0       1056         32       4104       8189   Object Totals
         50          0         32          0       4096          0   (incl. Generated)
          4          0          0          1          0          0   (incl. Padding)
 
@@ -742,8 +738,8 @@ Image component sizes
         26          0          0          0          0        116   fpinit.o
 
     ----------------------------------------------------------------------
-       264         16          0          0          0        400   Library Totals
-         6          0          0          0          0          0   (incl. Padding)
+       262         16          0          0          0        400   Library Totals
+         4          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -753,7 +749,7 @@ Image component sizes
         26          0          0          0          0        116   fz_wm.l
 
     ----------------------------------------------------------------------
-       264         16          0          0          0        400   Library Totals
+       262         16          0          0          0        400   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -762,15 +758,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      1156         16       1056         32       4104       8702   Grand Totals
-      1156         16       1056         32       4104       8702   ELF Image Totals
-      1156         16       1056         32          0          0   ROM Totals
+      1024         16       1056         32       4104       8697   Grand Totals
+      1024         16       1056         32       4104       8697   ELF Image Totals
+      1024         16       1056         32          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 2212 (   2.16kB)
+    Total RO  Size (Code + RO Data)                 2080 (   2.03kB)
     Total RW  Size (RW Data + ZI Data)              4136 (   4.04kB)
-    Total ROM Size (Code + RO Data + RW Data)       2244 (   2.19kB)
+    Total ROM Size (Code + RO Data + RW Data)       2112 (   2.06kB)
 
 ==============================================================================
 

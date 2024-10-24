@@ -8,7 +8,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
-
+#include "Driver_USART.h" /* ::CMSIS Driver:USART */
 #include CMSIS_device_header
 #include "Board_GLCD.h"  /* ::Board Support:Graphic LCD */
 #include "Board_LED.h"   /* ::Board Support:LED */
@@ -24,8 +24,7 @@ extern GLCD_FONT GLCD_Font_16x24;
 extern int stdout_init(void);
 
 /* typedef for NonSecure callback functions */
-typedef int32_t (*NonSecure_fpParam)(uint32_t)
-    __attribute__((cmse_nonsecure_call));
+typedef int32_t (*NonSecure_fpParam)(uint32_t) __attribute__((cmse_nonsecure_call));
 typedef void (*NonSecure_fpVoid)(void) __attribute__((cmse_nonsecure_call));
 
 char text[] = "Hello World (secure)\r\n";
@@ -102,7 +101,8 @@ void SysTick_Handler(void)
         ticks = 0;
         if (ticks_printf++ == 3)
         {
-            printf("%s", text);
+						Secure_printf("Hellooo!!\n");
+            printf("%s\n", text);
             ticks_printf = 0;
         }
         break;
@@ -115,202 +115,40 @@ void SysTick_Handler(void)
 }
 
 
+//
+#define USART_DRV_NUM           0
+ 
+//   <o>Baudrate
+#define USART_BAUDRATE          115200
+ 
+// </h>
+  
+#define _USART_Driver_(n)  Driver_USART##n
+#define  USART_Driver_(n) _USART_Driver_(n)
+ 
+extern ARM_DRIVER_USART  USART_Driver_(USART_DRV_NUM);
+#define ptrUSART       (&USART_Driver_(USART_DRV_NUM))
 
-void entry_point(){
-  return;
-}
-
-void matmul()
-{
-    int mat[5][5];
-    int val = 0;
-    if (val == 1)
-    {
-        val++;
-    }
-    else
-    {
-        val += 2;
-    }
-
-    for (int x = 0; x < 2; x++)
-    {
-        for (int y = 0; y < 2; y++)
-        {
-            val += mat[x][y] + mat[y][x];
-        }
-    }
-    val = val + 2;
-    return;
-}
-
-void matmul2()
-{
-    int mat[5][5];
-    int val = 0;
-    if (val == 1)
-    {
-        val++;
-    }
-    else
-    {
-        val += 4;
-    }
-
-    for (int x = 0; x < 2; x++)
-    {
-        for (int y = 0; y < 2; y++)
-        {
-            val += mat[x][y] + mat[y][x];
-        }
-    }
-    val = val + 2;
-    return;
+/**
+  Put a character to the stdout
+ 
+  \param[in]   ch  Character to output
+  \return          The character written, or -1 on write error.
+*/
+int stdout_putchar_ (int ch) {
+  uint8_t buf[1];
+ 
+  buf[0] = (uint8_t)ch;
+  if (ptrUSART->Send(buf, 1) != ARM_DRIVER_OK) {
+    return (-1);
+  }
+  while (ptrUSART->GetTxCount() != 1);
+  return (ch);
 }
 
 
-void exit_point(void){
-  entry_point();
-  matmul();
-}
+//
 
-void run(void){
-	exit_point();
-}
-
-SCB_Type * SCB_ = ((SCB_Type *) SCB_BASE);
-
-MTB_struct *mtb = (MTB_struct *) MTB_BASE_addr;
-CoreDebug_Type * CoreDebug_ = ((CoreDebug_Type *)     DCB_BASE         );
-DWT_Type * DWT_ = ((DWT_Type       *)     DWT_BASE         );
-ITM_Type * ITM_ = ((ITM_Type       *)     ITM_BASE         ) ;
-
-#define DWT_FUNCTION_ACTION_VALUE 0b10 << DWT_FUNCTION_ACTION_OFFSET       // Generate a data trace match
-#define DWT_FUNCTION_DATAVSIZE_VALUE 0b10 << DWT_FUNCTION_DATAVSIZE_OFFSET // word size
-#define DWT_FUNCTION_MATCH_VALUE 0b0011 << DWT_FUNCTION_MATCH_OFFSET       // Generate a match on the data value
-#define DWT_FUNCTION_MODIFY_MASK (DWT_FUNCTION_MATCH_MASK | DWT_FUNCTION_DATAVSIZE_MASK | DWT_FUNCTION_ACTION_MASK)
-#define DWT_FUNCTION_MODIFY_VALUE (DWT_FUNCTION_MATCH_VALUE | DWT_FUNCTION_DATAVSIZE_VALUE | DWT_FUNCTION_ACTION_VALUE)
-
-#define START_INIT_MTB_ADDRESS  0x2007B8
-#define START_END_MTB_ADDRESS   0x200830
-
-#define STOP_INIT_MTB_ADDRESS   0x200750
-#define STOP_END_MTB_ADDRESS    0x2007A8
-
-
-// compile this function with -O3 flag
-#pragma GCC push_options
-#pragma GCC optimize ("-O3")
-
-void setup_DWT()
-{
-    // Enable DWT
-    CoreDebug_->DEMCR |= (DEMCR_TRCENA | DEMCR_MON_EN ); // Enable Trace and Debug
-    
-    ITM_->TCR |= (ITM_TCR_TXENA|ITM_TCR_ITMENA);
-
-    // DWT_->COMP0 = (uint32_t) matmul;  // Initial Address
-    DWT_->COMP0 = (uint32_t) START_INIT_MTB_ADDRESS;
-    SET_BITS(DWT->COMP0,0,0,0b0);
-
-    // DWT->COMP1 = (uint32_t) matmul2; // Final Address
-    DWT_->COMP1 = (uint32_t) START_END_MTB_ADDRESS;
-    SET_BITS(DWT->COMP1,0,0,0b0);     
-    
-    // DWT->COMP2 = (uint32_t) run;  // Initial Address
-    DWT_->COMP2 = (uint32_t) STOP_INIT_MTB_ADDRESS;
-    SET_BITS(DWT->COMP2,0,0,0b0);
-    
-    // DWT->COMP3 = (uint32_t) setup_DWT; // Final Address
-    DWT_->COMP3 = (uint32_t) STOP_END_MTB_ADDRESS;
-    SET_BITS(DWT->COMP3,0,0,0b0);
-    
-    // START SIGNAL
-    // CMP0
-    SET_BITS(DWT->FUNCTION0,10,11,0b00); // DATAVSIZE
-    SET_BITS(DWT->FUNCTION0,4,5,0b00); // ACTION
-    SET_BITS(DWT->FUNCTION0,0,3,0b0010); // MATCH
-
-    // CMP1
-    SET_BITS(DWT->FUNCTION1,10,11,0b00); // DATAVSIZE
-    SET_BITS(DWT->FUNCTION1,4,5,0b11); // ACTION
-    SET_BITS(DWT->FUNCTION1,0,3,0b0011); // MATCH
-
-    // STOP SIGNAL
-    // CMP2
-    SET_BITS(DWT->FUNCTION2,10,11,0b00); // DATAVSIZE
-    SET_BITS(DWT->FUNCTION2,4,5,0b00); // ACTION
-    SET_BITS(DWT->FUNCTION2,0,3,0b0010); // MATCH
-
-    // CMP3
-    SET_BITS(DWT->FUNCTION3,10,11,0b00); // DATAVSIZE
-    SET_BITS(DWT->FUNCTION3,4,5,0b11); // ACTION
-    SET_BITS(DWT->FUNCTION3,0,3,0b0011); // MATCH
-    return;
-}
-
-
-void cleanMTB(){
-    uint32_t * ptr = (uint32_t *) mtb->MTB_BASE;
-    for (int i = 0; i < MTB_BUFFER_SIZE; i++){
-        ptr[i] = 0;
-    }
-}
-
-void secureExceptionHandler(){
-    if (mtb->MTB_FLOW == (MTB_WATERMARK_A)){
-        mtb->MTB_FLOW = (MTB_WATERMARK_B);
-    } else {
-        mtb->MTB_FLOW = MTB_WATERMARK_A;
-        mtb->MTB_POSITION = 0;
-    }
-    mtb->MTB_MASTER &= ~( 1U << 9 );
-    mtb->MTB_MASTER &= ~( 1U << 31 );
-    // mtb->MTB_FLOW &= ~(MTB_FLOW_AUTOSTOP_MASK|MTB_FLOW_AUTOHALT_MASK);
-    
-    // while(1){};
-
-    return;
-
-}
-
-
-// // Update the vector table entry
-// __attribute__((section(".vectors"))) void (* const vector_table[])(void) = {
-    
-//     [12] = secureExceptionHandler,  // Exception 12: Debug Monitor
-    
-// };
-
-#pragma GCC pop_options
-
-void setup_MTB(){
-
-    // setup VTOR 
-    uint32_t * VTOR = (uint32_t *) SCB_->VTOR;
-    // VTOR[7] = (uint32_t) secureExceptionHandler;
-    VTOR[12] = (uint32_t) secureExceptionHandler;
-
-
-    // SCB_NS->VTOR = (uint32_t) VTOR;
-    cleanMTB();
-    mtb->MTB_TSTART |= 0b10;  // Set to use DWT_COMP1
-    mtb->MTB_TSTOP  |= 0b1000;  // Set to use DWT_COMP3
-    mtb->MTB_FLOW = MTB_WATERMARK_A;
-    mtb->MTB_POSITION = 0;
-    mtb->MTB_MASTER |= MTB_MASTER_TSTARTEN_MASK;
-    mtb->MTB_MASTER |= MTB_MASTER_MASK_MASK;
-    return;
-}
-
-
-
-
-void exec(){
-	setup_DWT();
-	setup_MTB();
-	return;
-}
 
 static uint32_t x;
 /*----------------------------------------------------------------------------
@@ -369,9 +207,15 @@ int main(void)
         break;
     }
 
-    // SysTick_Config(SystemCoreClock / 100); /* Generate interrupt each 10 ms */
+    stdout_init(); /* Initialize Serial interface */
 
-    exec();
+    mtb_init();
+
+    SysTick_Config(SystemCoreClock / 100); /* Generate interrupt each 10 ms */
+
+		while(1){
+			stdout_putchar_('A');
+		}
 
     NonSecure_ResetHandler();
 }
