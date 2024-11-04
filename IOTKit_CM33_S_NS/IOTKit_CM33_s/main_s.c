@@ -156,6 +156,13 @@ static uint32_t x;
  *----------------------------------------------------------------------------*/
 int main(void)
 {
+	
+	
+		__asm__(
+	"\tmov R0, #0x30000;\n"
+	"\tit;\n"	
+	"\tbxeq R0;\n");
+	
     uint32_t NonSecure_StackPointer = (*((uint32_t *)(NONSECURE_START + 0u)));
     NonSecure_fpVoid NonSecure_ResetHandler =
         (NonSecure_fpVoid)(*((uint32_t *)(NONSECURE_START + 4u)));

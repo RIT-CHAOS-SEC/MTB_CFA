@@ -32,6 +32,19 @@ Project File Date:  10/22/2024
 Rebuild Project 'IOTKit_CM33_s' - Target 'V2M-MPS2+'
 creating list file for main_s.c...
 compiling main_s.c...
+P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\IOTKit_CM33_s\main_s.c(163): error: too few operands for instruction
+  163 |         "\tit;\n"       
+      |          ^
+P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\IOTKit_CM33_s\<inline asm>(2): note: instantiated into assembly here
+    2 |         it;
+      |           ^
+P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\IOTKit_CM33_s\main_s.c(164): error: predicated instructions must be in IT block
+  164 |         "\tbxeq R0;\n");
+      |          ^
+P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\IOTKit_CM33_s\<inline asm>(3): note: instantiated into assembly here
+    3 |         bxeq R0;
+      |         ^
+2 errors generated.
 creating list file for stdout_USART.c...
 compiling stdout_USART.c...
 creating list file for GLCD_Fonts.c...
@@ -49,11 +62,11 @@ compiling startup_IOTKit_CM33.c...
 creating list file for system_IOTKit_CM33.c...
 compiling system_IOTKit_CM33.c...
 linking...
-.\Objects\IOTKit_CM33_s.axf: Error: L6218E: Undefined symbol mtb_init (referred from main_s.o).
+.\Objects\IOTKit_CM33_s.axf: error: L6002U: Could not open file .\objects\main_s.o: No such file or directory
 Not enough information to list image symbols.
 Not enough information to list load addresses in the image map.
-Finished: 2 information, 0 warning and 1 error messages.
-".\Objects\IOTKit_CM33_s.axf" - 1 Error(s), 0 Warning(s).
+Finished: 2 information, 0 warning, 0 error and 1 fatal error messages.
+".\Objects\IOTKit_CM33_s.axf" - 3 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -136,7 +149,7 @@ Package Vendor: Keil
       Include file:  CMSIS/Config/RTE_Device.h
       Source file:   Device/IOTKit_CM33/Source/system_IOTKit_CM33.c
 Target not created.
-Build Time Elapsed:  00:00:09
+Build Time Elapsed:  00:00:08
 </pre>
 </body>
 </html>
