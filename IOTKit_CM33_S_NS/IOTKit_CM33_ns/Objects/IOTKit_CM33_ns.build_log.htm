@@ -30,11 +30,17 @@ Project File Date:  10/21/2024
 <h2>Output:</h2>
 *** Using Compiler 'V6.22', folder: 'C:\Users\aj4775\AppData\Local\Keil_v5\ARM\ARMCLANG\Bin'
 Build Project 'IOTKit_CM33_ns' - Target 'V2M-MPS2+'
+P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\IOTKit_CM33_ns\main_ns.c(10): warning: In file included from...
+P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\IOTKit_CM33_s\Secure_Functions.h(20): warning: 'cmse_nonsecure_call' attribute ignored [-Wignored-attributes]
+   20 | typedef int32_t (*NonSecure_fpParam)(uint32_t) __attribute__((cmse_nonsecure_call));
+      |                                                               ^
+P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\IOTKit_CM33_s\Secure_Functions.h(21): warning: 'cmse_nonsecure_call' attribute ignored [-Wignored-attributes]
+   21 | typedef void (*NonSecure_fpVoid)(void) __attribute__((cmse_nonsecure_call));
+      |                                                       ^
+2 warnings generated.
+compiling main_ns.c...
 linking...
-P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\IOTKit_CM33_ns\RTE\Device\IOTKit_CM33_FP\ac6_arm.sct(22): warning: L6314W: No section matches pattern *(.MTBAR_MEM).
-P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\IOTKit_CM33_ns\RTE\Device\IOTKit_CM33_FP\ac6_arm.sct(26): warning: L6314W: No section matches pattern *(.MTBDR_MEM).
-Program Size: Code=1124 RO-data=1056 RW-data=32 ZI-data=4676  
-Finished: 0 information, 2 warning and 0 error messages.
+Program Size: Code=1268 RO-data=1088 RW-data=32 ZI-data=4676  
 ".\Objects\IOTKit_CM33_ns.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
@@ -83,7 +89,7 @@ Package Vendor: Keil
       Include file:  Device/IOTKit_CM33/Include/Template/partition_IOTKit_CM33.h
       Include file:  CMSIS/Config/RTE_Device.h
       Source file:   Device/IOTKit_CM33/Source/system_IOTKit_CM33.c
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

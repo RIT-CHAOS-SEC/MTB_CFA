@@ -63,9 +63,50 @@ static uint32_t x;
   Main function
  *----------------------------------------------------------------------------*/
 
+
+__attribute__((section(".MTBDR_MEM"),naked,used)) void nopes(){
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    __asm("nop\n");
+    
+}
+
 #define MAXX 10
 #define MAXY 5
-__attribute__((section("MTBAR_MEM"))) void matmul3()
+__attribute__((section(".MTBAR_MEM"))) void matmul3()
 {
     int mat[MAXX][MAXY];
     int val = 0;

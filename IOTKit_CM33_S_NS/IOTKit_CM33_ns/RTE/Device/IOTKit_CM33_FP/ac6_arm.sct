@@ -9,6 +9,16 @@
 ;-------- <<< Use Configuration Wizard in Context Menu >>> -------------------
 */
 
+/*--------------------- Flash Configuration ----------------------------------
+; <h> Flash Configuration
+;   <o0> Flash Base Address <0x0-0xFFFFFFFF:8>
+;   <o1> Flash Size (in Bytes) <0x0-0xFFFFFFFF:8>
+; </h>
+ *----------------------------------------------------------------------------*/
+#define __ROM_BASE      0x00200000
+#define __ROM_SIZE      0x00200000
+
+
 #define __ROM_HALF_SIZE 0x00100000
 
 #define __MTBAR_BASE    0x00300000
@@ -18,14 +28,6 @@
 #define __MTBDR_SIZE    0x80000
 
 
-/*--------------------- Flash Configuration ----------------------------------
-; <h> Flash Configuration
-;   <o0> Flash Base Address <0x0-0xFFFFFFFF:8>
-;   <o1> Flash Size (in Bytes) <0x0-0xFFFFFFFF:8>
-; </h>
- *----------------------------------------------------------------------------*/
-#define __ROM_BASE      0x10000000
-#define __ROM_SIZE      0x00200000
 
 /*--------------------- Embedded RAM Configuration ---------------------------
 ; <h> RAM Configuration
@@ -33,7 +35,7 @@
 ;   <o1> RAM Size (in Bytes) <0x0-0xFFFFFFFF:8>
 ; </h>
  *----------------------------------------------------------------------------*/
-#define __RAM_BASE      0x38000000
+#define __RAM_BASE      0x28200000
 #define __RAM_SIZE      0x00200000
 
 /*--------------------- Stack / Heap Configuration ---------------------------
@@ -91,6 +93,7 @@
 
 
 
+
 /*----------------------------------------------------------------------------
   Scatter Region definition
  *----------------------------------------------------------------------------*/
@@ -109,6 +112,7 @@ LR_ROM __RO_BASE __RO_SIZE  {                       ; load region size_region
   ER_MTBDR __MTBDR_BASE __MTBDR_SIZE {              ; New ROM Execution Region
     *(.MTBDR_MEM)                                      ; Read-only sections for new region
   }
+
 
 
   RW_RAM __RW_BASE __RW_SIZE  {                     ; RW data
@@ -134,9 +138,6 @@ LR_CMSE_VENEER __CV_BASE ALIGN 32 __CV_SIZE  {      ; own load/execution region 
   ER_CMSE_VENEER __CV_BASE __CV_SIZE  {
    *(Veneer$$CMSE)
   }
-}
 
+};
 #endif
-
-
-

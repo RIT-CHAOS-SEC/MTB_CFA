@@ -4,553 +4,625 @@ P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\IOTKit_CM33_ns\Objects\IOTKit_CM33_ns.
 
 Disassembly of section ER_ROM:
 
-10000000 <__Vectors>:
-10000000:	00 00 20 38 65 05 00 10 ed 04 00 10 f1 04 00 10     .. 8e...........
-10000010:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
+00200000 <__Vectors>:
+  200000:	00 00 40 28 65 05 20 00 ed 04 20 00 f1 04 20 00     ..@(e. ... ... .
+  200010:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
 	...
-1000002c:	ed 04 00 10 ed 04 00 10 00 00 00 00 ed 04 00 10     ................
-1000003c:	d9 05 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
-1000004c:	ed 04 00 10 ed 04 00 10 ed 04 00 10 00 00 00 00     ................
+  20002c:	ed 04 20 00 ed 04 20 00 00 00 00 00 ed 04 20 00     .. ... ....... .
+  20003c:	d9 05 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  20004c:	ed 04 20 00 ed 04 20 00 ed 04 20 00 00 00 00 00     .. ... ... .....
 	...
-10000064:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
+  200064:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
 	...
-100000c0:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
-100000d0:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
-100000e0:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
-100000f0:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
-10000100:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
-10000110:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
-10000120:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
-10000130:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
-10000140:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
-10000150:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
-10000160:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
-10000170:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
-10000180:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
-10000190:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
-100001a0:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
-100001b0:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
-100001c0:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
-100001d0:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
-100001e0:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
-100001f0:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
-10000200:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
-10000210:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
-10000220:	ed 04 00 10 ed 04 00 10 ed 04 00 10 ed 04 00 10     ................
-	...
-
-10000400 <__main>:
-10000400:	f000 f802 	bl	10000408 <__scatterload_rt2>
-10000404:	f000 f852 	bl	100004ac <__rt_entry>
-
-10000408 <__scatterload_rt2>:
-10000408:	a614      	add	r6, pc, #80	@ (adr r6, 1000045c <__scatterload_loop+0x4a>)
-1000040a:	e896 0c00 	ldmia.w	r6, {sl, fp}
-1000040e:	44b2      	add	sl, r6
-10000410:	44b3      	add	fp, r6
-
-10000412 <__scatterload_loop>:
-10000412:	45da      	cmp	sl, fp
-10000414:	d101      	bne.n	1000041a <__scatterload_loop+0x8>
-10000416:	f000 f849 	bl	100004ac <__rt_entry>
-1000041a:	e8ba 000f 	ldmia.w	sl!, {r0, r1, r2, r3}
-1000041e:	a60f      	add	r6, pc, #60	@ (adr r6, 1000045c <__scatterload_loop+0x4a>)
-10000420:	e896 0030 	ldmia.w	r6, {r4, r5}
-10000424:	eba5 0504 	sub.w	r5, r5, r4
-10000428:	eb04 0706 	add.w	r7, r4, r6
-1000042c:	ebaa 0407 	sub.w	r4, sl, r7
-10000430:	f1a7 0701 	sub.w	r7, r7, #1
-10000434:	ea4f 1515 	mov.w	r5, r5, lsr #4
-10000438:	ea4f 1434 	mov.w	r4, r4, ror #4
-1000043c:	f1a4 0401 	sub.w	r4, r4, #1
-10000440:	42ac      	cmp	r4, r5
-10000442:	d301      	bcc.n	10000448 <__scatterload_loop+0x36>
-10000444:	f000 f832 	bl	100004ac <__rt_entry>
-10000448:	f013 0f01 	tst.w	r3, #1
-1000044c:	bf18      	it	ne
-1000044e:	1afb      	subne	r3, r7, r3
-10000450:	f043 0301 	orr.w	r3, r3, #1
-10000454:	f000 f801 	bl	1000045a <__scatterload_loop+0x48>
-10000458:	e7db      	b.n	10000412 <__scatterload_loop>
-1000045a:	4718      	bx	r3
-1000045c:	00000408 	.word	0x00000408
-10000460:	00000428 	.word	0x00000428
-
-10000464 <__scatterload_copy>:
-10000464:	3a10      	subs	r2, #16
-10000466:	bf24      	itt	cs
-10000468:	c878      	ldmiacs	r0!, {r3, r4, r5, r6}
-1000046a:	c178      	stmiacs	r1!, {r3, r4, r5, r6}
-1000046c:	d8fa      	bhi.n	10000464 <__scatterload_copy>
-1000046e:	0752      	lsls	r2, r2, #29
-10000470:	bf24      	itt	cs
-10000472:	c830      	ldmiacs	r0!, {r4, r5}
-10000474:	c130      	stmiacs	r1!, {r4, r5}
-10000476:	bf44      	itt	mi
-10000478:	6804      	ldrmi	r4, [r0, #0]
-1000047a:	600c      	strmi	r4, [r1, #0]
-1000047c:	4770      	bx	lr
+  2000c0:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  2000d0:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  2000e0:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  2000f0:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200100:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200110:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200120:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200130:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200140:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200150:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200160:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200170:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200180:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200190:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  2001a0:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  2001b0:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  2001c0:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  2001d0:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  2001e0:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  2001f0:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200200:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200210:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200220:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
 	...
 
-10000480 <__scatterload_null>:
-10000480:	4770      	bx	lr
+00200400 <__main>:
+  200400:	f000 f802 	bl	200408 <__scatterload_rt2>
+  200404:	f000 f852 	bl	2004ac <__rt_entry>
+
+00200408 <__scatterload_rt2>:
+  200408:	a614      	add	r6, pc, #80	@ (adr r6, 20045c <__scatterload_loop+0x4a>)
+  20040a:	e896 0c00 	ldmia.w	r6, {sl, fp}
+  20040e:	44b2      	add	sl, r6
+  200410:	44b3      	add	fp, r6
+
+00200412 <__scatterload_loop>:
+  200412:	45da      	cmp	sl, fp
+  200414:	d101      	bne.n	20041a <__scatterload_loop+0x8>
+  200416:	f000 f849 	bl	2004ac <__rt_entry>
+  20041a:	e8ba 000f 	ldmia.w	sl!, {r0, r1, r2, r3}
+  20041e:	a60f      	add	r6, pc, #60	@ (adr r6, 20045c <__scatterload_loop+0x4a>)
+  200420:	e896 0030 	ldmia.w	r6, {r4, r5}
+  200424:	eba5 0504 	sub.w	r5, r5, r4
+  200428:	eb04 0706 	add.w	r7, r4, r6
+  20042c:	ebaa 0407 	sub.w	r4, sl, r7
+  200430:	f1a7 0701 	sub.w	r7, r7, #1
+  200434:	ea4f 1515 	mov.w	r5, r5, lsr #4
+  200438:	ea4f 1434 	mov.w	r4, r4, ror #4
+  20043c:	f1a4 0401 	sub.w	r4, r4, #1
+  200440:	42ac      	cmp	r4, r5
+  200442:	d301      	bcc.n	200448 <__scatterload_loop+0x36>
+  200444:	f000 f832 	bl	2004ac <__rt_entry>
+  200448:	f013 0f01 	tst.w	r3, #1
+  20044c:	bf18      	it	ne
+  20044e:	1afb      	subne	r3, r7, r3
+  200450:	f043 0301 	orr.w	r3, r3, #1
+  200454:	f000 f801 	bl	20045a <__scatterload_loop+0x48>
+  200458:	e7db      	b.n	200412 <__scatterload_loop>
+  20045a:	4718      	bx	r3
+  20045c:	000003d0 	.word	0x000003d0
+  200460:	00000410 	.word	0x00000410
+
+00200464 <__scatterload_copy>:
+  200464:	3a10      	subs	r2, #16
+  200466:	bf24      	itt	cs
+  200468:	c878      	ldmiacs	r0!, {r3, r4, r5, r6}
+  20046a:	c178      	stmiacs	r1!, {r3, r4, r5, r6}
+  20046c:	d8fa      	bhi.n	200464 <__scatterload_copy>
+  20046e:	0752      	lsls	r2, r2, #29
+  200470:	bf24      	itt	cs
+  200472:	c830      	ldmiacs	r0!, {r4, r5}
+  200474:	c130      	stmiacs	r1!, {r4, r5}
+  200476:	bf44      	itt	mi
+  200478:	6804      	ldrmi	r4, [r0, #0]
+  20047a:	600c      	strmi	r4, [r1, #0]
+  20047c:	4770      	bx	lr
 	...
 
-10000484 <__scatterload_zeroinit>:
-10000484:	2300      	movs	r3, #0
-10000486:	2400      	movs	r4, #0
-10000488:	2500      	movs	r5, #0
-1000048a:	2600      	movs	r6, #0
-1000048c:	3a10      	subs	r2, #16
-1000048e:	bf28      	it	cs
-10000490:	c178      	stmiacs	r1!, {r3, r4, r5, r6}
-10000492:	d8fb      	bhi.n	1000048c <__scatterload_zeroinit+0x8>
-10000494:	0752      	lsls	r2, r2, #29
-10000496:	bf28      	it	cs
-10000498:	c130      	stmiacs	r1!, {r4, r5}
-1000049a:	bf48      	it	mi
-1000049c:	600b      	strmi	r3, [r1, #0]
-1000049e:	4770      	bx	lr
-
-100004a0 <__rt_lib_init>:
-100004a0:	b51f      	push	{r0, r1, r2, r3, r4, lr}
-
-100004a2 <__rt_lib_init_fp_1>:
-100004a2:	f000 f9d2 	bl	1000084a <_fp_init>
-
-100004a6 <__rt_lib_init_alloca_1>:
-100004a6:	bd1f      	pop	{r0, r1, r2, r3, r4, pc}
-
-100004a8 <__rt_lib_shutdown>:
-100004a8:	b510      	push	{r4, lr}
-
-100004aa <__rt_lib_shutdown_cpp_1>:
-100004aa:	bd10      	pop	{r4, pc}
-
-100004ac <__rt_entry>:
-100004ac:	f8df d00c 	ldr.w	sp, [pc, #12]	@ 100004bc <__lit__00000000>
-
-100004b0 <__rt_entry_li>:
-100004b0:	f7ff fff6 	bl	100004a0 <__rt_lib_init>
-
-100004b4 <__rt_entry_main>:
-100004b4:	f000 f8f2 	bl	1000069c <main>
-100004b8:	f000 f808 	bl	100004cc <exit>
-
-100004bc <__lit__00000000>:
-100004bc:	0000 3820                                   .. 8
-
-100004c0 <__rt_exit>:
-100004c0:	b403      	push	{r0, r1}
-
-100004c2 <__rt_exit_ls>:
-100004c2:	f7ff fff1 	bl	100004a8 <__rt_lib_shutdown>
-
-100004c6 <__rt_exit_exit>:
-100004c6:	bc03      	pop	{r0, r1}
-100004c8:	f000 f80a 	bl	100004e0 <_sys_exit>
-
-100004cc <exit>:
-100004cc:	b510      	push	{r4, lr}
-100004ce:	4604      	mov	r4, r0
-100004d0:	f3af 8000 	nop.w
-100004d4:	4620      	mov	r0, r4
-100004d6:	e8bd 4010 	ldmia.w	sp!, {r4, lr}
-100004da:	f7ff bff1 	b.w	100004c0 <__rt_exit>
-
-100004de <__use_no_semihosting_swi>:
-100004de:	4770      	bx	lr
-
-100004e0 <_sys_exit>:
-100004e0:	4901      	ldr	r1, [pc, #4]	@ (100004e8 <_sys_exit+0x8>)
-100004e2:	2018      	movs	r0, #24
-100004e4:	beab      	bkpt	0x00ab
-100004e6:	e7fe      	b.n	100004e6 <_sys_exit+0x6>
-100004e8:	00020026 	.word	0x00020026
-
-100004ec <Default_Handler>:
-100004ec:	e7ff      	b.n	100004ee <Default_Handler+0x2>
-100004ee:	e7fe      	b.n	100004ee <Default_Handler+0x2>
-
-100004f0 <HardFault_Handler>:
-100004f0:	e7ff      	b.n	100004f2 <HardFault_Handler+0x2>
-100004f2:	e7fe      	b.n	100004f2 <HardFault_Handler+0x2>
-
-100004f4 <LED_Off>:
-100004f4:	b081      	sub	sp, #4
-100004f6:	9000      	str	r0, [sp, #0]
-100004f8:	9800      	ldr	r0, [sp, #0]
-100004fa:	2807      	cmp	r0, #7
-100004fc:	d80b      	bhi.n	10000516 <LED_Off+0x22>
-100004fe:	e7ff      	b.n	10000500 <LED_Off+0xc>
-10000500:	9900      	ldr	r1, [sp, #0]
-10000502:	2001      	movs	r0, #1
-10000504:	fa00 f201 	lsl.w	r2, r0, r1
-10000508:	2104      	movs	r1, #4
-1000050a:	f2c4 0130 	movt	r1, #16432	@ 0x4030
-1000050e:	6808      	ldr	r0, [r1, #0]
-10000510:	4390      	bics	r0, r2
-10000512:	6008      	str	r0, [r1, #0]
-10000514:	e7ff      	b.n	10000516 <LED_Off+0x22>
-10000516:	2000      	movs	r0, #0
-10000518:	b001      	add	sp, #4
-1000051a:	4770      	bx	lr
-
-1000051c <LED_On>:
-1000051c:	b081      	sub	sp, #4
-1000051e:	9000      	str	r0, [sp, #0]
-10000520:	9800      	ldr	r0, [sp, #0]
-10000522:	2807      	cmp	r0, #7
-10000524:	d80b      	bhi.n	1000053e <LED_On+0x22>
-10000526:	e7ff      	b.n	10000528 <LED_On+0xc>
-10000528:	9900      	ldr	r1, [sp, #0]
-1000052a:	2001      	movs	r0, #1
-1000052c:	fa00 f201 	lsl.w	r2, r0, r1
-10000530:	2104      	movs	r1, #4
-10000532:	f2c4 0130 	movt	r1, #16432	@ 0x4030
-10000536:	6808      	ldr	r0, [r1, #0]
-10000538:	4310      	orrs	r0, r2
-1000053a:	6008      	str	r0, [r1, #0]
-1000053c:	e7ff      	b.n	1000053e <LED_On+0x22>
-1000053e:	2000      	movs	r0, #0
-10000540:	b001      	add	sp, #4
-10000542:	4770      	bx	lr
-
-10000544 <NonSecure_LED_Off>:
-10000544:	b580      	push	{r7, lr}
-10000546:	b082      	sub	sp, #8
-10000548:	9001      	str	r0, [sp, #4]
-1000054a:	9801      	ldr	r0, [sp, #4]
-1000054c:	f7ff ffd2 	bl	100004f4 <LED_Off>
-10000550:	b002      	add	sp, #8
-10000552:	bd80      	pop	{r7, pc}
-
-10000554 <NonSecure_LED_On>:
-10000554:	b580      	push	{r7, lr}
-10000556:	b082      	sub	sp, #8
-10000558:	9001      	str	r0, [sp, #4]
-1000055a:	9801      	ldr	r0, [sp, #4]
-1000055c:	f7ff ffde 	bl	1000051c <LED_On>
-10000560:	b002      	add	sp, #8
-10000562:	bd80      	pop	{r7, pc}
-
-10000564 <Reset_Handler>:
-10000564:	b084      	sub	sp, #16
-10000566:	f240 0000 	movw	r0, #0
-1000056a:	f6c3 0020 	movt	r0, #14368	@ 0x3820
-1000056e:	9001      	str	r0, [sp, #4]
-10000570:	9801      	ldr	r0, [sp, #4]
-10000572:	f380 8809 	msr	PSP, r0
-10000576:	f64f 4000 	movw	r0, #64512	@ 0xfc00
-1000057a:	f6c3 001f 	movt	r0, #14367	@ 0x381f
-1000057e:	9002      	str	r0, [sp, #8]
-10000580:	9902      	ldr	r1, [sp, #8]
-10000582:	f381 880a 	msr	MSPLIM, r1
-10000586:	9003      	str	r0, [sp, #12]
-10000588:	9803      	ldr	r0, [sp, #12]
-1000058a:	f380 880b 	msr	PSPLIM, r0
-1000058e:	f000 f869 	bl	10000664 <SystemInit>
-10000592:	f7ff ff35 	bl	10000400 <__main>
+00200480 <__scatterload_null>:
+  200480:	4770      	bx	lr
 	...
 
-10000598 <SCB_GetFPUType>:
-10000598:	b082      	sub	sp, #8
-1000059a:	f64e 7040 	movw	r0, #61248	@ 0xef40
-1000059e:	f2ce 0000 	movt	r0, #57344	@ 0xe000
-100005a2:	6800      	ldr	r0, [r0, #0]
-100005a4:	9000      	str	r0, [sp, #0]
-100005a6:	9800      	ldr	r0, [sp, #0]
-100005a8:	f400 607f 	and.w	r0, r0, #4080	@ 0xff0
-100005ac:	f5b0 7f08 	cmp.w	r0, #544	@ 0x220
-100005b0:	d103      	bne.n	100005ba <SCB_GetFPUType+0x22>
-100005b2:	e7ff      	b.n	100005b4 <SCB_GetFPUType+0x1c>
-100005b4:	2002      	movs	r0, #2
-100005b6:	9001      	str	r0, [sp, #4]
-100005b8:	e00b      	b.n	100005d2 <SCB_GetFPUType+0x3a>
-100005ba:	9800      	ldr	r0, [sp, #0]
-100005bc:	f400 607f 	and.w	r0, r0, #4080	@ 0xff0
-100005c0:	2820      	cmp	r0, #32
-100005c2:	d103      	bne.n	100005cc <SCB_GetFPUType+0x34>
-100005c4:	e7ff      	b.n	100005c6 <SCB_GetFPUType+0x2e>
-100005c6:	2001      	movs	r0, #1
-100005c8:	9001      	str	r0, [sp, #4]
-100005ca:	e002      	b.n	100005d2 <SCB_GetFPUType+0x3a>
-100005cc:	2000      	movs	r0, #0
-100005ce:	9001      	str	r0, [sp, #4]
-100005d0:	e7ff      	b.n	100005d2 <SCB_GetFPUType+0x3a>
-100005d2:	9801      	ldr	r0, [sp, #4]
-100005d4:	b002      	add	sp, #8
-100005d6:	4770      	bx	lr
+00200484 <__scatterload_zeroinit>:
+  200484:	2300      	movs	r3, #0
+  200486:	2400      	movs	r4, #0
+  200488:	2500      	movs	r5, #0
+  20048a:	2600      	movs	r6, #0
+  20048c:	3a10      	subs	r2, #16
+  20048e:	bf28      	it	cs
+  200490:	c178      	stmiacs	r1!, {r3, r4, r5, r6}
+  200492:	d8fb      	bhi.n	20048c <__scatterload_zeroinit+0x8>
+  200494:	0752      	lsls	r2, r2, #29
+  200496:	bf28      	it	cs
+  200498:	c130      	stmiacs	r1!, {r4, r5}
+  20049a:	bf48      	it	mi
+  20049c:	600b      	strmi	r3, [r1, #0]
+  20049e:	4770      	bx	lr
 
-100005d8 <SysTick_Handler>:
-100005d8:	b580      	push	{r7, lr}
-100005da:	b082      	sub	sp, #8
-100005dc:	f240 0220 	movw	r2, #32
-100005e0:	f6c3 0200 	movt	r2, #14336	@ 0x3800
-100005e4:	6810      	ldr	r0, [r2, #0]
-100005e6:	9001      	str	r0, [sp, #4]
-100005e8:	1c41      	adds	r1, r0, #1
-100005ea:	6011      	str	r1, [r2, #0]
-100005ec:	280a      	cmp	r0, #10
-100005ee:	d010      	beq.n	10000612 <SysTick_Handler+0x3a>
-100005f0:	e7ff      	b.n	100005f2 <SysTick_Handler+0x1a>
-100005f2:	9801      	ldr	r0, [sp, #4]
-100005f4:	2814      	cmp	r0, #20
-100005f6:	d010      	beq.n	1000061a <SysTick_Handler+0x42>
-100005f8:	e7ff      	b.n	100005fa <SysTick_Handler+0x22>
-100005fa:	9801      	ldr	r0, [sp, #4]
-100005fc:	281e      	cmp	r0, #30
-100005fe:	d010      	beq.n	10000622 <SysTick_Handler+0x4a>
-10000600:	e7ff      	b.n	10000602 <SysTick_Handler+0x2a>
-10000602:	9801      	ldr	r0, [sp, #4]
-10000604:	2832      	cmp	r0, #50	@ 0x32
-10000606:	d010      	beq.n	1000062a <SysTick_Handler+0x52>
-10000608:	e7ff      	b.n	1000060a <SysTick_Handler+0x32>
-1000060a:	9801      	ldr	r0, [sp, #4]
-1000060c:	2863      	cmp	r0, #99	@ 0x63
-1000060e:	d010      	beq.n	10000632 <SysTick_Handler+0x5a>
-10000610:	e016      	b.n	10000640 <SysTick_Handler+0x68>
-10000612:	2007      	movs	r0, #7
-10000614:	f7ff ff82 	bl	1000051c <LED_On>
-10000618:	e022      	b.n	10000660 <SysTick_Handler+0x88>
-1000061a:	2006      	movs	r0, #6
-1000061c:	f1ff fbf8 	bl	101ffe10 <Secure_LED_On>
-10000620:	e01e      	b.n	10000660 <SysTick_Handler+0x88>
-10000622:	2007      	movs	r0, #7
-10000624:	f7ff ff66 	bl	100004f4 <LED_Off>
-10000628:	e01a      	b.n	10000660 <SysTick_Handler+0x88>
-1000062a:	2006      	movs	r0, #6
-1000062c:	f1ff fbf4 	bl	101ffe18 <Secure_LED_Off>
-10000630:	e016      	b.n	10000660 <SysTick_Handler+0x88>
-10000632:	f240 0120 	movw	r1, #32
-10000636:	f6c3 0100 	movt	r1, #14336	@ 0x3800
-1000063a:	2000      	movs	r0, #0
-1000063c:	6008      	str	r0, [r1, #0]
-1000063e:	e00f      	b.n	10000660 <SysTick_Handler+0x88>
-10000640:	f240 0020 	movw	r0, #32
-10000644:	f6c3 0000 	movt	r0, #14336	@ 0x3800
-10000648:	6800      	ldr	r0, [r0, #0]
-1000064a:	2864      	cmp	r0, #100	@ 0x64
-1000064c:	d307      	bcc.n	1000065e <SysTick_Handler+0x86>
-1000064e:	e7ff      	b.n	10000650 <SysTick_Handler+0x78>
-10000650:	f240 0120 	movw	r1, #32
-10000654:	f6c3 0100 	movt	r1, #14336	@ 0x3800
-10000658:	2000      	movs	r0, #0
-1000065a:	6008      	str	r0, [r1, #0]
-1000065c:	e7ff      	b.n	1000065e <SysTick_Handler+0x86>
-1000065e:	e7ff      	b.n	10000660 <SysTick_Handler+0x88>
-10000660:	b002      	add	sp, #8
-10000662:	bd80      	pop	{r7, pc}
+002004a0 <__rt_lib_init>:
+  2004a0:	b51f      	push	{r0, r1, r2, r3, r4, lr}
 
-10000664 <SystemInit>:
-10000664:	f240 0000 	movw	r0, #0
-10000668:	f2c1 0000 	movt	r0, #4096	@ 0x1000
-1000066c:	f64e 5108 	movw	r1, #60680	@ 0xed08
-10000670:	f2ce 0100 	movt	r1, #57344	@ 0xe000
-10000674:	6008      	str	r0, [r1, #0]
-10000676:	f64e 5188 	movw	r1, #60808	@ 0xed88
-1000067a:	f2ce 0100 	movt	r1, #57344	@ 0xe000
-1000067e:	6808      	ldr	r0, [r1, #0]
-10000680:	f440 0070 	orr.w	r0, r0, #15728640	@ 0xf00000
-10000684:	6008      	str	r0, [r1, #0]
-10000686:	f240 0100 	movw	r1, #0
-1000068a:	f6c3 0100 	movt	r1, #14336	@ 0x3800
-1000068e:	f647 0040 	movw	r0, #30784	@ 0x7840
-10000692:	f2c0 107d 	movt	r0, #381	@ 0x17d
-10000696:	6008      	str	r0, [r1, #0]
-10000698:	4770      	bx	lr
+002004a2 <__rt_lib_init_fp_1>:
+  2004a2:	f000 f9b6 	bl	200812 <_fp_init>
+
+002004a6 <__rt_lib_init_alloca_1>:
+  2004a6:	bd1f      	pop	{r0, r1, r2, r3, r4, pc}
+
+002004a8 <__rt_lib_shutdown>:
+  2004a8:	b510      	push	{r4, lr}
+
+002004aa <__rt_lib_shutdown_cpp_1>:
+  2004aa:	bd10      	pop	{r4, pc}
+
+002004ac <__rt_entry>:
+  2004ac:	f8df d00c 	ldr.w	sp, [pc, #12]	@ 2004bc <__lit__00000000>
+
+002004b0 <__rt_entry_li>:
+  2004b0:	f7ff fff6 	bl	2004a0 <__rt_lib_init>
+
+002004b4 <__rt_entry_main>:
+  2004b4:	f000 f8f2 	bl	20069c <main>
+  2004b8:	f000 f808 	bl	2004cc <exit>
+
+002004bc <__lit__00000000>:
+  2004bc:	0000 2840                                   ..@(
+
+002004c0 <__rt_exit>:
+  2004c0:	b403      	push	{r0, r1}
+
+002004c2 <__rt_exit_ls>:
+  2004c2:	f7ff fff1 	bl	2004a8 <__rt_lib_shutdown>
+
+002004c6 <__rt_exit_exit>:
+  2004c6:	bc03      	pop	{r0, r1}
+  2004c8:	f000 f80a 	bl	2004e0 <_sys_exit>
+
+002004cc <exit>:
+  2004cc:	b510      	push	{r4, lr}
+  2004ce:	4604      	mov	r4, r0
+  2004d0:	f3af 8000 	nop.w
+  2004d4:	4620      	mov	r0, r4
+  2004d6:	e8bd 4010 	ldmia.w	sp!, {r4, lr}
+  2004da:	f7ff bff1 	b.w	2004c0 <__rt_exit>
+
+002004de <__use_no_semihosting_swi>:
+  2004de:	4770      	bx	lr
+
+002004e0 <_sys_exit>:
+  2004e0:	4901      	ldr	r1, [pc, #4]	@ (2004e8 <_sys_exit+0x8>)
+  2004e2:	2018      	movs	r0, #24
+  2004e4:	beab      	bkpt	0x00ab
+  2004e6:	e7fe      	b.n	2004e6 <_sys_exit+0x6>
+  2004e8:	00020026 	.word	0x00020026
+
+002004ec <Default_Handler>:
+  2004ec:	e7ff      	b.n	2004ee <Default_Handler+0x2>
+  2004ee:	e7fe      	b.n	2004ee <Default_Handler+0x2>
+
+002004f0 <HardFault_Handler>:
+  2004f0:	e7ff      	b.n	2004f2 <HardFault_Handler+0x2>
+  2004f2:	e7fe      	b.n	2004f2 <HardFault_Handler+0x2>
+
+002004f4 <LED_Off>:
+  2004f4:	b081      	sub	sp, #4
+  2004f6:	9000      	str	r0, [sp, #0]
+  2004f8:	9800      	ldr	r0, [sp, #0]
+  2004fa:	2807      	cmp	r0, #7
+  2004fc:	d80b      	bhi.n	200516 <LED_Off+0x22>
+  2004fe:	e7ff      	b.n	200500 <LED_Off+0xc>
+  200500:	9900      	ldr	r1, [sp, #0]
+  200502:	2001      	movs	r0, #1
+  200504:	fa00 f201 	lsl.w	r2, r0, r1
+  200508:	2104      	movs	r1, #4
+  20050a:	f2c4 0130 	movt	r1, #16432	@ 0x4030
+  20050e:	6808      	ldr	r0, [r1, #0]
+  200510:	4390      	bics	r0, r2
+  200512:	6008      	str	r0, [r1, #0]
+  200514:	e7ff      	b.n	200516 <LED_Off+0x22>
+  200516:	2000      	movs	r0, #0
+  200518:	b001      	add	sp, #4
+  20051a:	4770      	bx	lr
+
+0020051c <LED_On>:
+  20051c:	b081      	sub	sp, #4
+  20051e:	9000      	str	r0, [sp, #0]
+  200520:	9800      	ldr	r0, [sp, #0]
+  200522:	2807      	cmp	r0, #7
+  200524:	d80b      	bhi.n	20053e <LED_On+0x22>
+  200526:	e7ff      	b.n	200528 <LED_On+0xc>
+  200528:	9900      	ldr	r1, [sp, #0]
+  20052a:	2001      	movs	r0, #1
+  20052c:	fa00 f201 	lsl.w	r2, r0, r1
+  200530:	2104      	movs	r1, #4
+  200532:	f2c4 0130 	movt	r1, #16432	@ 0x4030
+  200536:	6808      	ldr	r0, [r1, #0]
+  200538:	4310      	orrs	r0, r2
+  20053a:	6008      	str	r0, [r1, #0]
+  20053c:	e7ff      	b.n	20053e <LED_On+0x22>
+  20053e:	2000      	movs	r0, #0
+  200540:	b001      	add	sp, #4
+  200542:	4770      	bx	lr
+
+00200544 <NonSecure_LED_Off>:
+  200544:	b580      	push	{r7, lr}
+  200546:	b082      	sub	sp, #8
+  200548:	9001      	str	r0, [sp, #4]
+  20054a:	9801      	ldr	r0, [sp, #4]
+  20054c:	f7ff ffd2 	bl	2004f4 <LED_Off>
+  200550:	b002      	add	sp, #8
+  200552:	bd80      	pop	{r7, pc}
+
+00200554 <NonSecure_LED_On>:
+  200554:	b580      	push	{r7, lr}
+  200556:	b082      	sub	sp, #8
+  200558:	9001      	str	r0, [sp, #4]
+  20055a:	9801      	ldr	r0, [sp, #4]
+  20055c:	f7ff ffde 	bl	20051c <LED_On>
+  200560:	b002      	add	sp, #8
+  200562:	bd80      	pop	{r7, pc}
+
+00200564 <Reset_Handler>:
+  200564:	b084      	sub	sp, #16
+  200566:	f240 0000 	movw	r0, #0
+  20056a:	f6c2 0040 	movt	r0, #10304	@ 0x2840
+  20056e:	9001      	str	r0, [sp, #4]
+  200570:	9801      	ldr	r0, [sp, #4]
+  200572:	f380 8809 	msr	PSP, r0
+  200576:	f64f 4000 	movw	r0, #64512	@ 0xfc00
+  20057a:	f6c2 003f 	movt	r0, #10303	@ 0x283f
+  20057e:	9002      	str	r0, [sp, #8]
+  200580:	9902      	ldr	r1, [sp, #8]
+  200582:	f381 880a 	msr	MSPLIM, r1
+  200586:	9003      	str	r0, [sp, #12]
+  200588:	9803      	ldr	r0, [sp, #12]
+  20058a:	f380 880b 	msr	PSPLIM, r0
+  20058e:	f000 f869 	bl	200664 <SystemInit>
+  200592:	f7ff ff35 	bl	200400 <__main>
 	...
 
-1000069c <main>:
-1000069c:	b580      	push	{r7, lr}
-1000069e:	b088      	sub	sp, #32
-100006a0:	2000      	movs	r0, #0
-100006a2:	9005      	str	r0, [sp, #20]
-100006a4:	f240 70cd 	movw	r0, #1997	@ 0x7cd
-100006a8:	f2c1 0000 	movt	r0, #4096	@ 0x1000
-100006ac:	f1ff fba8 	bl	101ffe00 <SECURE_register_callback>
-100006b0:	f240 0024 	movw	r0, #36	@ 0x24
-100006b4:	f6c3 0000 	movt	r0, #14336	@ 0x3800
-100006b8:	f1ff fba6 	bl	101ffe08 <SECURE_start_cfa>
-100006bc:	f7ff ff6c 	bl	10000598 <SCB_GetFPUType>
-100006c0:	9003      	str	r0, [sp, #12]
-100006c2:	f644 60a5 	movw	r0, #20133	@ 0x4ea5
-100006c6:	f2c4 1047 	movt	r0, #16711	@ 0x4147
-100006ca:	9002      	str	r0, [sp, #8]
-100006cc:	f64e 6095 	movw	r0, #61077	@ 0xee95
-100006d0:	f6c3 7029 	movt	r0, #16169	@ 0x3f29
-100006d4:	9001      	str	r0, [sp, #4]
-100006d6:	f24e 308f 	movw	r0, #58255	@ 0xe38f
-100006da:	f2c4 10c0 	movt	r0, #16832	@ 0x41c0
-100006de:	9000      	str	r0, [sp, #0]
-100006e0:	ed9d 0a00 	vldr	s0, [sp]
-100006e4:	ed9d 1a02 	vldr	s2, [sp, #8]
-100006e8:	ed9d 2a01 	vldr	s4, [sp, #4]
-100006ec:	ee81 1a02 	vdiv.f32	s2, s2, s4
-100006f0:	ee20 0a01 	vmul.f32	s0, s0, s2
-100006f4:	ed8d 0a00 	vstr	s0, [sp]
-100006f8:	f3ef 8008 	mrs	r0, MSP
-100006fc:	9006      	str	r0, [sp, #24]
-100006fe:	9806      	ldr	r0, [sp, #24]
-10000700:	f240 2160 	movw	r1, #608	@ 0x260
-10000704:	f6c3 0100 	movt	r1, #14336	@ 0x3800
-10000708:	6008      	str	r0, [r1, #0]
-1000070a:	f3ef 8009 	mrs	r0, PSP
-1000070e:	9007      	str	r0, [sp, #28]
-10000710:	9807      	ldr	r0, [sp, #28]
-10000712:	6008      	str	r0, [r1, #0]
-10000714:	f240 5055 	movw	r0, #1365	@ 0x555
-10000718:	f2c1 0000 	movt	r0, #4096	@ 0x1000
-1000071c:	f1ff fb84 	bl	101ffe28 <Secure_LED_On_callback>
-10000720:	f240 5045 	movw	r0, #1349	@ 0x545
-10000724:	f2c1 0000 	movt	r0, #4096	@ 0x1000
-10000728:	f1ff fb82 	bl	101ffe30 <Secure_LED_Off_callback>
-1000072c:	e7ff      	b.n	1000072e <main+0x92>
-1000072e:	2005      	movs	r0, #5
-10000730:	f7ff fef4 	bl	1000051c <LED_On>
-10000734:	2000      	movs	r0, #0
-10000736:	9004      	str	r0, [sp, #16]
-10000738:	e7ff      	b.n	1000073a <main+0x9e>
-1000073a:	9904      	ldr	r1, [sp, #16]
-1000073c:	2000      	movs	r0, #0
-1000073e:	ebb0 5f11 	cmp.w	r0, r1, lsr #20
-10000742:	d106      	bne.n	10000752 <main+0xb6>
-10000744:	e7ff      	b.n	10000746 <main+0xaa>
-10000746:	bf00      	nop
-10000748:	e7ff      	b.n	1000074a <main+0xae>
-1000074a:	9804      	ldr	r0, [sp, #16]
-1000074c:	3001      	adds	r0, #1
-1000074e:	9004      	str	r0, [sp, #16]
-10000750:	e7f3      	b.n	1000073a <main+0x9e>
-10000752:	2005      	movs	r0, #5
-10000754:	f7ff fece 	bl	100004f4 <LED_Off>
-10000758:	2000      	movs	r0, #0
-1000075a:	9004      	str	r0, [sp, #16]
-1000075c:	e7ff      	b.n	1000075e <main+0xc2>
-1000075e:	9904      	ldr	r1, [sp, #16]
-10000760:	2000      	movs	r0, #0
-10000762:	ebb0 5f11 	cmp.w	r0, r1, lsr #20
-10000766:	d106      	bne.n	10000776 <main+0xda>
-10000768:	e7ff      	b.n	1000076a <main+0xce>
-1000076a:	bf00      	nop
-1000076c:	e7ff      	b.n	1000076e <main+0xd2>
-1000076e:	9804      	ldr	r0, [sp, #16]
-10000770:	3001      	adds	r0, #1
-10000772:	9004      	str	r0, [sp, #16]
-10000774:	e7f3      	b.n	1000075e <main+0xc2>
-10000776:	2004      	movs	r0, #4
-10000778:	f1ff fb4a 	bl	101ffe10 <Secure_LED_On>
-1000077c:	2000      	movs	r0, #0
-1000077e:	9004      	str	r0, [sp, #16]
-10000780:	e7ff      	b.n	10000782 <main+0xe6>
-10000782:	9904      	ldr	r1, [sp, #16]
-10000784:	2000      	movs	r0, #0
-10000786:	ebb0 5f11 	cmp.w	r0, r1, lsr #20
-1000078a:	d106      	bne.n	1000079a <main+0xfe>
-1000078c:	e7ff      	b.n	1000078e <main+0xf2>
-1000078e:	bf00      	nop
-10000790:	e7ff      	b.n	10000792 <main+0xf6>
-10000792:	9804      	ldr	r0, [sp, #16]
-10000794:	3001      	adds	r0, #1
-10000796:	9004      	str	r0, [sp, #16]
-10000798:	e7f3      	b.n	10000782 <main+0xe6>
-1000079a:	2004      	movs	r0, #4
-1000079c:	f1ff fb3c 	bl	101ffe18 <Secure_LED_Off>
-100007a0:	2000      	movs	r0, #0
-100007a2:	9004      	str	r0, [sp, #16]
-100007a4:	e7ff      	b.n	100007a6 <main+0x10a>
-100007a6:	9904      	ldr	r1, [sp, #16]
-100007a8:	2000      	movs	r0, #0
-100007aa:	ebb0 5f11 	cmp.w	r0, r1, lsr #20
-100007ae:	d106      	bne.n	100007be <main+0x122>
-100007b0:	e7ff      	b.n	100007b2 <main+0x116>
-100007b2:	bf00      	nop
-100007b4:	e7ff      	b.n	100007b6 <main+0x11a>
-100007b6:	9804      	ldr	r0, [sp, #16]
-100007b8:	3001      	adds	r0, #1
-100007ba:	9004      	str	r0, [sp, #16]
-100007bc:	e7f3      	b.n	100007a6 <main+0x10a>
-100007be:	f240 0004 	movw	r0, #4
-100007c2:	f6c3 0000 	movt	r0, #14336	@ 0x3800
-100007c6:	f1ff fb2b 	bl	101ffe20 <Secure_printf>
-100007ca:	e7b0      	b.n	1000072e <main+0x92>
+00200598 <SCB_GetFPUType>:
+  200598:	b082      	sub	sp, #8
+  20059a:	f64e 7040 	movw	r0, #61248	@ 0xef40
+  20059e:	f2ce 0000 	movt	r0, #57344	@ 0xe000
+  2005a2:	6800      	ldr	r0, [r0, #0]
+  2005a4:	9000      	str	r0, [sp, #0]
+  2005a6:	9800      	ldr	r0, [sp, #0]
+  2005a8:	f400 607f 	and.w	r0, r0, #4080	@ 0xff0
+  2005ac:	f5b0 7f08 	cmp.w	r0, #544	@ 0x220
+  2005b0:	d103      	bne.n	2005ba <SCB_GetFPUType+0x22>
+  2005b2:	e7ff      	b.n	2005b4 <SCB_GetFPUType+0x1c>
+  2005b4:	2002      	movs	r0, #2
+  2005b6:	9001      	str	r0, [sp, #4]
+  2005b8:	e00b      	b.n	2005d2 <SCB_GetFPUType+0x3a>
+  2005ba:	9800      	ldr	r0, [sp, #0]
+  2005bc:	f400 607f 	and.w	r0, r0, #4080	@ 0xff0
+  2005c0:	2820      	cmp	r0, #32
+  2005c2:	d103      	bne.n	2005cc <SCB_GetFPUType+0x34>
+  2005c4:	e7ff      	b.n	2005c6 <SCB_GetFPUType+0x2e>
+  2005c6:	2001      	movs	r0, #1
+  2005c8:	9001      	str	r0, [sp, #4]
+  2005ca:	e002      	b.n	2005d2 <SCB_GetFPUType+0x3a>
+  2005cc:	2000      	movs	r0, #0
+  2005ce:	9001      	str	r0, [sp, #4]
+  2005d0:	e7ff      	b.n	2005d2 <SCB_GetFPUType+0x3a>
+  2005d2:	9801      	ldr	r0, [sp, #4]
+  2005d4:	b002      	add	sp, #8
+  2005d6:	4770      	bx	lr
 
-100007cc <matmul3>:
-100007cc:	b0b5      	sub	sp, #212	@ 0xd4
-100007ce:	2000      	movs	r0, #0
-100007d0:	9002      	str	r0, [sp, #8]
-100007d2:	9802      	ldr	r0, [sp, #8]
-100007d4:	2801      	cmp	r0, #1
-100007d6:	d104      	bne.n	100007e2 <matmul3+0x16>
-100007d8:	e7ff      	b.n	100007da <matmul3+0xe>
-100007da:	9802      	ldr	r0, [sp, #8]
-100007dc:	3001      	adds	r0, #1
-100007de:	9002      	str	r0, [sp, #8]
-100007e0:	e003      	b.n	100007ea <matmul3+0x1e>
-100007e2:	9802      	ldr	r0, [sp, #8]
-100007e4:	3004      	adds	r0, #4
-100007e6:	9002      	str	r0, [sp, #8]
-100007e8:	e7ff      	b.n	100007ea <matmul3+0x1e>
-100007ea:	2000      	movs	r0, #0
-100007ec:	9001      	str	r0, [sp, #4]
-100007ee:	e7ff      	b.n	100007f0 <matmul3+0x24>
-100007f0:	9801      	ldr	r0, [sp, #4]
-100007f2:	2809      	cmp	r0, #9
-100007f4:	dc24      	bgt.n	10000840 <matmul3+0x74>
-100007f6:	e7ff      	b.n	100007f8 <matmul3+0x2c>
-100007f8:	2000      	movs	r0, #0
-100007fa:	9000      	str	r0, [sp, #0]
-100007fc:	e7ff      	b.n	100007fe <matmul3+0x32>
-100007fe:	9800      	ldr	r0, [sp, #0]
-10000800:	2804      	cmp	r0, #4
-10000802:	dc18      	bgt.n	10000836 <matmul3+0x6a>
-10000804:	e7ff      	b.n	10000806 <matmul3+0x3a>
-10000806:	9a01      	ldr	r2, [sp, #4]
-10000808:	eb02 0082 	add.w	r0, r2, r2, lsl #2
-1000080c:	a903      	add	r1, sp, #12
-1000080e:	eb01 0080 	add.w	r0, r1, r0, lsl #2
-10000812:	9b00      	ldr	r3, [sp, #0]
-10000814:	f850 0023 	ldr.w	r0, [r0, r3, lsl #2]
-10000818:	eb03 0383 	add.w	r3, r3, r3, lsl #2
-1000081c:	eb01 0183 	add.w	r1, r1, r3, lsl #2
-10000820:	f851 1022 	ldr.w	r1, [r1, r2, lsl #2]
-10000824:	4401      	add	r1, r0
-10000826:	9802      	ldr	r0, [sp, #8]
-10000828:	4408      	add	r0, r1
-1000082a:	9002      	str	r0, [sp, #8]
-1000082c:	e7ff      	b.n	1000082e <matmul3+0x62>
-1000082e:	9800      	ldr	r0, [sp, #0]
-10000830:	3001      	adds	r0, #1
-10000832:	9000      	str	r0, [sp, #0]
-10000834:	e7e3      	b.n	100007fe <matmul3+0x32>
-10000836:	e7ff      	b.n	10000838 <matmul3+0x6c>
-10000838:	9801      	ldr	r0, [sp, #4]
-1000083a:	3001      	adds	r0, #1
-1000083c:	9001      	str	r0, [sp, #4]
-1000083e:	e7d7      	b.n	100007f0 <matmul3+0x24>
-10000840:	9802      	ldr	r0, [sp, #8]
-10000842:	3002      	adds	r0, #2
-10000844:	9002      	str	r0, [sp, #8]
-10000846:	b035      	add	sp, #212	@ 0xd4
-10000848:	4770      	bx	lr
+002005d8 <SysTick_Handler>:
+  2005d8:	b580      	push	{r7, lr}
+  2005da:	b082      	sub	sp, #8
+  2005dc:	f240 0220 	movw	r2, #32
+  2005e0:	f6c2 0220 	movt	r2, #10272	@ 0x2820
+  2005e4:	6810      	ldr	r0, [r2, #0]
+  2005e6:	9001      	str	r0, [sp, #4]
+  2005e8:	1c41      	adds	r1, r0, #1
+  2005ea:	6011      	str	r1, [r2, #0]
+  2005ec:	280a      	cmp	r0, #10
+  2005ee:	d010      	beq.n	200612 <SysTick_Handler+0x3a>
+  2005f0:	e7ff      	b.n	2005f2 <SysTick_Handler+0x1a>
+  2005f2:	9801      	ldr	r0, [sp, #4]
+  2005f4:	2814      	cmp	r0, #20
+  2005f6:	d010      	beq.n	20061a <SysTick_Handler+0x42>
+  2005f8:	e7ff      	b.n	2005fa <SysTick_Handler+0x22>
+  2005fa:	9801      	ldr	r0, [sp, #4]
+  2005fc:	281e      	cmp	r0, #30
+  2005fe:	d010      	beq.n	200622 <SysTick_Handler+0x4a>
+  200600:	e7ff      	b.n	200602 <SysTick_Handler+0x2a>
+  200602:	9801      	ldr	r0, [sp, #4]
+  200604:	2832      	cmp	r0, #50	@ 0x32
+  200606:	d010      	beq.n	20062a <SysTick_Handler+0x52>
+  200608:	e7ff      	b.n	20060a <SysTick_Handler+0x32>
+  20060a:	9801      	ldr	r0, [sp, #4]
+  20060c:	2863      	cmp	r0, #99	@ 0x63
+  20060e:	d010      	beq.n	200632 <SysTick_Handler+0x5a>
+  200610:	e016      	b.n	200640 <SysTick_Handler+0x68>
+  200612:	2007      	movs	r0, #7
+  200614:	f7ff ff82 	bl	20051c <LED_On>
+  200618:	e022      	b.n	200660 <SysTick_Handler+0x88>
+  20061a:	2006      	movs	r0, #6
+  20061c:	f000 f8d6 	bl	2007cc <main+0x130>
+  200620:	e01e      	b.n	200660 <SysTick_Handler+0x88>
+  200622:	2007      	movs	r0, #7
+  200624:	f7ff ff66 	bl	2004f4 <LED_Off>
+  200628:	e01a      	b.n	200660 <SysTick_Handler+0x88>
+  20062a:	2006      	movs	r0, #6
+  20062c:	f000 f8d3 	bl	2007d6 <main+0x13a>
+  200630:	e016      	b.n	200660 <SysTick_Handler+0x88>
+  200632:	f240 0120 	movw	r1, #32
+  200636:	f6c2 0120 	movt	r1, #10272	@ 0x2820
+  20063a:	2000      	movs	r0, #0
+  20063c:	6008      	str	r0, [r1, #0]
+  20063e:	e00f      	b.n	200660 <SysTick_Handler+0x88>
+  200640:	f240 0020 	movw	r0, #32
+  200644:	f6c2 0020 	movt	r0, #10272	@ 0x2820
+  200648:	6800      	ldr	r0, [r0, #0]
+  20064a:	2864      	cmp	r0, #100	@ 0x64
+  20064c:	d307      	bcc.n	20065e <SysTick_Handler+0x86>
+  20064e:	e7ff      	b.n	200650 <SysTick_Handler+0x78>
+  200650:	f240 0120 	movw	r1, #32
+  200654:	f6c2 0120 	movt	r1, #10272	@ 0x2820
+  200658:	2000      	movs	r0, #0
+  20065a:	6008      	str	r0, [r1, #0]
+  20065c:	e7ff      	b.n	20065e <SysTick_Handler+0x86>
+  20065e:	e7ff      	b.n	200660 <SysTick_Handler+0x88>
+  200660:	b002      	add	sp, #8
+  200662:	bd80      	pop	{r7, pc}
 
-1000084a <_fp_init>:
-1000084a:	eef1 0a10 	vmrs	r0, fpscr
-1000084e:	f64f 71ff 	movw	r1, #65535	@ 0xffff
-10000852:	f2c0 31c0 	movt	r1, #960	@ 0x3c0
-10000856:	ea20 0001 	bic.w	r0, r0, r1
-1000085a:	f040 7040 	orr.w	r0, r0, #50331648	@ 0x3000000
-1000085e:	eee1 0a10 	vmsr	fpscr, r0
+00200664 <SystemInit>:
+  200664:	f240 0000 	movw	r0, #0
+  200668:	f2c0 0020 	movt	r0, #32
+  20066c:	f64e 5108 	movw	r1, #60680	@ 0xed08
+  200670:	f2ce 0100 	movt	r1, #57344	@ 0xe000
+  200674:	6008      	str	r0, [r1, #0]
+  200676:	f64e 5188 	movw	r1, #60808	@ 0xed88
+  20067a:	f2ce 0100 	movt	r1, #57344	@ 0xe000
+  20067e:	6808      	ldr	r0, [r1, #0]
+  200680:	f440 0070 	orr.w	r0, r0, #15728640	@ 0xf00000
+  200684:	6008      	str	r0, [r1, #0]
+  200686:	f240 0100 	movw	r1, #0
+  20068a:	f6c2 0120 	movt	r1, #10272	@ 0x2820
+  20068e:	f647 0040 	movw	r0, #30784	@ 0x7840
+  200692:	f2c0 107d 	movt	r0, #381	@ 0x17d
+  200696:	6008      	str	r0, [r1, #0]
+  200698:	4770      	bx	lr
+	...
 
-10000862 <__fplib_config_fpu_vfp>:
-10000862:	4770      	bx	lr
+0020069c <main>:
+  20069c:	b580      	push	{r7, lr}
+  20069e:	b088      	sub	sp, #32
+  2006a0:	2000      	movs	r0, #0
+  2006a2:	9005      	str	r0, [sp, #20]
+  2006a4:	f240 0001 	movw	r0, #1
+  2006a8:	f2c0 0030 	movt	r0, #48	@ 0x30
+  2006ac:	f000 f898 	bl	2007e0 <main+0x144>
+  2006b0:	f240 0024 	movw	r0, #36	@ 0x24
+  2006b4:	f6c2 0020 	movt	r0, #10272	@ 0x2820
+  2006b8:	f000 f897 	bl	2007ea <main+0x14e>
+  2006bc:	f7ff ff6c 	bl	200598 <SCB_GetFPUType>
+  2006c0:	9003      	str	r0, [sp, #12]
+  2006c2:	f644 60a5 	movw	r0, #20133	@ 0x4ea5
+  2006c6:	f2c4 1047 	movt	r0, #16711	@ 0x4147
+  2006ca:	9002      	str	r0, [sp, #8]
+  2006cc:	f64e 6095 	movw	r0, #61077	@ 0xee95
+  2006d0:	f6c3 7029 	movt	r0, #16169	@ 0x3f29
+  2006d4:	9001      	str	r0, [sp, #4]
+  2006d6:	f24e 308f 	movw	r0, #58255	@ 0xe38f
+  2006da:	f2c4 10c0 	movt	r0, #16832	@ 0x41c0
+  2006de:	9000      	str	r0, [sp, #0]
+  2006e0:	ed9d 0a00 	vldr	s0, [sp]
+  2006e4:	ed9d 1a02 	vldr	s2, [sp, #8]
+  2006e8:	ed9d 2a01 	vldr	s4, [sp, #4]
+  2006ec:	ee81 1a02 	vdiv.f32	s2, s2, s4
+  2006f0:	ee20 0a01 	vmul.f32	s0, s0, s2
+  2006f4:	ed8d 0a00 	vstr	s0, [sp]
+  2006f8:	f3ef 8008 	mrs	r0, MSP
+  2006fc:	9006      	str	r0, [sp, #24]
+  2006fe:	9806      	ldr	r0, [sp, #24]
+  200700:	f240 2160 	movw	r1, #608	@ 0x260
+  200704:	f6c2 0120 	movt	r1, #10272	@ 0x2820
+  200708:	6008      	str	r0, [r1, #0]
+  20070a:	f3ef 8009 	mrs	r0, PSP
+  20070e:	9007      	str	r0, [sp, #28]
+  200710:	9807      	ldr	r0, [sp, #28]
+  200712:	6008      	str	r0, [r1, #0]
+  200714:	f240 5055 	movw	r0, #1365	@ 0x555
+  200718:	f2c0 0020 	movt	r0, #32
+  20071c:	f000 f86a 	bl	2007f4 <main+0x158>
+  200720:	f240 5045 	movw	r0, #1349	@ 0x545
+  200724:	f2c0 0020 	movt	r0, #32
+  200728:	f000 f869 	bl	2007fe <main+0x162>
+  20072c:	e7ff      	b.n	20072e <main+0x92>
+  20072e:	2005      	movs	r0, #5
+  200730:	f7ff fef4 	bl	20051c <LED_On>
+  200734:	2000      	movs	r0, #0
+  200736:	9004      	str	r0, [sp, #16]
+  200738:	e7ff      	b.n	20073a <main+0x9e>
+  20073a:	9904      	ldr	r1, [sp, #16]
+  20073c:	2000      	movs	r0, #0
+  20073e:	ebb0 5f11 	cmp.w	r0, r1, lsr #20
+  200742:	d106      	bne.n	200752 <main+0xb6>
+  200744:	e7ff      	b.n	200746 <main+0xaa>
+  200746:	bf00      	nop
+  200748:	e7ff      	b.n	20074a <main+0xae>
+  20074a:	9804      	ldr	r0, [sp, #16]
+  20074c:	3001      	adds	r0, #1
+  20074e:	9004      	str	r0, [sp, #16]
+  200750:	e7f3      	b.n	20073a <main+0x9e>
+  200752:	2005      	movs	r0, #5
+  200754:	f7ff fece 	bl	2004f4 <LED_Off>
+  200758:	2000      	movs	r0, #0
+  20075a:	9004      	str	r0, [sp, #16]
+  20075c:	e7ff      	b.n	20075e <main+0xc2>
+  20075e:	9904      	ldr	r1, [sp, #16]
+  200760:	2000      	movs	r0, #0
+  200762:	ebb0 5f11 	cmp.w	r0, r1, lsr #20
+  200766:	d106      	bne.n	200776 <main+0xda>
+  200768:	e7ff      	b.n	20076a <main+0xce>
+  20076a:	bf00      	nop
+  20076c:	e7ff      	b.n	20076e <main+0xd2>
+  20076e:	9804      	ldr	r0, [sp, #16]
+  200770:	3001      	adds	r0, #1
+  200772:	9004      	str	r0, [sp, #16]
+  200774:	e7f3      	b.n	20075e <main+0xc2>
+  200776:	2004      	movs	r0, #4
+  200778:	f000 f828 	bl	2007cc <main+0x130>
+  20077c:	2000      	movs	r0, #0
+  20077e:	9004      	str	r0, [sp, #16]
+  200780:	e7ff      	b.n	200782 <main+0xe6>
+  200782:	9904      	ldr	r1, [sp, #16]
+  200784:	2000      	movs	r0, #0
+  200786:	ebb0 5f11 	cmp.w	r0, r1, lsr #20
+  20078a:	d106      	bne.n	20079a <main+0xfe>
+  20078c:	e7ff      	b.n	20078e <main+0xf2>
+  20078e:	bf00      	nop
+  200790:	e7ff      	b.n	200792 <main+0xf6>
+  200792:	9804      	ldr	r0, [sp, #16]
+  200794:	3001      	adds	r0, #1
+  200796:	9004      	str	r0, [sp, #16]
+  200798:	e7f3      	b.n	200782 <main+0xe6>
+  20079a:	2004      	movs	r0, #4
+  20079c:	f000 f81b 	bl	2007d6 <main+0x13a>
+  2007a0:	2000      	movs	r0, #0
+  2007a2:	9004      	str	r0, [sp, #16]
+  2007a4:	e7ff      	b.n	2007a6 <main+0x10a>
+  2007a6:	9904      	ldr	r1, [sp, #16]
+  2007a8:	2000      	movs	r0, #0
+  2007aa:	ebb0 5f11 	cmp.w	r0, r1, lsr #20
+  2007ae:	d106      	bne.n	2007be <main+0x122>
+  2007b0:	e7ff      	b.n	2007b2 <main+0x116>
+  2007b2:	bf00      	nop
+  2007b4:	e7ff      	b.n	2007b6 <main+0x11a>
+  2007b6:	9804      	ldr	r0, [sp, #16]
+  2007b8:	3001      	adds	r0, #1
+  2007ba:	9004      	str	r0, [sp, #16]
+  2007bc:	e7f3      	b.n	2007a6 <main+0x10a>
+  2007be:	f240 0004 	movw	r0, #4
+  2007c2:	f6c2 0020 	movt	r0, #10272	@ 0x2820
+  2007c6:	f000 f81f 	bl	200808 <main+0x16c>
+  2007ca:	e7b0      	b.n	20072e <main+0x92>
+  2007cc:	f64f 6c11 	movw	ip, #65041	@ 0xfe11
+  2007d0:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
+  2007d4:	4760      	bx	ip
+  2007d6:	f64f 6c19 	movw	ip, #65049	@ 0xfe19
+  2007da:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
+  2007de:	4760      	bx	ip
+  2007e0:	f64f 6c01 	movw	ip, #65025	@ 0xfe01
+  2007e4:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
+  2007e8:	4760      	bx	ip
+  2007ea:	f64f 6c09 	movw	ip, #65033	@ 0xfe09
+  2007ee:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
+  2007f2:	4760      	bx	ip
+  2007f4:	f64f 6c29 	movw	ip, #65065	@ 0xfe29
+  2007f8:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
+  2007fc:	4760      	bx	ip
+  2007fe:	f64f 6c31 	movw	ip, #65073	@ 0xfe31
+  200802:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
+  200806:	4760      	bx	ip
+  200808:	f64f 6c21 	movw	ip, #65057	@ 0xfe21
+  20080c:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
+  200810:	4760      	bx	ip
 
-10000864 <Region$$Table$$Base>:
-10000864:	10000884 	.word	0x10000884
-10000868:	38000000 	.word	0x38000000
-1000086c:	00000020 	.word	0x00000020
-10000870:	10000464 	.word	0x10000464
-10000874:	100008a4 	.word	0x100008a4
-10000878:	38000020 	.word	0x38000020
-1000087c:	00000244 	.word	0x00000244
-10000880:	10000484 	.word	0x10000484
+00200812 <_fp_init>:
+  200812:	eef1 0a10 	vmrs	r0, fpscr
+  200816:	f64f 71ff 	movw	r1, #65535	@ 0xffff
+  20081a:	f2c0 31c0 	movt	r1, #960	@ 0x3c0
+  20081e:	ea20 0001 	bic.w	r0, r0, r1
+  200822:	f040 7040 	orr.w	r0, r0, #50331648	@ 0x3000000
+  200826:	eee1 0a10 	vmsr	fpscr, r0
+
+0020082a <__fplib_config_fpu_vfp>:
+  20082a:	4770      	bx	lr
+
+0020082c <Region$$Table$$Base>:
+  20082c:	0020086c 	.word	0x0020086c
+  200830:	00300000 	.word	0x00300000
+  200834:	00000080 	.word	0x00000080
+  200838:	00200464 	.word	0x00200464
+  20083c:	002008ec 	.word	0x002008ec
+  200840:	00380000 	.word	0x00380000
+  200844:	00000048 	.word	0x00000048
+  200848:	00200464 	.word	0x00200464
+  20084c:	00200934 	.word	0x00200934
+  200850:	28200000 	.word	0x28200000
+  200854:	00000020 	.word	0x00000020
+  200858:	00200464 	.word	0x00200464
+  20085c:	00200954 	.word	0x00200954
+  200860:	28200020 	.word	0x28200020
+  200864:	00000244 	.word	0x00000244
+  200868:	00200484 	.word	0x00200484
+
+Disassembly of section ER_MTBAR:
+
+00300000 <matmul3>:
+  300000:	b0b5      	sub	sp, #212	@ 0xd4
+  300002:	2000      	movs	r0, #0
+  300004:	9002      	str	r0, [sp, #8]
+  300006:	9802      	ldr	r0, [sp, #8]
+  300008:	2801      	cmp	r0, #1
+  30000a:	d104      	bne.n	300016 <matmul3+0x16>
+  30000c:	e7ff      	b.n	30000e <matmul3+0xe>
+  30000e:	9802      	ldr	r0, [sp, #8]
+  300010:	3001      	adds	r0, #1
+  300012:	9002      	str	r0, [sp, #8]
+  300014:	e003      	b.n	30001e <matmul3+0x1e>
+  300016:	9802      	ldr	r0, [sp, #8]
+  300018:	3004      	adds	r0, #4
+  30001a:	9002      	str	r0, [sp, #8]
+  30001c:	e7ff      	b.n	30001e <matmul3+0x1e>
+  30001e:	2000      	movs	r0, #0
+  300020:	9001      	str	r0, [sp, #4]
+  300022:	e7ff      	b.n	300024 <matmul3+0x24>
+  300024:	9801      	ldr	r0, [sp, #4]
+  300026:	2809      	cmp	r0, #9
+  300028:	dc24      	bgt.n	300074 <matmul3+0x74>
+  30002a:	e7ff      	b.n	30002c <matmul3+0x2c>
+  30002c:	2000      	movs	r0, #0
+  30002e:	9000      	str	r0, [sp, #0]
+  300030:	e7ff      	b.n	300032 <matmul3+0x32>
+  300032:	9800      	ldr	r0, [sp, #0]
+  300034:	2804      	cmp	r0, #4
+  300036:	dc18      	bgt.n	30006a <matmul3+0x6a>
+  300038:	e7ff      	b.n	30003a <matmul3+0x3a>
+  30003a:	9a01      	ldr	r2, [sp, #4]
+  30003c:	eb02 0082 	add.w	r0, r2, r2, lsl #2
+  300040:	a903      	add	r1, sp, #12
+  300042:	eb01 0080 	add.w	r0, r1, r0, lsl #2
+  300046:	9b00      	ldr	r3, [sp, #0]
+  300048:	f850 0023 	ldr.w	r0, [r0, r3, lsl #2]
+  30004c:	eb03 0383 	add.w	r3, r3, r3, lsl #2
+  300050:	eb01 0183 	add.w	r1, r1, r3, lsl #2
+  300054:	f851 1022 	ldr.w	r1, [r1, r2, lsl #2]
+  300058:	4401      	add	r1, r0
+  30005a:	9802      	ldr	r0, [sp, #8]
+  30005c:	4408      	add	r0, r1
+  30005e:	9002      	str	r0, [sp, #8]
+  300060:	e7ff      	b.n	300062 <matmul3+0x62>
+  300062:	9800      	ldr	r0, [sp, #0]
+  300064:	3001      	adds	r0, #1
+  300066:	9000      	str	r0, [sp, #0]
+  300068:	e7e3      	b.n	300032 <matmul3+0x32>
+  30006a:	e7ff      	b.n	30006c <matmul3+0x6c>
+  30006c:	9801      	ldr	r0, [sp, #4]
+  30006e:	3001      	adds	r0, #1
+  300070:	9001      	str	r0, [sp, #4]
+  300072:	e7d7      	b.n	300024 <matmul3+0x24>
+  300074:	9802      	ldr	r0, [sp, #8]
+  300076:	3002      	adds	r0, #2
+  300078:	9002      	str	r0, [sp, #8]
+  30007a:	b035      	add	sp, #212	@ 0xd4
+  30007c:	4770      	bx	lr
+	...
+
+Disassembly of section ER_MTBDR:
+
+00380000 <nopes>:
+  380000:	bf00      	nop
+  380002:	bf00      	nop
+  380004:	bf00      	nop
+  380006:	bf00      	nop
+  380008:	bf00      	nop
+  38000a:	bf00      	nop
+  38000c:	bf00      	nop
+  38000e:	bf00      	nop
+  380010:	bf00      	nop
+  380012:	bf00      	nop
+  380014:	bf00      	nop
+  380016:	bf00      	nop
+  380018:	bf00      	nop
+  38001a:	bf00      	nop
+  38001c:	bf00      	nop
+  38001e:	bf00      	nop
+  380020:	bf00      	nop
+  380022:	bf00      	nop
+  380024:	bf00      	nop
+  380026:	bf00      	nop
+  380028:	bf00      	nop
+  38002a:	bf00      	nop
+  38002c:	bf00      	nop
+  38002e:	bf00      	nop
+  380030:	bf00      	nop
+  380032:	bf00      	nop
+  380034:	bf00      	nop
+  380036:	bf00      	nop
+  380038:	bf00      	nop
+  38003a:	bf00      	nop
+  38003c:	bf00      	nop
+  38003e:	bf00      	nop
+  380040:	bf00      	nop
+  380042:	bf00      	nop
+  380044:	bf00      	nop
+  380046:	bf00      	nop
