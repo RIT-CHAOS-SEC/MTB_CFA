@@ -8,7 +8,7 @@
 #include CMSIS_device_header
 #include "Board_LED.h"                             /* ::Board Support:LED */
 #include "..\IOTKit_CM33_s\Secure_Functions.h"     /* Secure Code Entry Points */
-#
+#include "application.h"
 char text[] = "Hello World (non-secure)\r\n";
 
 /*----------------------------------------------------------------------------
@@ -63,7 +63,6 @@ static uint32_t x;
   Main function
  *----------------------------------------------------------------------------*/
 
-
 __attribute__((section(".MTBAR_MEM"),naked,used)) void nopes(){
     __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
     __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
@@ -85,38 +84,6 @@ __attribute__((section(".MTBAR_MEM"),naked,used)) void nopes(){
     __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
     __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
     __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
-}
-
-#define MAXX 10
-#define MAXY 5
-__attribute__((section(".MTBDR_MEM"))) void matmul3()
-{
-    int mat[MAXX][MAXY];
-    int val = 0;
-    if (val == 1)
-    {
-        val++;
-    }
-    else
-    {
-        val += 4;
-    }
-
-    for (int x = 0; x < MAXX; x++)
-    {
-        for (int y = 0; y < MAXY; y++)
-        {
-            val += mat[x][y] + mat[y][x];
-        }
-    }
-    val = val + 2;
-    return;
-}
-
-
-__attribute__((section(".MTBAR_MEM"))) void matmul3_entry(){
-    matmul3();
-    return;
 }
 
 CFReport report_s = {0};

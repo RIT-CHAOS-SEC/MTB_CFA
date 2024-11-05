@@ -32,4 +32,6 @@ extern void    Secure_printf (char*);
 void SECURE_register_callback(void *);
 void SECURE_start_cfa(CFReport *);
 
+void SECURE_NOPE(void);
+
 #endif /* SECURE_FUNCTIONS_H_ */

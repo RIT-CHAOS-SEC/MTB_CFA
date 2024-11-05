@@ -17,7 +17,11 @@ NonSecure_fpVoid fNSFunc = (NonSecure_fpVoid)NULL;
 
 void SECURE_register_callback(void* callback) NSENTRY;
 void SECURE_start_cfa(CFReport * report) NSENTRY;
+void SECURE_NOPE(void) NSENTRY;
 
+void SECURE_NOPE(void){
+    return;
+}
 
 
  void SECURE_register_callback(void* callback) 
@@ -33,6 +37,9 @@ void SECURE_start_cfa(CFReport * report) NSENTRY;
     printf("[LOG] Callback function registered\n");
     return;
 }
+
+
+
 
 uint32_t CFA_stat = FALSE;
 

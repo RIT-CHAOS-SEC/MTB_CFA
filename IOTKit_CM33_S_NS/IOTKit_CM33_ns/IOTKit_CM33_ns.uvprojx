@@ -389,6 +389,11 @@
               <FileType>1</FileType>
               <FilePath>.\main_ns.c</FilePath>
             </File>
+            <File>
+              <FileName>application.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\application.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -809,6 +814,11 @@
               <FileName>main_ns.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\main_ns.c</FilePath>
+            </File>
+            <File>
+              <FileName>application.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\application.c</FilePath>
             </File>
           </Files>
         </Group>

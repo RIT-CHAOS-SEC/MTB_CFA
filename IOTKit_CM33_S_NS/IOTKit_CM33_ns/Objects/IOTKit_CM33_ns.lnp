@@ -1,5 +1,6 @@
 --cpu=Cortex-M33
 ".\objects\main_ns.o"
+".\objects\application.o"
 "..\IOTKit_CM33_s\Objects\IOTKit_CM33_s_CMSE_Lib.o"
 ".\objects\led_v2m-mps2.o"
 ".\objects\startup_iotkit_cm33.o"
