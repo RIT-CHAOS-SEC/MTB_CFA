@@ -366,7 +366,7 @@ Disassembly of section ER_ROM:
   20069e:	b088      	sub	sp, #32
   2006a0:	2000      	movs	r0, #0
   2006a2:	9005      	str	r0, [sp, #20]
-  2006a4:	f240 0001 	movw	r0, #1
+  2006a4:	f240 20d1 	movw	r0, #721	@ 0x2d1
   2006a8:	f2c0 0030 	movt	r0, #48	@ 0x30
   2006ac:	f000 f898 	bl	2007e0 <main+0x144>
   2006b0:	f240 0024 	movw	r0, #36	@ 0x24
@@ -510,119 +510,448 @@ Disassembly of section ER_ROM:
 0020082c <Region$$Table$$Base>:
   20082c:	0020086c 	.word	0x0020086c
   200830:	00300000 	.word	0x00300000
-  200834:	00000080 	.word	0x00000080
+  200834:	000002d8 	.word	0x000002d8
   200838:	00200464 	.word	0x00200464
-  20083c:	002008ec 	.word	0x002008ec
+  20083c:	00200b44 	.word	0x00200b44
   200840:	00380000 	.word	0x00380000
-  200844:	00000048 	.word	0x00000048
+  200844:	00000080 	.word	0x00000080
   200848:	00200464 	.word	0x00200464
-  20084c:	00200934 	.word	0x00200934
+  20084c:	00200bc4 	.word	0x00200bc4
   200850:	28200000 	.word	0x28200000
   200854:	00000020 	.word	0x00000020
   200858:	00200464 	.word	0x00200464
-  20085c:	00200954 	.word	0x00200954
+  20085c:	00200be4 	.word	0x00200be4
   200860:	28200020 	.word	0x28200020
   200864:	00000244 	.word	0x00000244
   200868:	00200484 	.word	0x00200484
 
 Disassembly of section ER_MTBAR:
 
-00300000 <matmul3>:
-  300000:	b0b5      	sub	sp, #212	@ 0xd4
-  300002:	2000      	movs	r0, #0
-  300004:	9002      	str	r0, [sp, #8]
-  300006:	9802      	ldr	r0, [sp, #8]
-  300008:	2801      	cmp	r0, #1
-  30000a:	d104      	bne.n	300016 <matmul3+0x16>
-  30000c:	e7ff      	b.n	30000e <matmul3+0xe>
-  30000e:	9802      	ldr	r0, [sp, #8]
-  300010:	3001      	adds	r0, #1
-  300012:	9002      	str	r0, [sp, #8]
-  300014:	e003      	b.n	30001e <matmul3+0x1e>
-  300016:	9802      	ldr	r0, [sp, #8]
-  300018:	3004      	adds	r0, #4
-  30001a:	9002      	str	r0, [sp, #8]
-  30001c:	e7ff      	b.n	30001e <matmul3+0x1e>
-  30001e:	2000      	movs	r0, #0
-  300020:	9001      	str	r0, [sp, #4]
-  300022:	e7ff      	b.n	300024 <matmul3+0x24>
-  300024:	9801      	ldr	r0, [sp, #4]
-  300026:	2809      	cmp	r0, #9
-  300028:	dc24      	bgt.n	300074 <matmul3+0x74>
-  30002a:	e7ff      	b.n	30002c <matmul3+0x2c>
-  30002c:	2000      	movs	r0, #0
-  30002e:	9000      	str	r0, [sp, #0]
-  300030:	e7ff      	b.n	300032 <matmul3+0x32>
-  300032:	9800      	ldr	r0, [sp, #0]
-  300034:	2804      	cmp	r0, #4
-  300036:	dc18      	bgt.n	30006a <matmul3+0x6a>
-  300038:	e7ff      	b.n	30003a <matmul3+0x3a>
-  30003a:	9a01      	ldr	r2, [sp, #4]
-  30003c:	eb02 0082 	add.w	r0, r2, r2, lsl #2
-  300040:	a903      	add	r1, sp, #12
-  300042:	eb01 0080 	add.w	r0, r1, r0, lsl #2
-  300046:	9b00      	ldr	r3, [sp, #0]
-  300048:	f850 0023 	ldr.w	r0, [r0, r3, lsl #2]
-  30004c:	eb03 0383 	add.w	r3, r3, r3, lsl #2
-  300050:	eb01 0183 	add.w	r1, r1, r3, lsl #2
-  300054:	f851 1022 	ldr.w	r1, [r1, r2, lsl #2]
-  300058:	4401      	add	r1, r0
-  30005a:	9802      	ldr	r0, [sp, #8]
-  30005c:	4408      	add	r0, r1
-  30005e:	9002      	str	r0, [sp, #8]
-  300060:	e7ff      	b.n	300062 <matmul3+0x62>
-  300062:	9800      	ldr	r0, [sp, #0]
-  300064:	3001      	adds	r0, #1
-  300066:	9000      	str	r0, [sp, #0]
-  300068:	e7e3      	b.n	300032 <matmul3+0x32>
-  30006a:	e7ff      	b.n	30006c <matmul3+0x6c>
-  30006c:	9801      	ldr	r0, [sp, #4]
-  30006e:	3001      	adds	r0, #1
-  300070:	9001      	str	r0, [sp, #4]
-  300072:	e7d7      	b.n	300024 <matmul3+0x24>
-  300074:	9802      	ldr	r0, [sp, #8]
-  300076:	3002      	adds	r0, #2
-  300078:	9002      	str	r0, [sp, #8]
-  30007a:	b035      	add	sp, #212	@ 0xd4
-  30007c:	4770      	bx	lr
-	...
+00300000 <nopes>:
+  300000:	bf00      	nop
+  300002:	bf00      	nop
+  300004:	bf00      	nop
+  300006:	bf00      	nop
+  300008:	bf00      	nop
+  30000a:	bf00      	nop
+  30000c:	bf00      	nop
+  30000e:	bf00      	nop
+  300010:	bf00      	nop
+  300012:	bf00      	nop
+  300014:	bf00      	nop
+  300016:	bf00      	nop
+  300018:	bf00      	nop
+  30001a:	bf00      	nop
+  30001c:	bf00      	nop
+  30001e:	bf00      	nop
+  300020:	bf00      	nop
+  300022:	bf00      	nop
+  300024:	bf00      	nop
+  300026:	bf00      	nop
+  300028:	bf00      	nop
+  30002a:	bf00      	nop
+  30002c:	bf00      	nop
+  30002e:	bf00      	nop
+  300030:	bf00      	nop
+  300032:	bf00      	nop
+  300034:	bf00      	nop
+  300036:	bf00      	nop
+  300038:	bf00      	nop
+  30003a:	bf00      	nop
+  30003c:	bf00      	nop
+  30003e:	bf00      	nop
+  300040:	bf00      	nop
+  300042:	bf00      	nop
+  300044:	bf00      	nop
+  300046:	bf00      	nop
+  300048:	bf00      	nop
+  30004a:	bf00      	nop
+  30004c:	bf00      	nop
+  30004e:	bf00      	nop
+  300050:	bf00      	nop
+  300052:	bf00      	nop
+  300054:	bf00      	nop
+  300056:	bf00      	nop
+  300058:	bf00      	nop
+  30005a:	bf00      	nop
+  30005c:	bf00      	nop
+  30005e:	bf00      	nop
+  300060:	bf00      	nop
+  300062:	bf00      	nop
+  300064:	bf00      	nop
+  300066:	bf00      	nop
+  300068:	bf00      	nop
+  30006a:	bf00      	nop
+  30006c:	bf00      	nop
+  30006e:	bf00      	nop
+  300070:	bf00      	nop
+  300072:	bf00      	nop
+  300074:	bf00      	nop
+  300076:	bf00      	nop
+  300078:	bf00      	nop
+  30007a:	bf00      	nop
+  30007c:	bf00      	nop
+  30007e:	bf00      	nop
+  300080:	bf00      	nop
+  300082:	bf00      	nop
+  300084:	bf00      	nop
+  300086:	bf00      	nop
+  300088:	bf00      	nop
+  30008a:	bf00      	nop
+  30008c:	bf00      	nop
+  30008e:	bf00      	nop
+  300090:	bf00      	nop
+  300092:	bf00      	nop
+  300094:	bf00      	nop
+  300096:	bf00      	nop
+  300098:	bf00      	nop
+  30009a:	bf00      	nop
+  30009c:	bf00      	nop
+  30009e:	bf00      	nop
+  3000a0:	bf00      	nop
+  3000a2:	bf00      	nop
+  3000a4:	bf00      	nop
+  3000a6:	bf00      	nop
+  3000a8:	bf00      	nop
+  3000aa:	bf00      	nop
+  3000ac:	bf00      	nop
+  3000ae:	bf00      	nop
+  3000b0:	bf00      	nop
+  3000b2:	bf00      	nop
+  3000b4:	bf00      	nop
+  3000b6:	bf00      	nop
+  3000b8:	bf00      	nop
+  3000ba:	bf00      	nop
+  3000bc:	bf00      	nop
+  3000be:	bf00      	nop
+  3000c0:	bf00      	nop
+  3000c2:	bf00      	nop
+  3000c4:	bf00      	nop
+  3000c6:	bf00      	nop
+  3000c8:	bf00      	nop
+  3000ca:	bf00      	nop
+  3000cc:	bf00      	nop
+  3000ce:	bf00      	nop
+  3000d0:	bf00      	nop
+  3000d2:	bf00      	nop
+  3000d4:	bf00      	nop
+  3000d6:	bf00      	nop
+  3000d8:	bf00      	nop
+  3000da:	bf00      	nop
+  3000dc:	bf00      	nop
+  3000de:	bf00      	nop
+  3000e0:	bf00      	nop
+  3000e2:	bf00      	nop
+  3000e4:	bf00      	nop
+  3000e6:	bf00      	nop
+  3000e8:	bf00      	nop
+  3000ea:	bf00      	nop
+  3000ec:	bf00      	nop
+  3000ee:	bf00      	nop
+  3000f0:	bf00      	nop
+  3000f2:	bf00      	nop
+  3000f4:	bf00      	nop
+  3000f6:	bf00      	nop
+  3000f8:	bf00      	nop
+  3000fa:	bf00      	nop
+  3000fc:	bf00      	nop
+  3000fe:	bf00      	nop
+  300100:	bf00      	nop
+  300102:	bf00      	nop
+  300104:	bf00      	nop
+  300106:	bf00      	nop
+  300108:	bf00      	nop
+  30010a:	bf00      	nop
+  30010c:	bf00      	nop
+  30010e:	bf00      	nop
+  300110:	bf00      	nop
+  300112:	bf00      	nop
+  300114:	bf00      	nop
+  300116:	bf00      	nop
+  300118:	bf00      	nop
+  30011a:	bf00      	nop
+  30011c:	bf00      	nop
+  30011e:	bf00      	nop
+  300120:	bf00      	nop
+  300122:	bf00      	nop
+  300124:	bf00      	nop
+  300126:	bf00      	nop
+  300128:	bf00      	nop
+  30012a:	bf00      	nop
+  30012c:	bf00      	nop
+  30012e:	bf00      	nop
+  300130:	bf00      	nop
+  300132:	bf00      	nop
+  300134:	bf00      	nop
+  300136:	bf00      	nop
+  300138:	bf00      	nop
+  30013a:	bf00      	nop
+  30013c:	bf00      	nop
+  30013e:	bf00      	nop
+  300140:	bf00      	nop
+  300142:	bf00      	nop
+  300144:	bf00      	nop
+  300146:	bf00      	nop
+  300148:	bf00      	nop
+  30014a:	bf00      	nop
+  30014c:	bf00      	nop
+  30014e:	bf00      	nop
+  300150:	bf00      	nop
+  300152:	bf00      	nop
+  300154:	bf00      	nop
+  300156:	bf00      	nop
+  300158:	bf00      	nop
+  30015a:	bf00      	nop
+  30015c:	bf00      	nop
+  30015e:	bf00      	nop
+  300160:	bf00      	nop
+  300162:	bf00      	nop
+  300164:	bf00      	nop
+  300166:	bf00      	nop
+  300168:	bf00      	nop
+  30016a:	bf00      	nop
+  30016c:	bf00      	nop
+  30016e:	bf00      	nop
+  300170:	bf00      	nop
+  300172:	bf00      	nop
+  300174:	bf00      	nop
+  300176:	bf00      	nop
+  300178:	bf00      	nop
+  30017a:	bf00      	nop
+  30017c:	bf00      	nop
+  30017e:	bf00      	nop
+  300180:	bf00      	nop
+  300182:	bf00      	nop
+  300184:	bf00      	nop
+  300186:	bf00      	nop
+  300188:	bf00      	nop
+  30018a:	bf00      	nop
+  30018c:	bf00      	nop
+  30018e:	bf00      	nop
+  300190:	bf00      	nop
+  300192:	bf00      	nop
+  300194:	bf00      	nop
+  300196:	bf00      	nop
+  300198:	bf00      	nop
+  30019a:	bf00      	nop
+  30019c:	bf00      	nop
+  30019e:	bf00      	nop
+  3001a0:	bf00      	nop
+  3001a2:	bf00      	nop
+  3001a4:	bf00      	nop
+  3001a6:	bf00      	nop
+  3001a8:	bf00      	nop
+  3001aa:	bf00      	nop
+  3001ac:	bf00      	nop
+  3001ae:	bf00      	nop
+  3001b0:	bf00      	nop
+  3001b2:	bf00      	nop
+  3001b4:	bf00      	nop
+  3001b6:	bf00      	nop
+  3001b8:	bf00      	nop
+  3001ba:	bf00      	nop
+  3001bc:	bf00      	nop
+  3001be:	bf00      	nop
+  3001c0:	bf00      	nop
+  3001c2:	bf00      	nop
+  3001c4:	bf00      	nop
+  3001c6:	bf00      	nop
+  3001c8:	bf00      	nop
+  3001ca:	bf00      	nop
+  3001cc:	bf00      	nop
+  3001ce:	bf00      	nop
+  3001d0:	bf00      	nop
+  3001d2:	bf00      	nop
+  3001d4:	bf00      	nop
+  3001d6:	bf00      	nop
+  3001d8:	bf00      	nop
+  3001da:	bf00      	nop
+  3001dc:	bf00      	nop
+  3001de:	bf00      	nop
+  3001e0:	bf00      	nop
+  3001e2:	bf00      	nop
+  3001e4:	bf00      	nop
+  3001e6:	bf00      	nop
+  3001e8:	bf00      	nop
+  3001ea:	bf00      	nop
+  3001ec:	bf00      	nop
+  3001ee:	bf00      	nop
+  3001f0:	bf00      	nop
+  3001f2:	bf00      	nop
+  3001f4:	bf00      	nop
+  3001f6:	bf00      	nop
+  3001f8:	bf00      	nop
+  3001fa:	bf00      	nop
+  3001fc:	bf00      	nop
+  3001fe:	bf00      	nop
+  300200:	bf00      	nop
+  300202:	bf00      	nop
+  300204:	bf00      	nop
+  300206:	bf00      	nop
+  300208:	bf00      	nop
+  30020a:	bf00      	nop
+  30020c:	bf00      	nop
+  30020e:	bf00      	nop
+  300210:	bf00      	nop
+  300212:	bf00      	nop
+  300214:	bf00      	nop
+  300216:	bf00      	nop
+  300218:	bf00      	nop
+  30021a:	bf00      	nop
+  30021c:	bf00      	nop
+  30021e:	bf00      	nop
+  300220:	bf00      	nop
+  300222:	bf00      	nop
+  300224:	bf00      	nop
+  300226:	bf00      	nop
+  300228:	bf00      	nop
+  30022a:	bf00      	nop
+  30022c:	bf00      	nop
+  30022e:	bf00      	nop
+  300230:	bf00      	nop
+  300232:	bf00      	nop
+  300234:	bf00      	nop
+  300236:	bf00      	nop
+  300238:	bf00      	nop
+  30023a:	bf00      	nop
+  30023c:	bf00      	nop
+  30023e:	bf00      	nop
+  300240:	bf00      	nop
+  300242:	bf00      	nop
+  300244:	bf00      	nop
+  300246:	bf00      	nop
+  300248:	bf00      	nop
+  30024a:	bf00      	nop
+  30024c:	bf00      	nop
+  30024e:	bf00      	nop
+  300250:	bf00      	nop
+  300252:	bf00      	nop
+  300254:	bf00      	nop
+  300256:	bf00      	nop
+  300258:	bf00      	nop
+  30025a:	bf00      	nop
+  30025c:	bf00      	nop
+  30025e:	bf00      	nop
+  300260:	bf00      	nop
+  300262:	bf00      	nop
+  300264:	bf00      	nop
+  300266:	bf00      	nop
+  300268:	bf00      	nop
+  30026a:	bf00      	nop
+  30026c:	bf00      	nop
+  30026e:	bf00      	nop
+  300270:	bf00      	nop
+  300272:	bf00      	nop
+  300274:	bf00      	nop
+  300276:	bf00      	nop
+  300278:	bf00      	nop
+  30027a:	bf00      	nop
+  30027c:	bf00      	nop
+  30027e:	bf00      	nop
+  300280:	bf00      	nop
+  300282:	bf00      	nop
+  300284:	bf00      	nop
+  300286:	bf00      	nop
+  300288:	bf00      	nop
+  30028a:	bf00      	nop
+  30028c:	bf00      	nop
+  30028e:	bf00      	nop
+  300290:	bf00      	nop
+  300292:	bf00      	nop
+  300294:	bf00      	nop
+  300296:	bf00      	nop
+  300298:	bf00      	nop
+  30029a:	bf00      	nop
+  30029c:	bf00      	nop
+  30029e:	bf00      	nop
+  3002a0:	bf00      	nop
+  3002a2:	bf00      	nop
+  3002a4:	bf00      	nop
+  3002a6:	bf00      	nop
+  3002a8:	bf00      	nop
+  3002aa:	bf00      	nop
+  3002ac:	bf00      	nop
+  3002ae:	bf00      	nop
+  3002b0:	bf00      	nop
+  3002b2:	bf00      	nop
+  3002b4:	bf00      	nop
+  3002b6:	bf00      	nop
+  3002b8:	bf00      	nop
+  3002ba:	bf00      	nop
+  3002bc:	bf00      	nop
+  3002be:	bf00      	nop
+  3002c0:	bf00      	nop
+  3002c2:	bf00      	nop
+  3002c4:	bf00      	nop
+  3002c6:	bf00      	nop
+  3002c8:	bf00      	nop
+  3002ca:	bf00      	nop
+  3002cc:	bf00      	nop
+  3002ce:	bf00      	nop
+
+003002d0 <matmul3_entry>:
+  3002d0:	b580      	push	{r7, lr}
+  3002d2:	f07f fe95 	bl	380000 <matmul3>
+  3002d6:	bd80      	pop	{r7, pc}
 
 Disassembly of section ER_MTBDR:
 
-00380000 <nopes>:
-  380000:	bf00      	nop
-  380002:	bf00      	nop
-  380004:	bf00      	nop
-  380006:	bf00      	nop
-  380008:	bf00      	nop
-  38000a:	bf00      	nop
-  38000c:	bf00      	nop
-  38000e:	bf00      	nop
-  380010:	bf00      	nop
-  380012:	bf00      	nop
-  380014:	bf00      	nop
-  380016:	bf00      	nop
-  380018:	bf00      	nop
-  38001a:	bf00      	nop
-  38001c:	bf00      	nop
-  38001e:	bf00      	nop
-  380020:	bf00      	nop
-  380022:	bf00      	nop
-  380024:	bf00      	nop
-  380026:	bf00      	nop
-  380028:	bf00      	nop
-  38002a:	bf00      	nop
-  38002c:	bf00      	nop
-  38002e:	bf00      	nop
-  380030:	bf00      	nop
-  380032:	bf00      	nop
-  380034:	bf00      	nop
-  380036:	bf00      	nop
-  380038:	bf00      	nop
-  38003a:	bf00      	nop
-  38003c:	bf00      	nop
-  38003e:	bf00      	nop
-  380040:	bf00      	nop
-  380042:	bf00      	nop
-  380044:	bf00      	nop
-  380046:	bf00      	nop
+00380000 <matmul3>:
+  380000:	b0b5      	sub	sp, #212	@ 0xd4
+  380002:	2000      	movs	r0, #0
+  380004:	9002      	str	r0, [sp, #8]
+  380006:	9802      	ldr	r0, [sp, #8]
+  380008:	2801      	cmp	r0, #1
+  38000a:	d104      	bne.n	380016 <matmul3+0x16>
+  38000c:	e7ff      	b.n	38000e <matmul3+0xe>
+  38000e:	9802      	ldr	r0, [sp, #8]
+  380010:	3001      	adds	r0, #1
+  380012:	9002      	str	r0, [sp, #8]
+  380014:	e003      	b.n	38001e <matmul3+0x1e>
+  380016:	9802      	ldr	r0, [sp, #8]
+  380018:	3004      	adds	r0, #4
+  38001a:	9002      	str	r0, [sp, #8]
+  38001c:	e7ff      	b.n	38001e <matmul3+0x1e>
+  38001e:	2000      	movs	r0, #0
+  380020:	9001      	str	r0, [sp, #4]
+  380022:	e7ff      	b.n	380024 <matmul3+0x24>
+  380024:	9801      	ldr	r0, [sp, #4]
+  380026:	2809      	cmp	r0, #9
+  380028:	dc24      	bgt.n	380074 <matmul3+0x74>
+  38002a:	e7ff      	b.n	38002c <matmul3+0x2c>
+  38002c:	2000      	movs	r0, #0
+  38002e:	9000      	str	r0, [sp, #0]
+  380030:	e7ff      	b.n	380032 <matmul3+0x32>
+  380032:	9800      	ldr	r0, [sp, #0]
+  380034:	2804      	cmp	r0, #4
+  380036:	dc18      	bgt.n	38006a <matmul3+0x6a>
+  380038:	e7ff      	b.n	38003a <matmul3+0x3a>
+  38003a:	9a01      	ldr	r2, [sp, #4]
+  38003c:	eb02 0082 	add.w	r0, r2, r2, lsl #2
+  380040:	a903      	add	r1, sp, #12
+  380042:	eb01 0080 	add.w	r0, r1, r0, lsl #2
+  380046:	9b00      	ldr	r3, [sp, #0]
+  380048:	f850 0023 	ldr.w	r0, [r0, r3, lsl #2]
+  38004c:	eb03 0383 	add.w	r3, r3, r3, lsl #2
+  380050:	eb01 0183 	add.w	r1, r1, r3, lsl #2
+  380054:	f851 1022 	ldr.w	r1, [r1, r2, lsl #2]
+  380058:	4401      	add	r1, r0
+  38005a:	9802      	ldr	r0, [sp, #8]
+  38005c:	4408      	add	r0, r1
+  38005e:	9002      	str	r0, [sp, #8]
+  380060:	e7ff      	b.n	380062 <matmul3+0x62>
+  380062:	9800      	ldr	r0, [sp, #0]
+  380064:	3001      	adds	r0, #1
+  380066:	9000      	str	r0, [sp, #0]
+  380068:	e7e3      	b.n	380032 <matmul3+0x32>
+  38006a:	e7ff      	b.n	38006c <matmul3+0x6c>
+  38006c:	9801      	ldr	r0, [sp, #4]
+  38006e:	3001      	adds	r0, #1
+  380070:	9001      	str	r0, [sp, #4]
+  380072:	e7d7      	b.n	380024 <matmul3+0x24>
+  380074:	9802      	ldr	r0, [sp, #8]
+  380076:	3002      	adds	r0, #2
+  380078:	9002      	str	r0, [sp, #8]
+  38007a:	b035      	add	sp, #212	@ 0xd4
+  38007c:	4770      	bx	lr
+	...

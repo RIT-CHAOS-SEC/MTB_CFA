@@ -64,49 +64,32 @@ static uint32_t x;
  *----------------------------------------------------------------------------*/
 
 
-__attribute__((section(".MTBDR_MEM"),naked,used)) void nopes(){
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    __asm("nop\n");
-    
+__attribute__((section(".MTBAR_MEM"),naked,used)) void nopes(){
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
 }
 
 #define MAXX 10
 #define MAXY 5
-__attribute__((section(".MTBAR_MEM"))) void matmul3()
+__attribute__((section(".MTBDR_MEM"))) void matmul3()
 {
     int mat[MAXX][MAXY];
     int val = 0;
@@ -130,6 +113,12 @@ __attribute__((section(".MTBAR_MEM"))) void matmul3()
     return;
 }
 
+
+__attribute__((section(".MTBAR_MEM"))) void matmul3_entry(){
+    matmul3();
+    return;
+}
+
 CFReport report_s = {0};
 
 int main (void)
@@ -137,7 +126,7 @@ int main (void)
   uint32_t i;
 	
   // Register Function
-  SECURE_register_callback((void*) matmul3);
+  SECURE_register_callback((void*) matmul3_entry);
 
   // Start CFA
   SECURE_start_cfa(&report_s);

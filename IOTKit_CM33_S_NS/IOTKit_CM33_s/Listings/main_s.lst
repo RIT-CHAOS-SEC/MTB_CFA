@@ -372,6 +372,8 @@ main:
 .LBB2_5:
 	.loc	2 169 5                         @ main_s.c:169:5
 	bl	stdout_init
+	.loc	2 171 5                         @ main_s.c:171:5
+	bl	mtb_init
 	.loc	2 173 20                        @ main_s.c:173:20
 	movw	r0, :lower16:SystemCoreClock
 	movt	r0, :upper16:SystemCoreClock
