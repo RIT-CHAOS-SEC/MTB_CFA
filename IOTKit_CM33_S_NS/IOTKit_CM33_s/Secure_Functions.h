@@ -6,6 +6,8 @@
 #ifndef SECURE_FUNCTIONS_H_
 #define SECURE_FUNCTIONS_H_
 
+#include "RTE_Components.h" 
+#include CMSIS_device_header
 #include <arm_cmse.h>
 #include "cfa.h"
 
@@ -20,10 +22,10 @@ typedef void (*NonSecure_fpVoid)(void) __attribute__((cmse_nonsecure_call));
 
 
 /* Function declarations for Secure functions called from NonSecure application */
-extern int32_t Secure_LED_On (uint32_t);
-extern int32_t Secure_LED_Off(uint32_t);
-extern int32_t Secure_LED_On_callback (NonSecure_funcptr);
-extern int32_t Secure_LED_Off_callback(NonSecure_funcptr);
+ int32_t Secure_LED_On (uint32_t);
+ int32_t Secure_LED_Off(uint32_t);
+ int32_t Secure_LED_On_callback (NonSecure_funcptr);
+ int32_t Secure_LED_Off_callback(NonSecure_funcptr);
 extern void    Secure_printf (char*);
 
 

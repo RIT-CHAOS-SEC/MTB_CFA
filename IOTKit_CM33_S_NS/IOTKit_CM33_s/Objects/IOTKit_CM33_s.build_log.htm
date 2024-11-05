@@ -25,28 +25,22 @@ Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\IOTKit_CM33_s\IOTKit_CM33_s.uvprojx
-Project File Date:  10/22/2024
+Project File Date:  11/05/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.22', folder: 'C:\Users\aj4775\AppData\Local\Keil_v5\ARM\ARMCLANG\Bin'
+*** Note: Rebuilding project, since 'Options->Output->Create Batch File' is selected.
 Rebuild Project 'IOTKit_CM33_s' - Target 'V2M-MPS2+'
 creating list file for main_s.c...
 compiling main_s.c...
-P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\IOTKit_CM33_s\main_s.c(163): error: too few operands for instruction
-  163 |         "\tit;\n"       
-      |          ^
-P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\IOTKit_CM33_s\<inline asm>(2): note: instantiated into assembly here
-    2 |         it;
-      |           ^
-P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\IOTKit_CM33_s\main_s.c(164): error: predicated instructions must be in IT block
-  164 |         "\tbxeq R0;\n");
-      |          ^
-P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\IOTKit_CM33_s\<inline asm>(3): note: instantiated into assembly here
-    3 |         bxeq R0;
-      |         ^
-2 errors generated.
 creating list file for stdout_USART.c...
 compiling stdout_USART.c...
+creating list file for mtb.c...
+compiling mtb.c...
+creating list file for Secure_Functions.c...
+compiling Secure_Functions.c...
+creating list file for cfa.c...
+compiling cfa.c...
 creating list file for GLCD_Fonts.c...
 compiling GLCD_Fonts.c...
 creating list file for GLCD_V2M-MPS2.c...
@@ -62,11 +56,8 @@ compiling startup_IOTKit_CM33.c...
 creating list file for system_IOTKit_CM33.c...
 compiling system_IOTKit_CM33.c...
 linking...
-.\Objects\IOTKit_CM33_s.axf: error: L6002U: Could not open file .\objects\main_s.o: No such file or directory
-Not enough information to list image symbols.
-Not enough information to list load addresses in the image map.
-Finished: 2 information, 0 warning, 0 error and 1 fatal error messages.
-".\Objects\IOTKit_CM33_s.axf" - 3 Error(s), 0 Warning(s).
+Program Size: Code=16732 RO-data=7568 RW-data=36 ZI-data=5088  
+".\Objects\IOTKit_CM33_s.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -148,8 +139,7 @@ Package Vendor: Keil
       Include file:  Device/IOTKit_CM33/Include/Template/partition_IOTKit_CM33.h
       Include file:  CMSIS/Config/RTE_Device.h
       Source file:   Device/IOTKit_CM33/Source/system_IOTKit_CM33.c
-Target not created.
-Build Time Elapsed:  00:00:08
+Build Time Elapsed:  00:00:11
 </pre>
 </body>
 </html>

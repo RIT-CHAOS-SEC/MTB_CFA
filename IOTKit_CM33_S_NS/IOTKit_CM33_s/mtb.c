@@ -1,5 +1,8 @@
 #include "mtb.h"
+#include "RTE_Components.h" 
+#include CMSIS_device_header
 #include "core_cm33.h"
+#include "stdio.h"
 
 SCB_Type * SCB_ = ((SCB_Type *) SCB_BASE);
 
@@ -80,6 +83,7 @@ void mtb_cleanMTB(){
 }
 
 void mtb_debugMonitorHandler(){
+    printf("[LOG] Debug Monitor Handler\n");
     if (mtb->MTB_FLOW == (MTB_WATERMARK_A)){
         mtb->MTB_FLOW = (MTB_WATERMARK_B);
     } else {
@@ -94,13 +98,27 @@ void mtb_debugMonitorHandler(){
     return;
 }
 
-void mtb_setup_MTB(){
+void mtb_debugMonitorHandlerEmpty(){
+    while(1){};
+}
+
+
+
+void mtb_setup_debugMonitor(){
     // setup VTOR 
     uint32_t * VTOR = (uint32_t *) SCB_->VTOR;
-    // VTOR[7] = (uint32_t) secureExceptionHandler;
     VTOR[12] = (uint32_t) mtb_debugMonitorHandler;
+    return;
+}
 
+void mtb_remove_debugMonitor(){
+    // setup VTOR 
+    uint32_t * VTOR = (uint32_t *) SCB_->VTOR;
+    VTOR[12] = (uint32_t) mtb_debugMonitorHandlerEmpty;
+    return;
+}
 
+void mtb_setup_MTB(){
     // SCB_NS->VTOR = (uint32_t) VTOR;
     mtb_cleanMTB();
     mtb->MTB_TSTART |= 0b10;  // Set to use DWT_COMP1
@@ -115,16 +133,25 @@ void mtb_setup_MTB(){
 #pragma GCC pop_options
 
 void mtb_init(){
+    printf("[LOG] Setting up DWT");
 	mtb_setup_DWT();
+    printf("[LOG] Setting up MTB");
 	mtb_setup_MTB();
+    printf("[LOG] Setting up Debug Monitor");
+    mtb_setup_debugMonitor();
 	return;
 }
 
 void mtb_exit(){
-    
+
+    __disable_irq();
+
     // clean mtb buffer
     mtb_cleanMTB();
     
+    // Remove the debug monitor function handler
+    mtb_remove_debugMonitor();
+
     // deactivate MTB
     mtb->MTB_MASTER &= ~(1U << 5);
     mtb->MTB_MASTER &= ~(1U << 9);
@@ -140,5 +167,7 @@ void mtb_exit(){
     DWT_->FUNCTION2 = 0;
     DWT_->FUNCTION3 = 0;
     
+    __enable_irq();
+
     return;
 }

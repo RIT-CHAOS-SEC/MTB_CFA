@@ -2,6 +2,7 @@
 # include "mtb.h"
 # include <stdint.h>
 # include <string.h>
+# include <stdio.h>
 
 CFReport report_s;
 typedef void (*NonSecure_fpVoid)(void) __attribute__((cmse_nonsecure_call));
@@ -27,8 +28,13 @@ void vCFA_add_log(){
     //todo
 }
 
+
 error_t eCFA_init_cfa(CFReport *report_ns){
     
+
+    printf("[LOG] CFA funtion entry\n");
+
+
     report_ns->status = CFA_STATUS_STARTED;
     
     if(memcmp(report_ns->challenge, report_s.challenge, sizeof(uint32_t) * CFA_CHALLANGE_SIZE))
@@ -46,8 +52,10 @@ error_t eCFA_init_cfa(CFReport *report_ns){
     // configure the MTB
     //todo
 
+    printf("[LOG] CFA Calling Non Secure Function\n");
     // run the NSfunction
     fNSFunc();
+    printf("[LOG] CFA Returned from Non Secure Function\n");
 
     // sign the report
     // todo
@@ -62,6 +70,8 @@ error_t eCFA_init_cfa(CFReport *report_ns){
     report_ns->status = CFA_STATUS_SUCCESS;
 
     vDebug_send_report_to_UART();
+
+    printf("[LOG] CFA funtion exit\n");
 
     return CFA_STATUS_SUCCESS;
 }

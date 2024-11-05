@@ -15,7 +15,7 @@
 #include "GLCD_Config.h" /* Keil.V2M-MPS2 IOT-Kit::Board Support:Graphic LCD */
 #include "mtb.h"
 #include "core_cm33.h"
-
+#import "Secure_Functions.h"
 /* Start address of non-secure application */
 #define NONSECURE_START (0x00200000u)
 
@@ -27,47 +27,6 @@ extern int stdout_init(void);
 typedef int32_t (*NonSecure_fpParam)(uint32_t) __attribute__((cmse_nonsecure_call));
 typedef void (*NonSecure_fpVoid)(void) __attribute__((cmse_nonsecure_call));
 
-char text[] = "Hello World (secure)\r\n";
-
-/*----------------------------------------------------------------------------
-  NonSecure callback functions
- *----------------------------------------------------------------------------*/
-extern NonSecure_fpParam pfNonSecure_LED_On;
-NonSecure_fpParam pfNonSecure_LED_On = (NonSecure_fpParam)NULL;
-extern NonSecure_fpParam pfNonSecure_LED_Off;
-NonSecure_fpParam pfNonSecure_LED_Off = (NonSecure_fpParam)NULL;
-
-/*----------------------------------------------------------------------------
-  Secure functions exported to NonSecure application
- *----------------------------------------------------------------------------*/
-int32_t Secure_LED_On(uint32_t num) __attribute__((cmse_nonsecure_entry));
-int32_t Secure_LED_On(uint32_t num) { return LED_On(num); }
-
-int32_t Secure_LED_Off(uint32_t num) __attribute__((cmse_nonsecure_entry));
-int32_t Secure_LED_Off(uint32_t num) { return LED_Off(num); }
-
-void Secure_printf(char *pString) __attribute__((cmse_nonsecure_entry));
-void Secure_printf(char *pString) { printf("%s", pString); }
-
-/*----------------------------------------------------------------------------
-  Secure function for NonSecure callbacks exported to NonSecure application
- *----------------------------------------------------------------------------*/
-int32_t Secure_LED_On_callback(NonSecure_fpParam callback)
-    __attribute__((cmse_nonsecure_entry));
-int32_t Secure_LED_On_callback(NonSecure_fpParam callback)
-{
-    pfNonSecure_LED_On = callback;
-    return 0;
-}
-
-int32_t Secure_LED_Off_callback(NonSecure_fpParam callback)
-    __attribute__((cmse_nonsecure_entry));
-int32_t Secure_LED_Off_callback(NonSecure_fpParam callback)
-{
-    pfNonSecure_LED_Off = callback;
-    return 0;
-}
-
 /*----------------------------------------------------------------------------
   SysTick IRQ Handler
  *----------------------------------------------------------------------------*/
@@ -77,41 +36,42 @@ void SysTick_Handler(void)
     static uint32_t ticks = 0;
     static uint32_t ticks_printf = 0;
 
-    switch (ticks++)
-    {
-    case 10:
-        LED_On(0u);
-        break;
-    case 20:
-        LED_Off(0u);
-        break;
-    case 30:
-        if (pfNonSecure_LED_On != NULL)
-        {
-            pfNonSecure_LED_On(1u);
-        }
-        break;
-    case 50:
-        if (pfNonSecure_LED_Off != NULL)
-        {
-            pfNonSecure_LED_Off(1u);
-        }
-        break;
-    case 99:
-        ticks = 0;
-        if (ticks_printf++ == 3)
-        {
-						Secure_printf("Hellooo!!\n");
-            printf("%s\n", text);
-            ticks_printf = 0;
-        }
-        break;
-    default:
-        if (ticks > 99)
-        {
-            ticks = 0;
-        }
-    }
+    ticks++;
+    // switch (ticks++)
+    // {
+    // case 10:
+    //     LED_On(0u);
+    //     break;
+    // case 20:
+    //     LED_Off(0u);
+    //     break;
+    // case 30:
+    //     if (pfNonSecure_LED_On != NULL)
+    //     {
+    //         pfNonSecure_LED_On(1u);
+    //     }
+    //     break;
+    // case 50:
+    //     if (pfNonSecure_LED_Off != NULL)
+    //     {
+    //         pfNonSecure_LED_Off(1u);
+    //     }
+    //     break;
+    // case 99:
+    //     ticks = 0;
+    //     if (ticks_printf++ == 3)
+    //     {
+	// 					Secure_printf("Hellooo!!\n");
+    //         printf("%s\n", text);
+    //         ticks_printf = 0;
+    //     }
+    //     break;
+    // default:
+    //     if (ticks > 99)
+    //     {
+    //         ticks = 0;
+    //     }
+    // }
 }
 
 
@@ -145,8 +105,6 @@ int stdout_putchar_ (int ch) {
   while (ptrUSART->GetTxCount() != 1);
   return (ch);
 }
-
-
 //
 
 
@@ -156,12 +114,6 @@ static uint32_t x;
  *----------------------------------------------------------------------------*/
 int main(void)
 {
-	
-	
-		__asm__(
-	"\tmov R0, #0x30000;\n"
-	"\tit;\n"	
-	"\tbxeq R0;\n");
 	
     uint32_t NonSecure_StackPointer = (*((uint32_t *)(NONSECURE_START + 0u)));
     NonSecure_fpVoid NonSecure_ResetHandler =
@@ -216,13 +168,13 @@ int main(void)
 
     stdout_init(); /* Initialize Serial interface */
 
-    mtb_init();
+    // mtb_init();
 
     SysTick_Config(SystemCoreClock / 100); /* Generate interrupt each 10 ms */
 
-		while(1){
-			stdout_putchar_('A');
-		}
+		// while(1){
+		// 	stdout_putchar_('A');
+		// }
 
     NonSecure_ResetHandler();
 }

@@ -2,7 +2,7 @@
 #ifndef MTB_H
 #define MTB_H
 
-#include <arm_cmse.h>
+#include <stdint.h>
 
 #define MTB_BASE_addr 						0xE0043000
 #define MTB_MASTER_EN_MASK 				1<<31
@@ -70,6 +70,7 @@ typedef struct MTB_struct{
 #define MTB_WATERMARK_B (( (sizeof(uint32_t)* 2 * DWT_A_SIZE * 2) << 3 ) | MTB_FLOW_AUTOHALT_MASK | MTB_FLOW_AUTOSTOP_MASK)
 
 void mtb_init();
+void mtb_exit();
 
 #endif
 

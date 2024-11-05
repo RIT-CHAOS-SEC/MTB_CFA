@@ -8,8 +8,7 @@
 #include CMSIS_device_header
 #include "Board_LED.h"                             /* ::Board Support:LED */
 #include "..\IOTKit_CM33_s\Secure_Functions.h"     /* Secure Code Entry Points */
-
-
+#
 char text[] = "Hello World (non-secure)\r\n";
 
 /*----------------------------------------------------------------------------
@@ -66,7 +65,7 @@ static uint32_t x;
 
 #define MAXX 10
 #define MAXY 5
-void matmul3()
+__attribute__((section("MTBAR_MEM"))) void matmul3()
 {
     int mat[MAXX][MAXY];
     int val = 0;
@@ -90,11 +89,18 @@ void matmul3()
     return;
 }
 
+CFReport report_s = {0};
+
 int main (void)
 {
   uint32_t i;
 	
-	
+  // Register Function
+  SECURE_register_callback((void*) matmul3);
+
+  // Start CFA
+  SECURE_start_cfa(&report_s);
+
   /* exercise some floating point instructions */
   volatile uint32_t fpuType = SCB_GetFPUType(); 
   volatile float  x1 = 12.4567f;

@@ -394,6 +394,21 @@
               <FileType>1</FileType>
               <FilePath>.\stdout_USART.c</FilePath>
             </File>
+            <File>
+              <FileName>mtb.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\mtb.c</FilePath>
+            </File>
+            <File>
+              <FileName>Secure_Functions.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Secure_Functions.c</FilePath>
+            </File>
+            <File>
+              <FileName>cfa.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\cfa.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -810,6 +825,21 @@
               <FileName>stdout_USART.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\stdout_USART.c</FilePath>
+            </File>
+            <File>
+              <FileName>mtb.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\mtb.c</FilePath>
+            </File>
+            <File>
+              <FileName>Secure_Functions.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Secure_Functions.c</FilePath>
+            </File>
+            <File>
+              <FileName>cfa.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\cfa.c</FilePath>
             </File>
           </Files>
         </Group>
