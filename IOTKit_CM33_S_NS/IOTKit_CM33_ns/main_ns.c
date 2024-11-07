@@ -93,7 +93,7 @@ int main (void)
   uint32_t i;
 	
   // Register Function
-  SECURE_register_callback((void*) matmul3_entry);
+  SECURE_register_callback((void*) application_entry);
 
   // Start CFA
   SECURE_start_cfa(&report_s);

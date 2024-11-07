@@ -372,20 +372,18 @@ main:
 .LBB2_5:
 	.loc	2 169 5                         @ main_s.c:169:5
 	bl	stdout_init
-	.loc	2 171 5                         @ main_s.c:171:5
-	bl	mtb_init
-	.loc	2 173 20                        @ main_s.c:173:20
+	.loc	2 171 20                        @ main_s.c:171:20
 	movw	r0, :lower16:SystemCoreClock
 	movt	r0, :upper16:SystemCoreClock
 	ldr	r0, [r0]
 	movw	r1, #34079
 	movt	r1, #20971
-	.loc	2 173 36 is_stmt 0              @ main_s.c:173:36
+	.loc	2 171 36 is_stmt 0              @ main_s.c:171:36
 	umull	r1, r0, r0, r1
 	lsrs	r0, r0, #5
-	.loc	2 173 5                         @ main_s.c:173:5
+	.loc	2 171 5                         @ main_s.c:171:5
 	bl	SysTick_Config
-	.loc	2 179 5 is_stmt 1               @ main_s.c:179:5
+	.loc	2 177 5 is_stmt 1               @ main_s.c:177:5
 	ldr	r0, [sp, #28]
 	push.w	{r4, r5, r6, r7, r8, r9, r10, r11}
 	bic	r0, r0, #1
@@ -412,9 +410,9 @@ main:
 	vlldm	sp, {d0 - d15}
 	add	sp, #136
 	pop.w	{r4, r5, r6, r7, r8, r9, r10, r11}
-	.loc	2 180 1                         @ main_s.c:180:1
+	.loc	2 178 1                         @ main_s.c:178:1
 	ldr	r0, [sp, #36]
-	.loc	2 180 1 epilogue_begin is_stmt 0 @ main_s.c:180:1
+	.loc	2 178 1 epilogue_begin is_stmt 0 @ main_s.c:178:1
 	add	sp, #64
 	pop	{r7, pc}
 .Ltmp20:

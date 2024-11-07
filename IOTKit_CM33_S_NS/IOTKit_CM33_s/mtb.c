@@ -1,8 +1,11 @@
 #include "mtb.h"
 #include "RTE_Components.h" 
+#include <stdint.h>
+#include <stdio.h>
 #include CMSIS_device_header
 #include "core_cm33.h"
 #include "stdio.h"
+#include "stdout_USART.h"
 
 SCB_Type * SCB_ = ((SCB_Type *) SCB_BASE);
 
@@ -29,9 +32,15 @@ ITM_Type * ITM_ = ((ITM_Type       *)     ITM_BASE         ) ;
 
 void mtb_setup_DWT()
 {
+
+    // Disable Halt Mode
+    // SET_BITS(CoreDebug_->DHCSR, 16, 31, DHCSR_DEBUG_KEY);
+    // CoreDebug_->DHCSR &= ~(DHCSR_HALT_ENABLED_MASK);
+
     // Enable DWT
     CoreDebug_->DEMCR |= (DEMCR_TRCENA | DEMCR_MON_EN ); // Enable Trace and Debug
     
+
     ITM_->TCR |= (ITM_TCR_TXENA|ITM_TCR_ITMENA);
 
     // DWT_->COMP0 = (uint32_t) matmul;  // Initial Address
@@ -71,6 +80,11 @@ void mtb_setup_DWT()
     SET_BITS(DWT->FUNCTION3,10,11,0b00); // DATAVSIZE
     SET_BITS(DWT->FUNCTION3,4,5,0b11); // ACTION
     SET_BITS(DWT->FUNCTION3,0,3,0b0011); // MATCH
+    
+    printf("[LOG] CoreDebug_->DHCSR : %x\n", (uint32_t) CoreDebug_->DHCSR);
+    printf("[LOG] CoreDebug_->DEMCR : %x\n", (uint32_t) CoreDebug_->DEMCR);
+    
+
     return;
 }
 
@@ -82,31 +96,64 @@ void mtb_cleanMTB(){
     }
 }
 
-void mtb_debugMonitorHandler(){
-    printf("[LOG] Debug Monitor Handler\n");
-    if (mtb->MTB_FLOW == (MTB_WATERMARK_A)){
-        mtb->MTB_FLOW = (MTB_WATERMARK_B);
-    } else {
-        mtb->MTB_FLOW = MTB_WATERMARK_A;
-        mtb->MTB_POSITION = 0;
-    }
-    mtb->MTB_MASTER &= ~( 1U << 9 );
-    mtb->MTB_MASTER &= ~( 1U << 31 );
-    // mtb->MTB_FLOW &= ~(MTB_FLOW_AUTOSTOP_MASK|MTB_FLOW_AUTOHALT_MASK);
 
-    // while(1){};
+
+#define USE_PRINTF 1
+
+void vMTB_sendBuffer(){
+
+    // stdout_init();
+    #if USE_PRINTF == 1
+        printf("[LOG] Sending MTB Buffer\n");
+    #endif
+
+    printf("%d\n", mtb->MTB_POSITION);
+
+    uint32_t * ptr = (uint32_t *) mtb->MTB_BASE;
+#if USE_PRINTF == 1
+    for (int i = 0; i < mtb->MTB_POSITION/4; i++){
+        printf("%x;", ptr[i]);
+
+    }
+#else
+    stdout_putbuffer(ptr, mtb->MTB_POSITION/4, 2);
+
+#endif
+    #if USE_PRINTF == 1
+        printf("\n[LOG] MTB Buffer Sent\n");
+    #endif
+
+    return;
+}
+
+void mtb_debugMonitorHandler(){
+
+    printf("[LOG] Debug Monitor Handler\n");
+
+    // Deactivate halt mode
+    mtb->MTB_MASTER &= ~( 1U << 9 );
+    
+    // todo 
+    // hash buffer
+    
+    // Send Buffer    
+    vMTB_sendBuffer();
+
+
+    mtb->MTB_POSITION = 0;
+    // // printf("[LOG] Debug Monitor Handler\n");
+    // if (mtb->MTB_FLOW == (MTB_WATERMARK_A)){
+    //     mtb->MTB_FLOW = (MTB_WATERMARK_B);
+    // } else {
+    //     mtb->MTB_FLOW = MTB_WATERMARK_A;
+    //     mtb->MTB_POSITION = 0;
+    // }
+
     return;
 }
 
 void mtb_debugMonitorHandlerEmpty(){
     while(1){};
-}
-
-void mtb_setup_debugMonitor(){
-    // setup VTOR 
-    uint32_t * VTOR = (uint32_t *) SCB_->VTOR;
-    VTOR[12] = (uint32_t) mtb_debugMonitorHandler;
-    return;
 }
 
 void mtb_remove_debugMonitor(){
@@ -116,12 +163,26 @@ void mtb_remove_debugMonitor(){
     return;
 }
 
+void mtb_config_interrupthandlers(){
+    // Setting PendSV handler
+    uint32_t * VTOR = (uint32_t *) SCB->VTOR;
+
+    // Setting Debug Monitor handler
+    VTOR[12] = (uint32_t) mtb_debugMonitorHandler;
+
+    // Dont do this in real life :). This is just to bypass a uart problem with interupt priority
+    NVIC_SetPriority(DebugMonitor_IRQn, (1 << __NVIC_PRIO_BITS) - 1);
+    return;
+}
+
+
 void mtb_setup_MTB(){
     // SCB_NS->VTOR = (uint32_t) VTOR;
+    printf("[LOG] Setting up MTB\n");
     mtb_cleanMTB();
     mtb->MTB_TSTART |= 0b10;  // Set to use DWT_COMP1
     mtb->MTB_TSTOP  |= 0b1000;  // Set to use DWT_COMP3
-    // mtb->MTB_FLOW = MTB_WATERMARK_A;
+    mtb->MTB_FLOW = MTB_WATERMARK_A;
     mtb->MTB_POSITION = 0;
     mtb->MTB_MASTER |= MTB_MASTER_TSTARTEN_MASK;
     mtb->MTB_MASTER |= MTB_MASTER_MASK_MASK;
@@ -131,12 +192,12 @@ void mtb_setup_MTB(){
 #pragma GCC pop_options
 
 void mtb_init(){
-    printf("[LOG] Setting up DWT");
+    printf("[LOG] Setting up DWT\n");
 	mtb_setup_DWT();
-    printf("[LOG] Setting up MTB");
+    printf("[LOG] Setting up MTB\n");
 	mtb_setup_MTB();
-    printf("[LOG] Setting up Debug Monitor");
-    mtb_setup_debugMonitor();
+    printf("[LOG] Setting up Interrupt Handlers\n");
+    mtb_config_interrupthandlers();
 	return;
 }
 
@@ -167,5 +228,30 @@ void mtb_exit(){
     
     __enable_irq();
 
+    return;
+}
+
+void __debug_MTB_Registers(){
+    printf("[LOG] Entering Debug MTB Registers\n");
+    printf("[LOG] MTB_BASE : %x\n", (uint32_t) mtb->MTB_BASE);
+    printf("[LOG] MTB_POSITION : %x\n", (uint32_t) mtb->MTB_POSITION);
+    printf("[LOG] MTB_MASTER : %x\n", (uint32_t) mtb->MTB_MASTER);
+    printf("[LOG] MTB_FLOW : %x\n", (uint32_t) mtb->MTB_FLOW);
+    printf("[LOG] MTB_TSTART : %x\n", (uint32_t) mtb->MTB_TSTART);
+    printf("[LOG] MTB_TSTOP : %x\n", (uint32_t) mtb->MTB_TSTOP);
+    printf("[LOG] MTB_SECURE : %x\n", (uint32_t) mtb->MTB_SECURE);
+    return;
+}
+
+void __debug_DWT_Registers(){
+    printf("[LOG] Entering Debug DWT Registers\n");
+    printf("[LOG] DWT_COMP0 : %x\n", (uint32_t) DWT_->COMP0);
+    printf("[LOG] DWT_COMP1 : %x\n", (uint32_t) DWT_->COMP1);
+    printf("[LOG] DWT_COMP2 : %x\n", (uint32_t) DWT_->COMP2);
+    printf("[LOG] DWT_COMP3 : %x\n", (uint32_t) DWT_->COMP3);
+    printf("[LOG] DWT_FUNCTION0 : %x\n", (uint32_t) DWT_->FUNCTION0);
+    printf("[LOG] DWT_FUNCTION1 : %x\n", (uint32_t) DWT_->FUNCTION1);
+    printf("[LOG] DWT_FUNCTION2 : %x\n", (uint32_t) DWT_->FUNCTION2);
+    printf("[LOG] DWT_FUNCTION3 : %x\n", (uint32_t) DWT_->FUNCTION3);
     return;
 }

@@ -21,11 +21,11 @@
 
 #define __ROM_HALF_SIZE 0x00100000
 
-#define __MTBAR_BASE    0x00300000
-#define __MTBAR_SIZE    0x80000
-
-#define __MTBDR_BASE    0x00380000
+#define __MTBDR_BASE    0x00300000
 #define __MTBDR_SIZE    0x80000
+
+#define __MTBAR_BASE    0x00380000
+#define __MTBAR_SIZE    0x80000
 
 
 

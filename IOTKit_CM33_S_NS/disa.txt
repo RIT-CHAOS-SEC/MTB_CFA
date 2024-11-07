@@ -366,7 +366,7 @@ Disassembly of section ER_ROM:
   20069e:	b088      	sub	sp, #32
   2006a0:	2000      	movs	r0, #0
   2006a2:	9005      	str	r0, [sp, #20]
-  2006a4:	f240 20d1 	movw	r0, #721	@ 0x2d1
+  2006a4:	f240 0001 	movw	r0, #1
   2006a8:	f2c0 0030 	movt	r0, #48	@ 0x30
   2006ac:	f000 f898 	bl	2007e0 <main+0x144>
   2006b0:	f240 0024 	movw	r0, #36	@ 0x24
@@ -392,7 +392,7 @@ Disassembly of section ER_ROM:
   2006f8:	f3ef 8008 	mrs	r0, MSP
   2006fc:	9006      	str	r0, [sp, #24]
   2006fe:	9806      	ldr	r0, [sp, #24]
-  200700:	f240 2160 	movw	r1, #608	@ 0x260
+  200700:	f640 0188 	movw	r1, #2184	@ 0x888
   200704:	f6c2 0120 	movt	r1, #10272	@ 0x2820
   200708:	6008      	str	r0, [r1, #0]
   20070a:	f3ef 8009 	mrs	r0, PSP
@@ -474,25 +474,25 @@ Disassembly of section ER_ROM:
   2007c2:	f6c2 0020 	movt	r0, #10272	@ 0x2820
   2007c6:	f000 f81f 	bl	200808 <main+0x16c>
   2007ca:	e7b0      	b.n	20072e <main+0x92>
-  2007cc:	f64f 6c11 	movw	ip, #65041	@ 0xfe11
+  2007cc:	f64f 6c19 	movw	ip, #65049	@ 0xfe19
   2007d0:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
   2007d4:	4760      	bx	ip
-  2007d6:	f64f 6c19 	movw	ip, #65049	@ 0xfe19
+  2007d6:	f64f 6c21 	movw	ip, #65057	@ 0xfe21
   2007da:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
   2007de:	4760      	bx	ip
-  2007e0:	f64f 6c01 	movw	ip, #65025	@ 0xfe01
+  2007e0:	f64f 6c09 	movw	ip, #65033	@ 0xfe09
   2007e4:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
   2007e8:	4760      	bx	ip
-  2007ea:	f64f 6c09 	movw	ip, #65033	@ 0xfe09
+  2007ea:	f64f 6c11 	movw	ip, #65041	@ 0xfe11
   2007ee:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
   2007f2:	4760      	bx	ip
-  2007f4:	f64f 6c29 	movw	ip, #65065	@ 0xfe29
+  2007f4:	f64f 6c31 	movw	ip, #65073	@ 0xfe31
   2007f8:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
   2007fc:	4760      	bx	ip
-  2007fe:	f64f 6c31 	movw	ip, #65073	@ 0xfe31
+  2007fe:	f64f 6c39 	movw	ip, #65081	@ 0xfe39
   200802:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
   200806:	4760      	bx	ip
-  200808:	f64f 6c21 	movw	ip, #65057	@ 0xfe21
+  200808:	f64f 6c29 	movw	ip, #65065	@ 0xfe29
   20080c:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
   200810:	4760      	bx	ip
 
@@ -509,12 +509,12 @@ Disassembly of section ER_ROM:
 
 0020082c <Region$$Table$$Base>:
   20082c:	0020086c 	.word	0x0020086c
-  200830:	00300000 	.word	0x00300000
-  200834:	000002d8 	.word	0x000002d8
+  200830:	00380000 	.word	0x00380000
+  200834:	00000350 	.word	0x00000350
   200838:	00200464 	.word	0x00200464
-  20083c:	00200b44 	.word	0x00200b44
-  200840:	00380000 	.word	0x00380000
-  200844:	00000080 	.word	0x00000080
+  20083c:	00200bbc 	.word	0x00200bbc
+  200840:	00300000 	.word	0x00300000
+  200844:	00000008 	.word	0x00000008
   200848:	00200464 	.word	0x00200464
   20084c:	00200bc4 	.word	0x00200bc4
   200850:	28200000 	.word	0x28200000
@@ -522,436 +522,436 @@ Disassembly of section ER_ROM:
   200858:	00200464 	.word	0x00200464
   20085c:	00200be4 	.word	0x00200be4
   200860:	28200020 	.word	0x28200020
-  200864:	00000244 	.word	0x00000244
+  200864:	0000086c 	.word	0x0000086c
   200868:	00200484 	.word	0x00200484
 
 Disassembly of section ER_MTBAR:
 
-00300000 <nopes>:
-  300000:	bf00      	nop
-  300002:	bf00      	nop
-  300004:	bf00      	nop
-  300006:	bf00      	nop
-  300008:	bf00      	nop
-  30000a:	bf00      	nop
-  30000c:	bf00      	nop
-  30000e:	bf00      	nop
-  300010:	bf00      	nop
-  300012:	bf00      	nop
-  300014:	bf00      	nop
-  300016:	bf00      	nop
-  300018:	bf00      	nop
-  30001a:	bf00      	nop
-  30001c:	bf00      	nop
-  30001e:	bf00      	nop
-  300020:	bf00      	nop
-  300022:	bf00      	nop
-  300024:	bf00      	nop
-  300026:	bf00      	nop
-  300028:	bf00      	nop
-  30002a:	bf00      	nop
-  30002c:	bf00      	nop
-  30002e:	bf00      	nop
-  300030:	bf00      	nop
-  300032:	bf00      	nop
-  300034:	bf00      	nop
-  300036:	bf00      	nop
-  300038:	bf00      	nop
-  30003a:	bf00      	nop
-  30003c:	bf00      	nop
-  30003e:	bf00      	nop
-  300040:	bf00      	nop
-  300042:	bf00      	nop
-  300044:	bf00      	nop
-  300046:	bf00      	nop
-  300048:	bf00      	nop
-  30004a:	bf00      	nop
-  30004c:	bf00      	nop
-  30004e:	bf00      	nop
-  300050:	bf00      	nop
-  300052:	bf00      	nop
-  300054:	bf00      	nop
-  300056:	bf00      	nop
-  300058:	bf00      	nop
-  30005a:	bf00      	nop
-  30005c:	bf00      	nop
-  30005e:	bf00      	nop
-  300060:	bf00      	nop
-  300062:	bf00      	nop
-  300064:	bf00      	nop
-  300066:	bf00      	nop
-  300068:	bf00      	nop
-  30006a:	bf00      	nop
-  30006c:	bf00      	nop
-  30006e:	bf00      	nop
-  300070:	bf00      	nop
-  300072:	bf00      	nop
-  300074:	bf00      	nop
-  300076:	bf00      	nop
-  300078:	bf00      	nop
-  30007a:	bf00      	nop
-  30007c:	bf00      	nop
-  30007e:	bf00      	nop
-  300080:	bf00      	nop
-  300082:	bf00      	nop
-  300084:	bf00      	nop
-  300086:	bf00      	nop
-  300088:	bf00      	nop
-  30008a:	bf00      	nop
-  30008c:	bf00      	nop
-  30008e:	bf00      	nop
-  300090:	bf00      	nop
-  300092:	bf00      	nop
-  300094:	bf00      	nop
-  300096:	bf00      	nop
-  300098:	bf00      	nop
-  30009a:	bf00      	nop
-  30009c:	bf00      	nop
-  30009e:	bf00      	nop
-  3000a0:	bf00      	nop
-  3000a2:	bf00      	nop
-  3000a4:	bf00      	nop
-  3000a6:	bf00      	nop
-  3000a8:	bf00      	nop
-  3000aa:	bf00      	nop
-  3000ac:	bf00      	nop
-  3000ae:	bf00      	nop
-  3000b0:	bf00      	nop
-  3000b2:	bf00      	nop
-  3000b4:	bf00      	nop
-  3000b6:	bf00      	nop
-  3000b8:	bf00      	nop
-  3000ba:	bf00      	nop
-  3000bc:	bf00      	nop
-  3000be:	bf00      	nop
-  3000c0:	bf00      	nop
-  3000c2:	bf00      	nop
-  3000c4:	bf00      	nop
-  3000c6:	bf00      	nop
-  3000c8:	bf00      	nop
-  3000ca:	bf00      	nop
-  3000cc:	bf00      	nop
-  3000ce:	bf00      	nop
-  3000d0:	bf00      	nop
-  3000d2:	bf00      	nop
-  3000d4:	bf00      	nop
-  3000d6:	bf00      	nop
-  3000d8:	bf00      	nop
-  3000da:	bf00      	nop
-  3000dc:	bf00      	nop
-  3000de:	bf00      	nop
-  3000e0:	bf00      	nop
-  3000e2:	bf00      	nop
-  3000e4:	bf00      	nop
-  3000e6:	bf00      	nop
-  3000e8:	bf00      	nop
-  3000ea:	bf00      	nop
-  3000ec:	bf00      	nop
-  3000ee:	bf00      	nop
-  3000f0:	bf00      	nop
-  3000f2:	bf00      	nop
-  3000f4:	bf00      	nop
-  3000f6:	bf00      	nop
-  3000f8:	bf00      	nop
-  3000fa:	bf00      	nop
-  3000fc:	bf00      	nop
-  3000fe:	bf00      	nop
-  300100:	bf00      	nop
-  300102:	bf00      	nop
-  300104:	bf00      	nop
-  300106:	bf00      	nop
-  300108:	bf00      	nop
-  30010a:	bf00      	nop
-  30010c:	bf00      	nop
-  30010e:	bf00      	nop
-  300110:	bf00      	nop
-  300112:	bf00      	nop
-  300114:	bf00      	nop
-  300116:	bf00      	nop
-  300118:	bf00      	nop
-  30011a:	bf00      	nop
-  30011c:	bf00      	nop
-  30011e:	bf00      	nop
-  300120:	bf00      	nop
-  300122:	bf00      	nop
-  300124:	bf00      	nop
-  300126:	bf00      	nop
-  300128:	bf00      	nop
-  30012a:	bf00      	nop
-  30012c:	bf00      	nop
-  30012e:	bf00      	nop
-  300130:	bf00      	nop
-  300132:	bf00      	nop
-  300134:	bf00      	nop
-  300136:	bf00      	nop
-  300138:	bf00      	nop
-  30013a:	bf00      	nop
-  30013c:	bf00      	nop
-  30013e:	bf00      	nop
-  300140:	bf00      	nop
-  300142:	bf00      	nop
-  300144:	bf00      	nop
-  300146:	bf00      	nop
-  300148:	bf00      	nop
-  30014a:	bf00      	nop
-  30014c:	bf00      	nop
-  30014e:	bf00      	nop
-  300150:	bf00      	nop
-  300152:	bf00      	nop
-  300154:	bf00      	nop
-  300156:	bf00      	nop
-  300158:	bf00      	nop
-  30015a:	bf00      	nop
-  30015c:	bf00      	nop
-  30015e:	bf00      	nop
-  300160:	bf00      	nop
-  300162:	bf00      	nop
-  300164:	bf00      	nop
-  300166:	bf00      	nop
-  300168:	bf00      	nop
-  30016a:	bf00      	nop
-  30016c:	bf00      	nop
-  30016e:	bf00      	nop
-  300170:	bf00      	nop
-  300172:	bf00      	nop
-  300174:	bf00      	nop
-  300176:	bf00      	nop
-  300178:	bf00      	nop
-  30017a:	bf00      	nop
-  30017c:	bf00      	nop
-  30017e:	bf00      	nop
-  300180:	bf00      	nop
-  300182:	bf00      	nop
-  300184:	bf00      	nop
-  300186:	bf00      	nop
-  300188:	bf00      	nop
-  30018a:	bf00      	nop
-  30018c:	bf00      	nop
-  30018e:	bf00      	nop
-  300190:	bf00      	nop
-  300192:	bf00      	nop
-  300194:	bf00      	nop
-  300196:	bf00      	nop
-  300198:	bf00      	nop
-  30019a:	bf00      	nop
-  30019c:	bf00      	nop
-  30019e:	bf00      	nop
-  3001a0:	bf00      	nop
-  3001a2:	bf00      	nop
-  3001a4:	bf00      	nop
-  3001a6:	bf00      	nop
-  3001a8:	bf00      	nop
-  3001aa:	bf00      	nop
-  3001ac:	bf00      	nop
-  3001ae:	bf00      	nop
-  3001b0:	bf00      	nop
-  3001b2:	bf00      	nop
-  3001b4:	bf00      	nop
-  3001b6:	bf00      	nop
-  3001b8:	bf00      	nop
-  3001ba:	bf00      	nop
-  3001bc:	bf00      	nop
-  3001be:	bf00      	nop
-  3001c0:	bf00      	nop
-  3001c2:	bf00      	nop
-  3001c4:	bf00      	nop
-  3001c6:	bf00      	nop
-  3001c8:	bf00      	nop
-  3001ca:	bf00      	nop
-  3001cc:	bf00      	nop
-  3001ce:	bf00      	nop
-  3001d0:	bf00      	nop
-  3001d2:	bf00      	nop
-  3001d4:	bf00      	nop
-  3001d6:	bf00      	nop
-  3001d8:	bf00      	nop
-  3001da:	bf00      	nop
-  3001dc:	bf00      	nop
-  3001de:	bf00      	nop
-  3001e0:	bf00      	nop
-  3001e2:	bf00      	nop
-  3001e4:	bf00      	nop
-  3001e6:	bf00      	nop
-  3001e8:	bf00      	nop
-  3001ea:	bf00      	nop
-  3001ec:	bf00      	nop
-  3001ee:	bf00      	nop
-  3001f0:	bf00      	nop
-  3001f2:	bf00      	nop
-  3001f4:	bf00      	nop
-  3001f6:	bf00      	nop
-  3001f8:	bf00      	nop
-  3001fa:	bf00      	nop
-  3001fc:	bf00      	nop
-  3001fe:	bf00      	nop
-  300200:	bf00      	nop
-  300202:	bf00      	nop
-  300204:	bf00      	nop
-  300206:	bf00      	nop
-  300208:	bf00      	nop
-  30020a:	bf00      	nop
-  30020c:	bf00      	nop
-  30020e:	bf00      	nop
-  300210:	bf00      	nop
-  300212:	bf00      	nop
-  300214:	bf00      	nop
-  300216:	bf00      	nop
-  300218:	bf00      	nop
-  30021a:	bf00      	nop
-  30021c:	bf00      	nop
-  30021e:	bf00      	nop
-  300220:	bf00      	nop
-  300222:	bf00      	nop
-  300224:	bf00      	nop
-  300226:	bf00      	nop
-  300228:	bf00      	nop
-  30022a:	bf00      	nop
-  30022c:	bf00      	nop
-  30022e:	bf00      	nop
-  300230:	bf00      	nop
-  300232:	bf00      	nop
-  300234:	bf00      	nop
-  300236:	bf00      	nop
-  300238:	bf00      	nop
-  30023a:	bf00      	nop
-  30023c:	bf00      	nop
-  30023e:	bf00      	nop
-  300240:	bf00      	nop
-  300242:	bf00      	nop
-  300244:	bf00      	nop
-  300246:	bf00      	nop
-  300248:	bf00      	nop
-  30024a:	bf00      	nop
-  30024c:	bf00      	nop
-  30024e:	bf00      	nop
-  300250:	bf00      	nop
-  300252:	bf00      	nop
-  300254:	bf00      	nop
-  300256:	bf00      	nop
-  300258:	bf00      	nop
-  30025a:	bf00      	nop
-  30025c:	bf00      	nop
-  30025e:	bf00      	nop
-  300260:	bf00      	nop
-  300262:	bf00      	nop
-  300264:	bf00      	nop
-  300266:	bf00      	nop
-  300268:	bf00      	nop
-  30026a:	bf00      	nop
-  30026c:	bf00      	nop
-  30026e:	bf00      	nop
-  300270:	bf00      	nop
-  300272:	bf00      	nop
-  300274:	bf00      	nop
-  300276:	bf00      	nop
-  300278:	bf00      	nop
-  30027a:	bf00      	nop
-  30027c:	bf00      	nop
-  30027e:	bf00      	nop
-  300280:	bf00      	nop
-  300282:	bf00      	nop
-  300284:	bf00      	nop
-  300286:	bf00      	nop
-  300288:	bf00      	nop
-  30028a:	bf00      	nop
-  30028c:	bf00      	nop
-  30028e:	bf00      	nop
-  300290:	bf00      	nop
-  300292:	bf00      	nop
-  300294:	bf00      	nop
-  300296:	bf00      	nop
-  300298:	bf00      	nop
-  30029a:	bf00      	nop
-  30029c:	bf00      	nop
-  30029e:	bf00      	nop
-  3002a0:	bf00      	nop
-  3002a2:	bf00      	nop
-  3002a4:	bf00      	nop
-  3002a6:	bf00      	nop
-  3002a8:	bf00      	nop
-  3002aa:	bf00      	nop
-  3002ac:	bf00      	nop
-  3002ae:	bf00      	nop
-  3002b0:	bf00      	nop
-  3002b2:	bf00      	nop
-  3002b4:	bf00      	nop
-  3002b6:	bf00      	nop
-  3002b8:	bf00      	nop
-  3002ba:	bf00      	nop
-  3002bc:	bf00      	nop
-  3002be:	bf00      	nop
-  3002c0:	bf00      	nop
-  3002c2:	bf00      	nop
-  3002c4:	bf00      	nop
-  3002c6:	bf00      	nop
-  3002c8:	bf00      	nop
-  3002ca:	bf00      	nop
-  3002cc:	bf00      	nop
-  3002ce:	bf00      	nop
+00380000 <nopes>:
+  380000:	bf00      	nop
+  380002:	bf00      	nop
+  380004:	bf00      	nop
+  380006:	bf00      	nop
+  380008:	bf00      	nop
+  38000a:	bf00      	nop
+  38000c:	bf00      	nop
+  38000e:	bf00      	nop
+  380010:	bf00      	nop
+  380012:	bf00      	nop
+  380014:	bf00      	nop
+  380016:	bf00      	nop
+  380018:	bf00      	nop
+  38001a:	bf00      	nop
+  38001c:	bf00      	nop
+  38001e:	bf00      	nop
+  380020:	bf00      	nop
+  380022:	bf00      	nop
+  380024:	bf00      	nop
+  380026:	bf00      	nop
+  380028:	bf00      	nop
+  38002a:	bf00      	nop
+  38002c:	bf00      	nop
+  38002e:	bf00      	nop
+  380030:	bf00      	nop
+  380032:	bf00      	nop
+  380034:	bf00      	nop
+  380036:	bf00      	nop
+  380038:	bf00      	nop
+  38003a:	bf00      	nop
+  38003c:	bf00      	nop
+  38003e:	bf00      	nop
+  380040:	bf00      	nop
+  380042:	bf00      	nop
+  380044:	bf00      	nop
+  380046:	bf00      	nop
+  380048:	bf00      	nop
+  38004a:	bf00      	nop
+  38004c:	bf00      	nop
+  38004e:	bf00      	nop
+  380050:	bf00      	nop
+  380052:	bf00      	nop
+  380054:	bf00      	nop
+  380056:	bf00      	nop
+  380058:	bf00      	nop
+  38005a:	bf00      	nop
+  38005c:	bf00      	nop
+  38005e:	bf00      	nop
+  380060:	bf00      	nop
+  380062:	bf00      	nop
+  380064:	bf00      	nop
+  380066:	bf00      	nop
+  380068:	bf00      	nop
+  38006a:	bf00      	nop
+  38006c:	bf00      	nop
+  38006e:	bf00      	nop
+  380070:	bf00      	nop
+  380072:	bf00      	nop
+  380074:	bf00      	nop
+  380076:	bf00      	nop
+  380078:	bf00      	nop
+  38007a:	bf00      	nop
+  38007c:	bf00      	nop
+  38007e:	bf00      	nop
+  380080:	bf00      	nop
+  380082:	bf00      	nop
+  380084:	bf00      	nop
+  380086:	bf00      	nop
+  380088:	bf00      	nop
+  38008a:	bf00      	nop
+  38008c:	bf00      	nop
+  38008e:	bf00      	nop
+  380090:	bf00      	nop
+  380092:	bf00      	nop
+  380094:	bf00      	nop
+  380096:	bf00      	nop
+  380098:	bf00      	nop
+  38009a:	bf00      	nop
+  38009c:	bf00      	nop
+  38009e:	bf00      	nop
+  3800a0:	bf00      	nop
+  3800a2:	bf00      	nop
+  3800a4:	bf00      	nop
+  3800a6:	bf00      	nop
+  3800a8:	bf00      	nop
+  3800aa:	bf00      	nop
+  3800ac:	bf00      	nop
+  3800ae:	bf00      	nop
+  3800b0:	bf00      	nop
+  3800b2:	bf00      	nop
+  3800b4:	bf00      	nop
+  3800b6:	bf00      	nop
+  3800b8:	bf00      	nop
+  3800ba:	bf00      	nop
+  3800bc:	bf00      	nop
+  3800be:	bf00      	nop
+  3800c0:	bf00      	nop
+  3800c2:	bf00      	nop
+  3800c4:	bf00      	nop
+  3800c6:	bf00      	nop
+  3800c8:	bf00      	nop
+  3800ca:	bf00      	nop
+  3800cc:	bf00      	nop
+  3800ce:	bf00      	nop
+  3800d0:	bf00      	nop
+  3800d2:	bf00      	nop
+  3800d4:	bf00      	nop
+  3800d6:	bf00      	nop
+  3800d8:	bf00      	nop
+  3800da:	bf00      	nop
+  3800dc:	bf00      	nop
+  3800de:	bf00      	nop
+  3800e0:	bf00      	nop
+  3800e2:	bf00      	nop
+  3800e4:	bf00      	nop
+  3800e6:	bf00      	nop
+  3800e8:	bf00      	nop
+  3800ea:	bf00      	nop
+  3800ec:	bf00      	nop
+  3800ee:	bf00      	nop
+  3800f0:	bf00      	nop
+  3800f2:	bf00      	nop
+  3800f4:	bf00      	nop
+  3800f6:	bf00      	nop
+  3800f8:	bf00      	nop
+  3800fa:	bf00      	nop
+  3800fc:	bf00      	nop
+  3800fe:	bf00      	nop
+  380100:	bf00      	nop
+  380102:	bf00      	nop
+  380104:	bf00      	nop
+  380106:	bf00      	nop
+  380108:	bf00      	nop
+  38010a:	bf00      	nop
+  38010c:	bf00      	nop
+  38010e:	bf00      	nop
+  380110:	bf00      	nop
+  380112:	bf00      	nop
+  380114:	bf00      	nop
+  380116:	bf00      	nop
+  380118:	bf00      	nop
+  38011a:	bf00      	nop
+  38011c:	bf00      	nop
+  38011e:	bf00      	nop
+  380120:	bf00      	nop
+  380122:	bf00      	nop
+  380124:	bf00      	nop
+  380126:	bf00      	nop
+  380128:	bf00      	nop
+  38012a:	bf00      	nop
+  38012c:	bf00      	nop
+  38012e:	bf00      	nop
+  380130:	bf00      	nop
+  380132:	bf00      	nop
+  380134:	bf00      	nop
+  380136:	bf00      	nop
+  380138:	bf00      	nop
+  38013a:	bf00      	nop
+  38013c:	bf00      	nop
+  38013e:	bf00      	nop
+  380140:	bf00      	nop
+  380142:	bf00      	nop
+  380144:	bf00      	nop
+  380146:	bf00      	nop
+  380148:	bf00      	nop
+  38014a:	bf00      	nop
+  38014c:	bf00      	nop
+  38014e:	bf00      	nop
+  380150:	bf00      	nop
+  380152:	bf00      	nop
+  380154:	bf00      	nop
+  380156:	bf00      	nop
+  380158:	bf00      	nop
+  38015a:	bf00      	nop
+  38015c:	bf00      	nop
+  38015e:	bf00      	nop
+  380160:	bf00      	nop
+  380162:	bf00      	nop
+  380164:	bf00      	nop
+  380166:	bf00      	nop
+  380168:	bf00      	nop
+  38016a:	bf00      	nop
+  38016c:	bf00      	nop
+  38016e:	bf00      	nop
+  380170:	bf00      	nop
+  380172:	bf00      	nop
+  380174:	bf00      	nop
+  380176:	bf00      	nop
+  380178:	bf00      	nop
+  38017a:	bf00      	nop
+  38017c:	bf00      	nop
+  38017e:	bf00      	nop
+  380180:	bf00      	nop
+  380182:	bf00      	nop
+  380184:	bf00      	nop
+  380186:	bf00      	nop
+  380188:	bf00      	nop
+  38018a:	bf00      	nop
+  38018c:	bf00      	nop
+  38018e:	bf00      	nop
+  380190:	bf00      	nop
+  380192:	bf00      	nop
+  380194:	bf00      	nop
+  380196:	bf00      	nop
+  380198:	bf00      	nop
+  38019a:	bf00      	nop
+  38019c:	bf00      	nop
+  38019e:	bf00      	nop
+  3801a0:	bf00      	nop
+  3801a2:	bf00      	nop
+  3801a4:	bf00      	nop
+  3801a6:	bf00      	nop
+  3801a8:	bf00      	nop
+  3801aa:	bf00      	nop
+  3801ac:	bf00      	nop
+  3801ae:	bf00      	nop
+  3801b0:	bf00      	nop
+  3801b2:	bf00      	nop
+  3801b4:	bf00      	nop
+  3801b6:	bf00      	nop
+  3801b8:	bf00      	nop
+  3801ba:	bf00      	nop
+  3801bc:	bf00      	nop
+  3801be:	bf00      	nop
+  3801c0:	bf00      	nop
+  3801c2:	bf00      	nop
+  3801c4:	bf00      	nop
+  3801c6:	bf00      	nop
+  3801c8:	bf00      	nop
+  3801ca:	bf00      	nop
+  3801cc:	bf00      	nop
+  3801ce:	bf00      	nop
+  3801d0:	bf00      	nop
+  3801d2:	bf00      	nop
+  3801d4:	bf00      	nop
+  3801d6:	bf00      	nop
+  3801d8:	bf00      	nop
+  3801da:	bf00      	nop
+  3801dc:	bf00      	nop
+  3801de:	bf00      	nop
+  3801e0:	bf00      	nop
+  3801e2:	bf00      	nop
+  3801e4:	bf00      	nop
+  3801e6:	bf00      	nop
+  3801e8:	bf00      	nop
+  3801ea:	bf00      	nop
+  3801ec:	bf00      	nop
+  3801ee:	bf00      	nop
+  3801f0:	bf00      	nop
+  3801f2:	bf00      	nop
+  3801f4:	bf00      	nop
+  3801f6:	bf00      	nop
+  3801f8:	bf00      	nop
+  3801fa:	bf00      	nop
+  3801fc:	bf00      	nop
+  3801fe:	bf00      	nop
+  380200:	bf00      	nop
+  380202:	bf00      	nop
+  380204:	bf00      	nop
+  380206:	bf00      	nop
+  380208:	bf00      	nop
+  38020a:	bf00      	nop
+  38020c:	bf00      	nop
+  38020e:	bf00      	nop
+  380210:	bf00      	nop
+  380212:	bf00      	nop
+  380214:	bf00      	nop
+  380216:	bf00      	nop
+  380218:	bf00      	nop
+  38021a:	bf00      	nop
+  38021c:	bf00      	nop
+  38021e:	bf00      	nop
+  380220:	bf00      	nop
+  380222:	bf00      	nop
+  380224:	bf00      	nop
+  380226:	bf00      	nop
+  380228:	bf00      	nop
+  38022a:	bf00      	nop
+  38022c:	bf00      	nop
+  38022e:	bf00      	nop
+  380230:	bf00      	nop
+  380232:	bf00      	nop
+  380234:	bf00      	nop
+  380236:	bf00      	nop
+  380238:	bf00      	nop
+  38023a:	bf00      	nop
+  38023c:	bf00      	nop
+  38023e:	bf00      	nop
+  380240:	bf00      	nop
+  380242:	bf00      	nop
+  380244:	bf00      	nop
+  380246:	bf00      	nop
+  380248:	bf00      	nop
+  38024a:	bf00      	nop
+  38024c:	bf00      	nop
+  38024e:	bf00      	nop
+  380250:	bf00      	nop
+  380252:	bf00      	nop
+  380254:	bf00      	nop
+  380256:	bf00      	nop
+  380258:	bf00      	nop
+  38025a:	bf00      	nop
+  38025c:	bf00      	nop
+  38025e:	bf00      	nop
+  380260:	bf00      	nop
+  380262:	bf00      	nop
+  380264:	bf00      	nop
+  380266:	bf00      	nop
+  380268:	bf00      	nop
+  38026a:	bf00      	nop
+  38026c:	bf00      	nop
+  38026e:	bf00      	nop
+  380270:	bf00      	nop
+  380272:	bf00      	nop
+  380274:	bf00      	nop
+  380276:	bf00      	nop
+  380278:	bf00      	nop
+  38027a:	bf00      	nop
+  38027c:	bf00      	nop
+  38027e:	bf00      	nop
+  380280:	bf00      	nop
+  380282:	bf00      	nop
+  380284:	bf00      	nop
+  380286:	bf00      	nop
+  380288:	bf00      	nop
+  38028a:	bf00      	nop
+  38028c:	bf00      	nop
+  38028e:	bf00      	nop
+  380290:	bf00      	nop
+  380292:	bf00      	nop
+  380294:	bf00      	nop
+  380296:	bf00      	nop
+  380298:	bf00      	nop
+  38029a:	bf00      	nop
+  38029c:	bf00      	nop
+  38029e:	bf00      	nop
+  3802a0:	bf00      	nop
+  3802a2:	bf00      	nop
+  3802a4:	bf00      	nop
+  3802a6:	bf00      	nop
+  3802a8:	bf00      	nop
+  3802aa:	bf00      	nop
+  3802ac:	bf00      	nop
+  3802ae:	bf00      	nop
+  3802b0:	bf00      	nop
+  3802b2:	bf00      	nop
+  3802b4:	bf00      	nop
+  3802b6:	bf00      	nop
+  3802b8:	bf00      	nop
+  3802ba:	bf00      	nop
+  3802bc:	bf00      	nop
+  3802be:	bf00      	nop
+  3802c0:	bf00      	nop
+  3802c2:	bf00      	nop
+  3802c4:	bf00      	nop
+  3802c6:	bf00      	nop
+  3802c8:	bf00      	nop
+  3802ca:	bf00      	nop
+  3802cc:	bf00      	nop
+  3802ce:	bf00      	nop
 
-003002d0 <matmul3_entry>:
-  3002d0:	b580      	push	{r7, lr}
-  3002d2:	f07f fe95 	bl	380000 <matmul3>
-  3002d6:	bd80      	pop	{r7, pc}
+003802d0 <application>:
+  3802d0:	b0b5      	sub	sp, #212	@ 0xd4
+  3802d2:	2000      	movs	r0, #0
+  3802d4:	9002      	str	r0, [sp, #8]
+  3802d6:	9802      	ldr	r0, [sp, #8]
+  3802d8:	2801      	cmp	r0, #1
+  3802da:	d104      	bne.n	3802e6 <application+0x16>
+  3802dc:	e7ff      	b.n	3802de <application+0xe>
+  3802de:	9802      	ldr	r0, [sp, #8]
+  3802e0:	3001      	adds	r0, #1
+  3802e2:	9002      	str	r0, [sp, #8]
+  3802e4:	e003      	b.n	3802ee <application+0x1e>
+  3802e6:	9802      	ldr	r0, [sp, #8]
+  3802e8:	3004      	adds	r0, #4
+  3802ea:	9002      	str	r0, [sp, #8]
+  3802ec:	e7ff      	b.n	3802ee <application+0x1e>
+  3802ee:	2000      	movs	r0, #0
+  3802f0:	9001      	str	r0, [sp, #4]
+  3802f2:	e7ff      	b.n	3802f4 <application+0x24>
+  3802f4:	9801      	ldr	r0, [sp, #4]
+  3802f6:	2809      	cmp	r0, #9
+  3802f8:	dc24      	bgt.n	380344 <application+0x74>
+  3802fa:	e7ff      	b.n	3802fc <application+0x2c>
+  3802fc:	2000      	movs	r0, #0
+  3802fe:	9000      	str	r0, [sp, #0]
+  380300:	e7ff      	b.n	380302 <application+0x32>
+  380302:	9800      	ldr	r0, [sp, #0]
+  380304:	2804      	cmp	r0, #4
+  380306:	dc18      	bgt.n	38033a <application+0x6a>
+  380308:	e7ff      	b.n	38030a <application+0x3a>
+  38030a:	9a01      	ldr	r2, [sp, #4]
+  38030c:	eb02 0082 	add.w	r0, r2, r2, lsl #2
+  380310:	a903      	add	r1, sp, #12
+  380312:	eb01 0080 	add.w	r0, r1, r0, lsl #2
+  380316:	9b00      	ldr	r3, [sp, #0]
+  380318:	f850 0023 	ldr.w	r0, [r0, r3, lsl #2]
+  38031c:	eb03 0383 	add.w	r3, r3, r3, lsl #2
+  380320:	eb01 0183 	add.w	r1, r1, r3, lsl #2
+  380324:	f851 1022 	ldr.w	r1, [r1, r2, lsl #2]
+  380328:	4401      	add	r1, r0
+  38032a:	9802      	ldr	r0, [sp, #8]
+  38032c:	4408      	add	r0, r1
+  38032e:	9002      	str	r0, [sp, #8]
+  380330:	e7ff      	b.n	380332 <application+0x62>
+  380332:	9800      	ldr	r0, [sp, #0]
+  380334:	3001      	adds	r0, #1
+  380336:	9000      	str	r0, [sp, #0]
+  380338:	e7e3      	b.n	380302 <application+0x32>
+  38033a:	e7ff      	b.n	38033c <application+0x6c>
+  38033c:	9801      	ldr	r0, [sp, #4]
+  38033e:	3001      	adds	r0, #1
+  380340:	9001      	str	r0, [sp, #4]
+  380342:	e7d7      	b.n	3802f4 <application+0x24>
+  380344:	9802      	ldr	r0, [sp, #8]
+  380346:	3002      	adds	r0, #2
+  380348:	9002      	str	r0, [sp, #8]
+  38034a:	b035      	add	sp, #212	@ 0xd4
+  38034c:	4770      	bx	lr
+	...
 
 Disassembly of section ER_MTBDR:
 
-00380000 <matmul3>:
-  380000:	b0b5      	sub	sp, #212	@ 0xd4
-  380002:	2000      	movs	r0, #0
-  380004:	9002      	str	r0, [sp, #8]
-  380006:	9802      	ldr	r0, [sp, #8]
-  380008:	2801      	cmp	r0, #1
-  38000a:	d104      	bne.n	380016 <matmul3+0x16>
-  38000c:	e7ff      	b.n	38000e <matmul3+0xe>
-  38000e:	9802      	ldr	r0, [sp, #8]
-  380010:	3001      	adds	r0, #1
-  380012:	9002      	str	r0, [sp, #8]
-  380014:	e003      	b.n	38001e <matmul3+0x1e>
-  380016:	9802      	ldr	r0, [sp, #8]
-  380018:	3004      	adds	r0, #4
-  38001a:	9002      	str	r0, [sp, #8]
-  38001c:	e7ff      	b.n	38001e <matmul3+0x1e>
-  38001e:	2000      	movs	r0, #0
-  380020:	9001      	str	r0, [sp, #4]
-  380022:	e7ff      	b.n	380024 <matmul3+0x24>
-  380024:	9801      	ldr	r0, [sp, #4]
-  380026:	2809      	cmp	r0, #9
-  380028:	dc24      	bgt.n	380074 <matmul3+0x74>
-  38002a:	e7ff      	b.n	38002c <matmul3+0x2c>
-  38002c:	2000      	movs	r0, #0
-  38002e:	9000      	str	r0, [sp, #0]
-  380030:	e7ff      	b.n	380032 <matmul3+0x32>
-  380032:	9800      	ldr	r0, [sp, #0]
-  380034:	2804      	cmp	r0, #4
-  380036:	dc18      	bgt.n	38006a <matmul3+0x6a>
-  380038:	e7ff      	b.n	38003a <matmul3+0x3a>
-  38003a:	9a01      	ldr	r2, [sp, #4]
-  38003c:	eb02 0082 	add.w	r0, r2, r2, lsl #2
-  380040:	a903      	add	r1, sp, #12
-  380042:	eb01 0080 	add.w	r0, r1, r0, lsl #2
-  380046:	9b00      	ldr	r3, [sp, #0]
-  380048:	f850 0023 	ldr.w	r0, [r0, r3, lsl #2]
-  38004c:	eb03 0383 	add.w	r3, r3, r3, lsl #2
-  380050:	eb01 0183 	add.w	r1, r1, r3, lsl #2
-  380054:	f851 1022 	ldr.w	r1, [r1, r2, lsl #2]
-  380058:	4401      	add	r1, r0
-  38005a:	9802      	ldr	r0, [sp, #8]
-  38005c:	4408      	add	r0, r1
-  38005e:	9002      	str	r0, [sp, #8]
-  380060:	e7ff      	b.n	380062 <matmul3+0x62>
-  380062:	9800      	ldr	r0, [sp, #0]
-  380064:	3001      	adds	r0, #1
-  380066:	9000      	str	r0, [sp, #0]
-  380068:	e7e3      	b.n	380032 <matmul3+0x32>
-  38006a:	e7ff      	b.n	38006c <matmul3+0x6c>
-  38006c:	9801      	ldr	r0, [sp, #4]
-  38006e:	3001      	adds	r0, #1
-  380070:	9001      	str	r0, [sp, #4]
-  380072:	e7d7      	b.n	380024 <matmul3+0x24>
-  380074:	9802      	ldr	r0, [sp, #8]
-  380076:	3002      	adds	r0, #2
-  380078:	9002      	str	r0, [sp, #8]
-  38007a:	b035      	add	sp, #212	@ 0xd4
-  38007c:	4770      	bx	lr
-	...
+00300000 <application_entry>:
+  300000:	b580      	push	{r7, lr}
+  300002:	f080 f965 	bl	3802d0 <application>
+  300006:	bd80      	pop	{r7, pc}

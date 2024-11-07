@@ -29,6 +29,7 @@
    POSSIBILITY OF SUCH DAMAGE.
    ---------------------------------------------------------------------------*/
 
+#include <stdio.h>
 #if   defined (IOTKit_CM33)    || defined (IOTKit_CM33_VHT)
   #include "IOTKit_CM33.h"
 #elif defined (IOTKit_CM33_FP) || defined (IOTKit_CM33_FP_VHT)
@@ -497,6 +498,7 @@ __NO_RETURN void Reset_Handler(void)
  *----------------------------------------------------------------------------*/
 void HardFault_Handler(void)
 {
+  printf("[LOG] Hard Fault\n");	
   while(1);
 }
 
@@ -505,6 +507,7 @@ void HardFault_Handler(void)
  *----------------------------------------------------------------------------*/
 void Default_Handler(void)
 {
+  printf("[LOG] Default Handler Fault\n");	
   while(1);
 }
 

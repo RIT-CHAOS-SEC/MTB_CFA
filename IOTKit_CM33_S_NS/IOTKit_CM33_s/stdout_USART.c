@@ -98,8 +98,31 @@ int stdout_putchar (int ch) {
   if (ptrUSART->Send(buf, 1) != ARM_DRIVER_OK) {
     return (-1);
   }
+
   while (ptrUSART->GetTxCount() != 1);
+
+
   return (ch);
+
+  // for (int i= 0 ; i < 1000; i++){
+  //   __asm("nop\n");
+  // }
+}
+
+
+
+int stdout_putbuffer (uint32_t *buf, int len, int stride){
+
+  stdout_putchar('E');
+  for (uint32_t *  buff_walk = buf; buff_walk < buf+len; buff_walk+=stride){
+
+      if (ptrUSART->Send((void * ) buff_walk, 4) != ARM_DRIVER_OK) {
+          return (-1);
+      }
+      while (ptrUSART->GetTxCount() != 4);
+  }
+  return len;
+
 }
 
 

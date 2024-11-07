@@ -26,50 +26,23 @@
 	.file	1 "P:\\Workspace\\Git\\MTB_CFA\\IOTKit_CM33_S_NS\\IOTKit_CM33_s" ".\\Secure_Functions.h"
 	.file	2 "P:\\Workspace\\Git\\MTB_CFA\\IOTKit_CM33_S_NS\\IOTKit_CM33_s" "Secure_Functions.c"
 	.file	3 "C:\\Users\\aj4775\\AppData\\Local\\Keil_v5\\ARM\\ARMCLANG\\bin\\..\\include" "stdint.h"
-	.section	.text.SECURE_register_callback,"ax",%progbits
-	.hidden	SECURE_register_callback        @ -- Begin function SECURE_register_callback
-	.globl	SECURE_register_callback
+	.section	.text.SECURE_NOPE,"ax",%progbits
+	.hidden	SECURE_NOPE                     @ -- Begin function SECURE_NOPE
+	.globl	SECURE_NOPE
 	.p2align	2
-	.type	SECURE_register_callback,%function
-	.code	16                              @ @SECURE_register_callback
+	.type	SECURE_NOPE,%function
+	.code	16                              @ @SECURE_NOPE
 	.thumb_func
-	.globl	__acle_se_SECURE_register_callback
-	.type	__acle_se_SECURE_register_callback,%function
-__acle_se_SECURE_register_callback:
-SECURE_register_callback:
+	.globl	__acle_se_SECURE_NOPE
+	.type	__acle_se_SECURE_NOPE,%function
+__acle_se_SECURE_NOPE:
+SECURE_NOPE:
 .Lfunc_begin0:
-	.loc	2 24 0                          @ Secure_Functions.c:24:0
 	.fnstart
 	.cfi_sections .debug_frame
 	.cfi_startproc
 @ %bb.0:
-	.save	{r7, lr}
-	push	{r7, lr}
-	.cfi_def_cfa_offset 8
-	.cfi_offset lr, -4
-	.cfi_offset r7, -8
-	.pad	#8
-	sub	sp, #8
-	.cfi_def_cfa_offset 16
-	str	r0, [sp, #4]
-.Ltmp0:
-	.loc	2 25 5 prologue_end             @ Secure_Functions.c:25:5
-	movw	r0, :lower16:.L.str
-	movt	r0, :upper16:.L.str
-	bl	printf
-	.loc	2 32 34                         @ Secure_Functions.c:32:34
-	ldr	r0, [sp, #4]
-	.loc	2 32 13 is_stmt 0               @ Secure_Functions.c:32:13
-	movw	r1, :lower16:fNSFunc
-	movt	r1, :upper16:fNSFunc
-	str	r0, [r1]
-	.loc	2 33 5 is_stmt 1                @ Secure_Functions.c:33:5
-	movw	r0, :lower16:.L.str.1
-	movt	r0, :upper16:.L.str.1
-	bl	printf
-	.loc	2 34 5 epilogue_begin           @ Secure_Functions.c:34:5
-	add	sp, #8
-	pop.w	{r7, lr}
+	.loc	2 23 5 prologue_end             @ Secure_Functions.c:23:5
 	mrs	r12, control
 	tst.w	r12, #8
 	beq	.LBB0_2
@@ -94,9 +67,83 @@ SECURE_register_callback:
 	mov	r12, lr
 	msr	apsr_nzcvqg, lr
 	bxns	lr
-.Ltmp1:
+.Ltmp0:
 .Lfunc_end0:
-	.size	SECURE_register_callback, .Lfunc_end0-SECURE_register_callback
+	.size	SECURE_NOPE, .Lfunc_end0-SECURE_NOPE
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.SECURE_register_callback,"ax",%progbits
+	.hidden	SECURE_register_callback        @ -- Begin function SECURE_register_callback
+	.globl	SECURE_register_callback
+	.p2align	2
+	.type	SECURE_register_callback,%function
+	.code	16                              @ @SECURE_register_callback
+	.thumb_func
+	.globl	__acle_se_SECURE_register_callback
+	.type	__acle_se_SECURE_register_callback,%function
+__acle_se_SECURE_register_callback:
+SECURE_register_callback:
+.Lfunc_begin1:
+	.loc	2 28 0                          @ Secure_Functions.c:28:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.pad	#8
+	sub	sp, #8
+	.cfi_def_cfa_offset 16
+	str	r0, [sp, #4]
+.Ltmp1:
+	.loc	2 29 5 prologue_end             @ Secure_Functions.c:29:5
+	movw	r0, :lower16:.L.str
+	movt	r0, :upper16:.L.str
+	bl	printf
+	.loc	2 36 34                         @ Secure_Functions.c:36:34
+	ldr	r0, [sp, #4]
+	.loc	2 36 13 is_stmt 0               @ Secure_Functions.c:36:13
+	movw	r1, :lower16:fNSFunc
+	movt	r1, :upper16:fNSFunc
+	str	r0, [r1]
+	.loc	2 37 5 is_stmt 1                @ Secure_Functions.c:37:5
+	movw	r0, :lower16:.L.str.1
+	movt	r0, :upper16:.L.str.1
+	bl	printf
+	.loc	2 38 5 epilogue_begin           @ Secure_Functions.c:38:5
+	add	sp, #8
+	pop.w	{r7, lr}
+	mrs	r12, control
+	tst.w	r12, #8
+	beq	.LBB1_2
+@ %bb.1:
+	vmov	d0, lr, lr
+	vmov	d1, lr, lr
+	vmov	d2, lr, lr
+	vmov	d3, lr, lr
+	vmov	d4, lr, lr
+	vmov	d5, lr, lr
+	vmov	d6, lr, lr
+	vmov	d7, lr, lr
+	vmrs	r12, fpscr
+	bic	r12, r12, #159
+	bic	r12, r12, #4026531840
+	vmsr	fpscr, r12
+.LBB1_2:
+	mov	r0, lr
+	mov	r1, lr
+	mov	r2, lr
+	mov	r3, lr
+	mov	r12, lr
+	msr	apsr_nzcvqg, lr
+	bxns	lr
+.Ltmp2:
+.Lfunc_end1:
+	.size	SECURE_register_callback, .Lfunc_end1-SECURE_register_callback
 	.cfi_endproc
 	.cantunwind
 	.fnend
@@ -109,67 +156,67 @@ SECURE_register_callback:
 	.code	16                              @ @_set_stat
 	.thumb_func
 _set_stat:
-.Lfunc_begin1:
-	.loc	2 39 0                          @ Secure_Functions.c:39:0
+.Lfunc_begin2:
+	.loc	2 46 0                          @ Secure_Functions.c:46:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
 	.pad	#4
 	sub	sp, #4
 	.cfi_def_cfa_offset 4
-.Ltmp2:
+.Ltmp3:
 	.file	4 "C:/Users/aj4775/AppData/Local/arm/packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include" "cmsis_armclang.h"
 	.loc	4 636 3 prologue_end            @ C:/Users/aj4775/AppData/Local/arm/packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include\cmsis_armclang.h:636:3
 	@APP
 	cpsid i
 	@NO_APP
-.Ltmp3:
-	.loc	2 42 9                          @ Secure_Functions.c:42:9
+.Ltmp4:
+	.loc	2 49 9                          @ Secure_Functions.c:49:9
 	movw	r0, :lower16:CFA_stat
 	movt	r0, :upper16:CFA_stat
 	ldr	r0, [r0]
-.Ltmp4:
-	.loc	2 42 9 is_stmt 0                @ Secure_Functions.c:42:9
-	cmp	r0, #1
-	bne	.LBB1_2
-	b	.LBB1_1
-.LBB1_1:
 .Ltmp5:
+	.loc	2 49 9 is_stmt 0                @ Secure_Functions.c:49:9
+	cmp	r0, #1
+	bne	.LBB2_2
+	b	.LBB2_1
+.LBB2_1:
+.Ltmp6:
 	.loc	4 623 3 is_stmt 1               @ C:/Users/aj4775/AppData/Local/arm/packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include\cmsis_armclang.h:623:3
 	@APP
 	cpsie i
 	@NO_APP
 	movs	r0, #1
-.Ltmp6:
-	.loc	2 45 9                          @ Secure_Functions.c:45:9
-	strb.w	r0, [sp, #3]
-	b	.LBB1_3
 .Ltmp7:
-.LBB1_2:
-	.loc	2 48 14                         @ Secure_Functions.c:48:14
+	.loc	2 52 9                          @ Secure_Functions.c:52:9
+	strb.w	r0, [sp, #3]
+	b	.LBB2_3
+.Ltmp8:
+.LBB2_2:
+	.loc	2 55 14                         @ Secure_Functions.c:55:14
 	movw	r1, :lower16:CFA_stat
 	movt	r1, :upper16:CFA_stat
 	movs	r0, #1
 	str	r0, [r1]
-.Ltmp8:
+.Ltmp9:
 	.loc	4 623 3                         @ C:/Users/aj4775/AppData/Local/arm/packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include\cmsis_armclang.h:623:3
 	@APP
 	cpsie i
 	@NO_APP
 	movs	r0, #0
-.Ltmp9:
-	.loc	2 51 5                          @ Secure_Functions.c:51:5
+.Ltmp10:
+	.loc	2 58 5                          @ Secure_Functions.c:58:5
 	strb.w	r0, [sp, #3]
-	b	.LBB1_3
-.LBB1_3:
-	.loc	2 52 1                          @ Secure_Functions.c:52:1
+	b	.LBB2_3
+.LBB2_3:
+	.loc	2 59 1                          @ Secure_Functions.c:59:1
 	ldrb.w	r0, [sp, #3]
-	.loc	2 52 1 epilogue_begin is_stmt 0 @ Secure_Functions.c:52:1
+	.loc	2 59 1 epilogue_begin is_stmt 0 @ Secure_Functions.c:59:1
 	add	sp, #4
 	bx	lr
-.Ltmp10:
-.Lfunc_end1:
-	.size	_set_stat, .Lfunc_end1-_set_stat
+.Ltmp11:
+.Lfunc_end2:
+	.size	_set_stat, .Lfunc_end2-_set_stat
 	.cfi_endproc
 	.cantunwind
 	.fnend
@@ -182,7 +229,7 @@ _set_stat:
 	.code	16                              @ @_clear_stat
 	.thumb_func
 _clear_stat:
-.Lfunc_begin2:
+.Lfunc_begin3:
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -190,23 +237,23 @@ _clear_stat:
 	@APP
 	cpsid i
 	@NO_APP
-.Ltmp11:
-	.loc	2 58 14                         @ Secure_Functions.c:58:14
+.Ltmp12:
+	.loc	2 65 14                         @ Secure_Functions.c:65:14
 	movw	r1, :lower16:CFA_stat
 	movt	r1, :upper16:CFA_stat
 	movs	r0, #0
 	str	r0, [r1]
-.Ltmp12:
+.Ltmp13:
 	.loc	4 623 3                         @ C:/Users/aj4775/AppData/Local/arm/packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include\cmsis_armclang.h:623:3
 	@APP
 	cpsie i
 	@NO_APP
-.Ltmp13:
-	.loc	2 61 1                          @ Secure_Functions.c:61:1
-	bx	lr
 .Ltmp14:
-.Lfunc_end2:
-	.size	_clear_stat, .Lfunc_end2-_clear_stat
+	.loc	2 68 1                          @ Secure_Functions.c:68:1
+	bx	lr
+.Ltmp15:
+.Lfunc_end3:
+	.size	_clear_stat, .Lfunc_end3-_clear_stat
 	.cfi_endproc
 	.cantunwind
 	.fnend
@@ -222,8 +269,8 @@ _clear_stat:
 	.type	__acle_se_SECURE_start_cfa,%function
 __acle_se_SECURE_start_cfa:
 SECURE_start_cfa:
-.Lfunc_begin3:
-	.loc	2 63 0                          @ Secure_Functions.c:63:0
+.Lfunc_begin4:
+	.loc	2 70 0                          @ Secure_Functions.c:70:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -236,82 +283,82 @@ SECURE_start_cfa:
 	sub	sp, #8
 	.cfi_def_cfa_offset 16
 	str	r0, [sp, #4]
-.Ltmp15:
-	.loc	2 64 5 prologue_end             @ Secure_Functions.c:64:5
+.Ltmp16:
+	.loc	2 71 5 prologue_end             @ Secure_Functions.c:71:5
 	movw	r0, :lower16:.L.str.2
 	movt	r0, :upper16:.L.str.2
 	bl	printf
-.Ltmp16:
+.Ltmp17:
 	.loc	4 636 3                         @ C:/Users/aj4775/AppData/Local/arm/packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include\cmsis_armclang.h:636:3
 	@APP
 	cpsid i
 	@NO_APP
-.Ltmp17:
-	.loc	2 68 9                          @ Secure_Functions.c:68:9
+.Ltmp18:
+	.loc	2 75 9                          @ Secure_Functions.c:75:9
 	movw	r0, :lower16:fNSFunc
 	movt	r0, :upper16:fNSFunc
 	ldr	r0, [r0]
-.Ltmp18:
-	.loc	2 68 9 is_stmt 0                @ Secure_Functions.c:68:9
-	cbnz	r0, .LBB3_2
-	b	.LBB3_1
-.LBB3_1:
 .Ltmp19:
-	.loc	2 70 9 is_stmt 1                @ Secure_Functions.c:70:9
+	.loc	2 75 9 is_stmt 0                @ Secure_Functions.c:75:9
+	cbnz	r0, .LBB4_2
+	b	.LBB4_1
+.LBB4_1:
+.Ltmp20:
+	.loc	2 77 9 is_stmt 1                @ Secure_Functions.c:77:9
 	movw	r0, :lower16:.L.str.3
 	movt	r0, :upper16:.L.str.3
 	bl	printf
-	.loc	2 71 9                          @ Secure_Functions.c:71:9
+	.loc	2 78 9                          @ Secure_Functions.c:78:9
 	ldr	r1, [sp, #4]
 	movs	r0, #100
-	.loc	2 71 24 is_stmt 0               @ Secure_Functions.c:71:24
+	.loc	2 78 24 is_stmt 0               @ Secure_Functions.c:78:24
 	strb	r0, [r1]
-.Ltmp20:
+.Ltmp21:
 	.loc	4 623 3 is_stmt 1               @ C:/Users/aj4775/AppData/Local/arm/packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include\cmsis_armclang.h:623:3
 	@APP
 	cpsie i
 	@NO_APP
-.Ltmp21:
-	.loc	2 73 9                          @ Secure_Functions.c:73:9
-	b	.LBB3_5
 .Ltmp22:
-.LBB3_2:
+	.loc	2 80 9                          @ Secure_Functions.c:80:9
+	b	.LBB4_5
+.Ltmp23:
+.LBB4_2:
 	.loc	4 623 3                         @ C:/Users/aj4775/AppData/Local/arm/packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include\cmsis_armclang.h:623:3
 	@APP
 	cpsie i
 	@NO_APP
-.Ltmp23:
-	.loc	2 78 8                          @ Secure_Functions.c:78:8
-	bl	_set_stat
 .Ltmp24:
-	.loc	2 78 8 is_stmt 0                @ Secure_Functions.c:78:8
-	cbz	r0, .LBB3_4
-	b	.LBB3_3
-.LBB3_3:
+	.loc	2 85 8                          @ Secure_Functions.c:85:8
+	bl	_set_stat
 .Ltmp25:
-	.loc	2 78 20                         @ Secure_Functions.c:78:20
-	b	.LBB3_5
+	.loc	2 85 8 is_stmt 0                @ Secure_Functions.c:85:8
+	cbz	r0, .LBB4_4
+	b	.LBB4_3
+.LBB4_3:
 .Ltmp26:
-.LBB3_4:
-	.loc	2 80 5 is_stmt 1                @ Secure_Functions.c:80:5
+	.loc	2 85 20                         @ Secure_Functions.c:85:20
+	b	.LBB4_5
+.Ltmp27:
+.LBB4_4:
+	.loc	2 87 5 is_stmt 1                @ Secure_Functions.c:87:5
 	movw	r0, :lower16:.L.str.4
 	movt	r0, :upper16:.L.str.4
 	bl	printf
-	.loc	2 82 19                         @ Secure_Functions.c:82:19
+	.loc	2 89 19                         @ Secure_Functions.c:89:19
 	ldr	r0, [sp, #4]
-	.loc	2 82 5 is_stmt 0                @ Secure_Functions.c:82:5
+	.loc	2 89 5 is_stmt 0                @ Secure_Functions.c:89:5
 	bl	eCFA_init_cfa
-	.loc	2 84 5 is_stmt 1                @ Secure_Functions.c:84:5
+	.loc	2 91 5 is_stmt 1                @ Secure_Functions.c:91:5
 	bl	_clear_stat
-	.loc	2 86 5                          @ Secure_Functions.c:86:5
-	b	.LBB3_5
-.LBB3_5:
-	.loc	2 87 1 epilogue_begin           @ Secure_Functions.c:87:1
+	.loc	2 93 5                          @ Secure_Functions.c:93:5
+	b	.LBB4_5
+.LBB4_5:
+	.loc	2 94 1 epilogue_begin           @ Secure_Functions.c:94:1
 	add	sp, #8
 	pop.w	{r7, lr}
 	mrs	r12, control
 	tst.w	r12, #8
-	beq	.LBB3_7
+	beq	.LBB4_7
 @ %bb.6:
 	vmov	d0, lr, lr
 	vmov	d1, lr, lr
@@ -325,7 +372,7 @@ SECURE_start_cfa:
 	bic	r12, r12, #159
 	bic	r12, r12, #4026531840
 	vmsr	fpscr, r12
-.LBB3_7:
+.LBB4_7:
 	mov	r0, lr
 	mov	r1, lr
 	mov	r2, lr
@@ -333,9 +380,9 @@ SECURE_start_cfa:
 	mov	r12, lr
 	msr	apsr_nzcvqg, lr
 	bxns	lr
-.Ltmp27:
-.Lfunc_end3:
-	.size	SECURE_start_cfa, .Lfunc_end3-SECURE_start_cfa
+.Ltmp28:
+.Lfunc_end4:
+	.size	SECURE_start_cfa, .Lfunc_end4-SECURE_start_cfa
 	.cfi_endproc
 	.cantunwind
 	.fnend
@@ -351,71 +398,8 @@ SECURE_start_cfa:
 	.type	__acle_se_Secure_LED_On,%function
 __acle_se_Secure_LED_On:
 Secure_LED_On:
-.Lfunc_begin4:
-	.loc	2 109 0                         @ Secure_Functions.c:109:0
-	.fnstart
-	.cfi_startproc
-@ %bb.0:
-	.save	{r7, lr}
-	push	{r7, lr}
-	.cfi_def_cfa_offset 8
-	.cfi_offset lr, -4
-	.cfi_offset r7, -8
-	.pad	#8
-	sub	sp, #8
-	.cfi_def_cfa_offset 16
-	str	r0, [sp, #4]
-.Ltmp28:
-	.loc	2 109 53 prologue_end           @ Secure_Functions.c:109:53
-	ldr	r0, [sp, #4]
-	.loc	2 109 46 is_stmt 0              @ Secure_Functions.c:109:46
-	bl	LED_On
-	.loc	2 109 39 epilogue_begin         @ Secure_Functions.c:109:39
-	add	sp, #8
-	pop.w	{r7, lr}
-	mrs	r12, control
-	tst.w	r12, #8
-	beq	.LBB4_2
-@ %bb.1:
-	vmov	d0, lr, lr
-	vmov	d1, lr, lr
-	vmov	d2, lr, lr
-	vmov	d3, lr, lr
-	vmov	d4, lr, lr
-	vmov	d5, lr, lr
-	vmov	d6, lr, lr
-	vmov	d7, lr, lr
-	vmrs	r12, fpscr
-	bic	r12, r12, #159
-	bic	r12, r12, #4026531840
-	vmsr	fpscr, r12
-.LBB4_2:
-	mov	r1, lr
-	mov	r2, lr
-	mov	r3, lr
-	mov	r12, lr
-	msr	apsr_nzcvqg, lr
-	bxns	lr
-.Ltmp29:
-.Lfunc_end4:
-	.size	Secure_LED_On, .Lfunc_end4-Secure_LED_On
-	.cfi_endproc
-	.cantunwind
-	.fnend
-                                        @ -- End function
-	.section	.text.Secure_LED_Off,"ax",%progbits
-	.hidden	Secure_LED_Off                  @ -- Begin function Secure_LED_Off
-	.globl	Secure_LED_Off
-	.p2align	2
-	.type	Secure_LED_Off,%function
-	.code	16                              @ @Secure_LED_Off
-	.thumb_func
-	.globl	__acle_se_Secure_LED_Off
-	.type	__acle_se_Secure_LED_Off,%function
-__acle_se_Secure_LED_Off:
-Secure_LED_Off:
 .Lfunc_begin5:
-	.loc	2 112 0 is_stmt 1               @ Secure_Functions.c:112:0
+	.loc	2 116 0                         @ Secure_Functions.c:116:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -428,12 +412,12 @@ Secure_LED_Off:
 	sub	sp, #8
 	.cfi_def_cfa_offset 16
 	str	r0, [sp, #4]
-.Ltmp30:
-	.loc	2 112 55 prologue_end           @ Secure_Functions.c:112:55
+.Ltmp29:
+	.loc	2 116 53 prologue_end           @ Secure_Functions.c:116:53
 	ldr	r0, [sp, #4]
-	.loc	2 112 47 is_stmt 0              @ Secure_Functions.c:112:47
-	bl	LED_Off
-	.loc	2 112 40 epilogue_begin         @ Secure_Functions.c:112:40
+	.loc	2 116 46 is_stmt 0              @ Secure_Functions.c:116:46
+	bl	LED_On
+	.loc	2 116 39 epilogue_begin         @ Secure_Functions.c:116:39
 	add	sp, #8
 	pop.w	{r7, lr}
 	mrs	r12, control
@@ -459,26 +443,26 @@ Secure_LED_Off:
 	mov	r12, lr
 	msr	apsr_nzcvqg, lr
 	bxns	lr
-.Ltmp31:
+.Ltmp30:
 .Lfunc_end5:
-	.size	Secure_LED_Off, .Lfunc_end5-Secure_LED_Off
+	.size	Secure_LED_On, .Lfunc_end5-Secure_LED_On
 	.cfi_endproc
 	.cantunwind
 	.fnend
                                         @ -- End function
-	.section	.text.Secure_printf,"ax",%progbits
-	.hidden	Secure_printf                   @ -- Begin function Secure_printf
-	.globl	Secure_printf
+	.section	.text.Secure_LED_Off,"ax",%progbits
+	.hidden	Secure_LED_Off                  @ -- Begin function Secure_LED_Off
+	.globl	Secure_LED_Off
 	.p2align	2
-	.type	Secure_printf,%function
-	.code	16                              @ @Secure_printf
+	.type	Secure_LED_Off,%function
+	.code	16                              @ @Secure_LED_Off
 	.thumb_func
-	.globl	__acle_se_Secure_printf
-	.type	__acle_se_Secure_printf,%function
-__acle_se_Secure_printf:
-Secure_printf:
+	.globl	__acle_se_Secure_LED_Off
+	.type	__acle_se_Secure_LED_Off,%function
+__acle_se_Secure_LED_Off:
+Secure_LED_Off:
 .Lfunc_begin6:
-	.loc	2 115 0 is_stmt 1               @ Secure_Functions.c:115:0
+	.loc	2 119 0 is_stmt 1               @ Secure_Functions.c:119:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -491,14 +475,12 @@ Secure_printf:
 	sub	sp, #8
 	.cfi_def_cfa_offset 16
 	str	r0, [sp, #4]
-.Ltmp32:
-	.loc	2 115 50 prologue_end           @ Secure_Functions.c:115:50
-	ldr	r1, [sp, #4]
-	.loc	2 115 37 is_stmt 0              @ Secure_Functions.c:115:37
-	movw	r0, :lower16:.L.str.5
-	movt	r0, :upper16:.L.str.5
-	bl	printf
-	.loc	2 115 60 epilogue_begin         @ Secure_Functions.c:115:60
+.Ltmp31:
+	.loc	2 119 55 prologue_end           @ Secure_Functions.c:119:55
+	ldr	r0, [sp, #4]
+	.loc	2 119 47 is_stmt 0              @ Secure_Functions.c:119:47
+	bl	LED_Off
+	.loc	2 119 40 epilogue_begin         @ Secure_Functions.c:119:40
 	add	sp, #8
 	pop.w	{r7, lr}
 	mrs	r12, control
@@ -518,50 +500,54 @@ Secure_printf:
 	bic	r12, r12, #4026531840
 	vmsr	fpscr, r12
 .LBB6_2:
-	mov	r0, lr
 	mov	r1, lr
 	mov	r2, lr
 	mov	r3, lr
 	mov	r12, lr
 	msr	apsr_nzcvqg, lr
 	bxns	lr
-.Ltmp33:
+.Ltmp32:
 .Lfunc_end6:
-	.size	Secure_printf, .Lfunc_end6-Secure_printf
+	.size	Secure_LED_Off, .Lfunc_end6-Secure_LED_Off
 	.cfi_endproc
 	.cantunwind
 	.fnend
                                         @ -- End function
-	.section	.text.Secure_LED_On_callback,"ax",%progbits
-	.hidden	Secure_LED_On_callback          @ -- Begin function Secure_LED_On_callback
-	.globl	Secure_LED_On_callback
+	.section	.text.Secure_printf,"ax",%progbits
+	.hidden	Secure_printf                   @ -- Begin function Secure_printf
+	.globl	Secure_printf
 	.p2align	2
-	.type	Secure_LED_On_callback,%function
-	.code	16                              @ @Secure_LED_On_callback
+	.type	Secure_printf,%function
+	.code	16                              @ @Secure_printf
 	.thumb_func
-	.globl	__acle_se_Secure_LED_On_callback
-	.type	__acle_se_Secure_LED_On_callback,%function
-__acle_se_Secure_LED_On_callback:
-Secure_LED_On_callback:
+	.globl	__acle_se_Secure_printf
+	.type	__acle_se_Secure_printf,%function
+__acle_se_Secure_printf:
+Secure_printf:
 .Lfunc_begin7:
-	.loc	2 123 0 is_stmt 1               @ Secure_Functions.c:123:0
+	.loc	2 122 0 is_stmt 1               @ Secure_Functions.c:122:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
-	.pad	#4
-	sub	sp, #4
-	.cfi_def_cfa_offset 4
-	str	r0, [sp]
-.Ltmp34:
-	.loc	2 124 26 prologue_end           @ Secure_Functions.c:124:26
-	ldr	r0, [sp]
-	.loc	2 124 24 is_stmt 0              @ Secure_Functions.c:124:24
-	movw	r1, :lower16:pfNonSecure_LED_On
-	movt	r1, :upper16:pfNonSecure_LED_On
-	str	r0, [r1]
-	movs	r0, #0
-	.loc	2 125 5 epilogue_begin is_stmt 1 @ Secure_Functions.c:125:5
-	add	sp, #4
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.pad	#8
+	sub	sp, #8
+	.cfi_def_cfa_offset 16
+	str	r0, [sp, #4]
+.Ltmp33:
+	.loc	2 122 50 prologue_end           @ Secure_Functions.c:122:50
+	ldr	r1, [sp, #4]
+	.loc	2 122 37 is_stmt 0              @ Secure_Functions.c:122:37
+	movw	r0, :lower16:.L.str.5
+	movt	r0, :upper16:.L.str.5
+	bl	printf
+	.loc	2 122 60 epilogue_begin         @ Secure_Functions.c:122:60
+	add	sp, #8
+	pop.w	{r7, lr}
 	mrs	r12, control
 	tst.w	r12, #8
 	beq	.LBB7_2
@@ -579,32 +565,33 @@ Secure_LED_On_callback:
 	bic	r12, r12, #4026531840
 	vmsr	fpscr, r12
 .LBB7_2:
+	mov	r0, lr
 	mov	r1, lr
 	mov	r2, lr
 	mov	r3, lr
 	mov	r12, lr
 	msr	apsr_nzcvqg, lr
 	bxns	lr
-.Ltmp35:
+.Ltmp34:
 .Lfunc_end7:
-	.size	Secure_LED_On_callback, .Lfunc_end7-Secure_LED_On_callback
+	.size	Secure_printf, .Lfunc_end7-Secure_printf
 	.cfi_endproc
 	.cantunwind
 	.fnend
                                         @ -- End function
-	.section	.text.Secure_LED_Off_callback,"ax",%progbits
-	.hidden	Secure_LED_Off_callback         @ -- Begin function Secure_LED_Off_callback
-	.globl	Secure_LED_Off_callback
+	.section	.text.Secure_LED_On_callback,"ax",%progbits
+	.hidden	Secure_LED_On_callback          @ -- Begin function Secure_LED_On_callback
+	.globl	Secure_LED_On_callback
 	.p2align	2
-	.type	Secure_LED_Off_callback,%function
-	.code	16                              @ @Secure_LED_Off_callback
+	.type	Secure_LED_On_callback,%function
+	.code	16                              @ @Secure_LED_On_callback
 	.thumb_func
-	.globl	__acle_se_Secure_LED_Off_callback
-	.type	__acle_se_Secure_LED_Off_callback,%function
-__acle_se_Secure_LED_Off_callback:
-Secure_LED_Off_callback:
+	.globl	__acle_se_Secure_LED_On_callback
+	.type	__acle_se_Secure_LED_On_callback,%function
+__acle_se_Secure_LED_On_callback:
+Secure_LED_On_callback:
 .Lfunc_begin8:
-	.loc	2 131 0                         @ Secure_Functions.c:131:0
+	.loc	2 130 0 is_stmt 1               @ Secure_Functions.c:130:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -612,15 +599,15 @@ Secure_LED_Off_callback:
 	sub	sp, #4
 	.cfi_def_cfa_offset 4
 	str	r0, [sp]
-.Ltmp36:
-	.loc	2 132 27 prologue_end           @ Secure_Functions.c:132:27
+.Ltmp35:
+	.loc	2 131 26 prologue_end           @ Secure_Functions.c:131:26
 	ldr	r0, [sp]
-	.loc	2 132 25 is_stmt 0              @ Secure_Functions.c:132:25
-	movw	r1, :lower16:pfNonSecure_LED_Off
-	movt	r1, :upper16:pfNonSecure_LED_Off
+	.loc	2 131 24 is_stmt 0              @ Secure_Functions.c:131:24
+	movw	r1, :lower16:pfNonSecure_LED_On
+	movt	r1, :upper16:pfNonSecure_LED_On
 	str	r0, [r1]
 	movs	r0, #0
-	.loc	2 133 5 epilogue_begin is_stmt 1 @ Secure_Functions.c:133:5
+	.loc	2 132 5 epilogue_begin is_stmt 1 @ Secure_Functions.c:132:5
 	add	sp, #4
 	mrs	r12, control
 	tst.w	r12, #8
@@ -645,9 +632,69 @@ Secure_LED_Off_callback:
 	mov	r12, lr
 	msr	apsr_nzcvqg, lr
 	bxns	lr
-.Ltmp37:
+.Ltmp36:
 .Lfunc_end8:
-	.size	Secure_LED_Off_callback, .Lfunc_end8-Secure_LED_Off_callback
+	.size	Secure_LED_On_callback, .Lfunc_end8-Secure_LED_On_callback
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.Secure_LED_Off_callback,"ax",%progbits
+	.hidden	Secure_LED_Off_callback         @ -- Begin function Secure_LED_Off_callback
+	.globl	Secure_LED_Off_callback
+	.p2align	2
+	.type	Secure_LED_Off_callback,%function
+	.code	16                              @ @Secure_LED_Off_callback
+	.thumb_func
+	.globl	__acle_se_Secure_LED_Off_callback
+	.type	__acle_se_Secure_LED_Off_callback,%function
+__acle_se_Secure_LED_Off_callback:
+Secure_LED_Off_callback:
+.Lfunc_begin9:
+	.loc	2 138 0                         @ Secure_Functions.c:138:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.pad	#4
+	sub	sp, #4
+	.cfi_def_cfa_offset 4
+	str	r0, [sp]
+.Ltmp37:
+	.loc	2 139 27 prologue_end           @ Secure_Functions.c:139:27
+	ldr	r0, [sp]
+	.loc	2 139 25 is_stmt 0              @ Secure_Functions.c:139:25
+	movw	r1, :lower16:pfNonSecure_LED_Off
+	movt	r1, :upper16:pfNonSecure_LED_Off
+	str	r0, [r1]
+	movs	r0, #0
+	.loc	2 140 5 epilogue_begin is_stmt 1 @ Secure_Functions.c:140:5
+	add	sp, #4
+	mrs	r12, control
+	tst.w	r12, #8
+	beq	.LBB9_2
+@ %bb.1:
+	vmov	d0, lr, lr
+	vmov	d1, lr, lr
+	vmov	d2, lr, lr
+	vmov	d3, lr, lr
+	vmov	d4, lr, lr
+	vmov	d5, lr, lr
+	vmov	d6, lr, lr
+	vmov	d7, lr, lr
+	vmrs	r12, fpscr
+	bic	r12, r12, #159
+	bic	r12, r12, #4026531840
+	vmsr	fpscr, r12
+.LBB9_2:
+	mov	r1, lr
+	mov	r2, lr
+	mov	r3, lr
+	mov	r12, lr
+	msr	apsr_nzcvqg, lr
+	bxns	lr
+.Ltmp38:
+.Lfunc_end9:
+	.size	Secure_LED_Off_callback, .Lfunc_end9-Secure_LED_Off_callback
 	.cfi_endproc
 	.cantunwind
 	.fnend
@@ -863,7 +910,7 @@ pfNonSecure_LED_Off:
 	.byte	0                               @ EOM(2)
 	.byte	13                              @ Abbreviation Code
 	.byte	46                              @ DW_TAG_subprogram
-	.byte	1                               @ DW_CHILDREN_yes
+	.byte	0                               @ DW_CHILDREN_no
 	.byte	17                              @ DW_AT_low_pc
 	.byte	1                               @ DW_FORM_addr
 	.byte	18                              @ DW_AT_high_pc
@@ -883,6 +930,27 @@ pfNonSecure_LED_Off:
 	.byte	0                               @ EOM(1)
 	.byte	0                               @ EOM(2)
 	.byte	14                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	63                              @ DW_AT_external
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	15                              @ Abbreviation Code
 	.byte	5                               @ DW_TAG_formal_parameter
 	.byte	0                               @ DW_CHILDREN_no
 	.byte	2                               @ DW_AT_location
@@ -897,7 +965,7 @@ pfNonSecure_LED_Off:
 	.byte	19                              @ DW_FORM_ref4
 	.byte	0                               @ EOM(1)
 	.byte	0                               @ EOM(2)
-	.byte	15                              @ Abbreviation Code
+	.byte	16                              @ Abbreviation Code
 	.byte	46                              @ DW_TAG_subprogram
 	.byte	0                               @ DW_CHILDREN_no
 	.byte	3                               @ DW_AT_name
@@ -912,7 +980,7 @@ pfNonSecure_LED_Off:
 	.byte	11                              @ DW_FORM_data1
 	.byte	0                               @ EOM(1)
 	.byte	0                               @ EOM(2)
-	.byte	16                              @ Abbreviation Code
+	.byte	17                              @ Abbreviation Code
 	.byte	46                              @ DW_TAG_subprogram
 	.byte	1                               @ DW_CHILDREN_yes
 	.byte	17                              @ DW_AT_low_pc
@@ -933,7 +1001,7 @@ pfNonSecure_LED_Off:
 	.byte	25                              @ DW_FORM_flag_present
 	.byte	0                               @ EOM(1)
 	.byte	0                               @ EOM(2)
-	.byte	17                              @ Abbreviation Code
+	.byte	18                              @ Abbreviation Code
 	.byte	29                              @ DW_TAG_inlined_subroutine
 	.byte	0                               @ DW_CHILDREN_no
 	.byte	49                              @ DW_AT_abstract_origin
@@ -948,25 +1016,6 @@ pfNonSecure_LED_Off:
 	.byte	11                              @ DW_FORM_data1
 	.byte	87                              @ DW_AT_call_column
 	.byte	11                              @ DW_FORM_data1
-	.byte	0                               @ EOM(1)
-	.byte	0                               @ EOM(2)
-	.byte	18                              @ Abbreviation Code
-	.byte	46                              @ DW_TAG_subprogram
-	.byte	1                               @ DW_CHILDREN_yes
-	.byte	17                              @ DW_AT_low_pc
-	.byte	1                               @ DW_FORM_addr
-	.byte	18                              @ DW_AT_high_pc
-	.byte	6                               @ DW_FORM_data4
-	.byte	64                              @ DW_AT_frame_base
-	.byte	24                              @ DW_FORM_exprloc
-	.byte	3                               @ DW_AT_name
-	.byte	14                              @ DW_FORM_strp
-	.byte	58                              @ DW_AT_decl_file
-	.byte	11                              @ DW_FORM_data1
-	.byte	59                              @ DW_AT_decl_line
-	.byte	11                              @ DW_FORM_data1
-	.byte	63                              @ DW_AT_external
-	.byte	25                              @ DW_FORM_flag_present
 	.byte	0                               @ EOM(1)
 	.byte	0                               @ EOM(2)
 	.byte	19                              @ Abbreviation Code
@@ -984,6 +1033,25 @@ pfNonSecure_LED_Off:
 	.byte	11                              @ DW_FORM_data1
 	.byte	59                              @ DW_AT_decl_line
 	.byte	11                              @ DW_FORM_data1
+	.byte	63                              @ DW_AT_external
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	20                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
 	.byte	39                              @ DW_AT_prototyped
 	.byte	25                              @ DW_FORM_flag_present
 	.byte	73                              @ DW_AT_type
@@ -992,12 +1060,12 @@ pfNonSecure_LED_Off:
 	.byte	25                              @ DW_FORM_flag_present
 	.byte	0                               @ EOM(1)
 	.byte	0                               @ EOM(2)
-	.byte	20                              @ Abbreviation Code
+	.byte	21                              @ Abbreviation Code
 	.byte	15                              @ DW_TAG_pointer_type
 	.byte	0                               @ DW_CHILDREN_no
 	.byte	0                               @ EOM(1)
 	.byte	0                               @ EOM(2)
-	.byte	21                              @ Abbreviation Code
+	.byte	22                              @ Abbreviation Code
 	.byte	19                              @ DW_TAG_structure_type
 	.byte	1                               @ DW_CHILDREN_yes
 	.byte	3                               @ DW_AT_name
@@ -1010,7 +1078,7 @@ pfNonSecure_LED_Off:
 	.byte	11                              @ DW_FORM_data1
 	.byte	0                               @ EOM(1)
 	.byte	0                               @ EOM(2)
-	.byte	22                              @ Abbreviation Code
+	.byte	23                              @ Abbreviation Code
 	.byte	13                              @ DW_TAG_member
 	.byte	0                               @ DW_CHILDREN_no
 	.byte	3                               @ DW_AT_name
@@ -1025,7 +1093,22 @@ pfNonSecure_LED_Off:
 	.byte	11                              @ DW_FORM_data1
 	.byte	0                               @ EOM(1)
 	.byte	0                               @ EOM(2)
-	.byte	23                              @ Abbreviation Code
+	.byte	24                              @ Abbreviation Code
+	.byte	13                              @ DW_TAG_member
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	56                              @ DW_AT_data_member_location
+	.byte	5                               @ DW_FORM_data2
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	25                              @ Abbreviation Code
 	.byte	33                              @ DW_TAG_subrange_type
 	.byte	0                               @ DW_CHILDREN_no
 	.byte	73                              @ DW_AT_type
@@ -1042,7 +1125,7 @@ pfNonSecure_LED_Off:
 	.short	4                               @ DWARF version number
 	.long	.debug_abbrev                   @ Offset Into Abbrev. Section
 	.byte	4                               @ Address Size (in bytes)
-	.byte	1                               @ Abbrev [1] 0xb:0x3b4 DW_TAG_compile_unit
+	.byte	1                               @ Abbrev [1] 0xb:0x3f6 DW_TAG_compile_unit
 	.long	.Linfo_string0                  @ DW_AT_producer
 	.short	29                              @ DW_AT_language
 	.long	.Linfo_string1                  @ DW_AT_name
@@ -1071,7 +1154,7 @@ pfNonSecure_LED_Off:
 	.byte	6                               @ Abbrev [6] 0x48:0xd DW_TAG_variable
 	.long	85                              @ DW_AT_type
 	.byte	2                               @ DW_AT_decl_file
-	.byte	25                              @ DW_AT_decl_line
+	.byte	29                              @ DW_AT_decl_line
 	.byte	5                               @ DW_AT_location
 	.byte	3
 	.long	.L.str
@@ -1092,7 +1175,7 @@ pfNonSecure_LED_Off:
 	.byte	6                               @ Abbrev [6] 0x6f:0xd DW_TAG_variable
 	.long	124                             @ DW_AT_type
 	.byte	2                               @ DW_AT_decl_file
-	.byte	33                              @ DW_AT_decl_line
+	.byte	37                              @ DW_AT_decl_line
 	.byte	5                               @ DW_AT_location
 	.byte	3
 	.long	.L.str.1
@@ -1107,7 +1190,7 @@ pfNonSecure_LED_Off:
 	.long	153                             @ DW_AT_type
                                         @ DW_AT_external
 	.byte	2                               @ DW_AT_decl_file
-	.byte	37                              @ DW_AT_decl_line
+	.byte	44                              @ DW_AT_decl_line
 	.byte	5                               @ DW_AT_location
 	.byte	3
 	.long	CFA_stat
@@ -1123,7 +1206,7 @@ pfNonSecure_LED_Off:
 	.byte	6                               @ Abbrev [6] 0xab:0xd DW_TAG_variable
 	.long	184                             @ DW_AT_type
 	.byte	2                               @ DW_AT_decl_file
-	.byte	64                              @ DW_AT_decl_line
+	.byte	71                              @ DW_AT_decl_line
 	.byte	5                               @ DW_AT_location
 	.byte	3
 	.long	.L.str.2
@@ -1136,7 +1219,7 @@ pfNonSecure_LED_Off:
 	.byte	6                               @ Abbrev [6] 0xc4:0xd DW_TAG_variable
 	.long	209                             @ DW_AT_type
 	.byte	2                               @ DW_AT_decl_file
-	.byte	70                              @ DW_AT_decl_line
+	.byte	77                              @ DW_AT_decl_line
 	.byte	5                               @ DW_AT_location
 	.byte	3
 	.long	.L.str.3
@@ -1149,7 +1232,7 @@ pfNonSecure_LED_Off:
 	.byte	6                               @ Abbrev [6] 0xdd:0xd DW_TAG_variable
 	.long	234                             @ DW_AT_type
 	.byte	2                               @ DW_AT_decl_file
-	.byte	80                              @ DW_AT_decl_line
+	.byte	87                              @ DW_AT_decl_line
 	.byte	5                               @ DW_AT_location
 	.byte	3
 	.long	.L.str.4
@@ -1164,7 +1247,7 @@ pfNonSecure_LED_Off:
 	.long	263                             @ DW_AT_type
                                         @ DW_AT_external
 	.byte	2                               @ DW_AT_decl_file
-	.byte	95                              @ DW_AT_decl_line
+	.byte	102                             @ DW_AT_decl_line
 	.byte	5                               @ DW_AT_location
 	.byte	3
 	.long	text
@@ -1179,7 +1262,7 @@ pfNonSecure_LED_Off:
 	.long	292                             @ DW_AT_type
                                         @ DW_AT_external
 	.byte	2                               @ DW_AT_decl_file
-	.byte	101                             @ DW_AT_decl_line
+	.byte	108                             @ DW_AT_decl_line
 	.byte	5                               @ DW_AT_location
 	.byte	3
 	.long	pfNonSecure_LED_On
@@ -1210,14 +1293,14 @@ pfNonSecure_LED_Off:
 	.long	292                             @ DW_AT_type
                                         @ DW_AT_external
 	.byte	2                               @ DW_AT_decl_file
-	.byte	103                             @ DW_AT_decl_line
+	.byte	110                             @ DW_AT_decl_line
 	.byte	5                               @ DW_AT_location
 	.byte	3
 	.long	pfNonSecure_LED_Off
 	.byte	6                               @ Abbrev [6] 0x162:0xd DW_TAG_variable
 	.long	367                             @ DW_AT_type
 	.byte	2                               @ DW_AT_decl_file
-	.byte	115                             @ DW_AT_decl_line
+	.byte	122                             @ DW_AT_decl_line
 	.byte	5                               @ DW_AT_location
 	.byte	3
 	.long	.L.str.5
@@ -1236,193 +1319,184 @@ pfNonSecure_LED_Off:
 	.long	.Linfo_string16                 @ DW_AT_name
 	.byte	8                               @ DW_AT_encoding
 	.byte	1                               @ DW_AT_byte_size
-	.byte	13                              @ Abbrev [13] 0x18d:0x20 DW_TAG_subprogram
+	.byte	13                              @ Abbrev [13] 0x18d:0x11 DW_TAG_subprogram
 	.long	.Lfunc_begin0                   @ DW_AT_low_pc
 	.long	.Lfunc_end0-.Lfunc_begin0       @ DW_AT_high_pc
 	.byte	1                               @ DW_AT_frame_base
 	.byte	93
 	.long	.Linfo_string20                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	23                              @ DW_AT_decl_line
+	.byte	22                              @ DW_AT_decl_line
                                         @ DW_AT_prototyped
                                         @ DW_AT_external
-	.byte	14                              @ Abbrev [14] 0x19e:0xe DW_TAG_formal_parameter
-	.byte	2                               @ DW_AT_location
-	.byte	145
-	.byte	4
-	.long	.Linfo_string29                 @ DW_AT_name
-	.byte	2                               @ DW_AT_decl_file
-	.byte	23                              @ DW_AT_decl_line
-	.long	823                             @ DW_AT_type
-	.byte	0                               @ End Of Children Mark
-	.byte	15                              @ Abbrev [15] 0x1ad:0x9 DW_TAG_subprogram
-	.long	.Linfo_string18                 @ DW_AT_name
-	.byte	4                               @ DW_AT_decl_file
-	.short	634                             @ DW_AT_decl_line
-                                        @ DW_AT_prototyped
-	.byte	1                               @ DW_AT_inline
-	.byte	15                              @ Abbrev [15] 0x1b6:0x9 DW_TAG_subprogram
-	.long	.Linfo_string19                 @ DW_AT_name
-	.byte	4                               @ DW_AT_decl_file
-	.short	621                             @ DW_AT_decl_line
-                                        @ DW_AT_prototyped
-	.byte	1                               @ DW_AT_inline
-	.byte	16                              @ Abbrev [16] 0x1bf:0x46 DW_TAG_subprogram
+	.byte	14                              @ Abbrev [14] 0x19e:0x20 DW_TAG_subprogram
 	.long	.Lfunc_begin1                   @ DW_AT_low_pc
 	.long	.Lfunc_end1-.Lfunc_begin1       @ DW_AT_high_pc
 	.byte	1                               @ DW_AT_frame_base
 	.byte	93
 	.long	.Linfo_string21                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	39                              @ DW_AT_decl_line
-	.long	379                             @ DW_AT_type
+	.byte	27                              @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
                                         @ DW_AT_external
-	.byte	17                              @ Abbrev [17] 0x1d4:0x10 DW_TAG_inlined_subroutine
-	.long	429                             @ DW_AT_abstract_origin
-	.long	.Ltmp2                          @ DW_AT_low_pc
-	.long	.Ltmp3-.Ltmp2                   @ DW_AT_high_pc
-	.byte	2                               @ DW_AT_call_file
-	.byte	41                              @ DW_AT_call_line
-	.byte	5                               @ DW_AT_call_column
-	.byte	17                              @ Abbrev [17] 0x1e4:0x10 DW_TAG_inlined_subroutine
-	.long	438                             @ DW_AT_abstract_origin
-	.long	.Ltmp5                          @ DW_AT_low_pc
-	.long	.Ltmp6-.Ltmp5                   @ DW_AT_high_pc
-	.byte	2                               @ DW_AT_call_file
-	.byte	44                              @ DW_AT_call_line
-	.byte	9                               @ DW_AT_call_column
-	.byte	17                              @ Abbrev [17] 0x1f4:0x10 DW_TAG_inlined_subroutine
-	.long	438                             @ DW_AT_abstract_origin
-	.long	.Ltmp8                          @ DW_AT_low_pc
-	.long	.Ltmp9-.Ltmp8                   @ DW_AT_high_pc
-	.byte	2                               @ DW_AT_call_file
-	.byte	50                              @ DW_AT_call_line
-	.byte	5                               @ DW_AT_call_column
+	.byte	15                              @ Abbrev [15] 0x1af:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	4
+	.long	.Linfo_string30                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	27                              @ DW_AT_decl_line
+	.long	840                             @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
-	.byte	18                              @ Abbrev [18] 0x205:0x32 DW_TAG_subprogram
+	.byte	16                              @ Abbrev [16] 0x1be:0x9 DW_TAG_subprogram
+	.long	.Linfo_string18                 @ DW_AT_name
+	.byte	4                               @ DW_AT_decl_file
+	.short	634                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+	.byte	1                               @ DW_AT_inline
+	.byte	16                              @ Abbrev [16] 0x1c7:0x9 DW_TAG_subprogram
+	.long	.Linfo_string19                 @ DW_AT_name
+	.byte	4                               @ DW_AT_decl_file
+	.short	621                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+	.byte	1                               @ DW_AT_inline
+	.byte	17                              @ Abbrev [17] 0x1d0:0x46 DW_TAG_subprogram
 	.long	.Lfunc_begin2                   @ DW_AT_low_pc
 	.long	.Lfunc_end2-.Lfunc_begin2       @ DW_AT_high_pc
 	.byte	1                               @ DW_AT_frame_base
 	.byte	93
 	.long	.Linfo_string22                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	54                              @ DW_AT_decl_line
+	.byte	46                              @ DW_AT_decl_line
+	.long	379                             @ DW_AT_type
                                         @ DW_AT_external
-	.byte	17                              @ Abbrev [17] 0x216:0x10 DW_TAG_inlined_subroutine
-	.long	429                             @ DW_AT_abstract_origin
-	.long	.Lfunc_begin2                   @ DW_AT_low_pc
-	.long	.Ltmp11-.Lfunc_begin2           @ DW_AT_high_pc
+	.byte	18                              @ Abbrev [18] 0x1e5:0x10 DW_TAG_inlined_subroutine
+	.long	446                             @ DW_AT_abstract_origin
+	.long	.Ltmp3                          @ DW_AT_low_pc
+	.long	.Ltmp4-.Ltmp3                   @ DW_AT_high_pc
 	.byte	2                               @ DW_AT_call_file
-	.byte	56                              @ DW_AT_call_line
+	.byte	48                              @ DW_AT_call_line
 	.byte	5                               @ DW_AT_call_column
-	.byte	17                              @ Abbrev [17] 0x226:0x10 DW_TAG_inlined_subroutine
-	.long	438                             @ DW_AT_abstract_origin
-	.long	.Ltmp12                         @ DW_AT_low_pc
-	.long	.Ltmp13-.Ltmp12                 @ DW_AT_high_pc
+	.byte	18                              @ Abbrev [18] 0x1f5:0x10 DW_TAG_inlined_subroutine
+	.long	455                             @ DW_AT_abstract_origin
+	.long	.Ltmp6                          @ DW_AT_low_pc
+	.long	.Ltmp7-.Ltmp6                   @ DW_AT_high_pc
 	.byte	2                               @ DW_AT_call_file
-	.byte	60                              @ DW_AT_call_line
+	.byte	51                              @ DW_AT_call_line
+	.byte	9                               @ DW_AT_call_column
+	.byte	18                              @ Abbrev [18] 0x205:0x10 DW_TAG_inlined_subroutine
+	.long	455                             @ DW_AT_abstract_origin
+	.long	.Ltmp9                          @ DW_AT_low_pc
+	.long	.Ltmp10-.Ltmp9                  @ DW_AT_high_pc
+	.byte	2                               @ DW_AT_call_file
+	.byte	57                              @ DW_AT_call_line
 	.byte	5                               @ DW_AT_call_column
 	.byte	0                               @ End Of Children Mark
-	.byte	13                              @ Abbrev [13] 0x237:0x50 DW_TAG_subprogram
+	.byte	19                              @ Abbrev [19] 0x216:0x32 DW_TAG_subprogram
 	.long	.Lfunc_begin3                   @ DW_AT_low_pc
 	.long	.Lfunc_end3-.Lfunc_begin3       @ DW_AT_high_pc
 	.byte	1                               @ DW_AT_frame_base
 	.byte	93
 	.long	.Linfo_string23                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	63                              @ DW_AT_decl_line
-                                        @ DW_AT_prototyped
+	.byte	61                              @ DW_AT_decl_line
                                         @ DW_AT_external
-	.byte	14                              @ Abbrev [14] 0x248:0xe DW_TAG_formal_parameter
-	.byte	2                               @ DW_AT_location
-	.byte	145
-	.byte	4
-	.long	.Linfo_string30                 @ DW_AT_name
-	.byte	2                               @ DW_AT_decl_file
-	.byte	63                              @ DW_AT_decl_line
-	.long	824                             @ DW_AT_type
-	.byte	17                              @ Abbrev [17] 0x256:0x10 DW_TAG_inlined_subroutine
-	.long	429                             @ DW_AT_abstract_origin
-	.long	.Ltmp16                         @ DW_AT_low_pc
-	.long	.Ltmp17-.Ltmp16                 @ DW_AT_high_pc
+	.byte	18                              @ Abbrev [18] 0x227:0x10 DW_TAG_inlined_subroutine
+	.long	446                             @ DW_AT_abstract_origin
+	.long	.Lfunc_begin3                   @ DW_AT_low_pc
+	.long	.Ltmp12-.Lfunc_begin3           @ DW_AT_high_pc
 	.byte	2                               @ DW_AT_call_file
-	.byte	66                              @ DW_AT_call_line
+	.byte	63                              @ DW_AT_call_line
 	.byte	5                               @ DW_AT_call_column
-	.byte	17                              @ Abbrev [17] 0x266:0x10 DW_TAG_inlined_subroutine
-	.long	438                             @ DW_AT_abstract_origin
-	.long	.Ltmp20                         @ DW_AT_low_pc
-	.long	.Ltmp21-.Ltmp20                 @ DW_AT_high_pc
+	.byte	18                              @ Abbrev [18] 0x237:0x10 DW_TAG_inlined_subroutine
+	.long	455                             @ DW_AT_abstract_origin
+	.long	.Ltmp13                         @ DW_AT_low_pc
+	.long	.Ltmp14-.Ltmp13                 @ DW_AT_high_pc
 	.byte	2                               @ DW_AT_call_file
-	.byte	72                              @ DW_AT_call_line
-	.byte	9                               @ DW_AT_call_column
-	.byte	17                              @ Abbrev [17] 0x276:0x10 DW_TAG_inlined_subroutine
-	.long	438                             @ DW_AT_abstract_origin
-	.long	.Ltmp22                         @ DW_AT_low_pc
-	.long	.Ltmp23-.Ltmp22                 @ DW_AT_high_pc
-	.byte	2                               @ DW_AT_call_file
-	.byte	75                              @ DW_AT_call_line
+	.byte	67                              @ DW_AT_call_line
 	.byte	5                               @ DW_AT_call_column
 	.byte	0                               @ End Of Children Mark
-	.byte	19                              @ Abbrev [19] 0x287:0x24 DW_TAG_subprogram
+	.byte	14                              @ Abbrev [14] 0x248:0x50 DW_TAG_subprogram
 	.long	.Lfunc_begin4                   @ DW_AT_low_pc
 	.long	.Lfunc_end4-.Lfunc_begin4       @ DW_AT_high_pc
 	.byte	1                               @ DW_AT_frame_base
 	.byte	93
 	.long	.Linfo_string24                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	109                             @ DW_AT_decl_line
+	.byte	70                              @ DW_AT_decl_line
                                         @ DW_AT_prototyped
-	.long	319                             @ DW_AT_type
                                         @ DW_AT_external
-	.byte	14                              @ Abbrev [14] 0x29c:0xe DW_TAG_formal_parameter
+	.byte	15                              @ Abbrev [15] 0x259:0xe DW_TAG_formal_parameter
 	.byte	2                               @ DW_AT_location
 	.byte	145
 	.byte	4
-	.long	.Linfo_string38                 @ DW_AT_name
+	.long	.Linfo_string31                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	109                             @ DW_AT_decl_line
-	.long	153                             @ DW_AT_type
+	.byte	70                              @ DW_AT_decl_line
+	.long	841                             @ DW_AT_type
+	.byte	18                              @ Abbrev [18] 0x267:0x10 DW_TAG_inlined_subroutine
+	.long	446                             @ DW_AT_abstract_origin
+	.long	.Ltmp17                         @ DW_AT_low_pc
+	.long	.Ltmp18-.Ltmp17                 @ DW_AT_high_pc
+	.byte	2                               @ DW_AT_call_file
+	.byte	73                              @ DW_AT_call_line
+	.byte	5                               @ DW_AT_call_column
+	.byte	18                              @ Abbrev [18] 0x277:0x10 DW_TAG_inlined_subroutine
+	.long	455                             @ DW_AT_abstract_origin
+	.long	.Ltmp21                         @ DW_AT_low_pc
+	.long	.Ltmp22-.Ltmp21                 @ DW_AT_high_pc
+	.byte	2                               @ DW_AT_call_file
+	.byte	79                              @ DW_AT_call_line
+	.byte	9                               @ DW_AT_call_column
+	.byte	18                              @ Abbrev [18] 0x287:0x10 DW_TAG_inlined_subroutine
+	.long	455                             @ DW_AT_abstract_origin
+	.long	.Ltmp23                         @ DW_AT_low_pc
+	.long	.Ltmp24-.Ltmp23                 @ DW_AT_high_pc
+	.byte	2                               @ DW_AT_call_file
+	.byte	82                              @ DW_AT_call_line
+	.byte	5                               @ DW_AT_call_column
 	.byte	0                               @ End Of Children Mark
-	.byte	19                              @ Abbrev [19] 0x2ab:0x24 DW_TAG_subprogram
+	.byte	20                              @ Abbrev [20] 0x298:0x24 DW_TAG_subprogram
 	.long	.Lfunc_begin5                   @ DW_AT_low_pc
 	.long	.Lfunc_end5-.Lfunc_begin5       @ DW_AT_high_pc
 	.byte	1                               @ DW_AT_frame_base
 	.byte	93
 	.long	.Linfo_string25                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	112                             @ DW_AT_decl_line
+	.byte	116                             @ DW_AT_decl_line
                                         @ DW_AT_prototyped
 	.long	319                             @ DW_AT_type
                                         @ DW_AT_external
-	.byte	14                              @ Abbrev [14] 0x2c0:0xe DW_TAG_formal_parameter
+	.byte	15                              @ Abbrev [15] 0x2ad:0xe DW_TAG_formal_parameter
 	.byte	2                               @ DW_AT_location
 	.byte	145
 	.byte	4
-	.long	.Linfo_string38                 @ DW_AT_name
+	.long	.Linfo_string44                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	112                             @ DW_AT_decl_line
+	.byte	116                             @ DW_AT_decl_line
 	.long	153                             @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
-	.byte	13                              @ Abbrev [13] 0x2cf:0x20 DW_TAG_subprogram
+	.byte	20                              @ Abbrev [20] 0x2bc:0x24 DW_TAG_subprogram
 	.long	.Lfunc_begin6                   @ DW_AT_low_pc
 	.long	.Lfunc_end6-.Lfunc_begin6       @ DW_AT_high_pc
 	.byte	1                               @ DW_AT_frame_base
 	.byte	93
 	.long	.Linfo_string26                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	115                             @ DW_AT_decl_line
+	.byte	119                             @ DW_AT_decl_line
                                         @ DW_AT_prototyped
+	.long	319                             @ DW_AT_type
                                         @ DW_AT_external
-	.byte	14                              @ Abbrev [14] 0x2e0:0xe DW_TAG_formal_parameter
+	.byte	15                              @ Abbrev [15] 0x2d1:0xe DW_TAG_formal_parameter
 	.byte	2                               @ DW_AT_location
 	.byte	145
 	.byte	4
-	.long	.Linfo_string39                 @ DW_AT_name
+	.long	.Linfo_string44                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	115                             @ DW_AT_decl_line
-	.long	953                             @ DW_AT_type
+	.byte	119                             @ DW_AT_decl_line
+	.long	153                             @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
-	.byte	19                              @ Abbrev [19] 0x2ef:0x24 DW_TAG_subprogram
+	.byte	14                              @ Abbrev [14] 0x2e0:0x20 DW_TAG_subprogram
 	.long	.Lfunc_begin7                   @ DW_AT_low_pc
 	.long	.Lfunc_end7-.Lfunc_begin7       @ DW_AT_high_pc
 	.byte	1                               @ DW_AT_frame_base
@@ -1431,103 +1505,146 @@ pfNonSecure_LED_Off:
 	.byte	2                               @ DW_AT_decl_file
 	.byte	122                             @ DW_AT_decl_line
                                         @ DW_AT_prototyped
-	.long	319                             @ DW_AT_type
                                         @ DW_AT_external
-	.byte	14                              @ Abbrev [14] 0x304:0xe DW_TAG_formal_parameter
+	.byte	15                              @ Abbrev [15] 0x2f1:0xe DW_TAG_formal_parameter
 	.byte	2                               @ DW_AT_location
 	.byte	145
-	.byte	0
-	.long	.Linfo_string29                 @ DW_AT_name
+	.byte	4
+	.long	.Linfo_string45                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
 	.byte	122                             @ DW_AT_decl_line
-	.long	292                             @ DW_AT_type
+	.long	1019                            @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
-	.byte	19                              @ Abbrev [19] 0x313:0x24 DW_TAG_subprogram
+	.byte	20                              @ Abbrev [20] 0x300:0x24 DW_TAG_subprogram
 	.long	.Lfunc_begin8                   @ DW_AT_low_pc
 	.long	.Lfunc_end8-.Lfunc_begin8       @ DW_AT_high_pc
 	.byte	1                               @ DW_AT_frame_base
 	.byte	93
 	.long	.Linfo_string28                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	130                             @ DW_AT_decl_line
+	.byte	129                             @ DW_AT_decl_line
                                         @ DW_AT_prototyped
 	.long	319                             @ DW_AT_type
                                         @ DW_AT_external
-	.byte	14                              @ Abbrev [14] 0x328:0xe DW_TAG_formal_parameter
+	.byte	15                              @ Abbrev [15] 0x315:0xe DW_TAG_formal_parameter
 	.byte	2                               @ DW_AT_location
 	.byte	145
 	.byte	0
-	.long	.Linfo_string29                 @ DW_AT_name
+	.long	.Linfo_string30                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	130                             @ DW_AT_decl_line
+	.byte	129                             @ DW_AT_decl_line
 	.long	292                             @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
-	.byte	20                              @ Abbrev [20] 0x337:0x1 DW_TAG_pointer_type
-	.byte	4                               @ Abbrev [4] 0x338:0x5 DW_TAG_pointer_type
-	.long	829                             @ DW_AT_type
-	.byte	3                               @ Abbrev [3] 0x33d:0xb DW_TAG_typedef
-	.long	840                             @ DW_AT_type
-	.long	.Linfo_string37                 @ DW_AT_name
-	.byte	5                               @ DW_AT_decl_file
-	.byte	23                              @ DW_AT_decl_line
-	.byte	21                              @ Abbrev [21] 0x348:0x46 DW_TAG_structure_type
-	.long	.Linfo_string37                 @ DW_AT_name
-	.short	572                             @ DW_AT_byte_size
-	.byte	5                               @ DW_AT_decl_file
-	.byte	17                              @ DW_AT_decl_line
-	.byte	22                              @ Abbrev [22] 0x351:0xc DW_TAG_member
-	.long	.Linfo_string31                 @ DW_AT_name
-	.long	379                             @ DW_AT_type
-	.byte	5                               @ DW_AT_decl_file
-	.byte	18                              @ DW_AT_decl_line
-	.byte	0                               @ DW_AT_data_member_location
-	.byte	22                              @ Abbrev [22] 0x35d:0xc DW_TAG_member
-	.long	.Linfo_string32                 @ DW_AT_name
-	.long	910                             @ DW_AT_type
-	.byte	5                               @ DW_AT_decl_file
-	.byte	19                              @ DW_AT_decl_line
-	.byte	1                               @ DW_AT_data_member_location
-	.byte	22                              @ Abbrev [22] 0x369:0xc DW_TAG_member
-	.long	.Linfo_string33                 @ DW_AT_name
-	.long	910                             @ DW_AT_type
-	.byte	5                               @ DW_AT_decl_file
-	.byte	20                              @ DW_AT_decl_line
-	.byte	29                              @ DW_AT_data_member_location
-	.byte	22                              @ Abbrev [22] 0x375:0xc DW_TAG_member
-	.long	.Linfo_string34                 @ DW_AT_name
-	.long	922                             @ DW_AT_type
-	.byte	5                               @ DW_AT_decl_file
-	.byte	21                              @ DW_AT_decl_line
-	.byte	58                              @ DW_AT_data_member_location
-	.byte	22                              @ Abbrev [22] 0x381:0xc DW_TAG_member
+	.byte	20                              @ Abbrev [20] 0x324:0x24 DW_TAG_subprogram
+	.long	.Lfunc_begin9                   @ DW_AT_low_pc
+	.long	.Lfunc_end9-.Lfunc_begin9       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string29                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	137                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+	.long	319                             @ DW_AT_type
+                                        @ DW_AT_external
+	.byte	15                              @ Abbrev [15] 0x339:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	0
 	.long	.Linfo_string30                 @ DW_AT_name
-	.long	940                             @ DW_AT_type
-	.byte	5                               @ DW_AT_decl_file
-	.byte	22                              @ DW_AT_decl_line
-	.byte	60                              @ DW_AT_data_member_location
+	.byte	2                               @ DW_AT_decl_file
+	.byte	137                             @ DW_AT_decl_line
+	.long	292                             @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
-	.byte	7                               @ Abbrev [7] 0x38e:0xc DW_TAG_array_type
+	.byte	21                              @ Abbrev [21] 0x348:0x1 DW_TAG_pointer_type
+	.byte	4                               @ Abbrev [4] 0x349:0x5 DW_TAG_pointer_type
+	.long	846                             @ DW_AT_type
+	.byte	3                               @ Abbrev [3] 0x34e:0xb DW_TAG_typedef
+	.long	857                             @ DW_AT_type
+	.long	.Linfo_string43                 @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.byte	41                              @ DW_AT_decl_line
+	.byte	22                              @ Abbrev [22] 0x359:0x77 DW_TAG_structure_type
+	.long	.Linfo_string43                 @ DW_AT_name
+	.short	2148                            @ DW_AT_byte_size
+	.byte	5                               @ DW_AT_decl_file
+	.byte	30                              @ DW_AT_decl_line
+	.byte	23                              @ Abbrev [23] 0x362:0xc DW_TAG_member
+	.long	.Linfo_string32                 @ DW_AT_name
 	.long	379                             @ DW_AT_type
-	.byte	8                               @ Abbrev [8] 0x393:0x6 DW_TAG_subrange_type
+	.byte	5                               @ DW_AT_decl_file
+	.byte	32                              @ DW_AT_decl_line
+	.byte	0                               @ DW_AT_data_member_location
+	.byte	23                              @ Abbrev [23] 0x36e:0xc DW_TAG_member
+	.long	.Linfo_string33                 @ DW_AT_name
+	.long	153                             @ DW_AT_type
+	.byte	5                               @ DW_AT_decl_file
+	.byte	33                              @ DW_AT_decl_line
+	.byte	4                               @ DW_AT_data_member_location
+	.byte	23                              @ Abbrev [23] 0x37a:0xc DW_TAG_member
+	.long	.Linfo_string34                 @ DW_AT_name
+	.long	976                             @ DW_AT_type
+	.byte	5                               @ DW_AT_decl_file
+	.byte	34                              @ DW_AT_decl_line
+	.byte	8                               @ DW_AT_data_member_location
+	.byte	23                              @ Abbrev [23] 0x386:0xc DW_TAG_member
+	.long	.Linfo_string35                 @ DW_AT_name
+	.long	976                             @ DW_AT_type
+	.byte	5                               @ DW_AT_decl_file
+	.byte	35                              @ DW_AT_decl_line
+	.byte	36                              @ DW_AT_data_member_location
+	.byte	23                              @ Abbrev [23] 0x392:0xc DW_TAG_member
+	.long	.Linfo_string36                 @ DW_AT_name
+	.long	988                             @ DW_AT_type
+	.byte	5                               @ DW_AT_decl_file
+	.byte	36                              @ DW_AT_decl_line
+	.byte	64                              @ DW_AT_data_member_location
+	.byte	23                              @ Abbrev [23] 0x39e:0xc DW_TAG_member
+	.long	.Linfo_string39                 @ DW_AT_name
+	.long	976                             @ DW_AT_type
+	.byte	5                               @ DW_AT_decl_file
+	.byte	37                              @ DW_AT_decl_line
+	.byte	66                              @ DW_AT_data_member_location
+	.byte	23                              @ Abbrev [23] 0x3aa:0xc DW_TAG_member
+	.long	.Linfo_string40                 @ DW_AT_name
+	.long	988                             @ DW_AT_type
+	.byte	5                               @ DW_AT_decl_file
+	.byte	38                              @ DW_AT_decl_line
+	.byte	94                              @ DW_AT_data_member_location
+	.byte	23                              @ Abbrev [23] 0x3b6:0xc DW_TAG_member
+	.long	.Linfo_string41                 @ DW_AT_name
+	.long	1006                            @ DW_AT_type
+	.byte	5                               @ DW_AT_decl_file
+	.byte	39                              @ DW_AT_decl_line
+	.byte	96                              @ DW_AT_data_member_location
+	.byte	24                              @ Abbrev [24] 0x3c2:0xd DW_TAG_member
+	.long	.Linfo_string42                 @ DW_AT_name
+	.long	988                             @ DW_AT_type
+	.byte	5                               @ DW_AT_decl_file
+	.byte	40                              @ DW_AT_decl_line
+	.short	2144                            @ DW_AT_data_member_location
+	.byte	0                               @ End Of Children Mark
+	.byte	7                               @ Abbrev [7] 0x3d0:0xc DW_TAG_array_type
+	.long	379                             @ DW_AT_type
+	.byte	8                               @ Abbrev [8] 0x3d5:0x6 DW_TAG_subrange_type
 	.long	104                             @ DW_AT_type
 	.byte	28                              @ DW_AT_count
 	.byte	0                               @ End Of Children Mark
-	.byte	3                               @ Abbrev [3] 0x39a:0xb DW_TAG_typedef
-	.long	933                             @ DW_AT_type
-	.long	.Linfo_string36                 @ DW_AT_name
+	.byte	3                               @ Abbrev [3] 0x3dc:0xb DW_TAG_typedef
+	.long	999                             @ DW_AT_type
+	.long	.Linfo_string38                 @ DW_AT_name
 	.byte	3                               @ DW_AT_decl_file
 	.byte	63                              @ DW_AT_decl_line
-	.byte	9                               @ Abbrev [9] 0x3a5:0x7 DW_TAG_base_type
-	.long	.Linfo_string35                 @ DW_AT_name
+	.byte	9                               @ Abbrev [9] 0x3e7:0x7 DW_TAG_base_type
+	.long	.Linfo_string37                 @ DW_AT_name
 	.byte	7                               @ DW_AT_encoding
 	.byte	2                               @ DW_AT_byte_size
-	.byte	7                               @ Abbrev [7] 0x3ac:0xd DW_TAG_array_type
-	.long	379                             @ DW_AT_type
-	.byte	23                              @ Abbrev [23] 0x3b1:0x7 DW_TAG_subrange_type
+	.byte	7                               @ Abbrev [7] 0x3ee:0xd DW_TAG_array_type
+	.long	153                             @ DW_AT_type
+	.byte	25                              @ Abbrev [25] 0x3f3:0x7 DW_TAG_subrange_type
 	.long	104                             @ DW_AT_type
 	.short	512                             @ DW_AT_count
 	.byte	0                               @ End Of Children Mark
-	.byte	4                               @ Abbrev [4] 0x3b9:0x5 DW_TAG_pointer_type
+	.byte	4                               @ Abbrev [4] 0x3fb:0x5 DW_TAG_pointer_type
 	.long	97                              @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
 .Ldebug_info_end0:
@@ -1551,6 +1668,8 @@ pfNonSecure_LED_Off:
 	.long	.Lfunc_end7
 	.long	.Lfunc_begin8
 	.long	.Lfunc_end8
+	.long	.Lfunc_begin9
+	.long	.Lfunc_end9
 	.long	0
 	.long	0
 	.section	.debug_str,"MS",%progbits,1
@@ -1595,45 +1714,57 @@ pfNonSecure_LED_Off:
 .Linfo_string19:
 	.asciz	"__enable_irq"                  @ string offset=334
 .Linfo_string20:
-	.asciz	"SECURE_register_callback"      @ string offset=347
+	.asciz	"SECURE_NOPE"                   @ string offset=347
 .Linfo_string21:
-	.asciz	"_set_stat"                     @ string offset=372
+	.asciz	"SECURE_register_callback"      @ string offset=359
 .Linfo_string22:
-	.asciz	"_clear_stat"                   @ string offset=382
+	.asciz	"_set_stat"                     @ string offset=384
 .Linfo_string23:
-	.asciz	"SECURE_start_cfa"              @ string offset=394
+	.asciz	"_clear_stat"                   @ string offset=394
 .Linfo_string24:
-	.asciz	"Secure_LED_On"                 @ string offset=411
+	.asciz	"SECURE_start_cfa"              @ string offset=406
 .Linfo_string25:
-	.asciz	"Secure_LED_Off"                @ string offset=425
+	.asciz	"Secure_LED_On"                 @ string offset=423
 .Linfo_string26:
-	.asciz	"Secure_printf"                 @ string offset=440
+	.asciz	"Secure_LED_Off"                @ string offset=437
 .Linfo_string27:
-	.asciz	"Secure_LED_On_callback"        @ string offset=454
+	.asciz	"Secure_printf"                 @ string offset=452
 .Linfo_string28:
-	.asciz	"Secure_LED_Off_callback"       @ string offset=477
+	.asciz	"Secure_LED_On_callback"        @ string offset=466
 .Linfo_string29:
-	.asciz	"callback"                      @ string offset=501
+	.asciz	"Secure_LED_Off_callback"       @ string offset=489
 .Linfo_string30:
-	.asciz	"report"                        @ string offset=510
+	.asciz	"callback"                      @ string offset=513
 .Linfo_string31:
-	.asciz	"status"                        @ string offset=517
+	.asciz	"report"                        @ string offset=522
 .Linfo_string32:
-	.asciz	"challenge"                     @ string offset=524
+	.asciz	"status"                        @ string offset=529
 .Linfo_string33:
-	.asciz	"signature"                     @ string offset=534
+	.asciz	"log_counter"                   @ string offset=536
 .Linfo_string34:
-	.asciz	"report_size"                   @ string offset=544
+	.asciz	"challenge"                     @ string offset=548
 .Linfo_string35:
-	.asciz	"unsigned short"                @ string offset=556
+	.asciz	"signature"                     @ string offset=558
 .Linfo_string36:
-	.asciz	"uint16_t"                      @ string offset=571
+	.asciz	"isFinal"                       @ string offset=568
 .Linfo_string37:
-	.asciz	"CFReport"                      @ string offset=580
+	.asciz	"unsigned short"                @ string offset=576
 .Linfo_string38:
-	.asciz	"num"                           @ string offset=589
+	.asciz	"uint16_t"                      @ string offset=591
 .Linfo_string39:
-	.asciz	"pString"                       @ string offset=593
+	.asciz	"mem_hash"                      @ string offset=600
+.Linfo_string40:
+	.asciz	"num_CF_Log_size"               @ string offset=609
+.Linfo_string41:
+	.asciz	"CFLog"                         @ string offset=625
+.Linfo_string42:
+	.asciz	"number_of_logs_sent"           @ string offset=631
+.Linfo_string43:
+	.asciz	"CFReport"                      @ string offset=651
+.Linfo_string44:
+	.asciz	"num"                           @ string offset=660
+.Linfo_string45:
+	.asciz	"pString"                       @ string offset=664
 	.ident	"Component: Arm Compiler for Embedded 6.22 Tool: armclang [5ee92100]"
 	.section	".note.GNU-stack","",%progbits
 	.eabi_attribute	30, 6	@ Tag_ABI_optimization_goals

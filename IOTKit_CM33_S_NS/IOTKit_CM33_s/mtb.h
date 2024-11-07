@@ -50,6 +50,12 @@ typedef struct MTB_struct{
 #define DEMCR_MON_EN 					1 << DEMCR_MON_EN_OFFSET
 #define DEMCR_SDME 						1 << DEMCR_SDME_OFFSET
 
+
+#define DHCSR_HALT_ENABLED_OFFSET 		0
+#define DHCSR_HALT_ENABLED_MASK 		1 << DHCSR_HALT_ENABLED_OFFSET
+
+#define DHCSR_DEBUG_KEY	 				0xA05F
+
 #define DWT_FUNCTION_DATAVSIZE_OFFSET   10
 #define DWT_FUNCTION_ACTION_OFFSET      4
 #define DWT_FUNCTION_MATCHED_OFFSET     24
@@ -60,17 +66,22 @@ typedef struct MTB_struct{
 #define DWT_FUNCTION_MATCHED_MASK       0b1 << DWT_FUNCTION_MATCHED_OFFSET
 #define DWT_FUNCTION_MATCH_MASK         0b1111 <<  DWT_FUNCTION_MATCH_OFFSET
 
-#define DWT_A_SIZE 						5
+#define DWT_A_SIZE 						50
 #define DWT_B_SIZE 						5
 
 #define SET_BITS(D, X, Y, Z) \
-    ((D) = ((D) & ~(((1U << ((Y) - (X) + 1)) - 1) << (X))) | ((Z) << (X)))
+    ((D) = ((D) & ~(((1U << ((Y) - (X) + 1)) - 1) << (X))) | ((Z) << (X))) // set a specific range of bits in a variable (or register) D to a value Z, starting at bit position X and ending at bit position Y
 
 #define MTB_WATERMARK_A (( (sizeof(uint32_t)* 2 * DWT_A_SIZE) << 3 ) | MTB_FLOW_AUTOHALT_MASK | MTB_FLOW_AUTOSTOP_MASK)
 #define MTB_WATERMARK_B (( (sizeof(uint32_t)* 2 * DWT_A_SIZE * 2) << 3 ) | MTB_FLOW_AUTOHALT_MASK | MTB_FLOW_AUTOSTOP_MASK)
 
 void mtb_init();
 void mtb_exit();
+void mtb_cleanMTB();
+void vMTB_sendBuffer();
+
+void __debug_MTB_Registers();
+void __debug_DWT_Registers();
 
 #endif
 

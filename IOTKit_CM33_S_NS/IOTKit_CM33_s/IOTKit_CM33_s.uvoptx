@@ -304,7 +304,7 @@
         <LExpSel>0</LExpSel>
       </OPTXL>
       <OPTFL>
-        <tvExp>0</tvExp>
+        <tvExp>1</tvExp>
         <tvExpOptDlg>0</tvExpOptDlg>
         <IsCurrentTarget>1</IsCurrentTarget>
       </OPTFL>
@@ -366,7 +366,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGTARM</Key>
-          <Name>(6010=1982,104,2459,700,0)(6018=-1,-1,-1,-1,0)(6019=-1,-1,-1,-1,0)(6008=2686,106,2968,290,0)(6009=2686,292,2968,476,0)(6014=-1,-1,-1,-1,0)(6015=120,153,378,775,0)(6003=2007,167,2580,702,0)(6000=2190,169,2643,501,0)</Name>
+          <Name>(6010=1982,104,2459,700,0)(6018=105,137,294,501,0)(6019=-1,-1,-1,-1,0)(6008=2686,106,2968,290,0)(6009=2686,292,2968,476,0)(6014=-1,-1,-1,-1,0)(6015=120,153,378,775,0)(6003=2007,167,2580,702,0)(6000=2190,169,2643,501,0)</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -393,21 +393,6 @@
       <WatchWindow1>
         <Ww>
           <count>0</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>mtb</ItemText>
-        </Ww>
-        <Ww>
-          <count>1</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>DWT_</ItemText>
-        </Ww>
-        <Ww>
-          <count>2</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>ITM_</ItemText>
-        </Ww>
-        <Ww>
-          <count>3</count>
           <WinNumber>1</WinNumber>
           <ItemText>CoreDebug_</ItemText>
         </Ww>
@@ -457,7 +442,7 @@
         <periodic>1</periodic>
         <aLwin>1</aLwin>
         <aCover>0</aCover>
-        <aSer1>1</aSer1>
+        <aSer1>0</aSer1>
         <aSer2>0</aSer2>
         <aPa>0</aPa>
         <viewmode>1</viewmode>
@@ -472,7 +457,7 @@
         <aLa>0</aLa>
         <aPa1>0</aPa1>
         <AscS4>0</AscS4>
-        <aSer4>1</aSer4>
+        <aSer4>0</aSer4>
         <StkLoc>1</StkLoc>
         <TrcWin>0</TrcWin>
         <newCpu>0</newCpu>

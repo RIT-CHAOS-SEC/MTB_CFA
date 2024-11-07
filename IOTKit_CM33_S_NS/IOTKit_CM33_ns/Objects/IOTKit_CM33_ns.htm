@@ -3,11 +3,11 @@
 <title>Static Call Graph - [.\Objects\IOTKit_CM33_ns.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\IOTKit_CM33_ns.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Tue Nov  5 17:39:29 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Thu Nov  7 17:09:30 2024
 <BR><P>
 <H3>Maximum Stack Usage =        220 bytes + Unknown(Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-matmul3_entry &rArr; matmul3
+application_entry &rArr; application
 <P>
 <H3>
 Function Pointers
@@ -127,7 +127,7 @@ Function Pointers
  <LI><a href="#[23]">UART4_Handler</a> from startup_iotkit_cm33.o(.text.Default_Handler) referenced from startup_iotkit_cm33.o(RESET)
  <LI><a href="#[24]">UARTOVF_Handler</a> from startup_iotkit_cm33.o(.text.Default_Handler) referenced from startup_iotkit_cm33.o(RESET)
  <LI><a href="#[5]">UsageFault_Handler</a> from startup_iotkit_cm33.o(.text.Default_Handler) referenced from startup_iotkit_cm33.o(RESET)
- <LI><a href="#[71]">matmul3_entry</a> from application.o(.MTBAR_MEM) referenced 2 times from main_ns.o(.text.main)
+ <LI><a href="#[71]">application_entry</a> from application.o(.MTBDR_MEM) referenced 2 times from main_ns.o(.text.main)
 </UL>
 <P>
 <H3>
@@ -701,19 +701,19 @@ Global Symbols
 
 <P><STRONG><a name="[bc]"></a>__fplib_config_pureend_doubles</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, fpinit.o(x$fpl$fpinit), UNUSED)
 
-<P><STRONG><a name="[74]"></a>nopes</STRONG> (Thumb, 720 bytes, Stack size 0 bytes, main_ns.o(.MTBAR_MEM), UNUSED, KEPT)
-
-<P><STRONG><a name="[71]"></a>matmul3_entry</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, application.o(.MTBAR_MEM))
-<BR><BR>[Stack]<UL><LI>Max Depth = 220<LI>Call Chain = matmul3_entry &rArr; matmul3
+<P><STRONG><a name="[71]"></a>application_entry</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, application.o(.MTBDR_MEM))
+<BR><BR>[Stack]<UL><LI>Max Depth = 220<LI>Call Chain = application_entry &rArr; application
 </UL>
-<BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;matmul3
+<BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;application
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main_ns.o(.text.main)
 </UL>
-<P><STRONG><a name="[76]"></a>matmul3</STRONG> (Thumb, 126 bytes, Stack size 212 bytes, application.o(.MTBDR_MEM))
-<BR><BR>[Stack]<UL><LI>Max Depth = 212<LI>Call Chain = matmul3
+<P><STRONG><a name="[74]"></a>nopes</STRONG> (Thumb, 720 bytes, Stack size 0 bytes, main_ns.o(.MTBAR_MEM), UNUSED, KEPT)
+
+<P><STRONG><a name="[76]"></a>application</STRONG> (Thumb, 126 bytes, Stack size 212 bytes, application.o(.MTBAR_MEM))
+<BR><BR>[Stack]<UL><LI>Max Depth = 212<LI>Call Chain = application
 </UL>
-<BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;matmul3_entry
+<BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;application_entry
 </UL>
 
 <P><STRONG><a name="[8c]"></a>SECURE_register_callback</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, IOTKit_CM33_s_CMSE_Lib.o(ABSOLUTE))

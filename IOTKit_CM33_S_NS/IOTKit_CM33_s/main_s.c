@@ -168,8 +168,6 @@ int main(void)
 
     stdout_init(); /* Initialize Serial interface */
 
-    mtb_init();
-
     SysTick_Config(SystemCoreClock / 100); /* Generate interrupt each 10 ms */
 
 		// while(1){
