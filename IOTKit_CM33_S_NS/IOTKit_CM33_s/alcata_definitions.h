@@ -9,9 +9,15 @@
 
 // AVAILABLE APPLICATIONS
 #define MATMAL3  0
+#define PRIME    1
+#define DUFF     2
+#define CRC32    3
+#define FIB      4
+#define SEARCH   5
+#define TEST     6
 
 // CHOOSE APPLICATION HERE
-#define APPLICATION MATMAL3
+#define APPLICATION CRC32
 
 
 #endif

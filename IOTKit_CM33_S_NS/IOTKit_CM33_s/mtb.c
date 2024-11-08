@@ -100,13 +100,16 @@ void mtb_cleanMTB(){
 
 #define USE_PRINTF 1
 
+uint32_t log_counter;
+
 void vMTB_sendBuffer(){
 
+        printf("[LOG] Sending MTB Buffer\n");
     // stdout_init();
     #if USE_PRINTF == 1
-        printf("[LOG] Sending MTB Buffer\n");
     #endif
-
+    log_counter+=mtb->MTB_POSITION;
+    printf("[LOG] Log Counter : %d\n", log_counter);
     printf("%d\n", mtb->MTB_POSITION);
 
     uint32_t * ptr = (uint32_t *) mtb->MTB_BASE;
@@ -120,8 +123,8 @@ void vMTB_sendBuffer(){
 
 #endif
     #if USE_PRINTF == 1
-        printf("\n[LOG] MTB Buffer Sent\n");
     #endif
+printf("\n[LOG] MTB Buffer Sent\n");
 
     return;
 }
@@ -185,6 +188,7 @@ void mtb_setup_MTB(){
 #pragma GCC pop_options
 
 void mtb_init(){
+    log_counter = 0;
     printf("[LOG] Setting up DWT\n");
 	mtb_setup_DWT();
     printf("[LOG] Setting up MTB\n");

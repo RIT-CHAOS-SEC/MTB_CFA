@@ -66,7 +66,7 @@ typedef struct MTB_struct{
 #define DWT_FUNCTION_MATCHED_MASK       0b1 << DWT_FUNCTION_MATCHED_OFFSET
 #define DWT_FUNCTION_MATCH_MASK         0b1111 <<  DWT_FUNCTION_MATCH_OFFSET
 
-#define DWT_A_SIZE 						50
+#define DWT_A_SIZE 						63
 #define DWT_B_SIZE 						5
 
 #define SET_BITS(D, X, Y, Z) \

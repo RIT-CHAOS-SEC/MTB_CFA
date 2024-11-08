@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\IOTKit_CM33_s.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\IOTKit_CM33_s.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Fri Nov  8 12:56:45 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Fri Nov  8 17:04:40 2024
 <BR><P>
 <H3>Maximum Stack Usage =        324 bytes + Unknown(Functions without stacksize, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -496,7 +496,7 @@ Global Symbols
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__acle_se_Secure_printf
 <LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eCFA_init_cfa
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__acle_se_SECURE_start_cfa
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__acle_se_SECURE_register_callback
+<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__acle_se_SECURE_register_callback
 <LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__debug_DWT_Registers
 <LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__debug_MTB_Registers
 <LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mtb_init
@@ -1768,7 +1768,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SECURE_NOPE
 </UL>
 
-<P><STRONG><a name="[84]"></a>__acle_se_SECURE_register_callback</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, secure_functions.o(.text.SECURE_register_callback), UNUSED, KEPT)
+<P><STRONG><a name="[85]"></a>__acle_se_SECURE_register_callback</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, secure_functions.o(.text.SECURE_register_callback), UNUSED, KEPT)
 <BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
 <LI>Call Chain = __acle_se_SECURE_register_callback &rArr; printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
@@ -1797,7 +1797,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Secure_LED_Off
 </UL>
 
-<P><STRONG><a name="[85]"></a>__acle_se_Secure_LED_Off_callback</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, secure_functions.o(.text.Secure_LED_Off_callback), UNUSED, KEPT)
+<P><STRONG><a name="[84]"></a>__acle_se_Secure_LED_Off_callback</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, secure_functions.o(.text.Secure_LED_Off_callback), UNUSED, KEPT)
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = __acle_se_Secure_LED_Off_callback
 </UL>
 <BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Secure_LED_Off_callback
@@ -1995,7 +1995,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eCFA_init_cfa
 </UL>
 
-<P><STRONG><a name="[13d]"></a>mtb_init</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, mtb.o(.text.mtb_init), UNUSED, KEPT)
+<P><STRONG><a name="[13d]"></a>mtb_init</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, mtb.o(.text.mtb_init), UNUSED, KEPT)
 <BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
 <LI>Call Chain = mtb_init &rArr; mtb_setup_DWT &rArr; printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
@@ -2044,7 +2044,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_write
 </UL>
 
-<P><STRONG><a name="[13e]"></a>vMTB_sendBuffer</STRONG> (Thumb, 124 bytes, Stack size 24 bytes, mtb.o(.text.vMTB_sendBuffer))
+<P><STRONG><a name="[13e]"></a>vMTB_sendBuffer</STRONG> (Thumb, 158 bytes, Stack size 24 bytes, mtb.o(.text.vMTB_sendBuffer))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
 <LI>Call Chain = vMTB_sendBuffer &rArr; printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
@@ -2178,7 +2178,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
 <LI>Call Chain = SECURE_register_callback &rArr; __acle_se_SECURE_register_callback &rArr; printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__acle_se_SECURE_register_callback
+<BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__acle_se_SECURE_register_callback
 </UL>
 
 <P><STRONG><a name="[8f]"></a>SECURE_start_cfa</STRONG> (Thumb, 8 bytes, Stack size unknown bytes, anon$$obj.o(Veneer$$CMSE), UNUSED, KEPT)
@@ -2220,7 +2220,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 4 + Unknown Stack Size
 <LI>Call Chain = Secure_LED_Off_callback &rArr; __acle_se_Secure_LED_Off_callback
 </UL>
-<BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__acle_se_Secure_LED_Off_callback
+<BR>[Calls]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__acle_se_Secure_LED_Off_callback
 </UL>
 <P>
 <H3>
