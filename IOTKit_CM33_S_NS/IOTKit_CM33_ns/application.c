@@ -1,12 +1,6 @@
 # include <stdint.h>
 # include "application.h"
-
-#define MATMAL3  0
-
-
-// CHOOSE APPLICATION HERE
-#define APPLICATION MATMAL3
-
+#include "..\IOTKit_CM33_s\Secure_Functions.h"  
 
 #define MTBAR __attribute__((section(".MTBAR_MEM")))
 #define MTBDR __attribute__((section(".MTBDR_MEM")))

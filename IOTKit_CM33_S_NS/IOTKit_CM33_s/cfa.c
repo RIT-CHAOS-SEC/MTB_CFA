@@ -3,6 +3,7 @@
 # include <stdint.h>
 # include <string.h>
 # include <stdio.h>
+# include "stdout_USART.h"
 
 CFReport report_s;
 extern MTB_struct *mtb;
@@ -33,6 +34,11 @@ void vCFA_add_log(){
 #define USE_MTB 1
 #define DEBUG_REGISTERS 1
 
+void cfa_cflog_init(){
+    report_s.num_CF_Log_size = 0;
+    return;
+}
+
 error_t eCFA_init_cfa(CFReport *report_ns){
 
     printf("[LOG] CFA funtion entry.\n");
@@ -54,11 +60,14 @@ error_t eCFA_init_cfa(CFReport *report_ns){
 
     // hash the memory
     // todo
-    // configure the MTB
+    
 #if USE_MTB == 1
+    // configure the MTB
     mtb_init();
-#endif
+#else
+    cfa_cflog_init();
 
+#endif
 
     printf("[LOG] CFA Calling Non Secure Function : %x\n",(uint32_t)fNSFunc);
     
@@ -97,121 +106,116 @@ error_t eCFA_init_cfa(CFReport *report_ns){
 
 
 
+uint8_t loop_detect = 0;
+uint16_t loop_counter = 1;
+uint32_t prev_entry;
+uint32_t overflow = 0;
+#define CFLOG_TYPE CFLOG_RAM
+// VERBATIM STYLE
+/**/
 
 
+void _send_report(){
+    
+    // hash
+    // todo
+    
+    // send the report
+    stdout_putbuffer((uint32_t *)report_s.CFLog, report_s.num_CF_Log_size, 1);
 
+    // reset log size
+    report_s.num_CF_Log_size = 0;
+    
+    // repo
+	return;
+}
 
+void CFA_ENGINE_new_log_entry(uint32_t value){
+	if(report_s.num_CF_Log_size >= MAX_CF_LOG_SIZE){
+		// cfa_engine_conf.attestation_status = WAITING_PARTIAL;
+		report_s.num_CF_Log_size = MAX_CF_LOG_SIZE; // might point over with loop overflow
+		_send_report();
 
-// uint8_t loop_detect = 0;
-// uint16_t loop_counter = 1;
-// uint32_t prev_entry;
-// uint32_t overflow = 0;
-// #define CFLOG_TYPE CFLOG_RAM
-// // VERBATIM STYLE
-// /**/
-
-
-
-
-// void _send_report(){
-//     // hash
-//     // todo
-//     // 
-//     // _send_report_message();
-//     // reset log size
-//     report_s.num_CF_Log_size = 0;
-//     // repo
-// 	return;
-// }
-
-
-
-// void CFA_ENGINE_new_log_entry(uint32_t value){
-// 	if(report_s.num_CF_Log_size >= MAX_CF_LOG_SIZE){
-// 		// cfa_engine_conf.attestation_status = WAITING_PARTIAL;
-// 		report_s.num_CF_Log_size = MAX_CF_LOG_SIZE; // might point over with loop overflow
-// 		_send_report();
-
-// 		if(overflow != 0){
-// 			#if CFLOG_TYPE == CFLOG_RAM
-// 			report_s.CFLog[report_s.num_CF_Log_size] = overflow;
-// 			#else
-// 			uint32_t addr = (uint32_t)(&FLASH_CFLog[report_secure.num_CF_Log_size]);
-// 			//		update_flash(addr, value);
-// 			FLASH_CFLog[report_secure.num_CF_Log_size] = overflow;
-// 			#endif
-// 			overflow = 0;
-// 			report_s.num_CF_Log_size++;
+		if(overflow != 0){
+			#if CFLOG_TYPE == CFLOG_RAM
+			report_s.CFLog[report_s.num_CF_Log_size] = overflow;
+			#else
+			uint32_t addr = (uint32_t)(&FLASH_CFLog[report_secure.num_CF_Log_size]);
+			//		update_flash(addr, value);
+			FLASH_CFLog[report_secure.num_CF_Log_size] = overflow;
+			#endif
+			overflow = 0;
+			report_s.num_CF_Log_size++;
 			
-// 		}
+		}
 
-// 		#if CFLOG_TYPE == CFLOG_RAM
-// 		report_s.CFLog[report_s.num_CF_Log_size] = value;
-// 		#else
-// 		uint32_t addr = (uint32_t)(&FLASH_CFLog[report_secure.num_CF_Log_size]);
-// //		update_flash(addr, value);
-// 		FLASH_CFLog[report_secure.num_CF_Log_size] = value;
-// 		#endif
+		#if CFLOG_TYPE == CFLOG_RAM
+		report_s.CFLog[report_s.num_CF_Log_size] = value;
+		#else
+		uint32_t addr = (uint32_t)(&FLASH_CFLog[report_secure.num_CF_Log_size]);
+//		update_flash(addr, value);
+		FLASH_CFLog[report_secure.num_CF_Log_size] = value;
+		#endif
 
-// 		report_s.num_CF_Log_size++;
+		report_s.num_CF_Log_size++;
 		
-// 		// _read_serial_loop();
-// 		// start = HAL_GetTick();
-// 	}
-// 	else{
-// //
-// //		if(report_secure.num_CF_Log_size == MAX_CF_LOG_SIZE)
-// //			loop_detect = loop_detect;
+		// _read_serial_loop();
+		// start = HAL_GetTick();
+	}
+	else{
+//
+//		if(report_secure.num_CF_Log_size == MAX_CF_LOG_SIZE)
+//			loop_detect = loop_detect;
 
-// 		// compare current value to previous, if equal, replace with counter
-// 		#if CFLOG_TYPE == CFLOG_RAM
-// 		prev_entry = report_s.CFLog[report_s.num_CF_Log_size - 1];
-// 		if(report_s.num_CF_Log_size != 0 && prev_entry == value){
+		// compare current value to previous, if equal, replace with counter
+		#if CFLOG_TYPE == CFLOG_RAM
+		prev_entry = report_s.CFLog[report_s.num_CF_Log_size - 1];
+		if(report_s.num_CF_Log_size != 0 && prev_entry == value){
 
-// 		#else
-// 		prev_entry = FLASH_CFLog[report_secure.num_CF_Log_size - 1];
-// 		if(report_secure.num_CF_Log_size != 0 && prev_entry == value){
+		#else
+		prev_entry = FLASH_CFLog[report_secure.num_CF_Log_size - 1];
+		if(report_secure.num_CF_Log_size != 0 && prev_entry == value){
 
-// 		#endif
-// 			if (loop_detect == 0){
-// 				// since first instance of repeat, set flag
-// 				loop_detect ^= 1;
-// 			} else if (loop_detect == 1){
-// 				// if more than one instance, increment counter
-// 				loop_counter++;
-// 			}
-// 		}
-// 		else{ // enter this block either because 1) not a loop or 2) loop exit
-// 			if(loop_detect == 1){
-// 				// if loop exit, clear flag and increment log size for next entry
-//                 report_s.CFLog[report_s.num_CF_Log_size] = (0xffff0000 + loop_counter);
+		#endif
+			if (loop_detect == 0){
+				// since first instance of repeat, set flag
+				loop_detect ^= 1;
+			} else if (loop_detect == 1){
+				// if more than one instance, increment counter
+				loop_counter++;
+			}
+		}
+		else{ // enter this block either because 1) not a loop or 2) loop exit
+			if(loop_detect == 1){
+				// if loop exit, clear flag and increment log size for next entry
+                report_s.CFLog[report_s.num_CF_Log_size] = (0xffff0000 + loop_counter);
 				
 
-// 				loop_detect = 0;
-// 				report_s.log_counter++;
-// 				report_s.num_CF_Log_size++;
-// 				loop_counter = 1;
+				loop_detect = 0;
+				report_s.log_counter++;
+				report_s.num_CF_Log_size++;
+				loop_counter = 1;
 
-// 				// Need to catch case when the counter is the last entry in the cflog
-// 				if(report_s.num_CF_Log_size == MAX_CF_LOG_SIZE){
-// 					overflow = value;
-// 				}
-// 			}
+				// Need to catch case when the counter is the last entry in the cflog
+				if(report_s.num_CF_Log_size == MAX_CF_LOG_SIZE){
+					overflow = value;
+				}
+			}
 
-// 			 if (overflow == 0){
-// 				#if CFLOG_TYPE == CFLOG_RAM
-// 				report_s.CFLog[report_s.num_CF_Log_size] = value;
-// 				#else
-// 				uint32_t addr = (uint32_t)(&FLASH_CFLog[report_secure.num_CF_Log_size]);
-// 	//			update_flash(addr, value);
-// 				FLASH_CFLog[report_secure.num_CF_Log_size] = value;
-// 				prev_entry = value;
-// 				#endif
-// 				report_s.log_counter++;
-// 				report_s.num_CF_Log_size++;
-// 			}
+			 if (overflow == 0){
+				#if CFLOG_TYPE == CFLOG_RAM
+				report_s.CFLog[report_s.num_CF_Log_size] = value;
+				#else
+				uint32_t addr = (uint32_t)(&FLASH_CFLog[report_secure.num_CF_Log_size]);
+	//			update_flash(addr, value);
+				FLASH_CFLog[report_secure.num_CF_Log_size] = value;
+				prev_entry = value;
+				#endif
+				report_s.log_counter++;
+				report_s.num_CF_Log_size++;
+			}
 
-// 		}
-// 	}
-// 	return;
-// }
+		}
+	}
+	return;
+}

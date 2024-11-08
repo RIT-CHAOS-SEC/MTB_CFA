@@ -6,6 +6,9 @@
 #include "core_cm33.h"
 #include "stdio.h"
 #include "stdout_USART.h"
+#include "alcata_definitions.h"
+
+
 
 SCB_Type * SCB_ = ((SCB_Type *) SCB_BASE);
 
@@ -88,15 +91,12 @@ void mtb_setup_DWT()
     return;
 }
 
-
 void mtb_cleanMTB(){
     uint32_t * ptr = (uint32_t *) mtb->MTB_BASE;
     for (int i = 0; i < MTB_BUFFER_SIZE; i++){
         ptr[i] = 0;
     }
 }
-
-
 
 #define USE_PRINTF 1
 
@@ -132,22 +132,15 @@ void mtb_debugMonitorHandler(){
 
     // Deactivate halt mode
     mtb->MTB_MASTER &= ~( 1U << 9 );
-    
-    // todo 
-    // hash buffer
-    
-    // Send Buffer    
+
+
+#if ALCATA_PP == TRUE
+
+#else
     vMTB_sendBuffer();
-
-
     mtb->MTB_POSITION = 0;
-    // // printf("[LOG] Debug Monitor Handler\n");
-    // if (mtb->MTB_FLOW == (MTB_WATERMARK_A)){
-    //     mtb->MTB_FLOW = (MTB_WATERMARK_B);
-    // } else {
-    //     mtb->MTB_FLOW = MTB_WATERMARK_A;
-    //     mtb->MTB_POSITION = 0;
-    // }
+
+#endif
 
     return;
 }

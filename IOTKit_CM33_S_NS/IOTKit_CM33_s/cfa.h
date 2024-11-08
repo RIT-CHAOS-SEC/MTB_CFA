@@ -43,7 +43,7 @@ typedef struct CFReport{
 typedef uint8_t error_t;
 
 error_t  eCFA_init_cfa(CFReport *report);
-
+void CFA_ENGINE_new_log_entry(uint32_t value);
 
 
 #endif

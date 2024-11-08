@@ -46,7 +46,7 @@ SysTick_Handler:
 	ldr	r0, [r1]
 	adds	r0, #1
 	str	r0, [r1]
-	.loc	2 75 1                          @ main_s.c:75:1
+	.loc	2 40 1                          @ main_s.c:40:1
 	bx	lr
 .Ltmp0:
 .Lfunc_end0:
@@ -64,7 +64,7 @@ SysTick_Handler:
 	.thumb_func
 stdout_putchar_:
 .Lfunc_begin1:
-	.loc	2 98 0                          @ main_s.c:98:0
+	.loc	2 63 0                          @ main_s.c:63:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -78,57 +78,57 @@ stdout_putchar_:
 	.cfi_def_cfa_offset 24
 	str	r0, [sp, #8]
 .Ltmp1:
-	.loc	2 101 21 prologue_end           @ main_s.c:101:21
+	.loc	2 66 21 prologue_end            @ main_s.c:66:21
 	ldr	r0, [sp, #8]
-	.loc	2 101 10 is_stmt 0              @ main_s.c:101:10
+	.loc	2 66 10 is_stmt 0               @ main_s.c:66:10
 	strb.w	r0, [sp, #7]
 .Ltmp2:
-	.loc	2 102 17 is_stmt 1              @ main_s.c:102:17
+	.loc	2 67 17 is_stmt 1               @ main_s.c:67:17
 	movw	r0, :lower16:Driver_USART0
 	movt	r0, :upper16:Driver_USART0
 	ldr	r2, [r0, #20]
 	add.w	r0, sp, #7
 	movs	r1, #1
-	.loc	2 102 7 is_stmt 0               @ main_s.c:102:7
+	.loc	2 67 7 is_stmt 0                @ main_s.c:67:7
 	blx	r2
 .Ltmp3:
-	.loc	2 102 7                         @ main_s.c:102:7
+	.loc	2 67 7                          @ main_s.c:67:7
 	cbz	r0, .LBB1_2
 	b	.LBB1_1
 .LBB1_1:
 	.loc	2 0 7                           @ main_s.c:0:7
 	mov.w	r0, #-1
 .Ltmp4:
-	.loc	2 103 5 is_stmt 1               @ main_s.c:103:5
+	.loc	2 68 5 is_stmt 1                @ main_s.c:68:5
 	str	r0, [sp, #12]
 	b	.LBB1_6
 .Ltmp5:
 .LBB1_2:
-	.loc	2 105 3                         @ main_s.c:105:3
+	.loc	2 70 3                          @ main_s.c:70:3
 	b	.LBB1_3
 .LBB1_3:                                @ =>This Inner Loop Header: Depth=1
-	.loc	2 105 20 is_stmt 0              @ main_s.c:105:20
+	.loc	2 70 20 is_stmt 0               @ main_s.c:70:20
 	movw	r0, :lower16:Driver_USART0
 	movt	r0, :upper16:Driver_USART0
 	ldr	r0, [r0, #32]
-	.loc	2 105 10                        @ main_s.c:105:10
+	.loc	2 70 10                         @ main_s.c:70:10
 	blx	r0
-	.loc	2 105 3                         @ main_s.c:105:3
+	.loc	2 70 3                          @ main_s.c:70:3
 	cmp	r0, #1
 	beq	.LBB1_5
 	b	.LBB1_4
 .LBB1_4:                                @   in Loop: Header=BB1_3 Depth=1
 	b	.LBB1_3
 .LBB1_5:
-	.loc	2 106 11 is_stmt 1              @ main_s.c:106:11
+	.loc	2 71 11 is_stmt 1               @ main_s.c:71:11
 	ldr	r0, [sp, #8]
-	.loc	2 106 3 is_stmt 0               @ main_s.c:106:3
+	.loc	2 71 3 is_stmt 0                @ main_s.c:71:3
 	str	r0, [sp, #12]
 	b	.LBB1_6
 .LBB1_6:
-	.loc	2 107 1 is_stmt 1               @ main_s.c:107:1
+	.loc	2 72 1 is_stmt 1                @ main_s.c:72:1
 	ldr	r0, [sp, #12]
-	.loc	2 107 1 epilogue_begin is_stmt 0 @ main_s.c:107:1
+	.loc	2 72 1 epilogue_begin is_stmt 0 @ main_s.c:72:1
 	add	sp, #16
 	pop	{r7, pc}
 .Ltmp6:
@@ -147,7 +147,7 @@ stdout_putchar_:
 	.thumb_func
 main:
 .Lfunc_begin2:
-	.loc	2 116 0 is_stmt 1               @ main_s.c:116:0
+	.loc	2 81 0 is_stmt 1                @ main_s.c:81:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -164,43 +164,43 @@ main:
 	str	r0, [sp, #36]
 	mov.w	r0, #2097152
 .Ltmp7:
-	.loc	2 118 40 prologue_end           @ main_s.c:118:40
+	.loc	2 83 40 prologue_end            @ main_s.c:83:40
 	ldr	r0, [r0]
-	.loc	2 118 14 is_stmt 0              @ main_s.c:118:14
+	.loc	2 83 14 is_stmt 0               @ main_s.c:83:14
 	str	r0, [sp, #32]
 	movs	r0, #4
 	movt	r0, #32
-	.loc	2 120 28 is_stmt 1              @ main_s.c:120:28
+	.loc	2 85 28 is_stmt 1               @ main_s.c:85:28
 	ldr	r0, [r0]
-	.loc	2 119 22                        @ main_s.c:119:22
+	.loc	2 84 22                         @ main_s.c:84:22
 	str	r0, [sp, #28]
-	.loc	2 123 33                        @ main_s.c:123:33
+	.loc	2 88 33                         @ main_s.c:88:33
 	bl	SCB_GetFPUType
-	.loc	2 123 23 is_stmt 0              @ main_s.c:123:23
+	.loc	2 88 23 is_stmt 0               @ main_s.c:88:23
 	str	r0, [sp, #24]
 	movw	r0, #20133
 	movt	r0, #16711
-	.loc	2 124 20 is_stmt 1              @ main_s.c:124:20
+	.loc	2 89 20 is_stmt 1               @ main_s.c:89:20
 	str	r0, [sp, #20]
 	movw	r0, #61077
 	movt	r0, #16169
-	.loc	2 125 20                        @ main_s.c:125:20
+	.loc	2 90 20                         @ main_s.c:90:20
 	str	r0, [sp, #16]
 	movw	r0, #58255
 	movt	r0, #16832
-	.loc	2 126 20                        @ main_s.c:126:20
+	.loc	2 91 20                         @ main_s.c:91:20
 	str	r0, [sp, #12]
-	.loc	2 128 10                        @ main_s.c:128:10
+	.loc	2 93 10                         @ main_s.c:93:10
 	vldr	s0, [sp, #12]
-	.loc	2 128 16 is_stmt 0              @ main_s.c:128:16
+	.loc	2 93 16 is_stmt 0               @ main_s.c:93:16
 	vldr	s2, [sp, #20]
-	.loc	2 128 21                        @ main_s.c:128:21
+	.loc	2 93 21                         @ main_s.c:93:21
 	vldr	s4, [sp, #16]
-	.loc	2 128 19                        @ main_s.c:128:19
+	.loc	2 93 19                         @ main_s.c:93:19
 	vdiv.f32	s2, s2, s4
-	.loc	2 128 13                        @ main_s.c:128:13
+	.loc	2 93 13                         @ main_s.c:93:13
 	vmul.f32	s0, s0, s2
-	.loc	2 128 8                         @ main_s.c:128:8
+	.loc	2 93 8                          @ main_s.c:93:8
 	vstr	s0, [sp, #12]
 .Ltmp8:
 	.file	5 "C:/Users/aj4775/AppData/Local/arm/packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include\\./m-profile" "cmsis_armclang_m.h"
@@ -212,7 +212,7 @@ main:
 	.loc	5 285 11                        @ C:/Users/aj4775/AppData/Local/arm/packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include\./m-profile/cmsis_armclang_m.h:285:11
 	ldr	r0, [sp, #40]
 .Ltmp9:
-	.loc	2 131 7                         @ main_s.c:131:7
+	.loc	2 96 7                          @ main_s.c:96:7
 	movw	r1, :lower16:x
 	movt	r1, :upper16:x
 	str	r0, [r1]
@@ -225,9 +225,9 @@ main:
 	.loc	5 231 11                        @ C:/Users/aj4775/AppData/Local/arm/packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include\./m-profile/cmsis_armclang_m.h:231:11
 	ldr	r0, [sp, #44]
 .Ltmp11:
-	.loc	2 132 7                         @ main_s.c:132:7
+	.loc	2 97 7                          @ main_s.c:97:7
 	str	r0, [r1]
-	.loc	2 133 21                        @ main_s.c:133:21
+	.loc	2 98 21                         @ main_s.c:98:21
 	ldr	r0, [sp, #32]
 	str	r0, [sp, #48]
 .Ltmp12:
@@ -246,7 +246,7 @@ main:
 	.loc	5 300 11                        @ C:/Users/aj4775/AppData/Local/arm/packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include\./m-profile/cmsis_armclang_m.h:300:11
 	ldr	r0, [sp, #52]
 .Ltmp14:
-	.loc	2 134 7                         @ main_s.c:134:7
+	.loc	2 99 7                          @ main_s.c:99:7
 	str	r0, [r1]
 	mov.w	r0, #570425344
 	str	r0, [sp, #56]
@@ -266,67 +266,67 @@ main:
 	.loc	5 246 11                        @ C:/Users/aj4775/AppData/Local/arm/packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include\./m-profile/cmsis_armclang_m.h:246:11
 	ldr	r0, [sp, #60]
 .Ltmp17:
-	.loc	2 136 7                         @ main_s.c:136:7
+	.loc	2 101 7                         @ main_s.c:101:7
 	str	r0, [r1]
-	.loc	2 138 5                         @ main_s.c:138:5
+	.loc	2 103 5                         @ main_s.c:103:5
 	bl	SystemCoreClockUpdate
-	.loc	2 140 5                         @ main_s.c:140:5
+	.loc	2 105 5                         @ main_s.c:105:5
 	bl	stdout_init
-	.loc	2 141 5                         @ main_s.c:141:5
+	.loc	2 106 5                         @ main_s.c:106:5
 	bl	LED_Initialize
-	.loc	2 142 5                         @ main_s.c:142:5
+	.loc	2 107 5                         @ main_s.c:107:5
 	bl	GLCD_Initialize
-	.loc	2 145 5                         @ main_s.c:145:5
+	.loc	2 110 5                         @ main_s.c:110:5
 	movw	r0, :lower16:GLCD_Font_16x24
 	movt	r0, :upper16:GLCD_Font_16x24
 	bl	GLCD_SetFont
 	movw	r0, #65535
-	.loc	2 146 5                         @ main_s.c:146:5
+	.loc	2 111 5                         @ main_s.c:111:5
 	str	r0, [sp]                        @ 4-byte Spill
 	bl	GLCD_SetBackgroundColor
-	.loc	2 147 5                         @ main_s.c:147:5
+	.loc	2 112 5                         @ main_s.c:112:5
 	bl	GLCD_ClearScreen
 	movs	r0, #31
-	.loc	2 148 5                         @ main_s.c:148:5
+	.loc	2 113 5                         @ main_s.c:113:5
 	bl	GLCD_SetBackgroundColor
 	mov.w	r0, #63488
-	.loc	2 149 5                         @ main_s.c:149:5
+	.loc	2 114 5                         @ main_s.c:114:5
 	bl	GLCD_SetForegroundColor
 	ldr	r1, [sp, #4]                    @ 4-byte Reload
-	.loc	2 150 5                         @ main_s.c:150:5
+	.loc	2 115 5                         @ main_s.c:115:5
 	movw	r2, :lower16:.L.str
 	movt	r2, :upper16:.L.str
 	mov	r0, r1
 	bl	GLCD_DrawString
                                         @ kill: def $r1 killed $r0
-	.loc	2 151 5                         @ main_s.c:151:5
+	.loc	2 116 5                         @ main_s.c:116:5
 	ldr	r0, [sp, #4]                    @ 4-byte Reload
 	movw	r2, :lower16:.L.str.1
 	movt	r2, :upper16:.L.str.1
 	movs	r1, #24
 	bl	GLCD_DrawString
                                         @ kill: def $r1 killed $r0
-	.loc	2 152 5                         @ main_s.c:152:5
+	.loc	2 117 5                         @ main_s.c:117:5
 	ldr	r0, [sp, #4]                    @ 4-byte Reload
 	movw	r2, :lower16:.L.str.2
 	movt	r2, :upper16:.L.str.2
 	movs	r1, #48
 	bl	GLCD_DrawString
                                         @ kill: def $r1 killed $r0
-	.loc	2 154 5                         @ main_s.c:154:5
+	.loc	2 119 5                         @ main_s.c:119:5
 	ldr	r0, [sp]                        @ 4-byte Reload
 	bl	GLCD_SetBackgroundColor
                                         @ kill: def $r1 killed $r0
-	.loc	2 155 5                         @ main_s.c:155:5
+	.loc	2 120 5                         @ main_s.c:120:5
 	ldr	r0, [sp, #4]                    @ 4-byte Reload
 	bl	GLCD_SetForegroundColor
 	movw	r0, #60672
 	movt	r0, #57344
-	.loc	2 156 19                        @ main_s.c:156:19
+	.loc	2 121 19                        @ main_s.c:121:19
 	ldr	r0, [r0]
-	.loc	2 156 31 is_stmt 0              @ main_s.c:156:31
+	.loc	2 121 31 is_stmt 0              @ main_s.c:121:31
 	ubfx	r0, r0, #4, #12
-	.loc	2 156 5                         @ main_s.c:156:5
+	.loc	2 121 5                         @ main_s.c:121:5
 	mov	r1, r0
 	str	r1, [sp, #8]                    @ 4-byte Spill
 	cmp.w	r0, #3360
@@ -336,54 +336,54 @@ main:
 	.loc	2 0 5                           @ main_s.c:0:5
 	ldr	r0, [sp, #8]                    @ 4-byte Reload
 	movw	r1, #3361
-	.loc	2 156 5                         @ main_s.c:156:5
+	.loc	2 121 5                         @ main_s.c:121:5
 	cmp	r0, r1
 	beq	.LBB2_3
 	b	.LBB2_4
 .LBB2_2:
 .Ltmp18:
-	.loc	2 159 9 is_stmt 1               @ main_s.c:159:9
+	.loc	2 124 9 is_stmt 1               @ main_s.c:124:9
 	movw	r2, :lower16:.L.str.3
 	movt	r2, :upper16:.L.str.3
 	movs	r0, #0
 	movs	r1, #96
 	bl	GLCD_DrawString
-	.loc	2 160 9                         @ main_s.c:160:9
+	.loc	2 125 9                         @ main_s.c:125:9
 	b	.LBB2_5
 .LBB2_3:
-	.loc	2 162 9                         @ main_s.c:162:9
+	.loc	2 127 9                         @ main_s.c:127:9
 	movw	r2, :lower16:.L.str.4
 	movt	r2, :upper16:.L.str.4
 	movs	r0, #0
 	movs	r1, #96
 	bl	GLCD_DrawString
-	.loc	2 163 9                         @ main_s.c:163:9
+	.loc	2 128 9                         @ main_s.c:128:9
 	b	.LBB2_5
 .LBB2_4:
-	.loc	2 165 9                         @ main_s.c:165:9
+	.loc	2 130 9                         @ main_s.c:130:9
 	movw	r2, :lower16:.L.str.5
 	movt	r2, :upper16:.L.str.5
 	movs	r0, #0
 	movs	r1, #96
 	bl	GLCD_DrawString
-	.loc	2 166 9                         @ main_s.c:166:9
+	.loc	2 131 9                         @ main_s.c:131:9
 	b	.LBB2_5
 .Ltmp19:
 .LBB2_5:
-	.loc	2 169 5                         @ main_s.c:169:5
+	.loc	2 134 5                         @ main_s.c:134:5
 	bl	stdout_init
-	.loc	2 171 20                        @ main_s.c:171:20
+	.loc	2 136 20                        @ main_s.c:136:20
 	movw	r0, :lower16:SystemCoreClock
 	movt	r0, :upper16:SystemCoreClock
 	ldr	r0, [r0]
 	movw	r1, #34079
 	movt	r1, #20971
-	.loc	2 171 36 is_stmt 0              @ main_s.c:171:36
+	.loc	2 136 36 is_stmt 0              @ main_s.c:136:36
 	umull	r1, r0, r0, r1
 	lsrs	r0, r0, #5
-	.loc	2 171 5                         @ main_s.c:171:5
+	.loc	2 136 5                         @ main_s.c:136:5
 	bl	SysTick_Config
-	.loc	2 177 5 is_stmt 1               @ main_s.c:177:5
+	.loc	2 142 5 is_stmt 1               @ main_s.c:142:5
 	ldr	r0, [sp, #28]
 	push.w	{r4, r5, r6, r7, r8, r9, r10, r11}
 	bic	r0, r0, #1
@@ -410,9 +410,9 @@ main:
 	vlldm	sp, {d0 - d15}
 	add	sp, #136
 	pop.w	{r4, r5, r6, r7, r8, r9, r10, r11}
-	.loc	2 178 1                         @ main_s.c:178:1
+	.loc	2 143 1                         @ main_s.c:143:1
 	ldr	r0, [sp, #36]
-	.loc	2 178 1 epilogue_begin is_stmt 0 @ main_s.c:178:1
+	.loc	2 143 1 epilogue_begin is_stmt 0 @ main_s.c:143:1
 	add	sp, #64
 	pop	{r7, pc}
 .Ltmp20:
@@ -1251,7 +1251,7 @@ __ARM_use_no_argv:
 	.byte	6                               @ Abbrev [6] 0x6c:0xd DW_TAG_variable
 	.long	121                             @ DW_AT_type
 	.byte	2                               @ DW_AT_decl_file
-	.byte	150                             @ DW_AT_decl_line
+	.byte	115                             @ DW_AT_decl_line
 	.byte	5                               @ DW_AT_location
 	.byte	3
 	.long	.L.str
@@ -1272,35 +1272,35 @@ __ARM_use_no_argv:
 	.byte	6                               @ Abbrev [6] 0x93:0xd DW_TAG_variable
 	.long	121                             @ DW_AT_type
 	.byte	2                               @ DW_AT_decl_file
-	.byte	151                             @ DW_AT_decl_line
+	.byte	116                             @ DW_AT_decl_line
 	.byte	5                               @ DW_AT_location
 	.byte	3
 	.long	.L.str.1
 	.byte	6                               @ Abbrev [6] 0xa0:0xd DW_TAG_variable
 	.long	121                             @ DW_AT_type
 	.byte	2                               @ DW_AT_decl_file
-	.byte	152                             @ DW_AT_decl_line
+	.byte	117                             @ DW_AT_decl_line
 	.byte	5                               @ DW_AT_location
 	.byte	3
 	.long	.L.str.2
 	.byte	6                               @ Abbrev [6] 0xad:0xd DW_TAG_variable
 	.long	121                             @ DW_AT_type
 	.byte	2                               @ DW_AT_decl_file
-	.byte	159                             @ DW_AT_decl_line
+	.byte	124                             @ DW_AT_decl_line
 	.byte	5                               @ DW_AT_location
 	.byte	3
 	.long	.L.str.3
 	.byte	6                               @ Abbrev [6] 0xba:0xd DW_TAG_variable
 	.long	121                             @ DW_AT_type
 	.byte	2                               @ DW_AT_decl_file
-	.byte	162                             @ DW_AT_decl_line
+	.byte	127                             @ DW_AT_decl_line
 	.byte	5                               @ DW_AT_location
 	.byte	3
 	.long	.L.str.4
 	.byte	6                               @ Abbrev [6] 0xc7:0xd DW_TAG_variable
 	.long	121                             @ DW_AT_type
 	.byte	2                               @ DW_AT_decl_file
-	.byte	165                             @ DW_AT_decl_line
+	.byte	130                             @ DW_AT_decl_line
 	.byte	5                               @ DW_AT_location
 	.byte	3
 	.long	.L.str.5
@@ -1308,7 +1308,7 @@ __ARM_use_no_argv:
 	.long	.Linfo_string9                  @ DW_AT_name
 	.long	90                              @ DW_AT_type
 	.byte	2                               @ DW_AT_decl_file
-	.byte	111                             @ DW_AT_decl_line
+	.byte	76                              @ DW_AT_decl_line
 	.byte	5                               @ DW_AT_location
 	.byte	3
 	.long	x
@@ -2250,7 +2250,7 @@ __ARM_use_no_argv:
 	.byte	93
 	.long	.Linfo_string205                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	98                              @ DW_AT_decl_line
+	.byte	63                              @ DW_AT_decl_line
                                         @ DW_AT_prototyped
 	.long	1964                            @ DW_AT_type
                                         @ DW_AT_external
@@ -2260,7 +2260,7 @@ __ARM_use_no_argv:
 	.byte	8
 	.long	.Linfo_string210                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	98                              @ DW_AT_decl_line
+	.byte	63                              @ DW_AT_decl_line
 	.long	1964                            @ DW_AT_type
 	.byte	24                              @ Abbrev [24] 0x8ee:0xe DW_TAG_variable
 	.byte	2                               @ DW_AT_location
@@ -2268,7 +2268,7 @@ __ARM_use_no_argv:
 	.byte	7
 	.long	.Linfo_string211                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	99                              @ DW_AT_decl_line
+	.byte	64                              @ DW_AT_decl_line
 	.long	2826                            @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
 	.byte	25                              @ Abbrev [25] 0x8fd:0x1a DW_TAG_subprogram
@@ -2354,7 +2354,7 @@ __ARM_use_no_argv:
 	.byte	93
 	.long	.Linfo_string206                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	115                             @ DW_AT_decl_line
+	.byte	80                              @ DW_AT_decl_line
                                         @ DW_AT_prototyped
 	.long	1964                            @ DW_AT_type
                                         @ DW_AT_external
@@ -2364,7 +2364,7 @@ __ARM_use_no_argv:
 	.byte	32
 	.long	.Linfo_string212                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	118                             @ DW_AT_decl_line
+	.byte	83                              @ DW_AT_decl_line
 	.long	90                              @ DW_AT_type
 	.byte	24                              @ Abbrev [24] 0x9b0:0xe DW_TAG_variable
 	.byte	2                               @ DW_AT_location
@@ -2372,7 +2372,7 @@ __ARM_use_no_argv:
 	.byte	28
 	.long	.Linfo_string213                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	119                             @ DW_AT_decl_line
+	.byte	84                              @ DW_AT_decl_line
 	.long	997                             @ DW_AT_type
 	.byte	24                              @ Abbrev [24] 0x9be:0xe DW_TAG_variable
 	.byte	2                               @ DW_AT_location
@@ -2380,7 +2380,7 @@ __ARM_use_no_argv:
 	.byte	24
 	.long	.Linfo_string214                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	123                             @ DW_AT_decl_line
+	.byte	88                              @ DW_AT_decl_line
 	.long	1658                            @ DW_AT_type
 	.byte	24                              @ Abbrev [24] 0x9cc:0xe DW_TAG_variable
 	.byte	2                               @ DW_AT_location
@@ -2388,7 +2388,7 @@ __ARM_use_no_argv:
 	.byte	20
 	.long	.Linfo_string215                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	124                             @ DW_AT_decl_line
+	.byte	89                              @ DW_AT_decl_line
 	.long	2838                            @ DW_AT_type
 	.byte	24                              @ Abbrev [24] 0x9da:0xe DW_TAG_variable
 	.byte	2                               @ DW_AT_location
@@ -2396,7 +2396,7 @@ __ARM_use_no_argv:
 	.byte	16
 	.long	.Linfo_string217                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	125                             @ DW_AT_decl_line
+	.byte	90                              @ DW_AT_decl_line
 	.long	2838                            @ DW_AT_type
 	.byte	24                              @ Abbrev [24] 0x9e8:0xe DW_TAG_variable
 	.byte	2                               @ DW_AT_location
@@ -2404,14 +2404,14 @@ __ARM_use_no_argv:
 	.byte	12
 	.long	.Linfo_string218                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	126                             @ DW_AT_decl_line
+	.byte	91                              @ DW_AT_decl_line
 	.long	2838                            @ DW_AT_type
 	.byte	31                              @ Abbrev [31] 0x9f6:0x19 DW_TAG_inlined_subroutine
 	.long	2301                            @ DW_AT_abstract_origin
 	.long	.Ltmp8                          @ DW_AT_low_pc
 	.long	.Ltmp9-.Ltmp8                   @ DW_AT_high_pc
 	.byte	2                               @ DW_AT_call_file
-	.byte	131                             @ DW_AT_call_line
+	.byte	96                              @ DW_AT_call_line
 	.byte	9                               @ DW_AT_call_column
 	.byte	32                              @ Abbrev [32] 0xa06:0x8 DW_TAG_variable
 	.byte	2                               @ DW_AT_location
@@ -2424,7 +2424,7 @@ __ARM_use_no_argv:
 	.long	.Ltmp10                         @ DW_AT_low_pc
 	.long	.Ltmp11-.Ltmp10                 @ DW_AT_high_pc
 	.byte	2                               @ DW_AT_call_file
-	.byte	132                             @ DW_AT_call_line
+	.byte	97                              @ DW_AT_call_line
 	.byte	9                               @ DW_AT_call_column
 	.byte	32                              @ Abbrev [32] 0xa1f:0x8 DW_TAG_variable
 	.byte	2                               @ DW_AT_location
@@ -2437,7 +2437,7 @@ __ARM_use_no_argv:
 	.long	.Ltmp12                         @ DW_AT_low_pc
 	.long	.Ltmp13-.Ltmp12                 @ DW_AT_high_pc
 	.byte	2                               @ DW_AT_call_file
-	.byte	133                             @ DW_AT_call_line
+	.byte	98                              @ DW_AT_call_line
 	.byte	5                               @ DW_AT_call_column
 	.byte	33                              @ Abbrev [33] 0xa38:0x8 DW_TAG_formal_parameter
 	.byte	2                               @ DW_AT_location
@@ -2450,7 +2450,7 @@ __ARM_use_no_argv:
 	.long	.Ltmp13                         @ DW_AT_low_pc
 	.long	.Ltmp14-.Ltmp13                 @ DW_AT_high_pc
 	.byte	2                               @ DW_AT_call_file
-	.byte	134                             @ DW_AT_call_line
+	.byte	99                              @ DW_AT_call_line
 	.byte	9                               @ DW_AT_call_column
 	.byte	32                              @ Abbrev [32] 0xa51:0x8 DW_TAG_variable
 	.byte	2                               @ DW_AT_location
@@ -2463,7 +2463,7 @@ __ARM_use_no_argv:
 	.long	.Ltmp15                         @ DW_AT_low_pc
 	.long	.Ltmp16-.Ltmp15                 @ DW_AT_high_pc
 	.byte	2                               @ DW_AT_call_file
-	.byte	135                             @ DW_AT_call_line
+	.byte	100                             @ DW_AT_call_line
 	.byte	5                               @ DW_AT_call_column
 	.byte	33                              @ Abbrev [33] 0xa6a:0x8 DW_TAG_formal_parameter
 	.byte	2                               @ DW_AT_location
@@ -2476,7 +2476,7 @@ __ARM_use_no_argv:
 	.long	.Ltmp16                         @ DW_AT_low_pc
 	.long	.Ltmp17-.Ltmp16                 @ DW_AT_high_pc
 	.byte	2                               @ DW_AT_call_file
-	.byte	136                             @ DW_AT_call_line
+	.byte	101                             @ DW_AT_call_line
 	.byte	9                               @ DW_AT_call_column
 	.byte	32                              @ Abbrev [32] 0xa83:0x8 DW_TAG_variable
 	.byte	2                               @ DW_AT_location

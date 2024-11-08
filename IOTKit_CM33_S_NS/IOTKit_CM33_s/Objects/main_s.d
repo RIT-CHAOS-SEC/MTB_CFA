@@ -7,4 +7,5 @@
   C:\Users\aj4775\AppData\Local\arm\packs\Keil\MDK-Middleware\7.17.0\Board\Board_GLCD.h \
   C:\Users\aj4775\AppData\Local\arm\packs\Keil\MDK-Middleware\7.17.0\Board\Board_LED.h \
   C:\Users\aj4775\AppData\Local\arm\packs\Keil\V2M-MPS2_IOTKit_BSP\1.5.2\Boards\ARM\V2M-MPS2\Common\GLCD_Config.h \
-  mtb.h Secure_Functions.h cfa.h
+  mtb.h Secure_Functions.h cfa.h alcata_definitions.h \
+  Secure_Functions_CFA.h

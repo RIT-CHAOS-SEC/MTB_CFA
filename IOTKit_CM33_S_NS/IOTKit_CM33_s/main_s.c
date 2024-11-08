@@ -37,41 +37,6 @@ void SysTick_Handler(void)
     static uint32_t ticks_printf = 0;
 
     ticks++;
-    // switch (ticks++)
-    // {
-    // case 10:
-    //     LED_On(0u);
-    //     break;
-    // case 20:
-    //     LED_Off(0u);
-    //     break;
-    // case 30:
-    //     if (pfNonSecure_LED_On != NULL)
-    //     {
-    //         pfNonSecure_LED_On(1u);
-    //     }
-    //     break;
-    // case 50:
-    //     if (pfNonSecure_LED_Off != NULL)
-    //     {
-    //         pfNonSecure_LED_Off(1u);
-    //     }
-    //     break;
-    // case 99:
-    //     ticks = 0;
-    //     if (ticks_printf++ == 3)
-    //     {
-	// 					Secure_printf("Hellooo!!\n");
-    //         printf("%s\n", text);
-    //         ticks_printf = 0;
-    //     }
-    //     break;
-    // default:
-    //     if (ticks > 99)
-    //     {
-    //         ticks = 0;
-    //     }
-    // }
 }
 
 

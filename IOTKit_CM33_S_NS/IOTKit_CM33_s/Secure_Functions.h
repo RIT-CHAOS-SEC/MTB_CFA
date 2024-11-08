@@ -10,8 +10,11 @@
 #include CMSIS_device_header
 #include <arm_cmse.h>
 #include "cfa.h"
+#include "alcata_definitions.h"
+#include "Secure_Functions_CFA.h"
 
 #define NSENTRY __attribute__((cmse_nonsecure_entry))
+#define NSENTRY_NAKED __attribute__((cmse_nonsecure_entry, naked))
 
 /* Define typedef for NonSecure callback function */ 
 typedef int32_t (*NonSecure_funcptr)(uint32_t);
