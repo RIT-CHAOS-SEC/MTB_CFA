@@ -2,10 +2,9 @@
 #include "..\IOTKit_CM33_s\Secure_Functions.h"
 #include <stdint.h>
 
-
 #define MTBAR __attribute__((section(".MTBAR_MEM")))
 #define MTBDR __attribute__((section(".MTBDR_MEM")))
-#define REGION_TEMP MTBAR
+#define REGION_TEMP MTBDR
 
 REGION_TEMP void application();
 
@@ -383,20 +382,1110 @@ MTBDR void application_entry()
 
 
 
+
+
+
 #if APPLICATION == TEST
     //16 KB
 
-    int a = 0;
+        int a = 0;
 
-    REGION_TEMP void add_to_a()
+    __attribute__((section(".MTBAR_MEM"),used)) void nopes_(){
+        
+        if (a == 2){
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+        __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+        __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+        __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+        __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+            __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+            __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+            __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+    __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n");
+        
+        }
+        else {
+            __asm(" nop\n");
+        }
+    }
+
+
+
+        REGION_TEMP void add_to_a()
+        {
+        
+            a += 1;
+        }
+
+        void application()
+        {
+            nopes_();
+            add_to_a();
+
+        }
+
+#endif
+
+#if APPLICATION==GPS
+
+    // #include <ctype.h>
+    #include <stdlib.h>
+    // #include <string.h>
+
+    //Lets fake another library
+
+    // get_position, f_get_position, get_datetime, crack_datetime stats
+    #define _GPS_MAX_FIELD_SIZE 15
+    #define _GPRMCterm "GPRMC"
+    #define _GPGGAterm "GPGGA"
+    #define _GNRMCterm "GNRMC"
+    #define _GNGGAterm "GNGGA"
+    #define GPS_INVALID_ANGLE 999999999
+
+    enum {GPS_SENTENCE_GPGGA,  GPS_SENTENCE_GPRMC, GPS_SENTENCE_OTHER};
+    static const float GPS_INVALID_F_ANGLE, GPS_INVALID_F_ALTITUDE, GPS_INVALID_F_SPEED;
+    int encodedCharCount = 0; 
+    uint8_t parity =0;
+    int isChecksumTerm = 0;
+    uint8_t curSentenceType = GPS_SENTENCE_OTHER;
+    uint8_t curTermNumber = 0;
+    uint8_t curTermOffset = 0;
+    char term[_GPS_MAX_FIELD_SIZE] = {'\0','\0','\0','\0','\0','\0','\0','\0','\0','\0','\0','\0','\0','\0','\0'};
+    int sentenceHasFix = 0;
+    int passedChecksumCount = 0;
+    int sentencesWithFixCount = 0;
+    int failedChecksumCount = 0;
+
+    REGION_TEMP int mystrcmp(char * s1, char * s2) {
+        
+            int res = 0;
+            int first = 1;
+            for(int i = 0; i < _GPS_MAX_FIELD_SIZE; i++) {
+            if (first == 1 && s1[i] > s2[i]) {
+                res = 1;
+                first = 0;
+            }
+            else if (first == 1 && s1[i] < s2[i]) {
+                res = 1;
+                first = 0;
+            }
+            }
+            return res;
+    }
+
+    REGION_TEMP int isdigit(int c)
     {
-        a += 1;
+    
+        return (unsigned)c - '0' < 10;
+    }
+
+    REGION_TEMP int fromHex(char a){
+    
+        if (a >= 'A' && a <= 'F'){
+            return a - 'A' + 10;
+        }else if (a >= 'a' && a <= 'f'){
+            return a - 'a' + 10;
+        }else{
+            return a - '0';
+        }
+    }
+
+    // mock functions
+    int validDate = 0;
+    int upDate = 0;
+    uint32_t dateValue = 0;
+    REGION_TEMP void date_commit(){
+    
+        validDate = 1;
+        upDate = 1;
+    }
+
+    int32_t timeVal = 0;
+    int validTime = 0;
+    int updateTime = 0;
+    REGION_TEMP void time_commit(){
+    
+        validTime = 1;
+        updateTime = 1;
+    }
+
+
+    float lat = 0;
+    float lng = 0;
+    int rawNewLatDataNegative = 0;
+    int rawNewLongDataNegative = 0;
+    int validLoc = 0;
+    int updateLoc = 0;
+    REGION_TEMP void location_commit(){
+    
+        validLoc = 0;
+        updateLoc = 0;
+    }
+
+    float speedVal = 0;
+    int validSpeed = 0;
+    int updateSpeed = 0;
+    REGION_TEMP void speed_commit(){
+    
+        validSpeed = 1;
+        updateSpeed = 1;
+    }
+
+    float degrees = 0.0;
+    int validDeg = 0;
+    int updateDeg = 0;
+    
+    REGION_TEMP void course_commit(){
+    
+        validDeg = 1;
+        updateDeg = 1;
+    }
+
+    float height = 0.0;
+    int validAlt = 0;
+    int updateAlt = 0;
+
+    REGION_TEMP void altitude_commit(){
+    
+        validAlt = 1;
+        updateAlt = 1;
+    }
+
+        int validSat = 0;
+        int updateSat = 0;
+        int satCount = 0;
+
+    REGION_TEMP void satellites_commit(){
+    
+        validSat = 1;
+        updateSat = 1;
+    }
+
+        float hdopVal = 0.0;
+        int validHDop = 0;
+        int updateHDop = 0;
+
+    REGION_TEMP void hdop_commit(){
+        
+            validHDop = 1;
+            updateHDop = 1;
+    }
+
+    REGION_TEMP float parseDegrees(char *term)
+    {
+        uint32_t leftOfDecimal = (uint32_t)atol(term);
+        uint16_t minutes = (uint16_t)(leftOfDecimal % 100);
+        uint32_t multiplier = 10000000UL;
+        uint32_t tenMillionthsOfMinutes = minutes * multiplier;
+
+        int16_t deg = (int16_t)(leftOfDecimal / 100);
+
+        while (isdigit(*term))
+            ++term;
+
+        if (*term == '.')
+            while (isdigit(*++term))
+            {
+            multiplier /= 10;
+            tenMillionthsOfMinutes += (*term - '0') * multiplier;
+            }
+
+        deg += ((5 * tenMillionthsOfMinutes + 1) / 3)/1000000000.0f;
+        return (float) deg;
+    }
+
+    REGION_TEMP int32_t parseDecimal(char *term){
+    
+        int negative = *term == '-';
+        if (negative) ++term;
+        int32_t ret = 100 * (int32_t)atol(term);
+        while (isdigit(*term)) ++term;
+        if (*term == '.' && isdigit(term[1])){
+            ret += 10 * (term[1] - '0');
+            if (isdigit(term[2]))
+                ret += term[2] - '0';
+        }
+        return negative ? -ret : ret;
+    }
+
+    REGION_TEMP void time_setTime(char *term){
+    
+        timeVal = parseDecimal(term);
+    }
+
+    REGION_TEMP void location_setLatitude(char *term)
+    {
+    
+    lat = parseDegrees(term);
+    }
+
+    REGION_TEMP void location_setLongitude(char *term)
+    {
+    
+    lng = parseDegrees(term);
+    }
+
+    REGION_TEMP void speed_set(char *term){
+    
+        speedVal = parseDecimal(term);
+    }
+
+    REGION_TEMP void course_set(char *term){
+    
+        degrees = parseDecimal(term);
+    }
+
+    REGION_TEMP void satellites_set(char *term){
+    
+        satCount ++;
+    }
+
+    REGION_TEMP void date_setDate(char *term){
+    
+        dateValue = atol(term);
+    }
+
+    REGION_TEMP void hdop_set(char *term){
+    
+        hdopVal = parseDecimal(term);
+    }
+
+    REGION_TEMP void altitude_set(char *term){
+    
+        height = parseDecimal(term);
+    }
+
+    REGION_TEMP int endOfTermHandler(){
+    
+        if(isChecksumTerm){
+            unsigned char checksum = 16 * fromHex(term[0]) + fromHex(term[1]);
+            if (checksum == parity){
+                passedChecksumCount++;
+                if (sentenceHasFix){
+                    ++sentencesWithFixCount;
+                }
+                switch(curSentenceType){
+                    case GPS_SENTENCE_GPRMC:
+                        date_commit();
+                        time_commit();
+                        if(sentenceHasFix){
+                            location_commit();
+                            speed_commit();
+                            course_commit();
+                        }
+                        break;
+                    case GPS_SENTENCE_GPGGA:
+                        time_commit();
+                        if(sentenceHasFix){
+                            location_commit();
+                            altitude_commit();
+                        }
+                        satellites_commit();
+                        hdop_commit();
+                        break;
+                }
+                return 1;
+            }else{
+                ++failedChecksumCount;  
+            }
+            // return 0;
+        }
+        if (curTermNumber == 0){
+            if(!mystrcmp(term, _GPRMCterm) || !mystrcmp(term, _GNRMCterm)){
+                curSentenceType = GPS_SENTENCE_GPRMC;
+            }else if (!mystrcmp(term, _GPGGAterm) || !mystrcmp(term, _GNGGAterm)){
+                curSentenceType = GPS_SENTENCE_GPGGA;
+            }else{
+                curSentenceType = GPS_SENTENCE_OTHER;
+            }
+            // return 0;
+        }
+        if (curSentenceType != GPS_SENTENCE_OTHER && term[0]){
+            switch(curSentenceType){
+                case GPS_SENTENCE_GPRMC:
+                    switch(curTermNumber){
+                        case 1:
+                            time_setTime(term);
+                            break;
+                        case 2:
+                            sentenceHasFix = term[0] == 'A';
+                            break;
+                        case 3:
+                            location_setLatitude(term);
+                            break;
+                        case 4:
+                            rawNewLatDataNegative = term[0] == 'S';
+                            break;
+                        case 5:
+                            location_setLongitude(term);
+                            break;
+                        case 6:
+                            rawNewLongDataNegative = term[0] == 'W';
+                            break;
+                        case 7:
+                            speed_set(term);
+                            break;
+                        case 8:
+                            course_set(term);
+                            break;
+                        case 9:
+                            date_setDate(term);
+                            break;
+                    }
+                    break;
+                case GPS_SENTENCE_GPGGA:
+                    switch(curTermNumber){
+                        case 1:
+                            time_setTime(term);
+                            break;
+                        case 2:
+                            location_setLatitude(term);
+                            break;
+                        case 3:
+                            rawNewLatDataNegative = term[0] == 'S';
+                            break;
+                        case 4:
+                            location_setLongitude(term);
+                            break;
+                        case 5:
+                            rawNewLongDataNegative = term[0] == 'W';
+                            break;
+                        case 6:
+                            sentenceHasFix = term[0] > 0;
+                            break;
+                        case 7:
+                            satellites_set(term);
+                            break;
+                        case 8:
+                            hdop_set(term);
+                            break;
+                        case 9:
+                            altitude_set(term);
+                            break;
+                    }
+                    break;
+                }
+            }
+        return 0;
+    }
+
+    char outputchar ;
+    REGION_TEMP int gps_encode(char c) {
+    
+        // SECURE_record_output_data(c);
+        ++encodedCharCount;
+
+        switch(c){
+            case ',':
+                parity ^= (uint8_t)c;
+                outputchar= '1';
+            case '\r':
+               outputchar='2';
+            case '\n':
+                outputchar = '3';
+            case '*':
+                {
+                outputchar = '4';
+                int isValidSentence = 0;
+                if (curTermOffset < 15){
+                    term[curTermOffset] = 0;
+                    isValidSentence = endOfTermHandler();
+                }
+                ++curTermNumber;
+                curTermOffset = 0;
+                isChecksumTerm = (int)c == '*';
+                return isValidSentence;
+                break;
+                }
+            case '$':
+                outputchar='5';
+                curTermNumber = curTermOffset = 0;
+                parity = 0;
+                curSentenceType = GPS_SENTENCE_OTHER;
+                isChecksumTerm = 0;
+                sentenceHasFix = 0;
+                return 0;
+            default:
+                outputchar = '6';
+                if (curTermOffset < _GPS_MAX_FIELD_SIZE-1){
+                    term[curTermOffset++] = c;
+                }
+                if (!isChecksumTerm){
+                    parity ^= c;
+                }
+                return 0;
+        }
+        return 0;
+    }
+
+    REGION_TEMP void get_position(long *latitude, long *longitude){
+    
+        if (latitude) *latitude = lat;
+        if (longitude) *longitude = lng;
+    }
+
+    REGION_TEMP void f_get_position(float *flat, float *flng){
+    
+        long tempLat, tempLong;
+        get_position(&tempLat, &tempLong);
+        *flat = tempLat == GPS_INVALID_ANGLE ? GPS_INVALID_F_ANGLE : (tempLat / 1000000.0f);
+        *flng = tempLong == GPS_INVALID_ANGLE ? GPS_INVALID_F_ANGLE : (tempLong / 1000000.0f);
+    }
+
+    REGION_TEMP void get_datetime(unsigned long *date, unsigned long *time){
+    
+        if(date) *date = dateValue;
+        if(time) *time = timeVal;
+    }
+
+    REGION_TEMP void crack_datetime(int* year, unsigned char* month, unsigned char* day, unsigned char* hour, unsigned char* minute, unsigned char* second, unsigned char* hundredths){
+    
+        unsigned long tempDate, tempTime;
+        get_datetime(&tempDate, &tempTime);
+        if (year) {
+            *year = tempDate % 100;
+            *year += *year > 80 ? 1900 : 2000;
+        } 
+        if (month) *month = (tempDate / 100) % 100;
+        if (day) *day = tempDate / 10000;
+        if (hour) *hour = tempTime / 1000000;
+        if (minute) *minute = (tempTime / 10000) % 100;
+        if (second) *second = (tempTime / 100) % 100;
+        if (hundredths) *hundredths = tempTime % 100;
+    }
+
+    REGION_TEMP void stats(unsigned long* chars, unsigned short* sentences, unsigned short* failed){
+    
+        if (chars) *chars = encodedCharCount;
+        if (sentences) *sentences = passedChecksumCount;
+        if (failed) *failed = failedChecksumCount;
+    } 
+
+    // __attribute ((naked)) void my_aeabi_i2d()
+    //     __asm__ volatile("teq   r0, #0");
+    //     __asm__ volatile("itteq");
+    //     __asm__ volatile("moveq r1, #0");
+    //     __asm__ volatile("bxeq  lr");
+    //     __asm__ volatile("bx    lr");
+    // }
+
+    REGION_TEMP void gpsdump()
+    {
+
+        long lat, lon;
+        float flat, flon;
+        unsigned long date, time, chars;
+        int year;
+        unsigned char month, day, hour, minute, second, hundredths;
+        unsigned short sentences, failed;
+
+        get_position(&lat, &lon);
+        f_get_position(&flat, &flon);
+        get_datetime(&date, &time);
+        crack_datetime(&year, &month, &day, &hour, &minute, &second, &hundredths);
+        stats(&chars, &sentences, &failed);
+    }
+
+
+    #define BUFFER_LEN    46
+    const char input_buffer[BUFFER_LEN] = 
+    {'$', 'G', 'P', 'R', 'M', 'C', '\n', '1', '0', '.', '2', '3', ',', 'A',',', '-', '2', '4', ',', 'N', ',',
+    '5', '4', ',', 'W', ',', '1', '5', '.', '4', '3',',', '9', '9', '.', '9', ',', '1', '2', '3', '4', '*', '3',
+    '4', '\n'}; // $GPRMC\n10.23,A,-24,N,54,W,15.43,99.9,1234*34\n$GPGGA\n10.23,-9,S,13,E,1,Doesnt matter,12.34,56.78*12\n\0};
+
+    volatile uint32_t lt, ln;
+    volatile uint32_t d, t, c;
+    volatile int y;
+    volatile char m, da, h, mi, s, hu;
+    volatile unsigned short se, f;
+
+    void application(){
+    
+        for (int buffer_index = 0; buffer_index < BUFFER_LEN; buffer_index++){
+            gps_encode(input_buffer[buffer_index]);
+        }
+
+        gpsdump();
+    }
+
+#endif
+
+
+
+
+
+
+#if APPLICATION == SYRINGE
+
+    #define THREADED_ROD_PITCH 1.25
+    #define STEPS_PER_REVOLUTION 4.0
+    #define MICROSTEPS_PER_STEP 16.0
+    #define SYRINGE_VOLUME_ML 50.0
+    #define SYRINGE_BARREL_LENGTH_MM 8.0
+    #define SPEED_MICROSECONDS_DELAY 100
+    #define TIME_BETWEEN_INJECTIONS  1000
+    #define TOTAL_INJECTIONS		 3
+
+    enum{PUSH,PULL};
+    int steps;
+
+    // extern TIM_HandleTypeDef htim1;
+    REGION_TEMP void delay(uint32_t us){
+        // htim1.Instance->CR1 |= TIM_CR1_CEN;
+
+        // while (htim1.Instance->CNT < us);
+
+        // htim1.Instance->CR1 &= ~TIM_CR1_CEN;
+    
+        for(int i=0; i<us; i++);
+    }
+
+    uint8_t maxinputpointer = 2;
+    char input[2] = "+\n";
+
+    REGION_TEMP char getserialinput(uint8_t inputserialpointer)
+    {
+    
+        if (inputserialpointer < maxinputpointer)
+        {
+            return input[inputserialpointer];
+        }
+        return 0;
+    }
+
+
+    // Bolus size
+    uint16_t mLBolus =  5;
+    REGION_TEMP void run_syringe()
+    {
+        uint16_t sensor = 0xa5;
+    
+        /* -- Global variables -- */
+        // Input related variables
+        volatile uint8_t inputserialpointer = -1;
+        uint16_t inputStrLen = 0;
+        char inputStr[10]; //input string storage
+
+        // Steps per ml
+        int ustepsPerML = (MICROSTEPS_PER_STEP * STEPS_PER_REVOLUTION * SYRINGE_BARREL_LENGTH_MM) / (SYRINGE_VOLUME_ML * THREADED_ROD_PITCH);
+
+        //int ustepsPerML = 10;
+        int inner = 0;
+        int outer = 0;
+        steps = 0;
+
+        while(outer < 1)
+        {
+        char c = getserialinput(inputserialpointer);
+        inputserialpointer++;
+        // hex to char reader
+        while (inner < 10)
+        {
+    
+            if(c == '\n') // Custom EOF
+            {
+        
+                break;
+            }
+    
+            if(c == 0)
+            {
+        
+                outer = 10;
+                break;
+            }
+    
+            inputStr[inputStrLen++] = c;
+            c = getserialinput(inputserialpointer);
+            inputserialpointer++;
+    
+            inner += 1;
+        }
+        inputStr[inputStrLen++] = '\0';
+        steps = mLBolus * ustepsPerML;
+        // SECURE_record_output_data(mLBolus);
+        // SECURE_record_output_data(ustepsPerML);
+        // SECURE_record_output_data(steps);
+        
+            for(int i=0; i < steps; i++)
+            {
+                if(inputStr[0] == '+' || inputStr[0] == '-')    
+                {   
+                    // write 0xff to port
+                    sensor = 0xff;
+                    delay(SPEED_MICROSECONDS_DELAY);
+                }
+                // write 0x00 to port
+                sensor = 0x00;
+                delay(SPEED_MICROSECONDS_DELAY);
+            }
+            // delay(SPEED_MICROSECONDS_DELAY);
+            inputStrLen = 0;
+            outer += 1;
+        }
     }
 
     void application()
     {
-        add_to_a();
+        
+        // for(int i=0; i<TOTAL_INJECTIONS; i++){
+        run_syringe();
+        // }
+    }
+#endif
 
+
+
+
+#if APPLICATION == ULT
+
+    #define MAX_DURATION    1000
+    extern __IO uint32_t uwTick;
+    uint32_t read_val = 0;
+
+    struct GPIO{
+        uint32_t MODER;
+        uint32_t OTYPER;
+        uint32_t OSPEEDR;
+        uint32_t PUPDR;
+        uint32_t IDR;
+        uint32_t ODR;
+        uint32_t BSRR;
+        uint32_t LCKR;
+        uint32_t AFR[2];
+        uint32_t BRR;
+    };
+
+    #define GPIOA_BASE 0x40020000
+    #define GPIOA_ ((struct GPIO *) GPIOA_BASE)
+
+    #define GPIO_PIN_8 0x0100
+
+    struct GPIO *GPIOA = GPIOA_;
+
+    REGION_TEMP void delay(uint32_t us){
+    
+        // uint32_t start = uwTick;
+        // while(uwTick - start < us);
+        for(int i=0; i<us; i++);
     }
 
+    REGION_TEMP uint32_t pulseIn(void){
+    
+        uint32_t duration = 0;
+
+        for(int i=0; i < MAX_DURATION; i++){
+            duration += (GPIOA->IDR & GPIO_PIN_8) >> 8;
+        } 
+
+        return duration;
+    }
+
+    REGION_TEMP uint32_t getUltrasonicReading(void){
+    
+        // Set as output and Set signal low for 2us
+        GPIOA->BSRR = (uint32_t)GPIO_PIN_8;
+        
+        delay(2);
+
+        // Set signal high for 5 us
+        GPIOA->BRR = (uint32_t)GPIO_PIN_8;
+
+        delay(5);
+
+        // Set signal low
+        GPIOA->BSRR = (uint32_t)GPIO_PIN_8;
+
+        // Set as input and read for duration
+        uint32_t duration = pulseIn();
+
+    
+
+        return duration;
+    }
+
+    void application(){
+    
+        uint32_t ult_vec = 0;
+        // for(int i=0; i<MAX_READINGS; i++){
+        //     ult_vec += getUltrasonicReading()/MAX_READINGS;
+        // }
+
+        ult_vec = getUltrasonicReading();
+        read_val = ult_vec;
+        
+        // SECURE_record_output_data(read_val);
+
+    }
 #endif
+
+
+
+
+
+#if APPLICATION == GEIGER
+    uint32_t bouncer_state;
+    #define sig_len 14
+    uint8_t signals[sig_len] = {0b00000001, 0b00000001, 0b00000000, 0b00000010, 0b00000011, 0b00000000, 0b00000000, 0b00000001, 0b00000011, 0b00000011, 0b00000001, 0b00000010, 0b00000010, 0b00000000};
+    int sig_idx = 0;
+
+    // Lets emulate the bouncer
+    const uint8_t DEBOUNCED_STATE = 0b00000001;
+    const uint8_t UNSTABLE_STATE = 0b00000010;
+    const uint8_t CHANGED_STATE = 0b00000100;
+
+    REGION_TEMP void setStateFlag(const uint8_t flag) {
+    
+        bouncer_state |= flag;
+    }
+
+    REGION_TEMP void unsetStateFlag(const uint8_t flag) {
+    
+        bouncer_state &= ~flag;
+    }
+
+    REGION_TEMP void toggleStateFlag(const uint8_t flag) {
+    
+        bouncer_state ^= flag;
+    }
+
+    REGION_TEMP uint32_t getStateFlag(const uint8_t flag) {
+    
+        return ((bouncer_state & flag) != 0);
+    }  
+    REGION_TEMP void changeState(){
+        toggleStateFlag(DEBOUNCED_STATE);
+        setStateFlag(CHANGED_STATE);
+    }
+
+    REGION_TEMP uint32_t digitalRead(){
+    
+        uint32_t val = signals[sig_idx];
+        sig_idx++;
+        return val;
+    }
+
+    REGION_TEMP uint32_t changed() {
+    
+        return getStateFlag(CHANGED_STATE);
+    }
+
+    REGION_TEMP uint32_t readCurrentState() {
+    
+        return digitalRead();
+    }
+
+    REGION_TEMP void bouncer_begin(){
+    
+        bouncer_state = 0;
+        if (readCurrentState()){
+            setStateFlag(DEBOUNCED_STATE | UNSTABLE_STATE);
+        } 
+    }
+
+    REGION_TEMP uint32_t bouncer_update(){
+    
+        unsetStateFlag(CHANGED_STATE);
+        
+        uint32_t currentState = readCurrentState();
+
+        if (((currentState & UNSTABLE_STATE) !=0) != getStateFlag(UNSTABLE_STATE)){
+            toggleStateFlag(UNSTABLE_STATE);
+        }else{
+            if (((currentState & DEBOUNCED_STATE) !=0) != getStateFlag(DEBOUNCED_STATE)){
+                changeState();
+            }
+        }
+        return changed();
+    }
+
+    REGION_TEMP int bouncer_read() {
+        return getStateFlag(DEBOUNCED_STATE);
+    }
+
+    uint8_t datastring[10] = {'\0','\0','\0','\0','\0','\0','\0','\0','\0','\0'};
+    void application() {
+        int index = 0;
+
+        bouncer_begin();
+        while(sig_idx < sig_len){
+            if(bouncer_update()){
+                if(bouncer_read() == 0){
+                    datastring[index] = '1';
+                    datastring[index+1] = ',';
+                    index = index + 2;   
+                }
+            }
+        }
+    }
+#endif
+
+
+
+
+
+#if APPLICATION == TEMP
+    int temp;
+    int humidity;
+    uint8_t data[5] = {0,0,0,0,0};
+    uint8_t valid_reading = 0;
+
+
+    struct GPIO{
+        uint32_t MODER;
+        uint32_t OTYPER;
+        uint32_t OSPEEDR;
+        uint32_t PUPDR;
+        uint32_t IDR;
+        uint32_t ODR;
+        uint32_t BSRR;
+        uint32_t LCKR;
+        uint32_t AFR[2];
+        uint32_t BRR;
+    };
+
+#define MAX_READINGS        83
+#define MAX_DURATION        1000
+
+    #define GPIOA_BASE 0x40020000
+    #define GPIOA_ ((struct GPIO *) GPIOA_BASE)
+
+    #define GPIO_PIN_8 0x0100
+
+    struct GPIO *GPIOA = GPIOA_;
+
+    extern __IO uint32_t uwTick;
+    REGION_TEMP void delay(uint32_t us){
+    
+        // uint32_t start = uwTick;
+        // while(uwTick - start < us);
+        for(int i=0; i<us; i++);
+    }
+
+    // uint8_t sim_sensor = 1;
+    // counter += (sim_sensor) >> 8;
+    // sim_sensor++;
+    // sim_sensor = (sim_sensor >> 1);
+    uint8_t counter = 0;
+
+    REGION_TEMP void read_data(){
+
+        // pull signal high & delay
+        GPIOA->BRR = (uint32_t)GPIO_PIN_8;
+        delay(250);
+
+        /// pull signal low for 20us
+        GPIOA->BSRR = (uint32_t)GPIO_PIN_8;
+        delay(20);
+
+        // pull signal high for 40us
+        GPIOA->BRR = (uint32_t)GPIO_PIN_8;
+        delay(40);
+
+        //read timings
+        int j = 0;
+        int i;
+        for(i=0; i<MAX_READINGS; i++){
+
+            counter += (GPIOA->IDR & GPIO_PIN_8) >> 8;
+
+            // ignore first 3 transitions
+            if ((i >= 4) && ( (i & 0x01) == 0x00)) {
+        
+                // shove each bit into the storage bytes
+                data[j >> 3] <<= 1;
+                if (counter > 6){
+            
+                    data[j >> 3] |= 1;
+                }
+        
+                j++;
+            }
+
+        }
+
+        // SECURE_record_output_data(i);
+
+        // check we read 40 bits and that the checksum matches
+        if ((j >= 40) && (data[4] == ((data[0] + data[1] + data[2] + data[3]) & 0xFF)) ) {
+
+            valid_reading = 1;
+        } else {
+
+            valid_reading = 0;
+        }
+    }
+
+    REGION_TEMP uint16_t get_temperature(){
+        read_data();
+
+        uint16_t t = data[2];
+        t |= (data[3] << 8);
+        return t;
+    }
+
+    REGION_TEMP uint16_t get_humidity(){
+        read_data();
+
+        uint16_t h = data[0];
+        h |= (data[1] << 8);
+        return h;
+    }
+
+
+    void application(){
+        // Get sensor readings
+        temp = get_temperature();
+    }
+#endif // TEMP

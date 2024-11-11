@@ -15,9 +15,14 @@
 #define FIB      4
 #define SEARCH   5
 #define TEST     6
+#define GPS      7
+#define SYRINGE  8
+#define ULT      9
+#define GEIGER   10
+#define TEMP     11
+
 
 // CHOOSE APPLICATION HERE
-#define APPLICATION CRC32
-
+#define APPLICATION GPS
 
 #endif

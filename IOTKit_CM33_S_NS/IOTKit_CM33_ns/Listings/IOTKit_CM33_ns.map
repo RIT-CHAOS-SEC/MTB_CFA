@@ -24,11 +24,50 @@ Section Cross References
     main_ns.o(.text.main) refers to main_ns.o(.data.text) for text
     main_ns.o(.ARM.exidx.text.main) refers to main_ns.o(.text.main) for [Anonymous Symbol]
     main_ns.o(.ARM.exidx.text.SCB_GetFPUType) refers to main_ns.o(.text.SCB_GetFPUType) for [Anonymous Symbol]
-    application.o(.MTBDR_MEM) refers to application.o(.MTBAR_MEM) for application
+    application.o(.MTBDR_MEM) refers to application.o(.bss.validDate) for validDate
+    application.o(.MTBDR_MEM) refers to application.o(.bss.upDate) for upDate
+    application.o(.MTBDR_MEM) refers to application.o(.bss.validTime) for validTime
+    application.o(.MTBDR_MEM) refers to application.o(.bss.updateTime) for updateTime
+    application.o(.MTBDR_MEM) refers to application.o(.bss.validLoc) for validLoc
+    application.o(.MTBDR_MEM) refers to application.o(.bss.updateLoc) for updateLoc
+    application.o(.MTBDR_MEM) refers to application.o(.bss.validSpeed) for validSpeed
+    application.o(.MTBDR_MEM) refers to application.o(.bss.updateSpeed) for updateSpeed
+    application.o(.MTBDR_MEM) refers to application.o(.bss.validDeg) for validDeg
+    application.o(.MTBDR_MEM) refers to application.o(.bss.updateDeg) for updateDeg
+    application.o(.MTBDR_MEM) refers to application.o(.bss.validAlt) for validAlt
+    application.o(.MTBDR_MEM) refers to application.o(.bss.updateAlt) for updateAlt
+    application.o(.MTBDR_MEM) refers to application.o(.bss.validSat) for validSat
+    application.o(.MTBDR_MEM) refers to application.o(.bss.updateSat) for updateSat
+    application.o(.MTBDR_MEM) refers to application.o(.bss.validHDop) for validHDop
+    application.o(.MTBDR_MEM) refers to application.o(.bss.updateHDop) for updateHDop
+    application.o(.MTBDR_MEM) refers to atol.o(.text) for atol
+    application.o(.MTBDR_MEM) refers to application.o(.bss.timeVal) for timeVal
+    application.o(.MTBDR_MEM) refers to application.o(.bss.lat) for lat
+    application.o(.MTBDR_MEM) refers to application.o(.bss.lng) for lng
+    application.o(.MTBDR_MEM) refers to application.o(.bss.speedVal) for speedVal
+    application.o(.MTBDR_MEM) refers to application.o(.bss.degrees) for degrees
+    application.o(.MTBDR_MEM) refers to application.o(.bss.satCount) for satCount
+    application.o(.MTBDR_MEM) refers to application.o(.bss.dateValue) for dateValue
+    application.o(.MTBDR_MEM) refers to application.o(.bss.hdopVal) for hdopVal
+    application.o(.MTBDR_MEM) refers to application.o(.bss.height) for height
+    application.o(.MTBDR_MEM) refers to application.o(.bss.isChecksumTerm) for isChecksumTerm
+    application.o(.MTBDR_MEM) refers to application.o(.bss.term) for term
+    application.o(.MTBDR_MEM) refers to application.o(.bss.parity) for parity
+    application.o(.MTBDR_MEM) refers to application.o(.bss.passedChecksumCount) for passedChecksumCount
+    application.o(.MTBDR_MEM) refers to application.o(.bss.sentenceHasFix) for sentenceHasFix
+    application.o(.MTBDR_MEM) refers to application.o(.bss.sentencesWithFixCount) for sentencesWithFixCount
+    application.o(.MTBDR_MEM) refers to application.o(.data.curSentenceType) for curSentenceType
+    application.o(.MTBDR_MEM) refers to application.o(.bss.failedChecksumCount) for failedChecksumCount
+    application.o(.MTBDR_MEM) refers to application.o(.bss.curTermNumber) for curTermNumber
+    application.o(.MTBDR_MEM) refers to application.o(.rodata.str1.1) for .L.str
+    application.o(.MTBDR_MEM) refers to application.o(.bss.rawNewLatDataNegative) for rawNewLatDataNegative
+    application.o(.MTBDR_MEM) refers to application.o(.bss.rawNewLongDataNegative) for rawNewLongDataNegative
+    application.o(.MTBDR_MEM) refers to application.o(.bss.encodedCharCount) for encodedCharCount
+    application.o(.MTBDR_MEM) refers to application.o(.bss.outputchar) for outputchar
+    application.o(.MTBDR_MEM) refers to application.o(.bss.curTermOffset) for curTermOffset
+    application.o(.MTBDR_MEM) refers to application.o(.rodata.GPS_INVALID_F_ANGLE) for GPS_INVALID_F_ANGLE
+    application.o(.MTBDR_MEM) refers to application.o(.rodata.input_buffer) for input_buffer
     application.o(.ARM.exidx.MTBDR_MEM) refers to application.o(.MTBDR_MEM) for [Anonymous Symbol]
-    application.o(.MTBAR_MEM) refers to application.o(.rodata.crc_32_tab) for crc_32_tab
-    application.o(.MTBAR_MEM) refers to application.o(.bss.seed) for seed
-    application.o(.ARM.exidx.MTBAR_MEM) refers to application.o(.MTBAR_MEM) for [Anonymous Symbol]
     led_v2m-mps2.o(.ARM.exidx.text.LED_Initialize) refers to led_v2m-mps2.o(.text.LED_Initialize) for [Anonymous Symbol]
     led_v2m-mps2.o(.ARM.exidx.text.LED_Uninitialize) refers to led_v2m-mps2.o(.text.LED_Uninitialize) for [Anonymous Symbol]
     led_v2m-mps2.o(.ARM.exidx.text.LED_On) refers to led_v2m-mps2.o(.text.LED_On) for [Anonymous Symbol]
@@ -49,6 +88,8 @@ Section Cross References
     system_iotkit_cm33.o(.text.SystemInit) refers to startup_iotkit_cm33.o(RESET) for __Vectors
     system_iotkit_cm33.o(.text.SystemInit) refers to system_iotkit_cm33.o(.data.SystemCoreClock) for SystemCoreClock
     system_iotkit_cm33.o(.ARM.exidx.text.SystemInit) refers to system_iotkit_cm33.o(.text.SystemInit) for [Anonymous Symbol]
+    atol.o(.text) refers to rt_errno_addr_intlibspace.o(.text) for __aeabi_errno_addr
+    atol.o(.text) refers to strtol.o(.text) for strtol
     __main.o(!!!main) refers to __rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
     __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
     __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for __rt_entry_main
@@ -56,6 +97,12 @@ Section Cross References
     __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000009) for __rt_entry_postsh_1
     __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000002) for __rt_entry_presh_1
     __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry7.o(.ARM.Collect$$rtentry$$00000007) for __rt_entry_sh
+    rt_errno_addr.o(.text) refers to rt_errno_addr.o(.bss) for __aeabi_errno_addr_data
+    rt_errno_addr_intlibspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    strtol.o(.text) refers to rt_ctype_table.o(.text) for __rt_ctype_table
+    strtol.o(.text) refers to _strtoul.o(.text) for _strtoul
+    strtol.o(.text) refers to rt_errno_addr_intlibspace.o(.text) for __aeabi_errno_addr
+    libspace.o(.text) refers to libspace.o(.bss) for __libspace_start
     __rtentry2.o(.ARM.Collect$$rtentry$$00000008) refers to boardinit2.o(.text) for _platform_post_stackheap_init
     __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) refers to libinit.o(.ARM.Collect$$libinit$$00000000) for __rt_lib_init
     __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) refers to boardinit3.o(.text) for _platform_post_lib_init
@@ -72,8 +119,18 @@ Section Cross References
     __rtentry7.o(__vectab_stack_and_reset_2_area) refers to __main.o(!!!main) for __main
     __rtentry7.o(.ARM.exidx) refers to __rtentry7.o(.ARM.Collect$$rtentry$$00000007) for .ARM.Collect$$rtentry$$00000007
     __rtentry7.o(.ARM.exidx) refers to __rtentry7.o(.ARM.Collect$$rtentry$$00002718) for .ARM.Collect$$rtentry$$00002718
+    rt_ctype_table.o(.text) refers to rt_locale_intlibspace.o(.text) for __rt_locale
+    rt_ctype_table.o(.text) refers to lc_ctype_c.o(locale$$code) for _get_lc_ctype
+    _strtoul.o(.text) refers to _chval.o(.text) for _chval
+    _strtoul.o(.text) refers to rt_errno_addr_intlibspace.o(.text) for __aeabi_errno_addr
     sys_stackheap_outer.o(.text) refers to libspace.o(.text) for __user_perproc_libspace
     sys_stackheap_outer.o(.text) refers to sys_stackheap.o(.text) for __user_initial_stackheap
+    rt_locale.o(.text) refers to rt_locale.o(.bss) for __rt_locale_data
+    rt_locale_intlibspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    lc_ctype_c.o(locale$$data) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000014) for __rt_lib_init_lc_ctype_2
+    lc_ctype_c.o(locale$$code) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000014) for __rt_lib_init_lc_ctype_2
+    lc_ctype_c.o(locale$$code) refers to strcmpv8m_maindsp.o(.text) for strcmp
+    lc_ctype_c.o(locale$$code) refers to lc_ctype_c.o(locale$$data) for __lcctype_c_name
     exit.o(.text) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for __rt_exit
     libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000030) for __rt_lib_init_alloca_1
     libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002E) for __rt_lib_init_argv_1
@@ -97,7 +154,6 @@ Section Cross References
     libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001F) for __rt_lib_init_signal_1
     libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000027) for __rt_lib_init_stdio_1
     libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000E) for __rt_lib_init_user_alloc_1
-    libspace.o(.text) refers to libspace.o(.bss) for __libspace_start
     sys_stackheap.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
     sys_stackheap.o(.text) refers to use_no_semi.o(.text) for __I$use$semihosting
     sys_stackheap_hlt.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
@@ -110,8 +166,10 @@ Section Cross References
     rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
     rtexit.o(.ARM.exidx) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for .ARM.Collect$$rtexit$$00000000
     libinit2.o(.ARM.Collect$$libinit$$00000001) refers to fpinit.o(x$fpl$fpinit) for _fp_init
+    libinit2.o(.ARM.Collect$$libinit$$00000011) refers (Weak) to rt_locale_intlibspace.o(.text) for __rt_locale
     libinit2.o(.ARM.Collect$$libinit$$00000012) refers to libinit2.o(.ARM.Collect$$libinit$$00000011) for .ARM.Collect$$libinit$$00000011
     libinit2.o(.ARM.Collect$$libinit$$00000014) refers to libinit2.o(.ARM.Collect$$libinit$$00000011) for .ARM.Collect$$libinit$$00000011
+    libinit2.o(.ARM.Collect$$libinit$$00000014) refers (Weak) to lc_ctype_c.o(locale$$code) for _get_lc_ctype
     libinit2.o(.ARM.Collect$$libinit$$00000016) refers to libinit2.o(.ARM.Collect$$libinit$$00000011) for .ARM.Collect$$libinit$$00000011
     libinit2.o(.ARM.Collect$$libinit$$00000018) refers to libinit2.o(.ARM.Collect$$libinit$$00000011) for .ARM.Collect$$libinit$$00000011
     libinit2.o(.ARM.Collect$$libinit$$0000001A) refers to libinit2.o(.ARM.Collect$$libinit$$00000011) for .ARM.Collect$$libinit$$00000011
@@ -181,8 +239,21 @@ Removing Unused input sections from the image.
     Removing main_ns.o(.ARM.exidx.text.SCB_GetFPUType), (8 bytes).
     Removing main_ns.o(.ARM.use_no_argv), (4 bytes).
     Removing application.o(.text), (0 bytes).
-    Removing application.o(.ARM.exidx.MTBDR_MEM), (8 bytes).
-    Removing application.o(.ARM.exidx.MTBAR_MEM), (24 bytes).
+    Removing application.o(.ARM.exidx.MTBDR_MEM), (256 bytes).
+    Removing application.o(.bss.lt), (4 bytes).
+    Removing application.o(.bss.ln), (4 bytes).
+    Removing application.o(.bss.d), (4 bytes).
+    Removing application.o(.bss.t), (4 bytes).
+    Removing application.o(.bss.c), (4 bytes).
+    Removing application.o(.bss.y), (4 bytes).
+    Removing application.o(.bss.m), (1 bytes).
+    Removing application.o(.bss.da), (1 bytes).
+    Removing application.o(.bss.h), (1 bytes).
+    Removing application.o(.bss.mi), (1 bytes).
+    Removing application.o(.bss.s), (1 bytes).
+    Removing application.o(.bss.hu), (1 bytes).
+    Removing application.o(.bss.se), (2 bytes).
+    Removing application.o(.bss.f), (2 bytes).
     Removing led_v2m-mps2.o(.text), (0 bytes).
     Removing led_v2m-mps2.o(.text.LED_Initialize), (12 bytes).
     Removing led_v2m-mps2.o(.ARM.exidx.text.LED_Initialize), (8 bytes).
@@ -203,7 +274,7 @@ Removing Unused input sections from the image.
     Removing system_iotkit_cm33.o(.ARM.exidx.text.SystemCoreClockUpdate), (8 bytes).
     Removing system_iotkit_cm33.o(.ARM.exidx.text.SystemInit), (8 bytes).
 
-30 unused section(s) (total 234 bytes) removed from the image.
+43 unused section(s) (total 492 bytes) removed from the image.
 
 ==============================================================================
 
@@ -239,11 +310,16 @@ Image Symbol Table
     ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry7.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_errno_addr.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_errno_addr_intlibspace.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_ctype_table.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_locale.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_locale_intlibspace.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
     ../clib/angel/scatter.s                  0x00000000   Number         0  __scatter.o ABSOLUTE
     ../clib/angel/startup.s                  0x00000000   Number         0  __main.o ABSOLUTE
-    ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_hlt.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
@@ -264,6 +340,12 @@ Image Symbol Table
     ../clib/libinit.s                        0x00000000   Number         0  libinit5.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
+    ../clib/locale.s                         0x00000000   Number         0  lc_ctype_c.o ABSOLUTE
+    ../clib/memcpset.s                       0x00000000   Number         0  strcmpv8m_maindsp.o ABSOLUTE
+    ../clib/scanf.c                          0x00000000   Number         0  atol.o ABSOLUTE
+    ../clib/scanf.c                          0x00000000   Number         0  strtol.o ABSOLUTE
+    ../clib/scanf.c                          0x00000000   Number         0  _strtoul.o ABSOLUTE
+    ../clib/scanf.c                          0x00000000   Number         0  _chval.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
@@ -300,74 +382,91 @@ Image Symbol Table
     .ARM.Collect$$libinit$$0000000C          0x002004a6   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000C)
     .ARM.Collect$$libinit$$0000000E          0x002004a6   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000E)
     .ARM.Collect$$libinit$$00000010          0x002004a6   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000010)
-    .ARM.Collect$$libinit$$00000013          0x002004a6   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000013)
-    .ARM.Collect$$libinit$$00000015          0x002004a6   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000015)
-    .ARM.Collect$$libinit$$00000017          0x002004a6   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000017)
-    .ARM.Collect$$libinit$$00000019          0x002004a6   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000019)
-    .ARM.Collect$$libinit$$0000001B          0x002004a6   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
-    .ARM.Collect$$libinit$$0000001D          0x002004a6   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
-    .ARM.Collect$$libinit$$0000001F          0x002004a6   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
-    .ARM.Collect$$libinit$$00000021          0x002004a6   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000021)
-    .ARM.Collect$$libinit$$00000023          0x002004a6   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000023)
-    .ARM.Collect$$libinit$$00000025          0x002004a6   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000025)
-    .ARM.Collect$$libinit$$00000027          0x002004a6   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000027)
-    .ARM.Collect$$libinit$$0000002E          0x002004a6   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
-    .ARM.Collect$$libinit$$00000030          0x002004a6   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000030)
-    .ARM.Collect$$libinit$$00000032          0x002004a6   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000032)
-    .ARM.Collect$$libinit$$00000034          0x002004a6   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000034)
-    .ARM.Collect$$libinit$$00000035          0x002004a6   Section        2  libinit2.o(.ARM.Collect$$libinit$$00000035)
-    .ARM.Collect$$libshutdown$$00000000      0x002004a8   Section        2  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
-    .ARM.Collect$$libshutdown$$00000002      0x002004aa   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000002)
-    .ARM.Collect$$libshutdown$$00000004      0x002004aa   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000004)
-    .ARM.Collect$$libshutdown$$00000007      0x002004aa   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000007)
-    .ARM.Collect$$libshutdown$$0000000A      0x002004aa   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A)
-    .ARM.Collect$$libshutdown$$0000000C      0x002004aa   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C)
-    .ARM.Collect$$libshutdown$$0000000F      0x002004aa   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F)
-    .ARM.Collect$$libshutdown$$00000010      0x002004aa   Section        2  libshutdown2.o(.ARM.Collect$$libshutdown$$00000010)
-    .ARM.Collect$$rtentry$$00000000          0x002004ac   Section        0  __rtentry.o(.ARM.Collect$$rtentry$$00000000)
-    .ARM.Collect$$rtentry$$00000002          0x002004ac   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$00000002)
-    .ARM.Collect$$rtentry$$00000007          0x002004ac   Section        4  __rtentry7.o(.ARM.Collect$$rtentry$$00000007)
-    .ARM.Collect$$rtentry$$00000009          0x002004b0   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$00000009)
-    .ARM.Collect$$rtentry$$0000000A          0x002004b0   Section        4  __rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
-    .ARM.Collect$$rtentry$$0000000C          0x002004b4   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
-    .ARM.Collect$$rtentry$$0000000D          0x002004b4   Section        8  __rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
-    __lit__00000000                          0x002004bc   Data           4  __rtentry7.o(.ARM.Collect$$rtentry$$00002718)
-    .ARM.Collect$$rtentry$$00002718          0x002004bc   Section        4  __rtentry7.o(.ARM.Collect$$rtentry$$00002718)
-    .ARM.Collect$$rtexit$$00000000           0x002004c0   Section        2  rtexit.o(.ARM.Collect$$rtexit$$00000000)
-    .ARM.Collect$$rtexit$$00000002           0x002004c2   Section        0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
-    .ARM.Collect$$rtexit$$00000003           0x002004c2   Section        4  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
-    .ARM.Collect$$rtexit$$00000004           0x002004c6   Section        6  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
-    .text                                    0x002004cc   Section        0  exit.o(.text)
-    .text                                    0x002004de   Section        2  use_no_semi.o(.text)
-    .text                                    0x002004e0   Section        0  indicate_semi.o(.text)
-    .text                                    0x002004e0   Section        0  sys_exit.o(.text)
-    [Anonymous Symbol]                       0x002004ec   Section        0  startup_iotkit_cm33.o(.text.Default_Handler)
-    [Anonymous Symbol]                       0x002004f0   Section        0  startup_iotkit_cm33.o(.text.HardFault_Handler)
-    [Anonymous Symbol]                       0x002004f4   Section        0  led_v2m-mps2.o(.text.LED_Off)
-    [Anonymous Symbol]                       0x0020051c   Section        0  led_v2m-mps2.o(.text.LED_On)
-    [Anonymous Symbol]                       0x00200544   Section        0  main_ns.o(.text.NonSecure_LED_Off)
-    [Anonymous Symbol]                       0x00200554   Section        0  main_ns.o(.text.NonSecure_LED_On)
-    [Anonymous Symbol]                       0x00200564   Section        0  startup_iotkit_cm33.o(.text.Reset_Handler)
-    SCB_GetFPUType                           0x00200599   Thumb Code    64  main_ns.o(.text.SCB_GetFPUType)
-    [Anonymous Symbol]                       0x00200598   Section        0  main_ns.o(.text.SCB_GetFPUType)
-    [Anonymous Symbol]                       0x002005d8   Section        0  main_ns.o(.text.SysTick_Handler)
-    [Anonymous Symbol]                       0x00200664   Section        0  system_iotkit_cm33.o(.text.SystemInit)
-    [Anonymous Symbol]                       0x0020069c   Section        0  main_ns.o(.text.main)
-    $v0                                      0x00200812   Number         0  fpinit.o(x$fpl$fpinit)
-    x$fpl$fpinit                             0x00200812   Section       26  fpinit.o(x$fpl$fpinit)
-    crc_32_tab                               0x0020082c   Data        1024  application.o(.rodata.crc_32_tab)
-    [Anonymous Symbol]                       0x0020082c   Section        0  application.o(.rodata.crc_32_tab)
+    .ARM.Collect$$libinit$$00000011          0x002004a6   Section        6  libinit2.o(.ARM.Collect$$libinit$$00000011)
+    .ARM.Collect$$libinit$$00000013          0x002004ac   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000013)
+    .ARM.Collect$$libinit$$00000014          0x002004ac   Section       12  libinit2.o(.ARM.Collect$$libinit$$00000014)
+    .ARM.Collect$$libinit$$00000015          0x002004b8   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000015)
+    .ARM.Collect$$libinit$$00000017          0x002004b8   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000017)
+    .ARM.Collect$$libinit$$00000019          0x002004b8   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000019)
+    .ARM.Collect$$libinit$$0000001B          0x002004b8   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    .ARM.Collect$$libinit$$0000001D          0x002004b8   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
+    .ARM.Collect$$libinit$$0000001F          0x002004b8   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
+    .ARM.Collect$$libinit$$00000021          0x002004b8   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000021)
+    .ARM.Collect$$libinit$$00000023          0x002004b8   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000023)
+    .ARM.Collect$$libinit$$00000025          0x002004b8   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000025)
+    .ARM.Collect$$libinit$$00000027          0x002004b8   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000027)
+    .ARM.Collect$$libinit$$0000002E          0x002004b8   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
+    .ARM.Collect$$libinit$$00000030          0x002004b8   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000030)
+    .ARM.Collect$$libinit$$00000032          0x002004b8   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000032)
+    .ARM.Collect$$libinit$$00000034          0x002004b8   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000034)
+    .ARM.Collect$$libinit$$00000035          0x002004b8   Section        2  libinit2.o(.ARM.Collect$$libinit$$00000035)
+    .ARM.Collect$$libshutdown$$00000000      0x002004ba   Section        2  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
+    .ARM.Collect$$libshutdown$$00000002      0x002004bc   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000002)
+    .ARM.Collect$$libshutdown$$00000004      0x002004bc   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000004)
+    .ARM.Collect$$libshutdown$$00000007      0x002004bc   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000007)
+    .ARM.Collect$$libshutdown$$0000000A      0x002004bc   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A)
+    .ARM.Collect$$libshutdown$$0000000C      0x002004bc   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C)
+    .ARM.Collect$$libshutdown$$0000000F      0x002004bc   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F)
+    .ARM.Collect$$libshutdown$$00000010      0x002004bc   Section        2  libshutdown2.o(.ARM.Collect$$libshutdown$$00000010)
+    .ARM.Collect$$rtentry$$00000000          0x002004be   Section        0  __rtentry.o(.ARM.Collect$$rtentry$$00000000)
+    .ARM.Collect$$rtentry$$00000002          0x002004be   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$00000002)
+    .ARM.Collect$$rtentry$$00000007          0x002004be   Section        4  __rtentry7.o(.ARM.Collect$$rtentry$$00000007)
+    .ARM.Collect$$rtentry$$00000009          0x002004c2   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$00000009)
+    .ARM.Collect$$rtentry$$0000000A          0x002004c2   Section        4  __rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
+    .ARM.Collect$$rtentry$$0000000C          0x002004c6   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
+    .ARM.Collect$$rtentry$$0000000D          0x002004c6   Section        8  __rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
+    __lit__00000000                          0x002004d0   Data           4  __rtentry7.o(.ARM.Collect$$rtentry$$00002718)
+    .ARM.Collect$$rtentry$$00002718          0x002004d0   Section        4  __rtentry7.o(.ARM.Collect$$rtentry$$00002718)
+    .ARM.Collect$$rtexit$$00000000           0x002004d4   Section        2  rtexit.o(.ARM.Collect$$rtexit$$00000000)
+    .ARM.Collect$$rtexit$$00000002           0x002004d6   Section        0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
+    .ARM.Collect$$rtexit$$00000003           0x002004d6   Section        4  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
+    .ARM.Collect$$rtexit$$00000004           0x002004da   Section        6  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
+    .text                                    0x002004e0   Section        0  atol.o(.text)
+    .text                                    0x002004fc   Section        8  rt_errno_addr_intlibspace.o(.text)
+    .text                                    0x00200504   Section        0  strtol.o(.text)
+    .text                                    0x00200574   Section       16  rt_ctype_table.o(.text)
+    .text                                    0x00200584   Section        0  _strtoul.o(.text)
+    .text                                    0x00200624   Section        8  rt_locale_intlibspace.o(.text)
+    .text                                    0x0020062c   Section        0  _chval.o(.text)
+    .text                                    0x00200648   Section        0  exit.o(.text)
+    .text                                    0x00200660   Section      124  strcmpv8m_maindsp.o(.text)
+    .text                                    0x002006dc   Section        2  use_no_semi.o(.text)
+    .text                                    0x002006de   Section        0  indicate_semi.o(.text)
+    .text                                    0x002006e0   Section        0  sys_exit.o(.text)
+    [Anonymous Symbol]                       0x002006ec   Section        0  startup_iotkit_cm33.o(.text.Default_Handler)
+    [Anonymous Symbol]                       0x002006f0   Section        0  startup_iotkit_cm33.o(.text.HardFault_Handler)
+    [Anonymous Symbol]                       0x002006f4   Section        0  led_v2m-mps2.o(.text.LED_Off)
+    [Anonymous Symbol]                       0x0020071c   Section        0  led_v2m-mps2.o(.text.LED_On)
+    [Anonymous Symbol]                       0x00200744   Section        0  main_ns.o(.text.NonSecure_LED_Off)
+    [Anonymous Symbol]                       0x00200754   Section        0  main_ns.o(.text.NonSecure_LED_On)
+    [Anonymous Symbol]                       0x00200764   Section        0  startup_iotkit_cm33.o(.text.Reset_Handler)
+    SCB_GetFPUType                           0x00200799   Thumb Code    64  main_ns.o(.text.SCB_GetFPUType)
+    [Anonymous Symbol]                       0x00200798   Section        0  main_ns.o(.text.SCB_GetFPUType)
+    [Anonymous Symbol]                       0x002007d8   Section        0  main_ns.o(.text.SysTick_Handler)
+    [Anonymous Symbol]                       0x00200864   Section        0  system_iotkit_cm33.o(.text.SystemInit)
+    [Anonymous Symbol]                       0x0020089c   Section        0  main_ns.o(.text.main)
+    locale$$code                             0x00200a14   Section       44  lc_ctype_c.o(locale$$code)
+    $v0                                      0x00200a40   Number         0  fpinit.o(x$fpl$fpinit)
+    x$fpl$fpinit                             0x00200a40   Section       26  fpinit.o(x$fpl$fpinit)
+    GPS_INVALID_F_ANGLE                      0x00200a5c   Data           4  application.o(.rodata.GPS_INVALID_F_ANGLE)
+    [Anonymous Symbol]                       0x00200a5c   Section        0  application.o(.rodata.GPS_INVALID_F_ANGLE)
+    .L.str.3                                 0x00200a8e   Data           6  application.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x00200a8e   Section        0  application.o(.rodata.str1.1)
+    .L.str.2                                 0x00200a94   Data           6  application.o(.rodata.str1.1)
+    .L.str.1                                 0x00200a9a   Data           6  application.o(.rodata.str1.1)
+    .L.str                                   0x00200aa0   Data           6  application.o(.rodata.str1.1)
+    locale$$data                             0x00200ae8   Section      272  lc_ctype_c.o(locale$$data)
+    __lcctype_c_name                         0x00200aec   Data           2  lc_ctype_c.o(locale$$data)
+    __lcctype_c_start                        0x00200af4   Data           0  lc_ctype_c.o(locale$$data)
+    __lcctype_c_end                          0x00200bf8   Data           0  lc_ctype_c.o(locale$$data)
     [Anonymous Symbol]                       0x00300000   Section        0  application.o(.MTBDR_MEM)
     __tagsym$$used.0                         0x00380000   Number         0  main_ns.o(.MTBAR_MEM)
     [Anonymous Symbol]                       0x00380000   Section        0  main_ns.o(.MTBAR_MEM)
-    [Anonymous Symbol]                       0x003802d0   Section        0  application.o(.MTBAR_MEM)
-    rand_beebs                               0x00380335   Thumb Code    38  application.o(.MTBAR_MEM)
-    SysTick_Handler.ticks                    0x28200020   Data           4  main_ns.o(.bss.SysTick_Handler.ticks)
-    [Anonymous Symbol]                       0x28200020   Section        0  main_ns.o(.bss.SysTick_Handler.ticks)
-    seed                                     0x28200888   Data           4  application.o(.bss.seed)
-    [Anonymous Symbol]                       0x28200888   Section        0  application.o(.bss.seed)
-    x                                        0x2820088c   Data           4  main_ns.o(.bss.x)
-    [Anonymous Symbol]                       0x2820088c   Section        0  main_ns.o(.bss.x)
+    .bss                                     0x28200020   Section       96  libspace.o(.bss)
+    SysTick_Handler.ticks                    0x28200080   Data           4  main_ns.o(.bss.SysTick_Handler.ticks)
+    [Anonymous Symbol]                       0x28200080   Section        0  main_ns.o(.bss.SysTick_Handler.ticks)
+    x                                        0x28200984   Data           4  main_ns.o(.bss.x)
+    [Anonymous Symbol]                       0x28200984   Section        0  main_ns.o(.bss.x)
 
     Global Symbols
 
@@ -381,7 +480,6 @@ Image Symbol Table
     __arm_relocate_pie_                       - Undefined Weak Reference
     __cpp_initialize__aeabi_                  - Undefined Weak Reference
     __cxa_finalize                            - Undefined Weak Reference
-    __rt_locale                               - Undefined Weak Reference
     __sigvec_lookup                           - Undefined Weak Reference
     _atexit_init                              - Undefined Weak Reference
     _call_atexit_fns                          - Undefined Weak Reference
@@ -389,7 +487,6 @@ Image Symbol Table
     _fp_trap_init                             - Undefined Weak Reference
     _fp_trap_shutdown                         - Undefined Weak Reference
     _get_lc_collate                           - Undefined Weak Reference
-    _get_lc_ctype                             - Undefined Weak Reference
     _get_lc_monetary                          - Undefined Weak Reference
     _get_lc_numeric                           - Undefined Weak Reference
     _get_lc_time                              - Undefined Weak Reference
@@ -415,187 +512,231 @@ Image Symbol Table
     __scatterload_zeroinit                   0x00200485   Thumb Code    28  __scatter_zi.o(!!handler_zi)
     __rt_lib_init                            0x002004a1   Thumb Code     0  libinit.o(.ARM.Collect$$libinit$$00000000)
     __rt_lib_init_fp_1                       0x002004a3   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000001)
-    __rt_lib_init_alloca_1                   0x002004a7   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000030)
-    __rt_lib_init_argv_1                     0x002004a7   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
-    __rt_lib_init_atexit_1                   0x002004a7   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
-    __rt_lib_init_clock_1                    0x002004a7   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000023)
-    __rt_lib_init_cpp_1                      0x002004a7   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000034)
-    __rt_lib_init_exceptions_1               0x002004a7   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000032)
-    __rt_lib_init_fp_trap_1                  0x002004a7   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000021)
-    __rt_lib_init_getenv_1                   0x002004a7   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000025)
     __rt_lib_init_heap_1                     0x002004a7   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000C)
-    __rt_lib_init_lc_collate_1               0x002004a7   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000013)
-    __rt_lib_init_lc_ctype_1                 0x002004a7   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000015)
-    __rt_lib_init_lc_monetary_1              0x002004a7   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000017)
-    __rt_lib_init_lc_numeric_1               0x002004a7   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000019)
-    __rt_lib_init_lc_time_1                  0x002004a7   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    __rt_lib_init_lc_common                  0x002004a7   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000011)
     __rt_lib_init_preinit_1                  0x002004a7   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000006)
     __rt_lib_init_rand_1                     0x002004a7   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000010)
     __rt_lib_init_relocate_pie_1             0x002004a7   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000004)
-    __rt_lib_init_return                     0x002004a7   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000035)
-    __rt_lib_init_signal_1                   0x002004a7   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
-    __rt_lib_init_stdio_1                    0x002004a7   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000027)
     __rt_lib_init_user_alloc_1               0x002004a7   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000E)
-    __rt_lib_shutdown                        0x002004a9   Thumb Code     0  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
-    __rt_lib_shutdown_cpp_1                  0x002004ab   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000002)
-    __rt_lib_shutdown_fp_trap_1              0x002004ab   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000007)
-    __rt_lib_shutdown_heap_1                 0x002004ab   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F)
-    __rt_lib_shutdown_return                 0x002004ab   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000010)
-    __rt_lib_shutdown_signal_1               0x002004ab   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A)
-    __rt_lib_shutdown_stdio_1                0x002004ab   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000004)
-    __rt_lib_shutdown_user_alloc_1           0x002004ab   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C)
-    __rt_entry                               0x002004ad   Thumb Code     0  __rtentry.o(.ARM.Collect$$rtentry$$00000000)
-    __rt_entry_presh_1                       0x002004ad   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$00000002)
-    __rt_entry_sh                            0x002004ad   Thumb Code     0  __rtentry7.o(.ARM.Collect$$rtentry$$00000007)
-    __rt_entry_li                            0x002004b1   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
-    __rt_entry_postsh_1                      0x002004b1   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$00000009)
-    __rt_entry_main                          0x002004b5   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
-    __rt_entry_postli_1                      0x002004b5   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
-    __rt_exit                                0x002004c1   Thumb Code     0  rtexit.o(.ARM.Collect$$rtexit$$00000000)
-    __rt_exit_ls                             0x002004c3   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
-    __rt_exit_prels_1                        0x002004c3   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
-    __rt_exit_exit                           0x002004c7   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
-    exit                                     0x002004cd   Thumb Code    18  exit.o(.text)
-    __I$use$semihosting                      0x002004df   Thumb Code     0  use_no_semi.o(.text)
-    __use_no_semihosting_swi                 0x002004df   Thumb Code     2  use_no_semi.o(.text)
-    __semihosting_library_function           0x002004e1   Thumb Code     0  indicate_semi.o(.text)
-    _sys_exit                                0x002004e1   Thumb Code     8  sys_exit.o(.text)
-    BRIDGE_ERROR_Handler                     0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    BusFault_Handler                         0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    DMA0_ERROR_Handler                       0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    DMA0_Handler                             0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    DMA0_TC_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    DMA1_ERROR_Handler                       0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    DMA1_Handler                             0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    DMA1_TC_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    DMA2_ERROR_Handler                       0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    DMA2_Handler                             0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    DMA2_TC_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    DMA3_ERROR_Handler                       0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    DMA3_Handler                             0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    DMA3_TC_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    DUALTIMER_Handler                        0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    DebugMon_Handler                         0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    Default_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    ETHERNET_Handler                         0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO0_0_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO0_10_Handler                         0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO0_11_Handler                         0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO0_12_Handler                         0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO0_13_Handler                         0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO0_14_Handler                         0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO0_15_Handler                         0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO0_1_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO0_2_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO0_3_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO0_4_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO0_5_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO0_6_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO0_7_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO0_8_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO0_9_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO0_Handler                            0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO1_0_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO1_10_Handler                         0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO1_11_Handler                         0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO1_12_Handler                         0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO1_13_Handler                         0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO1_14_Handler                         0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO1_15_Handler                         0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO1_1_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO1_2_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO1_3_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO1_4_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO1_5_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO1_6_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO1_7_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO1_8_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO1_9_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO1_Handler                            0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO2_0_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO2_10_Handler                         0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO2_11_Handler                         0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO2_12_Handler                         0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO2_13_Handler                         0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO2_14_Handler                         0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO2_15_Handler                         0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO2_1_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO2_2_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO2_3_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO2_4_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO2_5_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO2_6_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO2_7_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO2_8_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO2_9_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO2_Handler                            0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO3_0_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO3_1_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO3_2_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO3_3_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    GPIO3_Handler                            0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    I2S_Handler                              0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    MPC_Handler                              0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    MSC_Handler                              0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    MemManage_Handler                        0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    NMI_Handler                              0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    NONSEC_WATCHDOG_Handler                  0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    NONSEC_WATCHDOG_RESET_Handler            0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    PPC_Handler                              0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    PendSV_Handler                           0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    S32K_TIMER_Handler                       0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    SPI0_Handler                             0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    SPI1_Handler                             0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    SPI2_Handler                             0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    SPI3_Handler                             0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    SPI4_Handler                             0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    SVC_Handler                              0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    SecureFault_Handler                      0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    TIMER0_Handler                           0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    TIMER1_Handler                           0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    TSC_Handler                              0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    UART0RX_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    UART0TX_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    UART0_Handler                            0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    UART1RX_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    UART1TX_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    UART1_Handler                            0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    UART2RX_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    UART2TX_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    UART2_Handler                            0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    UART3RX_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    UART3TX_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    UART3_Handler                            0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    UART4RX_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    UART4TX_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    UART4_Handler                            0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    UARTOVF_Handler                          0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    UsageFault_Handler                       0x002004ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
-    HardFault_Handler                        0x002004f1   Thumb Code     4  startup_iotkit_cm33.o(.text.HardFault_Handler)
-    LED_Off                                  0x002004f5   Thumb Code    40  led_v2m-mps2.o(.text.LED_Off)
-    LED_On                                   0x0020051d   Thumb Code    40  led_v2m-mps2.o(.text.LED_On)
-    NonSecure_LED_Off                        0x00200545   Thumb Code    16  main_ns.o(.text.NonSecure_LED_Off)
-    NonSecure_LED_On                         0x00200555   Thumb Code    16  main_ns.o(.text.NonSecure_LED_On)
-    Reset_Handler                            0x00200565   Thumb Code    50  startup_iotkit_cm33.o(.text.Reset_Handler)
-    SysTick_Handler                          0x002005d9   Thumb Code   140  main_ns.o(.text.SysTick_Handler)
-    SystemInit                               0x00200665   Thumb Code    54  system_iotkit_cm33.o(.text.SystemInit)
-    main                                     0x0020069d   Thumb Code   304  main_ns.o(.text.main)
-    Long Thumb to Thumb Veneer to Secure_LED_On 0x002007cd   Thumb Code    10  anon$$obj.o(Veneer$$Code)
-    Long Thumb to Thumb Veneer to Secure_LED_Off 0x002007d7   Thumb Code    10  anon$$obj.o(Veneer$$Code)
-    Long Thumb to Thumb Veneer to SECURE_register_callback 0x002007e1   Thumb Code    10  anon$$obj.o(Veneer$$Code)
-    Long Thumb to Thumb Veneer to SECURE_start_cfa 0x002007eb   Thumb Code    10  anon$$obj.o(Veneer$$Code)
-    Long Thumb to Thumb Veneer to Secure_LED_On_callback 0x002007f5   Thumb Code    10  anon$$obj.o(Veneer$$Code)
-    Long Thumb to Thumb Veneer to Secure_LED_Off_callback 0x002007ff   Thumb Code    10  anon$$obj.o(Veneer$$Code)
-    Long Thumb to Thumb Veneer to Secure_printf 0x00200809   Thumb Code    10  anon$$obj.o(Veneer$$Code)
-    _fp_init                                 0x00200813   Thumb Code    26  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x0020082b   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x0020082b   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    Region$$Table$$Base                      0x00200c2c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00200c6c   Number         0  anon$$obj.o(Region$$Table)
+    __rt_lib_init_lc_collate_1               0x002004ad   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000013)
+    __rt_lib_init_lc_ctype_2                 0x002004ad   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000014)
+    __rt_lib_init_alloca_1                   0x002004b9   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000030)
+    __rt_lib_init_argv_1                     0x002004b9   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
+    __rt_lib_init_atexit_1                   0x002004b9   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
+    __rt_lib_init_clock_1                    0x002004b9   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000023)
+    __rt_lib_init_cpp_1                      0x002004b9   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000034)
+    __rt_lib_init_exceptions_1               0x002004b9   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000032)
+    __rt_lib_init_fp_trap_1                  0x002004b9   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000021)
+    __rt_lib_init_getenv_1                   0x002004b9   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000025)
+    __rt_lib_init_lc_ctype_1                 0x002004b9   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000015)
+    __rt_lib_init_lc_monetary_1              0x002004b9   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000017)
+    __rt_lib_init_lc_numeric_1               0x002004b9   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000019)
+    __rt_lib_init_lc_time_1                  0x002004b9   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    __rt_lib_init_return                     0x002004b9   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000035)
+    __rt_lib_init_signal_1                   0x002004b9   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
+    __rt_lib_init_stdio_1                    0x002004b9   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000027)
+    __rt_lib_shutdown                        0x002004bb   Thumb Code     0  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
+    __rt_lib_shutdown_cpp_1                  0x002004bd   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000002)
+    __rt_lib_shutdown_fp_trap_1              0x002004bd   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000007)
+    __rt_lib_shutdown_heap_1                 0x002004bd   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F)
+    __rt_lib_shutdown_return                 0x002004bd   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000010)
+    __rt_lib_shutdown_signal_1               0x002004bd   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A)
+    __rt_lib_shutdown_stdio_1                0x002004bd   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000004)
+    __rt_lib_shutdown_user_alloc_1           0x002004bd   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C)
+    __rt_entry                               0x002004bf   Thumb Code     0  __rtentry.o(.ARM.Collect$$rtentry$$00000000)
+    __rt_entry_presh_1                       0x002004bf   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$00000002)
+    __rt_entry_sh                            0x002004bf   Thumb Code     0  __rtentry7.o(.ARM.Collect$$rtentry$$00000007)
+    __rt_entry_li                            0x002004c3   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
+    __rt_entry_postsh_1                      0x002004c3   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$00000009)
+    __rt_entry_main                          0x002004c7   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
+    __rt_entry_postli_1                      0x002004c7   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
+    __rt_exit                                0x002004d5   Thumb Code     0  rtexit.o(.ARM.Collect$$rtexit$$00000000)
+    __rt_exit_ls                             0x002004d7   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
+    __rt_exit_prels_1                        0x002004d7   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
+    __rt_exit_exit                           0x002004db   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
+    atol                                     0x002004e1   Thumb Code    26  atol.o(.text)
+    __aeabi_errno_addr                       0x002004fd   Thumb Code     8  rt_errno_addr_intlibspace.o(.text)
+    __errno$intlibspace                      0x002004fd   Thumb Code     0  rt_errno_addr_intlibspace.o(.text)
+    __rt_errno_addr$intlibspace              0x002004fd   Thumb Code     0  rt_errno_addr_intlibspace.o(.text)
+    strtol                                   0x00200505   Thumb Code   112  strtol.o(.text)
+    __rt_ctype_table                         0x00200575   Thumb Code    16  rt_ctype_table.o(.text)
+    _strtoul                                 0x00200585   Thumb Code   158  _strtoul.o(.text)
+    __rt_locale                              0x00200625   Thumb Code     8  rt_locale_intlibspace.o(.text)
+    _chval                                   0x0020062d   Thumb Code    28  _chval.o(.text)
+    exit                                     0x00200649   Thumb Code    18  exit.o(.text)
+    strcmp                                   0x00200661   Thumb Code   124  strcmpv8m_maindsp.o(.text)
+    __I$use$semihosting                      0x002006dd   Thumb Code     0  use_no_semi.o(.text)
+    __use_no_semihosting_swi                 0x002006dd   Thumb Code     2  use_no_semi.o(.text)
+    __semihosting_library_function           0x002006df   Thumb Code     0  indicate_semi.o(.text)
+    _sys_exit                                0x002006e1   Thumb Code     8  sys_exit.o(.text)
+    BRIDGE_ERROR_Handler                     0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    BusFault_Handler                         0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    DMA0_ERROR_Handler                       0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    DMA0_Handler                             0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    DMA0_TC_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    DMA1_ERROR_Handler                       0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    DMA1_Handler                             0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    DMA1_TC_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    DMA2_ERROR_Handler                       0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    DMA2_Handler                             0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    DMA2_TC_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    DMA3_ERROR_Handler                       0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    DMA3_Handler                             0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    DMA3_TC_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    DUALTIMER_Handler                        0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    DebugMon_Handler                         0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    Default_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    ETHERNET_Handler                         0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO0_0_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO0_10_Handler                         0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO0_11_Handler                         0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO0_12_Handler                         0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO0_13_Handler                         0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO0_14_Handler                         0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO0_15_Handler                         0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO0_1_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO0_2_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO0_3_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO0_4_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO0_5_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO0_6_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO0_7_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO0_8_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO0_9_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO0_Handler                            0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO1_0_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO1_10_Handler                         0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO1_11_Handler                         0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO1_12_Handler                         0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO1_13_Handler                         0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO1_14_Handler                         0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO1_15_Handler                         0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO1_1_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO1_2_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO1_3_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO1_4_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO1_5_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO1_6_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO1_7_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO1_8_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO1_9_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO1_Handler                            0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO2_0_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO2_10_Handler                         0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO2_11_Handler                         0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO2_12_Handler                         0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO2_13_Handler                         0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO2_14_Handler                         0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO2_15_Handler                         0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO2_1_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO2_2_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO2_3_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO2_4_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO2_5_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO2_6_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO2_7_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO2_8_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO2_9_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO2_Handler                            0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO3_0_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO3_1_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO3_2_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO3_3_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    GPIO3_Handler                            0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    I2S_Handler                              0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    MPC_Handler                              0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    MSC_Handler                              0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    MemManage_Handler                        0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    NMI_Handler                              0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    NONSEC_WATCHDOG_Handler                  0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    NONSEC_WATCHDOG_RESET_Handler            0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    PPC_Handler                              0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    PendSV_Handler                           0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    S32K_TIMER_Handler                       0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    SPI0_Handler                             0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    SPI1_Handler                             0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    SPI2_Handler                             0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    SPI3_Handler                             0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    SPI4_Handler                             0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    SVC_Handler                              0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    SecureFault_Handler                      0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    TIMER0_Handler                           0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    TIMER1_Handler                           0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    TSC_Handler                              0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    UART0RX_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    UART0TX_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    UART0_Handler                            0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    UART1RX_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    UART1TX_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    UART1_Handler                            0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    UART2RX_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    UART2TX_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    UART2_Handler                            0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    UART3RX_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    UART3TX_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    UART3_Handler                            0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    UART4RX_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    UART4TX_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    UART4_Handler                            0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    UARTOVF_Handler                          0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    UsageFault_Handler                       0x002006ed   Thumb Code     4  startup_iotkit_cm33.o(.text.Default_Handler)
+    HardFault_Handler                        0x002006f1   Thumb Code     4  startup_iotkit_cm33.o(.text.HardFault_Handler)
+    LED_Off                                  0x002006f5   Thumb Code    40  led_v2m-mps2.o(.text.LED_Off)
+    LED_On                                   0x0020071d   Thumb Code    40  led_v2m-mps2.o(.text.LED_On)
+    NonSecure_LED_Off                        0x00200745   Thumb Code    16  main_ns.o(.text.NonSecure_LED_Off)
+    NonSecure_LED_On                         0x00200755   Thumb Code    16  main_ns.o(.text.NonSecure_LED_On)
+    Reset_Handler                            0x00200765   Thumb Code    50  startup_iotkit_cm33.o(.text.Reset_Handler)
+    SysTick_Handler                          0x002007d9   Thumb Code   140  main_ns.o(.text.SysTick_Handler)
+    SystemInit                               0x00200865   Thumb Code    54  system_iotkit_cm33.o(.text.SystemInit)
+    main                                     0x0020089d   Thumb Code   304  main_ns.o(.text.main)
+    Long Thumb to Thumb Veneer to Secure_LED_On 0x002009cd   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to Secure_LED_Off 0x002009d7   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to SECURE_register_callback 0x002009e1   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to SECURE_start_cfa 0x002009eb   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to Secure_LED_On_callback 0x002009f5   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to Secure_LED_Off_callback 0x002009ff   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to Secure_printf 0x00200a09   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    _get_lc_ctype                            0x00200a15   Thumb Code    44  lc_ctype_c.o(locale$$code)
+    _fp_init                                 0x00200a41   Thumb Code    26  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x00200a59   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x00200a59   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    input_buffer                             0x00200a60   Data          46  application.o(.rodata.input_buffer)
+    Region$$Table$$Base                      0x00200aa8   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00200ae8   Number         0  anon$$obj.o(Region$$Table)
+    __ctype                                  0x00200af5   Data           0  lc_ctype_c.o(locale$$data)
     application_entry                        0x00300001   Thumb Code     8  application.o(.MTBDR_MEM)
+    mystrcmp                                 0x00300009   Thumb Code   112  application.o(.MTBDR_MEM)
+    isdigit                                  0x00300079   Thumb Code    22  application.o(.MTBDR_MEM)
+    fromHex                                  0x00300091   Thumb Code    82  application.o(.MTBDR_MEM)
+    date_commit                              0x003000e5   Thumb Code    24  application.o(.MTBDR_MEM)
+    time_commit                              0x003000fd   Thumb Code    24  application.o(.MTBDR_MEM)
+    location_commit                          0x00300115   Thumb Code    24  application.o(.MTBDR_MEM)
+    speed_commit                             0x0030012d   Thumb Code    24  application.o(.MTBDR_MEM)
+    course_commit                            0x00300145   Thumb Code    24  application.o(.MTBDR_MEM)
+    altitude_commit                          0x0030015d   Thumb Code    24  application.o(.MTBDR_MEM)
+    satellites_commit                        0x00300175   Thumb Code    24  application.o(.MTBDR_MEM)
+    hdop_commit                              0x0030018d   Thumb Code    24  application.o(.MTBDR_MEM)
+    parseDegrees                             0x003001a5   Thumb Code   244  application.o(.MTBDR_MEM)
+    parseDecimal                             0x0030029d   Thumb Code   166  application.o(.MTBDR_MEM)
+    time_setTime                             0x00300345   Thumb Code    26  application.o(.MTBDR_MEM)
+    location_setLatitude                     0x00300361   Thumb Code    28  application.o(.MTBDR_MEM)
+    location_setLongitude                    0x0030037d   Thumb Code    28  application.o(.MTBDR_MEM)
+    speed_set                                0x00300399   Thumb Code    36  application.o(.MTBDR_MEM)
+    course_set                               0x003003bd   Thumb Code    36  application.o(.MTBDR_MEM)
+    satellites_set                           0x003003e1   Thumb Code    22  application.o(.MTBDR_MEM)
+    date_setDate                             0x003003f9   Thumb Code    26  application.o(.MTBDR_MEM)
+    hdop_set                                 0x00300415   Thumb Code    36  application.o(.MTBDR_MEM)
+    altitude_set                             0x00300439   Thumb Code    36  application.o(.MTBDR_MEM)
+    endOfTermHandler                         0x0030045d   Thumb Code   912  application.o(.MTBDR_MEM)
+    gps_encode                               0x003007ed   Thumb Code   440  application.o(.MTBDR_MEM)
+    get_position                             0x003009a5   Thumb Code    70  application.o(.MTBDR_MEM)
+    f_get_position                           0x003009ed   Thumb Code   152  application.o(.MTBDR_MEM)
+    get_datetime                             0x00300a89   Thumb Code    54  application.o(.MTBDR_MEM)
+    crack_datetime                           0x00300ac1   Thumb Code   330  application.o(.MTBDR_MEM)
+    stats                                    0x00300c0d   Thumb Code    78  application.o(.MTBDR_MEM)
+    gpsdump                                  0x00300c5d   Thumb Code    80  application.o(.MTBDR_MEM)
+    application                              0x00300cad   Thumb Code    52  application.o(.MTBDR_MEM)
     nopes                                    0x00380001   Thumb Code   720  main_ns.o(.MTBAR_MEM)
-    crc32pseudo                              0x003802d1   Thumb Code    82  application.o(.MTBAR_MEM)
-    application                              0x00380325   Thumb Code    14  application.o(.MTBAR_MEM)
     SECURE_NOPE                              0x101ffe01   Thumb Code     8  IOTKit_CM33_s_CMSE_Lib.o ABSOLUTE
     SECURE_register_callback                 0x101ffe09   Thumb Code     8  IOTKit_CM33_s_CMSE_Lib.o ABSOLUTE
     SECURE_start_cfa                         0x101ffe11   Thumb Code     8  IOTKit_CM33_s_CMSE_Lib.o ABSOLUTE
@@ -605,10 +746,51 @@ Image Symbol Table
     Secure_LED_On_callback                   0x101ffe31   Thumb Code     8  IOTKit_CM33_s_CMSE_Lib.o ABSOLUTE
     Secure_LED_Off_callback                  0x101ffe39   Thumb Code     8  IOTKit_CM33_s_CMSE_Lib.o ABSOLUTE
     SystemCoreClock                          0x28200000   Data           4  system_iotkit_cm33.o(.data.SystemCoreClock)
-    text                                     0x28200004   Data          27  main_ns.o(.data.text)
-    report_s                                 0x28200024   Data        2148  main_ns.o(.bss.report_s)
-    Image$$ARM_LIB_HEAP$$ZI$$Base            0x28200890   Number         0  anon$$obj.o ABSOLUTE
-    Image$$ARM_LIB_HEAP$$ZI$$Limit           0x28201490   Number         0  anon$$obj.o ABSOLUTE
+    curSentenceType                          0x28200004   Data           1  application.o(.data.curSentenceType)
+    text                                     0x28200005   Data          27  main_ns.o(.data.text)
+    __libspace_start                         0x28200020   Data          96  libspace.o(.bss)
+    __temporary_stack_top$libspace           0x28200080   Data           0  libspace.o(.bss)
+    curTermNumber                            0x28200084   Data           1  application.o(.bss.curTermNumber)
+    curTermOffset                            0x28200085   Data           1  application.o(.bss.curTermOffset)
+    dateValue                                0x28200088   Data           4  application.o(.bss.dateValue)
+    degrees                                  0x2820008c   Data           4  application.o(.bss.degrees)
+    encodedCharCount                         0x28200090   Data           4  application.o(.bss.encodedCharCount)
+    failedChecksumCount                      0x28200094   Data           4  application.o(.bss.failedChecksumCount)
+    hdopVal                                  0x28200098   Data           4  application.o(.bss.hdopVal)
+    height                                   0x2820009c   Data           4  application.o(.bss.height)
+    isChecksumTerm                           0x282000a0   Data           4  application.o(.bss.isChecksumTerm)
+    lat                                      0x282000a4   Data           4  application.o(.bss.lat)
+    lng                                      0x282000a8   Data           4  application.o(.bss.lng)
+    outputchar                               0x282000ac   Data           1  application.o(.bss.outputchar)
+    parity                                   0x282000ad   Data           1  application.o(.bss.parity)
+    passedChecksumCount                      0x282000b0   Data           4  application.o(.bss.passedChecksumCount)
+    rawNewLatDataNegative                    0x282000b4   Data           4  application.o(.bss.rawNewLatDataNegative)
+    rawNewLongDataNegative                   0x282000b8   Data           4  application.o(.bss.rawNewLongDataNegative)
+    report_s                                 0x282000bc   Data        2148  main_ns.o(.bss.report_s)
+    satCount                                 0x28200920   Data           4  application.o(.bss.satCount)
+    sentenceHasFix                           0x28200924   Data           4  application.o(.bss.sentenceHasFix)
+    sentencesWithFixCount                    0x28200928   Data           4  application.o(.bss.sentencesWithFixCount)
+    speedVal                                 0x2820092c   Data           4  application.o(.bss.speedVal)
+    term                                     0x28200930   Data          15  application.o(.bss.term)
+    timeVal                                  0x28200940   Data           4  application.o(.bss.timeVal)
+    upDate                                   0x28200944   Data           4  application.o(.bss.upDate)
+    updateAlt                                0x28200948   Data           4  application.o(.bss.updateAlt)
+    updateDeg                                0x2820094c   Data           4  application.o(.bss.updateDeg)
+    updateHDop                               0x28200950   Data           4  application.o(.bss.updateHDop)
+    updateLoc                                0x28200954   Data           4  application.o(.bss.updateLoc)
+    updateSat                                0x28200958   Data           4  application.o(.bss.updateSat)
+    updateSpeed                              0x2820095c   Data           4  application.o(.bss.updateSpeed)
+    updateTime                               0x28200960   Data           4  application.o(.bss.updateTime)
+    validAlt                                 0x28200964   Data           4  application.o(.bss.validAlt)
+    validDate                                0x28200968   Data           4  application.o(.bss.validDate)
+    validDeg                                 0x2820096c   Data           4  application.o(.bss.validDeg)
+    validHDop                                0x28200970   Data           4  application.o(.bss.validHDop)
+    validLoc                                 0x28200974   Data           4  application.o(.bss.validLoc)
+    validSat                                 0x28200978   Data           4  application.o(.bss.validSat)
+    validSpeed                               0x2820097c   Data           4  application.o(.bss.validSpeed)
+    validTime                                0x28200980   Data           4  application.o(.bss.validTime)
+    Image$$ARM_LIB_HEAP$$ZI$$Base            0x28200988   Number         0  anon$$obj.o ABSOLUTE
+    Image$$ARM_LIB_HEAP$$ZI$$Limit           0x28201588   Number         0  anon$$obj.o ABSOLUTE
     Image$$ARM_LIB_STACK$$ZI$$Base           0x283ffc00   Number         0  anon$$obj.o ABSOLUTE
     Image$$ARM_LIB_STACK$$ZI$$Limit          0x28400000   Number         0  anon$$obj.o ABSOLUTE
 
@@ -620,128 +802,190 @@ Memory Map of the image
 
   Image Entry point : 0x00200401
 
-  Load Region LR_ROM (Base: 0x00200000, Size: 0x00000ff0, Max: 0x00200000, ABSOLUTE)
+  Load Region LR_ROM (Base: 0x00200000, Size: 0x00001bc8, Max: 0x00200000, ABSOLUTE)
 
-    Execution Region ER_ROM (Exec base: 0x00200000, Load base: 0x00200000, Size: 0x00000c6c, Max: 0x00100000, ABSOLUTE)
+    Execution Region ER_ROM (Exec base: 0x00200000, Load base: 0x00200000, Size: 0x00000bf8, Max: 0x00100000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x00200000   0x00200000   0x00000400   Data   RO           66    RESET               startup_iotkit_cm33.o
-    0x00200400   0x00200400   0x00000008   Code   RO           87  * !!!main             c_w.l(__main.o)
-    0x00200408   0x00200408   0x0000005c   Code   RO          265    !!!scatter          c_w.l(__scatter.o)
-    0x00200464   0x00200464   0x0000001a   Code   RO          269    !!handler_copy      c_w.l(__scatter_copy.o)
+    0x00200000   0x00200000   0x00000400   Data   RO          117    RESET               startup_iotkit_cm33.o
+    0x00200400   0x00200400   0x00000008   Code   RO          140  * !!!main             c_w.l(__main.o)
+    0x00200408   0x00200408   0x0000005c   Code   RO          341    !!!scatter          c_w.l(__scatter.o)
+    0x00200464   0x00200464   0x0000001a   Code   RO          345    !!handler_copy      c_w.l(__scatter_copy.o)
     0x0020047e   0x0020047e   0x00000002   PAD
-    0x00200480   0x00200480   0x00000002   Code   RO          266    !!handler_null      c_w.l(__scatter.o)
+    0x00200480   0x00200480   0x00000002   Code   RO          342    !!handler_null      c_w.l(__scatter.o)
     0x00200482   0x00200482   0x00000002   PAD
-    0x00200484   0x00200484   0x0000001c   Code   RO          271    !!handler_zi        c_w.l(__scatter_zi.o)
-    0x002004a0   0x002004a0   0x00000002   Code   RO          119    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
-    0x002004a2   0x002004a2   0x00000004   Code   RO          129    .ARM.Collect$$libinit$$00000001  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          132    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          134    .ARM.Collect$$libinit$$00000006  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          137    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          139    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          141    .ARM.Collect$$libinit$$00000010  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          144    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          146    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          148    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          150    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          152    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          154    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          156    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          158    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          160    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          162    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          164    .ARM.Collect$$libinit$$00000027  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          168    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          170    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          172    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          174    .ARM.Collect$$libinit$$00000034  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000002   Code   RO          175    .ARM.Collect$$libinit$$00000035  c_w.l(libinit2.o)
-    0x002004a8   0x002004a8   0x00000002   Code   RO          204    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
-    0x002004aa   0x002004aa   0x00000000   Code   RO          216    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
-    0x002004aa   0x002004aa   0x00000000   Code   RO          218    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
-    0x002004aa   0x002004aa   0x00000000   Code   RO          221    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
-    0x002004aa   0x002004aa   0x00000000   Code   RO          224    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
-    0x002004aa   0x002004aa   0x00000000   Code   RO          226    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
-    0x002004aa   0x002004aa   0x00000000   Code   RO          229    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
-    0x002004aa   0x002004aa   0x00000002   Code   RO          230    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
-    0x002004ac   0x002004ac   0x00000000   Code   RO           89    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
-    0x002004ac   0x002004ac   0x00000000   Code   RO           91    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
-    0x002004ac   0x002004ac   0x00000004   Code   RO          105    .ARM.Collect$$rtentry$$00000007  c_w.l(__rtentry7.o)
-    0x002004b0   0x002004b0   0x00000000   Code   RO           93    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
-    0x002004b0   0x002004b0   0x00000004   Code   RO           94    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
-    0x002004b4   0x002004b4   0x00000000   Code   RO           96    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
-    0x002004b4   0x002004b4   0x00000008   Code   RO           97    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
-    0x002004bc   0x002004bc   0x00000004   Code   RO          106    .ARM.Collect$$rtentry$$00002718  c_w.l(__rtentry7.o)
-    0x002004c0   0x002004c0   0x00000002   Code   RO          127    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
-    0x002004c2   0x002004c2   0x00000000   Code   RO          184    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
-    0x002004c2   0x002004c2   0x00000004   Code   RO          185    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
-    0x002004c6   0x002004c6   0x00000006   Code   RO          186    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
-    0x002004cc   0x002004cc   0x00000012   Code   RO          112    .text               c_w.l(exit.o)
-    0x002004de   0x002004de   0x00000002   Code   RO          180    .text               c_w.l(use_no_semi.o)
-    0x002004e0   0x002004e0   0x00000000   Code   RO          182    .text               c_w.l(indicate_semi.o)
-    0x002004e0   0x002004e0   0x0000000c   Code   RO          194    .text               c_w.l(sys_exit.o)
-    0x002004ec   0x002004ec   0x00000004   Code   RO           60    .text.Default_Handler  startup_iotkit_cm33.o
-    0x002004f0   0x002004f0   0x00000004   Code   RO           64    .text.HardFault_Handler  startup_iotkit_cm33.o
-    0x002004f4   0x002004f4   0x00000028   Code   RO           47    .text.LED_Off       led_v2m-mps2.o
-    0x0020051c   0x0020051c   0x00000028   Code   RO           45    .text.LED_On        led_v2m-mps2.o
-    0x00200544   0x00200544   0x00000010   Code   RO            6    .text.NonSecure_LED_Off  main_ns.o
-    0x00200554   0x00200554   0x00000010   Code   RO            4    .text.NonSecure_LED_On  main_ns.o
-    0x00200564   0x00200564   0x00000032   Code   RO           62    .text.Reset_Handler  startup_iotkit_cm33.o
-    0x00200596   0x00200596   0x00000002   PAD
-    0x00200598   0x00200598   0x00000040   Code   RO           14    .text.SCB_GetFPUType  main_ns.o
-    0x002005d8   0x002005d8   0x0000008c   Code   RO            8    .text.SysTick_Handler  main_ns.o
-    0x00200664   0x00200664   0x00000036   Code   RO           76    .text.SystemInit    system_iotkit_cm33.o
-    0x0020069a   0x0020069a   0x00000002   PAD
-    0x0020069c   0x0020069c   0x00000130   Code   RO           12    .text.main          main_ns.o
-    0x002007cc   0x002007cc   0x0000000a   Ven    RO          273    Veneer$$Code        anon$$obj.o
-    0x002007d6   0x002007d6   0x0000000a   Ven    RO          274    Veneer$$Code        anon$$obj.o
-    0x002007e0   0x002007e0   0x0000000a   Ven    RO          275    Veneer$$Code        anon$$obj.o
-    0x002007ea   0x002007ea   0x0000000a   Ven    RO          276    Veneer$$Code        anon$$obj.o
-    0x002007f4   0x002007f4   0x0000000a   Ven    RO          277    Veneer$$Code        anon$$obj.o
-    0x002007fe   0x002007fe   0x0000000a   Ven    RO          278    Veneer$$Code        anon$$obj.o
-    0x00200808   0x00200808   0x0000000a   Ven    RO          279    Veneer$$Code        anon$$obj.o
-    0x00200812   0x00200812   0x0000001a   Code   RO          192    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x0020082c   0x0020082c   0x00000400   Data   RO           32    .rodata.crc_32_tab  application.o
-    0x00200c2c   0x00200c2c   0x00000040   Data   RO          264    Region$$Table       anon$$obj.o
+    0x00200484   0x00200484   0x0000001c   Code   RO          347    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x002004a0   0x002004a0   0x00000002   Code   RO          196    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x002004a2   0x002004a2   0x00000004   Code   RO          205    .ARM.Collect$$libinit$$00000001  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          208    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          210    .ARM.Collect$$libinit$$00000006  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          213    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          215    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          217    .ARM.Collect$$libinit$$00000010  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000006   Code   RO          218    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
+    0x002004ac   0x002004ac   0x00000000   Code   RO          220    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x002004ac   0x002004ac   0x0000000c   Code   RO          221    .ARM.Collect$$libinit$$00000014  c_w.l(libinit2.o)
+    0x002004b8   0x002004b8   0x00000000   Code   RO          222    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x002004b8   0x002004b8   0x00000000   Code   RO          224    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x002004b8   0x002004b8   0x00000000   Code   RO          226    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x002004b8   0x002004b8   0x00000000   Code   RO          228    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x002004b8   0x002004b8   0x00000000   Code   RO          230    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x002004b8   0x002004b8   0x00000000   Code   RO          232    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x002004b8   0x002004b8   0x00000000   Code   RO          234    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x002004b8   0x002004b8   0x00000000   Code   RO          236    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x002004b8   0x002004b8   0x00000000   Code   RO          238    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
+    0x002004b8   0x002004b8   0x00000000   Code   RO          240    .ARM.Collect$$libinit$$00000027  c_w.l(libinit2.o)
+    0x002004b8   0x002004b8   0x00000000   Code   RO          244    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x002004b8   0x002004b8   0x00000000   Code   RO          246    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x002004b8   0x002004b8   0x00000000   Code   RO          248    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
+    0x002004b8   0x002004b8   0x00000000   Code   RO          250    .ARM.Collect$$libinit$$00000034  c_w.l(libinit2.o)
+    0x002004b8   0x002004b8   0x00000002   Code   RO          251    .ARM.Collect$$libinit$$00000035  c_w.l(libinit2.o)
+    0x002004ba   0x002004ba   0x00000002   Code   RO          280    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x002004bc   0x002004bc   0x00000000   Code   RO          292    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
+    0x002004bc   0x002004bc   0x00000000   Code   RO          294    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
+    0x002004bc   0x002004bc   0x00000000   Code   RO          297    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
+    0x002004bc   0x002004bc   0x00000000   Code   RO          300    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
+    0x002004bc   0x002004bc   0x00000000   Code   RO          302    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
+    0x002004bc   0x002004bc   0x00000000   Code   RO          305    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x002004bc   0x002004bc   0x00000002   Code   RO          306    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
+    0x002004be   0x002004be   0x00000000   Code   RO          142    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
+    0x002004be   0x002004be   0x00000000   Code   RO          154    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
+    0x002004be   0x002004be   0x00000004   Code   RO          168    .ARM.Collect$$rtentry$$00000007  c_w.l(__rtentry7.o)
+    0x002004c2   0x002004c2   0x00000000   Code   RO          156    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
+    0x002004c2   0x002004c2   0x00000004   Code   RO          157    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
+    0x002004c6   0x002004c6   0x00000000   Code   RO          159    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
+    0x002004c6   0x002004c6   0x00000008   Code   RO          160    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
+    0x002004ce   0x002004ce   0x00000002   PAD
+    0x002004d0   0x002004d0   0x00000004   Code   RO          169    .ARM.Collect$$rtentry$$00002718  c_w.l(__rtentry7.o)
+    0x002004d4   0x002004d4   0x00000002   Code   RO          201    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x002004d6   0x002004d6   0x00000000   Code   RO          260    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x002004d6   0x002004d6   0x00000004   Code   RO          261    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x002004da   0x002004da   0x00000006   Code   RO          262    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x002004e0   0x002004e0   0x0000001a   Code   RO          138    .text               c_w.l(atol.o)
+    0x002004fa   0x002004fa   0x00000002   PAD
+    0x002004fc   0x002004fc   0x00000008   Code   RO          146    .text               c_w.l(rt_errno_addr_intlibspace.o)
+    0x00200504   0x00200504   0x00000070   Code   RO          148    .text               c_w.l(strtol.o)
+    0x00200574   0x00200574   0x00000010   Code   RO          173    .text               c_w.l(rt_ctype_table.o)
+    0x00200584   0x00200584   0x0000009e   Code   RO          175    .text               c_w.l(_strtoul.o)
+    0x00200622   0x00200622   0x00000002   PAD
+    0x00200624   0x00200624   0x00000008   Code   RO          182    .text               c_w.l(rt_locale_intlibspace.o)
+    0x0020062c   0x0020062c   0x0000001c   Code   RO          184    .text               c_w.l(_chval.o)
+    0x00200648   0x00200648   0x00000012   Code   RO          189    .text               c_w.l(exit.o)
+    0x0020065a   0x0020065a   0x00000006   PAD
+    0x00200660   0x00200660   0x0000007c   Code   RO          203    .text               c_w.l(strcmpv8m_maindsp.o)
+    0x002006dc   0x002006dc   0x00000002   Code   RO          256    .text               c_w.l(use_no_semi.o)
+    0x002006de   0x002006de   0x00000000   Code   RO          258    .text               c_w.l(indicate_semi.o)
+    0x002006de   0x002006de   0x00000002   PAD
+    0x002006e0   0x002006e0   0x0000000c   Code   RO          270    .text               c_w.l(sys_exit.o)
+    0x002006ec   0x002006ec   0x00000004   Code   RO          111    .text.Default_Handler  startup_iotkit_cm33.o
+    0x002006f0   0x002006f0   0x00000004   Code   RO          115    .text.HardFault_Handler  startup_iotkit_cm33.o
+    0x002006f4   0x002006f4   0x00000028   Code   RO           98    .text.LED_Off       led_v2m-mps2.o
+    0x0020071c   0x0020071c   0x00000028   Code   RO           96    .text.LED_On        led_v2m-mps2.o
+    0x00200744   0x00200744   0x00000010   Code   RO            6    .text.NonSecure_LED_Off  main_ns.o
+    0x00200754   0x00200754   0x00000010   Code   RO            4    .text.NonSecure_LED_On  main_ns.o
+    0x00200764   0x00200764   0x00000032   Code   RO          113    .text.Reset_Handler  startup_iotkit_cm33.o
+    0x00200796   0x00200796   0x00000002   PAD
+    0x00200798   0x00200798   0x00000040   Code   RO           14    .text.SCB_GetFPUType  main_ns.o
+    0x002007d8   0x002007d8   0x0000008c   Code   RO            8    .text.SysTick_Handler  main_ns.o
+    0x00200864   0x00200864   0x00000036   Code   RO          127    .text.SystemInit    system_iotkit_cm33.o
+    0x0020089a   0x0020089a   0x00000002   PAD
+    0x0020089c   0x0020089c   0x00000130   Code   RO           12    .text.main          main_ns.o
+    0x002009cc   0x002009cc   0x0000000a   Ven    RO          349    Veneer$$Code        anon$$obj.o
+    0x002009d6   0x002009d6   0x0000000a   Ven    RO          350    Veneer$$Code        anon$$obj.o
+    0x002009e0   0x002009e0   0x0000000a   Ven    RO          351    Veneer$$Code        anon$$obj.o
+    0x002009ea   0x002009ea   0x0000000a   Ven    RO          352    Veneer$$Code        anon$$obj.o
+    0x002009f4   0x002009f4   0x0000000a   Ven    RO          353    Veneer$$Code        anon$$obj.o
+    0x002009fe   0x002009fe   0x0000000a   Ven    RO          354    Veneer$$Code        anon$$obj.o
+    0x00200a08   0x00200a08   0x0000000a   Ven    RO          355    Veneer$$Code        anon$$obj.o
+    0x00200a12   0x00200a12   0x00000002   PAD
+    0x00200a14   0x00200a14   0x0000002c   Code   RO          187    locale$$code        c_w.l(lc_ctype_c.o)
+    0x00200a40   0x00200a40   0x0000001a   Code   RO          268    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x00200a5a   0x00200a5a   0x00000002   PAD
+    0x00200a5c   0x00200a5c   0x00000004   Data   RO           70    .rodata.GPS_INVALID_F_ANGLE  application.o
+    0x00200a60   0x00200a60   0x0000002e   Data   RO           71    .rodata.input_buffer  application.o
+    0x00200a8e   0x00200a8e   0x00000018   Data   RO           68    .rodata.str1.1      application.o
+    0x00200aa6   0x00200aa6   0x00000002   PAD
+    0x00200aa8   0x00200aa8   0x00000040   Data   RO          340    Region$$Table       anon$$obj.o
+    0x00200ae8   0x00200ae8   0x00000110   Data   RO          186    locale$$data        c_w.l(lc_ctype_c.o)
 
 
-    Execution Region ER_MTBDR (Exec base: 0x00300000, Load base: 0x00200fc8, Size: 0x00000008, Max: 0x00080000, ABSOLUTE)
-
-    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
-
-    0x00300000   0x00200fc8   0x00000008   Code   RO           28    .MTBDR_MEM          application.o
-
-
-    Execution Region ER_MTBAR (Exec base: 0x00380000, Load base: 0x00200c6c, Size: 0x0000035c, Max: 0x00080000, ABSOLUTE)
-
-    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
-
-    0x00380000   0x00200c6c   0x000002d0   Code   RO           10    .MTBAR_MEM          main_ns.o
-    0x003802d0   0x00200f3c   0x0000008a   Code   RO           30    .MTBAR_MEM          application.o
-
-
-    Execution Region RW_RAM (Exec base: 0x28200000, Load base: 0x00200fd0, Size: 0x00000890, Max: 0x001ff000, ABSOLUTE)
-
-    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
-
-    0x28200000   0x00200fd0   0x00000004   Data   RW           78    .data.SystemCoreClock  system_iotkit_cm33.o
-    0x28200004   0x00200fd4   0x0000001b   Data   RW           16    .data.text          main_ns.o
-    0x2820001f   0x00200fef   0x00000001   PAD
-    0x28200020        -       0x00000004   Zero   RW           17    .bss.SysTick_Handler.ticks  main_ns.o
-    0x28200024        -       0x00000864   Zero   RW           18    .bss.report_s       main_ns.o
-    0x28200888        -       0x00000004   Zero   RW           33    .bss.seed           application.o
-    0x2820088c        -       0x00000004   Zero   RW           19    .bss.x              main_ns.o
-
-
-    Execution Region ARM_LIB_HEAP (Exec base: 0x28200890, Load base: 0x00200ff0, Size: 0x00000c00, Max: 0x00000c00, ABSOLUTE)
+    Execution Region ER_MTBDR (Exec base: 0x00300000, Load base: 0x00200ec8, Size: 0x00000ce0, Max: 0x00080000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x28200890        -       0x00000c00   Zero   RW            1    ARM_LIB_HEAP.bss    anon$$obj.o
+    0x00300000   0x00200ec8   0x00000ce0   Code   RO           28    .MTBDR_MEM          application.o
 
 
-    Execution Region ARM_LIB_STACK (Exec base: 0x283ffc00, Load base: 0x00200ff0, Size: 0x00000400, Max: 0x00000400, ABSOLUTE)
+    Execution Region ER_MTBAR (Exec base: 0x00380000, Load base: 0x00200bf8, Size: 0x000002d0, Max: 0x00080000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00380000   0x00200bf8   0x000002d0   Code   RO           10    .MTBAR_MEM          main_ns.o
+
+
+    Execution Region RW_RAM (Exec base: 0x28200000, Load base: 0x00201ba8, Size: 0x00000988, Max: 0x001ff000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x28200000   0x00201ba8   0x00000004   Data   RW          129    .data.SystemCoreClock  system_iotkit_cm33.o
+    0x28200004   0x00201bac   0x00000001   Data   RW           33    .data.curSentenceType  application.o
+    0x28200005   0x00201bad   0x0000001b   Data   RW           16    .data.text          main_ns.o
+    0x28200020        -       0x00000060   Zero   RW          151    .bss                c_w.l(libspace.o)
+    0x28200080        -       0x00000004   Zero   RW           17    .bss.SysTick_Handler.ticks  main_ns.o
+    0x28200084        -       0x00000001   Zero   RW           34    .bss.curTermNumber  application.o
+    0x28200085        -       0x00000001   Zero   RW           35    .bss.curTermOffset  application.o
+    0x28200086   0x00201bc8   0x00000002   PAD
+    0x28200088        -       0x00000004   Zero   RW           43    .bss.dateValue      application.o
+    0x2820008c        -       0x00000004   Zero   RW           56    .bss.degrees        application.o
+    0x28200090        -       0x00000004   Zero   RW           30    .bss.encodedCharCount  application.o
+    0x28200094        -       0x00000004   Zero   RW           40    .bss.failedChecksumCount  application.o
+    0x28200098        -       0x00000004   Zero   RW           65    .bss.hdopVal        application.o
+    0x2820009c        -       0x00000004   Zero   RW           59    .bss.height         application.o
+    0x282000a0        -       0x00000004   Zero   RW           32    .bss.isChecksumTerm  application.o
+    0x282000a4        -       0x00000004   Zero   RW           47    .bss.lat            application.o
+    0x282000a8        -       0x00000004   Zero   RW           48    .bss.lng            application.o
+    0x282000ac        -       0x00000001   Zero   RW           69    .bss.outputchar     application.o
+    0x282000ad        -       0x00000001   Zero   RW           31    .bss.parity         application.o
+    0x282000ae   0x00201bc8   0x00000002   PAD
+    0x282000b0        -       0x00000004   Zero   RW           38    .bss.passedChecksumCount  application.o
+    0x282000b4        -       0x00000004   Zero   RW           49    .bss.rawNewLatDataNegative  application.o
+    0x282000b8        -       0x00000004   Zero   RW           50    .bss.rawNewLongDataNegative  application.o
+    0x282000bc        -       0x00000864   Zero   RW           18    .bss.report_s       main_ns.o
+    0x28200920        -       0x00000004   Zero   RW           64    .bss.satCount       application.o
+    0x28200924        -       0x00000004   Zero   RW           37    .bss.sentenceHasFix  application.o
+    0x28200928        -       0x00000004   Zero   RW           39    .bss.sentencesWithFixCount  application.o
+    0x2820092c        -       0x00000004   Zero   RW           53    .bss.speedVal       application.o
+    0x28200930        -       0x0000000f   Zero   RW           36    .bss.term           application.o
+    0x2820093f   0x00201bc8   0x00000001   PAD
+    0x28200940        -       0x00000004   Zero   RW           44    .bss.timeVal        application.o
+    0x28200944        -       0x00000004   Zero   RW           42    .bss.upDate         application.o
+    0x28200948        -       0x00000004   Zero   RW           61    .bss.updateAlt      application.o
+    0x2820094c        -       0x00000004   Zero   RW           58    .bss.updateDeg      application.o
+    0x28200950        -       0x00000004   Zero   RW           67    .bss.updateHDop     application.o
+    0x28200954        -       0x00000004   Zero   RW           52    .bss.updateLoc      application.o
+    0x28200958        -       0x00000004   Zero   RW           63    .bss.updateSat      application.o
+    0x2820095c        -       0x00000004   Zero   RW           55    .bss.updateSpeed    application.o
+    0x28200960        -       0x00000004   Zero   RW           46    .bss.updateTime     application.o
+    0x28200964        -       0x00000004   Zero   RW           60    .bss.validAlt       application.o
+    0x28200968        -       0x00000004   Zero   RW           41    .bss.validDate      application.o
+    0x2820096c        -       0x00000004   Zero   RW           57    .bss.validDeg       application.o
+    0x28200970        -       0x00000004   Zero   RW           66    .bss.validHDop      application.o
+    0x28200974        -       0x00000004   Zero   RW           51    .bss.validLoc       application.o
+    0x28200978        -       0x00000004   Zero   RW           62    .bss.validSat       application.o
+    0x2820097c        -       0x00000004   Zero   RW           54    .bss.validSpeed     application.o
+    0x28200980        -       0x00000004   Zero   RW           45    .bss.validTime      application.o
+    0x28200984        -       0x00000004   Zero   RW           19    .bss.x              main_ns.o
+
+
+    Execution Region ARM_LIB_HEAP (Exec base: 0x28200988, Load base: 0x00201bc8, Size: 0x00000c00, Max: 0x00000c00, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x28200988        -       0x00000c00   Zero   RW            1    ARM_LIB_HEAP.bss    anon$$obj.o
+
+
+    Execution Region ARM_LIB_STACK (Exec base: 0x283ffc00, Load base: 0x00201bc8, Size: 0x00000400, Max: 0x00000400, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -755,16 +999,16 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       146          0       1024          0          4       1090   application.o
+      3296         64         74          1        151       7583   application.o
         80          0          0          0          0       1968   led_v2m-mps2.o
       1260          0          0         27       2156       2952   main_ns.o
         58          0       1024          0          0       1498   startup_iotkit_cm33.o
         54          0          0          4          0       2048   system_iotkit_cm33.o
 
     ----------------------------------------------------------------------
-      1674          0       2112         32       6256       9556   Object Totals
+      4824         64       1164         32       6408      16049   Object Totals
         70          0         64          0       4096          0   (incl. Generated)
-         6          0          0          1          0          0   (incl. Padding)
+         6          0          2          0          5          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -777,31 +1021,41 @@ Image component sizes
         94          8          0          0          0          0   __scatter.o
         26          0          0          0          0          0   __scatter_copy.o
         28          0          0          0          0          0   __scatter_zi.o
+        28          0          0          0          0         68   _chval.o
+       158          0          0          0          0         92   _strtoul.o
+        26          0          0          0          0         80   atol.o
         18          0          0          0          0         80   exit.o
          0          0          0          0          0          0   indicate_semi.o
+        44         10        272          0          0         76   lc_ctype_c.o
          2          0          0          0          0          0   libinit.o
-         6          0          0          0          0          0   libinit2.o
+        24          0          0          0          0          0   libinit2.o
          2          0          0          0          0          0   libshutdown.o
          2          0          0          0          0          0   libshutdown2.o
+         0          0          0          0         96          0   libspace.o
+        16          4          0          0          0         76   rt_ctype_table.o
+         8          4          0          0          0         68   rt_errno_addr_intlibspace.o
+         8          4          0          0          0         68   rt_locale_intlibspace.o
          2          0          0          0          0          0   rtexit.o
         10          0          0          0          0          0   rtexit2.o
+       124          0          0          0          0         88   strcmpv8m_maindsp.o
+       112          0          0          0          0         88   strtol.o
         12          4          0          0          0         68   sys_exit.o
          2          0          0          0          0         68   use_no_semi.o
         26          0          0          0          0        116   fpinit.o
 
     ----------------------------------------------------------------------
-       262         16          0          0          0        400   Library Totals
-         4          0          0          0          0          0   (incl. Padding)
+       820         38        272          0         96       1104   Library Totals
+        20          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
 
-       232         16          0          0          0        284   c_w.l
+       774         38        272          0         96        988   c_w.l
         26          0          0          0          0        116   fz_wm.l
 
     ----------------------------------------------------------------------
-       262         16          0          0          0        400   Library Totals
+       820         38        272          0         96       1104   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -810,15 +1064,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      1936         16       2112         32       6256      10044   Grand Totals
-      1936         16       2112         32       6256      10044   ELF Image Totals
-      1936         16       2112         32          0          0   ROM Totals
+      5644        102       1436         32       6504      16773   Grand Totals
+      5644        102       1436         32       6504      16773   ELF Image Totals
+      5644        102       1436         32          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 4048 (   3.95kB)
-    Total RW  Size (RW Data + ZI Data)              6288 (   6.14kB)
-    Total ROM Size (Code + RO Data + RW Data)       4080 (   3.98kB)
+    Total RO  Size (Code + RO Data)                 7080 (   6.91kB)
+    Total RW  Size (RW Data + ZI Data)              6536 (   6.38kB)
+    Total ROM Size (Code + RO Data + RW Data)       7112 (   6.95kB)
 
 ==============================================================================
 
