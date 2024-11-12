@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\IOTKit_CM33_ns.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\IOTKit_CM33_ns.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Tue Nov 12 00:04:52 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Tue Nov 12 00:45:35 2024
 <BR><P>
 <H3>Maximum Stack Usage =         56 bytes + Unknown(Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -704,42 +704,42 @@ Global Symbols
 <P><STRONG><a name="[71]"></a>application_entry</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, application.o(.MTBDR_MEM))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = application_entry &rArr; application &rArr; getUltrasonicReading &rArr; pulseIn
 </UL>
-<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;application
+<BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;application
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main_ns.o(.text.main)
 </UL>
-<P><STRONG><a name="[79]"></a>delay</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, application.o(.MTBDR_MEM))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = delay
-</UL>
-<BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getUltrasonicReading
-</UL>
-
-<P><STRONG><a name="[7a]"></a>pulseIn</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, application.o(.MTBDR_MEM))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = pulseIn
-</UL>
-<BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getUltrasonicReading
-</UL>
-
-<P><STRONG><a name="[78]"></a>getUltrasonicReading</STRONG> (Thumb, 64 bytes, Stack size 24 bytes, application.o(.MTBDR_MEM))
-<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = getUltrasonicReading &rArr; pulseIn
-</UL>
-<BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pulseIn
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay
-</UL>
-<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;application
-</UL>
-
-<P><STRONG><a name="[77]"></a>application</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, application.o(.MTBDR_MEM))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = application &rArr; getUltrasonicReading &rArr; pulseIn
-</UL>
-<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getUltrasonicReading
-</UL>
-<BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;application_entry
-</UL>
-
 <P><STRONG><a name="[75]"></a>trampoline_mtbdr</STRONG> (Thumb, 2592 bytes, Stack size 0 bytes, application.o(.MTBDR_MEM), UNUSED, KEPT)
 
 <P><STRONG><a name="[74]"></a>nopes</STRONG> (Thumb, 1980 bytes, Stack size 0 bytes, main_ns.o(.MTBAR_MEM), UNUSED, KEPT)
+
+<P><STRONG><a name="[78]"></a>delay</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, application.o(.MTBAR_MEM))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = delay
+</UL>
+<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getUltrasonicReading
+</UL>
+
+<P><STRONG><a name="[79]"></a>pulseIn</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, application.o(.MTBAR_MEM))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = pulseIn
+</UL>
+<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getUltrasonicReading
+</UL>
+
+<P><STRONG><a name="[77]"></a>getUltrasonicReading</STRONG> (Thumb, 64 bytes, Stack size 24 bytes, application.o(.MTBAR_MEM))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = getUltrasonicReading &rArr; pulseIn
+</UL>
+<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pulseIn
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay
+</UL>
+<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;application
+</UL>
+
+<P><STRONG><a name="[7a]"></a>application</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, application.o(.MTBAR_MEM))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = application &rArr; getUltrasonicReading &rArr; pulseIn
+</UL>
+<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getUltrasonicReading
+</UL>
+<BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;application_entry
+</UL>
 
 <P><STRONG><a name="[90]"></a>SECURE_register_callback</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, IOTKit_CM33_s_CMSE_Lib.o(ABSOLUTE))
 <BR><BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main (via Veneer)

@@ -4,7 +4,7 @@
 
 #define MTBAR __attribute__((section(".MTBAR_MEM")))
 #define MTBDR __attribute__((section(".MTBDR_MEM")))
-#define REGION_TEMP MTBDR
+#define REGION_TEMP MTBAR
 
 
 
