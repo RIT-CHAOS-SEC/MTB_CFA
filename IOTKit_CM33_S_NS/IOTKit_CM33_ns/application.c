@@ -20,25 +20,69 @@ MTBDR void application_entry()
 #if APPLICATION == MATMAL3
     #define MAXX 10
     #define MAXY 5
-    void application()
+    // void application()
+    // {
+    //     int mat[MAXX][MAXY];
+    //     int val = 0;
+    //     if (val == 1)
+    //     {
+    //         val++;
+    //     }
+    //     else
+    //     {
+    //         val += 4;
+    //     }
+
+    //     for (int x = 0; x < MAXX; x++)
+    //     {
+    //         for (int y = 0; y < MAXY; y++)
+    //         {
+    //             val += mat[x][y] + mat[y][x];
+    //         }
+    //     }
+    //     val = val + 2;
+
+    //     // APPLICATION_NOPES;
+        
+    //     return;
+    // }
+
+#pragma GCC push_options
+#pragma GCC optimize ("-O0")
+
+
+    REGION_TEMP int  random_code(int a){
+
+        return a++;
+    }
+
+    // void hello
+
+        void application()
     {
-        int mat[MAXX][MAXY];
+        int mat[MAXY];
         int val = 0;
-        if (val == 1)
-        {
-            val++;
-        }
-        else
-        {
-            val += 4;
-        }
+        // if (val == 1)
+        // {
+        //     val++;
+        // }
+        // else
+        // {
+        //     val += 4;
+        // }
 
         for (int x = 0; x < MAXX; x++)
         {
-            for (int y = 0; y < MAXY; y++)
-            {
-                val += mat[x][y] + mat[y][x];
-            }
+            // for (int y = 0; y < MAXY; y++)
+            // {
+                
+                if (x % 2 == 1){
+                    val += mat[x];
+                }
+                else{
+                    val += mat[x] + 1 + random_code( mat[x]);
+                }
+            // }
         }
         val = val + 2;
 
@@ -46,6 +90,8 @@ MTBDR void application_entry()
         
         return;
     }
+#pragma GCC pop_options
+// 380020;30003d;380020;30003d;380020;30003d;380020;30003d;380020;30003d;38000e;300059;
 #endif
 
 #if APPLICATION == PRIME
