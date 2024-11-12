@@ -57,7 +57,9 @@ def instrument(cfg, asm_funcs):
 
     pg = PatchGenerator(cfg.arch.patch_base)
 
-    MTBDR_MIN = 0x300008    
+    tr_pg = PatchGenerator(cfg.arch.trampoline_region)
+
+    MTBDR_MIN = 0x300000    
     MTBDR_MAX = 0x380000    
     # func_labels = ['application']#, 'NonSecure_LED_Off']
 
@@ -79,30 +81,42 @@ def instrument(cfg, asm_funcs):
                     prev_instr = func.instr_list[i-1]
                     
                     ## add dir branch to the cb dest in MTBAR
-                    # prev_instr --> cmp
-                    # instr --> bne
                     mtbar_patch = Patch(instr.addr)
-                    for k in range(0, 3):
+                    for k in range(0, 4):
                         asm = AssemblyInstruction(addr=None, instr='nop', arg=f'')
                         mtbar_patch = add_instruction_ARM(asm, cfg, mtbar_patch, pg)
-                    
-                    asm = AssemblyInstruction(addr=None, instr=prev_instr.instr, arg=f'{prev_instr.arg}')
-                    mtbar_patch = add_instruction_ARM(asm, cfg, mtbar_patch, pg)
-                    asm = AssemblyInstruction(addr=None, instr=instr.instr, arg=f'{hex(int(instr.arg, 16)-4)}')
-                    print(asm.reconstruct())
-                    mtbar_patch = add_instruction_ARM(asm, cfg, mtbar_patch, pg)
-                    asm = AssemblyInstruction(addr=None, instr='b.n', arg=f'{hex(int(prev_instr.addr, 16)+4)}')
-                    print(asm.reconstruct())
+                    asm = AssemblyInstruction(addr=None, instr='b.w', arg=f'{instr.arg}')
                     mtbar_patch = add_instruction_ARM(asm, cfg, mtbar_patch, pg)
                     pg = process_patch(pg, cfg, mtbar_patch)
-                    # a = input()
-                    ## change the dest addr of cb to be the MTBAR addr 
-                    tr_patch = Patch(f'{prev_instr.addr}-tr')
-                    mtbar_addr = mtbar_patch.instr[0].addr[2:]
-                    asm = AssemblyInstruction(addr=prev_instr.addr, instr='b.w', arg=f'{mtbar_addr}')
-                    print(f"trying to add {asm.reconstruct()}")
-                    tr_patch = add_instruction_ARM(asm, cfg, tr_patch, pg)
-                    pg = process_patch(pg, cfg, tr_patch)
+
+                    # asm = AssemblyInstruction(addr=None, instr=prev_instr.instr, arg=f'{prev_instr.arg}')
+                    # mtbar_patch = add_instruction_ARM(asm, cfg, mtbar_patch, pg)
+                    # asm = AssemblyInstruction(addr=None, instr=instr.instr, arg=f'{hex(int(instr.arg, 16)-4)}')
+                    # mtbar_patch = add_instruction_ARM(asm, cfg, mtbar_patch, pg)
+                    
+                    ## in TR region add cmp, cond_br to MTBAR, and b back to MTBDR
+                    tr_patch = Patch(f'{instr.addr}-tr')
+                    asm = AssemblyInstruction(addr=None, instr=prev_instr.instr, arg=f'{prev_instr.arg}')
+                    tr_patch = add_instruction_ARM(asm, cfg, tr_patch, tr_pg)
+                    asm = AssemblyInstruction(addr=None, instr=instr.instr, arg=f'{hex(int(mtbar_patch.instr[0].addr, 16)-4)}')
+                    tr_patch = add_instruction_ARM(asm, cfg, tr_patch, tr_pg)
+
+                    next_instr = func.instr_list[i+1]
+                    print(next_instr.reconstruct())
+                    if next_instr.instr in cfg.arch.unconditional_br_instrs:
+                        asm = AssemblyInstruction(addr=None, instr='b.w', arg=f"{next_instr.arg}")
+                    else:
+                        asm = AssemblyInstruction(addr=None, instr='b.n', arg=f'{hex(int(prev_instr.addr, 16)+4)}')
+                    print(asm.reconstruct())
+                    tr_patch = add_instruction_ARM(asm, cfg, tr_patch, tr_pg)
+                    tr_pg = process_patch(tr_pg, cfg, tr_patch)
+                    
+                    ## from MTBDR we need to b into the TR region
+                    mtbdr_patch = Patch(f'{tr_patch.addr}-tr')
+                    tr_addr = tr_patch.instr[0].addr[2:]
+                    asm = AssemblyInstruction(addr=prev_instr.addr, instr='b.w', arg=f'{tr_addr}')
+                    mtbdr_patch = add_instruction_ARM(asm, cfg, mtbdr_patch, pg)
+                    pg = process_patch(pg, cfg, mtbdr_patch)
 
                 elif instr.instr in cfg.arch.indr_calls: #indr_calls
                     print(f"Call at {instr.addr}")
@@ -129,37 +143,64 @@ def instrument(cfg, asm_funcs):
                     if '@' in prev_instr.arg:
                         prev_instr.arg = prev_instr.arg.split('@')[0]
 
-                    print(instr.arg )
+                    #'''
+                    print(f"checking {prev_instr.instr} in {cfg.arch.call_instrs}")
+                    a = input()
+                    if prev_instr.instr in cfg.arch.call_instrs:
+                        ## in this case: instr      =  pop/ldr to pc
+                        ##               prev_instr =  a bl -- all other branch instructions are handled naturally
 
-                    ### move ret instr into the MTBAR
-                    
-                    mtbar_patch = Patch(prev_instr.addr)
-                    asm = AssemblyInstruction(addr=None, instr=prev_instr.instr, arg=f'{prev_instr.arg}')
-                    mtbar_patch = add_instruction_ARM(asm, cfg, mtbar_patch, pg)
-                    asm = AssemblyInstruction(addr=None, instr=instr.instr, arg=f'{instr.arg}')
-                    mtbar_patch = add_instruction_ARM(asm, cfg, mtbar_patch, pg)
-                    pg = process_patch(pg, cfg, mtbar_patch)
 
-                    # ### trampoline to the ret
-                    tr_patch = Patch(f'{prev_instr.addr}-tr')
-                    asm = AssemblyInstruction(addr=prev_instr.addr, instr='b.w', arg=f'{mtbar_patch.instr[0].addr[2:]}')
-                    tr_patch = add_instruction_ARM(asm, cfg, tr_patch, pg)
-                    pg = process_patch(pg, cfg, tr_patch)
+                        ## MTBAR implements the return instruction
+                        mtbar_patch = Patch(instr.addr)
+                        asm = AssemblyInstruction(addr=None, instr=instr.instr, arg=f'{instr.arg}')
+                        mtbar_patch = add_instruction_ARM(asm, cfg, mtbar_patch, pg)
+                        pg = process_patch(pg, cfg, mtbar_patch)
+                        print(" got here !")
+                        ## trampoline region should have the prev instrucition, then a b.w. to the MTBAR
+                        tr_patch = Patch(f'{prev_instr.addr}-tr')
+                        asm = AssemblyInstruction(addr=None, instr=prev_instr.instr, arg=f"{prev_instr.arg.split(' ')[0]}")
+                        tr_patch = add_instruction_ARM(asm, cfg, tr_patch, tr_pg)
+                        asm = AssemblyInstruction(addr=None, instr='b.w', arg=f'{mtbar_patch.instr[0].addr[2:]}')
+                        tr_patch = add_instruction_ARM(asm, cfg, tr_patch, tr_pg)
+                        tr_pg = process_patch(tr_pg, cfg, tr_patch)
+                        print(" got here !!")
+                        ## direct branch in MTBDR to the trampoline region
+                        mtbdr_patch = Patch(f'{tr_patch.addr}-tr')
+                        asm = asm = AssemblyInstruction(addr=prev_instr.addr, instr='b.w', arg=f'{tr_patch.instr[0].addr[2:]}')
+                        mtbdr_patch = add_instruction_ARM(asm, cfg, mtbdr_patch, pg)
+                        pg = process_patch(pg, cfg, mtbdr_patch)
+                        print(" got here !!!")
+                    else:
+                        #'''
+                        print(instr.arg)
+                        ### move ret instr and prev into the MTBAR
+                        mtbar_patch = Patch(prev_instr.addr)
+                        asm = AssemblyInstruction(addr=None, instr=prev_instr.instr, arg=f'{prev_instr.arg}')
+                        mtbar_patch = add_instruction_ARM(asm, cfg, mtbar_patch, pg)
+                        asm = AssemblyInstruction(addr=None, instr=instr.instr, arg=f'{instr.arg}')
+                        mtbar_patch = add_instruction_ARM(asm, cfg, mtbar_patch, pg)
+                        pg = process_patch(pg, cfg, mtbar_patch)
+
+                        # ### trampoline to the ret
+                        tr_patch = Patch(f'{prev_instr.addr}-tr')
+                        asm = AssemblyInstruction(addr=prev_instr.addr, instr='b.w', arg=f'{mtbar_patch.instr[0].addr[2:]}')
+                        tr_patch = add_instruction_ARM(asm, cfg, tr_patch, pg)
+                        pg = process_patch(pg, cfg, tr_patch)
                 #'''
                 i += 1
 
-    print("---------------")
-    for addr, patch in pg.patches.items():
-        print(f"Patch at {addr}")
-        for instr in patch.instr:
-            print(instr)
-        print('\n')
+    # print("---------------")
+    # for addr, patch in pg.patches.items():
+    #     print(f"Patch at {addr}")
+    #     for instr in patch.instr:
+    #         print(instr)
+    #     print('\n')
 
     ## iterate over the patches and add the 
     elf_file_path = 'instrumented.axf'
     count=0
     print("---- Updating ELF ----")
-    start = time.time()
     for addr, patch in pg.patches.items():
         print(f"Updating ELF with patch {addr}...")
         for i in range(0, len(patch.instr)):
@@ -170,8 +211,18 @@ def instrument(cfg, asm_funcs):
         # break
     # a = input()
     print()
+    for addr, patch in tr_pg.patches.items():
+        print(f"Updating ELF with patch {addr}...")
+        for i in range(0, len(patch.instr)):
+            instr_addr = int(patch.instr[i].addr, 16)
+            print(f"Updating {patch.instr[i].addr} to {patch.bin[i]}")
+            update_instruction(cfg.arch, elf_file_path, instr_addr, patch.bin[i])
+        count += 1
+        # break
+    # a = input()
+    print()
     
-    bash_cmd = "arm-none-eabi-objdump.exe -d ./instrumented.axf > ./instrumented.lst"
+    bash_cmd = "arm-none-eabi-objdump -d ./instrumented.axf > ./instrumented.lst"
     os.system(bash_cmd)
 
 def main():

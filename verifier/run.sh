@@ -15,7 +15,7 @@ grep "word" ${input_file} > .words.tmp
 
 
 echo "arm-none-eabi-objdump -d" ${input_elf} ">" ${input_file}
-arm-none-eabi-objdump.exe -d ${input_elf} > ${input_file}
+arm-none-eabi-objdump -d ${input_elf} > ${input_file}
 
 cp ${input_elf} instrumented.axf
 
