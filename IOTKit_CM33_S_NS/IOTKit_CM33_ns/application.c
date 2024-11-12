@@ -6,6 +6,8 @@
 #define MTBDR __attribute__((section(".MTBDR_MEM")))
 #define REGION_TEMP MTBDR
 
+
+
 REGION_TEMP void application();
 
 MTBDR void application_entry()
@@ -39,6 +41,9 @@ MTBDR void application_entry()
             }
         }
         val = val + 2;
+
+        // APPLICATION_NOPES;
+        
         return;
     }
 #endif
@@ -1489,3 +1494,9 @@ MTBDR void application_entry()
         temp = get_temperature();
     }
 #endif // TEMP
+
+
+
+
+MTBDR_NAKED_USED void trampoline_mtbdr(){_NOPES;}
+

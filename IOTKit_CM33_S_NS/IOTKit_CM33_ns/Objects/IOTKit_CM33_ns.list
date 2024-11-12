@@ -1,0 +1,957 @@
+
+../IOTKit_CM33_S_NS/IOTKit_CM33_ns/Objects/IOTKit_CM33_ns.axf:     file format elf32-littlearm
+
+
+Disassembly of section ER_ROM:
+
+00200000 <__Vectors>:
+  200000:	00 00 40 28 65 05 20 00 ed 04 20 00 f1 04 20 00     ..@(e. ... ... .
+  200010:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+	...
+  20002c:	ed 04 20 00 ed 04 20 00 00 00 00 00 ed 04 20 00     .. ... ....... .
+  20003c:	d9 05 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  20004c:	ed 04 20 00 ed 04 20 00 ed 04 20 00 00 00 00 00     .. ... ... .....
+	...
+  200064:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+	...
+  2000c0:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  2000d0:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  2000e0:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  2000f0:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200100:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200110:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200120:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200130:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200140:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200150:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200160:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200170:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200180:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200190:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  2001a0:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  2001b0:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  2001c0:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  2001d0:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  2001e0:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  2001f0:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200200:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200210:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+  200220:	ed 04 20 00 ed 04 20 00 ed 04 20 00 ed 04 20 00     .. ... ... ... .
+	...
+
+00200400 <__main>:
+  200400:	f000 f802 	bl	200408 <__scatterload_rt2>
+  200404:	f000 f852 	bl	2004ac <__rt_entry>
+
+00200408 <__scatterload_rt2>:
+  200408:	a614      	add	r6, pc, #80	@ (adr r6, 20045c <__scatterload_loop+0x4a>)
+  20040a:	e896 0c00 	ldmia.w	r6, {sl, fp}
+  20040e:	44b2      	add	sl, r6
+  200410:	44b3      	add	fp, r6
+
+00200412 <__scatterload_loop>:
+  200412:	45da      	cmp	sl, fp
+  200414:	d101      	bne.n	20041a <__scatterload_loop+0x8>
+  200416:	f000 f849 	bl	2004ac <__rt_entry>
+  20041a:	e8ba 000f 	ldmia.w	sl!, {r0, r1, r2, r3}
+  20041e:	a60f      	add	r6, pc, #60	@ (adr r6, 20045c <__scatterload_loop+0x4a>)
+  200420:	e896 0030 	ldmia.w	r6, {r4, r5}
+  200424:	eba5 0504 	sub.w	r5, r5, r4
+  200428:	eb04 0706 	add.w	r7, r4, r6
+  20042c:	ebaa 0407 	sub.w	r4, sl, r7
+  200430:	f1a7 0701 	sub.w	r7, r7, #1
+  200434:	ea4f 1515 	mov.w	r5, r5, lsr #4
+  200438:	ea4f 1434 	mov.w	r4, r4, ror #4
+  20043c:	f1a4 0401 	sub.w	r4, r4, #1
+  200440:	42ac      	cmp	r4, r5
+  200442:	d301      	bcc.n	200448 <__scatterload_loop+0x36>
+  200444:	f000 f832 	bl	2004ac <__rt_entry>
+  200448:	f013 0f01 	tst.w	r3, #1
+  20044c:	bf18      	it	ne
+  20044e:	1afb      	subne	r3, r7, r3
+  200450:	f043 0301 	orr.w	r3, r3, #1
+  200454:	f000 f801 	bl	20045a <__scatterload_loop+0x48>
+  200458:	e7db      	b.n	200412 <__scatterload_loop>
+  20045a:	4718      	bx	r3
+  20045c:	000003d0 	.word	0x000003d0
+  200460:	00000410 	.word	0x00000410
+
+00200464 <__scatterload_copy>:
+  200464:	3a10      	subs	r2, #16
+  200466:	bf24      	itt	cs
+  200468:	c878      	ldmiacs	r0!, {r3, r4, r5, r6}
+  20046a:	c178      	stmiacs	r1!, {r3, r4, r5, r6}
+  20046c:	d8fa      	bhi.n	200464 <__scatterload_copy>
+  20046e:	0752      	lsls	r2, r2, #29
+  200470:	bf24      	itt	cs
+  200472:	c830      	ldmiacs	r0!, {r4, r5}
+  200474:	c130      	stmiacs	r1!, {r4, r5}
+  200476:	bf44      	itt	mi
+  200478:	6804      	ldrmi	r4, [r0, #0]
+  20047a:	600c      	strmi	r4, [r1, #0]
+  20047c:	4770      	bx	lr
+	...
+
+00200480 <__scatterload_null>:
+  200480:	4770      	bx	lr
+	...
+
+00200484 <__scatterload_zeroinit>:
+  200484:	2300      	movs	r3, #0
+  200486:	2400      	movs	r4, #0
+  200488:	2500      	movs	r5, #0
+  20048a:	2600      	movs	r6, #0
+  20048c:	3a10      	subs	r2, #16
+  20048e:	bf28      	it	cs
+  200490:	c178      	stmiacs	r1!, {r3, r4, r5, r6}
+  200492:	d8fb      	bhi.n	20048c <__scatterload_zeroinit+0x8>
+  200494:	0752      	lsls	r2, r2, #29
+  200496:	bf28      	it	cs
+  200498:	c130      	stmiacs	r1!, {r4, r5}
+  20049a:	bf48      	it	mi
+  20049c:	600b      	strmi	r3, [r1, #0]
+  20049e:	4770      	bx	lr
+
+002004a0 <__rt_lib_init>:
+  2004a0:	b51f      	push	{r0, r1, r2, r3, r4, lr}
+
+002004a2 <__rt_lib_init_fp_1>:
+  2004a2:	f000 f9b6 	bl	200812 <_fp_init>
+
+002004a6 <__rt_lib_init_alloca_1>:
+  2004a6:	bd1f      	pop	{r0, r1, r2, r3, r4, pc}
+
+002004a8 <__rt_lib_shutdown>:
+  2004a8:	b510      	push	{r4, lr}
+
+002004aa <__rt_lib_shutdown_cpp_1>:
+  2004aa:	bd10      	pop	{r4, pc}
+
+002004ac <__rt_entry>:
+  2004ac:	f8df d00c 	ldr.w	sp, [pc, #12]	@ 2004bc <__lit__00000000>
+
+002004b0 <__rt_entry_li>:
+  2004b0:	f7ff fff6 	bl	2004a0 <__rt_lib_init>
+
+002004b4 <__rt_entry_main>:
+  2004b4:	f000 f8f2 	bl	20069c <main>
+  2004b8:	f000 f808 	bl	2004cc <exit>
+
+002004bc <__lit__00000000>:
+  2004bc:	0000 2840                                   ..@(
+
+002004c0 <__rt_exit>:
+  2004c0:	b403      	push	{r0, r1}
+
+002004c2 <__rt_exit_ls>:
+  2004c2:	f7ff fff1 	bl	2004a8 <__rt_lib_shutdown>
+
+002004c6 <__rt_exit_exit>:
+  2004c6:	bc03      	pop	{r0, r1}
+  2004c8:	f000 f80a 	bl	2004e0 <_sys_exit>
+
+002004cc <exit>:
+  2004cc:	b510      	push	{r4, lr}
+  2004ce:	4604      	mov	r4, r0
+  2004d0:	f3af 8000 	nop.w
+  2004d4:	4620      	mov	r0, r4
+  2004d6:	e8bd 4010 	ldmia.w	sp!, {r4, lr}
+  2004da:	f7ff bff1 	b.w	2004c0 <__rt_exit>
+
+002004de <__use_no_semihosting_swi>:
+  2004de:	4770      	bx	lr
+
+002004e0 <_sys_exit>:
+  2004e0:	4901      	ldr	r1, [pc, #4]	@ (2004e8 <_sys_exit+0x8>)
+  2004e2:	2018      	movs	r0, #24
+  2004e4:	beab      	bkpt	0x00ab
+  2004e6:	e7fe      	b.n	2004e6 <_sys_exit+0x6>
+  2004e8:	00020026 	.word	0x00020026
+
+002004ec <Default_Handler>:
+  2004ec:	e7ff      	b.n	2004ee <Default_Handler+0x2>
+  2004ee:	e7fe      	b.n	2004ee <Default_Handler+0x2>
+
+002004f0 <HardFault_Handler>:
+  2004f0:	e7ff      	b.n	2004f2 <HardFault_Handler+0x2>
+  2004f2:	e7fe      	b.n	2004f2 <HardFault_Handler+0x2>
+
+002004f4 <LED_Off>:
+  2004f4:	b081      	sub	sp, #4
+  2004f6:	9000      	str	r0, [sp, #0]
+  2004f8:	9800      	ldr	r0, [sp, #0]
+  2004fa:	2807      	cmp	r0, #7
+  2004fc:	d80b      	bhi.n	200516 <LED_Off+0x22>
+  2004fe:	e7ff      	b.n	200500 <LED_Off+0xc>
+  200500:	9900      	ldr	r1, [sp, #0]
+  200502:	2001      	movs	r0, #1
+  200504:	fa00 f201 	lsl.w	r2, r0, r1
+  200508:	2104      	movs	r1, #4
+  20050a:	f2c4 0130 	movt	r1, #16432	@ 0x4030
+  20050e:	6808      	ldr	r0, [r1, #0]
+  200510:	4390      	bics	r0, r2
+  200512:	6008      	str	r0, [r1, #0]
+  200514:	e7ff      	b.n	200516 <LED_Off+0x22>
+  200516:	2000      	movs	r0, #0
+  200518:	b001      	add	sp, #4
+  20051a:	4770      	bx	lr
+
+0020051c <LED_On>:
+  20051c:	b081      	sub	sp, #4
+  20051e:	9000      	str	r0, [sp, #0]
+  200520:	9800      	ldr	r0, [sp, #0]
+  200522:	2807      	cmp	r0, #7
+  200524:	d80b      	bhi.n	20053e <LED_On+0x22>
+  200526:	e7ff      	b.n	200528 <LED_On+0xc>
+  200528:	9900      	ldr	r1, [sp, #0]
+  20052a:	2001      	movs	r0, #1
+  20052c:	fa00 f201 	lsl.w	r2, r0, r1
+  200530:	2104      	movs	r1, #4
+  200532:	f2c4 0130 	movt	r1, #16432	@ 0x4030
+  200536:	6808      	ldr	r0, [r1, #0]
+  200538:	4310      	orrs	r0, r2
+  20053a:	6008      	str	r0, [r1, #0]
+  20053c:	e7ff      	b.n	20053e <LED_On+0x22>
+  20053e:	2000      	movs	r0, #0
+  200540:	b001      	add	sp, #4
+  200542:	4770      	bx	lr
+
+00200544 <NonSecure_LED_Off>:
+  200544:	b580      	push	{r7, lr}
+  200546:	b082      	sub	sp, #8
+  200548:	9001      	str	r0, [sp, #4]
+  20054a:	9801      	ldr	r0, [sp, #4]
+  20054c:	f7ff ffd2 	bl	2004f4 <LED_Off>
+  200550:	b002      	add	sp, #8
+  200552:	bd80      	pop	{r7, pc}
+
+00200554 <NonSecure_LED_On>:
+  200554:	b580      	push	{r7, lr}
+  200556:	b082      	sub	sp, #8
+  200558:	9001      	str	r0, [sp, #4]
+  20055a:	9801      	ldr	r0, [sp, #4]
+  20055c:	f7ff ffde 	bl	20051c <LED_On>
+  200560:	b002      	add	sp, #8
+  200562:	bd80      	pop	{r7, pc}
+
+00200564 <Reset_Handler>:
+  200564:	b084      	sub	sp, #16
+  200566:	f240 0000 	movw	r0, #0
+  20056a:	f6c2 0040 	movt	r0, #10304	@ 0x2840
+  20056e:	9001      	str	r0, [sp, #4]
+  200570:	9801      	ldr	r0, [sp, #4]
+  200572:	f380 8809 	msr	PSP, r0
+  200576:	f64f 4000 	movw	r0, #64512	@ 0xfc00
+  20057a:	f6c2 003f 	movt	r0, #10303	@ 0x283f
+  20057e:	9002      	str	r0, [sp, #8]
+  200580:	9902      	ldr	r1, [sp, #8]
+  200582:	f381 880a 	msr	MSPLIM, r1
+  200586:	9003      	str	r0, [sp, #12]
+  200588:	9803      	ldr	r0, [sp, #12]
+  20058a:	f380 880b 	msr	PSPLIM, r0
+  20058e:	f000 f869 	bl	200664 <SystemInit>
+  200592:	f7ff ff35 	bl	200400 <__main>
+	...
+
+00200598 <SCB_GetFPUType>:
+  200598:	b082      	sub	sp, #8
+  20059a:	f64e 7040 	movw	r0, #61248	@ 0xef40
+  20059e:	f2ce 0000 	movt	r0, #57344	@ 0xe000
+  2005a2:	6800      	ldr	r0, [r0, #0]
+  2005a4:	9000      	str	r0, [sp, #0]
+  2005a6:	9800      	ldr	r0, [sp, #0]
+  2005a8:	f400 607f 	and.w	r0, r0, #4080	@ 0xff0
+  2005ac:	f5b0 7f08 	cmp.w	r0, #544	@ 0x220
+  2005b0:	d103      	bne.n	2005ba <SCB_GetFPUType+0x22>
+  2005b2:	e7ff      	b.n	2005b4 <SCB_GetFPUType+0x1c>
+  2005b4:	2002      	movs	r0, #2
+  2005b6:	9001      	str	r0, [sp, #4]
+  2005b8:	e00b      	b.n	2005d2 <SCB_GetFPUType+0x3a>
+  2005ba:	9800      	ldr	r0, [sp, #0]
+  2005bc:	f400 607f 	and.w	r0, r0, #4080	@ 0xff0
+  2005c0:	2820      	cmp	r0, #32
+  2005c2:	d103      	bne.n	2005cc <SCB_GetFPUType+0x34>
+  2005c4:	e7ff      	b.n	2005c6 <SCB_GetFPUType+0x2e>
+  2005c6:	2001      	movs	r0, #1
+  2005c8:	9001      	str	r0, [sp, #4]
+  2005ca:	e002      	b.n	2005d2 <SCB_GetFPUType+0x3a>
+  2005cc:	2000      	movs	r0, #0
+  2005ce:	9001      	str	r0, [sp, #4]
+  2005d0:	e7ff      	b.n	2005d2 <SCB_GetFPUType+0x3a>
+  2005d2:	9801      	ldr	r0, [sp, #4]
+  2005d4:	b002      	add	sp, #8
+  2005d6:	4770      	bx	lr
+
+002005d8 <SysTick_Handler>:
+  2005d8:	b580      	push	{r7, lr}
+  2005da:	b082      	sub	sp, #8
+  2005dc:	f240 0220 	movw	r2, #32
+  2005e0:	f6c2 0220 	movt	r2, #10272	@ 0x2820
+  2005e4:	6810      	ldr	r0, [r2, #0]
+  2005e6:	9001      	str	r0, [sp, #4]
+  2005e8:	1c41      	adds	r1, r0, #1
+  2005ea:	6011      	str	r1, [r2, #0]
+  2005ec:	280a      	cmp	r0, #10
+  2005ee:	d010      	beq.n	200612 <SysTick_Handler+0x3a>
+  2005f0:	e7ff      	b.n	2005f2 <SysTick_Handler+0x1a>
+  2005f2:	9801      	ldr	r0, [sp, #4]
+  2005f4:	2814      	cmp	r0, #20
+  2005f6:	d010      	beq.n	20061a <SysTick_Handler+0x42>
+  2005f8:	e7ff      	b.n	2005fa <SysTick_Handler+0x22>
+  2005fa:	9801      	ldr	r0, [sp, #4]
+  2005fc:	281e      	cmp	r0, #30
+  2005fe:	d010      	beq.n	200622 <SysTick_Handler+0x4a>
+  200600:	e7ff      	b.n	200602 <SysTick_Handler+0x2a>
+  200602:	9801      	ldr	r0, [sp, #4]
+  200604:	2832      	cmp	r0, #50	@ 0x32
+  200606:	d010      	beq.n	20062a <SysTick_Handler+0x52>
+  200608:	e7ff      	b.n	20060a <SysTick_Handler+0x32>
+  20060a:	9801      	ldr	r0, [sp, #4]
+  20060c:	2863      	cmp	r0, #99	@ 0x63
+  20060e:	d010      	beq.n	200632 <SysTick_Handler+0x5a>
+  200610:	e016      	b.n	200640 <SysTick_Handler+0x68>
+  200612:	2007      	movs	r0, #7
+  200614:	f7ff ff82 	bl	20051c <LED_On>
+  200618:	e022      	b.n	200660 <SysTick_Handler+0x88>
+  20061a:	2006      	movs	r0, #6
+  20061c:	f000 f8d6 	bl	2007cc <main+0x130>
+  200620:	e01e      	b.n	200660 <SysTick_Handler+0x88>
+  200622:	2007      	movs	r0, #7
+  200624:	f7ff ff66 	bl	2004f4 <LED_Off>
+  200628:	e01a      	b.n	200660 <SysTick_Handler+0x88>
+  20062a:	2006      	movs	r0, #6
+  20062c:	f000 f8d3 	bl	2007d6 <main+0x13a>
+  200630:	e016      	b.n	200660 <SysTick_Handler+0x88>
+  200632:	f240 0120 	movw	r1, #32
+  200636:	f6c2 0120 	movt	r1, #10272	@ 0x2820
+  20063a:	2000      	movs	r0, #0
+  20063c:	6008      	str	r0, [r1, #0]
+  20063e:	e00f      	b.n	200660 <SysTick_Handler+0x88>
+  200640:	f240 0020 	movw	r0, #32
+  200644:	f6c2 0020 	movt	r0, #10272	@ 0x2820
+  200648:	6800      	ldr	r0, [r0, #0]
+  20064a:	2864      	cmp	r0, #100	@ 0x64
+  20064c:	d307      	bcc.n	20065e <SysTick_Handler+0x86>
+  20064e:	e7ff      	b.n	200650 <SysTick_Handler+0x78>
+  200650:	f240 0120 	movw	r1, #32
+  200654:	f6c2 0120 	movt	r1, #10272	@ 0x2820
+  200658:	2000      	movs	r0, #0
+  20065a:	6008      	str	r0, [r1, #0]
+  20065c:	e7ff      	b.n	20065e <SysTick_Handler+0x86>
+  20065e:	e7ff      	b.n	200660 <SysTick_Handler+0x88>
+  200660:	b002      	add	sp, #8
+  200662:	bd80      	pop	{r7, pc}
+
+00200664 <SystemInit>:
+  200664:	f240 0000 	movw	r0, #0
+  200668:	f2c0 0020 	movt	r0, #32
+  20066c:	f64e 5108 	movw	r1, #60680	@ 0xed08
+  200670:	f2ce 0100 	movt	r1, #57344	@ 0xe000
+  200674:	6008      	str	r0, [r1, #0]
+  200676:	f64e 5188 	movw	r1, #60808	@ 0xed88
+  20067a:	f2ce 0100 	movt	r1, #57344	@ 0xe000
+  20067e:	6808      	ldr	r0, [r1, #0]
+  200680:	f440 0070 	orr.w	r0, r0, #15728640	@ 0xf00000
+  200684:	6008      	str	r0, [r1, #0]
+  200686:	f240 0100 	movw	r1, #0
+  20068a:	f6c2 0120 	movt	r1, #10272	@ 0x2820
+  20068e:	f647 0040 	movw	r0, #30784	@ 0x7840
+  200692:	f2c0 107d 	movt	r0, #381	@ 0x17d
+  200696:	6008      	str	r0, [r1, #0]
+  200698:	4770      	bx	lr
+	...
+
+0020069c <main>:
+  20069c:	b580      	push	{r7, lr}
+  20069e:	b088      	sub	sp, #32
+  2006a0:	2000      	movs	r0, #0
+  2006a2:	9005      	str	r0, [sp, #20]
+  2006a4:	f240 0001 	movw	r0, #1
+  2006a8:	f2c0 0030 	movt	r0, #48	@ 0x30
+  2006ac:	f000 f898 	bl	2007e0 <main+0x144>
+  2006b0:	f240 0024 	movw	r0, #36	@ 0x24
+  2006b4:	f6c2 0020 	movt	r0, #10272	@ 0x2820
+  2006b8:	f000 f897 	bl	2007ea <main+0x14e>
+  2006bc:	f7ff ff6c 	bl	200598 <SCB_GetFPUType>
+  2006c0:	9003      	str	r0, [sp, #12]
+  2006c2:	f644 60a5 	movw	r0, #20133	@ 0x4ea5
+  2006c6:	f2c4 1047 	movt	r0, #16711	@ 0x4147
+  2006ca:	9002      	str	r0, [sp, #8]
+  2006cc:	f64e 6095 	movw	r0, #61077	@ 0xee95
+  2006d0:	f6c3 7029 	movt	r0, #16169	@ 0x3f29
+  2006d4:	9001      	str	r0, [sp, #4]
+  2006d6:	f24e 308f 	movw	r0, #58255	@ 0xe38f
+  2006da:	f2c4 10c0 	movt	r0, #16832	@ 0x41c0
+  2006de:	9000      	str	r0, [sp, #0]
+  2006e0:	ed9d 0a00 	vldr	s0, [sp]
+  2006e4:	ed9d 1a02 	vldr	s2, [sp, #8]
+  2006e8:	ed9d 2a01 	vldr	s4, [sp, #4]
+  2006ec:	ee81 1a02 	vdiv.f32	s2, s2, s4
+  2006f0:	ee20 0a01 	vmul.f32	s0, s0, s2
+  2006f4:	ed8d 0a00 	vstr	s0, [sp]
+  2006f8:	f3ef 8008 	mrs	r0, MSP
+  2006fc:	9006      	str	r0, [sp, #24]
+  2006fe:	9806      	ldr	r0, [sp, #24]
+  200700:	f640 0188 	movw	r1, #2184	@ 0x888
+  200704:	f6c2 0120 	movt	r1, #10272	@ 0x2820
+  200708:	6008      	str	r0, [r1, #0]
+  20070a:	f3ef 8009 	mrs	r0, PSP
+  20070e:	9007      	str	r0, [sp, #28]
+  200710:	9807      	ldr	r0, [sp, #28]
+  200712:	6008      	str	r0, [r1, #0]
+  200714:	f240 5055 	movw	r0, #1365	@ 0x555
+  200718:	f2c0 0020 	movt	r0, #32
+  20071c:	f000 f86a 	bl	2007f4 <main+0x158>
+  200720:	f240 5045 	movw	r0, #1349	@ 0x545
+  200724:	f2c0 0020 	movt	r0, #32
+  200728:	f000 f869 	bl	2007fe <main+0x162>
+  20072c:	e7ff      	b.n	20072e <main+0x92>
+  20072e:	2005      	movs	r0, #5
+  200730:	f7ff fef4 	bl	20051c <LED_On>
+  200734:	2000      	movs	r0, #0
+  200736:	9004      	str	r0, [sp, #16]
+  200738:	e7ff      	b.n	20073a <main+0x9e>
+  20073a:	9904      	ldr	r1, [sp, #16]
+  20073c:	2000      	movs	r0, #0
+  20073e:	ebb0 5f11 	cmp.w	r0, r1, lsr #20
+  200742:	d106      	bne.n	200752 <main+0xb6>
+  200744:	e7ff      	b.n	200746 <main+0xaa>
+  200746:	bf00      	nop
+  200748:	e7ff      	b.n	20074a <main+0xae>
+  20074a:	9804      	ldr	r0, [sp, #16]
+  20074c:	3001      	adds	r0, #1
+  20074e:	9004      	str	r0, [sp, #16]
+  200750:	e7f3      	b.n	20073a <main+0x9e>
+  200752:	2005      	movs	r0, #5
+  200754:	f7ff fece 	bl	2004f4 <LED_Off>
+  200758:	2000      	movs	r0, #0
+  20075a:	9004      	str	r0, [sp, #16]
+  20075c:	e7ff      	b.n	20075e <main+0xc2>
+  20075e:	9904      	ldr	r1, [sp, #16]
+  200760:	2000      	movs	r0, #0
+  200762:	ebb0 5f11 	cmp.w	r0, r1, lsr #20
+  200766:	d106      	bne.n	200776 <main+0xda>
+  200768:	e7ff      	b.n	20076a <main+0xce>
+  20076a:	bf00      	nop
+  20076c:	e7ff      	b.n	20076e <main+0xd2>
+  20076e:	9804      	ldr	r0, [sp, #16]
+  200770:	3001      	adds	r0, #1
+  200772:	9004      	str	r0, [sp, #16]
+  200774:	e7f3      	b.n	20075e <main+0xc2>
+  200776:	2004      	movs	r0, #4
+  200778:	f000 f828 	bl	2007cc <main+0x130>
+  20077c:	2000      	movs	r0, #0
+  20077e:	9004      	str	r0, [sp, #16]
+  200780:	e7ff      	b.n	200782 <main+0xe6>
+  200782:	9904      	ldr	r1, [sp, #16]
+  200784:	2000      	movs	r0, #0
+  200786:	ebb0 5f11 	cmp.w	r0, r1, lsr #20
+  20078a:	d106      	bne.n	20079a <main+0xfe>
+  20078c:	e7ff      	b.n	20078e <main+0xf2>
+  20078e:	bf00      	nop
+  200790:	e7ff      	b.n	200792 <main+0xf6>
+  200792:	9804      	ldr	r0, [sp, #16]
+  200794:	3001      	adds	r0, #1
+  200796:	9004      	str	r0, [sp, #16]
+  200798:	e7f3      	b.n	200782 <main+0xe6>
+  20079a:	2004      	movs	r0, #4
+  20079c:	f000 f81b 	bl	2007d6 <main+0x13a>
+  2007a0:	2000      	movs	r0, #0
+  2007a2:	9004      	str	r0, [sp, #16]
+  2007a4:	e7ff      	b.n	2007a6 <main+0x10a>
+  2007a6:	9904      	ldr	r1, [sp, #16]
+  2007a8:	2000      	movs	r0, #0
+  2007aa:	ebb0 5f11 	cmp.w	r0, r1, lsr #20
+  2007ae:	d106      	bne.n	2007be <main+0x122>
+  2007b0:	e7ff      	b.n	2007b2 <main+0x116>
+  2007b2:	bf00      	nop
+  2007b4:	e7ff      	b.n	2007b6 <main+0x11a>
+  2007b6:	9804      	ldr	r0, [sp, #16]
+  2007b8:	3001      	adds	r0, #1
+  2007ba:	9004      	str	r0, [sp, #16]
+  2007bc:	e7f3      	b.n	2007a6 <main+0x10a>
+  2007be:	f240 0004 	movw	r0, #4
+  2007c2:	f6c2 0020 	movt	r0, #10272	@ 0x2820
+  2007c6:	f000 f81f 	bl	200808 <main+0x16c>
+  2007ca:	e7b0      	b.n	20072e <main+0x92>
+  2007cc:	f64f 6c19 	movw	ip, #65049	@ 0xfe19
+  2007d0:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
+  2007d4:	4760      	bx	ip
+  2007d6:	f64f 6c21 	movw	ip, #65057	@ 0xfe21
+  2007da:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
+  2007de:	4760      	bx	ip
+  2007e0:	f64f 6c09 	movw	ip, #65033	@ 0xfe09
+  2007e4:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
+  2007e8:	4760      	bx	ip
+  2007ea:	f64f 6c11 	movw	ip, #65041	@ 0xfe11
+  2007ee:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
+  2007f2:	4760      	bx	ip
+  2007f4:	f64f 6c31 	movw	ip, #65073	@ 0xfe31
+  2007f8:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
+  2007fc:	4760      	bx	ip
+  2007fe:	f64f 6c39 	movw	ip, #65081	@ 0xfe39
+  200802:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
+  200806:	4760      	bx	ip
+  200808:	f64f 6c29 	movw	ip, #65065	@ 0xfe29
+  20080c:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
+  200810:	4760      	bx	ip
+
+00200812 <_fp_init>:
+  200812:	eef1 0a10 	vmrs	r0, fpscr
+  200816:	f64f 71ff 	movw	r1, #65535	@ 0xffff
+  20081a:	f2c0 31c0 	movt	r1, #960	@ 0x3c0
+  20081e:	ea20 0001 	bic.w	r0, r0, r1
+  200822:	f040 7040 	orr.w	r0, r0, #50331648	@ 0x3000000
+  200826:	eee1 0a10 	vmsr	fpscr, r0
+
+0020082a <__fplib_config_fpu_vfp>:
+  20082a:	4770      	bx	lr
+
+0020082c <Region$$Table$$Base>:
+  20082c:	0020086c 	.word	0x0020086c
+  200830:	00380000 	.word	0x00380000
+  200834:	000002d0 	.word	0x000002d0
+  200838:	00200464 	.word	0x00200464
+  20083c:	00200b3c 	.word	0x00200b3c
+  200840:	00300000 	.word	0x00300000
+  200844:	00000088 	.word	0x00000088
+  200848:	00200464 	.word	0x00200464
+  20084c:	00200bc4 	.word	0x00200bc4
+  200850:	28200000 	.word	0x28200000
+  200854:	00000020 	.word	0x00000020
+  200858:	00200464 	.word	0x00200464
+  20085c:	00200be4 	.word	0x00200be4
+  200860:	28200020 	.word	0x28200020
+  200864:	0000086c 	.word	0x0000086c
+  200868:	00200484 	.word	0x00200484
+
+Disassembly of section ER_MTBAR:
+
+00380000 <nopes>:
+  380000:	bf00      	nop
+  380002:	bf00      	nop
+  380004:	bf00      	nop
+  380006:	bf00      	nop
+  380008:	bf00      	nop
+  38000a:	bf00      	nop
+  38000c:	bf00      	nop
+  38000e:	bf00      	nop
+  380010:	bf00      	nop
+  380012:	bf00      	nop
+  380014:	bf00      	nop
+  380016:	bf00      	nop
+  380018:	bf00      	nop
+  38001a:	bf00      	nop
+  38001c:	bf00      	nop
+  38001e:	bf00      	nop
+  380020:	bf00      	nop
+  380022:	bf00      	nop
+  380024:	bf00      	nop
+  380026:	bf00      	nop
+  380028:	bf00      	nop
+  38002a:	bf00      	nop
+  38002c:	bf00      	nop
+  38002e:	bf00      	nop
+  380030:	bf00      	nop
+  380032:	bf00      	nop
+  380034:	bf00      	nop
+  380036:	bf00      	nop
+  380038:	bf00      	nop
+  38003a:	bf00      	nop
+  38003c:	bf00      	nop
+  38003e:	bf00      	nop
+  380040:	bf00      	nop
+  380042:	bf00      	nop
+  380044:	bf00      	nop
+  380046:	bf00      	nop
+  380048:	bf00      	nop
+  38004a:	bf00      	nop
+  38004c:	bf00      	nop
+  38004e:	bf00      	nop
+  380050:	bf00      	nop
+  380052:	bf00      	nop
+  380054:	bf00      	nop
+  380056:	bf00      	nop
+  380058:	bf00      	nop
+  38005a:	bf00      	nop
+  38005c:	bf00      	nop
+  38005e:	bf00      	nop
+  380060:	bf00      	nop
+  380062:	bf00      	nop
+  380064:	bf00      	nop
+  380066:	bf00      	nop
+  380068:	bf00      	nop
+  38006a:	bf00      	nop
+  38006c:	bf00      	nop
+  38006e:	bf00      	nop
+  380070:	bf00      	nop
+  380072:	bf00      	nop
+  380074:	bf00      	nop
+  380076:	bf00      	nop
+  380078:	bf00      	nop
+  38007a:	bf00      	nop
+  38007c:	bf00      	nop
+  38007e:	bf00      	nop
+  380080:	bf00      	nop
+  380082:	bf00      	nop
+  380084:	bf00      	nop
+  380086:	bf00      	nop
+  380088:	bf00      	nop
+  38008a:	bf00      	nop
+  38008c:	bf00      	nop
+  38008e:	bf00      	nop
+  380090:	bf00      	nop
+  380092:	bf00      	nop
+  380094:	bf00      	nop
+  380096:	bf00      	nop
+  380098:	bf00      	nop
+  38009a:	bf00      	nop
+  38009c:	bf00      	nop
+  38009e:	bf00      	nop
+  3800a0:	bf00      	nop
+  3800a2:	bf00      	nop
+  3800a4:	bf00      	nop
+  3800a6:	bf00      	nop
+  3800a8:	bf00      	nop
+  3800aa:	bf00      	nop
+  3800ac:	bf00      	nop
+  3800ae:	bf00      	nop
+  3800b0:	bf00      	nop
+  3800b2:	bf00      	nop
+  3800b4:	bf00      	nop
+  3800b6:	bf00      	nop
+  3800b8:	bf00      	nop
+  3800ba:	bf00      	nop
+  3800bc:	bf00      	nop
+  3800be:	bf00      	nop
+  3800c0:	bf00      	nop
+  3800c2:	bf00      	nop
+  3800c4:	bf00      	nop
+  3800c6:	bf00      	nop
+  3800c8:	bf00      	nop
+  3800ca:	bf00      	nop
+  3800cc:	bf00      	nop
+  3800ce:	bf00      	nop
+  3800d0:	bf00      	nop
+  3800d2:	bf00      	nop
+  3800d4:	bf00      	nop
+  3800d6:	bf00      	nop
+  3800d8:	bf00      	nop
+  3800da:	bf00      	nop
+  3800dc:	bf00      	nop
+  3800de:	bf00      	nop
+  3800e0:	bf00      	nop
+  3800e2:	bf00      	nop
+  3800e4:	bf00      	nop
+  3800e6:	bf00      	nop
+  3800e8:	bf00      	nop
+  3800ea:	bf00      	nop
+  3800ec:	bf00      	nop
+  3800ee:	bf00      	nop
+  3800f0:	bf00      	nop
+  3800f2:	bf00      	nop
+  3800f4:	bf00      	nop
+  3800f6:	bf00      	nop
+  3800f8:	bf00      	nop
+  3800fa:	bf00      	nop
+  3800fc:	bf00      	nop
+  3800fe:	bf00      	nop
+  380100:	bf00      	nop
+  380102:	bf00      	nop
+  380104:	bf00      	nop
+  380106:	bf00      	nop
+  380108:	bf00      	nop
+  38010a:	bf00      	nop
+  38010c:	bf00      	nop
+  38010e:	bf00      	nop
+  380110:	bf00      	nop
+  380112:	bf00      	nop
+  380114:	bf00      	nop
+  380116:	bf00      	nop
+  380118:	bf00      	nop
+  38011a:	bf00      	nop
+  38011c:	bf00      	nop
+  38011e:	bf00      	nop
+  380120:	bf00      	nop
+  380122:	bf00      	nop
+  380124:	bf00      	nop
+  380126:	bf00      	nop
+  380128:	bf00      	nop
+  38012a:	bf00      	nop
+  38012c:	bf00      	nop
+  38012e:	bf00      	nop
+  380130:	bf00      	nop
+  380132:	bf00      	nop
+  380134:	bf00      	nop
+  380136:	bf00      	nop
+  380138:	bf00      	nop
+  38013a:	bf00      	nop
+  38013c:	bf00      	nop
+  38013e:	bf00      	nop
+  380140:	bf00      	nop
+  380142:	bf00      	nop
+  380144:	bf00      	nop
+  380146:	bf00      	nop
+  380148:	bf00      	nop
+  38014a:	bf00      	nop
+  38014c:	bf00      	nop
+  38014e:	bf00      	nop
+  380150:	bf00      	nop
+  380152:	bf00      	nop
+  380154:	bf00      	nop
+  380156:	bf00      	nop
+  380158:	bf00      	nop
+  38015a:	bf00      	nop
+  38015c:	bf00      	nop
+  38015e:	bf00      	nop
+  380160:	bf00      	nop
+  380162:	bf00      	nop
+  380164:	bf00      	nop
+  380166:	bf00      	nop
+  380168:	bf00      	nop
+  38016a:	bf00      	nop
+  38016c:	bf00      	nop
+  38016e:	bf00      	nop
+  380170:	bf00      	nop
+  380172:	bf00      	nop
+  380174:	bf00      	nop
+  380176:	bf00      	nop
+  380178:	bf00      	nop
+  38017a:	bf00      	nop
+  38017c:	bf00      	nop
+  38017e:	bf00      	nop
+  380180:	bf00      	nop
+  380182:	bf00      	nop
+  380184:	bf00      	nop
+  380186:	bf00      	nop
+  380188:	bf00      	nop
+  38018a:	bf00      	nop
+  38018c:	bf00      	nop
+  38018e:	bf00      	nop
+  380190:	bf00      	nop
+  380192:	bf00      	nop
+  380194:	bf00      	nop
+  380196:	bf00      	nop
+  380198:	bf00      	nop
+  38019a:	bf00      	nop
+  38019c:	bf00      	nop
+  38019e:	bf00      	nop
+  3801a0:	bf00      	nop
+  3801a2:	bf00      	nop
+  3801a4:	bf00      	nop
+  3801a6:	bf00      	nop
+  3801a8:	bf00      	nop
+  3801aa:	bf00      	nop
+  3801ac:	bf00      	nop
+  3801ae:	bf00      	nop
+  3801b0:	bf00      	nop
+  3801b2:	bf00      	nop
+  3801b4:	bf00      	nop
+  3801b6:	bf00      	nop
+  3801b8:	bf00      	nop
+  3801ba:	bf00      	nop
+  3801bc:	bf00      	nop
+  3801be:	bf00      	nop
+  3801c0:	bf00      	nop
+  3801c2:	bf00      	nop
+  3801c4:	bf00      	nop
+  3801c6:	bf00      	nop
+  3801c8:	bf00      	nop
+  3801ca:	bf00      	nop
+  3801cc:	bf00      	nop
+  3801ce:	bf00      	nop
+  3801d0:	bf00      	nop
+  3801d2:	bf00      	nop
+  3801d4:	bf00      	nop
+  3801d6:	bf00      	nop
+  3801d8:	bf00      	nop
+  3801da:	bf00      	nop
+  3801dc:	bf00      	nop
+  3801de:	bf00      	nop
+  3801e0:	bf00      	nop
+  3801e2:	bf00      	nop
+  3801e4:	bf00      	nop
+  3801e6:	bf00      	nop
+  3801e8:	bf00      	nop
+  3801ea:	bf00      	nop
+  3801ec:	bf00      	nop
+  3801ee:	bf00      	nop
+  3801f0:	bf00      	nop
+  3801f2:	bf00      	nop
+  3801f4:	bf00      	nop
+  3801f6:	bf00      	nop
+  3801f8:	bf00      	nop
+  3801fa:	bf00      	nop
+  3801fc:	bf00      	nop
+  3801fe:	bf00      	nop
+  380200:	bf00      	nop
+  380202:	bf00      	nop
+  380204:	bf00      	nop
+  380206:	bf00      	nop
+  380208:	bf00      	nop
+  38020a:	bf00      	nop
+  38020c:	bf00      	nop
+  38020e:	bf00      	nop
+  380210:	bf00      	nop
+  380212:	bf00      	nop
+  380214:	bf00      	nop
+  380216:	bf00      	nop
+  380218:	bf00      	nop
+  38021a:	bf00      	nop
+  38021c:	bf00      	nop
+  38021e:	bf00      	nop
+  380220:	bf00      	nop
+  380222:	bf00      	nop
+  380224:	bf00      	nop
+  380226:	bf00      	nop
+  380228:	bf00      	nop
+  38022a:	bf00      	nop
+  38022c:	bf00      	nop
+  38022e:	bf00      	nop
+  380230:	bf00      	nop
+  380232:	bf00      	nop
+  380234:	bf00      	nop
+  380236:	bf00      	nop
+  380238:	bf00      	nop
+  38023a:	bf00      	nop
+  38023c:	bf00      	nop
+  38023e:	bf00      	nop
+  380240:	bf00      	nop
+  380242:	bf00      	nop
+  380244:	bf00      	nop
+  380246:	bf00      	nop
+  380248:	bf00      	nop
+  38024a:	bf00      	nop
+  38024c:	bf00      	nop
+  38024e:	bf00      	nop
+  380250:	bf00      	nop
+  380252:	bf00      	nop
+  380254:	bf00      	nop
+  380256:	bf00      	nop
+  380258:	bf00      	nop
+  38025a:	bf00      	nop
+  38025c:	bf00      	nop
+  38025e:	bf00      	nop
+  380260:	bf00      	nop
+  380262:	bf00      	nop
+  380264:	bf00      	nop
+  380266:	bf00      	nop
+  380268:	bf00      	nop
+  38026a:	bf00      	nop
+  38026c:	bf00      	nop
+  38026e:	bf00      	nop
+  380270:	bf00      	nop
+  380272:	bf00      	nop
+  380274:	bf00      	nop
+  380276:	bf00      	nop
+  380278:	bf00      	nop
+  38027a:	bf00      	nop
+  38027c:	bf00      	nop
+  38027e:	bf00      	nop
+  380280:	bf00      	nop
+  380282:	bf00      	nop
+  380284:	bf00      	nop
+  380286:	bf00      	nop
+  380288:	bf00      	nop
+  38028a:	bf00      	nop
+  38028c:	bf00      	nop
+  38028e:	bf00      	nop
+  380290:	bf00      	nop
+  380292:	bf00      	nop
+  380294:	bf00      	nop
+  380296:	bf00      	nop
+  380298:	bf00      	nop
+  38029a:	bf00      	nop
+  38029c:	bf00      	nop
+  38029e:	bf00      	nop
+  3802a0:	bf00      	nop
+  3802a2:	bf00      	nop
+  3802a4:	bf00      	nop
+  3802a6:	bf00      	nop
+  3802a8:	bf00      	nop
+  3802aa:	bf00      	nop
+  3802ac:	bf00      	nop
+  3802ae:	bf00      	nop
+  3802b0:	bf00      	nop
+  3802b2:	bf00      	nop
+  3802b4:	bf00      	nop
+  3802b6:	bf00      	nop
+  3802b8:	bf00      	nop
+  3802ba:	bf00      	nop
+  3802bc:	bf00      	nop
+  3802be:	bf00      	nop
+  3802c0:	bf00      	nop
+  3802c2:	bf00      	nop
+  3802c4:	bf00      	nop
+  3802c6:	bf00      	nop
+  3802c8:	bf00      	nop
+  3802ca:	bf00      	nop
+  3802cc:	bf00      	nop
+  3802ce:	bf00      	nop
+
+Disassembly of section ER_MTBDR:
+
+00300000 <application_entry>:
+  300000:	b580      	push	{r7, lr}
+  300002:	f000 f801 	bl	300008 <application>
+  300006:	bd80      	pop	{r7, pc}
+
+00300008 <application>:
+  300008:	b0b5      	sub	sp, #212	@ 0xd4
+  30000a:	2000      	movs	r0, #0
+  30000c:	9002      	str	r0, [sp, #8]
+  30000e:	9802      	ldr	r0, [sp, #8]
+  300010:	2801      	cmp	r0, #1
+  300012:	d104      	bne.n	30001e <application+0x16>
+  300014:	e7ff      	b.n	300016 <application+0xe>
+  300016:	9802      	ldr	r0, [sp, #8]
+  300018:	3001      	adds	r0, #1
+  30001a:	9002      	str	r0, [sp, #8]
+  30001c:	e003      	b.n	300026 <application+0x1e>
+  30001e:	9802      	ldr	r0, [sp, #8]
+  300020:	3004      	adds	r0, #4
+  300022:	9002      	str	r0, [sp, #8]
+  300024:	e7ff      	b.n	300026 <application+0x1e>
+  300026:	2000      	movs	r0, #0
+  300028:	9001      	str	r0, [sp, #4]
+  30002a:	e7ff      	b.n	30002c <application+0x24>
+  30002c:	9801      	ldr	r0, [sp, #4]
+  30002e:	2809      	cmp	r0, #9
+  300030:	dc24      	bgt.n	30007c <application+0x74>
+  300032:	e7ff      	b.n	300034 <application+0x2c>
+  300034:	2000      	movs	r0, #0
+  300036:	9000      	str	r0, [sp, #0]
+  300038:	e7ff      	b.n	30003a <application+0x32>
+  30003a:	9800      	ldr	r0, [sp, #0]
+  30003c:	2804      	cmp	r0, #4
+  30003e:	dc18      	bgt.n	300072 <application+0x6a>
+  300040:	e7ff      	b.n	300042 <application+0x3a>
+  300042:	9a01      	ldr	r2, [sp, #4]
+  300044:	eb02 0082 	add.w	r0, r2, r2, lsl #2
+  300048:	a903      	add	r1, sp, #12
+  30004a:	eb01 0080 	add.w	r0, r1, r0, lsl #2
+  30004e:	9b00      	ldr	r3, [sp, #0]
+  300050:	f850 0023 	ldr.w	r0, [r0, r3, lsl #2]
+  300054:	eb03 0383 	add.w	r3, r3, r3, lsl #2
+  300058:	eb01 0183 	add.w	r1, r1, r3, lsl #2
+  30005c:	f851 1022 	ldr.w	r1, [r1, r2, lsl #2]
+  300060:	4401      	add	r1, r0
+  300062:	9802      	ldr	r0, [sp, #8]
+  300064:	4408      	add	r0, r1
+  300066:	9002      	str	r0, [sp, #8]
+  300068:	e7ff      	b.n	30006a <application+0x62>
+  30006a:	9800      	ldr	r0, [sp, #0]
+  30006c:	3001      	adds	r0, #1
+  30006e:	9000      	str	r0, [sp, #0]
+  300070:	e7e3      	b.n	30003a <application+0x32>
+  300072:	e7ff      	b.n	300074 <application+0x6c>
+  300074:	9801      	ldr	r0, [sp, #4]
+  300076:	3001      	adds	r0, #1
+  300078:	9001      	str	r0, [sp, #4]
+  30007a:	e7d7      	b.n	30002c <application+0x24>
+  30007c:	9802      	ldr	r0, [sp, #8]
+  30007e:	3002      	adds	r0, #2
+  300080:	9002      	str	r0, [sp, #8]
+  300082:	b035      	add	sp, #212	@ 0xd4
+  300084:	4770      	bx	lr
+	...

@@ -15,17 +15,17 @@
     <View>
       <WinId>38003</WinId>
       <ViewName>Registers</ViewName>
-      <TableColWidths>348 301</TableColWidths>
+      <TableColWidths>140 30</TableColWidths>
     </View>
     <View>
       <WinId>346</WinId>
       <ViewName>Code Coverage</ViewName>
-      <TableColWidths>810 100</TableColWidths>
+      <TableColWidths>810 160</TableColWidths>
     </View>
     <View>
       <WinId>204</WinId>
       <ViewName>Performance Analyzer</ViewName>
-      <TableColWidths>970 145 145 100</TableColWidths>
+      <TableColWidths>970</TableColWidths>
     </View>
   </SECTreeCtrl>
 
@@ -64,13 +64,13 @@
       <WinId>2506</WinId>
       <ViewName>Trace Data</ViewName>
       <UserString></UserString>
-      <TableColWidths>75 95 70 230 200 150</TableColWidths>
+      <TableColWidths>75 135 130 95 70 230 200 150</TableColWidths>
     </View>
     <View>
       <WinId>466</WinId>
       <ViewName>Source Browser</ViewName>
       <UserString>500</UserString>
-      <TableColWidths>166</TableColWidths>
+      <TableColWidths>300</TableColWidths>
     </View>
   </TreeListPane>
 
@@ -93,18 +93,18 @@
       <flags>0</flags>
       <showCmd>1</showCmd>
       <MinPosition>
-        <xPos>-32000</xPos>
-        <yPos>-32000</yPos>
+        <xPos>-1</xPos>
+        <yPos>-1</yPos>
       </MinPosition>
       <MaxPosition>
         <xPos>-1</xPos>
         <yPos>-1</yPos>
       </MaxPosition>
       <NormalPosition>
-        <Top>61</Top>
-        <Left>277</Left>
-        <Right>1717</Right>
-        <Bottom>910</Bottom>
+        <Top>63</Top>
+        <Left>38</Left>
+        <Right>1478</Right>
+        <Bottom>912</Bottom>
       </NormalPosition>
     </WindowPosition>
     <MDIClientArea>

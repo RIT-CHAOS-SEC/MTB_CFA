@@ -4,7 +4,8 @@ $expectedVolumeName = "V2M_MPS2"
 
 # Define the files to copy and their new names
 $sourceFile1 = "IOTKit_CM33_s\Objects\IOTKit_CM33_s.axf" # Update this path
-$sourceFile2 = "IOTKit_CM33_ns\Objects\IOTKit_CM33_ns.axf" # Update this path
+# $sourceFile2 = "IOTKit_CM33_ns\Objects\IOTKit_CM33_ns.axf" # Update this path
+$sourceFile2 = "IOTKit_CM33_ns\Objects\instrumented.axf" # Update this path
 $destinationFile1 = "$driveLetter\SOFTWARE\s.axf"
 $destinationFile2 = "$driveLetter\SOFTWARE\ns.axf"
 

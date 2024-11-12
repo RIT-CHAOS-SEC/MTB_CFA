@@ -8,7 +8,7 @@ Copyright (C) 2024 ARM Ltd and ARM Germany GmbH. All rights reserved.
 License Information: Antonio Joia
 Rochester Institute of Technology
 User-based license: Keil MDK Community (non-commercial free of charge)
-Valid until: May 31 2033. Cached until: Nov 13 2024
+Valid until: May 31 2033. Cached until: Nov 18 2024
  
 Tool Versions:
 Toolchain:       Keil MDK Community (non-commercial free of charge  Version: 5.41.0.0
@@ -39,9 +39,18 @@ P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\IOTKit_CM33_s\Secure_Functions.h(24): 
       |                                                       ^
 2 warnings generated.
 compiling application.c...
+P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\IOTKit_CM33_ns\main_ns.c(10): warning: In file included from...
+P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\IOTKit_CM33_s\Secure_Functions.h(23): warning: 'cmse_nonsecure_call' attribute ignored [-Wignored-attributes]
+   23 | typedef int32_t (*NonSecure_fpParam)(uint32_t) __attribute__((cmse_nonsecure_call));
+      |                                                               ^
+P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\IOTKit_CM33_s\Secure_Functions.h(24): warning: 'cmse_nonsecure_call' attribute ignored [-Wignored-attributes]
+   24 | typedef void (*NonSecure_fpVoid)(void) __attribute__((cmse_nonsecure_call));
+      |                                                       ^
+2 warnings generated.
+compiling main_ns.c...
 linking...
-Program Size: Code=5644 RO-data=1436 RW-data=32 ZI-data=6504  
-".\Objects\IOTKit_CM33_ns.axf" - 0 Error(s), 2 Warning(s).
+Program Size: Code=2644 RO-data=1088 RW-data=32 ZI-data=6252  
+".\Objects\IOTKit_CM33_ns.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -84,11 +93,11 @@ Package Vendor: Keil
       Source file:   Boards/ARM/V2M-MPS2/Common/LED_V2M-MPS2.c
 
    * Component: Keil::Device:Startup&C Startup@1.2.0
+      Source file:   Device/IOTKit_CM33/Source/system_IOTKit_CM33.c
+      Include file:  CMSIS/Config/RTE_Device.h
       Source file:   Device/IOTKit_CM33/Source/startup_IOTKit_CM33.c
       Include file:  Device/Common/Include/SMM_MPS2.h
       Include file:  Device/IOTKit_CM33/Include/Template/partition_IOTKit_CM33.h
-      Source file:   Device/IOTKit_CM33/Source/system_IOTKit_CM33.c
-      Include file:  CMSIS/Config/RTE_Device.h
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

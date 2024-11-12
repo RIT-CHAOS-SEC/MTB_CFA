@@ -40,8 +40,6 @@ void SECURE_NOPE(void){
 }
 
 
-
-
 uint32_t CFA_stat = FALSE;
 
 uint8_t _set_stat(){
