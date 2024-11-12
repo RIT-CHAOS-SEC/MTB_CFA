@@ -59,7 +59,7 @@ def instrument(cfg, asm_funcs):
 
     tr_pg = PatchGenerator(cfg.arch.trampoline_region)
 
-    MTBDR_MIN = 0x300000    
+    MTBDR_MIN = 0x300008    
     MTBDR_MAX = 0x380000    
     # func_labels = ['application']#, 'NonSecure_LED_Off']
 
@@ -80,9 +80,15 @@ def instrument(cfg, asm_funcs):
                     instr.arg = instr.arg.split(' ')[0]
                     prev_instr = func.instr_list[i-1]
                     
+                    prev_instr = func.instr_list[i-1]
+                    if '@' in instr.arg:
+                        instr.arg = instr.arg.split('@')[0]
+                    if '@' in prev_instr.arg:
+                        prev_instr.arg = prev_instr.arg.split('@')[0]
+
                     ## add dir branch to the cb dest in MTBAR
                     mtbar_patch = Patch(instr.addr)
-                    for k in range(0, 4):
+                    for k in range(0, 7):
                         asm = AssemblyInstruction(addr=None, instr='nop', arg=f'')
                         mtbar_patch = add_instruction_ARM(asm, cfg, mtbar_patch, pg)
                     asm = AssemblyInstruction(addr=None, instr='b.w', arg=f'{instr.arg}')
@@ -145,7 +151,7 @@ def instrument(cfg, asm_funcs):
 
                     #'''
                     print(f"checking {prev_instr.instr} in {cfg.arch.call_instrs}")
-                    a = input()
+                    # a = input()
                     if prev_instr.instr in cfg.arch.call_instrs:
                         ## in this case: instr      =  pop/ldr to pc
                         ##               prev_instr =  a bl -- all other branch instructions are handled naturally
@@ -176,6 +182,9 @@ def instrument(cfg, asm_funcs):
                         print(instr.arg)
                         ### move ret instr and prev into the MTBAR
                         mtbar_patch = Patch(prev_instr.addr)
+                        for k in range(0, 7):
+                            asm = AssemblyInstruction(addr=None, instr='nop', arg=f'')
+                            mtbar_patch = add_instruction_ARM(asm, cfg, mtbar_patch, pg)
                         asm = AssemblyInstruction(addr=None, instr=prev_instr.instr, arg=f'{prev_instr.arg}')
                         mtbar_patch = add_instruction_ARM(asm, cfg, mtbar_patch, pg)
                         asm = AssemblyInstruction(addr=None, instr=instr.instr, arg=f'{instr.arg}')
@@ -222,7 +231,7 @@ def instrument(cfg, asm_funcs):
     # a = input()
     print()
     
-    bash_cmd = "arm-none-eabi-objdump -d ./instrumented.axf > ./instrumented.lst"
+    bash_cmd = "arm-none-eabi-objdump.exe -d ./instrumented.axf > ./instrumented.lst"
     os.system(bash_cmd)
 
 def main():

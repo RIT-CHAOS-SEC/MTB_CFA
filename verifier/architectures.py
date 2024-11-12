@@ -30,7 +30,7 @@ class ARMv8M33:
         self.instrumentation_handle   = "SECURE_log"
         self.text_base = "0x200000"
         self.patch_base = "0x380000"
-        self.trampoline_region = "0x300088"
+        self.trampoline_region = "0x300a00"
         self.write_instrs    = ['ldr', 'mov', 'movs']
         self.indr_tgt_reg    = 'sl'
         self.regular_instr_size = 2

@@ -14,8 +14,8 @@ grep "word" ${input_file} > .words.tmp
 	sed 's/:/,/g' .words.tmp2 > ./objs/.words
 
 
-echo "arm-none-eabi-objdump -d" ${input_elf} ">" ${input_file}
-arm-none-eabi-objdump -d ${input_elf} > ${input_file}
+# echo "${OBJDUMP} -d" ${input_elf} ">" ${input_file}
+$OBJDUMP -d ${input_elf} > ${input_file}
 
 cp ${input_elf} instrumented.axf
 
