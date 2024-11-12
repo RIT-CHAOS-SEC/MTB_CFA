@@ -976,7 +976,7 @@ adj_instr: None
 -------------------
 __Vectors : 0x200000
 __main : 0x200400
-__scatterload_rt2 : 0x200408
+__scatterload : 0x200408
 __scatterload_loop : 0x200412
 __scatterload_copy : 0x200464
 __scatterload_null : 0x200480
@@ -994,8 +994,8 @@ __rt_exit : 0x2004c0
 __rt_exit_ls : 0x2004c2
 __rt_exit_exit : 0x2004c6
 exit : 0x2004cc
-__use_no_semihosting_swi : 0x2004de
-_sys_exit : 0x2004e0
+__I$use$semihosting : 0x2004de
+__semihosting_library_function : 0x2004e0
 Default_Handler : 0x2004ec
 HardFault_Handler : 0x2004f0
 LED_Off : 0x2004f4
