@@ -2,9 +2,8 @@
 #include "..\IOTKit_CM33_s\Secure_Functions.h"
 #include <stdint.h>
 
-#define MTBAR __attribute__((section(".MTBAR_MEM")))
-#define MTBDR __attribute__((section(".MTBDR_MEM")))
-#define REGION_TEMP MTBAR
+
+#define REGION_TEMP MTBDR
 
 
 
@@ -1544,5 +1543,5 @@ MTBDR void application_entry()
 
 
 
-MTBDR_NAKED_USED void trampoline_mtbdr(){_NOPES;}
+MTBTMP_NAKED_USED void trampoline_mtbdr(){_NOPES;}
 

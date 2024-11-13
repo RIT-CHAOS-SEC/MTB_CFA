@@ -1537,127 +1537,127 @@ Image Symbol Table
     [Anonymous Symbol]                       0x10003c38   Section        0  mtb.o(.text.mtb_init)
     [Anonymous Symbol]                       0x10003c78   Section        0  mtb.o(.text.mtb_remove_debugMonitor)
     [Anonymous Symbol]                       0x10003c98   Section        0  mtb.o(.text.mtb_setup_DWT)
-    [Anonymous Symbol]                       0x10003df0   Section        0  mtb.o(.text.mtb_setup_MTB)
-    spi_tran                                 0x10003e45   Thumb Code    58  glcd_v2m-mps2.o(.text.spi_tran)
-    [Anonymous Symbol]                       0x10003e44   Section        0  glcd_v2m-mps2.o(.text.spi_tran)
-    [Anonymous Symbol]                       0x10003e80   Section        0  stdout_usart.o(.text.stdout_init)
-    [Anonymous Symbol]                       0x10003f10   Section        0  stdout_usart.o(.text.stdout_putchar)
-    [Anonymous Symbol]                       0x10003f5c   Section        0  mtb.o(.text.vMTB_sendBuffer)
-    wr_cmd                                   0x10003ffd   Thumb Code    60  glcd_v2m-mps2.o(.text.wr_cmd)
-    [Anonymous Symbol]                       0x10003ffc   Section        0  glcd_v2m-mps2.o(.text.wr_cmd)
-    wr_dat                                   0x10004039   Thumb Code    62  glcd_v2m-mps2.o(.text.wr_dat)
-    [Anonymous Symbol]                       0x10004038   Section        0  glcd_v2m-mps2.o(.text.wr_dat)
-    wr_dat_only                              0x10004079   Thumb Code    28  glcd_v2m-mps2.o(.text.wr_dat_only)
-    [Anonymous Symbol]                       0x10004078   Section        0  glcd_v2m-mps2.o(.text.wr_dat_only)
-    wr_dat_start                             0x10004095   Thumb Code    26  glcd_v2m-mps2.o(.text.wr_dat_start)
-    [Anonymous Symbol]                       0x10004094   Section        0  glcd_v2m-mps2.o(.text.wr_dat_start)
-    wr_dat_stop                              0x100040b1   Thumb Code    18  glcd_v2m-mps2.o(.text.wr_dat_stop)
-    [Anonymous Symbol]                       0x100040b0   Section        0  glcd_v2m-mps2.o(.text.wr_dat_stop)
-    wr_reg                                   0x100040c5   Thumb Code    32  glcd_v2m-mps2.o(.text.wr_reg)
-    [Anonymous Symbol]                       0x100040c4   Section        0  glcd_v2m-mps2.o(.text.wr_reg)
-    CL$$btod_d2e                             0x100040e4   Section       62  btod.o(CL$$btod_d2e)
-    CL$$btod_d2e_denorm_low                  0x10004122   Section       70  btod.o(CL$$btod_d2e_denorm_low)
-    CL$$btod_d2e_norm_op1                    0x10004168   Section       96  btod.o(CL$$btod_d2e_norm_op1)
-    CL$$btod_div_common                      0x100041c8   Section      824  btod.o(CL$$btod_div_common)
-    CL$$btod_e2e                             0x10004500   Section      220  btod.o(CL$$btod_e2e)
-    CL$$btod_ediv                            0x100045dc   Section       42  btod.o(CL$$btod_ediv)
-    CL$$btod_emul                            0x10004606   Section       42  btod.o(CL$$btod_emul)
-    CL$$btod_mult_common                     0x10004630   Section      580  btod.o(CL$$btod_mult_common)
-    i.__ARM_fpclassify                       0x10004874   Section        0  fpclassify.o(i.__ARM_fpclassify)
-    i._is_digit                              0x100048a4   Section        0  __printf_wp.o(i._is_digit)
-    i.fputc                                  0x100048b2   Section        0  fputc.o(i.fputc)
-    locale$$code                             0x100048d0   Section       44  lc_numeric_c.o(locale$$code)
-    locale$$code                             0x100048fc   Section       44  lc_ctype_c.o(locale$$code)
-    $v0                                      0x10004928   Number         0  fpinit.o(x$fpl$fpinit)
-    x$fpl$fpinit                             0x10004928   Section       26  fpinit.o(x$fpl$fpinit)
-    $v0                                      0x10004942   Number         0  printf1.o(x$fpl$printf1)
-    x$fpl$printf1                            0x10004942   Section        4  printf1.o(x$fpl$printf1)
-    $v0                                      0x10004946   Number         0  printf2.o(x$fpl$printf2)
-    x$fpl$printf2                            0x10004946   Section        4  printf2.o(x$fpl$printf2)
-    x$fpl$usenofp                            0x1000494a   Section        0  usenofp.o(x$fpl$usenofp)
-    initial_mbstate                          0x1000494c   Data           8  _printf_wctomb.o(.constdata)
-    .constdata                               0x1000494c   Section        8  _printf_wctomb.o(.constdata)
-    uc_hextab                                0x10004954   Data          20  _printf_hex_int_ll_ptr.o(.constdata)
-    .constdata                               0x10004954   Section       40  _printf_hex_int_ll_ptr.o(.constdata)
-    lc_hextab                                0x10004968   Data          20  _printf_hex_int_ll_ptr.o(.constdata)
-    maptable                                 0x1000497c   Data          17  __printf_flags_ss_wp.o(.constdata)
-    .constdata                               0x1000497c   Section       17  __printf_flags_ss_wp.o(.constdata)
-    lc_hextab                                0x1000498d   Data          19  _printf_fp_hex.o(.constdata)
-    .constdata                               0x1000498d   Section       38  _printf_fp_hex.o(.constdata)
-    uc_hextab                                0x100049a0   Data          19  _printf_fp_hex.o(.constdata)
-    tenpwrs_x                                0x100049b4   Data          60  bigflt0.o(.constdata)
-    .constdata                               0x100049b4   Section      148  bigflt0.o(.constdata)
-    tenpwrs_i                                0x100049f0   Data          64  bigflt0.o(.constdata)
-    Font_16x24_h                             0x10004a80   Data        5376  glcd_fonts.o(.rodata.Font_16x24_h)
-    [Anonymous Symbol]                       0x10004a80   Section        0  glcd_fonts.o(.rodata.Font_16x24_h)
-    USART0_Resources                         0x10005f90   Data          28  usart_v2m-mps2.o(.rodata.USART0_Resources)
-    [Anonymous Symbol]                       0x10005f90   Section        0  usart_v2m-mps2.o(.rodata.USART0_Resources)
-    .L.str.3                                 0x10005fc3   Data          21  main_s.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x10005fc3   Section        0  main_s.o(.rodata.str1.1)
-    .L.str.4                                 0x10005fd8   Data          21  main_s.o(.rodata.str1.1)
-    .L.str.2                                 0x10005fed   Data          21  main_s.o(.rodata.str1.1)
-    .L.str                                   0x10006002   Data          21  main_s.o(.rodata.str1.1)
-    .L.str.5                                 0x10006017   Data          21  main_s.o(.rodata.str1.1)
-    .L.str.1                                 0x1000602c   Data          21  main_s.o(.rodata.str1.1)
-    .L.str.8                                 0x10006041   Data          22  mtb.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x10006041   Section        0  mtb.o(.rodata.str1.1)
-    .L.str.9                                 0x10006057   Data          22  mtb.o(.rodata.str1.1)
-    .L.str.3                                 0x1000606d   Data          24  mtb.o(.rodata.str1.1)
-    .L.str.4                                 0x10006081   Data           4  mtb.o(.rodata.str1.1)
-    .L.str.2                                 0x10006085   Data          26  mtb.o(.rodata.str1.1)
-    .L.str.7                                 0x1000609f   Data          29  mtb.o(.rodata.str1.1)
-    .L.str.10                                0x100060bc   Data          37  mtb.o(.rodata.str1.1)
-    .L.str.11                                0x100060e1   Data          36  mtb.o(.rodata.str1.1)
-    .L.str.19                                0x10006105   Data          36  mtb.o(.rodata.str1.1)
-    .L.str.6                                 0x10006129   Data          24  mtb.o(.rodata.str1.1)
-    .L.str.24                                0x10006141   Data          26  mtb.o(.rodata.str1.1)
-    .L.str.20                                0x1000615b   Data          22  mtb.o(.rodata.str1.1)
-    .L.str.25                                0x10006171   Data          26  mtb.o(.rodata.str1.1)
-    .L.str.21                                0x1000618b   Data          22  mtb.o(.rodata.str1.1)
-    .L.str.26                                0x100061a1   Data          26  mtb.o(.rodata.str1.1)
-    .L.str.22                                0x100061bb   Data          22  mtb.o(.rodata.str1.1)
-    .L.str.27                                0x100061d1   Data          26  mtb.o(.rodata.str1.1)
-    .L.str.23                                0x100061eb   Data          22  mtb.o(.rodata.str1.1)
-    .L.str.18                                0x10006201   Data          23  mtb.o(.rodata.str1.1)
-    .L.str.12                                0x10006218   Data          21  mtb.o(.rodata.str1.1)
-    .L.str.13                                0x1000622d   Data          25  mtb.o(.rodata.str1.1)
-    .L.str.17                                0x10006246   Data          22  mtb.o(.rodata.str1.1)
-    .L.str.1                                 0x1000625c   Data          30  mtb.o(.rodata.str1.1)
-    .L.str.14                                0x1000627a   Data          23  mtb.o(.rodata.str1.1)
-    .L.str                                   0x10006291   Data          30  mtb.o(.rodata.str1.1)
-    .L.str.16                                0x100062af   Data          23  mtb.o(.rodata.str1.1)
-    .L.str.15                                0x100062c6   Data          21  mtb.o(.rodata.str1.1)
-    .L.str.5                                 0x100062db   Data           4  mtb.o(.rodata.str1.1)
-    .L.str.2                                 0x100062df   Data          32  secure_functions.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x100062df   Section        0  secure_functions.o(.rodata.str1.1)
-    .L.str.3                                 0x100062ff   Data          39  secure_functions.o(.rodata.str1.1)
-    .L.str.1                                 0x10006326   Data          36  secure_functions.o(.rodata.str1.1)
-    .L.str                                   0x1000634a   Data          40  secure_functions.o(.rodata.str1.1)
-    .L.str.4                                 0x10006372   Data          26  secure_functions.o(.rodata.str1.1)
-    .L.str.5                                 0x1000638c   Data           3  secure_functions.o(.rodata.str1.1)
-    .L.str                                   0x1000638f   Data          26  cfa.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x1000638f   Section        0  cfa.o(.rodata.str1.1)
-    .L.str.2                                 0x100063a9   Data          45  cfa.o(.rodata.str1.1)
-    .L.str.3                                 0x100063d6   Data          24  cfa.o(.rodata.str1.1)
-    .L.str.1                                 0x100063ee   Data          44  cfa.o(.rodata.str1.1)
-    .L.str                                   0x1000641a   Data           7  retarget_io.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x1000641a   Section        0  retarget_io.o(.rodata.str1.1)
-    .L.str.2                                 0x10006421   Data           8  retarget_io.o(.rodata.str1.1)
-    .L.str.1                                 0x10006429   Data           8  retarget_io.o(.rodata.str1.1)
-    .L.str                                   0x10006431   Data          18  startup_iotkit_cm33.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x10006431   Section        0  startup_iotkit_cm33.o(.rodata.str1.1)
-    .L.str.1                                 0x10006443   Data          29  startup_iotkit_cm33.o(.rodata.str1.1)
-    locale$$data                             0x10006480   Section       28  lc_numeric_c.o(locale$$data)
-    __lcnum_c_name                           0x10006484   Data           2  lc_numeric_c.o(locale$$data)
-    __lcnum_c_start                          0x1000648c   Data           0  lc_numeric_c.o(locale$$data)
-    __lcnum_c_point                          0x10006498   Data           0  lc_numeric_c.o(locale$$data)
-    __lcnum_c_thousands                      0x1000649a   Data           0  lc_numeric_c.o(locale$$data)
-    __lcnum_c_grouping                       0x1000649b   Data           0  lc_numeric_c.o(locale$$data)
-    __lcnum_c_end                            0x1000649c   Data           0  lc_numeric_c.o(locale$$data)
-    locale$$data                             0x1000649c   Section      272  lc_ctype_c.o(locale$$data)
-    __lcctype_c_name                         0x100064a0   Data           2  lc_ctype_c.o(locale$$data)
-    __lcctype_c_start                        0x100064a8   Data           0  lc_ctype_c.o(locale$$data)
-    __lcctype_c_end                          0x100065ac   Data           0  lc_ctype_c.o(locale$$data)
+    [Anonymous Symbol]                       0x10003de0   Section        0  mtb.o(.text.mtb_setup_MTB)
+    spi_tran                                 0x10003e35   Thumb Code    58  glcd_v2m-mps2.o(.text.spi_tran)
+    [Anonymous Symbol]                       0x10003e34   Section        0  glcd_v2m-mps2.o(.text.spi_tran)
+    [Anonymous Symbol]                       0x10003e70   Section        0  stdout_usart.o(.text.stdout_init)
+    [Anonymous Symbol]                       0x10003f00   Section        0  stdout_usart.o(.text.stdout_putchar)
+    [Anonymous Symbol]                       0x10003f4c   Section        0  mtb.o(.text.vMTB_sendBuffer)
+    wr_cmd                                   0x10003fed   Thumb Code    60  glcd_v2m-mps2.o(.text.wr_cmd)
+    [Anonymous Symbol]                       0x10003fec   Section        0  glcd_v2m-mps2.o(.text.wr_cmd)
+    wr_dat                                   0x10004029   Thumb Code    62  glcd_v2m-mps2.o(.text.wr_dat)
+    [Anonymous Symbol]                       0x10004028   Section        0  glcd_v2m-mps2.o(.text.wr_dat)
+    wr_dat_only                              0x10004069   Thumb Code    28  glcd_v2m-mps2.o(.text.wr_dat_only)
+    [Anonymous Symbol]                       0x10004068   Section        0  glcd_v2m-mps2.o(.text.wr_dat_only)
+    wr_dat_start                             0x10004085   Thumb Code    26  glcd_v2m-mps2.o(.text.wr_dat_start)
+    [Anonymous Symbol]                       0x10004084   Section        0  glcd_v2m-mps2.o(.text.wr_dat_start)
+    wr_dat_stop                              0x100040a1   Thumb Code    18  glcd_v2m-mps2.o(.text.wr_dat_stop)
+    [Anonymous Symbol]                       0x100040a0   Section        0  glcd_v2m-mps2.o(.text.wr_dat_stop)
+    wr_reg                                   0x100040b5   Thumb Code    32  glcd_v2m-mps2.o(.text.wr_reg)
+    [Anonymous Symbol]                       0x100040b4   Section        0  glcd_v2m-mps2.o(.text.wr_reg)
+    CL$$btod_d2e                             0x100040d4   Section       62  btod.o(CL$$btod_d2e)
+    CL$$btod_d2e_denorm_low                  0x10004112   Section       70  btod.o(CL$$btod_d2e_denorm_low)
+    CL$$btod_d2e_norm_op1                    0x10004158   Section       96  btod.o(CL$$btod_d2e_norm_op1)
+    CL$$btod_div_common                      0x100041b8   Section      824  btod.o(CL$$btod_div_common)
+    CL$$btod_e2e                             0x100044f0   Section      220  btod.o(CL$$btod_e2e)
+    CL$$btod_ediv                            0x100045cc   Section       42  btod.o(CL$$btod_ediv)
+    CL$$btod_emul                            0x100045f6   Section       42  btod.o(CL$$btod_emul)
+    CL$$btod_mult_common                     0x10004620   Section      580  btod.o(CL$$btod_mult_common)
+    i.__ARM_fpclassify                       0x10004864   Section        0  fpclassify.o(i.__ARM_fpclassify)
+    i._is_digit                              0x10004894   Section        0  __printf_wp.o(i._is_digit)
+    i.fputc                                  0x100048a2   Section        0  fputc.o(i.fputc)
+    locale$$code                             0x100048c0   Section       44  lc_numeric_c.o(locale$$code)
+    locale$$code                             0x100048ec   Section       44  lc_ctype_c.o(locale$$code)
+    $v0                                      0x10004918   Number         0  fpinit.o(x$fpl$fpinit)
+    x$fpl$fpinit                             0x10004918   Section       26  fpinit.o(x$fpl$fpinit)
+    $v0                                      0x10004932   Number         0  printf1.o(x$fpl$printf1)
+    x$fpl$printf1                            0x10004932   Section        4  printf1.o(x$fpl$printf1)
+    $v0                                      0x10004936   Number         0  printf2.o(x$fpl$printf2)
+    x$fpl$printf2                            0x10004936   Section        4  printf2.o(x$fpl$printf2)
+    x$fpl$usenofp                            0x1000493a   Section        0  usenofp.o(x$fpl$usenofp)
+    initial_mbstate                          0x1000493c   Data           8  _printf_wctomb.o(.constdata)
+    .constdata                               0x1000493c   Section        8  _printf_wctomb.o(.constdata)
+    uc_hextab                                0x10004944   Data          20  _printf_hex_int_ll_ptr.o(.constdata)
+    .constdata                               0x10004944   Section       40  _printf_hex_int_ll_ptr.o(.constdata)
+    lc_hextab                                0x10004958   Data          20  _printf_hex_int_ll_ptr.o(.constdata)
+    maptable                                 0x1000496c   Data          17  __printf_flags_ss_wp.o(.constdata)
+    .constdata                               0x1000496c   Section       17  __printf_flags_ss_wp.o(.constdata)
+    lc_hextab                                0x1000497d   Data          19  _printf_fp_hex.o(.constdata)
+    .constdata                               0x1000497d   Section       38  _printf_fp_hex.o(.constdata)
+    uc_hextab                                0x10004990   Data          19  _printf_fp_hex.o(.constdata)
+    tenpwrs_x                                0x100049a4   Data          60  bigflt0.o(.constdata)
+    .constdata                               0x100049a4   Section      148  bigflt0.o(.constdata)
+    tenpwrs_i                                0x100049e0   Data          64  bigflt0.o(.constdata)
+    Font_16x24_h                             0x10004a70   Data        5376  glcd_fonts.o(.rodata.Font_16x24_h)
+    [Anonymous Symbol]                       0x10004a70   Section        0  glcd_fonts.o(.rodata.Font_16x24_h)
+    USART0_Resources                         0x10005f80   Data          28  usart_v2m-mps2.o(.rodata.USART0_Resources)
+    [Anonymous Symbol]                       0x10005f80   Section        0  usart_v2m-mps2.o(.rodata.USART0_Resources)
+    .L.str.3                                 0x10005fb3   Data          21  main_s.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x10005fb3   Section        0  main_s.o(.rodata.str1.1)
+    .L.str.4                                 0x10005fc8   Data          21  main_s.o(.rodata.str1.1)
+    .L.str.2                                 0x10005fdd   Data          21  main_s.o(.rodata.str1.1)
+    .L.str                                   0x10005ff2   Data          21  main_s.o(.rodata.str1.1)
+    .L.str.5                                 0x10006007   Data          21  main_s.o(.rodata.str1.1)
+    .L.str.1                                 0x1000601c   Data          21  main_s.o(.rodata.str1.1)
+    .L.str.8                                 0x10006031   Data          22  mtb.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x10006031   Section        0  mtb.o(.rodata.str1.1)
+    .L.str.9                                 0x10006047   Data          22  mtb.o(.rodata.str1.1)
+    .L.str.3                                 0x1000605d   Data          24  mtb.o(.rodata.str1.1)
+    .L.str.4                                 0x10006071   Data           4  mtb.o(.rodata.str1.1)
+    .L.str.2                                 0x10006075   Data          26  mtb.o(.rodata.str1.1)
+    .L.str.7                                 0x1000608f   Data          29  mtb.o(.rodata.str1.1)
+    .L.str.10                                0x100060ac   Data          37  mtb.o(.rodata.str1.1)
+    .L.str.11                                0x100060d1   Data          36  mtb.o(.rodata.str1.1)
+    .L.str.19                                0x100060f5   Data          36  mtb.o(.rodata.str1.1)
+    .L.str.6                                 0x10006119   Data          24  mtb.o(.rodata.str1.1)
+    .L.str.24                                0x10006131   Data          26  mtb.o(.rodata.str1.1)
+    .L.str.20                                0x1000614b   Data          22  mtb.o(.rodata.str1.1)
+    .L.str.25                                0x10006161   Data          26  mtb.o(.rodata.str1.1)
+    .L.str.21                                0x1000617b   Data          22  mtb.o(.rodata.str1.1)
+    .L.str.26                                0x10006191   Data          26  mtb.o(.rodata.str1.1)
+    .L.str.22                                0x100061ab   Data          22  mtb.o(.rodata.str1.1)
+    .L.str.27                                0x100061c1   Data          26  mtb.o(.rodata.str1.1)
+    .L.str.23                                0x100061db   Data          22  mtb.o(.rodata.str1.1)
+    .L.str.18                                0x100061f1   Data          23  mtb.o(.rodata.str1.1)
+    .L.str.12                                0x10006208   Data          21  mtb.o(.rodata.str1.1)
+    .L.str.13                                0x1000621d   Data          25  mtb.o(.rodata.str1.1)
+    .L.str.17                                0x10006236   Data          22  mtb.o(.rodata.str1.1)
+    .L.str.1                                 0x1000624c   Data          30  mtb.o(.rodata.str1.1)
+    .L.str.14                                0x1000626a   Data          23  mtb.o(.rodata.str1.1)
+    .L.str                                   0x10006281   Data          30  mtb.o(.rodata.str1.1)
+    .L.str.16                                0x1000629f   Data          23  mtb.o(.rodata.str1.1)
+    .L.str.15                                0x100062b6   Data          21  mtb.o(.rodata.str1.1)
+    .L.str.5                                 0x100062cb   Data           4  mtb.o(.rodata.str1.1)
+    .L.str.2                                 0x100062cf   Data          32  secure_functions.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x100062cf   Section        0  secure_functions.o(.rodata.str1.1)
+    .L.str.3                                 0x100062ef   Data          39  secure_functions.o(.rodata.str1.1)
+    .L.str.1                                 0x10006316   Data          36  secure_functions.o(.rodata.str1.1)
+    .L.str                                   0x1000633a   Data          40  secure_functions.o(.rodata.str1.1)
+    .L.str.4                                 0x10006362   Data          26  secure_functions.o(.rodata.str1.1)
+    .L.str.5                                 0x1000637c   Data           3  secure_functions.o(.rodata.str1.1)
+    .L.str                                   0x1000637f   Data          26  cfa.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x1000637f   Section        0  cfa.o(.rodata.str1.1)
+    .L.str.2                                 0x10006399   Data          45  cfa.o(.rodata.str1.1)
+    .L.str.3                                 0x100063c6   Data          24  cfa.o(.rodata.str1.1)
+    .L.str.1                                 0x100063de   Data          44  cfa.o(.rodata.str1.1)
+    .L.str                                   0x1000640a   Data           7  retarget_io.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x1000640a   Section        0  retarget_io.o(.rodata.str1.1)
+    .L.str.2                                 0x10006411   Data           8  retarget_io.o(.rodata.str1.1)
+    .L.str.1                                 0x10006419   Data           8  retarget_io.o(.rodata.str1.1)
+    .L.str                                   0x10006421   Data          18  startup_iotkit_cm33.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x10006421   Section        0  startup_iotkit_cm33.o(.rodata.str1.1)
+    .L.str.1                                 0x10006433   Data          29  startup_iotkit_cm33.o(.rodata.str1.1)
+    locale$$data                             0x10006470   Section       28  lc_numeric_c.o(locale$$data)
+    __lcnum_c_name                           0x10006474   Data           2  lc_numeric_c.o(locale$$data)
+    __lcnum_c_start                          0x1000647c   Data           0  lc_numeric_c.o(locale$$data)
+    __lcnum_c_point                          0x10006488   Data           0  lc_numeric_c.o(locale$$data)
+    __lcnum_c_thousands                      0x1000648a   Data           0  lc_numeric_c.o(locale$$data)
+    __lcnum_c_grouping                       0x1000648b   Data           0  lc_numeric_c.o(locale$$data)
+    __lcnum_c_end                            0x1000648c   Data           0  lc_numeric_c.o(locale$$data)
+    locale$$data                             0x1000648c   Section      272  lc_ctype_c.o(locale$$data)
+    __lcctype_c_name                         0x10006490   Data           2  lc_ctype_c.o(locale$$data)
+    __lcctype_c_start                        0x10006498   Data           0  lc_ctype_c.o(locale$$data)
+    __lcctype_c_end                          0x1000659c   Data           0  lc_ctype_c.o(locale$$data)
     .data                                    0x38000000   Section        4  stdio_streams.o(.data)
     .data                                    0x38000004   Section        4  stdio_streams.o(.data)
     .data                                    0x38000008   Section        4  stdio_streams.o(.data)
@@ -2044,38 +2044,38 @@ Image Symbol Table
     mtb_exit                                 0x10003bd9   Thumb Code    96  mtb.o(.text.mtb_exit)
     mtb_init                                 0x10003c39   Thumb Code    64  mtb.o(.text.mtb_init)
     mtb_remove_debugMonitor                  0x10003c79   Thumb Code    32  mtb.o(.text.mtb_remove_debugMonitor)
-    mtb_setup_DWT                            0x10003c99   Thumb Code   342  mtb.o(.text.mtb_setup_DWT)
-    mtb_setup_MTB                            0x10003df1   Thumb Code    82  mtb.o(.text.mtb_setup_MTB)
-    stdout_init                              0x10003e81   Thumb Code   142  stdout_usart.o(.text.stdout_init)
-    stdout_putchar                           0x10003f11   Thumb Code    76  stdout_usart.o(.text.stdout_putchar)
-    vMTB_sendBuffer                          0x10003f5d   Thumb Code   158  mtb.o(.text.vMTB_sendBuffer)
-    _btod_d2e                                0x100040e5   Thumb Code    62  btod.o(CL$$btod_d2e)
-    _d2e_denorm_low                          0x10004123   Thumb Code    70  btod.o(CL$$btod_d2e_denorm_low)
-    _d2e_norm_op1                            0x10004169   Thumb Code    96  btod.o(CL$$btod_d2e_norm_op1)
-    __btod_div_common                        0x100041c9   Thumb Code   696  btod.o(CL$$btod_div_common)
-    _e2e                                     0x10004501   Thumb Code   220  btod.o(CL$$btod_e2e)
-    _btod_ediv                               0x100045dd   Thumb Code    42  btod.o(CL$$btod_ediv)
-    _btod_emul                               0x10004607   Thumb Code    42  btod.o(CL$$btod_emul)
-    __btod_mult_common                       0x10004631   Thumb Code   580  btod.o(CL$$btod_mult_common)
-    __ARM_fpclassify                         0x10004875   Thumb Code    48  fpclassify.o(i.__ARM_fpclassify)
-    _is_digit                                0x100048a5   Thumb Code    14  __printf_wp.o(i._is_digit)
-    fputc                                    0x100048b3   Thumb Code    28  fputc.o(i.fputc)
-    _get_lc_numeric                          0x100048d1   Thumb Code    44  lc_numeric_c.o(locale$$code)
-    _get_lc_ctype                            0x100048fd   Thumb Code    44  lc_ctype_c.o(locale$$code)
-    _fp_init                                 0x10004929   Thumb Code    26  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x10004941   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x10004941   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    _printf_fp_dec                           0x10004943   Thumb Code     4  printf1.o(x$fpl$printf1)
-    _printf_fp_hex                           0x10004947   Thumb Code     4  printf2.o(x$fpl$printf2)
-    __I$use$fp                               0x1000494a   Number         0  usenofp.o(x$fpl$usenofp)
-    Driver_USART0                            0x10004a48   Data          56  usart_v2m-mps2.o(.rodata.Driver_USART0)
-    GLCD_Font_16x24                          0x10005f80   Data          16  glcd_fonts.o(.rodata.GLCD_Font_16x24)
-    __stderr_name                            0x10005fac   Data           8  retarget_io.o(.rodata.__stderr_name)
-    __stdin_name                             0x10005fb4   Data           7  retarget_io.o(.rodata.__stdin_name)
-    __stdout_name                            0x10005fbb   Data           8  retarget_io.o(.rodata.__stdout_name)
-    Region$$Table$$Base                      0x10006460   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x10006480   Number         0  anon$$obj.o(Region$$Table)
-    __ctype                                  0x100064a9   Data           0  lc_ctype_c.o(locale$$data)
+    mtb_setup_DWT                            0x10003c99   Thumb Code   326  mtb.o(.text.mtb_setup_DWT)
+    mtb_setup_MTB                            0x10003de1   Thumb Code    82  mtb.o(.text.mtb_setup_MTB)
+    stdout_init                              0x10003e71   Thumb Code   142  stdout_usart.o(.text.stdout_init)
+    stdout_putchar                           0x10003f01   Thumb Code    76  stdout_usart.o(.text.stdout_putchar)
+    vMTB_sendBuffer                          0x10003f4d   Thumb Code   158  mtb.o(.text.vMTB_sendBuffer)
+    _btod_d2e                                0x100040d5   Thumb Code    62  btod.o(CL$$btod_d2e)
+    _d2e_denorm_low                          0x10004113   Thumb Code    70  btod.o(CL$$btod_d2e_denorm_low)
+    _d2e_norm_op1                            0x10004159   Thumb Code    96  btod.o(CL$$btod_d2e_norm_op1)
+    __btod_div_common                        0x100041b9   Thumb Code   696  btod.o(CL$$btod_div_common)
+    _e2e                                     0x100044f1   Thumb Code   220  btod.o(CL$$btod_e2e)
+    _btod_ediv                               0x100045cd   Thumb Code    42  btod.o(CL$$btod_ediv)
+    _btod_emul                               0x100045f7   Thumb Code    42  btod.o(CL$$btod_emul)
+    __btod_mult_common                       0x10004621   Thumb Code   580  btod.o(CL$$btod_mult_common)
+    __ARM_fpclassify                         0x10004865   Thumb Code    48  fpclassify.o(i.__ARM_fpclassify)
+    _is_digit                                0x10004895   Thumb Code    14  __printf_wp.o(i._is_digit)
+    fputc                                    0x100048a3   Thumb Code    28  fputc.o(i.fputc)
+    _get_lc_numeric                          0x100048c1   Thumb Code    44  lc_numeric_c.o(locale$$code)
+    _get_lc_ctype                            0x100048ed   Thumb Code    44  lc_ctype_c.o(locale$$code)
+    _fp_init                                 0x10004919   Thumb Code    26  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x10004931   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x10004931   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    _printf_fp_dec                           0x10004933   Thumb Code     4  printf1.o(x$fpl$printf1)
+    _printf_fp_hex                           0x10004937   Thumb Code     4  printf2.o(x$fpl$printf2)
+    __I$use$fp                               0x1000493a   Number         0  usenofp.o(x$fpl$usenofp)
+    Driver_USART0                            0x10004a38   Data          56  usart_v2m-mps2.o(.rodata.Driver_USART0)
+    GLCD_Font_16x24                          0x10005f70   Data          16  glcd_fonts.o(.rodata.GLCD_Font_16x24)
+    __stderr_name                            0x10005f9c   Data           8  retarget_io.o(.rodata.__stderr_name)
+    __stdin_name                             0x10005fa4   Data           7  retarget_io.o(.rodata.__stdin_name)
+    __stdout_name                            0x10005fab   Data           8  retarget_io.o(.rodata.__stdout_name)
+    Region$$Table$$Base                      0x10006450   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x10006470   Number         0  anon$$obj.o(Region$$Table)
+    __ctype                                  0x10006499   Data           0  lc_ctype_c.o(locale$$data)
     SECURE_NOPE                              0x101ffe01   Thumb Code     8  anon$$obj.o(Veneer$$CMSE)
     SECURE_register_callback                 0x101ffe09   Thumb Code     8  anon$$obj.o(Veneer$$CMSE)
     SECURE_start_cfa                         0x101ffe11   Thumb Code     8  anon$$obj.o(Veneer$$CMSE)
@@ -2118,9 +2118,9 @@ Memory Map of the image
 
   Image Entry point : 0x10000401
 
-  Load Region LR_ROM (Base: 0x10000000, Size: 0x000065e4, Max: 0x001ffe00, ABSOLUTE)
+  Load Region LR_ROM (Base: 0x10000000, Size: 0x000065d4, Max: 0x001ffe00, ABSOLUTE)
 
-    Execution Region ER_ROM (Exec base: 0x10000000, Load base: 0x10000000, Size: 0x000065ac, Max: 0x001ffe00, ABSOLUTE)
+    Execution Region ER_ROM (Exec base: 0x10000000, Load base: 0x10000000, Size: 0x0000659c, Max: 0x001ffe00, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2381,86 +2381,86 @@ Memory Map of the image
     0x10003bd8   0x10003bd8   0x00000060   Code   RO           62    .text.mtb_exit      mtb.o
     0x10003c38   0x10003c38   0x00000040   Code   RO           60    .text.mtb_init      mtb.o
     0x10003c78   0x10003c78   0x00000020   Code   RO           52    .text.mtb_remove_debugMonitor  mtb.o
-    0x10003c98   0x10003c98   0x00000156   Code   RO           42    .text.mtb_setup_DWT  mtb.o
-    0x10003dee   0x10003dee   0x00000002   PAD
-    0x10003df0   0x10003df0   0x00000052   Code   RO           58    .text.mtb_setup_MTB  mtb.o
-    0x10003e42   0x10003e42   0x00000002   PAD
-    0x10003e44   0x10003e44   0x0000003a   Code   RO          202    .text.spi_tran      glcd_v2m-mps2.o
-    0x10003e7e   0x10003e7e   0x00000002   PAD
-    0x10003e80   0x10003e80   0x0000008e   Code   RO           29    .text.stdout_init   stdout_usart.o
-    0x10003f0e   0x10003f0e   0x00000002   PAD
-    0x10003f10   0x10003f10   0x0000004c   Code   RO           31    .text.stdout_putchar  stdout_usart.o
-    0x10003f5c   0x10003f5c   0x0000009e   Code   RO           46    .text.vMTB_sendBuffer  mtb.o
-    0x10003ffa   0x10003ffa   0x00000002   PAD
-    0x10003ffc   0x10003ffc   0x0000003c   Code   RO          168    .text.wr_cmd        glcd_v2m-mps2.o
-    0x10004038   0x10004038   0x0000003e   Code   RO          180    .text.wr_dat        glcd_v2m-mps2.o
-    0x10004076   0x10004076   0x00000002   PAD
-    0x10004078   0x10004078   0x0000001c   Code   RO          172    .text.wr_dat_only   glcd_v2m-mps2.o
-    0x10004094   0x10004094   0x0000001a   Code   RO          170    .text.wr_dat_start  glcd_v2m-mps2.o
-    0x100040ae   0x100040ae   0x00000002   PAD
-    0x100040b0   0x100040b0   0x00000012   Code   RO          174    .text.wr_dat_stop   glcd_v2m-mps2.o
-    0x100040c2   0x100040c2   0x00000002   PAD
-    0x100040c4   0x100040c4   0x00000020   Code   RO          156    .text.wr_reg        glcd_v2m-mps2.o
-    0x100040e4   0x100040e4   0x0000003e   Code   RO          615    CL$$btod_d2e        c_w.l(btod.o)
-    0x10004122   0x10004122   0x00000046   Code   RO          617    CL$$btod_d2e_denorm_low  c_w.l(btod.o)
-    0x10004168   0x10004168   0x00000060   Code   RO          616    CL$$btod_d2e_norm_op1  c_w.l(btod.o)
-    0x100041c8   0x100041c8   0x00000338   Code   RO          625    CL$$btod_div_common  c_w.l(btod.o)
-    0x10004500   0x10004500   0x000000dc   Code   RO          622    CL$$btod_e2e        c_w.l(btod.o)
-    0x100045dc   0x100045dc   0x0000002a   Code   RO          619    CL$$btod_ediv       c_w.l(btod.o)
-    0x10004606   0x10004606   0x0000002a   Code   RO          618    CL$$btod_emul       c_w.l(btod.o)
-    0x10004630   0x10004630   0x00000244   Code   RO          624    CL$$btod_mult_common  c_w.l(btod.o)
-    0x10004874   0x10004874   0x00000030   Code   RO          735    i.__ARM_fpclassify  m_wm.l(fpclassify.o)
-    0x100048a4   0x100048a4   0x0000000e   Code   RO          440    i._is_digit         c_w.l(__printf_wp.o)
-    0x100048b2   0x100048b2   0x0000001c   Code   RO          528    i.fputc             c_w.l(fputc.o)
-    0x100048ce   0x100048ce   0x00000002   PAD
-    0x100048d0   0x100048d0   0x0000002c   Code   RO          653    locale$$code        c_w.l(lc_numeric_c.o)
-    0x100048fc   0x100048fc   0x0000002c   Code   RO          786    locale$$code        c_w.l(lc_ctype_c.o)
-    0x10004928   0x10004928   0x0000001a   Code   RO          800    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x10004942   0x10004942   0x00000004   Code   RO          479    x$fpl$printf1       fz_wm.l(printf1.o)
-    0x10004946   0x10004946   0x00000004   Code   RO          481    x$fpl$printf2       fz_wm.l(printf2.o)
-    0x1000494a   0x1000494a   0x00000000   Code   RO          734    x$fpl$usenofp       fz_wm.l(usenofp.o)
-    0x1000494a   0x1000494a   0x00000002   PAD
-    0x1000494c   0x1000494c   0x00000008   Data   RO          398    .constdata          c_w.l(_printf_wctomb.o)
-    0x10004954   0x10004954   0x00000028   Data   RO          427    .constdata          c_w.l(_printf_hex_int_ll_ptr.o)
-    0x1000497c   0x1000497c   0x00000011   Data   RO          448    .constdata          c_w.l(__printf_flags_ss_wp.o)
-    0x1000498d   0x1000498d   0x00000026   Data   RO          516    .constdata          c_w.l(_printf_fp_hex.o)
-    0x100049b3   0x100049b3   0x00000001   PAD
-    0x100049b4   0x100049b4   0x00000094   Data   RO          613    .constdata          c_w.l(bigflt0.o)
-    0x10004a48   0x10004a48   0x00000038   Data   RO          301    .rodata.Driver_USART0  usart_v2m-mps2.o
-    0x10004a80   0x10004a80   0x00001500   Data   RO          145    .rodata.Font_16x24_h  glcd_fonts.o
-    0x10005f80   0x10005f80   0x00000010   Data   RO          146    .rodata.GLCD_Font_16x24  glcd_fonts.o
-    0x10005f90   0x10005f90   0x0000001c   Data   RO          306    .rodata.USART0_Resources  usart_v2m-mps2.o
-    0x10005fac   0x10005fac   0x00000008   Data   RO          331    .rodata.__stderr_name  retarget_io.o
-    0x10005fb4   0x10005fb4   0x00000007   Data   RO          329    .rodata.__stdin_name  retarget_io.o
-    0x10005fbb   0x10005fbb   0x00000008   Data   RO          330    .rodata.__stdout_name  retarget_io.o
-    0x10005fc3   0x10005fc3   0x0000007e   Data   RO           20    .rodata.str1.1      main_s.o
-    0x10006041   0x10006041   0x0000029e   Data   RO           73    .rodata.str1.1      mtb.o
-    0x100062df   0x100062df   0x000000b0   Data   RO          103    .rodata.str1.1      secure_functions.o
-    0x1000638f   0x1000638f   0x0000008b   Data   RO          131    .rodata.str1.1      cfa.o
-    0x1000641a   0x1000641a   0x00000017   Data   RO          332    .rodata.str1.1      retarget_io.o
-    0x10006431   0x10006431   0x0000002f   Data   RO          347    .rodata.str1.1      startup_iotkit_cm33.o
-    0x10006460   0x10006460   0x00000020   Data   RO          902    Region$$Table       anon$$obj.o
-    0x10006480   0x10006480   0x0000001c   Data   RO          652    locale$$data        c_w.l(lc_numeric_c.o)
-    0x1000649c   0x1000649c   0x00000110   Data   RO          785    locale$$data        c_w.l(lc_ctype_c.o)
+    0x10003c98   0x10003c98   0x00000146   Code   RO           42    .text.mtb_setup_DWT  mtb.o
+    0x10003dde   0x10003dde   0x00000002   PAD
+    0x10003de0   0x10003de0   0x00000052   Code   RO           58    .text.mtb_setup_MTB  mtb.o
+    0x10003e32   0x10003e32   0x00000002   PAD
+    0x10003e34   0x10003e34   0x0000003a   Code   RO          202    .text.spi_tran      glcd_v2m-mps2.o
+    0x10003e6e   0x10003e6e   0x00000002   PAD
+    0x10003e70   0x10003e70   0x0000008e   Code   RO           29    .text.stdout_init   stdout_usart.o
+    0x10003efe   0x10003efe   0x00000002   PAD
+    0x10003f00   0x10003f00   0x0000004c   Code   RO           31    .text.stdout_putchar  stdout_usart.o
+    0x10003f4c   0x10003f4c   0x0000009e   Code   RO           46    .text.vMTB_sendBuffer  mtb.o
+    0x10003fea   0x10003fea   0x00000002   PAD
+    0x10003fec   0x10003fec   0x0000003c   Code   RO          168    .text.wr_cmd        glcd_v2m-mps2.o
+    0x10004028   0x10004028   0x0000003e   Code   RO          180    .text.wr_dat        glcd_v2m-mps2.o
+    0x10004066   0x10004066   0x00000002   PAD
+    0x10004068   0x10004068   0x0000001c   Code   RO          172    .text.wr_dat_only   glcd_v2m-mps2.o
+    0x10004084   0x10004084   0x0000001a   Code   RO          170    .text.wr_dat_start  glcd_v2m-mps2.o
+    0x1000409e   0x1000409e   0x00000002   PAD
+    0x100040a0   0x100040a0   0x00000012   Code   RO          174    .text.wr_dat_stop   glcd_v2m-mps2.o
+    0x100040b2   0x100040b2   0x00000002   PAD
+    0x100040b4   0x100040b4   0x00000020   Code   RO          156    .text.wr_reg        glcd_v2m-mps2.o
+    0x100040d4   0x100040d4   0x0000003e   Code   RO          615    CL$$btod_d2e        c_w.l(btod.o)
+    0x10004112   0x10004112   0x00000046   Code   RO          617    CL$$btod_d2e_denorm_low  c_w.l(btod.o)
+    0x10004158   0x10004158   0x00000060   Code   RO          616    CL$$btod_d2e_norm_op1  c_w.l(btod.o)
+    0x100041b8   0x100041b8   0x00000338   Code   RO          625    CL$$btod_div_common  c_w.l(btod.o)
+    0x100044f0   0x100044f0   0x000000dc   Code   RO          622    CL$$btod_e2e        c_w.l(btod.o)
+    0x100045cc   0x100045cc   0x0000002a   Code   RO          619    CL$$btod_ediv       c_w.l(btod.o)
+    0x100045f6   0x100045f6   0x0000002a   Code   RO          618    CL$$btod_emul       c_w.l(btod.o)
+    0x10004620   0x10004620   0x00000244   Code   RO          624    CL$$btod_mult_common  c_w.l(btod.o)
+    0x10004864   0x10004864   0x00000030   Code   RO          735    i.__ARM_fpclassify  m_wm.l(fpclassify.o)
+    0x10004894   0x10004894   0x0000000e   Code   RO          440    i._is_digit         c_w.l(__printf_wp.o)
+    0x100048a2   0x100048a2   0x0000001c   Code   RO          528    i.fputc             c_w.l(fputc.o)
+    0x100048be   0x100048be   0x00000002   PAD
+    0x100048c0   0x100048c0   0x0000002c   Code   RO          653    locale$$code        c_w.l(lc_numeric_c.o)
+    0x100048ec   0x100048ec   0x0000002c   Code   RO          786    locale$$code        c_w.l(lc_ctype_c.o)
+    0x10004918   0x10004918   0x0000001a   Code   RO          800    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x10004932   0x10004932   0x00000004   Code   RO          479    x$fpl$printf1       fz_wm.l(printf1.o)
+    0x10004936   0x10004936   0x00000004   Code   RO          481    x$fpl$printf2       fz_wm.l(printf2.o)
+    0x1000493a   0x1000493a   0x00000000   Code   RO          734    x$fpl$usenofp       fz_wm.l(usenofp.o)
+    0x1000493a   0x1000493a   0x00000002   PAD
+    0x1000493c   0x1000493c   0x00000008   Data   RO          398    .constdata          c_w.l(_printf_wctomb.o)
+    0x10004944   0x10004944   0x00000028   Data   RO          427    .constdata          c_w.l(_printf_hex_int_ll_ptr.o)
+    0x1000496c   0x1000496c   0x00000011   Data   RO          448    .constdata          c_w.l(__printf_flags_ss_wp.o)
+    0x1000497d   0x1000497d   0x00000026   Data   RO          516    .constdata          c_w.l(_printf_fp_hex.o)
+    0x100049a3   0x100049a3   0x00000001   PAD
+    0x100049a4   0x100049a4   0x00000094   Data   RO          613    .constdata          c_w.l(bigflt0.o)
+    0x10004a38   0x10004a38   0x00000038   Data   RO          301    .rodata.Driver_USART0  usart_v2m-mps2.o
+    0x10004a70   0x10004a70   0x00001500   Data   RO          145    .rodata.Font_16x24_h  glcd_fonts.o
+    0x10005f70   0x10005f70   0x00000010   Data   RO          146    .rodata.GLCD_Font_16x24  glcd_fonts.o
+    0x10005f80   0x10005f80   0x0000001c   Data   RO          306    .rodata.USART0_Resources  usart_v2m-mps2.o
+    0x10005f9c   0x10005f9c   0x00000008   Data   RO          331    .rodata.__stderr_name  retarget_io.o
+    0x10005fa4   0x10005fa4   0x00000007   Data   RO          329    .rodata.__stdin_name  retarget_io.o
+    0x10005fab   0x10005fab   0x00000008   Data   RO          330    .rodata.__stdout_name  retarget_io.o
+    0x10005fb3   0x10005fb3   0x0000007e   Data   RO           20    .rodata.str1.1      main_s.o
+    0x10006031   0x10006031   0x0000029e   Data   RO           73    .rodata.str1.1      mtb.o
+    0x100062cf   0x100062cf   0x000000b0   Data   RO          103    .rodata.str1.1      secure_functions.o
+    0x1000637f   0x1000637f   0x0000008b   Data   RO          131    .rodata.str1.1      cfa.o
+    0x1000640a   0x1000640a   0x00000017   Data   RO          332    .rodata.str1.1      retarget_io.o
+    0x10006421   0x10006421   0x0000002f   Data   RO          347    .rodata.str1.1      startup_iotkit_cm33.o
+    0x10006450   0x10006450   0x00000020   Data   RO          902    Region$$Table       anon$$obj.o
+    0x10006470   0x10006470   0x0000001c   Data   RO          652    locale$$data        c_w.l(lc_numeric_c.o)
+    0x1000648c   0x1000648c   0x00000110   Data   RO          785    locale$$data        c_w.l(lc_ctype_c.o)
 
 
-    Execution Region RW_RAM (Exec base: 0x38000000, Load base: 0x100065ac, Size: 0x00000a3c, Max: 0x001ff000, ABSOLUTE)
+    Execution Region RW_RAM (Exec base: 0x38000000, Load base: 0x1000659c, Size: 0x00000a3c, Max: 0x001ff000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x38000000   0x100065ac   0x00000004   Data   RW          476    .data               c_w.l(stdio_streams.o)
-    0x38000004   0x100065b0   0x00000004   Data   RW          477    .data               c_w.l(stdio_streams.o)
-    0x38000008   0x100065b4   0x00000004   Data   RW          478    .data               c_w.l(stdio_streams.o)
-    0x3800000c   0x100065b8   0x00000004   Data   RW           70    .data.CoreDebug_    mtb.o
-    0x38000010   0x100065bc   0x00000004   Data   RW           71    .data.DWT_          mtb.o
-    0x38000014   0x100065c0   0x00000004   Data   RW           72    .data.ITM_          mtb.o
-    0x38000018   0x100065c4   0x00000004   Data   RW           68    .data.SCB_          mtb.o
-    0x3800001c   0x100065c8   0x00000004   Data   RW          361    .data.SystemCoreClock  system_iotkit_cm33.o
-    0x38000020   0x100065cc   0x00000008   Data   RW          302    .data.USART0_pin_rx  usart_v2m-mps2.o
-    0x38000028   0x100065d4   0x00000008   Data   RW          303    .data.USART0_pin_tx  usart_v2m-mps2.o
-    0x38000030   0x100065dc   0x00000002   Data   RW          205    .data.background_color  glcd_v2m-mps2.o
-    0x38000032   0x100065de   0x00000002   PAD
-    0x38000034   0x100065e0   0x00000004   Data   RW           69    .data.mtb           mtb.o
+    0x38000000   0x1000659c   0x00000004   Data   RW          476    .data               c_w.l(stdio_streams.o)
+    0x38000004   0x100065a0   0x00000004   Data   RW          477    .data               c_w.l(stdio_streams.o)
+    0x38000008   0x100065a4   0x00000004   Data   RW          478    .data               c_w.l(stdio_streams.o)
+    0x3800000c   0x100065a8   0x00000004   Data   RW           70    .data.CoreDebug_    mtb.o
+    0x38000010   0x100065ac   0x00000004   Data   RW           71    .data.DWT_          mtb.o
+    0x38000014   0x100065b0   0x00000004   Data   RW           72    .data.ITM_          mtb.o
+    0x38000018   0x100065b4   0x00000004   Data   RW           68    .data.SCB_          mtb.o
+    0x3800001c   0x100065b8   0x00000004   Data   RW          361    .data.SystemCoreClock  system_iotkit_cm33.o
+    0x38000020   0x100065bc   0x00000008   Data   RW          302    .data.USART0_pin_rx  usart_v2m-mps2.o
+    0x38000028   0x100065c4   0x00000008   Data   RW          303    .data.USART0_pin_tx  usart_v2m-mps2.o
+    0x38000030   0x100065cc   0x00000002   Data   RW          205    .data.background_color  glcd_v2m-mps2.o
+    0x38000032   0x100065ce   0x00000002   PAD
+    0x38000034   0x100065d0   0x00000004   Data   RW           69    .data.mtb           mtb.o
     0x38000038        -       0x00000054   Zero   RW          473    .bss                c_w.l(stdio_streams.o)
     0x3800008c        -       0x00000054   Zero   RW          474    .bss                c_w.l(stdio_streams.o)
     0x380000e0        -       0x00000054   Zero   RW          475    .bss                c_w.l(stdio_streams.o)
@@ -2472,7 +2472,7 @@ Memory Map of the image
     0x380001bc        -       0x00000004   Zero   RW          206    .bss.active_font    glcd_v2m-mps2.o
     0x380001c0        -       0x00000004   Zero   RW          102    .bss.fNSFunc        secure_functions.o
     0x380001c4        -       0x00000002   Zero   RW          204    .bss.foreground_color  glcd_v2m-mps2.o
-    0x380001c6   0x100065e4   0x00000002   PAD
+    0x380001c6   0x100065d4   0x00000002   PAD
     0x380001c8        -       0x00000004   Zero   RW           74    .bss.log_counter    mtb.o
     0x380001cc        -       0x00000004   Zero   RW          107    .bss.pfNonSecure_LED_Off  secure_functions.o
     0x380001d0        -       0x00000004   Zero   RW          106    .bss.pfNonSecure_LED_On  secure_functions.o
@@ -2480,21 +2480,21 @@ Memory Map of the image
     0x38000a38        -       0x00000004   Zero   RW           19    .bss.x              main_s.o
 
 
-    Execution Region ARM_LIB_HEAP (Exec base: 0x38000a40, Load base: 0x100065e4, Size: 0x00000c00, Max: 0x00000c00, ABSOLUTE)
+    Execution Region ARM_LIB_HEAP (Exec base: 0x38000a40, Load base: 0x100065d4, Size: 0x00000c00, Max: 0x00000c00, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x38000a40        -       0x00000c00   Zero   RW            1    ARM_LIB_HEAP.bss    anon$$obj.o
 
 
-    Execution Region ARM_LIB_STACK (Exec base: 0x381ffbf8, Load base: 0x100065e4, Size: 0x00000400, Max: 0x00000400, ABSOLUTE)
+    Execution Region ARM_LIB_STACK (Exec base: 0x381ffbf8, Load base: 0x100065d4, Size: 0x00000400, Max: 0x00000400, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x381ffbf8        -       0x00000400   Zero   RW            2    ARM_LIB_STACK.bss   anon$$obj.o
 
 
-    Execution Region STACKSEAL (Exec base: 0x381ffff8, Load base: 0x100065e4, Size: 0x00000008, Max: 0x00000008, ABSOLUTE)
+    Execution Region STACKSEAL (Exec base: 0x381ffff8, Load base: 0x100065d4, Size: 0x00000008, Max: 0x00000008, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2523,7 +2523,7 @@ Image component sizes
       1678          0          0          2          6       6524   glcd_v2m-mps2.o
         92          0          0          0          0       1967   led_v2m-mps2.o
        704          0        126          0          8       7040   main_s.o
-      1320          0        670         20          4       8904   mtb.o
+      1304          0        670         20          4       8904   mtb.o
        550          0         46          0          0       2453   retarget_io.o
        910          0        176          0         16       3067   secure_functions.o
        110          0       1071          0          0       1776   startup_iotkit_cm33.o
@@ -2532,7 +2532,7 @@ Image component sizes
       2024          6         84         16         32      13478   usart_v2m-mps2.o
 
     ----------------------------------------------------------------------
-      8428          6       7736         44       6320      53895   Object Totals
+      8412          6       7736         44       6320      53895   Object Totals
         64          0         32          0       4104          0   (incl. Generated)
         78          0          0          2          2          0   (incl. Padding)
 
@@ -2669,15 +2669,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     17804        450       8288         56       6668      56831   Grand Totals
-     17804        450       8288         56       6668      56831   ELF Image Totals
-     17804        450       8288         56          0          0   ROM Totals
+     17788        450       8288         56       6668      56831   Grand Totals
+     17788        450       8288         56       6668      56831   ELF Image Totals
+     17788        450       8288         56          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                26092 (  25.48kB)
+    Total RO  Size (Code + RO Data)                26076 (  25.46kB)
     Total RW  Size (RW Data + ZI Data)              6724 (   6.57kB)
-    Total ROM Size (Code + RO Data + RW Data)      26148 (  25.54kB)
+    Total ROM Size (Code + RO Data + RW Data)      26132 (  25.52kB)
 
 ==============================================================================
 

@@ -22,10 +22,13 @@
 #define __ROM_HALF_SIZE 0x00100000
 
 #define __MTBDR_BASE    0x00300000
-#define __MTBDR_SIZE    0x80000
+#define __MTBDR_SIZE    0x60000
 
 #define __MTBAR_BASE    0x00380000
 #define __MTBAR_SIZE    0x80000
+
+#define __MTBTMP_BASE    0x00360000
+#define __MTBTMP_SIZE    0x20000
 
 
 
@@ -113,6 +116,10 @@ LR_ROM __RO_BASE __RO_SIZE  {                       ; load region size_region
     *(.MTBDR_MEM)                                      ; Read-only sections for new region
   }
 
+
+  ER_MTBTMP __MTBTMP_BASE __MTBTMP_SIZE {              ; New ROM Execution Region
+    *(.MTBTMP_MEM)                                      ; Read-only sections for new region
+  }
 
 
   RW_RAM __RW_BASE __RW_SIZE  {                     ; RW data

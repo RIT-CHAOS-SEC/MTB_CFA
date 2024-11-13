@@ -71,42 +71,43 @@ mtb_setup_DWT:
 	orr	r1, r1, #9
 	str.w	r1, [r2, #3712]
 	.loc	3 56 5 is_stmt 1                @ mtb.c:56:5
-	movw	r2, :lower16:DWT_
-	movt	r2, :upper16:DWT_
-	ldr	r3, [r2]
-	mov.w	r1, #3670016
+	movw	r1, :lower16:DWT_
+	movt	r1, :upper16:DWT_
+	ldr	r3, [r1]
+	mov.w	r2, #3670016
 	.loc	3 56 17 is_stmt 0               @ mtb.c:56:17
-	str	r1, [r3, #32]
-	movw	r12, #4128
-	movt	r12, #57344
+	str	r2, [r3, #32]
+	movw	r3, #4128
+	movt	r3, #57344
 	.loc	3 57 5 is_stmt 1                @ mtb.c:57:5
-	ldr.w	r3, [r12]
-	bic	r3, r3, #1
-	str.w	r3, [r12]
+	ldr	r2, [r3]
+	bic	r2, r2, #1
+	str	r2, [r3]
 	.loc	3 60 5                          @ mtb.c:60:5
-	ldr.w	r12, [r2]
-	mov.w	r3, #4194304
+	ldr	r3, [r1]
+	mov.w	r2, #4194304
 	.loc	3 60 17 is_stmt 0               @ mtb.c:60:17
-	str.w	r3, [r12, #48]
-	movw	r12, #4144
-	movt	r12, #57344
+	str	r2, [r3, #48]
+	movw	r3, #4144
+	movt	r3, #57344
 	.loc	3 61 5 is_stmt 1                @ mtb.c:61:5
-	ldr.w	r3, [r12]
-	bic	r3, r3, #1
-	str.w	r3, [r12]
+	ldr	r2, [r3]
+	bic	r2, r2, #1
+	str	r2, [r3]
 	.loc	3 64 5                          @ mtb.c:64:5
-	ldr.w	r12, [r2]
-	mov.w	r3, #3145728
+	ldr	r3, [r1]
+	mov.w	r2, #3145728
 	.loc	3 64 17 is_stmt 0               @ mtb.c:64:17
-	str.w	r3, [r12, #64]
-	movw	r12, #4160
-	movt	r12, #57344
+	str	r2, [r3, #64]
+	movw	r3, #4160
+	movt	r3, #57344
 	.loc	3 65 5 is_stmt 1                @ mtb.c:65:5
-	ldr.w	r3, [r12]
-	bic	r3, r3, #1
-	str.w	r3, [r12]
+	ldr	r2, [r3]
+	bic	r2, r2, #1
+	str	r2, [r3]
 	.loc	3 68 5                          @ mtb.c:68:5
-	ldr	r2, [r2]
+	ldr	r2, [r1]
+	mov.w	r1, #3538944
 	.loc	3 68 17 is_stmt 0               @ mtb.c:68:17
 	str	r1, [r2, #80]
 	movw	r2, #4176

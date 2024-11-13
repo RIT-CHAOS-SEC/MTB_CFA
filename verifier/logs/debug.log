@@ -814,7 +814,7 @@ adj_instr: None
 
 start_addr: 0x300000
 end_addr: 0x300002
-successors: ['0x3000a8']
+successors: ['0x3000e8']
 parents: []
 type: call
 adj_instr: 0x300006
@@ -822,133 +822,119 @@ adj_instr: 0x300006
 start_addr: 0x300006
 end_addr: 0x300006
 successors: []
-parents: ['0x3000b4']
+parents: ['0x300100']
 type: ret
 adj_instr: None
 
 start_addr: 0x300008
-end_addr: 0x300010
-successors: ['0x300012']
-parents: ['0x300068', '0x300086']
-type: uncond
-adj_instr: 0x300012
-
-start_addr: 0x300012
-end_addr: 0x300018
-successors: ['0x30001a', '0x300026']
-parents: ['0x300008', '0x30001e']
+end_addr: 0x300032
+successors: ['0x300034', '0x3000e2']
+parents: ['0x3000e8']
 type: cond
-adj_instr: 0x30001a
+adj_instr: 0x300034
 
-start_addr: 0x30001a
-end_addr: 0x30001a
-successors: ['0x30001c']
-parents: ['0x300012']
+start_addr: 0x300034
+end_addr: 0x300042
+successors: ['0x300044']
+parents: ['0x300008']
 type: uncond
-adj_instr: 0x30001c
+adj_instr: 0x300044
 
-start_addr: 0x30001c
-end_addr: 0x30001c
-successors: ['0x30001e']
-parents: ['0x30001a']
+start_addr: 0x300044
+end_addr: 0x300054
+successors: ['0x300056']
+parents: ['0x300034', '0x3000d4']
 type: uncond
-adj_instr: 0x30001e
+adj_instr: 0x300056
 
-start_addr: 0x30001e
-end_addr: 0x300024
-successors: ['0x300012']
-parents: ['0x30001c']
-type: uncond
-adj_instr: 0x300026
-
-start_addr: 0x300026
-end_addr: 0x300028
-successors: ['0x300086', '0x300094']
-parents: ['0x300012']
-type: ret
-adj_instr: None
-
-start_addr: 0x30002c
-end_addr: 0x300034
-successors: ['0x300036']
-parents: ['0x300094']
-type: uncond
-adj_instr: 0x300036
-
-start_addr: 0x300036
-end_addr: 0x30003c
-successors: ['0x30003e', '0x300062']
-parents: ['0x30002c', '0x30005a']
-type: cond
-adj_instr: 0x30003e
-
-start_addr: 0x30003e
-end_addr: 0x30003e
-successors: ['0x300040']
-parents: ['0x300036']
-type: uncond
-adj_instr: 0x300040
-
-start_addr: 0x300040
-end_addr: 0x300058
-successors: ['0x30005a']
-parents: ['0x30003e']
-type: uncond
-adj_instr: 0x30005a
-
-start_addr: 0x30005a
-end_addr: 0x300060
-successors: ['0x300036']
-parents: ['0x300040']
-type: uncond
-adj_instr: 0x300062
-
-start_addr: 0x300062
+start_addr: 0x300056
 end_addr: 0x300066
-successors: ['0x3000a0']
-parents: ['0x300036']
-type: ret
-adj_instr: None
+successors: ['0x300068']
+parents: ['0x300044']
+type: uncond
+adj_instr: 0x300068
 
 start_addr: 0x300068
-end_addr: 0x300082
-successors: ['0x300008']
-parents: ['0x3000a8']
-type: call
-adj_instr: 0x300086
+end_addr: 0x300078
+successors: ['0x30007a']
+parents: ['0x300056']
+type: uncond
+adj_instr: 0x30007a
 
-start_addr: 0x300086
-end_addr: 0x300090
-successors: ['0x300008']
-parents: ['0x300026']
-type: call
-adj_instr: 0x300094
+start_addr: 0x30007a
+end_addr: 0x30008a
+successors: ['0x30008c']
+parents: ['0x300068']
+type: uncond
+adj_instr: 0x30008c
 
-start_addr: 0x300094
+start_addr: 0x30008c
 end_addr: 0x30009c
-successors: ['0x30002c']
-parents: ['0x300026']
-type: call
-adj_instr: 0x3000a0
+successors: ['0x30009e']
+parents: ['0x30007a']
+type: uncond
+adj_instr: 0x30009e
 
-start_addr: 0x3000a0
-end_addr: 0x3000a6
-successors: ['0x3000b4']
-parents: ['0x300062']
+start_addr: 0x30009e
+end_addr: 0x3000ae
+successors: ['0x3000b0']
+parents: ['0x30008c']
+type: uncond
+adj_instr: 0x3000b0
+
+start_addr: 0x3000b0
+end_addr: 0x3000c0
+successors: ['0x3000c2']
+parents: ['0x30009e']
+type: uncond
+adj_instr: 0x3000c2
+
+start_addr: 0x3000c2
+end_addr: 0x3000d2
+successors: ['0x3000d4']
+parents: ['0x3000b0']
+type: uncond
+adj_instr: 0x3000d4
+
+start_addr: 0x3000d4
+end_addr: 0x3000dc
+successors: ['0x3000de', '0x300044']
+parents: ['0x3000c2']
+type: cond
+adj_instr: 0x3000de
+
+start_addr: 0x3000de
+end_addr: 0x3000de
+successors: ['0x3000e0']
+parents: ['0x3000d4']
+type: uncond
+adj_instr: 0x3000e0
+
+start_addr: 0x3000e0
+end_addr: 0x3000e0
+successors: ['0x3000e2']
+parents: ['0x3000de']
+type: uncond
+adj_instr: 0x3000e2
+
+start_addr: 0x3000e2
+end_addr: 0x3000e4
+successors: ['0x300100']
+parents: ['0x300008', '0x3000e0']
 type: ret
 adj_instr: None
 
-start_addr: 0x3000a8
-end_addr: 0x3000b0
-successors: ['0x300068']
+start_addr: 0x3000e8
+end_addr: 0x3000fc
+successors: ['0x300008']
 parents: ['0x300000']
 type: call
-adj_instr: 0x3000b4
+adj_instr: 0x300100
 
-start_addr: 0x3000b4
-end_addr: 0x3000c4
+start_addr: 0x300100
+end_addr: 0x300100
 successors: ['0x300006']
-parents: ['0x3000a0']
+parents: ['0x3000e2']
 type: ret
 adj_instr: None
 
@@ -976,7 +962,7 @@ adj_instr: None
 -------------------
 __Vectors : 0x200000
 __main : 0x200400
-__scatterload : 0x200408
+__scatterload_rt2 : 0x200408
 __scatterload_loop : 0x200412
 __scatterload_copy : 0x200464
 __scatterload_null : 0x200480
@@ -994,8 +980,8 @@ __rt_exit : 0x2004c0
 __rt_exit_ls : 0x2004c2
 __rt_exit_exit : 0x2004c6
 exit : 0x2004cc
-__I$use$semihosting : 0x2004de
-__semihosting_library_function : 0x2004e0
+__use_no_semihosting_swi : 0x2004de
+_sys_exit : 0x2004e0
 Default_Handler : 0x2004ec
 HardFault_Handler : 0x2004f0
 LED_Off : 0x2004f4
@@ -1011,8 +997,6 @@ _fp_init : 0x200812
 __fplib_config_fpu_vfp : 0x20082a
 Region$$Table$$Base : 0x20082c
 application_entry : 0x300000
-delay : 0x300008
-pulseIn : 0x30002c
-getUltrasonicReading : 0x300068
-application : 0x3000a8
-trampoline_mtbdr : 0x3000c8
+duffcopy : 0x300008
+application : 0x3000e8
+trampoline_mtbdr : 0x360000
