@@ -21,6 +21,16 @@ rule C_EXECUTABLE_LINKER__IOTKit_CM33_ns.2bV2MMPS2_
 
 
 #############################################
+# Rule for compiling ASM files.
+
+rule ASM_COMPILER__Group_Source_Group_1_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ${LAUNCHER}${CODE_CHECK}c:\Users\aj4775\.vcpkg\artifacts\2139c4c6\compilers.arm.armclang\6.22.0\bin\\armclang.exe $DEFINES $INCLUDES $FLAGS -c -o $out $in
+  description = Building ASM object $out
+
+
+#############################################
 # Rule for compiling C files.
 
 rule C_COMPILER__Group_Source_Group_1_unscanned_

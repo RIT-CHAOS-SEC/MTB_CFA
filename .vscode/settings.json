@@ -1,6 +1,7 @@
 {
     "cmake.sourceDirectory": "D:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp",
     "clangd.arguments": [
-        "--compile-commands-dir=p:\\Workspace\\Git\\MTB_CFA\\IOTKit_CM33_S_NS\\out\\IOTKit_CM33_s\\V2MMPS2"
+        "--compile-commands-dir=p:\\Workspace\\Git\\MTB_CFA\\IOTKit_CM33_S_NS\\out\\IOTKit_CM33_s\\V2MMPS2",
+        "--compile-commands-dir=p:\\Workspace\\Git\\MTB_CFA\\IOTKit_CM33_S_NS\\out\\IOTKit_CM33_ns\\V2MMPS2"
     ]
 }

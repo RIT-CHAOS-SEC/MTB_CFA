@@ -102,6 +102,9 @@ project:
       files:
         - file: main_s.c
         - file: stdout_USART.c
+        - file: mtb.c
+        - file: Secure_Functions.c
+        - file: cfa.c
     - group: Documentation
       files:
         - file: ../README.md

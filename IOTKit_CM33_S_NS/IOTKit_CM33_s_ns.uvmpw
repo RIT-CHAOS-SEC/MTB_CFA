@@ -15,6 +15,7 @@
 
   <project>
     <PathAndName>.\IOTKit_CM33_ns\IOTKit_CM33_ns.uvprojx</PathAndName>
+    <NodeIsExpanded>1</NodeIsExpanded>
   </project>
 
 </ProjectWorkspace>

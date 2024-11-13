@@ -104,6 +104,8 @@ project:
     - group: Source Group 1
       files:
         - file: main_ns.c
+        # - file: application.c
+        - file: application.s
     - group: CMSE Library
       files:
         - file: ../IOTKit_CM33_s/Secure_Functions.h

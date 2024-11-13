@@ -109,8 +109,8 @@
     <sActiveDebugView></sActiveDebugView>
     <WindowPosition>
       <length>44</length>
-      <flags>0</flags>
-      <showCmd>1</showCmd>
+      <flags>2</flags>
+      <showCmd>3</showCmd>
       <MinPosition>
         <xPos>-32000</xPos>
         <yPos>-32000</yPos>

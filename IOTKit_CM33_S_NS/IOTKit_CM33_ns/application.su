@@ -1,0 +1,4 @@
+application.c:226:10:application	8	static
+application.c:12:12:application_entry	8	static
+application.c:189:22:duffcopy	32	static
+application.c:1548:24:trampoline_mtbdr	0	static,ignoring_inline_asm

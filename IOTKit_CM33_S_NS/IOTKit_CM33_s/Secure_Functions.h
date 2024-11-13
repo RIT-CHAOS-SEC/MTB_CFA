@@ -13,6 +13,7 @@
 #include "alcata_definitions.h"
 #include "Secure_Functions_CFA.h"
 
+
 #define NSENTRY __attribute__((cmse_nonsecure_entry))
 #define NSENTRY_NAKED __attribute__((cmse_nonsecure_entry, naked))
 

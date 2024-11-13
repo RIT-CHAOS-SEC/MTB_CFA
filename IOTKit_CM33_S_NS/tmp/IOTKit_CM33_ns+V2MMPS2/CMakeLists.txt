@@ -21,7 +21,7 @@ set(BYTE_ORDER Little-endian)
 include("toolchain.cmake")
 
 # Setup project
-project(${CONTEXT} LANGUAGES C)
+project(${CONTEXT} LANGUAGES C ASM)
 
 # Compilation database
 add_custom_target(database
@@ -60,6 +60,13 @@ target_compile_definitions(${CONTEXT} PUBLIC
 
 # Compile options
 target_compile_options(${CONTEXT} PUBLIC
+  $<$<COMPILE_LANGUAGE:ASM>:
+    "SHELL:${ASM_CPU}"
+    "SHELL:${ASM_FLAGS}"
+    "SHELL:${ASM_SECURE}"
+    "SHELL:${ASM_BYTE_ORDER}"
+    "SHELL:-masm=auto"
+  >
   $<$<COMPILE_LANGUAGE:C>:
     "SHELL:${CC_CPU}"
     "SHELL:${CC_FLAGS}"
@@ -89,9 +96,13 @@ target_compile_options(${CONTEXT} PUBLIC
 # Compile Options Abstractions
 add_library(${CONTEXT}_ABSTRACTIONS INTERFACE)
 cbuild_set_options_flags(CC "debug" "on" "" "" CC_OPTIONS_FLAGS_${CONTEXT})
+cbuild_set_options_flags(ASM "debug" "on" "" "" ASM_OPTIONS_FLAGS_${CONTEXT})
 target_compile_options(${CONTEXT}_ABSTRACTIONS INTERFACE
   $<$<COMPILE_LANGUAGE:C>:
     "SHELL:${CC_OPTIONS_FLAGS_${CONTEXT}}"
+  >
+  $<$<COMPILE_LANGUAGE:ASM>:
+    "SHELL:${ASM_OPTIONS_FLAGS_${CONTEXT}}"
   >
 )
 

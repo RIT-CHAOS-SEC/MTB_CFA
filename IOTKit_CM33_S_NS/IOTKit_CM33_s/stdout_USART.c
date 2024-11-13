@@ -79,7 +79,7 @@ int stdout_init (void) {
 
   status = ptrUSART->Control(ARM_USART_CONTROL_TX, 1);
   if (status != ARM_DRIVER_OK) return (-1);
-
+ 
   return (0);
 }
  

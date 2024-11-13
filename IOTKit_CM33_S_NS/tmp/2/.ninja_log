@@ -1,11 +1,17 @@
 # ninja log v6
-8	199	7514235820052408	CMakeFiles/database	7f9f0c5f13f4dd95
-8	199	7514235820052408	P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/2/CMakeFiles/database	7f9f0c5f13f4dd95
-10	197	7514942122617520	CMakeFiles/database	7f9f0c5f13f4dd95
-10	197	7514942122617520	P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/2/CMakeFiles/database	7f9f0c5f13f4dd95
-59	479	7526296966030720	CMakeFiles/database	7f9f0c5f13f4dd95
-59	479	7526296966030720	P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/2/CMakeFiles/database	7f9f0c5f13f4dd95
-9	252	7526297679995609	CMakeFiles/database	7f9f0c5f13f4dd95
-9	252	7526297679995609	P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/2/CMakeFiles/database	7f9f0c5f13f4dd95
-10	418	7530686728888766	CMakeFiles/database	7f9f0c5f13f4dd95
-10	418	7530686728888766	P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/2/CMakeFiles/database	7f9f0c5f13f4dd95
+6	209	7532357441708181	CMakeFiles/Group_Source_Group_1.dir/P_/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/IOTKit_CM33_ns/main_ns.o	513b3b495e4149d1
+4	182	7532357398843987	CMakeFiles/database	7f9f0c5f13f4dd95
+4	182	7532357398843987	P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/2/CMakeFiles/database	7f9f0c5f13f4dd95
+4	217	7532332567196184	CMakeFiles/Group_Source_Group_1.dir/P_/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/IOTKit_CM33_ns/application.o	f53a3a296cdc322e
+30	278	7532239578561158	CMakeFiles/Keil_Board_Support_V2M-MPS2_IOT-Kit_LED_2_0_0.dir/C_/Users/aj4775/AppData/Local/arm/packs/Keil/V2M-MPS2_IOTKit_BSP/1.5.2/Boards/ARM/V2M-MPS2/Common/LED_V2M-MPS2.o	2e3d05e9ee96308c
+58	349	7532237202896620	CMakeFiles/Keil_Device_Startup_C_Startup_1_2_0.dir/P_/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/IOTKit_CM33_ns/RTE/Device/IOTKit_CM33_FP/startup_IOTKit_CM33.o	34ec8b8751d2f2c7
+71	352	7532237203032138	CMakeFiles/Keil_Device_Startup_C_Startup_1_2_0.dir/P_/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/IOTKit_CM33_ns/RTE/Device/IOTKit_CM33_FP/system_IOTKit_CM33.o	7f18a9bd53095813
+3	2033	7532357891942910	build.ninja	47a12d20c35f8926
+218	656	7532332569341997	P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/out/IOTKit_CM33_ns/V2MMPS2/IOTKit_CM33_ns.axf	bda95eee57001f2
+3	3750	7532357891942910	build.ninja	47a12d20c35f8926
+4	185	7532357892449050	CMakeFiles/database	7f9f0c5f13f4dd95
+4	185	7532357892449050	P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/tmp/2/CMakeFiles/database	7f9f0c5f13f4dd95
+4	132	7532359299006832	CMakeFiles/Group_Source_Group_1.dir/P_/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/IOTKit_CM33_ns/application.o	1b559147377b6b32
+6	137	7532388282927194	CMakeFiles/Group_Source_Group_1.dir/P_/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/IOTKit_CM33_ns/application.o	1b559147377b6b32
+4	128	7532389348250791	CMakeFiles/Group_Source_Group_1.dir/P_/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/IOTKit_CM33_ns/application.o	1b559147377b6b32
+129	478	7532389349501248	P:/Workspace/Git/MTB_CFA/IOTKit_CM33_S_NS/out/IOTKit_CM33_ns/V2MMPS2/IOTKit_CM33_ns.axf	55a9c11caee594b9

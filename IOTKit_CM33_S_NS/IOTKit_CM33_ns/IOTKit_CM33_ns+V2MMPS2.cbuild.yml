@@ -176,6 +176,8 @@ build:
       files:
         - file: main_ns.c
           category: sourceC
+        - file: application.s
+          category: sourceAsm
     - group: CMSE Library
       files:
         - file: ../IOTKit_CM33_s/Secure_Functions.h
