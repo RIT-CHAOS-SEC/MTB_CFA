@@ -130,6 +130,9 @@ void _send_report(){
 	return;
 }
 
+#define REMOVE_LOG 1
+
+
 void CFA_ENGINE_new_log_entry(uint32_t value){
 	if(report_s.num_CF_Log_size >= MAX_CF_LOG_SIZE){
 		// cfa_engine_conf.attestation_status = WAITING_PARTIAL;
@@ -145,8 +148,10 @@ void CFA_ENGINE_new_log_entry(uint32_t value){
 			FLASH_CFLog[report_secure.num_CF_Log_size] = overflow;
 			#endif
 			overflow = 0;
+
+			#ifndef REMOVE_LOG
 			report_s.num_CF_Log_size++;
-			
+			#endif
 		}
 
 		#if CFLOG_TYPE == CFLOG_RAM
@@ -157,8 +162,10 @@ void CFA_ENGINE_new_log_entry(uint32_t value){
 		FLASH_CFLog[report_secure.num_CF_Log_size] = value;
 		#endif
 
+		#ifndef REMOVE_LOG
 		report_s.num_CF_Log_size++;
-		
+		#endif
+
 		// _read_serial_loop();
 		// start = HAL_GetTick();
 	}
@@ -192,7 +199,9 @@ void CFA_ENGINE_new_log_entry(uint32_t value){
 				
 
 				loop_detect = 0;
+				#ifndef REMOVE_LOG
 				report_s.log_counter++;
+				#endif
 				report_s.num_CF_Log_size++;
 				loop_counter = 1;
 
@@ -211,8 +220,10 @@ void CFA_ENGINE_new_log_entry(uint32_t value){
 				FLASH_CFLog[report_secure.num_CF_Log_size] = value;
 				prev_entry = value;
 				#endif
+				#ifndef REMOVE_LOG
 				report_s.log_counter++;
 				report_s.num_CF_Log_size++;
+				#endif
 			}
 
 		}

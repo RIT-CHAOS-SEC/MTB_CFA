@@ -3,7 +3,7 @@
 <title>Static Call Graph - [P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\out\IOTKit_CM33_s\V2MMPS2\IOTKit_CM33_s.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\out\IOTKit_CM33_s\V2MMPS2\IOTKit_CM33_s.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Wed Nov 13 18:19:38 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Wed Nov 13 18:29:55 2024
 <BR><P>
 <H3>Maximum Stack Usage =        168 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -173,8 +173,8 @@ Function Pointers
 Global Symbols
 </H3>
 <P><STRONG><a name="[90]"></a>__main</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, __main.o(!!!main))
-<BR><BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+<BR><BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
 </UL>
 <BR>[Called By]<UL><LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_Handler
 </UL>
@@ -318,8 +318,8 @@ Global Symbols
 <P><STRONG><a name="[121]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C))
 
 <P><STRONG><a name="[9f]"></a>__rt_entry</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry.o(.ARM.Collect$$rtentry$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
+<BR><BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
+<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 
 <P><STRONG><a name="[122]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000002))
@@ -550,9 +550,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_heap_descriptor
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fclose_internal
+<BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_ProvideMemory
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fclose_internal
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_terminateio
-<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_ProvideMemory
 </UL>
 
 <P><STRONG><a name="[ce]"></a>setvbuf</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, setvbuf.o(.text))
@@ -562,9 +562,9 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[c6]"></a>_seterr</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, stdio.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_writebuf
+<BR><BR>[Called By]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fseek
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_writebuf
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__flsbuf
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fseek
 </UL>
 
 <P><STRONG><a name="[ca]"></a>_writebuf</STRONG> (Thumb, 108 bytes, Stack size 48 bytes, stdio.o(.text))
@@ -597,9 +597,9 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
 <LI>Call Chain = freopen &rArr; _fclose_internal &rArr; _fflush &rArr; _writebuf &rArr; _sys_write &rArr; stdout_putchar
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fclose_internal
+<BR>[Calls]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fseek
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fclose_internal
 <LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_open
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fseek
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fopen
 <LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_initio
@@ -645,9 +645,9 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[d1]"></a>__rt_heap_descriptor</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, rt_heap_descriptor_intlibspace.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free
+<BR><BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_init_alloc
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free
 <LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_init_alloc
 </UL>
 
 <P><STRONG><a name="[12d]"></a>__use_no_heap</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, hguard.o(.text), UNUSED)
@@ -688,10 +688,10 @@ Global Symbols
 <P><STRONG><a name="[d7]"></a>_fseek</STRONG> (Thumb, 242 bytes, Stack size 24 bytes, fseek.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = _fseek &rArr; _ftell_internal
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_seterr
+<BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ftell_internal
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_seterr
 <LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_flen
 <LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_istty
-<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ftell_internal
 </UL>
 <BR>[Called By]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;freopen
 </UL>
@@ -701,8 +701,8 @@ Global Symbols
 <P><STRONG><a name="[dc]"></a>__sig_exit</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, defsig_exit.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTRED
-<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM
+<BR>[Called By]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTRED
 </UL>
 
 <P><STRONG><a name="[db]"></a>__rt_SIGRTRED_inner</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, defsig_rtred_inner.o(.text))
@@ -786,7 +786,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM
 </UL>
 
-<P><STRONG><a name="[e6]"></a>CFA_ENGINE_new_log_entry</STRONG> (Thumb, 244 bytes, Stack size 16 bytes, cfa.o(.text.CFA_ENGINE_new_log_entry), UNUSED, KEPT)
+<P><STRONG><a name="[e6]"></a>CFA_ENGINE_new_log_entry</STRONG> (Thumb, 220 bytes, Stack size 16 bytes, cfa.o(.text.CFA_ENGINE_new_log_entry), UNUSED, KEPT)
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = CFA_ENGINE_new_log_entry &rArr; stdout_putbuffer
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stdout_putbuffer
@@ -795,6 +795,7 @@ Global Symbols
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__acle_se_SECURE_log_ret
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__acle_se_SECURE_log_cond_br_not_taken
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__acle_se_SECURE_log_cond_br_taken
+<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__acle_se_SECURE_log_loop_cond
 </UL>
 
 <P><STRONG><a name="[14]"></a>BRIDGE_ERROR_Handler</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, startup_IOTKit_CM33.o(.text.Default_Handler))
@@ -1223,7 +1224,11 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[85]"></a>__acle_se_SECURE_log_loop_cond</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, Secure_Functions_CFA.o(.text.SECURE_log_loop_cond), UNUSED, KEPT)
-<BR><BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SECURE_log_loop_cond
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = __acle_se_SECURE_log_loop_cond &rArr; CFA_ENGINE_new_log_entry &rArr; stdout_putbuffer
+</UL>
+<BR>[Calls]<UL><LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CFA_ENGINE_new_log_entry
+</UL>
+<BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SECURE_log_loop_cond
 </UL>
 
 <P><STRONG><a name="[88]"></a>__acle_se_SECURE_log_ret</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, Secure_Functions_CFA.o(.text.SECURE_log_ret), UNUSED, KEPT)
@@ -1331,13 +1336,13 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[c7]"></a>_sys_flen</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, retarget_io.o(.text._sys_flen))
-<BR><BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__flsbuf
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fseek
+<BR><BR>[Called By]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fseek
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__flsbuf
 </UL>
 
 <P><STRONG><a name="[c8]"></a>_sys_istty</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, retarget_io.o(.text._sys_istty))
-<BR><BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__flsbuf
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fseek
+<BR><BR>[Called By]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fseek
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__flsbuf
 </UL>
 
 <P><STRONG><a name="[d6]"></a>_sys_open</STRONG> (Thumb, 94 bytes, Stack size 8 bytes, retarget_io.o(.text._sys_open))
@@ -1532,7 +1537,10 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[99]"></a>SECURE_log_loop_cond</STRONG> (Thumb, 8 bytes, Stack size unknown bytes, anon$$obj.o(Veneer$$CMSE), UNUSED, KEPT)
-<BR><BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__acle_se_SECURE_log_loop_cond
+<BR><BR>[Stack]<UL><LI>Max Depth = 56 + Unknown Stack Size
+<LI>Call Chain = SECURE_log_loop_cond &rArr; __acle_se_SECURE_log_loop_cond &rArr; CFA_ENGINE_new_log_entry &rArr; stdout_putbuffer
+</UL>
+<BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__acle_se_SECURE_log_loop_cond
 </UL>
 
 <P><STRONG><a name="[9a]"></a>SECURE_log_cond_br_taken</STRONG> (Thumb, 8 bytes, Stack size unknown bytes, anon$$obj.o(Veneer$$CMSE), UNUSED, KEPT)

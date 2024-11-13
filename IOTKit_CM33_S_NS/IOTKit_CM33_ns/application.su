@@ -1,5 +1,3 @@
 application.c:60:14:application	48	static
 application.c:12:12:application_entry	8	static
 application.c:53:22:random_code	16	static
-application.c:1548:24:trampoline_mtbdr	0	static,ignoring_inline_asm
-application.c:1549:23:nopes	0	static,ignoring_inline_asm

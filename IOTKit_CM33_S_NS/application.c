@@ -1545,7 +1545,7 @@ MTBDR void application_entry()
 
 
 
-MTBTMP_NAKED_USED void trampoline_mtbdr(){_NOPES;}
-MTBAR_NAKED_USED void nopes(){_NOPES;}
+// MTBTMP_NAKED_USED void trampoline_mtbdr(){_NOPES;}
+// MTBAR_NAKED_USED void nopes(){_NOPES;}
 
 

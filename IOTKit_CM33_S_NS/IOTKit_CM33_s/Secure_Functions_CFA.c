@@ -17,7 +17,8 @@ NSENTRY_NAKED void SECURE_log_loop_cond() {
 
         // Load loop condition from r11, apply mask, and log it
         "mov     r1, r11                           \n"
-        "orr     r1, r1, #0xffff0000               \n"
+        "ldr     r2, =0xffff0000               \n"  // Load immediate into r2
+        "orr     r1, r1, r2                    \n"
         "mov     r0, r1                            \n"
         "bl      CFA_ENGINE_new_log_entry          \n"
 
