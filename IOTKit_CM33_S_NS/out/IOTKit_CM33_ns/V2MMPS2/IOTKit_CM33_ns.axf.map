@@ -4,8 +4,6 @@ Component: Arm Compiler for Embedded 6.22 Tool: armlink [5ee90200]
 
 Section Cross References
 
-    application.o(.MTBDR_MEM) refers to application.o(.bss.target) for target
-    application.o(.MTBDR_MEM) refers to application.o(.bss.source) for source
     main_ns.o(.text.NonSecure_LED_On) refers to LED_V2M-MPS2.o(.text.LED_On) for LED_On
     main_ns.o(.ARM.exidx.text.NonSecure_LED_On) refers to main_ns.o(.text.NonSecure_LED_On) for [Anonymous Symbol]
     main_ns.o(.text.NonSecure_LED_Off) refers to LED_V2M-MPS2.o(.text.LED_Off) for LED_Off
@@ -14,7 +12,6 @@ Section Cross References
     main_ns.o(.text.SysTick_Handler) refers to LED_V2M-MPS2.o(.text.LED_Off) for LED_Off
     main_ns.o(.text.SysTick_Handler) refers to LED_V2M-MPS2.o(.text.LED_On) for LED_On
     main_ns.o(.ARM.exidx.text.SysTick_Handler) refers to main_ns.o(.text.SysTick_Handler) for [Anonymous Symbol]
-    main_ns.o(.ARM.exidx.MTBAR_MEM) refers to main_ns.o(.MTBAR_MEM) for [Anonymous Symbol]
     main_ns.o(.text.main) refers to application.o(.MTBDR_MEM) for application_entry
     main_ns.o(.text.main) refers to main_ns.o(.bss.report_s) for report_s
     main_ns.o(.text.main) refers to main_ns.o(.text.NonSecure_LED_On) for NonSecure_LED_On
@@ -168,11 +165,11 @@ Removing Unused input sections from the image.
 
     Removing application.o(.text), (0 bytes).
     Removing application.o(.MTBTMP_MEM), (2594 bytes).
+    Removing application.o(.MTBAR_MEM), (2594 bytes).
     Removing main_ns.o(.text), (0 bytes).
     Removing main_ns.o(.ARM.exidx.text.NonSecure_LED_On), (8 bytes).
     Removing main_ns.o(.ARM.exidx.text.NonSecure_LED_Off), (8 bytes).
     Removing main_ns.o(.ARM.exidx.text.SysTick_Handler), (8 bytes).
-    Removing main_ns.o(.ARM.exidx.MTBAR_MEM), (8 bytes).
     Removing main_ns.o(.ARM.exidx.text.main), (8 bytes).
     Removing main_ns.o(.ARM.use_no_argv), (4 bytes).
     Removing LED_V2M-MPS2.o(.text), (0 bytes).
@@ -195,7 +192,7 @@ Removing Unused input sections from the image.
     Removing system_IOTKit_CM33.o(.ARM.exidx.text.SystemCoreClockUpdate), (8 bytes).
     Removing system_IOTKit_CM33.o(.ARM.exidx.text.SystemInit), (8 bytes).
 
-28 unused section(s) (total 2782 bytes) removed from the image.
+28 unused section(s) (total 5368 bytes) removed from the image.
 
 ==============================================================================
 
@@ -343,11 +340,9 @@ Image Symbol Table
     [Anonymous Symbol]                       0x00200558   Section        0  main_ns.o(.text.SysTick_Handler)
     [Anonymous Symbol]                       0x002005a4   Section        0  system_IOTKit_CM33.o(.text.SystemInit)
     [Anonymous Symbol]                       0x002005d4   Section        0  main_ns.o(.text.main)
-    $v0                                      0x00200700   Number         0  fpinit.o(x$fpl$fpinit)
-    x$fpl$fpinit                             0x00200700   Section       22  fpinit.o(x$fpl$fpinit)
+    $v0                                      0x00200708   Number         0  fpinit.o(x$fpl$fpinit)
+    x$fpl$fpinit                             0x00200708   Section       22  fpinit.o(x$fpl$fpinit)
     [Anonymous Symbol]                       0x00300000   Section        0  application.o(.MTBDR_MEM)
-    __tagsym$$used.0                         0x00380000   Number         0  main_ns.o(.MTBAR_MEM)
-    [Anonymous Symbol]                       0x00380000   Section        0  main_ns.o(.MTBAR_MEM)
     SysTick_Handler.ticks                    0x28200020   Data           4  main_ns.o(.bss.SysTick_Handler.ticks)
     [Anonymous Symbol]                       0x28200020   Section        0  main_ns.o(.bss.SysTick_Handler.ticks)
 
@@ -561,23 +556,22 @@ Image Symbol Table
     Reset_Handler                            0x00200535   Thumb Code    36  startup_IOTKit_CM33.o(.text.Reset_Handler)
     SysTick_Handler                          0x00200559   Thumb Code    76  main_ns.o(.text.SysTick_Handler)
     SystemInit                               0x002005a5   Thumb Code    48  system_IOTKit_CM33.o(.text.SystemInit)
-    main                                     0x002005d5   Thumb Code   230  main_ns.o(.text.main)
-    Long Thumb to Thumb Veneer to Secure_LED_On 0x002006bb   Thumb Code    10  anon$$obj.o(Veneer$$Code)
-    Long Thumb to Thumb Veneer to Secure_LED_Off 0x002006c5   Thumb Code    10  anon$$obj.o(Veneer$$Code)
-    Long Thumb to Thumb Veneer to SECURE_register_callback 0x002006cf   Thumb Code    10  anon$$obj.o(Veneer$$Code)
-    Long Thumb to Thumb Veneer to SECURE_start_cfa 0x002006d9   Thumb Code    10  anon$$obj.o(Veneer$$Code)
-    Long Thumb to Thumb Veneer to Secure_LED_On_callback 0x002006e3   Thumb Code    10  anon$$obj.o(Veneer$$Code)
-    Long Thumb to Thumb Veneer to Secure_LED_Off_callback 0x002006ed   Thumb Code    10  anon$$obj.o(Veneer$$Code)
-    Long Thumb to Thumb Veneer to Secure_printf 0x002006f7   Thumb Code    10  anon$$obj.o(Veneer$$Code)
-    _fp_init                                 0x00200701   Thumb Code    22  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x00200715   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x00200715   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    Region$$Table$$Base                      0x00200718   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00200758   Number         0  anon$$obj.o(Region$$Table)
-    application                              0x00300001   Thumb Code    28  application.o(.MTBDR_MEM)
-    application_entry                        0x0030001d   Thumb Code    12  application.o(.MTBDR_MEM)
-    duffcopy                                 0x00300029   Thumb Code   260  application.o(.MTBDR_MEM)
-    nopes                                    0x00380001   Thumb Code  1980  main_ns.o(.MTBAR_MEM)
+    main                                     0x002005d5   Thumb Code   238  main_ns.o(.text.main)
+    Long Thumb to Thumb Veneer to Secure_LED_On 0x002006c3   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to Secure_LED_Off 0x002006cd   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to SECURE_register_callback 0x002006d7   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to SECURE_start_cfa 0x002006e1   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to Secure_LED_On_callback 0x002006eb   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to Secure_LED_Off_callback 0x002006f5   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to Secure_printf 0x002006ff   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    _fp_init                                 0x00200709   Thumb Code    22  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x0020071d   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x0020071d   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    Region$$Table$$Base                      0x00200720   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00200750   Number         0  anon$$obj.o(Region$$Table)
+    application                              0x00300001   Thumb Code   120  application.o(.MTBDR_MEM)
+    application_entry                        0x00300079   Thumb Code    12  application.o(.MTBDR_MEM)
+    random_code                              0x00300085   Thumb Code    26  application.o(.MTBDR_MEM)
     SECURE_NOPE                              0x101ffe01   Thumb Code     8  IOTKit_CM33_s_CMSE_Lib.o ABSOLUTE
     SECURE_register_callback                 0x101ffe09   Thumb Code     8  IOTKit_CM33_s_CMSE_Lib.o ABSOLUTE
     SECURE_start_cfa                         0x101ffe11   Thumb Code     8  IOTKit_CM33_s_CMSE_Lib.o ABSOLUTE
@@ -586,13 +580,16 @@ Image Symbol Table
     Secure_printf                            0x101ffe29   Thumb Code     8  IOTKit_CM33_s_CMSE_Lib.o ABSOLUTE
     Secure_LED_On_callback                   0x101ffe31   Thumb Code     8  IOTKit_CM33_s_CMSE_Lib.o ABSOLUTE
     Secure_LED_Off_callback                  0x101ffe39   Thumb Code     8  IOTKit_CM33_s_CMSE_Lib.o ABSOLUTE
+    SECURE_log_loop_cond                     0x101ffe41   Thumb Code     8  IOTKit_CM33_s_CMSE_Lib.o ABSOLUTE
+    SECURE_log_cond_br_taken                 0x101ffe49   Thumb Code     8  IOTKit_CM33_s_CMSE_Lib.o ABSOLUTE
+    SECURE_log_cond_br_not_taken             0x101ffe51   Thumb Code     8  IOTKit_CM33_s_CMSE_Lib.o ABSOLUTE
+    SECURE_log_ret                           0x101ffe59   Thumb Code     8  IOTKit_CM33_s_CMSE_Lib.o ABSOLUTE
+    SECURE_log_call                          0x101ffe61   Thumb Code     8  IOTKit_CM33_s_CMSE_Lib.o ABSOLUTE
     SystemCoreClock                          0x28200000   Data           4  system_IOTKit_CM33.o(.data.SystemCoreClock)
     text                                     0x28200004   Data          27  main_ns.o(.data.text)
     report_s                                 0x28200024   Data        2148  main_ns.o(.bss.report_s)
-    source                                   0x28200888   Data         100  application.o(.bss.source)
-    target                                   0x282008ec   Data         100  application.o(.bss.target)
-    Image$$ARM_LIB_HEAP$$ZI$$Base            0x28200950   Number         0  anon$$obj.o ABSOLUTE
-    Image$$ARM_LIB_HEAP$$ZI$$Limit           0x28201550   Number         0  anon$$obj.o ABSOLUTE
+    Image$$ARM_LIB_HEAP$$ZI$$Base            0x28200888   Number         0  anon$$obj.o ABSOLUTE
+    Image$$ARM_LIB_HEAP$$ZI$$Limit           0x28201488   Number         0  anon$$obj.o ABSOLUTE
     Image$$ARM_LIB_STACK$$ZI$$Base           0x283ffc00   Number         0  anon$$obj.o ABSOLUTE
     Image$$ARM_LIB_STACK$$ZI$$Limit          0x28400000   Number         0  anon$$obj.o ABSOLUTE
 
@@ -604,132 +601,128 @@ Memory Map of the image
 
   Image Entry point : 0x00200401
 
-  Load Region LR_ROM (Base: 0x00200000, Size: 0x00001060, Max: 0x00200000, ABSOLUTE)
+  Load Region LR_ROM (Base: 0x00200000, Size: 0x00000810, Max: 0x00200000, ABSOLUTE)
 
-    Execution Region ER_ROM (Exec base: 0x00200000, Load base: 0x00200000, Size: 0x00000758, Max: 0x00100000, ABSOLUTE)
+    Execution Region ER_ROM (Exec base: 0x00200000, Load base: 0x00200000, Size: 0x00000750, Max: 0x00100000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x00200000   0x00200000   0x00000400   Data   RO           62    RESET               startup_IOTKit_CM33.o
-    0x00200400   0x00200400   0x00000008   Code   RO           84  * !!!main             c_w.l(__main.o)
-    0x00200408   0x00200408   0x0000005c   Code   RO          262    !!!scatter          c_w.l(__scatter.o)
-    0x00200464   0x00200464   0x0000001a   Code   RO          266    !!handler_copy      c_w.l(__scatter_copy.o)
+    0x00200000   0x00200000   0x00000400   Data   RO           59    RESET               startup_IOTKit_CM33.o
+    0x00200400   0x00200400   0x00000008   Code   RO           81  * !!!main             c_w.l(__main.o)
+    0x00200408   0x00200408   0x0000005c   Code   RO          259    !!!scatter          c_w.l(__scatter.o)
+    0x00200464   0x00200464   0x0000001a   Code   RO          263    !!handler_copy      c_w.l(__scatter_copy.o)
     0x0020047e   0x0020047e   0x00000002   PAD
-    0x00200480   0x00200480   0x00000002   Code   RO          263    !!handler_null      c_w.l(__scatter.o)
+    0x00200480   0x00200480   0x00000002   Code   RO          260    !!handler_null      c_w.l(__scatter.o)
     0x00200482   0x00200482   0x00000002   PAD
-    0x00200484   0x00200484   0x0000001c   Code   RO          268    !!handler_zi        c_w.l(__scatter_zi.o)
-    0x002004a0   0x002004a0   0x00000002   Code   RO          116    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
-    0x002004a2   0x002004a2   0x00000004   Code   RO          126    .ARM.Collect$$libinit$$00000001  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          129    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          131    .ARM.Collect$$libinit$$00000006  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          134    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          136    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          138    .ARM.Collect$$libinit$$00000010  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          141    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          143    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          145    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          147    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          149    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          151    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          153    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          155    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          157    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          159    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          161    .ARM.Collect$$libinit$$00000027  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          165    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          167    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          169    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000000   Code   RO          171    .ARM.Collect$$libinit$$00000034  c_w.l(libinit2.o)
-    0x002004a6   0x002004a6   0x00000002   Code   RO          172    .ARM.Collect$$libinit$$00000035  c_w.l(libinit2.o)
-    0x002004a8   0x002004a8   0x00000002   Code   RO          201    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
-    0x002004aa   0x002004aa   0x00000000   Code   RO          213    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
-    0x002004aa   0x002004aa   0x00000000   Code   RO          215    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
-    0x002004aa   0x002004aa   0x00000000   Code   RO          218    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
-    0x002004aa   0x002004aa   0x00000000   Code   RO          221    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
-    0x002004aa   0x002004aa   0x00000000   Code   RO          223    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
-    0x002004aa   0x002004aa   0x00000000   Code   RO          226    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
-    0x002004aa   0x002004aa   0x00000002   Code   RO          227    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
-    0x002004ac   0x002004ac   0x00000000   Code   RO           86    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
-    0x002004ac   0x002004ac   0x00000000   Code   RO           88    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
-    0x002004ac   0x002004ac   0x00000004   Code   RO          102    .ARM.Collect$$rtentry$$00000007  c_w.l(__rtentry7.o)
-    0x002004b0   0x002004b0   0x00000000   Code   RO           90    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
-    0x002004b0   0x002004b0   0x00000004   Code   RO           91    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
-    0x002004b4   0x002004b4   0x00000000   Code   RO           93    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
-    0x002004b4   0x002004b4   0x00000008   Code   RO           94    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
-    0x002004bc   0x002004bc   0x00000004   Code   RO          103    .ARM.Collect$$rtentry$$00002718  c_w.l(__rtentry7.o)
-    0x002004c0   0x002004c0   0x00000002   Code   RO          124    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
-    0x002004c2   0x002004c2   0x00000000   Code   RO          181    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
-    0x002004c2   0x002004c2   0x00000004   Code   RO          182    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
-    0x002004c6   0x002004c6   0x00000006   Code   RO          183    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
-    0x002004cc   0x002004cc   0x00000012   Code   RO          109    .text               c_w.l(exit.o)
-    0x002004de   0x002004de   0x00000002   Code   RO          177    .text               c_w.l(use_no_semi.o)
-    0x002004e0   0x002004e0   0x00000000   Code   RO          179    .text               c_w.l(indicate_semi.o)
-    0x002004e0   0x002004e0   0x0000000c   Code   RO          191    .text               c_w.l(sys_exit.o)
-    0x002004ec   0x002004ec   0x00000002   Code   RO           56    .text.Default_Handler  startup_IOTKit_CM33.o
+    0x00200484   0x00200484   0x0000001c   Code   RO          265    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x002004a0   0x002004a0   0x00000002   Code   RO          113    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x002004a2   0x002004a2   0x00000004   Code   RO          123    .ARM.Collect$$libinit$$00000001  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          126    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          128    .ARM.Collect$$libinit$$00000006  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          131    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          133    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          135    .ARM.Collect$$libinit$$00000010  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          138    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          140    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          142    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          144    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          146    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          148    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          150    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          152    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          154    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          156    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          158    .ARM.Collect$$libinit$$00000027  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          162    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          164    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          166    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000000   Code   RO          168    .ARM.Collect$$libinit$$00000034  c_w.l(libinit2.o)
+    0x002004a6   0x002004a6   0x00000002   Code   RO          169    .ARM.Collect$$libinit$$00000035  c_w.l(libinit2.o)
+    0x002004a8   0x002004a8   0x00000002   Code   RO          198    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x002004aa   0x002004aa   0x00000000   Code   RO          210    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
+    0x002004aa   0x002004aa   0x00000000   Code   RO          212    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
+    0x002004aa   0x002004aa   0x00000000   Code   RO          215    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
+    0x002004aa   0x002004aa   0x00000000   Code   RO          218    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
+    0x002004aa   0x002004aa   0x00000000   Code   RO          220    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
+    0x002004aa   0x002004aa   0x00000000   Code   RO          223    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x002004aa   0x002004aa   0x00000002   Code   RO          224    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
+    0x002004ac   0x002004ac   0x00000000   Code   RO           83    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
+    0x002004ac   0x002004ac   0x00000000   Code   RO           85    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
+    0x002004ac   0x002004ac   0x00000004   Code   RO           99    .ARM.Collect$$rtentry$$00000007  c_w.l(__rtentry7.o)
+    0x002004b0   0x002004b0   0x00000000   Code   RO           87    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
+    0x002004b0   0x002004b0   0x00000004   Code   RO           88    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
+    0x002004b4   0x002004b4   0x00000000   Code   RO           90    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
+    0x002004b4   0x002004b4   0x00000008   Code   RO           91    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
+    0x002004bc   0x002004bc   0x00000004   Code   RO          100    .ARM.Collect$$rtentry$$00002718  c_w.l(__rtentry7.o)
+    0x002004c0   0x002004c0   0x00000002   Code   RO          121    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x002004c2   0x002004c2   0x00000000   Code   RO          178    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x002004c2   0x002004c2   0x00000004   Code   RO          179    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x002004c6   0x002004c6   0x00000006   Code   RO          180    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x002004cc   0x002004cc   0x00000012   Code   RO          106    .text               c_w.l(exit.o)
+    0x002004de   0x002004de   0x00000002   Code   RO          174    .text               c_w.l(use_no_semi.o)
+    0x002004e0   0x002004e0   0x00000000   Code   RO          176    .text               c_w.l(indicate_semi.o)
+    0x002004e0   0x002004e0   0x0000000c   Code   RO          188    .text               c_w.l(sys_exit.o)
+    0x002004ec   0x002004ec   0x00000002   Code   RO           53    .text.Default_Handler  startup_IOTKit_CM33.o
     0x002004ee   0x002004ee   0x00000002   PAD
-    0x002004f0   0x002004f0   0x00000002   Code   RO           60    .text.HardFault_Handler  startup_IOTKit_CM33.o
+    0x002004f0   0x002004f0   0x00000002   Code   RO           57    .text.HardFault_Handler  startup_IOTKit_CM33.o
     0x002004f2   0x002004f2   0x00000002   PAD
-    0x002004f4   0x002004f4   0x0000001c   Code   RO           42    .text.LED_Off       LED_V2M-MPS2.o
-    0x00200510   0x00200510   0x0000001a   Code   RO           40    .text.LED_On        LED_V2M-MPS2.o
+    0x002004f4   0x002004f4   0x0000001c   Code   RO           39    .text.LED_Off       LED_V2M-MPS2.o
+    0x00200510   0x00200510   0x0000001a   Code   RO           37    .text.LED_On        LED_V2M-MPS2.o
     0x0020052a   0x0020052a   0x00000002   PAD
-    0x0020052c   0x0020052c   0x00000004   Code   RO           16    .text.NonSecure_LED_Off  main_ns.o
-    0x00200530   0x00200530   0x00000004   Code   RO           14    .text.NonSecure_LED_On  main_ns.o
-    0x00200534   0x00200534   0x00000024   Code   RO           58    .text.Reset_Handler  startup_IOTKit_CM33.o
-    0x00200558   0x00200558   0x0000004c   Code   RO           18    .text.SysTick_Handler  main_ns.o
-    0x002005a4   0x002005a4   0x00000030   Code   RO           73    .text.SystemInit    system_IOTKit_CM33.o
-    0x002005d4   0x002005d4   0x000000e6   Code   RO           22    .text.main          main_ns.o
-    0x002006ba   0x002006ba   0x0000000a   Ven    RO          270    Veneer$$Code        anon$$obj.o
-    0x002006c4   0x002006c4   0x0000000a   Ven    RO          271    Veneer$$Code        anon$$obj.o
-    0x002006ce   0x002006ce   0x0000000a   Ven    RO          272    Veneer$$Code        anon$$obj.o
-    0x002006d8   0x002006d8   0x0000000a   Ven    RO          273    Veneer$$Code        anon$$obj.o
-    0x002006e2   0x002006e2   0x0000000a   Ven    RO          274    Veneer$$Code        anon$$obj.o
-    0x002006ec   0x002006ec   0x0000000a   Ven    RO          275    Veneer$$Code        anon$$obj.o
-    0x002006f6   0x002006f6   0x0000000a   Ven    RO          276    Veneer$$Code        anon$$obj.o
-    0x00200700   0x00200700   0x00000016   Code   RO          189    x$fpl$fpinit        g_wm.l(fpinit.o)
-    0x00200716   0x00200716   0x00000002   PAD
-    0x00200718   0x00200718   0x00000040   Data   RO          261    Region$$Table       anon$$obj.o
+    0x0020052c   0x0020052c   0x00000004   Code   RO           15    .text.NonSecure_LED_Off  main_ns.o
+    0x00200530   0x00200530   0x00000004   Code   RO           13    .text.NonSecure_LED_On  main_ns.o
+    0x00200534   0x00200534   0x00000024   Code   RO           55    .text.Reset_Handler  startup_IOTKit_CM33.o
+    0x00200558   0x00200558   0x0000004c   Code   RO           17    .text.SysTick_Handler  main_ns.o
+    0x002005a4   0x002005a4   0x00000030   Code   RO           70    .text.SystemInit    system_IOTKit_CM33.o
+    0x002005d4   0x002005d4   0x000000ee   Code   RO           19    .text.main          main_ns.o
+    0x002006c2   0x002006c2   0x0000000a   Ven    RO          267    Veneer$$Code        anon$$obj.o
+    0x002006cc   0x002006cc   0x0000000a   Ven    RO          268    Veneer$$Code        anon$$obj.o
+    0x002006d6   0x002006d6   0x0000000a   Ven    RO          269    Veneer$$Code        anon$$obj.o
+    0x002006e0   0x002006e0   0x0000000a   Ven    RO          270    Veneer$$Code        anon$$obj.o
+    0x002006ea   0x002006ea   0x0000000a   Ven    RO          271    Veneer$$Code        anon$$obj.o
+    0x002006f4   0x002006f4   0x0000000a   Ven    RO          272    Veneer$$Code        anon$$obj.o
+    0x002006fe   0x002006fe   0x0000000a   Ven    RO          273    Veneer$$Code        anon$$obj.o
+    0x00200708   0x00200708   0x00000016   Code   RO          186    x$fpl$fpinit        g_wm.l(fpinit.o)
+    0x0020071e   0x0020071e   0x00000002   PAD
+    0x00200720   0x00200720   0x00000030   Data   RO          258    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_MTBDR (Exec base: 0x00300000, Load base: 0x00200f14, Size: 0x0000012c, Max: 0x00060000, ABSOLUTE)
+    Execution Region ER_MTBDR (Exec base: 0x00300000, Load base: 0x00200750, Size: 0x000000a0, Max: 0x00060000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x00300000   0x00200f14   0x0000012c   Code   RO            4    .MTBDR_MEM          application.o
+    0x00300000   0x00200750   0x0000009e   Code   RO            4    .MTBDR_MEM          application.o
 
 
-    Execution Region ER_MTBTMP (Exec base: 0x00360000, Load base: 0x00201040, Size: 0x00000000, Max: 0x00020000, ABSOLUTE)
+    Execution Region ER_MTBTMP (Exec base: 0x00360000, Load base: 0x002007f0, Size: 0x00000000, Max: 0x00020000, ABSOLUTE)
 
     **** No section assigned to this execution region ****
 
 
-    Execution Region ER_MTBAR (Exec base: 0x00380000, Load base: 0x00200758, Size: 0x000007bc, Max: 0x00080000, ABSOLUTE)
+    Execution Region ER_MTBAR (Exec base: 0x00380000, Load base: 0x00200750, Size: 0x00000000, Max: 0x00080000, ABSOLUTE)
+
+    **** No section assigned to this execution region ****
+
+
+    Execution Region RW_RAM (Exec base: 0x28200000, Load base: 0x002007f0, Size: 0x00000888, Max: 0x001ff000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x00380000   0x00200758   0x000007bc   Code   RO           20    .MTBAR_MEM          main_ns.o
+    0x28200000   0x002007f0   0x00000004   Data   RW           72    .data.SystemCoreClock  system_IOTKit_CM33.o
+    0x28200004   0x002007f4   0x0000001b   Data   RW           21    .data.text          main_ns.o
+    0x2820001f   0x0020080f   0x00000001   PAD
+    0x28200020        -       0x00000004   Zero   RW           22    .bss.SysTick_Handler.ticks  main_ns.o
+    0x28200024        -       0x00000864   Zero   RW           23    .bss.report_s       main_ns.o
 
 
-    Execution Region RW_RAM (Exec base: 0x28200000, Load base: 0x00201040, Size: 0x00000950, Max: 0x001ff000, ABSOLUTE)
-
-    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
-
-    0x28200000   0x00201040   0x00000004   Data   RW           75    .data.SystemCoreClock  system_IOTKit_CM33.o
-    0x28200004   0x00201044   0x0000001b   Data   RW           24    .data.text          main_ns.o
-    0x2820001f   0x0020105f   0x00000001   PAD
-    0x28200020        -       0x00000004   Zero   RW           25    .bss.SysTick_Handler.ticks  main_ns.o
-    0x28200024        -       0x00000864   Zero   RW           26    .bss.report_s       main_ns.o
-    0x28200888        -       0x00000064   Zero   RW            5    .bss.source         application.o
-    0x282008ec        -       0x00000064   Zero   RW            6    .bss.target         application.o
-
-
-    Execution Region ARM_LIB_HEAP (Exec base: 0x28200950, Load base: 0x00201060, Size: 0x00000c00, Max: 0x00000c00, ABSOLUTE)
+    Execution Region ARM_LIB_HEAP (Exec base: 0x28200888, Load base: 0x00200810, Size: 0x00000c00, Max: 0x00000c00, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x28200950        -       0x00000c00   Zero   RW            1    ARM_LIB_HEAP.bss    anon$$obj.o
+    0x28200888        -       0x00000c00   Zero   RW            1    ARM_LIB_HEAP.bss    anon$$obj.o
 
 
-    Execution Region ARM_LIB_STACK (Exec base: 0x283ffc00, Load base: 0x00201060, Size: 0x00000400, Max: 0x00000400, ABSOLUTE)
+    Execution Region ARM_LIB_STACK (Exec base: 0x283ffc00, Load base: 0x00200810, Size: 0x00000400, Max: 0x00000400, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -744,15 +737,15 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
         54          0          0          0          0       2084   LED_V2M-MPS2.o
-       300          8          0          0        200       2003   application.o
-      2294          0          0         27       2152       3450   main_ns.o
+       158          0          0          0          0       3293   application.o
+       322          0          0         27       2152       3288   main_ns.o
         40          0       1024          0          0       1644   startup_IOTKit_CM33.o
         48          0          0          4          0       2170   system_IOTKit_CM33.o
 
     ----------------------------------------------------------------------
-      2812          8       1088         32       6448      11351   Object Totals
-        70          0         64          0       4096          0   (incl. Generated)
-         6          0          0          1          0          0   (incl. Padding)
+       700          0       1072         32       6248      12479   Object Totals
+        70          0         48          0       4096          0   (incl. Generated)
+         8          0          0          1          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -798,15 +791,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      3072         24       1088         32       6448      11859   Grand Totals
-      3072         24       1088         32       6448      11859   ELF Image Totals
-      3072         24       1088         32          0          0   ROM Totals
+       960         16       1072         32       6248      12987   Grand Totals
+       960         16       1072         32       6248      12987   ELF Image Totals
+       960         16       1072         32          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 4160 (   4.06kB)
-    Total RW  Size (RW Data + ZI Data)              6480 (   6.33kB)
-    Total ROM Size (Code + RO Data + RW Data)       4192 (   4.09kB)
+    Total RO  Size (Code + RO Data)                 2032 (   1.98kB)
+    Total RW  Size (RW Data + ZI Data)              6280 (   6.13kB)
+    Total ROM Size (Code + RO Data + RW Data)       2064 (   2.02kB)
 
 ==============================================================================
 

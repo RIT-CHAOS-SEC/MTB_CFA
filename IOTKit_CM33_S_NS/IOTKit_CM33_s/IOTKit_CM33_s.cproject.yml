@@ -105,6 +105,7 @@ project:
         - file: mtb.c
         - file: Secure_Functions.c
         - file: cfa.c
+        - file: Secure_Functions_CFA.c
     - group: Documentation
       files:
         - file: ../README.md

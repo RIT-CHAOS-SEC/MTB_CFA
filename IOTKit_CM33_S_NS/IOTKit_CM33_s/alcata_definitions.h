@@ -23,13 +23,14 @@
 
 #define MTBDR_NAKED_USED  __attribute__((section(".MTBDR_MEM"),naked,used))
 #define MTBTMP_NAKED_USED __attribute__((section(".MTBTMP_MEM"),naked,used))
+#define MTBAR_NAKED_USED __attribute__((section(".MTBAR_MEM"),naked,used))
 
 #define MTBAR __attribute__((section(".MTBAR_MEM")))
 #define MTBDR __attribute__((section(".MTBDR_MEM")))
 #define MTBTMP __attribute__((section(".MTBTMP_MEM")))
 
 // CHOOSE APPLICATION HERE
-#define APPLICATION DUFF
+#define APPLICATION MATMAL3
 
 
 

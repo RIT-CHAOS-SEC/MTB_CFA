@@ -268,6 +268,8 @@ build:
           category: sourceC
         - file: cfa.c
           category: sourceC
+        - file: Secure_Functions_CFA.c
+          category: sourceC
     - group: Documentation
       files:
         - file: ../README.md

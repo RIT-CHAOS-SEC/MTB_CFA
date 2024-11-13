@@ -5,7 +5,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "core_cm33.h"
-
+#include "Secure_Functions_CFA.h"
 
 // define callback functions
 NonSecure_fpVoid fNSFunc = (NonSecure_fpVoid)NULL;

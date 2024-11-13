@@ -42,7 +42,6 @@ arm-none-eabi-gcc.exe \
     "$full_file_path" \
     -mcpu=cortex-m33+nodsp  \
     -mlittle-endian \
-    -masm=auto \
     -std=gnu11  \
     -fshort-wchar \
     -O0  \

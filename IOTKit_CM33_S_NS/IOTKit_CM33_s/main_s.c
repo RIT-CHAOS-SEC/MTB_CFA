@@ -70,8 +70,6 @@ int stdout_putchar_ (int ch) {
   while (ptrUSART->GetTxCount() != 1);
   return (ch);
 }
-//
-
 
 static uint32_t x;
 /*----------------------------------------------------------------------------
@@ -79,7 +77,6 @@ static uint32_t x;
  *----------------------------------------------------------------------------*/
 int main(void)
 {
-	
     uint32_t NonSecure_StackPointer = (*((uint32_t *)(NONSECURE_START + 0u)));
     NonSecure_fpVoid NonSecure_ResetHandler =
         (NonSecure_fpVoid)(*((uint32_t *)(NONSECURE_START + 4u)));
@@ -107,14 +104,14 @@ int main(void)
     GLCD_Initialize();
 
     /* display initial screen */
-    GLCD_SetFont(&GLCD_Font_16x24);
-    GLCD_SetBackgroundColor(GLCD_COLOR_WHITE);
-    GLCD_ClearScreen();
-    GLCD_SetBackgroundColor(GLCD_COLOR_BLUE);
-    GLCD_SetForegroundColor(GLCD_COLOR_RED);
-    GLCD_DrawString(0 * 16, 0 * 24, "   V2M-MPS2+ Demo   ");
-    GLCD_DrawString(0 * 16, 1 * 24, " Secure/Non-Secure  ");
-    GLCD_DrawString(0 * 16, 2 * 24, "   www.keil.com     ");
+     GLCD_SetFont(&GLCD_Font_16x24);
+     GLCD_SetBackgroundColor(GLCD_COLOR_WHITE);
+     GLCD_ClearScreen();
+     GLCD_SetBackgroundColor(GLCD_COLOR_BLUE);
+     GLCD_SetForegroundColor(GLCD_COLOR_RED);
+     GLCD_DrawString(0 * 16, 0 * 24, "   V2M-MPS2+ Demo   ");
+     GLCD_DrawString(0 * 16, 1 * 24, " Secure/Non-Secure  ");
+     GLCD_DrawString(0 * 16, 2 * 24, "   www.keil.com     ");
 
     GLCD_SetBackgroundColor(GLCD_COLOR_WHITE);
     GLCD_SetForegroundColor(GLCD_COLOR_BLACK);
@@ -131,9 +128,11 @@ int main(void)
         break;
     }
 
+    SysTick->CTRL = 0;                      /* Disable SysTick IRQ and SysTick Timer */
+
     stdout_init(); /* Initialize Serial interface */
 
-    SysTick_Config(SystemCoreClock / 100); /* Generate interrupt each 10 ms */
+    // SysTick_Config(SystemCoreClock / 100); /* Generate interrupt each 10 ms */
 
 		// while(1){
 		// 	stdout_putchar_('A');
