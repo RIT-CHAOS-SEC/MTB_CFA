@@ -152,7 +152,7 @@ def instrument(cfg, asm_funcs):
             i = 0
             while i < len(func.instr_list):
                 instr = func.instr_list[i]
-                alt_ret = ('pop' in instr.instr or 'ldr' == instr.instr) and 'pc' in instr.arg
+                alt_ret = ('pop' in instr.instr and 'pc' in instr.arg) or ('ldr' == instr.instr and 'pc' in instr.arg.split(', ')[0])
 
                 print(f"{instr.addr} {instr.reconstruct()}")
 

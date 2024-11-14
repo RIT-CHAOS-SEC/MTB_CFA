@@ -1,5 +1,5 @@
 
-./instrumented.axf:     file format elf32-littlearm
+P:\Workspace\Git\MTB_CFA\IOTKit_CM33_S_NS\out\IOTKit_CM33_ns\V2MMPS2\instrumented.axf:     file format elf32-littlearm
 
 
 Disassembly of section ER_ROM:
@@ -410,8 +410,8 @@ Disassembly of section ER_MTBAR:
   380008:	bf00      	nop
   38000a:	bf00      	nop
   38000c:	bf00      	nop
-  38000e:	46bd      	mov	sp, r7
-  380010:	bd80      	pop	{r7, pc}
+  38000e:	6078      	str	r0, [r7, #4]
+  380010:	4a03      	ldr	r2, [pc, #12]	@ (380020 <nopes+0x20>)
   380012:	bf00      	nop
   380014:	bf00      	nop
   380016:	bf00      	nop
@@ -428,9 +428,8 @@ Disassembly of section ER_MTBAR:
   38002c:	bf00      	nop
   38002e:	bf00      	nop
   380030:	bf00      	nop
-  380032:	bf00      	nop
-  380034:	bf00      	nop
-  380036:	bf00      	nop
+  380032:	f780 b826 	b.w	300082 <pulseIn+0x28>
+  380036:	4b0b      	ldr	r3, [pc, #44]	@ (380064 <nopes+0x64>)
   380038:	bf00      	nop
   38003a:	bf00      	nop
   38003c:	bf00      	nop
@@ -438,10 +437,10 @@ Disassembly of section ER_MTBAR:
   380040:	bf00      	nop
   380042:	bf00      	nop
   380044:	bf00      	nop
-  380046:	bf00      	nop
-  380048:	bf00      	nop
-  38004a:	bf00      	nop
-  38004c:	bf00      	nop
+  380046:	af00      	add	r7, sp, #0
+  380048:	4b0e      	ldr	r3, [pc, #56]	@ (380084 <nopes+0x84>)
+  38004a:	4b0a      	ldr	r3, [pc, #40]	@ (380074 <nopes+0x74>)
+  38004c:	4b06      	ldr	r3, [pc, #24]	@ (380068 <nopes+0x68>)
   38004e:	bf00      	nop
   380050:	bf00      	nop
   380052:	bf00      	nop
@@ -449,8 +448,8 @@ Disassembly of section ER_MTBAR:
   380056:	bf00      	nop
   380058:	bf00      	nop
   38005a:	bf00      	nop
-  38005c:	bf00      	nop
-  38005e:	bf00      	nop
+  38005c:	46bd      	mov	sp, r7
+  38005e:	bd80      	pop	{r7, pc}
   380060:	bf00      	nop
   380062:	bf00      	nop
   380064:	bf00      	nop
@@ -1709,13 +1708,12 @@ Disassembly of section ER_MTBDR:
   300006:	2300      	movs	r3, #0
   300008:	607b      	str	r3, [r7, #4]
   30000a:	f000 f847 	bl	30009c <getUltrasonicReading>
-  30000e:	6078      	str	r0, [r7, #4]
-  300010:	4a03      	ldr	r2, [pc, #12]	@ (300020 <application+0x20>)
+  30000e:	f07f bff7 	b.w	380000 <nopes>
   300012:	687b      	ldr	r3, [r7, #4]
   300014:	6013      	str	r3, [r2, #0]
   300016:	bf00      	nop
   300018:	3708      	adds	r7, #8
-  30001a:	f07f bff1 	b.w	380000 <nopes>
+  30001a:	f07f bffa 	b.w	380012 <nopes+0x12>
   30001e:	bf00      	nop
   300020:	28200028 	.word	0x28200028
 
@@ -1754,8 +1752,7 @@ Disassembly of section ER_MTBDR:
   300060:	2300      	movs	r3, #0
   300062:	607b      	str	r3, [r7, #4]
   300064:	f05f ffd5 	bl	360012 <trampoline_mtbdr+0x12>
-  300068:	e00b      	b.n	300082 <pulseIn+0x28>
-  30006a:	4b0b      	ldr	r3, [pc, #44]	@ (300098 <pulseIn+0x3e>)
+  300068:	f07f bfdc 	b.w	380024 <nopes+0x24>
   30006c:	681b      	ldr	r3, [r3, #0]
   30006e:	691b      	ldr	r3, [r3, #16]
   300070:	0a1b      	lsrs	r3, r3, #8
@@ -1780,19 +1777,18 @@ Disassembly of section ER_MTBDR:
 0030009c <getUltrasonicReading>:
   30009c:	b580      	push	{r7, lr}
   30009e:	b082      	sub	sp, #8
-  3000a0:	af00      	add	r7, sp, #0
-  3000a2:	4b0e      	ldr	r3, [pc, #56]	@ (3000dc <getUltrasonicReading+0x40>)
+  3000a0:	f07f bfca 	b.w	380038 <nopes+0x38>
   3000a4:	681b      	ldr	r3, [r3, #0]
   3000a6:	f240 1200 	movw	r2, #256	@ 0x100
   3000aa:	619a      	str	r2, [r3, #24]
   3000ac:	2002      	movs	r0, #2
-  3000ae:	f7ff ffbf 	bl	300030 <delay>
+  3000ae:	f05f bfb4 	b.w	36001a <trampoline_mtbdr+0x1a>
   3000b2:	4b0a      	ldr	r3, [pc, #40]	@ (3000dc <getUltrasonicReading+0x40>)
   3000b4:	681b      	ldr	r3, [r3, #0]
   3000b6:	f240 1200 	movw	r2, #256	@ 0x100
   3000ba:	629a      	str	r2, [r3, #40]	@ 0x28
   3000bc:	2005      	movs	r0, #5
-  3000be:	f7ff ffb7 	bl	300030 <delay>
+  3000be:	f05f bfb0 	b.w	360022 <trampoline_mtbdr+0x22>
   3000c2:	4b06      	ldr	r3, [pc, #24]	@ (3000dc <getUltrasonicReading+0x40>)
   3000c4:	681b      	ldr	r3, [r3, #0]
   3000c6:	f240 1200 	movw	r2, #256	@ 0x100
@@ -1802,7 +1798,7 @@ Disassembly of section ER_MTBDR:
   3000d2:	687b      	ldr	r3, [r7, #4]
   3000d4:	4618      	mov	r0, r3
   3000d6:	3708      	adds	r7, #8
-  3000d8:	f07f bf9b 	b.w	380012 <nopes+0x12>
+  3000d8:	f07f bfb9 	b.w	38004e <nopes+0x4e>
   3000dc:	28200000 	.word	0x28200000
 
 Disassembly of section ER_MTBTMP:
@@ -1819,14 +1815,10 @@ Disassembly of section ER_MTBTMP:
   360014:	603b      	str	r3, [r7, #0]
   360016:	469a      	mov	sl, r3
   360018:	e7f2      	b.n	360000 <trampoline_mtbdr>
-  36001a:	bf00      	nop
-  36001c:	bf00      	nop
-  36001e:	bf00      	nop
-  360020:	bf00      	nop
-  360022:	bf00      	nop
-  360024:	bf00      	nop
-  360026:	bf00      	nop
-  360028:	bf00      	nop
+  36001a:	f7a0 f809 	bl	300030 <delay>
+  36001e:	f020 b814 	b.w	38004a <nopes+0x4a>
+  360022:	f7a0 f805 	bl	300030 <delay>
+  360026:	f020 b811 	b.w	38004c <nopes+0x4c>
   36002a:	bf00      	nop
   36002c:	bf00      	nop
   36002e:	bf00      	nop
