@@ -79,7 +79,7 @@ def reconstruct_nscs(cfg, asm_funcs):
 
     for sg in nsc_to_veneers:
         print(f"{sg} : {nsc_to_veneers[sg]}")
-    a = input()
+    # a = input()
     return nsc_to_veneers
 
 def instrument(cfg, asm_funcs):
@@ -98,7 +98,7 @@ def instrument(cfg, asm_funcs):
     for ln in cfg.inner_loop_nodes:
         loop_branches.append(cfg.nodes[ln].instr_addrs[-1].addr)
     print(f"Loop branches : {loop_branches}")
-    a = input()
+    # a = input()
 
     sglistFile = open("./sg.lst", "r")
     sglist = [x.replace('\n', '') for x in sglistFile.readlines()]
@@ -112,7 +112,7 @@ def instrument(cfg, asm_funcs):
     print(sglist)
     for func, addr in sg_mapping.items():
         print(f"{func} --> {addr}")
-    a = input()
+    # a = input()
 
     pg = PatchGenerator(cfg.arch.patch_base)
 
@@ -139,10 +139,22 @@ def instrument(cfg, asm_funcs):
     tr_pg = process_patch(tr_pg, cfg, tr_patch)
     nsc_addr = tr_patch.instr[0].addr
     print(f"Nsc_addr : {nsc_addr}")
-    a = input()
+    # a = input()
 
     # func = asm_funcs[cfg.label_addr_map['NonSecure_LED_Off']]
     for func_addr in asm_funcs.keys():
+        skip = True
+        for instr in asm_funcs[func_addr].instr_list:
+            if instr.instr in cfg.arch.indr_calls or instr.instr in cfg.arch.conditional_br_instrs:
+                skip = False
+
+        if skip:
+            continue
+
+        if 'rand_beebs' in cfg.label_addr_map.keys():
+            if func_addr == cfg.label_addr_map['rand_beebs']:
+                continue
+
         if func_addr == cfg.label_addr_map['application_entry']:
             print("AAAAAA !!!!!!")
             continue
@@ -162,18 +174,23 @@ def instrument(cfg, asm_funcs):
                     mtbdr_patch = add_instruction_ARM(asm, cfg, mtbdr_patch, pg)
                     sp_offset_instr = func.instr_list[i+1]
                     arg_front = sp_offset_instr.arg.split("#")[0]+'#'
+                    sp_offset_instr.arg = sp_offset_instr.arg.split('@')[0]
                     new_sp_offset = str(int(sp_offset_instr.arg.split("#")[1])-4)
                     asm = AssemblyInstruction(addr=sp_offset_instr.addr, instr=sp_offset_instr.instr, arg=arg_front+new_sp_offset)
                     mtbdr_patch = add_instruction_ARM(asm, cfg, mtbdr_patch, pg)
                     pg = process_patch(pg, cfg, mtbdr_patch)
 
-                if instr.instr == 'bx':
+                if instr.instr == 'bx' and 'lr' in instr.arg:
                     prev_instr = func.instr_list[i-1]
                     sp_change_instr = func.instr_list[i-2]
                     sp_offset_instr = func.instr_list[i-3]
                     mtbdr_patch = Patch(prev_instr.addr)
                     arg_front = sp_offset_instr.arg.split("#")[0]+'#'
+                    sp_offset_instr.arg = sp_offset_instr.arg.split('@')[0]
+                    print(sp_offset_instr.arg)
+                    print(instr.addr)
                     new_sp_offset = str(int(sp_offset_instr.arg.split("#")[1])-4)
+
                     asm = AssemblyInstruction(addr=sp_offset_instr.addr, instr=sp_offset_instr.instr, arg=arg_front+new_sp_offset)
                     mtbdr_patch = add_instruction_ARM(asm, cfg, mtbdr_patch, pg)
 
@@ -198,10 +215,12 @@ def instrument(cfg, asm_funcs):
                 alt_ret = ('pop' in instr.instr and 'pc' in instr.arg) or ('ldr' == instr.instr and 'pc' in instr.arg.split(', ')[0])
 
                 print(f"{instr.addr} {instr.reconstruct()}")
-
+                #'''
                 if instr.addr in loop_dests:
+                    do_nothing = 0
+                    
                     print(f"FOUND ONE IN HTE LOOP NODES : {instr.addr}")
-                    a = input()
+                    # a = input()
 
                     prev_instr = func.instr_list[i-1]
                     if prev_instr.instr in cfg.arch.all_br_insts:
@@ -243,7 +262,7 @@ def instrument(cfg, asm_funcs):
                         asm = AssemblyInstruction(addr=hex(int(prev_prev_instr.addr,16)+4), instr='nop', arg=f'')
                         mtbdr_patch = add_instruction_ARM(asm, cfg, mtbdr_patch, pg)
                     pg = process_patch(pg, cfg, mtbdr_patch)
-
+                #'''
                 if instr.instr in cfg.arch.conditional_br_instrs and instr.addr not in loop_branches:
 
                     instr.arg = instr.arg.split(' ')[0]

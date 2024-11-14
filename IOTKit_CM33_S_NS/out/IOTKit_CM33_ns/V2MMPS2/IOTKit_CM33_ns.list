@@ -73,8 +73,8 @@ Disassembly of section ER_ROM:
   200454:	f000 f801 	bl	20045a <__scatterload_loop+0x48>
   200458:	e7db      	b.n	200412 <__scatterload_loop>
   20045a:	4718      	bx	r3
-  20045c:	000002c4 	.word	0x000002c4
-  200460:	00000314 	.word	0x00000314
+  20045c:	000006c4 	.word	0x000006c4
+  200460:	00000714 	.word	0x00000714
 
 00200464 <__scatterload_copy>:
   200464:	3a10      	subs	r2, #16
@@ -221,7 +221,7 @@ Disassembly of section ER_ROM:
   200554:	f7ff ff54 	bl	200400 <__main>
 
 00200558 <SysTick_Handler>:
-  200558:	f240 0024 	movw	r0, #36	@ 0x24
+  200558:	f240 0020 	movw	r0, #32
   20055c:	f6c2 0020 	movt	r0, #10272	@ 0x2820
   200560:	6802      	ldr	r2, [r0, #0]
   200562:	1c51      	adds	r1, r2, #1
@@ -263,7 +263,7 @@ Disassembly of section ER_ROM:
   2005b8:	6808      	ldr	r0, [r1, #0]
   2005ba:	f440 0070 	orr.w	r0, r0, #15728640	@ 0xf00000
   2005be:	6008      	str	r0, [r1, #0]
-  2005c0:	f240 0004 	movw	r0, #4
+  2005c0:	f240 0000 	movw	r0, #0
   2005c4:	f647 0140 	movw	r1, #30784	@ 0x7840
   2005c8:	f6c2 0020 	movt	r0, #10272	@ 0x2820
   2005cc:	f2c0 117d 	movt	r1, #381	@ 0x17d
@@ -272,14 +272,14 @@ Disassembly of section ER_ROM:
 
 002005d4 <main>:
   2005d4:	b084      	sub	sp, #16
-  2005d6:	f240 0025 	movw	r0, #37	@ 0x25
+  2005d6:	f240 0015 	movw	r0, #21
   2005da:	f2c0 0030 	movt	r0, #48	@ 0x30
   2005de:	f000 f87a 	bl	2006d6 <main+0x102>
   2005e2:	f24e 0410 	movw	r4, #57360	@ 0xe010
   2005e6:	f2ce 0400 	movt	r4, #57344	@ 0xe000
   2005ea:	2000      	movs	r0, #0
   2005ec:	6020      	str	r0, [r4, #0]
-  2005ee:	f240 002c 	movw	r0, #44	@ 0x2c
+  2005ee:	f240 0024 	movw	r0, #36	@ 0x24
   2005f2:	f6c2 0020 	movt	r0, #10272	@ 0x2820
   2005f6:	f000 f873 	bl	2006e0 <main+0x10c>
   2005fa:	f8d4 0f30 	ldr.w	r0, [r4, #3888]	@ 0xf30
@@ -314,7 +314,7 @@ Disassembly of section ER_ROM:
   200662:	f240 502d 	movw	r0, #1325	@ 0x52d
   200666:	f2c0 0020 	movt	r0, #32
   20066a:	f000 f843 	bl	2006f4 <main+0x120>
-  20066e:	f240 0408 	movw	r4, #8
+  20066e:	f240 0404 	movw	r4, #4
   200672:	f6c2 0420 	movt	r4, #10272	@ 0x2820
   200676:	bf00      	nop
   200678:	2005      	movs	r0, #5
@@ -378,27 +378,93 @@ Disassembly of section ER_ROM:
   20071c:	4770      	bx	lr
 	...
 
-00200720 <Region$$Table$$Base>:
-  200720:	00200770 	.word	0x00200770
-  200724:	00380000 	.word	0x00380000
-  200728:	00000a20 	.word	0x00000a20
-  20072c:	00200464 	.word	0x00200464
-  200730:	00201190 	.word	0x00201190
-  200734:	00300000 	.word	0x00300000
-  200738:	000000e0 	.word	0x000000e0
-  20073c:	00200464 	.word	0x00200464
-  200740:	00201270 	.word	0x00201270
-  200744:	00360000 	.word	0x00360000
-  200748:	00000a20 	.word	0x00000a20
-  20074c:	00200464 	.word	0x00200464
-  200750:	00201c90 	.word	0x00201c90
-  200754:	28200000 	.word	0x28200000
-  200758:	00000024 	.word	0x00000024
-  20075c:	00200464 	.word	0x00200464
-  200760:	00201cb4 	.word	0x00201cb4
-  200764:	28200024 	.word	0x28200024
-  200768:	0000086c 	.word	0x0000086c
-  20076c:	00200484 	.word	0x00200484
+00200720 <crc_32_tab>:
+  200720:	0000 0000 3096 7707 612c ee0e 51ba 9909     .....0.w,a...Q..
+  200730:	c419 076d f48f 706a a535 e963 95a3 9e64     ..m...jp5.c...d.
+  200740:	8832 0edb b8a4 79dc e91e e0d5 d988 97d2     2......y........
+  200750:	4c2b 09b6 7cbd 7eb1 2d07 e7b8 1d91 90bf     +L...|.~.-......
+  200760:	1064 1db7 20f2 6ab0 7148 f3b9 41de 84be     d.... .jHq...A..
+  200770:	d47d 1ada e4eb 6ddd b551 f4d4 85c7 83d3     }......mQ.......
+  200780:	9856 136c a8c0 646b f97a fd62 c9ec 8a65     V.l...kdz.b...e.
+  200790:	5c4f 1401 6cd9 6306 3d63 fa0f 0df5 8d08     O\...l.cc=......
+  2007a0:	20c8 3b6e 105e 4c69 41e4 d560 7172 a267     . n;^.iL.A`.rqg.
+  2007b0:	e4d1 3c03 d447 4b04 85fd d20d b56b a50a     ...<G..K....k...
+  2007c0:	a8fa 35b5 986c 42b2 c9d6 dbbb f940 acbc     ...5l..B....@...
+  2007d0:	6ce3 32d8 5c75 45df 0dcf dcd6 3d59 abd1     .l.2u\.E....Y=..
+  2007e0:	30ac 26d9 003a 51de 5180 c8d7 6116 bfd0     .0.&:..Q.Q...a..
+  2007f0:	f4b5 21b4 c423 56b3 9599 cfba a50f b8bd     ...!#..V........
+  200800:	b89e 2802 8808 5f05 d9b2 c60c e924 b10b     ...(..._....$...
+  200810:	7c87 2f6f 4c11 5868 1dab c161 2d3d b666     .|o/.LhX..a.=-f.
+  200820:	4190 76dc 7106 01db 20bc 98d2 102a efd5     .A.v.q... ..*...
+  200830:	8589 71b1 b51f 06b6 e4a5 9fbf d433 e8b8     ...q........3...
+  200840:	c9a2 7807 f934 0f00 a88e 9609 9818 e10e     ...x4...........
+  200850:	0dbb 7f6a 3d2d 086d 6c97 9164 5c01 e663     ..j.-=m..ld..\c.
+  200860:	51f4 6b6b 6162 1c6c 30d8 8565 004e f262     .Qkkbal..0e.N.b.
+  200870:	95ed 6c06 a57b 1b01 f4c1 8208 c457 f50f     ...l{.......W...
+  200880:	d9c6 65b0 e950 12b7 b8ea 8bbe 887c fcb9     ...eP.......|...
+  200890:	1ddf 62dd 2d49 15da 7cf3 8cd3 4c65 fbd4     ...bI-...|..eL..
+  2008a0:	6158 4db2 51ce 3ab5 0074 a3bc 30e2 d4bb     Xa.M.Q.:t....0..
+  2008b0:	a541 4adf 95d7 3dd8 c46d a4d1 f4fb d3d6     A..J...=m.......
+  2008c0:	e96a 4369 d9fc 346e 8846 ad67 b8d0 da60     j.iC..n4F.g...`.
+  2008d0:	2d73 4404 1de5 3303 4c5f aa0a 7cc9 dd0d     s-.D...3_L...|..
+  2008e0:	713c 5005 41aa 2702 1010 be0b 2086 c90c     <q.P.A.'..... ..
+  2008f0:	b525 5768 85b3 206f d409 b966 e49f ce61     %.hW..o ..f...a.
+  200900:	f90e 5ede c998 29d9 9822 b0d0 a8b4 c7d7     ...^...)".......
+  200910:	3d17 59b3 0d81 2eb4 5c3b b7bd 6cad c0ba     .=.Y....;\...l..
+  200920:	8320 edb8 b3b6 9abf e20c 03b6 d29a 74b1      ..............t
+  200930:	4739 ead5 77af 9dd2 2615 04db 1683 73dc     9G...w...&.....s
+  200940:	0b12 e363 3b84 9464 6a3e 0d6d 5aa8 7a6a     ..c..;d.>jm..Zjz
+  200950:	cf0b e40e ff9d 9309 ae27 0a00 9eb1 7d07     ........'......}
+  200960:	9344 f00f a3d2 8708 f268 1e01 c2fe 6906     D.......h......i
+  200970:	575d f762 67cb 8065 3671 196c 06e7 6e6b     ]Wb..ge.q6l...kn
+  200980:	1b76 fed4 2be0 89d3 7a5a 10da 4acc 67dd     v....+..Zz...J.g
+  200990:	df6f f9b9 eff9 8ebe be43 17b7 8ed5 60b0     o.......C......`
+  2009a0:	a3e8 d6d6 937e a1d1 c2c4 38d8 f252 4fdf     ....~......8R..O
+  2009b0:	67f1 d1bb 5767 a6bc 06dd 3fb5 364b 48b2     .g..gW.....?K6.H
+  2009c0:	2bda d80d 1b4c af0a 4af6 3603 7a60 4104     .+..L....J.6`z.A
+  2009d0:	efc3 df60 df55 a867 8eef 316e be79 4669     ..`.U.g...n1y.iF
+  2009e0:	b38c cb61 831a bc66 d2a0 256f e236 5268     ..a...f...o%6.hR
+  2009f0:	7795 cc0c 4703 bb0b 16b9 2202 262f 5505     .w...G....."/&.U
+  200a00:	3bbe c5ba 0b28 b2bd 5a92 2bb4 6a04 5cb3     .;..(....Z.+.j.\
+  200a10:	ffa7 c2d7 cf31 b5d0 9e8b 2cd9 ae1d 5bde     ....1......,...[
+  200a20:	c2b0 9b64 f226 ec63 a39c 756a 930a 026d     ..d.&.c...ju..m.
+  200a30:	06a9 9c09 363f eb0e 6785 7207 5713 0500     ....?6...g.r.W..
+  200a40:	4a82 95bf 7a14 e2b8 2bae 7bb1 1b38 0cb6     .J...z...+.{8...
+  200a50:	8e9b 92d2 be0d e5d5 efb7 7cdc df21 0bdb     ...........|!...
+  200a60:	d2d4 86d3 e242 f1d4 b3f8 68dd 836e 1fda     ....B......hn...
+  200a70:	16cd 81be 265b f6b9 77e1 6fb0 4777 18b7     ....[&...w.owG..
+  200a80:	5ae6 8808 6a70 ff0f 3bca 6606 0b5c 1101     .Z..pj...;.f\...
+  200a90:	9eff 8f65 ae69 f862 ffd3 616b cf45 166c     ..e.i.b...kaE.l.
+  200aa0:	e278 a00a d2ee d70d 8354 4e04 b3c2 3903     x.......T..N...9
+  200ab0:	2661 a767 16f7 d060 474d 4969 77db 3e6e     a&g...`.MGiI.wn>
+  200ac0:	6a4a aed1 5adc d9d6 0b66 40df 3bf0 37d8     Jj...Z..f..@.;.7
+  200ad0:	ae53 a9bc 9ec5 debb cf7f 47b2 ffe9 30b5     S..........G...0
+  200ae0:	f21c bdbd c28a caba 9330 53b3 a3a6 24b4     ........0..S...$
+  200af0:	3605 bad0 0693 cdd7 5729 54de 67bf 23d9     .6......)W.T.g.#
+  200b00:	7a2e b366 4ab8 c461 1b02 5d68 2b94 2a6f     .zf..Ja...h].+o*
+  200b10:	be37 b40b 8ea1 c30c df1b 5a05 ef8d 2d02     7..........Z...-
+
+00200b20 <Region$$Table$$Base>:
+  200b20:	00200b70 	.word	0x00200b70
+  200b24:	00380000 	.word	0x00380000
+  200b28:	00000a20 	.word	0x00000a20
+  200b2c:	00200464 	.word	0x00200464
+  200b30:	00201590 	.word	0x00201590
+  200b34:	00300000 	.word	0x00300000
+  200b38:	0000009c 	.word	0x0000009c
+  200b3c:	00200464 	.word	0x00200464
+  200b40:	0020162c 	.word	0x0020162c
+  200b44:	00360000 	.word	0x00360000
+  200b48:	00000a20 	.word	0x00000a20
+  200b4c:	00200464 	.word	0x00200464
+  200b50:	0020204c 	.word	0x0020204c
+  200b54:	28200000 	.word	0x28200000
+  200b58:	00000020 	.word	0x00000020
+  200b5c:	00200464 	.word	0x00200464
+  200b60:	0020206c 	.word	0x0020206c
+  200b64:	28200020 	.word	0x28200020
+  200b68:	0000086c 	.word	0x0000086c
+  200b6c:	00200484 	.word	0x00200484
 
 Disassembly of section ER_MTBAR:
 
@@ -1706,108 +1772,72 @@ Disassembly of section ER_MTBDR:
   300000:	b580      	push	{r7, lr}
   300002:	b082      	sub	sp, #8
   300004:	af00      	add	r7, sp, #0
-  300006:	2300      	movs	r3, #0
-  300008:	607b      	str	r3, [r7, #4]
-  30000a:	f000 f847 	bl	30009c <getUltrasonicReading>
-  30000e:	6078      	str	r0, [r7, #4]
-  300010:	4a03      	ldr	r2, [pc, #12]	@ (300020 <application+0x20>)
-  300012:	687b      	ldr	r3, [r7, #4]
-  300014:	6013      	str	r3, [r2, #0]
-  300016:	bf00      	nop
-  300018:	3708      	adds	r7, #8
-  30001a:	46bd      	mov	sp, r7
-  30001c:	bd80      	pop	{r7, pc}
-  30001e:	bf00      	nop
-  300020:	28200028 	.word	0x28200028
+  300006:	f000 f827 	bl	300058 <crc32pseudo>
+  30000a:	6078      	str	r0, [r7, #4]
+  30000c:	bf00      	nop
+  30000e:	3708      	adds	r7, #8
+  300010:	46bd      	mov	sp, r7
+  300012:	bd80      	pop	{r7, pc}
 
-00300024 <application_entry>:
-  300024:	b580      	push	{r7, lr}
-  300026:	af00      	add	r7, sp, #0
-  300028:	f7ff ffea 	bl	300000 <application>
-  30002c:	bf00      	nop
-  30002e:	bd80      	pop	{r7, pc}
+00300014 <application_entry>:
+  300014:	b580      	push	{r7, lr}
+  300016:	af00      	add	r7, sp, #0
+  300018:	f7ff fff2 	bl	300000 <application>
+  30001c:	bf00      	nop
+  30001e:	bd80      	pop	{r7, pc}
 
-00300030 <delay>:
-  300030:	b480      	push	{r7}
-  300032:	b085      	sub	sp, #20
-  300034:	af00      	add	r7, sp, #0
-  300036:	6078      	str	r0, [r7, #4]
-  300038:	2300      	movs	r3, #0
-  30003a:	60fb      	str	r3, [r7, #12]
-  30003c:	e002      	b.n	300044 <delay+0x14>
-  30003e:	68fb      	ldr	r3, [r7, #12]
-  300040:	1c5b      	adds	r3, r3, #1
-  300042:	60fb      	str	r3, [r7, #12]
-  300044:	68fb      	ldr	r3, [r7, #12]
-  300046:	687a      	ldr	r2, [r7, #4]
-  300048:	429a      	cmp	r2, r3
-  30004a:	d8f8      	bhi.n	30003e <delay+0xe>
-  30004c:	bf00      	nop
+00300020 <rand_beebs>:
+  300020:	b480      	push	{r7}
+  300022:	af00      	add	r7, sp, #0
+  300024:	4b0a      	ldr	r3, [pc, #40]	@ (300050 <rand_beebs+0x30>)
+  300026:	681b      	ldr	r3, [r3, #0]
+  300028:	f8df 2028 	ldr.w	r2, [pc, #40]	@ 300054 <rand_beebs+0x34>
+  30002c:	fb02 f303 	mul.w	r3, r2, r3
+  300030:	f503 5340 	add.w	r3, r3, #12288	@ 0x3000
+  300034:	3339      	adds	r3, #57	@ 0x39
+  300036:	f023 4300 	bic.w	r3, r3, #2147483648	@ 0x80000000
+  30003a:	4a05      	ldr	r2, [pc, #20]	@ (300050 <rand_beebs+0x30>)
+  30003c:	6013      	str	r3, [r2, #0]
+  30003e:	4b04      	ldr	r3, [pc, #16]	@ (300050 <rand_beebs+0x30>)
+  300040:	681b      	ldr	r3, [r3, #0]
+  300042:	141b      	asrs	r3, r3, #16
+  300044:	4618      	mov	r0, r3
+  300046:	46bd      	mov	sp, r7
+  300048:	f85d 7b04 	ldr.w	r7, [sp], #4
+  30004c:	4770      	bx	lr
   30004e:	bf00      	nop
-  300050:	3714      	adds	r7, #20
-  300052:	46bd      	mov	sp, r7
-  300054:	f85d 7b04 	ldr.w	r7, [sp], #4
-  300058:	4770      	bx	lr
+  300050:	28200888 	.word	0x28200888
+  300054:	41c64e6d 	.word	0x41c64e6d
 
-0030005a <pulseIn>:
-  30005a:	b480      	push	{r7}
-  30005c:	b083      	sub	sp, #12
-  30005e:	af00      	add	r7, sp, #0
-  300060:	2300      	movs	r3, #0
-  300062:	607b      	str	r3, [r7, #4]
-  300064:	2300      	movs	r3, #0
-  300066:	603b      	str	r3, [r7, #0]
-  300068:	e00b      	b.n	300082 <pulseIn+0x28>
-  30006a:	4b0b      	ldr	r3, [pc, #44]	@ (300098 <pulseIn+0x3e>)
-  30006c:	681b      	ldr	r3, [r3, #0]
-  30006e:	691b      	ldr	r3, [r3, #16]
-  300070:	0a1b      	lsrs	r3, r3, #8
-  300072:	f003 0301 	and.w	r3, r3, #1
-  300076:	687a      	ldr	r2, [r7, #4]
-  300078:	4413      	add	r3, r2
-  30007a:	607b      	str	r3, [r7, #4]
-  30007c:	683b      	ldr	r3, [r7, #0]
-  30007e:	1c5b      	adds	r3, r3, #1
-  300080:	603b      	str	r3, [r7, #0]
-  300082:	683b      	ldr	r3, [r7, #0]
-  300084:	f5b3 7f7a 	cmp.w	r3, #1000	@ 0x3e8
-  300088:	dbef      	blt.n	30006a <pulseIn+0x10>
-  30008a:	687b      	ldr	r3, [r7, #4]
-  30008c:	4618      	mov	r0, r3
-  30008e:	370c      	adds	r7, #12
-  300090:	46bd      	mov	sp, r7
-  300092:	f85d 7b04 	ldr.w	r7, [sp], #4
-  300096:	4770      	bx	lr
-  300098:	28200000 	.word	0x28200000
-
-0030009c <getUltrasonicReading>:
-  30009c:	b580      	push	{r7, lr}
-  30009e:	b082      	sub	sp, #8
-  3000a0:	af00      	add	r7, sp, #0
-  3000a2:	4b0e      	ldr	r3, [pc, #56]	@ (3000dc <getUltrasonicReading+0x40>)
-  3000a4:	681b      	ldr	r3, [r3, #0]
-  3000a6:	f240 1200 	movw	r2, #256	@ 0x100
-  3000aa:	619a      	str	r2, [r3, #24]
-  3000ac:	2002      	movs	r0, #2
-  3000ae:	f7ff ffbf 	bl	300030 <delay>
-  3000b2:	4b0a      	ldr	r3, [pc, #40]	@ (3000dc <getUltrasonicReading+0x40>)
-  3000b4:	681b      	ldr	r3, [r3, #0]
-  3000b6:	f240 1200 	movw	r2, #256	@ 0x100
-  3000ba:	629a      	str	r2, [r3, #40]	@ 0x28
-  3000bc:	2005      	movs	r0, #5
-  3000be:	f7ff ffb7 	bl	300030 <delay>
-  3000c2:	4b06      	ldr	r3, [pc, #24]	@ (3000dc <getUltrasonicReading+0x40>)
-  3000c4:	681b      	ldr	r3, [r3, #0]
-  3000c6:	f240 1200 	movw	r2, #256	@ 0x100
-  3000ca:	619a      	str	r2, [r3, #24]
-  3000cc:	f7ff ffc5 	bl	30005a <pulseIn>
-  3000d0:	6078      	str	r0, [r7, #4]
-  3000d2:	687b      	ldr	r3, [r7, #4]
-  3000d4:	4618      	mov	r0, r3
-  3000d6:	3708      	adds	r7, #8
-  3000d8:	46bd      	mov	sp, r7
-  3000da:	bd80      	pop	{r7, pc}
-  3000dc:	28200000 	.word	0x28200000
+00300058 <crc32pseudo>:
+  300058:	b590      	push	{r4, r7, lr}
+  30005a:	b083      	sub	sp, #12
+  30005c:	af00      	add	r7, sp, #0
+  30005e:	f04f 34ff 	mov.w	r4, #4294967295
+  300062:	2300      	movs	r3, #0
+  300064:	607b      	str	r3, [r7, #4]
+  300066:	e00e      	b.n	300086 <crc32pseudo+0x2e>
+  300068:	f7ff ffda 	bl	300020 <rand_beebs>
+  30006c:	4603      	mov	r3, r0
+  30006e:	b2db      	uxtb	r3, r3
+  300070:	4063      	eors	r3, r4
+  300072:	b2db      	uxtb	r3, r3
+  300074:	4a08      	ldr	r2, [pc, #32]	@ (300098 <crc32pseudo+0x40>)
+  300076:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
+  30007a:	0a23      	lsrs	r3, r4, #8
+  30007c:	ea82 0403 	eor.w	r4, r2, r3
+  300080:	687b      	ldr	r3, [r7, #4]
+  300082:	1c5b      	adds	r3, r3, #1
+  300084:	607b      	str	r3, [r7, #4]
+  300086:	687b      	ldr	r3, [r7, #4]
+  300088:	f5b3 6f80 	cmp.w	r3, #1024	@ 0x400
+  30008c:	dbec      	blt.n	300068 <crc32pseudo+0x10>
+  30008e:	43e3      	mvns	r3, r4
+  300090:	4618      	mov	r0, r3
+  300092:	370c      	adds	r7, #12
+  300094:	46bd      	mov	sp, r7
+  300096:	bd90      	pop	{r4, r7, pc}
+  300098:	00200720 	.word	0x00200720
 
 Disassembly of section ER_MTBTMP:
 

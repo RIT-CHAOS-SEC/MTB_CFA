@@ -1146,7 +1146,7 @@ pfNonSecure_LED_Off:
 	.long	66                              @ DW_AT_type
 	.long	.Linfo_string4                  @ DW_AT_name
 	.byte	1                               @ DW_AT_decl_file
-	.byte	24                              @ DW_AT_decl_line
+	.byte	28                              @ DW_AT_decl_line
 	.byte	4                               @ Abbrev [4] 0x42:0x5 DW_TAG_pointer_type
 	.long	71                              @ DW_AT_type
 	.byte	5                               @ Abbrev [5] 0x47:0x1 DW_TAG_subroutine_type
@@ -1270,7 +1270,7 @@ pfNonSecure_LED_Off:
 	.long	303                             @ DW_AT_type
 	.long	.Linfo_string14                 @ DW_AT_name
 	.byte	1                               @ DW_AT_decl_file
-	.byte	23                              @ DW_AT_decl_line
+	.byte	27                              @ DW_AT_decl_line
 	.byte	4                               @ Abbrev [4] 0x12f:0x5 DW_TAG_pointer_type
 	.long	308                             @ DW_AT_type
 	.byte	11                              @ Abbrev [11] 0x134:0xb DW_TAG_subroutine_type

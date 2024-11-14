@@ -141,9 +141,10 @@ class CFG:
         #returns list of node start_addr that contains the addr
         node_addrs = []
         for node_start_addr in self.nodes.keys():
-            node_end_addr = self.nodes[node_start_addr].instr_addrs[-1].addr
-            if int(addr,16) >= int(node_start_addr,16) and int(addr,16) <= int(node_end_addr,16):
-                node_addrs.append(node_start_addr)
+            if len(self.nodes[node_start_addr].instr_addrs) > 0:
+                node_end_addr = self.nodes[node_start_addr].instr_addrs[-1].addr
+                if int(addr,16) >= int(node_start_addr,16) and int(addr,16) <= int(node_end_addr,16):
+                    node_addrs.append(node_start_addr)
 
         return node_addrs
 

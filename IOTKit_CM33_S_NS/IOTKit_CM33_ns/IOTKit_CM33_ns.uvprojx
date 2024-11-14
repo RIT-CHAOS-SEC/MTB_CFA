@@ -390,9 +390,9 @@
               <FilePath>.\main_ns.c</FilePath>
             </File>
             <File>
-              <FileName>application.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\application.c</FilePath>
+              <FileName>application.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\application.s</FilePath>
             </File>
           </Files>
         </Group>
@@ -816,9 +816,9 @@
               <FilePath>.\main_ns.c</FilePath>
             </File>
             <File>
-              <FileName>application.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\application.c</FilePath>
+              <FileName>application.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\application.s</FilePath>
             </File>
           </Files>
         </Group>

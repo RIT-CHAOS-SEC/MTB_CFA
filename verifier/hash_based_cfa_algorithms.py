@@ -61,7 +61,7 @@ def emulate_hash_chain(cfg, cflog):
                     # print(f"appending {loop_path}")
                     if loop_path == ['0xe176', '0xe172']:
                         print("STOP")
-                        a = input()
+                        # a = input()
                     loop_paths.append(loop_path)
                     # a  = input()
                     loop_path = []
@@ -98,7 +98,7 @@ def emulate_hash_chain(cfg, cflog):
                     loop_entry, loop_exit, isLoop = loop_stack[0]
                 except IndexError:
                     print(f"No loop metadata at {last_addr}")
-                    a = input()
+                    # a = input()
                 # print(f"\t\tpopped {(loop_entry, loop_exit, isLoop)} from loop stack")
                 loop_stack = loop_stack[1:]
                 print(f"{last_addr}  {hash_chain}", file=f)
@@ -615,7 +615,7 @@ def verify_hybrid_evidence(cfg):
     app_entry = 0
     current_node = cfg.head
     print(f"Current node: {current_node.start_addr}")
-    a = input()
+    # a = input()
     bit_idx = 0
 
     addr_bit_len = 8*cfg.arch.regular_instr_size

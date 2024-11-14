@@ -196,7 +196,7 @@
 ---------------------------
 0x200558 : Start Address: 0x200558 End Address: 0x2005a2
 
-	0x200558 movw r0, #36@ 0x24
+	0x200558 movw r0, #32
 	0x20055c movt r0, #10272@ 0x2820
 	0x200560 ldr r2, [r0, #0]
 	0x200562 adds r1, r2, #1
@@ -239,7 +239,7 @@
 	0x2005b8 ldr r0, [r1, #0]
 	0x2005ba orr.w r0, r0, #15728640@ 0xf00000
 	0x2005be str r0, [r1, #0]
-	0x2005c0 movw r0, #4
+	0x2005c0 movw r0, #0
 	0x2005c4 movw r1, #30784@ 0x7840
 	0x2005c8 movt r0, #10272@ 0x2820
 	0x2005cc movt r1, #381@ 0x17d
@@ -249,14 +249,14 @@
 0x2005d4 : Start Address: 0x2005d4 End Address: 0x200706
 
 	0x2005d4 sub sp, #16
-	0x2005d6 movw r0, #37@ 0x25
+	0x2005d6 movw r0, #21
 	0x2005da movt r0, #48@ 0x30
 	0x2005de bl 2006d6 <main+0x102>
 	0x2005e2 movw r4, #57360@ 0xe010
 	0x2005e6 movt r4, #57344@ 0xe000
 	0x2005ea movs r0, #0
 	0x2005ec str r0, [r4, #0]
-	0x2005ee movw r0, #44@ 0x2c
+	0x2005ee movw r0, #36@ 0x24
 	0x2005f2 movt r0, #10272@ 0x2820
 	0x2005f6 bl 2006e0 <main+0x10c>
 	0x2005fa ldr.w r0, [r4, #3888]@ 0xf30
@@ -291,7 +291,7 @@
 	0x200662 movw r0, #1325@ 0x52d
 	0x200666 movt r0, #32
 	0x20066a bl 2006f4 <main+0x120>
-	0x20066e movw r4, #8
+	0x20066e movw r4, #4
 	0x200672 movt r4, #10272@ 0x2820
 	0x200678 movs r0, #5
 	0x20067a bl 200510 <LED_On>
@@ -350,107 +350,72 @@
 
 	0x20071c bx lr
 ---------------------------
-0x300000 : Start Address: 0x300000 End Address: 0x30001c
+0x300000 : Start Address: 0x300000 End Address: 0x300012
 
 	0x300000 push {r7, lr}
 	0x300002 sub sp, #8
 	0x300004 add r7, sp, #0
-	0x300006 movs r3, #0
-	0x300008 str r3, [r7, #4]
-	0x30000a bl 30009c <getUltrasonicReading>
-	0x30000e str r0, [r7, #4]
-	0x300010 ldr r2, [pc, #12]@ (300020 <application+0x20>)
-	0x300012 ldr r3, [r7, #4]
-	0x300014 str r3, [r2, #0]
-	0x300018 adds r7, #8
-	0x30001a mov sp, r7
-	0x30001c pop {r7, pc}
+	0x300006 bl 300058 <crc32pseudo>
+	0x30000a str r0, [r7, #4]
+	0x30000e adds r7, #8
+	0x300010 mov sp, r7
+	0x300012 pop {r7, pc}
 ---------------------------
-0x300024 : Start Address: 0x300024 End Address: 0x30002e
+0x300014 : Start Address: 0x300014 End Address: 0x30001e
 
-	0x300024 push {r7, lr}
-	0x300026 add r7, sp, #0
-	0x300028 bl 300000 <application>
-	0x30002e pop {r7, pc}
+	0x300014 push {r7, lr}
+	0x300016 add r7, sp, #0
+	0x300018 bl 300000 <application>
+	0x30001e pop {r7, pc}
 ---------------------------
-0x300030 : Start Address: 0x300030 End Address: 0x300058
+0x300020 : Start Address: 0x300020 End Address: 0x30004c
 
-	0x300030 push {r7}
-	0x300032 sub sp, #20
-	0x300034 add r7, sp, #0
-	0x300036 str r0, [r7, #4]
-	0x300038 movs r3, #0
-	0x30003a str r3, [r7, #12]
-	0x30003c b.n 300044 <delay+0x14>
-	0x30003e ldr r3, [r7, #12]
-	0x300040 adds r3, r3, #1
-	0x300042 str r3, [r7, #12]
-	0x300044 ldr r3, [r7, #12]
-	0x300046 ldr r2, [r7, #4]
-	0x300048 cmp r2, r3
-	0x30004a bhi.n 30003e <delay+0xe>
-	0x300050 adds r7, #20
-	0x300052 mov sp, r7
-	0x300054 ldr.w r7, [sp], #4
-	0x300058 bx lr
+	0x300020 push {r7}
+	0x300022 add r7, sp, #0
+	0x300024 ldr r3, [pc, #40]@ (300050 <rand_beebs+0x30>)
+	0x300026 ldr r3, [r3, #0]
+	0x300028 ldr.w r2, [pc, #40]@ 300054 <rand_beebs+0x34>
+	0x30002c mul.w r3, r2, r3
+	0x300030 add.w r3, r3, #12288@ 0x3000
+	0x300034 adds r3, #57@ 0x39
+	0x300036 bic.w r3, r3, #2147483648@ 0x80000000
+	0x30003a ldr r2, [pc, #20]@ (300050 <rand_beebs+0x30>)
+	0x30003c str r3, [r2, #0]
+	0x30003e ldr r3, [pc, #16]@ (300050 <rand_beebs+0x30>)
+	0x300040 ldr r3, [r3, #0]
+	0x300042 asrs r3, r3, #16
+	0x300044 mov r0, r3
+	0x300046 mov sp, r7
+	0x300048 ldr.w r7, [sp], #4
+	0x30004c bx lr
 ---------------------------
-0x30005a : Start Address: 0x30005a End Address: 0x300096
+0x300058 : Start Address: 0x300058 End Address: 0x300096
 
-	0x30005a push {r7}
-	0x30005c sub sp, #12
-	0x30005e add r7, sp, #0
-	0x300060 movs r3, #0
-	0x300062 str r3, [r7, #4]
-	0x300064 movs r3, #0
-	0x300066 str r3, [r7, #0]
-	0x300068 b.n 300082 <pulseIn+0x28>
-	0x30006a ldr r3, [pc, #44]@ (300098 <pulseIn+0x3e>)
-	0x30006c ldr r3, [r3, #0]
-	0x30006e ldr r3, [r3, #16]
-	0x300070 lsrs r3, r3, #8
-	0x300072 and.w r3, r3, #1
-	0x300076 ldr r2, [r7, #4]
-	0x300078 add r3, r2
-	0x30007a str r3, [r7, #4]
-	0x30007c ldr r3, [r7, #0]
-	0x30007e adds r3, r3, #1
-	0x300080 str r3, [r7, #0]
-	0x300082 ldr r3, [r7, #0]
-	0x300084 cmp.w r3, #1000@ 0x3e8
-	0x300088 blt.n 30006a <pulseIn+0x10>
-	0x30008a ldr r3, [r7, #4]
-	0x30008c mov r0, r3
-	0x30008e adds r7, #12
-	0x300090 mov sp, r7
-	0x300092 ldr.w r7, [sp], #4
-	0x300096 bx lr
----------------------------
-0x30009c : Start Address: 0x30009c End Address: 0x3000da
-
-	0x30009c push {r7, lr}
-	0x30009e sub sp, #8
-	0x3000a0 add r7, sp, #0
-	0x3000a2 ldr r3, [pc, #56]@ (3000dc <getUltrasonicReading+0x40>)
-	0x3000a4 ldr r3, [r3, #0]
-	0x3000a6 movw r2, #256@ 0x100
-	0x3000aa str r2, [r3, #24]
-	0x3000ac movs r0, #2
-	0x3000ae bl 300030 <delay>
-	0x3000b2 ldr r3, [pc, #40]@ (3000dc <getUltrasonicReading+0x40>)
-	0x3000b4 ldr r3, [r3, #0]
-	0x3000b6 movw r2, #256@ 0x100
-	0x3000ba str r2, [r3, #40]@ 0x28
-	0x3000bc movs r0, #5
-	0x3000be bl 300030 <delay>
-	0x3000c2 ldr r3, [pc, #24]@ (3000dc <getUltrasonicReading+0x40>)
-	0x3000c4 ldr r3, [r3, #0]
-	0x3000c6 movw r2, #256@ 0x100
-	0x3000ca str r2, [r3, #24]
-	0x3000cc bl 30005a <pulseIn>
-	0x3000d0 str r0, [r7, #4]
-	0x3000d2 ldr r3, [r7, #4]
-	0x3000d4 mov r0, r3
-	0x3000d6 adds r7, #8
-	0x3000d8 mov sp, r7
-	0x3000da pop {r7, pc}
+	0x300058 push {r4, r7, lr}
+	0x30005a sub sp, #12
+	0x30005c add r7, sp, #0
+	0x30005e mov.w r4, #4294967295
+	0x300062 movs r3, #0
+	0x300064 str r3, [r7, #4]
+	0x300066 b.n 300086 <crc32pseudo+0x2e>
+	0x300068 bl 300020 <rand_beebs>
+	0x30006c mov r3, r0
+	0x30006e uxtb r3, r3
+	0x300070 eors r3, r4
+	0x300072 uxtb r3, r3
+	0x300074 ldr r2, [pc, #32]@ (300098 <crc32pseudo+0x40>)
+	0x300076 ldr.w r2, [r2, r3, lsl #2]
+	0x30007a lsrs r3, r4, #8
+	0x30007c eor.w r4, r2, r3
+	0x300080 ldr r3, [r7, #4]
+	0x300082 adds r3, r3, #1
+	0x300084 str r3, [r7, #4]
+	0x300086 ldr r3, [r7, #4]
+	0x300088 cmp.w r3, #1024@ 0x400
+	0x30008c blt.n 300068 <crc32pseudo+0x10>
+	0x30008e mvns r3, r4
+	0x300090 mov r0, r3
+	0x300092 adds r7, #12
+	0x300094 mov sp, r7
+	0x300096 pop {r4, r7, pc}
 ---------------------------

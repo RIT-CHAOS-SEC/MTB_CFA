@@ -460,12 +460,12 @@
     <File>
       <GroupNumber>1</GroupNumber>
       <FileNumber>2</FileNumber>
-      <FileType>1</FileType>
+      <FileType>2</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\application.c</PathWithFileName>
-      <FilenameWithoutPath>application.c</FilenameWithoutPath>
+      <PathWithFileName>.\application.s</PathWithFileName>
+      <FilenameWithoutPath>application.s</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

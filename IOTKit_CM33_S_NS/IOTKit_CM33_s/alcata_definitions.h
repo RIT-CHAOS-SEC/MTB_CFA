@@ -30,7 +30,7 @@
 #define MTBTMP __attribute__((section(".MTBTMP_MEM")))
 
 // CHOOSE APPLICATION HERE
-#define APPLICATION MATMAL3
+#define APPLICATION ULT
 
 #define _NOPES __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n"); \
     __asm("nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n"); \

@@ -189,11 +189,15 @@ void config_hardfault_handler(){
     
     NVIC_SetPriority(PendSV_IRQn, (1 << __NVIC_PRIO_BITS) - 1);
 
-    for (int i = 0; i < 16 ; i++)
-        VTOR[i] = (uint32_t) hardfault_handler;
+    // for (int i = 0; i < 16 ; i++)
+    //     VTOR[i] = (uint32_t) hardfault_handler;
+
+    // set hardfault handler to be hardfault_handler
+    VTOR[3] = (uint32_t) hardfault_handler;
 
     // set pendsv handler to be pendsv_handler
     VTOR[14] = (uint32_t) pendsv_handler;
+
 
 
 
@@ -219,7 +223,7 @@ void mtb_setup_MTB(){
     mtb_cleanMTB();
     mtb->MTB_TSTART |= 0b10;  // Set to use DWT_COMP1
     mtb->MTB_TSTOP  |= 0b1000;  // Set to use DWT_COMP3
-    // mtb->MTB_FLOW = MTB_WATERMARK_A;
+    mtb->MTB_FLOW = MTB_WATERMARK_A;
     mtb->MTB_POSITION = 0;
     mtb->MTB_MASTER |= MTB_MASTER_TSTARTEN_MASK;
     mtb->MTB_MASTER |= MTB_MASTER_MASK_MASK;

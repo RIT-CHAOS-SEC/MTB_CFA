@@ -35,11 +35,13 @@ def instr_to_binary_ARM(instr, arch):
     try:
         encoding, _ = ks.asm(instruction)
         print(f"ENCODING : {encoding}")
-        hex_instr = ''.join(['{:02x}'.format(byte) for byte in encoding])
-        bin_instr = bytes.fromhex(hex_instr)
-        return bin_instr, hex_instr, debug
     except KsError as e:
-        print(f"Error")
+        encoding = []
+        # print(f"Error")
+
+    hex_instr = ''.join(['{:02x}'.format(byte) for byte in encoding])
+    bin_instr = bytes.fromhex(hex_instr)
+    return bin_instr, hex_instr, debug
 
 def add_instruction_ARM(asm, cfg, patch, pg, mode_1_args=None):
     if pg.mode >= 1:

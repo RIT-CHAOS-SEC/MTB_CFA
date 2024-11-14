@@ -12,7 +12,6 @@
 	.eabi_attribute 30, 6
 	.eabi_attribute 34, 1
 	.eabi_attribute 18, 2
-	.file	"application.c"
 	.text
 	.section	.MTBDR_MEM,"ax",%progbits
 	.align	1
@@ -34,11 +33,11 @@ application:
 	ldr	r2, .L2
 	ldr	r3, [r7, #4]
 	str	r3, [r2]
-	nop
 	adds	r7, r7, #8
 	mov	sp, r7
 	@ sp needed
-	pop	{r7, pc}
+	pop	{r7, lr}
+	b	SECURE_log_ret
 .L3:
 	.align	2
 .L2:
@@ -56,8 +55,8 @@ application_entry:
 	push	{r7, lr}
 	add	r7, sp, #0
 	bl	application
-	nop
-	pop	{r7, pc}
+	pop	{r7, lr}
+	b	SECURE_log_ret
 	.size	application_entry, .-application_entry
 	.global	read_val
 	.section	.bss.read_val,"aw",%nobits
@@ -84,7 +83,7 @@ delay:
 	@ args = 0, pretend = 0, frame = 16
 	@ frame_needed = 1, uses_anonymous_args = 0
 	@ link register save eliminated.
-	push	{r7}
+	push	{r7, lr}
 	sub	sp, sp, #20
 	add	r7, sp, #0
 	str	r0, [r7, #4]
@@ -92,6 +91,7 @@ delay:
 	str	r3, [r7, #12]
 	b	.L7
 .L8:
+	bl	SECURE_log_cond_br_taken
 	ldr	r3, [r7, #12]
 	adds	r3, r3, #1
 	str	r3, [r7, #12]
@@ -100,13 +100,12 @@ delay:
 	ldr	r2, [r7, #4]
 	cmp	r2, r3
 	bhi	.L8
-	nop
-	nop
+	bl	SECURE_log_cond_br_not_taken
 	adds	r7, r7, #20
 	mov	sp, r7
 	@ sp needed
-	ldr	r7, [sp], #4
-	bx	lr
+	pop	{r7, lr}
+	b	SECURE_log_ret
 	.size	delay, .-delay
 	.align	1
 	.global	pulseIn
@@ -118,7 +117,7 @@ pulseIn:
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
 	@ link register save eliminated.
-	push	{r7}
+	push	{r7, lr}
 	sub	sp, sp, #12
 	add	r7, sp, #0
 	movs	r3, #0
@@ -127,6 +126,7 @@ pulseIn:
 	str	r3, [r7]
 	b	.L10
 .L11:
+	bl	SECURE_log_cond_br_taken
 	ldr	r3, .L13
 	ldr	r3, [r3]
 	ldr	r3, [r3, #16]
@@ -142,13 +142,14 @@ pulseIn:
 	ldr	r3, [r7]
 	cmp	r3, #1000
 	blt	.L11
+	bl	SECURE_log_cond_br_not_taken
 	ldr	r3, [r7, #4]
 	mov	r0, r3
 	adds	r7, r7, #12
 	mov	sp, r7
 	@ sp needed
-	ldr	r7, [sp], #4
-	bx	lr
+	pop	{r7, lr}
+	b	SECURE_log_ret
 .L14:
 	.align	2
 .L13:
@@ -189,7 +190,8 @@ getUltrasonicReading:
 	adds	r7, r7, #8
 	mov	sp, r7
 	@ sp needed
-	pop	{r7, pc}
+	pop	{r7, lr}
+	b	SECURE_log_ret
 .L18:
 	.align	2
 .L17:

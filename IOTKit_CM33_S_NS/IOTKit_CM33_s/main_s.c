@@ -133,7 +133,7 @@ int main(void)
 
     stdout_init(); /* Initialize Serial interface */
 
-    SysTick_Config(SystemCoreClock / 100); /* Generate interrupt each 10 ms */
+    // SysTick_Config(SystemCoreClock / 100); /* Generate interrupt each 10 ms */
 
 		// while(1){
 		// 	stdout_putchar_('A');

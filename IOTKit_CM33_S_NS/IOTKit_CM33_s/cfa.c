@@ -51,6 +51,8 @@ void cfa_cflog_init(){
     return;
 }
 
+uint32_t log_size_counter = 0;
+
 error_t eCFA_init_cfa(CFReport *report_ns){
 
     printf("[LOG] CFA funtion entry.\n");
@@ -96,7 +98,7 @@ error_t eCFA_init_cfa(CFReport *report_ns){
 	uint32_t t = IOTKIT_SECURE_DUALTIMER1->VALUE;
 	printf("Secure Timer Value: %u \n", 0xFFFFFFFF - t);
 
-
+	printf(" Log Counter: %u \n", 4*log_size_counter);
 
 
     printf("[LOG] CFA Returned from Non Secure Function\n");
@@ -160,6 +162,10 @@ void _send_report(){
 
 
 void CFA_ENGINE_new_log_entry(uint32_t value){
+	log_size_counter++;
+	printf("[LOG] New Log Entry\n");
+	return;
+
 	if(report_s.num_CF_Log_size >= MAX_CF_LOG_SIZE){
 		// cfa_engine_conf.attestation_status = WAITING_PARTIAL;
 		report_s.num_CF_Log_size = MAX_CF_LOG_SIZE; // might point over with loop overflow

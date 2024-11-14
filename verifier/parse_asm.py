@@ -766,7 +766,7 @@ def create_cfg(arch, lines):
     print("\n EMPTY LOOP NODES")
     for addr in loop_nodes:
         print(addr)
-    a = input()
+    # a = input()
 
     if cfg.arch.type == "elf32-msp430":
         cfg.head = cfg.label_addr_map['main']
