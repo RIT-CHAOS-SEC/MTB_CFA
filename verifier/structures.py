@@ -111,6 +111,8 @@ class CFG:
         self.indr_calls = []
         self.indr_jumps = []
         self.loop_nodes = []
+        self.inner_loop_nodes = []
+        self.nsc_to_veneers = {}
 
     #Currently just prints all nodes, not just successors of cfg.head
     def __repr__(self)-> str:
@@ -134,6 +136,16 @@ class CFG:
 
         # Increment the number of nodes
         self.num_nodes += 1
+
+    def get_node(self, addr):
+        #returns list of node start_addr that contains the addr
+        node_addrs = []
+        for node_start_addr in self.nodes.keys():
+            node_end_addr = self.nodes[node_start_addr].instr_addrs[-1].addr
+            if int(addr,16) >= int(node_start_addr,16) and int(addr,16) <= int(node_end_addr,16):
+                node_addrs.append(node_start_addr)
+
+        return node_addrs
 
 class Patch:
     def __init__(self, addr):

@@ -3,7 +3,7 @@ Nodes
 start_addr: 0x200400
 end_addr: 0x200400
 successors: ['0x200408']
-parents: ['0x200592']
+parents: ['0x200554']
 type: call
 adj_instr: 0x200404
 
@@ -100,7 +100,7 @@ adj_instr: None
 
 start_addr: 0x2004a0
 end_addr: 0x2004a2
-successors: ['0x200812']
+successors: ['0x200708']
 parents: ['0x2004ac']
 type: call
 adj_instr: None
@@ -128,7 +128,7 @@ adj_instr: None
 
 start_addr: 0x2004b4
 end_addr: 0x2004b4
-successors: ['0x20069c']
+successors: ['0x2005d4']
 parents: []
 type: call
 adj_instr: 0x2004b8
@@ -136,7 +136,7 @@ adj_instr: 0x2004b8
 start_addr: 0x2004b8
 end_addr: 0x2004b8
 successors: ['0x2004cc']
-parents: ['0x200808']
+parents: ['0x2006fe']
 type: call
 adj_instr: None
 
@@ -177,764 +177,407 @@ adj_instr: None
 
 start_addr: 0x2004ec
 end_addr: 0x2004ec
-successors: ['0x2004ee']
-parents: []
-type: uncond
-adj_instr: 0x2004ee
-
-start_addr: 0x2004ee
-end_addr: 0x2004ee
-successors: ['0x2004ee']
-parents: ['0x2004ec', '0x2004ee']
+successors: ['0x2004ec']
+parents: ['0x2004ec']
 type: uncond
 adj_instr: None
 
 start_addr: 0x2004f0
 end_addr: 0x2004f0
-successors: ['0x2004f2']
-parents: []
-type: uncond
-adj_instr: 0x2004f2
-
-start_addr: 0x2004f2
-end_addr: 0x2004f2
-successors: ['0x2004f2']
-parents: ['0x2004f0', '0x2004f2']
+successors: ['0x2004f0']
+parents: ['0x2004f0']
 type: uncond
 adj_instr: None
 
 start_addr: 0x2004f4
-end_addr: 0x2004fc
-successors: ['0x2004fe', '0x200516']
-parents: ['0x200544', '0x200622', '0x200752']
+end_addr: 0x2004f6
+successors: ['0x2004f8', '0x20050c']
+parents: ['0x20052c', '0x200586', '0x20068a']
 type: cond
-adj_instr: 0x2004fe
+adj_instr: 0x2004f8
 
-start_addr: 0x2004fe
-end_addr: 0x2004fe
-successors: ['0x200500']
+start_addr: 0x2004f8
+end_addr: 0x20050e
+successors: ['0x200690']
 parents: ['0x2004f4']
-type: uncond
-adj_instr: 0x200500
-
-start_addr: 0x200500
-end_addr: 0x200514
-successors: ['0x200516']
-parents: ['0x2004fe']
-type: uncond
-adj_instr: 0x200516
-
-start_addr: 0x200516
-end_addr: 0x20051a
-successors: ['0x200550', '0x200628', '0x200758']
-parents: ['0x2004f4', '0x200500']
 type: ret
 adj_instr: None
 
-start_addr: 0x20051c
-end_addr: 0x200524
-successors: ['0x200526', '0x20053e']
-parents: ['0x200554', '0x200612', '0x20072e']
+start_addr: 0x200510
+end_addr: 0x200512
+successors: ['0x200514', '0x200526']
+parents: ['0x200530', '0x200592', '0x20066e', '0x200678']
 type: cond
-adj_instr: 0x200526
+adj_instr: 0x200514
 
-start_addr: 0x200526
-end_addr: 0x200526
-successors: ['0x200528']
-parents: ['0x20051c']
-type: uncond
-adj_instr: 0x200528
-
-start_addr: 0x200528
-end_addr: 0x20053c
-successors: ['0x20053e']
-parents: ['0x200526']
-type: uncond
-adj_instr: 0x20053e
-
-start_addr: 0x20053e
-end_addr: 0x200542
-successors: ['0x200560', '0x200618', '0x200734']
-parents: ['0x20051c', '0x200528']
+start_addr: 0x200514
+end_addr: 0x200528
+successors: ['0x20067e']
+parents: ['0x200510']
 type: ret
 adj_instr: None
 
-start_addr: 0x200544
-end_addr: 0x20054c
+start_addr: 0x20052c
+end_addr: 0x20052c
 successors: ['0x2004f4']
 parents: []
-type: call
-adj_instr: 0x200550
-
-start_addr: 0x200550
-end_addr: 0x200552
-successors: []
-parents: ['0x200516']
-type: ret
+type: uncond
 adj_instr: None
+
+start_addr: 0x200530
+end_addr: 0x200530
+successors: ['0x200510']
+parents: []
+type: uncond
+adj_instr: None
+
+start_addr: 0x200534
+end_addr: 0x200550
+successors: ['0x2005a4']
+parents: []
+type: call
+adj_instr: 0x200554
 
 start_addr: 0x200554
-end_addr: 0x20055c
-successors: ['0x20051c']
-parents: []
+end_addr: 0x200554
+successors: ['0x200400']
+parents: ['0x2005a4']
 type: call
-adj_instr: 0x200560
-
-start_addr: 0x200560
-end_addr: 0x200562
-successors: []
-parents: ['0x20053e']
-type: ret
 adj_instr: None
 
-start_addr: 0x200564
-end_addr: 0x20058e
-successors: ['0x200664']
+start_addr: 0x200558
+end_addr: 0x200568
+successors: ['0x20056a', '0x200578']
 parents: []
-type: call
+type: cond
+adj_instr: 0x20056a
+
+start_addr: 0x20056a
+end_addr: 0x20056c
+successors: ['0x20056e', '0x200586']
+parents: ['0x200558']
+type: cond
+adj_instr: 0x20056e
+
+start_addr: 0x20056e
+end_addr: 0x200570
+successors: ['0x200572', '0x20058c']
+parents: ['0x20056a']
+type: cond
+adj_instr: 0x200572
+
+start_addr: 0x200572
+end_addr: 0x200574
+successors: ['0x200576', '0x20059e']
+parents: ['0x20056e']
+type: cond
+adj_instr: 0x200576
+
+start_addr: 0x200576
+end_addr: 0x200576
+successors: ['0x200598']
+parents: ['0x200572']
+type: uncond
+adj_instr: 0x200578
+
+start_addr: 0x200578
+end_addr: 0x20057a
+successors: ['0x20057c', '0x200592']
+parents: ['0x200558']
+type: cond
+adj_instr: 0x20057c
+
+start_addr: 0x20057c
+end_addr: 0x20057e
+successors: ['0x200580', '0x200598']
+parents: ['0x200578']
+type: cond
+adj_instr: 0x200580
+
+start_addr: 0x200580
+end_addr: 0x200582
+successors: ['0x2006c2']
+parents: ['0x20057c']
+type: uncond
+adj_instr: 0x200586
+
+start_addr: 0x200586
+end_addr: 0x200588
+successors: ['0x2004f4']
+parents: ['0x20056a']
+type: uncond
+adj_instr: 0x20058c
+
+start_addr: 0x20058c
+end_addr: 0x20058e
+successors: ['0x2006cc']
+parents: ['0x20056e']
+type: uncond
 adj_instr: 0x200592
 
 start_addr: 0x200592
-end_addr: 0x200592
-successors: ['0x200400']
-parents: ['0x200664']
-type: call
-adj_instr: None
+end_addr: 0x200594
+successors: ['0x200510']
+parents: ['0x200578']
+type: uncond
+adj_instr: 0x200598
 
 start_addr: 0x200598
-end_addr: 0x2005b0
-successors: ['0x2005b2', '0x2005ba']
-parents: ['0x2006bc']
-type: cond
-adj_instr: 0x2005b2
-
-start_addr: 0x2005b2
-end_addr: 0x2005b2
-successors: ['0x2005b4']
-parents: ['0x200598']
-type: uncond
-adj_instr: 0x2005b4
-
-start_addr: 0x2005b4
-end_addr: 0x2005b8
-successors: ['0x2005d2']
-parents: ['0x2005b2']
-type: uncond
-adj_instr: 0x2005ba
-
-start_addr: 0x2005ba
-end_addr: 0x2005c2
-successors: ['0x2005c4', '0x2005cc']
-parents: ['0x200598']
-type: cond
-adj_instr: 0x2005c4
-
-start_addr: 0x2005c4
-end_addr: 0x2005c4
-successors: ['0x2005c6']
-parents: ['0x2005ba']
-type: uncond
-adj_instr: 0x2005c6
-
-start_addr: 0x2005c6
-end_addr: 0x2005ca
-successors: ['0x2005d2']
-parents: ['0x2005c4']
-type: uncond
-adj_instr: 0x2005cc
-
-start_addr: 0x2005cc
-end_addr: 0x2005d0
-successors: ['0x2005d2']
-parents: ['0x2005ba']
-type: uncond
-adj_instr: 0x2005d2
-
-start_addr: 0x2005d2
-end_addr: 0x2005d6
-successors: ['0x2006c0']
-parents: ['0x2005b4', '0x2005c6', '0x2005cc']
+end_addr: 0x2005a2
+successors: []
+parents: ['0x200576', '0x20057c']
 type: ret
 adj_instr: None
 
-start_addr: 0x2005d8
-end_addr: 0x2005ee
-successors: ['0x2005f0', '0x200612']
-parents: []
-type: cond
-adj_instr: 0x2005f0
+start_addr: 0x2005a4
+end_addr: 0x2005d2
+successors: ['0x200554']
+parents: ['0x200534']
+type: ret
+adj_instr: None
 
-start_addr: 0x2005f0
-end_addr: 0x2005f0
-successors: ['0x2005f2']
-parents: ['0x2005d8']
-type: uncond
-adj_instr: 0x2005f2
+start_addr: 0x2005d4
+end_addr: 0x2005de
+successors: ['0x2006d6']
+parents: ['0x2004b4']
+type: call
+adj_instr: 0x2005e2
 
-start_addr: 0x2005f2
+start_addr: 0x2005e2
 end_addr: 0x2005f6
-successors: ['0x2005f8', '0x20061a']
-parents: ['0x2005f0']
-type: cond
-adj_instr: 0x2005f8
-
-start_addr: 0x2005f8
-end_addr: 0x2005f8
-successors: ['0x2005fa']
-parents: ['0x2005f2']
-type: uncond
+successors: ['0x2006e0']
+parents: []
+type: call
 adj_instr: 0x2005fa
 
 start_addr: 0x2005fa
-end_addr: 0x2005fe
-successors: ['0x200600', '0x200622']
-parents: ['0x2005f8']
-type: cond
-adj_instr: 0x200600
-
-start_addr: 0x200600
-end_addr: 0x200600
-successors: ['0x200602']
-parents: ['0x2005fa']
-type: uncond
-adj_instr: 0x200602
-
-start_addr: 0x200602
-end_addr: 0x200606
-successors: ['0x200608', '0x20062a']
-parents: ['0x200600']
-type: cond
-adj_instr: 0x200608
-
-start_addr: 0x200608
-end_addr: 0x200608
-successors: ['0x20060a']
-parents: ['0x200602']
-type: uncond
-adj_instr: 0x20060a
-
-start_addr: 0x20060a
-end_addr: 0x20060e
-successors: ['0x200610', '0x200632']
-parents: ['0x200608']
-type: cond
-adj_instr: 0x200610
-
-start_addr: 0x200610
-end_addr: 0x200610
-successors: ['0x200640']
-parents: ['0x20060a']
-type: uncond
-adj_instr: 0x200612
-
-start_addr: 0x200612
-end_addr: 0x200614
-successors: ['0x20051c']
-parents: ['0x2005d8']
-type: call
-adj_instr: 0x200618
-
-start_addr: 0x200618
-end_addr: 0x200618
-successors: ['0x200660']
-parents: ['0x20053e']
-type: uncond
-adj_instr: 0x20061a
-
-start_addr: 0x20061a
-end_addr: 0x20061c
-successors: ['0x2007cc']
-parents: ['0x2005f2']
-type: call
-adj_instr: 0x200620
-
-start_addr: 0x200620
-end_addr: 0x200620
-successors: ['0x200660']
-parents: []
-type: uncond
-adj_instr: 0x200622
-
-start_addr: 0x200622
-end_addr: 0x200624
-successors: ['0x2004f4']
-parents: ['0x2005fa']
-type: call
-adj_instr: 0x200628
-
-start_addr: 0x200628
-end_addr: 0x200628
-successors: ['0x200660']
-parents: ['0x200516']
-type: uncond
-adj_instr: 0x20062a
-
-start_addr: 0x20062a
-end_addr: 0x20062c
-successors: ['0x2007d6']
-parents: ['0x200602']
-type: call
-adj_instr: 0x200630
-
-start_addr: 0x200630
-end_addr: 0x200630
-successors: ['0x200660']
-parents: []
-type: uncond
-adj_instr: 0x200632
-
-start_addr: 0x200632
-end_addr: 0x20063e
-successors: ['0x200660']
-parents: ['0x20060a']
-type: uncond
-adj_instr: 0x200640
-
-start_addr: 0x200640
-end_addr: 0x20064c
-successors: ['0x20064e', '0x20065e']
-parents: ['0x200610']
-type: cond
-adj_instr: 0x20064e
-
-start_addr: 0x20064e
-end_addr: 0x20064e
-successors: ['0x200650']
-parents: ['0x200640']
-type: uncond
-adj_instr: 0x200650
-
-start_addr: 0x200650
-end_addr: 0x20065c
-successors: ['0x20065e']
-parents: ['0x20064e']
-type: uncond
-adj_instr: 0x20065e
-
-start_addr: 0x20065e
 end_addr: 0x20065e
-successors: ['0x200660']
-parents: ['0x200640', '0x200650']
-type: uncond
-adj_instr: 0x200660
+successors: ['0x2006ea']
+parents: []
+type: call
+adj_instr: 0x200662
 
-start_addr: 0x200660
-end_addr: 0x200662
-successors: []
-parents: ['0x200618', '0x200620', '0x200628', '0x200630', '0x200632', '0x20065e']
-type: ret
-adj_instr: None
+start_addr: 0x200662
+end_addr: 0x20066a
+successors: ['0x2006f4']
+parents: []
+type: call
+adj_instr: 0x20066e
 
-start_addr: 0x200664
+start_addr: 0x20066e
+end_addr: 0x20067a
+successors: ['0x200510']
+parents: []
+type: call
+adj_instr: 0x20067e
+
+start_addr: 0x20067e
+end_addr: 0x200688
+successors: ['0x20068a', '0x200684']
+parents: ['0x200514', '0x200526']
+type: cond
+adj_instr: 0x20068a
+
+start_addr: 0x20068a
+end_addr: 0x20068c
+successors: ['0x2004f4']
+parents: ['0x20067e', '0x200684']
+type: call
+adj_instr: 0x200690
+
+start_addr: 0x200690
 end_addr: 0x200698
-successors: ['0x200592']
-parents: ['0x200564']
-type: ret
-adj_instr: None
+successors: ['0x20069a', '0x200694']
+parents: ['0x2004f8', '0x20050c']
+type: cond
+adj_instr: 0x20069a
 
-start_addr: 0x20069c
+start_addr: 0x20069a
+end_addr: 0x20069c
+successors: ['0x2006c2']
+parents: ['0x200690', '0x200694']
+type: call
+adj_instr: 0x2006a0
+
+start_addr: 0x2006a0
+end_addr: 0x2006a8
+successors: ['0x2006aa', '0x2006a4']
+parents: []
+type: cond
+adj_instr: 0x2006aa
+
+start_addr: 0x2006aa
 end_addr: 0x2006ac
-successors: ['0x2007e0']
-parents: ['0x2004b4']
+successors: ['0x2006cc']
+parents: ['0x2006a0', '0x2006a4']
 type: call
 adj_instr: 0x2006b0
 
 start_addr: 0x2006b0
 end_addr: 0x2006b8
-successors: ['0x2007ea']
+successors: ['0x2006ba', '0x2006b4']
 parents: []
-type: call
-adj_instr: 0x2006bc
+type: cond
+adj_instr: 0x2006ba
 
-start_addr: 0x2006bc
+start_addr: 0x2006ba
 end_addr: 0x2006bc
-successors: ['0x200598']
-parents: []
+successors: ['0x2006fe']
+parents: ['0x2006b0', '0x2006b4']
 type: call
 adj_instr: 0x2006c0
 
 start_addr: 0x2006c0
-end_addr: 0x20071c
-successors: ['0x2007f4']
-parents: ['0x2005d2']
-type: call
-adj_instr: 0x200720
-
-start_addr: 0x200720
-end_addr: 0x200728
-successors: ['0x2007fe']
-parents: []
-type: call
-adj_instr: 0x20072c
-
-start_addr: 0x20072c
-end_addr: 0x20072c
-successors: ['0x20072e']
+end_addr: 0x2006c0
+successors: ['0x200678']
 parents: []
 type: uncond
-adj_instr: 0x20072e
+adj_instr: 0x2006c2
 
-start_addr: 0x20072e
-end_addr: 0x200730
-successors: ['0x20051c']
-parents: ['0x20072c', '0x2007ca']
-type: call
-adj_instr: 0x200734
-
-start_addr: 0x200734
-end_addr: 0x200738
-successors: ['0x20073a']
-parents: ['0x20053e']
-type: uncond
-adj_instr: 0x20073a
-
-start_addr: 0x20073a
-end_addr: 0x200742
-successors: ['0x200744', '0x200752']
-parents: ['0x200734', '0x20074a']
-type: cond
-adj_instr: 0x200744
-
-start_addr: 0x200744
-end_addr: 0x200744
-successors: ['0x200746']
-parents: ['0x20073a']
-type: uncond
-adj_instr: 0x200748
-
-start_addr: 0x200748
-end_addr: 0x200748
-successors: ['0x20074a']
-parents: []
-type: uncond
-adj_instr: 0x20074a
-
-start_addr: 0x20074a
-end_addr: 0x200750
-successors: ['0x20073a']
-parents: ['0x200748']
-type: uncond
-adj_instr: 0x200752
-
-start_addr: 0x200752
-end_addr: 0x200754
-successors: ['0x2004f4']
-parents: ['0x20073a']
-type: call
-adj_instr: 0x200758
-
-start_addr: 0x200758
-end_addr: 0x20075c
-successors: ['0x20075e']
-parents: ['0x200516']
-type: uncond
-adj_instr: 0x20075e
-
-start_addr: 0x20075e
-end_addr: 0x200766
-successors: ['0x200768', '0x200776']
-parents: ['0x200758', '0x20076e']
-type: cond
-adj_instr: 0x200768
-
-start_addr: 0x200768
-end_addr: 0x200768
-successors: ['0x20076a']
-parents: ['0x20075e']
-type: uncond
-adj_instr: 0x20076c
-
-start_addr: 0x20076c
-end_addr: 0x20076c
-successors: ['0x20076e']
-parents: []
-type: uncond
-adj_instr: 0x20076e
-
-start_addr: 0x20076e
-end_addr: 0x200774
-successors: ['0x20075e']
-parents: ['0x20076c']
-type: uncond
-adj_instr: 0x200776
-
-start_addr: 0x200776
-end_addr: 0x200778
-successors: ['0x2007cc']
-parents: ['0x20075e']
-type: call
-adj_instr: 0x20077c
-
-start_addr: 0x20077c
-end_addr: 0x200780
-successors: ['0x200782']
-parents: []
-type: uncond
-adj_instr: 0x200782
-
-start_addr: 0x200782
-end_addr: 0x20078a
-successors: ['0x20078c', '0x20079a']
-parents: ['0x20077c', '0x200792']
-type: cond
-adj_instr: 0x20078c
-
-start_addr: 0x20078c
-end_addr: 0x20078c
-successors: ['0x20078e']
-parents: ['0x200782']
-type: uncond
-adj_instr: 0x200790
-
-start_addr: 0x200790
-end_addr: 0x200790
-successors: ['0x200792']
-parents: []
-type: uncond
-adj_instr: 0x200792
-
-start_addr: 0x200792
-end_addr: 0x200798
-successors: ['0x200782']
-parents: ['0x200790']
-type: uncond
-adj_instr: 0x20079a
-
-start_addr: 0x20079a
-end_addr: 0x20079c
-successors: ['0x2007d6']
-parents: ['0x200782']
-type: call
-adj_instr: 0x2007a0
-
-start_addr: 0x2007a0
-end_addr: 0x2007a4
-successors: ['0x2007a6']
-parents: []
-type: uncond
-adj_instr: 0x2007a6
-
-start_addr: 0x2007a6
-end_addr: 0x2007ae
-successors: ['0x2007b0', '0x2007be']
-parents: ['0x2007a0', '0x2007b6']
-type: cond
-adj_instr: 0x2007b0
-
-start_addr: 0x2007b0
-end_addr: 0x2007b0
-successors: ['0x2007b2']
-parents: ['0x2007a6']
-type: uncond
-adj_instr: 0x2007b4
-
-start_addr: 0x2007b4
-end_addr: 0x2007b4
-successors: ['0x2007b6']
-parents: []
-type: uncond
-adj_instr: 0x2007b6
-
-start_addr: 0x2007b6
-end_addr: 0x2007bc
-successors: ['0x2007a6']
-parents: ['0x2007b4']
-type: uncond
-adj_instr: 0x2007be
-
-start_addr: 0x2007be
-end_addr: 0x2007c6
-successors: ['0x200808']
-parents: ['0x2007a6']
-type: call
-adj_instr: 0x2007ca
-
-start_addr: 0x2007ca
-end_addr: 0x2007ca
-successors: ['0x20072e']
-parents: []
-type: uncond
-adj_instr: 0x2007cc
-
-start_addr: 0x2007cc
-end_addr: 0x2007d4
+start_addr: 0x2006c2
+end_addr: 0x2006ca
 successors: []
-parents: ['0x20061a', '0x200776']
+parents: ['0x200580', '0x20069a']
 type: ret
-adj_instr: 0x2007d6
+adj_instr: 0x2006cc
 
-start_addr: 0x2007d6
-end_addr: 0x2007de
+start_addr: 0x2006cc
+end_addr: 0x2006d4
 successors: []
-parents: ['0x20062a', '0x20079a']
+parents: ['0x20058c', '0x2006aa']
 type: ret
-adj_instr: 0x2007e0
+adj_instr: 0x2006d6
 
-start_addr: 0x2007e0
-end_addr: 0x2007e8
+start_addr: 0x2006d6
+end_addr: 0x2006de
 successors: []
-parents: ['0x20069c']
+parents: ['0x2005d4']
 type: ret
-adj_instr: 0x2007ea
+adj_instr: 0x2006e0
 
-start_addr: 0x2007ea
-end_addr: 0x2007f2
+start_addr: 0x2006e0
+end_addr: 0x2006e8
 successors: []
-parents: ['0x2006b0']
+parents: ['0x2005e2']
 type: ret
-adj_instr: 0x2007f4
+adj_instr: 0x2006ea
 
-start_addr: 0x2007f4
-end_addr: 0x2007fc
+start_addr: 0x2006ea
+end_addr: 0x2006f2
 successors: []
-parents: ['0x2006c0']
+parents: ['0x2005fa']
 type: ret
-adj_instr: 0x2007fe
+adj_instr: 0x2006f4
 
-start_addr: 0x2007fe
-end_addr: 0x200806
+start_addr: 0x2006f4
+end_addr: 0x2006fc
 successors: []
-parents: ['0x200720']
+parents: ['0x200662']
 type: ret
-adj_instr: 0x200808
+adj_instr: 0x2006fe
 
-start_addr: 0x200808
-end_addr: 0x200810
+start_addr: 0x2006fe
+end_addr: 0x200706
 successors: ['0x2004b8']
-parents: ['0x2007be']
+parents: ['0x2006ba']
 type: ret
 adj_instr: None
 
-start_addr: 0x200812
-end_addr: 0x20082a
+start_addr: 0x200708
+end_addr: 0x20071c
 successors: []
 parents: ['0x2004a0']
 type: ret
 adj_instr: None
 
 start_addr: 0x300000
-end_addr: 0x300002
-successors: ['0x3000e8']
-parents: []
-type: call
-adj_instr: 0x300006
+end_addr: 0x30000e
+successors: ['0x300064']
+parents: ['0x3000b2']
+type: uncond
+adj_instr: 0x300010
 
-start_addr: 0x300006
-end_addr: 0x300006
-successors: []
-parents: ['0x300100']
-type: ret
-adj_instr: None
-
-start_addr: 0x300008
-end_addr: 0x300032
-successors: ['0x300034', '0x3000e2']
-parents: ['0x3000e8']
+start_addr: 0x300010
+end_addr: 0x30001e
+successors: ['0x300020', '0x300034']
+parents: ['0x300054', '0x300064', '0x30005e']
 type: cond
+adj_instr: 0x300020
+
+start_addr: 0x300020
+end_addr: 0x300032
+successors: ['0x30005e']
+parents: ['0x300010']
+type: uncond
 adj_instr: 0x300034
 
 start_addr: 0x300034
-end_addr: 0x300042
-successors: ['0x300044']
-parents: ['0x300008']
-type: uncond
-adj_instr: 0x300044
+end_addr: 0x300050
+successors: ['0x3000be']
+parents: ['0x300010']
+type: call
+adj_instr: 0x300054
 
-start_addr: 0x300044
-end_addr: 0x300054
-successors: ['0x300056']
-parents: ['0x300034', '0x3000d4']
-type: uncond
-adj_instr: 0x300056
+start_addr: 0x300054
+end_addr: 0x300068
+successors: ['0x30006a', '0x300010']
+parents: ['0x3000be']
+type: cond
+adj_instr: 0x30006a
 
-start_addr: 0x300056
-end_addr: 0x300066
-successors: ['0x300068']
-parents: ['0x300044']
+start_addr: 0x30006a
+end_addr: 0x300074
+successors: ['0x3000a4']
+parents: ['0x300054', '0x300064', '0x30005e']
 type: uncond
-adj_instr: 0x300068
+adj_instr: 0x300076
 
-start_addr: 0x300068
-end_addr: 0x300078
-successors: ['0x30007a']
-parents: ['0x300056']
+start_addr: 0x300076
+end_addr: 0x30007a
+successors: ['0x300098']
+parents: ['0x30009e', '0x3000a4']
 type: uncond
-adj_instr: 0x30007a
+adj_instr: 0x30007c
 
-start_addr: 0x30007a
-end_addr: 0x30008a
-successors: ['0x30008c']
-parents: ['0x300068']
-type: uncond
-adj_instr: 0x30008c
-
-start_addr: 0x30008c
+start_addr: 0x30007c
 end_addr: 0x30009c
-successors: ['0x30009e']
-parents: ['0x30007a']
-type: uncond
+successors: ['0x30009e', '0x30007c']
+parents: ['0x30007c', '0x300098']
+type: cond
 adj_instr: 0x30009e
 
 start_addr: 0x30009e
-end_addr: 0x3000ae
-successors: ['0x3000b0']
-parents: ['0x30008c']
-type: uncond
-adj_instr: 0x3000b0
-
-start_addr: 0x3000b0
-end_addr: 0x3000c0
-successors: ['0x3000c2']
-parents: ['0x30009e']
-type: uncond
-adj_instr: 0x3000c2
-
-start_addr: 0x3000c2
-end_addr: 0x3000d2
-successors: ['0x3000d4']
-parents: ['0x3000b0']
-type: uncond
-adj_instr: 0x3000d4
-
-start_addr: 0x3000d4
-end_addr: 0x3000dc
-successors: ['0x3000de', '0x300044']
-parents: ['0x3000c2']
+end_addr: 0x3000a8
+successors: ['0x3000ac', '0x300076']
+parents: ['0x30007c', '0x300098']
 type: cond
-adj_instr: 0x3000de
+adj_instr: 0x3000ac
 
-start_addr: 0x3000de
-end_addr: 0x3000de
-successors: ['0x3000e0']
-parents: ['0x3000d4']
-type: uncond
-adj_instr: 0x3000e0
-
-start_addr: 0x3000e0
-end_addr: 0x3000e0
-successors: ['0x3000e2']
-parents: ['0x3000de']
-type: uncond
-adj_instr: 0x3000e2
-
-start_addr: 0x3000e2
-end_addr: 0x3000e4
-successors: ['0x300100']
-parents: ['0x300008', '0x3000e0']
+start_addr: 0x3000ac
+end_addr: 0x3000b0
+successors: ['0x3000bc']
+parents: ['0x30009e', '0x3000a4']
 type: ret
 adj_instr: None
 
-start_addr: 0x3000e8
-end_addr: 0x3000fc
-successors: ['0x300008']
-parents: ['0x300000']
+start_addr: 0x3000b2
+end_addr: 0x3000b6
+successors: ['0x300000']
+parents: []
 type: call
-adj_instr: 0x300100
+adj_instr: 0x3000bc
 
-start_addr: 0x300100
-end_addr: 0x300100
-successors: ['0x300006']
-parents: ['0x3000e2']
+start_addr: 0x3000bc
+end_addr: 0x3000bc
+successors: []
+parents: ['0x3000ac']
+type: ret
+adj_instr: None
+
+start_addr: 0x3000be
+end_addr: 0x3000d6
+successors: ['0x300054']
+parents: ['0x300034']
 type: ret
 adj_instr: None
 
@@ -959,10 +602,94 @@ parents: ['0x2004e0', '0x2004e6']
 type: uncond
 adj_instr: None
 
+start_addr: 0x20050c
+end_addr: 0x20050e
+successors: ['0x200690']
+parents: ['0x2004f4']
+type: ret
+adj_instr: None
+
+start_addr: 0x200526
+end_addr: 0x200528
+successors: ['0x20067e']
+parents: ['0x200510']
+type: ret
+adj_instr: None
+
+start_addr: 0x20059e
+end_addr: 0x2005a2
+successors: []
+parents: ['0x200572']
+type: ret
+adj_instr: None
+
+start_addr: 0x200684
+end_addr: 0x200688
+successors: ['0x20068a', '0x200684']
+parents: ['0x20067e', '0x200684']
+type: cond
+adj_instr: 0x20068a
+
+start_addr: 0x200694
+end_addr: 0x200698
+successors: ['0x20069a', '0x200694']
+parents: ['0x200690', '0x200694']
+type: cond
+adj_instr: 0x20069a
+
+start_addr: 0x2006a4
+end_addr: 0x2006a8
+successors: ['0x2006aa', '0x2006a4']
+parents: ['0x2006a0', '0x2006a4']
+type: cond
+adj_instr: 0x2006aa
+
+start_addr: 0x2006b4
+end_addr: 0x2006b8
+successors: ['0x2006ba', '0x2006b4']
+parents: ['0x2006b0', '0x2006b4']
+type: cond
+adj_instr: 0x2006ba
+
+start_addr: 0x200678
+end_addr: 0x20067a
+successors: ['0x200510']
+parents: ['0x2006c0']
+type: call
+adj_instr: 0x20067e
+
+start_addr: 0x300064
+end_addr: 0x300068
+successors: ['0x30006a', '0x300010']
+parents: ['0x300000']
+type: cond
+adj_instr: 0x30006a
+
+start_addr: 0x30005e
+end_addr: 0x300068
+successors: ['0x30006a', '0x300010']
+parents: ['0x300020']
+type: cond
+adj_instr: 0x30006a
+
+start_addr: 0x3000a4
+end_addr: 0x3000a8
+successors: ['0x3000ac', '0x300076']
+parents: ['0x30006a']
+type: cond
+adj_instr: 0x3000ac
+
+start_addr: 0x300098
+end_addr: 0x30009c
+successors: ['0x30009e', '0x30007c']
+parents: ['0x300076']
+type: cond
+adj_instr: 0x30009e
+
 -------------------
 __Vectors : 0x200000
 __main : 0x200400
-__scatterload_rt2 : 0x200408
+__scatterload : 0x200408
 __scatterload_loop : 0x200412
 __scatterload_copy : 0x200464
 __scatterload_null : 0x200480
@@ -980,23 +707,22 @@ __rt_exit : 0x2004c0
 __rt_exit_ls : 0x2004c2
 __rt_exit_exit : 0x2004c6
 exit : 0x2004cc
-__use_no_semihosting_swi : 0x2004de
-_sys_exit : 0x2004e0
+__I$use$semihosting : 0x2004de
+__semihosting_library_function : 0x2004e0
 Default_Handler : 0x2004ec
 HardFault_Handler : 0x2004f0
 LED_Off : 0x2004f4
-LED_On : 0x20051c
-NonSecure_LED_Off : 0x200544
-NonSecure_LED_On : 0x200554
-Reset_Handler : 0x200564
-SCB_GetFPUType : 0x200598
-SysTick_Handler : 0x2005d8
-SystemInit : 0x200664
-main : 0x20069c
-_fp_init : 0x200812
-__fplib_config_fpu_vfp : 0x20082a
-Region$$Table$$Base : 0x20082c
-application_entry : 0x300000
-duffcopy : 0x300008
-application : 0x3000e8
+LED_On : 0x200510
+NonSecure_LED_Off : 0x20052c
+NonSecure_LED_On : 0x200530
+Reset_Handler : 0x200534
+SysTick_Handler : 0x200558
+SystemInit : 0x2005a4
+main : 0x2005d4
+_fp_init : 0x200708
+__fplib_config_fpu_vfp : 0x20071c
+Region$$Table$$Base : 0x200720
+application : 0x300000
+application_entry : 0x3000b2
+random_code : 0x3000be
 trampoline_mtbdr : 0x360000

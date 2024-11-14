@@ -583,14 +583,55 @@ def dfs(cfg, addr, end, path=None, ss=None, file=None):
     # print(f"{addr} : returning {len(paths)}")
     return paths
 
-def find_cfg_loop_nodes(cfg):
+def unique_end_nodes(cfg):
+    unique_end_nodes = {}
+
+    for addr, node in cfg.nodes.items():
+        if node.end_addr in unique_end_nodes:
+            print(f"{node.end_addr} in unique_end_nodes:")
+            print(f"\t{node.start_addr} < {unique_end_nodes[node.end_addr].start_addr}")
+            if int(node.start_addr,16) < int(unique_end_nodes[node.end_addr].start_addr,16):
+                print(f"Discarding {unique_end_nodes[node.end_addr].start_addr}")
+                print(f"Adding {node.start_addr}")
+                unique_end_nodes[node.end_addr] = node
+        else:
+            unique_end_nodes[node.end_addr] = node
+
+    unique = list(unique_end_nodes.values())
+    # for u in unique:
+    #     print(u.end_addr)
+    return unique
+
+def find_cfg_loop_nodes(cfg,asm_funcs):
+
     loops = []
-    for node_addr in cfg.nodes.keys():
-        node = cfg.nodes[node_addr]
+    loop_dests = []
+    ## first find all loops
+    cfg_nodes = unique_end_nodes(cfg)
+    # a = input()
+
+    # Sorted loops: 
+    # ['0x200464', '0x200484', '0x20067e', '0x200690', '0x2006a0', '0x2006b0', '0x300054', '0x30007c', '0x30009e']
+
+    for node in cfg_nodes:
+        # node = cfg.nodes[node_addr]
         if node.type == 'cond':
+            # print(f"------- {node_addr} -------")
             # print(f"cond {node_addr}")
             if (int(node.successors[0],16) < int(node.end_addr,16) or int(node.successors[1],16) < int(node.end_addr,16)):
-                loops.append(node_addr)
+                if int(node.successors[0],16) < int(node.end_addr,16):
+                    loop_dest = node.successors[0]
+                else:
+                    loop_dest = node.successors[1]
+
+                loops.append(node.start_addr)
+                # if loop_dest not in loop_dests:
+                #     # print(f"appending {node_addr} and {loop_dest}")
+                #     loops.append(node_addr)
+                #     loop_dests.append(loop_dest)
+                # else:
+                #     print(f"{loop_dest} from {node_addr} in {loop_dests}")
+        '''
         elif node.type == 'uncond':
             # print(f"trying uncond node {node_addr} to loop_nodes")
             if len(node.successors) == 1:
@@ -603,7 +644,57 @@ def find_cfg_loop_nodes(cfg):
                         cfg.nodes[node_addr].adj_instr = hex(int(node.end_addr, 16)+cfg.arch.regular_instr_size)
                     # next append to list
                     loops.append(node_addr)
-    return loops
+        '''
+
+    ## now check instrs's from loop enter to loop exit to see if any other br instructions
+    ### if none, add it to the empty loop
+    empty_loops = []
+    loops = sorted(loops)
+    print("Sorted loops: ")
+    print(loops)
+    # a = input()
+
+    empty_inner_loops = []
+    for loop_node_addr in loops:
+        loop_dest = '0x'+cfg.nodes[loop_node_addr].instr_addrs[-1].arg.split(' ')[0]
+        # print(f"loop_node_addr: {loop_node_addr}")
+        # print(f"loop dest: {loop_dest}")
+        toAdd = True
+        for func_addr in asm_funcs.keys():
+            func = asm_funcs[func_addr]
+            if int(loop_node_addr,16) >= int(func.start_addr,16) and int(loop_node_addr,16) <= int(func.end_addr,16):
+                # now we are in the func that has the loop
+                startMonitoring = False
+                innerEmptyLoop = False
+                for instr in func.instr_list:
+                    isCall = instr.instr in cfg.arch.call_instrs or instr.instr in cfg.arch.indr_calls
+                    isCond = instr.instr in cfg.arch.conditional_br_instrs
+                    isRet = instr.instr in cfg.arch.return_instrs
+                    if instr.addr in empty_loops:
+                        innerEmptyLoop = True
+                        naddrs = cfg.get_node(instr.addr)
+                        print(f"instr.addr : {instr.addr}")
+                        print(f"naddrs : {naddrs}")
+                        print(f"empty_loops : {empty_loops}")
+                        # empty_inner_loops.append(naddr)
+                        # empty_loops.remove(naddr)
+                        for n in naddrs:
+                            if n in empty_loops:
+                                empty_inner_loops.append(n)
+                                empty_loops.remove(n)
+                        # a = input()
+                    if instr.addr == loop_dest:
+                        # print("found loop dest!")
+                        startMonitoring = True
+                    elif startMonitoring and instr.addr == cfg.nodes[loop_node_addr].end_addr:
+                        break
+                    elif startMonitoring and (isCall or (isCond and not innerEmptyLoop) or isRet):
+                        print(f'setting {loop_node_addr} to false at {instr.addr}: \t isCall:{isCall} isCond:{isCond} isRet:{isRet}')
+                        toAdd = False
+        if toAdd:
+            empty_loops.append(loop_node_addr)
+
+    return empty_loops, empty_inner_loops
 
 def resolve_indr_jump_targets(cfg, indr_jump_node_addr, word_addrs=None, word_vals=None):
     # can leverage the fact that jump tables appear adjacent to the jump instruction...
@@ -666,8 +757,16 @@ def create_cfg(arch, lines):
     #     print("---------------------------", file=f)
     # f.close()
 
-    loop_nodes = find_cfg_loop_nodes(cfg)
+    loop_nodes, empty_inner_loops = find_cfg_loop_nodes(cfg,assembly_functions)
     cfg.loop_nodes = loop_nodes
+    cfg.inner_loop_nodes = empty_inner_loops
+    print("empty inner loops:")
+    for ei in empty_inner_loops:
+        print(ei)
+    print("\n EMPTY LOOP NODES")
+    for addr in loop_nodes:
+        print(addr)
+    a = input()
 
     if cfg.arch.type == "elf32-msp430":
         cfg.head = cfg.label_addr_map['main']

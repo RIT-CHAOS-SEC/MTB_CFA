@@ -76,15 +76,21 @@ def update_instruction(arch, elf_file_path, instr_addr, new_instruction_bytes):
     # text_start_addr = 0x80401f8
     # empty_start_addr = 0x8060000
     mtbdr_start_addr = 0x300000 #int(arch.text_base, 16) #0xe000
+    tr_region_start_addr = int(arch.trampoline_region,16)
     empty_start_addr = int(arch.patch_base, 16)
+
+    # print(f"Regions:\n\tMTBDR: {hex(mtbdr_start_addr)}\n\tMTBTPM : {hex(tr_region_start_addr)}\n\tMTBAR: {hex(empty_start_addr)}")
 
     # Open the ELF file for reading and writing
     with open(elf_file_path, 'rb+') as f:
         elf = ELFFile(f)
         
-        if (mtbdr_start_addr) <= instr_addr < empty_start_addr:
+        if mtbdr_start_addr <= instr_addr < tr_region_start_addr:
             section_name = 'ER_MTBDR'
             section_start_addr = mtbdr_start_addr
+        elif tr_region_start_addr <= instr_addr < empty_start_addr:
+            section_name = 'ER_MTBTMP'
+            section_start_addr = tr_region_start_addr
         else:
             section_name = 'ER_MTBAR'
             section_start_addr = empty_start_addr
@@ -100,7 +106,7 @@ def update_instruction(arch, elf_file_path, instr_addr, new_instruction_bytes):
             print(f"Error: {section_name} section not found")
             return
         
-        print(f"Writing to {section_name}")
+        # print(f"Writing to {section_name}")
         # Calculate the offset of the instruction within the .text section
         instr_offset = instr_addr - section_start_addr
         # print(f"text_section: {text_section}")

@@ -1,5 +1,5 @@
 
-./instrumented.axf:     file format elf32-littlearm
+../IOTKit_CM33_S_NS/out/IOTKit_CM33_ns/V2MMPS2/IOTKit_CM33_ns.axf:     file format elf32-littlearm
 
 
 Disassembly of section ER_ROM:
@@ -410,7 +410,8 @@ Disassembly of section ER_MTBAR:
   380008:	bf00      	nop
   38000a:	bf00      	nop
   38000c:	bf00      	nop
-  38000e:	f780 b811 	b.w	300034 <application+0x34>
+  38000e:	bf00      	nop
+  380010:	bf00      	nop
   380012:	bf00      	nop
   380014:	bf00      	nop
   380016:	bf00      	nop
@@ -418,7 +419,8 @@ Disassembly of section ER_MTBAR:
   38001a:	bf00      	nop
   38001c:	bf00      	nop
   38001e:	bf00      	nop
-  380020:	f77f bff6 	b.w	300010 <application+0x10>
+  380020:	bf00      	nop
+  380022:	bf00      	nop
   380024:	bf00      	nop
   380026:	bf00      	nop
   380028:	bf00      	nop
@@ -426,9 +428,9 @@ Disassembly of section ER_MTBAR:
   38002c:	bf00      	nop
   38002e:	bf00      	nop
   380030:	bf00      	nop
-  380032:	46bd      	mov	sp, r7
-  380034:	bd90      	pop	{r4, r7, pc}
-  380036:	bd80      	pop	{r7, pc}
+  380032:	bf00      	nop
+  380034:	bf00      	nop
+  380036:	bf00      	nop
   380038:	bf00      	nop
   38003a:	bf00      	nop
   38003c:	bf00      	nop
@@ -1714,7 +1716,8 @@ Disassembly of section ER_MTBDR:
   300014:	f003 0301 	and.w	r3, r3, #1
   300018:	bfb8      	it	lt
   30001a:	425b      	neglt	r3, r3
-  30001c:	f05f bff5 	b.w	36000a <trampoline_mtbdr+0xa>
+  30001c:	2b01      	cmp	r3, #1
+  30001e:	d109      	bne.n	300034 <application+0x34>
   300020:	6a3b      	ldr	r3, [r7, #32]
   300022:	009b      	lsls	r3, r3, #2
   300024:	3328      	adds	r3, #40	; 0x28
@@ -1746,11 +1749,13 @@ Disassembly of section ER_MTBDR:
   300060:	1c5b      	adds	r3, r3, #1
   300062:	623b      	str	r3, [r7, #32]
   300064:	6a3b      	ldr	r3, [r7, #32]
-  300066:	f05f bfd5 	b.w	360014 <trampoline_mtbdr+0x14>
+  300066:	2b09      	cmp	r3, #9
+  300068:	ddd2      	ble.n	300010 <application+0x10>
   30006a:	6a7b      	ldr	r3, [r7, #36]	; 0x24
   30006c:	1c9b      	adds	r3, r3, #2
   30006e:	627b      	str	r3, [r7, #36]	; 0x24
-  300070:	f05f ffd5 	bl	36001e <trampoline_mtbdr+0x1e>
+  300070:	2300      	movs	r3, #0
+  300072:	61fb      	str	r3, [r7, #28]
   300074:	e016      	b.n	3000a4 <application+0xa4>
   300076:	2300      	movs	r3, #0
   300078:	61bb      	str	r3, [r7, #24]
@@ -1779,12 +1784,13 @@ Disassembly of section ER_MTBDR:
   3000a8:	dde5      	ble.n	300076 <application+0x76>
   3000aa:	bf00      	nop
   3000ac:	372c      	adds	r7, #44	; 0x2c
-  3000ae:	f07f bfb9 	b.w	380024 <nopes+0x24>
+  3000ae:	46bd      	mov	sp, r7
+  3000b0:	bd90      	pop	{r4, r7, pc}
 
 003000b2 <application_entry>:
   3000b2:	b580      	push	{r7, lr}
   3000b4:	af00      	add	r7, sp, #0
-  3000b6:	f05f bfb6 	b.w	360026 <trampoline_mtbdr+0x26>
+  3000b6:	f7ff ffa3 	bl	300000 <application>
   3000ba:	bf00      	nop
   3000bc:	bd80      	pop	{r7, pc}
 
@@ -1805,21 +1811,29 @@ Disassembly of section ER_MTBDR:
 Disassembly of section ER_MTBTMP:
 
 00360000 <trampoline_mtbdr>:
-  360000:	f241 0c1f 	movw	ip, #4127	; 0x101f
-  360004:	f6cf 6c40 	movt	ip, #65088	; 0xfe40
-  360008:	4760      	bx	ip
-  36000a:	2b01      	cmp	r3, #1
-  36000c:	f05f 87f8 	bne.w	380000 <nopes>
-  360010:	f7a0 b806 	b.w	300020 <application+0x20>
-  360014:	2b09      	cmp	r3, #9
-  360016:	f35f 87fc 	ble.w	380012 <nopes+0x12>
-  36001a:	f7a0 b826 	b.w	30006a <application+0x6a>
-  36001e:	2300      	movs	r3, #0
-  360020:	61fb      	str	r3, [r7, #28]
-  360022:	469a      	mov	sl, r3
-  360024:	e7ec      	b.n	360000 <trampoline_mtbdr>
-  360026:	f79f ffeb 	bl	300000 <application>
-  36002a:	f020 b804 	b.w	380036 <nopes+0x36>
+  360000:	bf00      	nop
+  360002:	bf00      	nop
+  360004:	bf00      	nop
+  360006:	bf00      	nop
+  360008:	bf00      	nop
+  36000a:	bf00      	nop
+  36000c:	bf00      	nop
+  36000e:	bf00      	nop
+  360010:	bf00      	nop
+  360012:	bf00      	nop
+  360014:	bf00      	nop
+  360016:	bf00      	nop
+  360018:	bf00      	nop
+  36001a:	bf00      	nop
+  36001c:	bf00      	nop
+  36001e:	bf00      	nop
+  360020:	bf00      	nop
+  360022:	bf00      	nop
+  360024:	bf00      	nop
+  360026:	bf00      	nop
+  360028:	bf00      	nop
+  36002a:	bf00      	nop
+  36002c:	bf00      	nop
   36002e:	bf00      	nop
   360030:	bf00      	nop
   360032:	bf00      	nop
