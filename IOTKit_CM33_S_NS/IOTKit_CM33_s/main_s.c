@@ -8,7 +8,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
-#include "Driver_USART.h" /* ::CMSIS Driver:USART */
+// #include "Driver_USART.h" /* ::CMSIS Driver:USART */
 #include CMSIS_device_header
 #include "Board_GLCD.h"  /* ::Board Support:Graphic LCD */
 #include "Board_LED.h"   /* ::Board Support:LED */
@@ -40,36 +40,36 @@ void SysTick_Handler(void)
 }
 
 
-//
-#define USART_DRV_NUM           0
+// //
+// #define USART_DRV_NUM           0
  
-//   <o>Baudrate
-#define USART_BAUDRATE          115200
+// //   <o>Baudrate
+// #define USART_BAUDRATE          115200
  
-// </h>
+// // </h>
   
-#define _USART_Driver_(n)  Driver_USART##n
-#define  USART_Driver_(n) _USART_Driver_(n)
+// #define _USART_Driver_(n)  Driver_USART##n
+// #define  USART_Driver_(n) _USART_Driver_(n)
  
-extern ARM_DRIVER_USART  USART_Driver_(USART_DRV_NUM);
-#define ptrUSART       (&USART_Driver_(USART_DRV_NUM))
+// extern ARM_DRIVER_USART  USART_Driver_(USART_DRV_NUM);
+// #define ptrUSART       (&USART_Driver_(USART_DRV_NUM))
 
-/**
-  Put a character to the stdout
+// /**
+//   Put a character to the stdout
  
-  \param[in]   ch  Character to output
-  \return          The character written, or -1 on write error.
-*/
-int stdout_putchar_ (int ch) {
-  uint8_t buf[1];
+//   \param[in]   ch  Character to output
+//   \return          The character written, or -1 on write error.
+// */
+// int stdout_putchar_ (int ch) {
+//   uint8_t buf[1];
  
-  buf[0] = (uint8_t)ch;
-  if (ptrUSART->Send(buf, 1) != ARM_DRIVER_OK) {
-    return (-1);
-  }
-  while (ptrUSART->GetTxCount() != 1);
-  return (ch);
-}
+//   buf[0] = (uint8_t)ch;
+//   if (ptrUSART->Send(buf, 1) != ARM_DRIVER_OK) {
+//     return (-1);
+//   }
+//   while (ptrUSART->GetTxCount() != 1);
+//   return (ch);
+// }
 
 static uint32_t x;
 /*----------------------------------------------------------------------------
@@ -100,33 +100,33 @@ int main(void)
     SystemCoreClockUpdate();
 
     stdout_init(); /* Initialize Serial interface */
-    LED_Initialize();
-    GLCD_Initialize();
+    // LED_Initialize();
+    // GLCD_Initialize();
 
-    /* display initial screen */
-     GLCD_SetFont(&GLCD_Font_16x24);
-     GLCD_SetBackgroundColor(GLCD_COLOR_WHITE);
-     GLCD_ClearScreen();
-     GLCD_SetBackgroundColor(GLCD_COLOR_BLUE);
-     GLCD_SetForegroundColor(GLCD_COLOR_RED);
-     GLCD_DrawString(0 * 16, 0 * 24, "   V2M-MPS2+ Demo   ");
-     GLCD_DrawString(0 * 16, 1 * 24, " Secure/Non-Secure  ");
-     GLCD_DrawString(0 * 16, 2 * 24, "   www.keil.com     ");
+    // /* display initial screen */
+    //  GLCD_SetFont(&GLCD_Font_16x24);
+    //  GLCD_SetBackgroundColor(GLCD_COLOR_WHITE);
+    //  GLCD_ClearScreen();
+    //  GLCD_SetBackgroundColor(GLCD_COLOR_BLUE);
+    //  GLCD_SetForegroundColor(GLCD_COLOR_RED);
+    //  GLCD_DrawString(0 * 16, 0 * 24, "   V2M-MPS2+ Demo   ");
+    //  GLCD_DrawString(0 * 16, 1 * 24, " Secure/Non-Secure  ");
+    //  GLCD_DrawString(0 * 16, 2 * 24, "   www.keil.com     ");
 
-    GLCD_SetBackgroundColor(GLCD_COLOR_WHITE);
-    GLCD_SetForegroundColor(GLCD_COLOR_BLACK);
-    switch ((SCB->CPUID >> 4) & 0xFFF)
-    {
-    case 0xD20:
-        GLCD_DrawString(0 * 16, 4 * 24, "  Cortex-M23        ");
-        break;
-    case 0xD21:
-        GLCD_DrawString(0 * 16, 4 * 24, "  Cortex-M33        ");
-        break;
-    default:
-        GLCD_DrawString(0 * 16, 4 * 24, "  unknown Cortex-M  ");
-        break;
-    }
+    // GLCD_SetBackgroundColor(GLCD_COLOR_WHITE);
+    // GLCD_SetForegroundColor(GLCD_COLOR_BLACK);
+    // switch ((SCB->CPUID >> 4) & 0xFFF)
+    // {
+    // case 0xD20:
+    //     GLCD_DrawString(0 * 16, 4 * 24, "  Cortex-M23        ");
+    //     break;
+    // case 0xD21:
+    //     GLCD_DrawString(0 * 16, 4 * 24, "  Cortex-M33        ");
+    //     break;
+    // default:
+    //     GLCD_DrawString(0 * 16, 4 * 24, "  unknown Cortex-M  ");
+    //     break;
+    // }
 
     SysTick->CTRL = 0;                      /* Disable SysTick IRQ and SysTick Timer */
 
@@ -140,3 +140,8 @@ int main(void)
 
     NonSecure_ResetHandler();
 }
+
+
+
+
+

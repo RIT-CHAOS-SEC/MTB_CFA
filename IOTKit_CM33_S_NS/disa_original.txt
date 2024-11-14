@@ -221,7 +221,7 @@ Disassembly of section ER_ROM:
   200554:	f7ff ff54 	bl	200400 <__main>
 
 00200558 <SysTick_Handler>:
-  200558:	f240 0020 	movw	r0, #32
+  200558:	f240 0024 	movw	r0, #36	@ 0x24
   20055c:	f6c2 0020 	movt	r0, #10272	@ 0x2820
   200560:	6802      	ldr	r2, [r0, #0]
   200562:	1c51      	adds	r1, r2, #1
@@ -263,7 +263,7 @@ Disassembly of section ER_ROM:
   2005b8:	6808      	ldr	r0, [r1, #0]
   2005ba:	f440 0070 	orr.w	r0, r0, #15728640	@ 0xf00000
   2005be:	6008      	str	r0, [r1, #0]
-  2005c0:	f240 0000 	movw	r0, #0
+  2005c0:	f240 0004 	movw	r0, #4
   2005c4:	f647 0140 	movw	r1, #30784	@ 0x7840
   2005c8:	f6c2 0020 	movt	r0, #10272	@ 0x2820
   2005cc:	f2c0 117d 	movt	r1, #381	@ 0x17d
@@ -272,14 +272,14 @@ Disassembly of section ER_ROM:
 
 002005d4 <main>:
   2005d4:	b084      	sub	sp, #16
-  2005d6:	f240 00b3 	movw	r0, #179	@ 0xb3
+  2005d6:	f240 0025 	movw	r0, #37	@ 0x25
   2005da:	f2c0 0030 	movt	r0, #48	@ 0x30
   2005de:	f000 f87a 	bl	2006d6 <main+0x102>
   2005e2:	f24e 0410 	movw	r4, #57360	@ 0xe010
   2005e6:	f2ce 0400 	movt	r4, #57344	@ 0xe000
   2005ea:	2000      	movs	r0, #0
   2005ec:	6020      	str	r0, [r4, #0]
-  2005ee:	f240 0024 	movw	r0, #36	@ 0x24
+  2005ee:	f240 002c 	movw	r0, #44	@ 0x2c
   2005f2:	f6c2 0020 	movt	r0, #10272	@ 0x2820
   2005f6:	f000 f873 	bl	2006e0 <main+0x10c>
   2005fa:	f8d4 0f30 	ldr.w	r0, [r4, #3888]	@ 0xf30
@@ -314,7 +314,7 @@ Disassembly of section ER_ROM:
   200662:	f240 502d 	movw	r0, #1325	@ 0x52d
   200666:	f2c0 0020 	movt	r0, #32
   20066a:	f000 f843 	bl	2006f4 <main+0x120>
-  20066e:	f240 0404 	movw	r4, #4
+  20066e:	f240 0408 	movw	r4, #8
   200672:	f6c2 0420 	movt	r4, #10272	@ 0x2820
   200676:	bf00      	nop
   200678:	2005      	movs	r0, #5
@@ -385,19 +385,19 @@ Disassembly of section ER_ROM:
   20072c:	00200464 	.word	0x00200464
   200730:	00201190 	.word	0x00201190
   200734:	00300000 	.word	0x00300000
-  200738:	000000d8 	.word	0x000000d8
+  200738:	000000e0 	.word	0x000000e0
   20073c:	00200464 	.word	0x00200464
-  200740:	00201268 	.word	0x00201268
+  200740:	00201270 	.word	0x00201270
   200744:	00360000 	.word	0x00360000
   200748:	00000a20 	.word	0x00000a20
   20074c:	00200464 	.word	0x00200464
-  200750:	00201c88 	.word	0x00201c88
+  200750:	00201c90 	.word	0x00201c90
   200754:	28200000 	.word	0x28200000
-  200758:	00000020 	.word	0x00000020
+  200758:	00000024 	.word	0x00000024
   20075c:	00200464 	.word	0x00200464
-  200760:	00201ca8 	.word	0x00201ca8
-  200764:	28200020 	.word	0x28200020
-  200768:	00000868 	.word	0x00000868
+  200760:	00201cb4 	.word	0x00201cb4
+  200764:	28200024 	.word	0x28200024
+  200768:	0000086c 	.word	0x0000086c
   20076c:	00200484 	.word	0x00200484
 
 Disassembly of section ER_MTBAR:
@@ -1703,110 +1703,111 @@ Disassembly of section ER_MTBAR:
 Disassembly of section ER_MTBDR:
 
 00300000 <application>:
-  300000:	b590      	push	{r4, r7, lr}
-  300002:	b08b      	sub	sp, #44	@ 0x2c
+  300000:	b580      	push	{r7, lr}
+  300002:	b082      	sub	sp, #8
   300004:	af00      	add	r7, sp, #0
   300006:	2300      	movs	r3, #0
-  300008:	627b      	str	r3, [r7, #36]	@ 0x24
-  30000a:	2300      	movs	r3, #0
-  30000c:	623b      	str	r3, [r7, #32]
-  30000e:	e029      	b.n	300064 <application+0x64>
-  300010:	6a3b      	ldr	r3, [r7, #32]
-  300012:	2b00      	cmp	r3, #0
-  300014:	f003 0301 	and.w	r3, r3, #1
-  300018:	bfb8      	it	lt
-  30001a:	425b      	neglt	r3, r3
-  30001c:	2b01      	cmp	r3, #1
-  30001e:	d109      	bne.n	300034 <application+0x34>
-  300020:	6a3b      	ldr	r3, [r7, #32]
-  300022:	009b      	lsls	r3, r3, #2
-  300024:	3328      	adds	r3, #40	@ 0x28
-  300026:	443b      	add	r3, r7
-  300028:	f853 3c24 	ldr.w	r3, [r3, #-36]
-  30002c:	6a7a      	ldr	r2, [r7, #36]	@ 0x24
-  30002e:	4413      	add	r3, r2
-  300030:	627b      	str	r3, [r7, #36]	@ 0x24
-  300032:	e014      	b.n	30005e <application+0x5e>
-  300034:	6a3b      	ldr	r3, [r7, #32]
-  300036:	009b      	lsls	r3, r3, #2
-  300038:	3328      	adds	r3, #40	@ 0x28
-  30003a:	443b      	add	r3, r7
-  30003c:	f853 3c24 	ldr.w	r3, [r3, #-36]
-  300040:	1c5c      	adds	r4, r3, #1
-  300042:	6a3b      	ldr	r3, [r7, #32]
-  300044:	009b      	lsls	r3, r3, #2
-  300046:	3328      	adds	r3, #40	@ 0x28
-  300048:	443b      	add	r3, r7
-  30004a:	f853 3c24 	ldr.w	r3, [r3, #-36]
-  30004e:	4618      	mov	r0, r3
-  300050:	f000 f835 	bl	3000be <random_code>
-  300054:	4603      	mov	r3, r0
-  300056:	4423      	add	r3, r4
-  300058:	6a7a      	ldr	r2, [r7, #36]	@ 0x24
-  30005a:	4413      	add	r3, r2
-  30005c:	627b      	str	r3, [r7, #36]	@ 0x24
-  30005e:	6a3b      	ldr	r3, [r7, #32]
-  300060:	1c5b      	adds	r3, r3, #1
-  300062:	623b      	str	r3, [r7, #32]
-  300064:	6a3b      	ldr	r3, [r7, #32]
-  300066:	2b09      	cmp	r3, #9
-  300068:	ddd2      	ble.n	300010 <application+0x10>
-  30006a:	6a7b      	ldr	r3, [r7, #36]	@ 0x24
-  30006c:	1c9b      	adds	r3, r3, #2
-  30006e:	627b      	str	r3, [r7, #36]	@ 0x24
-  300070:	2300      	movs	r3, #0
-  300072:	61fb      	str	r3, [r7, #28]
-  300074:	e016      	b.n	3000a4 <application+0xa4>
-  300076:	2300      	movs	r3, #0
-  300078:	61bb      	str	r3, [r7, #24]
-  30007a:	e00d      	b.n	300098 <application+0x98>
-  30007c:	69fb      	ldr	r3, [r7, #28]
-  30007e:	009b      	lsls	r3, r3, #2
-  300080:	3328      	adds	r3, #40	@ 0x28
-  300082:	443b      	add	r3, r7
-  300084:	f853 2c24 	ldr.w	r2, [r3, #-36]
-  300088:	69bb      	ldr	r3, [r7, #24]
-  30008a:	4413      	add	r3, r2
-  30008c:	6a7a      	ldr	r2, [r7, #36]	@ 0x24
-  30008e:	4413      	add	r3, r2
-  300090:	627b      	str	r3, [r7, #36]	@ 0x24
-  300092:	69bb      	ldr	r3, [r7, #24]
-  300094:	1c5b      	adds	r3, r3, #1
-  300096:	61bb      	str	r3, [r7, #24]
-  300098:	69bb      	ldr	r3, [r7, #24]
-  30009a:	2b04      	cmp	r3, #4
-  30009c:	ddee      	ble.n	30007c <application+0x7c>
-  30009e:	69fb      	ldr	r3, [r7, #28]
-  3000a0:	1c5b      	adds	r3, r3, #1
-  3000a2:	61fb      	str	r3, [r7, #28]
-  3000a4:	69fb      	ldr	r3, [r7, #28]
-  3000a6:	2b09      	cmp	r3, #9
-  3000a8:	dde5      	ble.n	300076 <application+0x76>
-  3000aa:	bf00      	nop
-  3000ac:	372c      	adds	r7, #44	@ 0x2c
-  3000ae:	46bd      	mov	sp, r7
-  3000b0:	bd90      	pop	{r4, r7, pc}
+  300008:	607b      	str	r3, [r7, #4]
+  30000a:	f000 f847 	bl	30009c <getUltrasonicReading>
+  30000e:	6078      	str	r0, [r7, #4]
+  300010:	4a03      	ldr	r2, [pc, #12]	@ (300020 <application+0x20>)
+  300012:	687b      	ldr	r3, [r7, #4]
+  300014:	6013      	str	r3, [r2, #0]
+  300016:	bf00      	nop
+  300018:	3708      	adds	r7, #8
+  30001a:	46bd      	mov	sp, r7
+  30001c:	bd80      	pop	{r7, pc}
+  30001e:	bf00      	nop
+  300020:	28200028 	.word	0x28200028
 
-003000b2 <application_entry>:
-  3000b2:	b580      	push	{r7, lr}
-  3000b4:	af00      	add	r7, sp, #0
-  3000b6:	f7ff ffa3 	bl	300000 <application>
-  3000ba:	bf00      	nop
-  3000bc:	bd80      	pop	{r7, pc}
+00300024 <application_entry>:
+  300024:	b580      	push	{r7, lr}
+  300026:	af00      	add	r7, sp, #0
+  300028:	f7ff ffea 	bl	300000 <application>
+  30002c:	bf00      	nop
+  30002e:	bd80      	pop	{r7, pc}
 
-003000be <random_code>:
-  3000be:	b480      	push	{r7}
-  3000c0:	b083      	sub	sp, #12
-  3000c2:	af00      	add	r7, sp, #0
-  3000c4:	6078      	str	r0, [r7, #4]
-  3000c6:	687b      	ldr	r3, [r7, #4]
-  3000c8:	1c5a      	adds	r2, r3, #1
-  3000ca:	607a      	str	r2, [r7, #4]
-  3000cc:	4618      	mov	r0, r3
-  3000ce:	370c      	adds	r7, #12
-  3000d0:	46bd      	mov	sp, r7
-  3000d2:	f85d 7b04 	ldr.w	r7, [sp], #4
-  3000d6:	4770      	bx	lr
+00300030 <delay>:
+  300030:	b480      	push	{r7}
+  300032:	b085      	sub	sp, #20
+  300034:	af00      	add	r7, sp, #0
+  300036:	6078      	str	r0, [r7, #4]
+  300038:	2300      	movs	r3, #0
+  30003a:	60fb      	str	r3, [r7, #12]
+  30003c:	e002      	b.n	300044 <delay+0x14>
+  30003e:	68fb      	ldr	r3, [r7, #12]
+  300040:	1c5b      	adds	r3, r3, #1
+  300042:	60fb      	str	r3, [r7, #12]
+  300044:	68fb      	ldr	r3, [r7, #12]
+  300046:	687a      	ldr	r2, [r7, #4]
+  300048:	429a      	cmp	r2, r3
+  30004a:	d8f8      	bhi.n	30003e <delay+0xe>
+  30004c:	bf00      	nop
+  30004e:	bf00      	nop
+  300050:	3714      	adds	r7, #20
+  300052:	46bd      	mov	sp, r7
+  300054:	f85d 7b04 	ldr.w	r7, [sp], #4
+  300058:	4770      	bx	lr
+
+0030005a <pulseIn>:
+  30005a:	b480      	push	{r7}
+  30005c:	b083      	sub	sp, #12
+  30005e:	af00      	add	r7, sp, #0
+  300060:	2300      	movs	r3, #0
+  300062:	607b      	str	r3, [r7, #4]
+  300064:	2300      	movs	r3, #0
+  300066:	603b      	str	r3, [r7, #0]
+  300068:	e00b      	b.n	300082 <pulseIn+0x28>
+  30006a:	4b0b      	ldr	r3, [pc, #44]	@ (300098 <pulseIn+0x3e>)
+  30006c:	681b      	ldr	r3, [r3, #0]
+  30006e:	691b      	ldr	r3, [r3, #16]
+  300070:	0a1b      	lsrs	r3, r3, #8
+  300072:	f003 0301 	and.w	r3, r3, #1
+  300076:	687a      	ldr	r2, [r7, #4]
+  300078:	4413      	add	r3, r2
+  30007a:	607b      	str	r3, [r7, #4]
+  30007c:	683b      	ldr	r3, [r7, #0]
+  30007e:	1c5b      	adds	r3, r3, #1
+  300080:	603b      	str	r3, [r7, #0]
+  300082:	683b      	ldr	r3, [r7, #0]
+  300084:	f5b3 7f7a 	cmp.w	r3, #1000	@ 0x3e8
+  300088:	dbef      	blt.n	30006a <pulseIn+0x10>
+  30008a:	687b      	ldr	r3, [r7, #4]
+  30008c:	4618      	mov	r0, r3
+  30008e:	370c      	adds	r7, #12
+  300090:	46bd      	mov	sp, r7
+  300092:	f85d 7b04 	ldr.w	r7, [sp], #4
+  300096:	4770      	bx	lr
+  300098:	28200000 	.word	0x28200000
+
+0030009c <getUltrasonicReading>:
+  30009c:	b580      	push	{r7, lr}
+  30009e:	b082      	sub	sp, #8
+  3000a0:	af00      	add	r7, sp, #0
+  3000a2:	4b0e      	ldr	r3, [pc, #56]	@ (3000dc <getUltrasonicReading+0x40>)
+  3000a4:	681b      	ldr	r3, [r3, #0]
+  3000a6:	f240 1200 	movw	r2, #256	@ 0x100
+  3000aa:	619a      	str	r2, [r3, #24]
+  3000ac:	2002      	movs	r0, #2
+  3000ae:	f7ff ffbf 	bl	300030 <delay>
+  3000b2:	4b0a      	ldr	r3, [pc, #40]	@ (3000dc <getUltrasonicReading+0x40>)
+  3000b4:	681b      	ldr	r3, [r3, #0]
+  3000b6:	f240 1200 	movw	r2, #256	@ 0x100
+  3000ba:	629a      	str	r2, [r3, #40]	@ 0x28
+  3000bc:	2005      	movs	r0, #5
+  3000be:	f7ff ffb7 	bl	300030 <delay>
+  3000c2:	4b06      	ldr	r3, [pc, #24]	@ (3000dc <getUltrasonicReading+0x40>)
+  3000c4:	681b      	ldr	r3, [r3, #0]
+  3000c6:	f240 1200 	movw	r2, #256	@ 0x100
+  3000ca:	619a      	str	r2, [r3, #24]
+  3000cc:	f7ff ffc5 	bl	30005a <pulseIn>
+  3000d0:	6078      	str	r0, [r7, #4]
+  3000d2:	687b      	ldr	r3, [r7, #4]
+  3000d4:	4618      	mov	r0, r3
+  3000d6:	3708      	adds	r7, #8
+  3000d8:	46bd      	mov	sp, r7
+  3000da:	bd80      	pop	{r7, pc}
+  3000dc:	28200000 	.word	0x28200000
 
 Disassembly of section ER_MTBTMP:
 

@@ -40,11 +40,11 @@ Disassembly of section ER_ROM:
 	...
 
 00200400 <__main>:
-  200400:	f000 f802 	bl	200408 <__scatterload>
+  200400:	f000 f802 	bl	200408 <__scatterload_rt2>
   200404:	f000 f852 	bl	2004ac <__rt_entry>
 
-00200408 <__scatterload>:
-  200408:	a614      	add	r6, pc, #80	; (adr r6, 20045c <__scatterload_loop+0x4a>)
+00200408 <__scatterload_rt2>:
+  200408:	a614      	add	r6, pc, #80	@ (adr r6, 20045c <__scatterload_loop+0x4a>)
   20040a:	e896 0c00 	ldmia.w	r6, {sl, fp}
   20040e:	44b2      	add	sl, r6
   200410:	44b3      	add	fp, r6
@@ -54,7 +54,7 @@ Disassembly of section ER_ROM:
   200414:	d101      	bne.n	20041a <__scatterload_loop+0x8>
   200416:	f000 f849 	bl	2004ac <__rt_entry>
   20041a:	e8ba 000f 	ldmia.w	sl!, {r0, r1, r2, r3}
-  20041e:	a60f      	add	r6, pc, #60	; (adr r6, 20045c <__scatterload_loop+0x4a>)
+  20041e:	a60f      	add	r6, pc, #60	@ (adr r6, 20045c <__scatterload_loop+0x4a>)
   200420:	e896 0030 	ldmia.w	r6, {r4, r5}
   200424:	eba5 0504 	sub.w	r5, r5, r4
   200428:	eb04 0706 	add.w	r7, r4, r6
@@ -128,7 +128,7 @@ Disassembly of section ER_ROM:
   2004aa:	bd10      	pop	{r4, pc}
 
 002004ac <__rt_entry>:
-  2004ac:	f8df d00c 	ldr.w	sp, [pc, #12]	; 2004bc <__lit__00000000>
+  2004ac:	f8df d00c 	ldr.w	sp, [pc, #12]	@ 2004bc <__lit__00000000>
 
 002004b0 <__rt_entry_li>:
   2004b0:	f7ff fff6 	bl	2004a0 <__rt_lib_init>
@@ -148,7 +148,7 @@ Disassembly of section ER_ROM:
 
 002004c6 <__rt_exit_exit>:
   2004c6:	bc03      	pop	{r0, r1}
-  2004c8:	f000 f80a 	bl	2004e0 <__semihosting_library_function>
+  2004c8:	f000 f80a 	bl	2004e0 <_sys_exit>
 
 002004cc <exit>:
   2004cc:	b510      	push	{r4, lr}
@@ -158,14 +158,14 @@ Disassembly of section ER_ROM:
   2004d6:	e8bd 4010 	ldmia.w	sp!, {r4, lr}
   2004da:	f7ff bff1 	b.w	2004c0 <__rt_exit>
 
-002004de <__I$use$semihosting>:
+002004de <__use_no_semihosting_swi>:
   2004de:	4770      	bx	lr
 
-002004e0 <__semihosting_library_function>:
-  2004e0:	4901      	ldr	r1, [pc, #4]	; (2004e8 <__semihosting_library_function+0x8>)
+002004e0 <_sys_exit>:
+  2004e0:	4901      	ldr	r1, [pc, #4]	@ (2004e8 <_sys_exit+0x8>)
   2004e2:	2018      	movs	r0, #24
   2004e4:	beab      	bkpt	0x00ab
-  2004e6:	e7fe      	b.n	2004e6 <__semihosting_library_function+0x6>
+  2004e6:	e7fe      	b.n	2004e6 <_sys_exit+0x6>
   2004e8:	00020026 	.word	0x00020026
 
 002004ec <Default_Handler>:
@@ -180,7 +180,7 @@ Disassembly of section ER_ROM:
   2004f4:	2807      	cmp	r0, #7
   2004f6:	d809      	bhi.n	20050c <LED_Off+0x18>
   2004f8:	2204      	movs	r2, #4
-  2004fa:	f2c4 0230 	movt	r2, #16432	; 0x4030
+  2004fa:	f2c4 0230 	movt	r2, #16432	@ 0x4030
   2004fe:	2101      	movs	r1, #1
   200500:	6813      	ldr	r3, [r2, #0]
   200502:	fa01 f000 	lsl.w	r0, r1, r0
@@ -193,7 +193,7 @@ Disassembly of section ER_ROM:
   200510:	2807      	cmp	r0, #7
   200512:	d808      	bhi.n	200526 <LED_On+0x16>
   200514:	2204      	movs	r2, #4
-  200516:	f2c4 0230 	movt	r2, #16432	; 0x4030
+  200516:	f2c4 0230 	movt	r2, #16432	@ 0x4030
   20051a:	2101      	movs	r1, #1
   20051c:	6813      	ldr	r3, [r2, #0]
   20051e:	fa01 f000 	lsl.w	r0, r1, r0
@@ -211,18 +211,18 @@ Disassembly of section ER_ROM:
 
 00200534 <Reset_Handler>:
   200534:	f240 0000 	movw	r0, #0
-  200538:	f6c2 0040 	movt	r0, #10304	; 0x2840
+  200538:	f6c2 0040 	movt	r0, #10304	@ 0x2840
   20053c:	f380 8809 	msr	PSP, r0
-  200540:	f64f 4000 	movw	r0, #64512	; 0xfc00
-  200544:	f6c2 003f 	movt	r0, #10303	; 0x283f
-  200548:	f380 880a 	msr	<unknown>, r0
-  20054c:	f380 880b 	msr	<unknown>, r0
+  200540:	f64f 4000 	movw	r0, #64512	@ 0xfc00
+  200544:	f6c2 003f 	movt	r0, #10303	@ 0x283f
+  200548:	f380 880a 	msr	MSPLIM, r0
+  20054c:	f380 880b 	msr	PSPLIM, r0
   200550:	f000 f828 	bl	2005a4 <SystemInit>
   200554:	f7ff ff54 	bl	200400 <__main>
 
 00200558 <SysTick_Handler>:
-  200558:	f240 0020 	movw	r0, #32
-  20055c:	f6c2 0020 	movt	r0, #10272	; 0x2820
+  200558:	f240 0024 	movw	r0, #36	@ 0x24
+  20055c:	f6c2 0020 	movt	r0, #10272	@ 0x2820
   200560:	6802      	ldr	r2, [r0, #0]
   200562:	1c51      	adds	r1, r2, #1
   200564:	2a1d      	cmp	r2, #29
@@ -230,9 +230,9 @@ Disassembly of section ER_ROM:
   200568:	dd06      	ble.n	200578 <SysTick_Handler+0x20>
   20056a:	2a1e      	cmp	r2, #30
   20056c:	d00b      	beq.n	200586 <SysTick_Handler+0x2e>
-  20056e:	2a32      	cmp	r2, #50	; 0x32
+  20056e:	2a32      	cmp	r2, #50	@ 0x32
   200570:	d00c      	beq.n	20058c <SysTick_Handler+0x34>
-  200572:	2a63      	cmp	r2, #99	; 0x63
+  200572:	2a63      	cmp	r2, #99	@ 0x63
   200574:	d013      	beq.n	20059e <SysTick_Handler+0x46>
   200576:	e00f      	b.n	200598 <SysTick_Handler+0x40>
   200578:	2a0a      	cmp	r2, #10
@@ -247,7 +247,7 @@ Disassembly of section ER_ROM:
   20058e:	f000 b89d 	b.w	2006cc <main+0xf8>
   200592:	2007      	movs	r0, #7
   200594:	f7ff bfbc 	b.w	200510 <LED_On>
-  200598:	2964      	cmp	r1, #100	; 0x64
+  200598:	2964      	cmp	r1, #100	@ 0x64
   20059a:	bf38      	it	cc
   20059c:	4770      	bxcc	lr
   20059e:	2100      	movs	r1, #0
@@ -256,49 +256,49 @@ Disassembly of section ER_ROM:
 
 002005a4 <SystemInit>:
   2005a4:	f240 0000 	movw	r0, #0
-  2005a8:	f64e 5188 	movw	r1, #60808	; 0xed88
+  2005a8:	f64e 5188 	movw	r1, #60808	@ 0xed88
   2005ac:	f2c0 0020 	movt	r0, #32
-  2005b0:	f2ce 0100 	movt	r1, #57344	; 0xe000
+  2005b0:	f2ce 0100 	movt	r1, #57344	@ 0xe000
   2005b4:	f841 0c80 	str.w	r0, [r1, #-128]
   2005b8:	6808      	ldr	r0, [r1, #0]
-  2005ba:	f440 0070 	orr.w	r0, r0, #15728640	; 0xf00000
+  2005ba:	f440 0070 	orr.w	r0, r0, #15728640	@ 0xf00000
   2005be:	6008      	str	r0, [r1, #0]
-  2005c0:	f240 0000 	movw	r0, #0
-  2005c4:	f647 0140 	movw	r1, #30784	; 0x7840
-  2005c8:	f6c2 0020 	movt	r0, #10272	; 0x2820
-  2005cc:	f2c0 117d 	movt	r1, #381	; 0x17d
+  2005c0:	f240 0004 	movw	r0, #4
+  2005c4:	f647 0140 	movw	r1, #30784	@ 0x7840
+  2005c8:	f6c2 0020 	movt	r0, #10272	@ 0x2820
+  2005cc:	f2c0 117d 	movt	r1, #381	@ 0x17d
   2005d0:	6001      	str	r1, [r0, #0]
   2005d2:	4770      	bx	lr
 
 002005d4 <main>:
   2005d4:	b084      	sub	sp, #16
-  2005d6:	f240 00b3 	movw	r0, #179	; 0xb3
-  2005da:	f2c0 0030 	movt	r0, #48	; 0x30
+  2005d6:	f240 0025 	movw	r0, #37	@ 0x25
+  2005da:	f2c0 0030 	movt	r0, #48	@ 0x30
   2005de:	f000 f87a 	bl	2006d6 <main+0x102>
-  2005e2:	f24e 0410 	movw	r4, #57360	; 0xe010
-  2005e6:	f2ce 0400 	movt	r4, #57344	; 0xe000
+  2005e2:	f24e 0410 	movw	r4, #57360	@ 0xe010
+  2005e6:	f2ce 0400 	movt	r4, #57344	@ 0xe000
   2005ea:	2000      	movs	r0, #0
   2005ec:	6020      	str	r0, [r4, #0]
-  2005ee:	f240 0024 	movw	r0, #36	; 0x24
-  2005f2:	f6c2 0020 	movt	r0, #10272	; 0x2820
+  2005ee:	f240 002c 	movw	r0, #44	@ 0x2c
+  2005f2:	f6c2 0020 	movt	r0, #10272	@ 0x2820
   2005f6:	f000 f873 	bl	2006e0 <main+0x10c>
-  2005fa:	f8d4 0f30 	ldr.w	r0, [r4, #3888]	; 0xf30
-  2005fe:	f400 607f 	and.w	r0, r0, #4080	; 0xff0
+  2005fa:	f8d4 0f30 	ldr.w	r0, [r4, #3888]	@ 0xf30
+  2005fe:	f400 607f 	and.w	r0, r0, #4080	@ 0xff0
   200602:	f1a0 0120 	sub.w	r1, r0, #32
   200606:	fab1 f181 	clz	r1, r1
-  20060a:	f5b0 7f08 	cmp.w	r0, #544	; 0x220
-  20060e:	f644 60a5 	movw	r0, #20133	; 0x4ea5
+  20060a:	f5b0 7f08 	cmp.w	r0, #544	@ 0x220
+  20060e:	f644 60a5 	movw	r0, #20133	@ 0x4ea5
   200612:	ea4f 1151 	mov.w	r1, r1, lsr #5
-  200616:	f2c4 1047 	movt	r0, #16711	; 0x4147
+  200616:	f2c4 1047 	movt	r0, #16711	@ 0x4147
   20061a:	bf08      	it	eq
   20061c:	2102      	moveq	r1, #2
   20061e:	9103      	str	r1, [sp, #12]
   200620:	9002      	str	r0, [sp, #8]
-  200622:	f64e 6095 	movw	r0, #61077	; 0xee95
-  200626:	f6c3 7029 	movt	r0, #16169	; 0x3f29
+  200622:	f64e 6095 	movw	r0, #61077	@ 0xee95
+  200626:	f6c3 7029 	movt	r0, #16169	@ 0x3f29
   20062a:	9001      	str	r0, [sp, #4]
-  20062c:	f24e 308f 	movw	r0, #58255	; 0xe38f
-  200630:	f2c4 10c0 	movt	r0, #16832	; 0x41c0
+  20062c:	f24e 308f 	movw	r0, #58255	@ 0xe38f
+  200630:	f2c4 10c0 	movt	r0, #16832	@ 0x41c0
   200634:	9000      	str	r0, [sp, #0]
   200636:	ed9d 0a00 	vldr	s0, [sp]
   20063a:	ed9d 1a02 	vldr	s2, [sp, #8]
@@ -308,69 +308,69 @@ Disassembly of section ER_ROM:
   20064a:	ed8d 0a00 	vstr	s0, [sp]
   20064e:	f3ef 8008 	mrs	r0, MSP
   200652:	f3ef 8009 	mrs	r0, PSP
-  200656:	f240 5031 	movw	r0, #1329	; 0x531
+  200656:	f240 5031 	movw	r0, #1329	@ 0x531
   20065a:	f2c0 0020 	movt	r0, #32
   20065e:	f000 f844 	bl	2006ea <main+0x116>
-  200662:	f240 502d 	movw	r0, #1325	; 0x52d
+  200662:	f240 502d 	movw	r0, #1325	@ 0x52d
   200666:	f2c0 0020 	movt	r0, #32
   20066a:	f000 f843 	bl	2006f4 <main+0x120>
-  20066e:	f240 0404 	movw	r4, #4
-  200672:	f6c2 0420 	movt	r4, #10272	; 0x2820
+  20066e:	f240 0408 	movw	r4, #8
+  200672:	f6c2 0420 	movt	r4, #10272	@ 0x2820
   200676:	bf00      	nop
   200678:	2005      	movs	r0, #5
   20067a:	f7ff ff49 	bl	200510 <LED_On>
-  20067e:	f44f 1080 	mov.w	r0, #1048576	; 0x100000
+  20067e:	f44f 1080 	mov.w	r0, #1048576	@ 0x100000
   200682:	bf00      	nop
   200684:	3801      	subs	r0, #1
   200686:	bf00      	nop
   200688:	d1fc      	bne.n	200684 <main+0xb0>
   20068a:	2005      	movs	r0, #5
   20068c:	f7ff ff32 	bl	2004f4 <LED_Off>
-  200690:	f44f 1080 	mov.w	r0, #1048576	; 0x100000
+  200690:	f44f 1080 	mov.w	r0, #1048576	@ 0x100000
   200694:	3801      	subs	r0, #1
   200696:	bf00      	nop
   200698:	d1fc      	bne.n	200694 <main+0xc0>
   20069a:	2004      	movs	r0, #4
   20069c:	f000 f811 	bl	2006c2 <main+0xee>
-  2006a0:	f44f 1080 	mov.w	r0, #1048576	; 0x100000
+  2006a0:	f44f 1080 	mov.w	r0, #1048576	@ 0x100000
   2006a4:	3801      	subs	r0, #1
   2006a6:	bf00      	nop
   2006a8:	d1fc      	bne.n	2006a4 <main+0xd0>
   2006aa:	2004      	movs	r0, #4
   2006ac:	f000 f80e 	bl	2006cc <main+0xf8>
-  2006b0:	f44f 1080 	mov.w	r0, #1048576	; 0x100000
+  2006b0:	f44f 1080 	mov.w	r0, #1048576	@ 0x100000
   2006b4:	3801      	subs	r0, #1
   2006b6:	bf00      	nop
   2006b8:	d1fc      	bne.n	2006b4 <main+0xe0>
   2006ba:	4620      	mov	r0, r4
   2006bc:	f000 f81f 	bl	2006fe <main+0x12a>
   2006c0:	e7da      	b.n	200678 <main+0xa4>
-  2006c2:	f64f 6c19 	movw	ip, #65049	; 0xfe19
-  2006c6:	f2c1 0c1f 	movt	ip, #4127	; 0x101f
+  2006c2:	f64f 6c19 	movw	ip, #65049	@ 0xfe19
+  2006c6:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
   2006ca:	4760      	bx	ip
-  2006cc:	f64f 6c21 	movw	ip, #65057	; 0xfe21
-  2006d0:	f2c1 0c1f 	movt	ip, #4127	; 0x101f
+  2006cc:	f64f 6c21 	movw	ip, #65057	@ 0xfe21
+  2006d0:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
   2006d4:	4760      	bx	ip
-  2006d6:	f64f 6c09 	movw	ip, #65033	; 0xfe09
-  2006da:	f2c1 0c1f 	movt	ip, #4127	; 0x101f
+  2006d6:	f64f 6c09 	movw	ip, #65033	@ 0xfe09
+  2006da:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
   2006de:	4760      	bx	ip
-  2006e0:	f64f 6c11 	movw	ip, #65041	; 0xfe11
-  2006e4:	f2c1 0c1f 	movt	ip, #4127	; 0x101f
+  2006e0:	f64f 6c11 	movw	ip, #65041	@ 0xfe11
+  2006e4:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
   2006e8:	4760      	bx	ip
-  2006ea:	f64f 6c31 	movw	ip, #65073	; 0xfe31
-  2006ee:	f2c1 0c1f 	movt	ip, #4127	; 0x101f
+  2006ea:	f64f 6c31 	movw	ip, #65073	@ 0xfe31
+  2006ee:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
   2006f2:	4760      	bx	ip
-  2006f4:	f64f 6c39 	movw	ip, #65081	; 0xfe39
-  2006f8:	f2c1 0c1f 	movt	ip, #4127	; 0x101f
+  2006f4:	f64f 6c39 	movw	ip, #65081	@ 0xfe39
+  2006f8:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
   2006fc:	4760      	bx	ip
-  2006fe:	f64f 6c29 	movw	ip, #65065	; 0xfe29
-  200702:	f2c1 0c1f 	movt	ip, #4127	; 0x101f
+  2006fe:	f64f 6c29 	movw	ip, #65065	@ 0xfe29
+  200702:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
   200706:	4760      	bx	ip
 
 00200708 <_fp_init>:
   200708:	eef1 0a10 	vmrs	r0, fpscr
-  20070c:	f64f 71ff 	movw	r1, #65535	; 0xffff
-  200710:	f2c0 31c0 	movt	r1, #960	; 0x3c0
+  20070c:	f64f 71ff 	movw	r1, #65535	@ 0xffff
+  200710:	f2c0 31c0 	movt	r1, #960	@ 0x3c0
   200714:	ea20 0001 	bic.w	r0, r0, r1
   200718:	eee1 0a10 	vmsr	fpscr, r0
 
@@ -385,19 +385,19 @@ Disassembly of section ER_ROM:
   20072c:	00200464 	.word	0x00200464
   200730:	00201190 	.word	0x00201190
   200734:	00300000 	.word	0x00300000
-  200738:	000000d8 	.word	0x000000d8
+  200738:	000000e0 	.word	0x000000e0
   20073c:	00200464 	.word	0x00200464
-  200740:	00201268 	.word	0x00201268
+  200740:	00201270 	.word	0x00201270
   200744:	00360000 	.word	0x00360000
   200748:	00000a20 	.word	0x00000a20
   20074c:	00200464 	.word	0x00200464
-  200750:	00201c88 	.word	0x00201c88
+  200750:	00201c90 	.word	0x00201c90
   200754:	28200000 	.word	0x28200000
-  200758:	00000020 	.word	0x00000020
+  200758:	00000024 	.word	0x00000024
   20075c:	00200464 	.word	0x00200464
-  200760:	00201ca8 	.word	0x00201ca8
-  200764:	28200020 	.word	0x28200020
-  200768:	00000868 	.word	0x00000868
+  200760:	00201cb4 	.word	0x00201cb4
+  200764:	28200024 	.word	0x28200024
+  200768:	0000086c 	.word	0x0000086c
   20076c:	00200484 	.word	0x00200484
 
 Disassembly of section ER_MTBAR:
@@ -1703,110 +1703,111 @@ Disassembly of section ER_MTBAR:
 Disassembly of section ER_MTBDR:
 
 00300000 <application>:
-  300000:	b590      	push	{r4, r7, lr}
-  300002:	b08b      	sub	sp, #44	; 0x2c
+  300000:	b580      	push	{r7, lr}
+  300002:	b082      	sub	sp, #8
   300004:	af00      	add	r7, sp, #0
   300006:	2300      	movs	r3, #0
-  300008:	627b      	str	r3, [r7, #36]	; 0x24
-  30000a:	2300      	movs	r3, #0
-  30000c:	623b      	str	r3, [r7, #32]
-  30000e:	e029      	b.n	300064 <application+0x64>
-  300010:	6a3b      	ldr	r3, [r7, #32]
-  300012:	2b00      	cmp	r3, #0
-  300014:	f003 0301 	and.w	r3, r3, #1
-  300018:	bfb8      	it	lt
-  30001a:	425b      	neglt	r3, r3
-  30001c:	2b01      	cmp	r3, #1
-  30001e:	d109      	bne.n	300034 <application+0x34>
-  300020:	6a3b      	ldr	r3, [r7, #32]
-  300022:	009b      	lsls	r3, r3, #2
-  300024:	3328      	adds	r3, #40	; 0x28
-  300026:	443b      	add	r3, r7
-  300028:	f853 3c24 	ldr.w	r3, [r3, #-36]
-  30002c:	6a7a      	ldr	r2, [r7, #36]	; 0x24
-  30002e:	4413      	add	r3, r2
-  300030:	627b      	str	r3, [r7, #36]	; 0x24
-  300032:	e014      	b.n	30005e <application+0x5e>
-  300034:	6a3b      	ldr	r3, [r7, #32]
-  300036:	009b      	lsls	r3, r3, #2
-  300038:	3328      	adds	r3, #40	; 0x28
-  30003a:	443b      	add	r3, r7
-  30003c:	f853 3c24 	ldr.w	r3, [r3, #-36]
-  300040:	1c5c      	adds	r4, r3, #1
-  300042:	6a3b      	ldr	r3, [r7, #32]
-  300044:	009b      	lsls	r3, r3, #2
-  300046:	3328      	adds	r3, #40	; 0x28
-  300048:	443b      	add	r3, r7
-  30004a:	f853 3c24 	ldr.w	r3, [r3, #-36]
-  30004e:	4618      	mov	r0, r3
-  300050:	f000 f835 	bl	3000be <random_code>
-  300054:	4603      	mov	r3, r0
-  300056:	4423      	add	r3, r4
-  300058:	6a7a      	ldr	r2, [r7, #36]	; 0x24
-  30005a:	4413      	add	r3, r2
-  30005c:	627b      	str	r3, [r7, #36]	; 0x24
-  30005e:	6a3b      	ldr	r3, [r7, #32]
-  300060:	1c5b      	adds	r3, r3, #1
-  300062:	623b      	str	r3, [r7, #32]
-  300064:	6a3b      	ldr	r3, [r7, #32]
-  300066:	2b09      	cmp	r3, #9
-  300068:	ddd2      	ble.n	300010 <application+0x10>
-  30006a:	6a7b      	ldr	r3, [r7, #36]	; 0x24
-  30006c:	1c9b      	adds	r3, r3, #2
-  30006e:	627b      	str	r3, [r7, #36]	; 0x24
-  300070:	2300      	movs	r3, #0
-  300072:	61fb      	str	r3, [r7, #28]
-  300074:	e016      	b.n	3000a4 <application+0xa4>
-  300076:	2300      	movs	r3, #0
-  300078:	61bb      	str	r3, [r7, #24]
-  30007a:	e00d      	b.n	300098 <application+0x98>
-  30007c:	69fb      	ldr	r3, [r7, #28]
-  30007e:	009b      	lsls	r3, r3, #2
-  300080:	3328      	adds	r3, #40	; 0x28
-  300082:	443b      	add	r3, r7
-  300084:	f853 2c24 	ldr.w	r2, [r3, #-36]
-  300088:	69bb      	ldr	r3, [r7, #24]
-  30008a:	4413      	add	r3, r2
-  30008c:	6a7a      	ldr	r2, [r7, #36]	; 0x24
-  30008e:	4413      	add	r3, r2
-  300090:	627b      	str	r3, [r7, #36]	; 0x24
-  300092:	69bb      	ldr	r3, [r7, #24]
-  300094:	1c5b      	adds	r3, r3, #1
-  300096:	61bb      	str	r3, [r7, #24]
-  300098:	69bb      	ldr	r3, [r7, #24]
-  30009a:	2b04      	cmp	r3, #4
-  30009c:	ddee      	ble.n	30007c <application+0x7c>
-  30009e:	69fb      	ldr	r3, [r7, #28]
-  3000a0:	1c5b      	adds	r3, r3, #1
-  3000a2:	61fb      	str	r3, [r7, #28]
-  3000a4:	69fb      	ldr	r3, [r7, #28]
-  3000a6:	2b09      	cmp	r3, #9
-  3000a8:	dde5      	ble.n	300076 <application+0x76>
-  3000aa:	bf00      	nop
-  3000ac:	372c      	adds	r7, #44	; 0x2c
-  3000ae:	46bd      	mov	sp, r7
-  3000b0:	bd90      	pop	{r4, r7, pc}
+  300008:	607b      	str	r3, [r7, #4]
+  30000a:	f000 f847 	bl	30009c <getUltrasonicReading>
+  30000e:	6078      	str	r0, [r7, #4]
+  300010:	4a03      	ldr	r2, [pc, #12]	@ (300020 <application+0x20>)
+  300012:	687b      	ldr	r3, [r7, #4]
+  300014:	6013      	str	r3, [r2, #0]
+  300016:	bf00      	nop
+  300018:	3708      	adds	r7, #8
+  30001a:	46bd      	mov	sp, r7
+  30001c:	bd80      	pop	{r7, pc}
+  30001e:	bf00      	nop
+  300020:	28200028 	.word	0x28200028
 
-003000b2 <application_entry>:
-  3000b2:	b580      	push	{r7, lr}
-  3000b4:	af00      	add	r7, sp, #0
-  3000b6:	f7ff ffa3 	bl	300000 <application>
-  3000ba:	bf00      	nop
-  3000bc:	bd80      	pop	{r7, pc}
+00300024 <application_entry>:
+  300024:	b580      	push	{r7, lr}
+  300026:	af00      	add	r7, sp, #0
+  300028:	f7ff ffea 	bl	300000 <application>
+  30002c:	bf00      	nop
+  30002e:	bd80      	pop	{r7, pc}
 
-003000be <random_code>:
-  3000be:	b480      	push	{r7}
-  3000c0:	b083      	sub	sp, #12
-  3000c2:	af00      	add	r7, sp, #0
-  3000c4:	6078      	str	r0, [r7, #4]
-  3000c6:	687b      	ldr	r3, [r7, #4]
-  3000c8:	1c5a      	adds	r2, r3, #1
-  3000ca:	607a      	str	r2, [r7, #4]
-  3000cc:	4618      	mov	r0, r3
-  3000ce:	370c      	adds	r7, #12
-  3000d0:	46bd      	mov	sp, r7
-  3000d2:	f85d 7b04 	ldr.w	r7, [sp], #4
-  3000d6:	4770      	bx	lr
+00300030 <delay>:
+  300030:	b480      	push	{r7}
+  300032:	b085      	sub	sp, #20
+  300034:	af00      	add	r7, sp, #0
+  300036:	6078      	str	r0, [r7, #4]
+  300038:	2300      	movs	r3, #0
+  30003a:	60fb      	str	r3, [r7, #12]
+  30003c:	e002      	b.n	300044 <delay+0x14>
+  30003e:	68fb      	ldr	r3, [r7, #12]
+  300040:	1c5b      	adds	r3, r3, #1
+  300042:	60fb      	str	r3, [r7, #12]
+  300044:	68fb      	ldr	r3, [r7, #12]
+  300046:	687a      	ldr	r2, [r7, #4]
+  300048:	429a      	cmp	r2, r3
+  30004a:	d8f8      	bhi.n	30003e <delay+0xe>
+  30004c:	bf00      	nop
+  30004e:	bf00      	nop
+  300050:	3714      	adds	r7, #20
+  300052:	46bd      	mov	sp, r7
+  300054:	f85d 7b04 	ldr.w	r7, [sp], #4
+  300058:	4770      	bx	lr
+
+0030005a <pulseIn>:
+  30005a:	b480      	push	{r7}
+  30005c:	b083      	sub	sp, #12
+  30005e:	af00      	add	r7, sp, #0
+  300060:	2300      	movs	r3, #0
+  300062:	607b      	str	r3, [r7, #4]
+  300064:	2300      	movs	r3, #0
+  300066:	603b      	str	r3, [r7, #0]
+  300068:	e00b      	b.n	300082 <pulseIn+0x28>
+  30006a:	4b0b      	ldr	r3, [pc, #44]	@ (300098 <pulseIn+0x3e>)
+  30006c:	681b      	ldr	r3, [r3, #0]
+  30006e:	691b      	ldr	r3, [r3, #16]
+  300070:	0a1b      	lsrs	r3, r3, #8
+  300072:	f003 0301 	and.w	r3, r3, #1
+  300076:	687a      	ldr	r2, [r7, #4]
+  300078:	4413      	add	r3, r2
+  30007a:	607b      	str	r3, [r7, #4]
+  30007c:	683b      	ldr	r3, [r7, #0]
+  30007e:	1c5b      	adds	r3, r3, #1
+  300080:	603b      	str	r3, [r7, #0]
+  300082:	683b      	ldr	r3, [r7, #0]
+  300084:	f5b3 7f7a 	cmp.w	r3, #1000	@ 0x3e8
+  300088:	dbef      	blt.n	30006a <pulseIn+0x10>
+  30008a:	687b      	ldr	r3, [r7, #4]
+  30008c:	4618      	mov	r0, r3
+  30008e:	370c      	adds	r7, #12
+  300090:	46bd      	mov	sp, r7
+  300092:	f85d 7b04 	ldr.w	r7, [sp], #4
+  300096:	4770      	bx	lr
+  300098:	28200000 	.word	0x28200000
+
+0030009c <getUltrasonicReading>:
+  30009c:	b580      	push	{r7, lr}
+  30009e:	b082      	sub	sp, #8
+  3000a0:	af00      	add	r7, sp, #0
+  3000a2:	4b0e      	ldr	r3, [pc, #56]	@ (3000dc <getUltrasonicReading+0x40>)
+  3000a4:	681b      	ldr	r3, [r3, #0]
+  3000a6:	f240 1200 	movw	r2, #256	@ 0x100
+  3000aa:	619a      	str	r2, [r3, #24]
+  3000ac:	2002      	movs	r0, #2
+  3000ae:	f7ff ffbf 	bl	300030 <delay>
+  3000b2:	4b0a      	ldr	r3, [pc, #40]	@ (3000dc <getUltrasonicReading+0x40>)
+  3000b4:	681b      	ldr	r3, [r3, #0]
+  3000b6:	f240 1200 	movw	r2, #256	@ 0x100
+  3000ba:	629a      	str	r2, [r3, #40]	@ 0x28
+  3000bc:	2005      	movs	r0, #5
+  3000be:	f7ff ffb7 	bl	300030 <delay>
+  3000c2:	4b06      	ldr	r3, [pc, #24]	@ (3000dc <getUltrasonicReading+0x40>)
+  3000c4:	681b      	ldr	r3, [r3, #0]
+  3000c6:	f240 1200 	movw	r2, #256	@ 0x100
+  3000ca:	619a      	str	r2, [r3, #24]
+  3000cc:	f7ff ffc5 	bl	30005a <pulseIn>
+  3000d0:	6078      	str	r0, [r7, #4]
+  3000d2:	687b      	ldr	r3, [r7, #4]
+  3000d4:	4618      	mov	r0, r3
+  3000d6:	3708      	adds	r7, #8
+  3000d8:	46bd      	mov	sp, r7
+  3000da:	bd80      	pop	{r7, pc}
+  3000dc:	28200000 	.word	0x28200000
 
 Disassembly of section ER_MTBTMP:
 

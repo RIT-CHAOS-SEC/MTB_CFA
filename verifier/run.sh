@@ -6,7 +6,7 @@ input_elf=${ns_path}"IOTKit_CM33_ns.axf"
 echo ${input_elf}
 input_file=${ns_path}"IOTKit_CM33_ns.list"
 echo ${input_file}
-OBJDUMP=arm-none-eabi-objdump
+OBJDUMP=arm-none-eabi-objdump.exe
 arch_type="armv8-m33"
 
 

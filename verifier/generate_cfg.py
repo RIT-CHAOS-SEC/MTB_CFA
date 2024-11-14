@@ -63,10 +63,10 @@ def reconstruct_nscs(cfg, asm_funcs):
             if 'movw' in instr.instr: # get the lower half
                 veneer_addr = instr.addr
                 imm = instr.arg.split(", #")[1]
-                lower = int(imm)
+                lower = int(imm.split('@')[0])
             elif 'movt' in instr.instr: # get the upper half
                 imm = instr.arg.split(", #")[1]
-                upper = 0 | (int(imm) << 16)
+                upper = 0 | (int(imm.split('@')[0]) << 16)
             else: #bx ip
                 # print(f"\t veneer_addr : {veneer_addr}")
                 # print(f"\t lower : {hex(lower)}")
@@ -397,7 +397,7 @@ def instrument(cfg, asm_funcs):
     # a = input()
     print()
     
-    bash_cmd = "arm-none-eabi-objdump -d ./instrumented.axf > ./instrumented.lst"
+    bash_cmd = "arm-none-eabi-objdump.exe -d ./instrumented.axf > ./instrumented.lst"
     os.system(bash_cmd)
 
 def main():

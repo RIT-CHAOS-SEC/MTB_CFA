@@ -91,12 +91,8 @@ error_t eCFA_init_cfa(CFReport *report_ns){
 	IOTKIT_SECURE_DUALTIMER1->CTRL = 0b10000011;
 	IOTKIT_SECURE_DUALTIMER1->LOAD = 0xFFFFFFFF;
 
-    // fNSFunc();
+    fNSFunc();
 
-	for (int i = 0; i < 5; i++)
-		__asm("\tnop\n");
-
-	
 	uint32_t t = IOTKIT_SECURE_DUALTIMER1->VALUE;
 	printf("Secure Timer Value: %u \n", 0xFFFFFFFF - t);
 

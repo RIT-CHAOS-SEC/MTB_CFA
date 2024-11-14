@@ -198,7 +198,7 @@ void mtb_init(){
     printf("[LOG] Setting up DWT\n");
 	mtb_setup_DWT();
     printf("[LOG] Setting up MTB\n");
-	mtb_setup_MTB();
+	// mtb_setup_MTB();
     printf("[LOG] Setting up Interrupt Handlers\n");
     mtb_config_interrupthandlers();
 	return;

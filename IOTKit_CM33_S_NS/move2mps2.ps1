@@ -9,7 +9,11 @@ $expectedVolumeName = "V2M_MPS2"
 
 
 $sourceFile1 = "out\IOTKit_CM33_s\V2MMPS2\IOTKit_CM33_s.axf" # Update this path
-$sourceFile2 = "out\IOTKit_CM33_ns\V2MMPS2\IOTKit_CM33_ns.axf" # Update this path
+# $sourceFile2 = "out\IOTKit_CM33_ns\V2MMPS2\IOTKit_CM33_ns.axf" # Update this path
+$sourceFile2 = "out\IOTKit_CM33_ns\V2MMPS2\instrumented.axf" # Update this path
+
+# $sourceFile1 = "out\IOTKit_CM33_s\V2MMPS2\IOTKit_CM33_s.axf" # Update this path
+
 
 
 # $sourceFile2 = "IOTKit_CM33_ns\Objects\instrumented.axf" # Update this path

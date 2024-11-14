@@ -61,19 +61,9 @@ MTBDR void application_entry()
     {
         int mat[MAXY];
         int val = 0;
-        // if (val == 1)
-        // {
-        //     val++;
-        // }
-        // else
-        // {
-        //     val += 4;
-        // }
 
         for (int x = 0; x < MAXX; x++)
         {
-            // for (int y = 0; y < MAXY; y++)
-            // {
                 
                 if (x % 2 == 1){
                     val += mat[x];
