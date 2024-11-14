@@ -7,12 +7,31 @@ echo ${input_elf}
 input_file=${ns_path}"IOTKit_CM33_ns.list"
 echo ${input_file}
 
-OS_TYPE=""
-if [[ "$(uname)" == "Linux" ]]; then
-	OBJDUMP=arm-none-eabi-objdump
-else
+# OS_TYPE=""
+# if [[ "$(uname)" == "Linux" ]]; then
+# 	OBJDUMP=arm-none-eabi-objdump
+# else
+# 	OBJDUMP=arm-none-eabi-objdump.exe
+# fi
+
+# # check if is a linux system
+# if [[ "$(uname)" == "Linux" ]]; then
+# 	echo "Linux"
+# 	OBJDUMP=arm-none-eabi-objdump
+# else
+# 	echo "Windows"
+# 	OBJDUMP=arm-none-eabi-objdump.exe
+# fi
+
+OBJDUMP=arm-none-eabi-objdump
+# test if arm-none-eabi-objdump is installed
+if ! command -v $OBJDUMP &> /dev/null
+then
 	OBJDUMP=arm-none-eabi-objdump.exe
 fi
+
+echo "OBJDUMP: " $OBJDUMP
+
 arch_type="armv8-m33"
 
 

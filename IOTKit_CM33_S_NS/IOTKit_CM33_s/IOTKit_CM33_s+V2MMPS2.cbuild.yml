@@ -233,16 +233,6 @@ build:
         - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/Driver/Include/Driver_USART.h
           category: header
           version: 2.4.0
-    - api: Board Support:Graphic LCD@1.0.0
-      from-pack: Keil::MDK-Middleware@7.17.0
-      implemented-by: Keil::Board Support&V2M-MPS2 IOT-Kit:Graphic LCD@2.0.0
-      files:
-        - file: ${CMSIS_PACK_ROOT}/Keil/MDK-Middleware/7.17.0/Board/Board_GLCD.h
-          category: header
-          version: 1.0.0
-        - file: ${CMSIS_PACK_ROOT}/Keil/MDK-Middleware/7.17.0/Doc/Board/html/group__bsp__glcd.html
-          category: doc
-          version: 1.0.0
     - api: Board Support:LED@1.0.0
       from-pack: Keil::MDK-Middleware@7.17.0
       implemented-by: Keil::Board Support&V2M-MPS2 IOT-Kit:LED@2.0.0
@@ -251,6 +241,16 @@ build:
           category: header
           version: 1.0.0
         - file: ${CMSIS_PACK_ROOT}/Keil/MDK-Middleware/7.17.0/Doc/Board/html/group__bsp__led.html
+          category: doc
+          version: 1.0.0
+    - api: Board Support:Graphic LCD@1.0.0
+      from-pack: Keil::MDK-Middleware@7.17.0
+      implemented-by: Keil::Board Support&V2M-MPS2 IOT-Kit:Graphic LCD@2.0.0
+      files:
+        - file: ${CMSIS_PACK_ROOT}/Keil/MDK-Middleware/7.17.0/Board/Board_GLCD.h
+          category: header
+          version: 1.0.0
+        - file: ${CMSIS_PACK_ROOT}/Keil/MDK-Middleware/7.17.0/Doc/Board/html/group__bsp__glcd.html
           category: doc
           version: 1.0.0
   linker:

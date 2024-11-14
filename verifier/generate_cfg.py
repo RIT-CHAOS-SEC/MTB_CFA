@@ -6,6 +6,7 @@ import argparse
 from patch_ARM import *
 import os
 import platform
+from shutil import which
 
 def arg_parser():
     '''
@@ -425,10 +426,21 @@ def instrument(cfg, asm_funcs):
     print()
     
     os_type = platform.system()
-    if os_type == "Linux":
-        bash_cmd = "arm-none-eabi-objdump -d ./instrumented.axf > ./instrumented.lst"
-    else:
+
+    # check if command arm-none-eabi-objdump exist in the system
+    def check_command_exists(command):
+        return which(command) is not None
+
+    bash_cmd = "arm-none-eabi-objdump -d ./instrumented.axf > ./instrumented.lst"
+    if not check_command_exists("arm-none-eabi-objdump"):
         bash_cmd = "arm-none-eabi-objdump.exe -d ./instrumented.axf > ./instrumented.lst"
+        #raise EnvironmentError("arm-none-eabi-objdump command not found in the system PATH")
+
+
+    # if os_type == "Linux":
+    #     bash_cmd = "arm-none-eabi-objdump -d ./instrumented.axf > ./instrumented.lst"
+    # else:
+    #     bash_cmd = "arm-none-eabi-objdump.exe -d ./instrumented.axf > ./instrumented.lst"
     
     os.system(bash_cmd)
 

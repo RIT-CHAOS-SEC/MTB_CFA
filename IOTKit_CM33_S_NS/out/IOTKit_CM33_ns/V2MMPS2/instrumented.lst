@@ -1727,7 +1727,7 @@ Disassembly of section ER_MTBDR:
   30002e:	bd80      	pop	{r7, pc}
 
 00300030 <delay>:
-  300030:	b480      	push	{r7}
+  300030:	b580      	push	{r7, lr}
   300032:	b085      	sub	sp, #20
   300034:	af00      	add	r7, sp, #0
   300036:	6078      	str	r0, [r7, #4]
@@ -1744,11 +1744,12 @@ Disassembly of section ER_MTBDR:
   30004e:	bf00      	nop
   300050:	3714      	adds	r7, #20
   300052:	46bd      	mov	sp, r7
-  300054:	f85d 7b04 	ldr.w	r7, [sp], #4
-  300058:	4770      	bx	lr
+  300054:	bd80      	pop	{r7, pc}
+  300056:	bf00      	nop
+  300058:	bf00      	nop
 
 0030005a <pulseIn>:
-  30005a:	b480      	push	{r7}
+  30005a:	b580      	push	{r7, lr}
   30005c:	b083      	sub	sp, #12
   30005e:	af00      	add	r7, sp, #0
   300060:	2300      	movs	r3, #0
@@ -1773,8 +1774,9 @@ Disassembly of section ER_MTBDR:
   30008c:	4618      	mov	r0, r3
   30008e:	370c      	adds	r7, #12
   300090:	46bd      	mov	sp, r7
-  300092:	f85d 7b04 	ldr.w	r7, [sp], #4
-  300096:	4770      	bx	lr
+  300092:	bd80      	pop	{r7, pc}
+  300094:	bf00      	nop
+  300096:	bf00      	nop
   300098:	28200000 	.word	0x28200000
 
 0030009c <getUltrasonicReading>:
@@ -1808,8 +1810,8 @@ Disassembly of section ER_MTBDR:
 Disassembly of section ER_MTBTMP:
 
 00360000 <trampoline_mtbdr>:
-  360000:	f241 0c1f 	movw	ip, #4127	@ 0x101f
-  360004:	f6cf 6c40 	movt	ip, #65088	@ 0xfe40
+  360000:	f64f 6c41 	movw	ip, #65089	@ 0xfe41
+  360004:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
   360008:	4760      	bx	ip
   36000a:	2300      	movs	r3, #0
   36000c:	60fb      	str	r3, [r7, #12]

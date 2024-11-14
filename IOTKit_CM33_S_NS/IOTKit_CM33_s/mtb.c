@@ -165,6 +165,41 @@ void mtb_remove_debugMonitor(){
     return;
 }
 
+
+void pendsv_handler(){
+    printf("[LOG] PendSV\n");
+    vMTB_sendBuffer();
+    while(1){};
+    return;
+}
+
+void hardfault_handler(){
+    printf("[ERROR] Hardfault\n");
+    vMTB_sendBuffer();
+
+    // set pendsv
+    SCB->ICSR |= SCB_ICSR_PENDSVSET_Msk;
+
+    return;
+}
+
+
+void config_hardfault_handler(){
+    uint32_t * VTOR = (uint32_t *) SCB->VTOR;
+    
+    NVIC_SetPriority(PendSV_IRQn, (1 << __NVIC_PRIO_BITS) - 1);
+
+    for (int i = 0; i < 16 ; i++)
+        VTOR[i] = (uint32_t) hardfault_handler;
+
+    // set pendsv handler to be pendsv_handler
+    VTOR[14] = (uint32_t) pendsv_handler;
+
+
+
+    return;
+}
+
 void mtb_config_interrupthandlers(){
     // Setting PendSV handler
     uint32_t * VTOR = (uint32_t *) SCB->VTOR;
@@ -184,7 +219,7 @@ void mtb_setup_MTB(){
     mtb_cleanMTB();
     mtb->MTB_TSTART |= 0b10;  // Set to use DWT_COMP1
     mtb->MTB_TSTOP  |= 0b1000;  // Set to use DWT_COMP3
-    mtb->MTB_FLOW = MTB_WATERMARK_A;
+    // mtb->MTB_FLOW = MTB_WATERMARK_A;
     mtb->MTB_POSITION = 0;
     mtb->MTB_MASTER |= MTB_MASTER_TSTARTEN_MASK;
     mtb->MTB_MASTER |= MTB_MASTER_MASK_MASK;
@@ -194,11 +229,13 @@ void mtb_setup_MTB(){
 #pragma GCC pop_options
 
 void mtb_init(){
+    printf("[LOG] Setting up hardfaultHandler\n");
+    config_hardfault_handler();
     log_counter = 0;
     printf("[LOG] Setting up DWT\n");
 	mtb_setup_DWT();
     printf("[LOG] Setting up MTB\n");
-	// mtb_setup_MTB();
+	mtb_setup_MTB();
     printf("[LOG] Setting up Interrupt Handlers\n");
     mtb_config_interrupthandlers();
 	return;
@@ -233,6 +270,8 @@ void mtb_exit(){
 
     return;
 }
+
+
 
 void __debug_MTB_Registers(){
     printf("[LOG] Entering Debug MTB Registers\n");
