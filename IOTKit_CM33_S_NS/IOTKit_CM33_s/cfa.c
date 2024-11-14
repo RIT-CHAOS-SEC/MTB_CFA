@@ -1,3 +1,5 @@
+#include "IOTKit_CM33_FP.h"
+# include "RTE_Components.h"
 # include "cfa.h"
 # include "mtb.h"
 # include <stdint.h>
@@ -8,6 +10,16 @@
 CFReport report_s;
 extern MTB_struct *mtb;
 typedef void (*NonSecure_fpVoid)(void) __attribute__((cmse_nonsecure_call));
+
+
+
+
+
+
+
+
+
+
 
 uint8_t attestationKey[KEY_SIZE] = {0};
 
@@ -72,8 +84,25 @@ error_t eCFA_init_cfa(CFReport *report_ns){
     printf("[LOG] CFA Calling Non Secure Function : %x\n",(uint32_t)fNSFunc);
     
     // run the NSfunction
-    fNSFunc();
-    
+
+	// IOTKIT_SECURE_TIMER0->CTRL = 0x00000000;
+	// IOTKIT_SECURE_TIMER0->RELOAD = 0x00000000;
+
+	IOTKIT_SECURE_DUALTIMER1->CTRL = 0b10000011;
+	IOTKIT_SECURE_DUALTIMER1->LOAD = 0xFFFFFFFF;
+
+    // fNSFunc();
+
+	for (int i = 0; i < 5; i++)
+		__asm("\tnop\n");
+
+	
+	uint32_t t = IOTKIT_SECURE_DUALTIMER1->VALUE;
+	printf("Secure Timer Value: %u \n", 0xFFFFFFFF - t);
+
+
+
+
     printf("[LOG] CFA Returned from Non Secure Function\n");
 
 #if DEBUG_REGISTERS == 1
@@ -90,6 +119,7 @@ error_t eCFA_init_cfa(CFReport *report_ns){
     //     report_ns->status = CFA_STATUS_ERROR;
     //     return CFA_STATUS_ERROR;
     // }
+	
 
     report_ns->status = CFA_STATUS_SUCCESS;
 

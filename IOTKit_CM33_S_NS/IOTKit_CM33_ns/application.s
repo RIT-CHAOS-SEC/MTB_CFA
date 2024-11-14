@@ -22,65 +22,97 @@
 	.thumb_func
 	.type	application, %function
 application:
-	@ args = 0, pretend = 0, frame = 32
+	@ args = 0, pretend = 0, frame = 40
 	@ frame_needed = 1, uses_anonymous_args = 0
 	push	{r4, r7, lr}
-	sub	sp, sp, #36
+	sub	sp, sp, #44
 	add	r7, sp, #0
 	movs	r3, #0
-	str	r3, [r7, #28]
+	str	r3, [r7, #36]
 	movs	r3, #0
-	str	r3, [r7, #24]
+	str	r3, [r7, #32]
 	b	.L2
 .L5:
-	ldr	r3, [r7, #24]
+	ldr	r3, [r7, #32]
 	cmp	r3, #0
 	and	r3, r3, #1
 	it	lt
 	rsblt	r3, r3, #0
 	cmp	r3, #1
 	bne	.L3
-	ldr	r3, [r7, #24]
+	ldr	r3, [r7, #32]
 	lsls	r3, r3, #2
-	adds	r3, r3, #32
+	adds	r3, r3, #40
 	add	r3, r3, r7
-	ldr	r3, [r3, #-28]
-	ldr	r2, [r7, #28]
+	ldr	r3, [r3, #-36]
+	ldr	r2, [r7, #36]
 	add	r3, r3, r2
-	str	r3, [r7, #28]
+	str	r3, [r7, #36]
 	b	.L4
 .L3:
-	ldr	r3, [r7, #24]
+	ldr	r3, [r7, #32]
 	lsls	r3, r3, #2
-	adds	r3, r3, #32
+	adds	r3, r3, #40
 	add	r3, r3, r7
-	ldr	r3, [r3, #-28]
+	ldr	r3, [r3, #-36]
 	adds	r4, r3, #1
-	ldr	r3, [r7, #24]
+	ldr	r3, [r7, #32]
 	lsls	r3, r3, #2
-	adds	r3, r3, #32
+	adds	r3, r3, #40
 	add	r3, r3, r7
-	ldr	r3, [r3, #-28]
+	ldr	r3, [r3, #-36]
 	mov	r0, r3
 	bl	random_code
 	mov	r3, r0
 	add	r3, r3, r4
-	ldr	r2, [r7, #28]
+	ldr	r2, [r7, #36]
 	add	r3, r3, r2
-	str	r3, [r7, #28]
+	str	r3, [r7, #36]
 .L4:
+	ldr	r3, [r7, #32]
+	adds	r3, r3, #1
+	str	r3, [r7, #32]
+.L2:
+	ldr	r3, [r7, #32]
+	cmp	r3, #9
+	ble	.L5
+	ldr	r3, [r7, #36]
+	adds	r3, r3, #2
+	str	r3, [r7, #36]
+	movs	r3, #0
+	str	r3, [r7, #28]
+	b	.L6
+.L9:
+	movs	r3, #0
+	str	r3, [r7, #24]
+	b	.L7
+.L8:
+	ldr	r3, [r7, #28]
+	lsls	r3, r3, #2
+	adds	r3, r3, #40
+	add	r3, r3, r7
+	ldr	r2, [r3, #-36]
+	ldr	r3, [r7, #24]
+	add	r3, r3, r2
+	ldr	r2, [r7, #36]
+	add	r3, r3, r2
+	str	r3, [r7, #36]
 	ldr	r3, [r7, #24]
 	adds	r3, r3, #1
 	str	r3, [r7, #24]
-.L2:
+.L7:
 	ldr	r3, [r7, #24]
-	cmp	r3, #9
-	ble	.L5
+	cmp	r3, #4
+	ble	.L8
 	ldr	r3, [r7, #28]
-	adds	r3, r3, #2
+	adds	r3, r3, #1
 	str	r3, [r7, #28]
+.L6:
+	ldr	r3, [r7, #28]
+	cmp	r3, #9
+	ble	.L9
 	nop
-	adds	r7, r7, #36
+	adds	r7, r7, #44
 	mov	sp, r7
 	@ sp needed
 	pop	{r4, r7, pc}

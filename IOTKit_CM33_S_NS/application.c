@@ -85,6 +85,13 @@ MTBDR void application_entry()
         }
         val = val + 2;
 
+        for (int x = 0; x < MAXX; x++)
+        {
+            for (int y = 0; y < MAXY; y++){
+                    val += mat[x] + y ;
+            }
+        }
+
         // APPLICATION_NOPES;
         
         return;
