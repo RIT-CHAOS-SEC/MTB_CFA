@@ -488,19 +488,12 @@ end_addr: 0x20071c
 successors: []
 parents: ['0x2004a0']
 type: ret
-adj_instr: None
+adj_instr: 0x300004
 
-start_addr: 0x300000
-end_addr: 0x30000a
-successors: ['0x30009c']
-parents: ['0x300024']
-type: call
-adj_instr: 0x30000e
-
-start_addr: 0x30000e
+start_addr: 0x300004
 end_addr: 0x30001c
-successors: ['0x30002e']
-parents: ['0x3000d0']
+successors: []
+parents: []
 type: ret
 adj_instr: None
 
@@ -514,7 +507,7 @@ adj_instr: 0x30002e
 start_addr: 0x30002e
 end_addr: 0x30002e
 successors: []
-parents: ['0x30000e']
+parents: []
 type: ret
 adj_instr: None
 
@@ -563,7 +556,7 @@ adj_instr: None
 start_addr: 0x30009c
 end_addr: 0x3000ae
 successors: ['0x300030']
-parents: ['0x300000']
+parents: []
 type: call
 adj_instr: 0x3000b2
 
@@ -583,7 +576,7 @@ adj_instr: 0x3000d0
 
 start_addr: 0x3000d0
 end_addr: 0x3000da
-successors: ['0x30000e']
+successors: []
 parents: ['0x30008a']
 type: ret
 adj_instr: None
@@ -682,7 +675,7 @@ adj_instr: 0x30008a
 -------------------
 __Vectors : 0x200000
 __main : 0x200400
-__scatterload_rt2 : 0x200408
+__scatterload : 0x200408
 __scatterload_loop : 0x200412
 __scatterload_copy : 0x200464
 __scatterload_null : 0x200480
@@ -700,8 +693,8 @@ __rt_exit : 0x2004c0
 __rt_exit_ls : 0x2004c2
 __rt_exit_exit : 0x2004c6
 exit : 0x2004cc
-__use_no_semihosting_swi : 0x2004de
-_sys_exit : 0x2004e0
+__I$use$semihosting : 0x2004de
+__semihosting_library_function : 0x2004e0
 Default_Handler : 0x2004ec
 HardFault_Handler : 0x2004f0
 LED_Off : 0x2004f4

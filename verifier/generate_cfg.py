@@ -152,6 +152,27 @@ def instrument(cfg, asm_funcs):
             i = 0
             while i < len(func.instr_list):
                 instr = func.instr_list[i]
+
+                if instr.instr == 'push' and 'lr' not in instr.arg:
+                    mtbdr_patch = Patch(instr.addr)
+                    new_arg = instr.arg.replace("}", ", lr}")
+                    asm = AssemblyInstruction(addr=instr.addr, instr=instr.instr, arg=new_arg)
+                    mtbdr_patch = add_instruction_ARM(asm, cfg, mtbdr_patch, pg)
+                    pg = process_patch(pg, cfg, mtbdr_patch)
+
+                if instr.instr == 'bx':
+                    mtbdr_patch = Patch(instr.addr)
+                    asm = AssemblyInstruction(addr=instr.addr, instr='pop', arg='{r7, pc}')
+                    mtbdr_patch = add_instruction_ARM(asm, cfg, mtbdr_patch, pg)
+                    pg = process_patch(pg, cfg, mtbdr_patch)
+
+                if instr.instr == 'pop' and 'pc' not in instr.arg:
+                    mtbdr_patch = Patch(instr.addr)
+                    new_arg = instr.arg.replace("}", ", pc}")
+                    asm = AssemblyInstruction(addr=instr.addr, instr=instr.instr, arg=new_arg)
+                    mtbdr_patch = add_instruction_ARM(asm, cfg, mtbdr_patch, pg)
+                    pg = process_patch(pg, cfg, mtbdr_patch)
+
                 alt_ret = ('pop' in instr.instr and 'pc' in instr.arg) or ('ldr' == instr.instr and 'pc' in instr.arg.split(', ')[0])
 
                 print(f"{instr.addr} {instr.reconstruct()}")
@@ -397,7 +418,7 @@ def instrument(cfg, asm_funcs):
     # a = input()
     print()
     
-    bash_cmd = "arm-none-eabi-objdump.exe -d ./instrumented.axf > ./instrumented.lst"
+    bash_cmd = "arm-none-eabi-objdump -d ./instrumented.axf > ./instrumented.lst"
     os.system(bash_cmd)
 
 def main():
