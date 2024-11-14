@@ -141,6 +141,10 @@ def instrument(cfg, asm_funcs):
 
     # func = asm_funcs[cfg.label_addr_map['NonSecure_LED_Off']]
     for func_addr in asm_funcs.keys():
+        if func_addr == cfg.label_addr_map['application_entry']:
+            print("AAAAAA !!!!!!")
+            continue
+
         print(func_addr)
         if MTBDR_MIN <= int(func_addr,16) and MTBDR_MAX > int(func_addr,16):
             print(f"doing {func_addr}")

@@ -428,7 +428,7 @@ Disassembly of section ER_MTBAR:
   380030:	bf00      	nop
   380032:	46bd      	mov	sp, r7
   380034:	bd90      	pop	{r4, r7, pc}
-  380036:	bd80      	pop	{r7, pc}
+  380036:	bf00      	nop
   380038:	bf00      	nop
   38003a:	bf00      	nop
   38003c:	bf00      	nop
@@ -1784,7 +1784,7 @@ Disassembly of section ER_MTBDR:
 003000b2 <application_entry>:
   3000b2:	b580      	push	{r7, lr}
   3000b4:	af00      	add	r7, sp, #0
-  3000b6:	f05f bfb6 	b.w	360026 <trampoline_mtbdr+0x26>
+  3000b6:	f7ff ffa3 	bl	300000 <application>
   3000ba:	bf00      	nop
   3000bc:	bd80      	pop	{r7, pc}
 
@@ -1818,8 +1818,10 @@ Disassembly of section ER_MTBTMP:
   360020:	61fb      	str	r3, [r7, #28]
   360022:	469a      	mov	sl, r3
   360024:	e7ec      	b.n	360000 <trampoline_mtbdr>
-  360026:	f79f ffeb 	bl	300000 <application>
-  36002a:	f020 b804 	b.w	380036 <nopes+0x36>
+  360026:	bf00      	nop
+  360028:	bf00      	nop
+  36002a:	bf00      	nop
+  36002c:	bf00      	nop
   36002e:	bf00      	nop
   360030:	bf00      	nop
   360032:	bf00      	nop
