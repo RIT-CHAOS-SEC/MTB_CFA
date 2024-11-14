@@ -159,11 +159,26 @@ def instrument(cfg, asm_funcs):
                     new_arg = instr.arg.replace("}", ", lr}")
                     asm = AssemblyInstruction(addr=instr.addr, instr=instr.instr, arg=new_arg)
                     mtbdr_patch = add_instruction_ARM(asm, cfg, mtbdr_patch, pg)
+                    sp_offset_instr = func.instr_list[i+1]
+                    arg_front = sp_offset_instr.arg.split("#")[0]+'#'
+                    new_sp_offset = str(int(sp_offset_instr.arg.split("#")[1])-4)
+                    asm = AssemblyInstruction(addr=sp_offset_instr.addr, instr=sp_offset_instr.instr, arg=arg_front+new_sp_offset)
+                    mtbdr_patch = add_instruction_ARM(asm, cfg, mtbdr_patch, pg)
                     pg = process_patch(pg, cfg, mtbdr_patch)
 
                 if instr.instr == 'bx':
                     prev_instr = func.instr_list[i-1]
+                    sp_change_instr = func.instr_list[i-2]
+                    sp_offset_instr = func.instr_list[i-3]
                     mtbdr_patch = Patch(prev_instr.addr)
+                    arg_front = sp_offset_instr.arg.split("#")[0]+'#'
+                    new_sp_offset = str(int(sp_offset_instr.arg.split("#")[1])-4)
+                    asm = AssemblyInstruction(addr=sp_offset_instr.addr, instr=sp_offset_instr.instr, arg=arg_front+new_sp_offset)
+                    mtbdr_patch = add_instruction_ARM(asm, cfg, mtbdr_patch, pg)
+
+                    asm = AssemblyInstruction(addr=sp_change_instr.addr, instr=sp_change_instr.instr, arg=sp_change_instr.arg)
+                    mtbdr_patch = add_instruction_ARM(asm, cfg, mtbdr_patch, pg)
+
                     asm = AssemblyInstruction(addr=prev_instr.addr, instr='pop', arg='{r7, pc}')
                     mtbdr_patch = add_instruction_ARM(asm, cfg, mtbdr_patch, pg)
                     asm = AssemblyInstruction(addr=hex(int(prev_instr.addr,16)+2), instr='nop', arg='')
