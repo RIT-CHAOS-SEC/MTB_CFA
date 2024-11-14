@@ -5,6 +5,7 @@ import time
 import argparse
 from patch_ARM import *
 import os
+import platform
 
 def arg_parser():
     '''
@@ -161,8 +162,13 @@ def instrument(cfg, asm_funcs):
                     pg = process_patch(pg, cfg, mtbdr_patch)
 
                 if instr.instr == 'bx':
-                    mtbdr_patch = Patch(instr.addr)
-                    asm = AssemblyInstruction(addr=instr.addr, instr='pop', arg='{r7, pc}')
+                    prev_instr = func.instr_list[i-1]
+                    mtbdr_patch = Patch(prev_instr.addr)
+                    asm = AssemblyInstruction(addr=prev_instr.addr, instr='pop', arg='{r7, pc}')
+                    mtbdr_patch = add_instruction_ARM(asm, cfg, mtbdr_patch, pg)
+                    asm = AssemblyInstruction(addr=hex(int(prev_instr.addr,16)+2), instr='nop', arg='')
+                    mtbdr_patch = add_instruction_ARM(asm, cfg, mtbdr_patch, pg)
+                    asm = AssemblyInstruction(addr=instr.addr, instr='nop', arg='')
                     mtbdr_patch = add_instruction_ARM(asm, cfg, mtbdr_patch, pg)
                     pg = process_patch(pg, cfg, mtbdr_patch)
 
@@ -418,7 +424,12 @@ def instrument(cfg, asm_funcs):
     # a = input()
     print()
     
-    bash_cmd = "arm-none-eabi-objdump -d ./instrumented.axf > ./instrumented.lst"
+    os_type = platform.system()
+    if os_type == "Linux":
+        bash_cmd = "arm-none-eabi-objdump -d ./instrumented.axf > ./instrumented.lst"
+    else:
+        bash_cmd = "arm-none-eabi-objdump.exe -d ./instrumented.axf > ./instrumented.lst"
+    
     os.system(bash_cmd)
 
 def main():

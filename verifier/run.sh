@@ -6,7 +6,13 @@ input_elf=${ns_path}"IOTKit_CM33_ns.axf"
 echo ${input_elf}
 input_file=${ns_path}"IOTKit_CM33_ns.list"
 echo ${input_file}
-OBJDUMP=arm-none-eabi-objdump
+
+OS_TYPE=""
+if [[ "$(uname)" == "Linux" ]]; then
+	OBJDUMP=arm-none-eabi-objdump
+else
+	OBJDUMP=arm-none-eabi-objdump.exe
+fi
 arch_type="armv8-m33"
 
 
@@ -16,7 +22,7 @@ sed 's/:/,/g' .words.tmp2 > ./objs/.words
 
 
 # echo "${OBJDUMP} -d" ${input_elf} ">" ${input_file}
-rm ${input_filet}
+rm ${input_file}
 $OBJDUMP -d ${input_elf} > ${input_file}
 $OBJDUMP -d ${s_path}"IOTKit_CM33_s.axf" > ${s_path}"IOTKit_CM33_s.list"
 
