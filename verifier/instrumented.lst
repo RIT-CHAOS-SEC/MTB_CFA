@@ -1808,8 +1808,8 @@ Disassembly of section ER_MTBDR:
 Disassembly of section ER_MTBTMP:
 
 00360000 <trampoline_mtbdr>:
-  360000:	f241 0c1f 	movw	ip, #4127	@ 0x101f
-  360004:	f6cf 6c40 	movt	ip, #65088	@ 0xfe40
+  360000:	f64f 6c41 	movw	ip, #65089	@ 0xfe41
+  360004:	f2c1 0c1f 	movt	ip, #4127	@ 0x101f
   360008:	4760      	bx	ip
   36000a:	2300      	movs	r3, #0
   36000c:	60fb      	str	r3, [r7, #12]
