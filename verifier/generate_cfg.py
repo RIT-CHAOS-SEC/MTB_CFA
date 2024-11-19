@@ -3,7 +3,6 @@ from utils import *
 from parse_asm import *
 import time
 import argparse
-from patch_ARM import *
 import os
 import platform
 from shutil import which

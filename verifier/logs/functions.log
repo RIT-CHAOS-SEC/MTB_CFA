@@ -1,11 +1,11 @@
 0x200400 : Start Address: 0x200400 End Address: 0x200404
 
-	0x200400 bl 200408 <__scatterload_rt2>
+	0x200400 bl 200408 <__scatterload>
 	0x200404 bl 2004ac <__rt_entry>
 ---------------------------
 0x200408 : Start Address: 0x200408 End Address: 0x200410
 
-	0x200408 add r6, pc, #80@ (adr r6, 20045c <__scatterload_loop+0x4a>)
+	0x200408 add r6, pc, #80
 	0x20040a ldmia.w r6, {sl, fp}
 	0x20040e add sl, r6
 	0x200410 add fp, r6
@@ -16,7 +16,7 @@
 	0x200414 bne.n 20041a <__scatterload_loop+0x8>
 	0x200416 bl 2004ac <__rt_entry>
 	0x20041a ldmia.w sl!, {r0, r1, r2, r3}
-	0x20041e add r6, pc, #60@ (adr r6, 20045c <__scatterload_loop+0x4a>)
+	0x20041e add r6, pc, #60
 	0x200420 ldmia.w r6, {r4, r5}
 	0x200424 sub.w r5, r5, r4
 	0x200428 add.w r7, r4, r6
@@ -95,7 +95,7 @@
 ---------------------------
 0x2004ac : Start Address: 0x2004ac End Address: 0x2004ac
 
-	0x2004ac ldr.w sp, [pc, #12]@ 2004bc <__lit__00000000>
+	0x2004ac ldr.w sp, [pc, #12]
 ---------------------------
 0x2004b0 : Start Address: 0x2004b0 End Address: 0x2004b0
 
@@ -117,7 +117,7 @@
 0x2004c6 : Start Address: 0x2004c6 End Address: 0x2004c8
 
 	0x2004c6 pop {r0, r1}
-	0x2004c8 bl 2004e0 <_sys_exit>
+	0x2004c8 bl 2004e0 <__semihosting_library_function>
 ---------------------------
 0x2004cc : Start Address: 0x2004cc End Address: 0x2004da
 
@@ -133,10 +133,10 @@
 ---------------------------
 0x2004e0 : Start Address: 0x2004e0 End Address: 0x2004e6
 
-	0x2004e0 ldr r1, [pc, #4]@ (2004e8 <_sys_exit+0x8>)
+	0x2004e0 ldr r1, [pc, #4]
 	0x2004e2 movs r0, #24
 	0x2004e4 bkpt 0x00ab
-	0x2004e6 b.n 2004e6 <_sys_exit+0x6>
+	0x2004e6 b.n 2004e6 <__semihosting_library_function+0x6>
 ---------------------------
 0x2004ec : Start Address: 0x2004ec End Address: 0x2004ec
 
@@ -151,7 +151,7 @@
 	0x2004f4 cmp r0, #7
 	0x2004f6 bhi.n 20050c <LED_Off+0x18>
 	0x2004f8 movs r2, #4
-	0x2004fa movt r2, #16432@ 0x4030
+	0x2004fa movt r2, #16432
 	0x2004fe movs r1, #1
 	0x200500 ldr r3, [r2, #0]
 	0x200502 lsl.w r0, r1, r0
@@ -165,7 +165,7 @@
 	0x200510 cmp r0, #7
 	0x200512 bhi.n 200526 <LED_On+0x16>
 	0x200514 movs r2, #4
-	0x200516 movt r2, #16432@ 0x4030
+	0x200516 movt r2, #16432
 	0x20051a movs r1, #1
 	0x20051c ldr r3, [r2, #0]
 	0x20051e lsl.w r0, r1, r0
@@ -185,19 +185,19 @@
 0x200534 : Start Address: 0x200534 End Address: 0x200554
 
 	0x200534 movw r0, #0
-	0x200538 movt r0, #10304@ 0x2840
+	0x200538 movt r0, #10304
 	0x20053c msr PSP, r0
-	0x200540 movw r0, #64512@ 0xfc00
-	0x200544 movt r0, #10303@ 0x283f
-	0x200548 msr MSPLIM, r0
-	0x20054c msr PSPLIM, r0
+	0x200540 movw r0, #64512
+	0x200544 movt r0, #10303
+	0x200548 msr <unknown>, r0
+	0x20054c msr <unknown>, r0
 	0x200550 bl 2005a4 <SystemInit>
 	0x200554 bl 200400 <__main>
 ---------------------------
 0x200558 : Start Address: 0x200558 End Address: 0x2005a2
 
-	0x200558 movw r0, #32
-	0x20055c movt r0, #10272@ 0x2820
+	0x200558 movw r0, #36
+	0x20055c movt r0, #10272
 	0x200560 ldr r2, [r0, #0]
 	0x200562 adds r1, r2, #1
 	0x200564 cmp r2, #29
@@ -205,9 +205,9 @@
 	0x200568 ble.n 200578 <SysTick_Handler+0x20>
 	0x20056a cmp r2, #30
 	0x20056c beq.n 200586 <SysTick_Handler+0x2e>
-	0x20056e cmp r2, #50@ 0x32
+	0x20056e cmp r2, #50
 	0x200570 beq.n 20058c <SysTick_Handler+0x34>
-	0x200572 cmp r2, #99@ 0x63
+	0x200572 cmp r2, #99
 	0x200574 beq.n 20059e <SysTick_Handler+0x46>
 	0x200576 b.n 200598 <SysTick_Handler+0x40>
 	0x200578 cmp r2, #10
@@ -222,7 +222,7 @@
 	0x20058e b.w 2006cc <main+0xf8>
 	0x200592 movs r0, #7
 	0x200594 b.w 200510 <LED_On>
-	0x200598 cmp r1, #100@ 0x64
+	0x200598 cmp r1, #100
 	0x20059a it cc
 	0x20059c bxcc lr
 	0x20059e movs r1, #0
@@ -232,50 +232,50 @@
 0x2005a4 : Start Address: 0x2005a4 End Address: 0x2005d2
 
 	0x2005a4 movw r0, #0
-	0x2005a8 movw r1, #60808@ 0xed88
+	0x2005a8 movw r1, #60808
 	0x2005ac movt r0, #32
-	0x2005b0 movt r1, #57344@ 0xe000
+	0x2005b0 movt r1, #57344
 	0x2005b4 str.w r0, [r1, #-128]
 	0x2005b8 ldr r0, [r1, #0]
-	0x2005ba orr.w r0, r0, #15728640@ 0xf00000
+	0x2005ba orr.w r0, r0, #15728640
 	0x2005be str r0, [r1, #0]
-	0x2005c0 movw r0, #0
-	0x2005c4 movw r1, #30784@ 0x7840
-	0x2005c8 movt r0, #10272@ 0x2820
-	0x2005cc movt r1, #381@ 0x17d
+	0x2005c0 movw r0, #4
+	0x2005c4 movw r1, #30784
+	0x2005c8 movt r0, #10272
+	0x2005cc movt r1, #381
 	0x2005d0 str r1, [r0, #0]
 	0x2005d2 bx lr
 ---------------------------
 0x2005d4 : Start Address: 0x2005d4 End Address: 0x200706
 
 	0x2005d4 sub sp, #16
-	0x2005d6 movw r0, #21
-	0x2005da movt r0, #48@ 0x30
+	0x2005d6 movw r0, #41
+	0x2005da movt r0, #48
 	0x2005de bl 2006d6 <main+0x102>
-	0x2005e2 movw r4, #57360@ 0xe010
-	0x2005e6 movt r4, #57344@ 0xe000
+	0x2005e2 movw r4, #57360
+	0x2005e6 movt r4, #57344
 	0x2005ea movs r0, #0
 	0x2005ec str r0, [r4, #0]
-	0x2005ee movw r0, #36@ 0x24
-	0x2005f2 movt r0, #10272@ 0x2820
+	0x2005ee movw r0, #44
+	0x2005f2 movt r0, #10272
 	0x2005f6 bl 2006e0 <main+0x10c>
-	0x2005fa ldr.w r0, [r4, #3888]@ 0xf30
-	0x2005fe and.w r0, r0, #4080@ 0xff0
+	0x2005fa ldr.w r0, [r4, #3888]
+	0x2005fe and.w r0, r0, #4080
 	0x200602 sub.w r1, r0, #32
 	0x200606 clz r1, r1
-	0x20060a cmp.w r0, #544@ 0x220
-	0x20060e movw r0, #20133@ 0x4ea5
+	0x20060a cmp.w r0, #544
+	0x20060e movw r0, #20133
 	0x200612 mov.w r1, r1, lsr #5
-	0x200616 movt r0, #16711@ 0x4147
+	0x200616 movt r0, #16711
 	0x20061a it eq
 	0x20061c moveq r1, #2
 	0x20061e str r1, [sp, #12]
 	0x200620 str r0, [sp, #8]
-	0x200622 movw r0, #61077@ 0xee95
-	0x200626 movt r0, #16169@ 0x3f29
+	0x200622 movw r0, #61077
+	0x200626 movt r0, #16169
 	0x20062a str r0, [sp, #4]
-	0x20062c movw r0, #58255@ 0xe38f
-	0x200630 movt r0, #16832@ 0x41c0
+	0x20062c movw r0, #58255
+	0x200630 movt r0, #16832
 	0x200634 str r0, [sp, #0]
 	0x200636 vldr s0, [sp]
 	0x20063a vldr s2, [sp, #8]
@@ -285,64 +285,64 @@
 	0x20064a vstr s0, [sp]
 	0x20064e mrs r0, MSP
 	0x200652 mrs r0, PSP
-	0x200656 movw r0, #1329@ 0x531
+	0x200656 movw r0, #1329
 	0x20065a movt r0, #32
 	0x20065e bl 2006ea <main+0x116>
-	0x200662 movw r0, #1325@ 0x52d
+	0x200662 movw r0, #1325
 	0x200666 movt r0, #32
 	0x20066a bl 2006f4 <main+0x120>
-	0x20066e movw r4, #4
-	0x200672 movt r4, #10272@ 0x2820
+	0x20066e movw r4, #8
+	0x200672 movt r4, #10272
 	0x200678 movs r0, #5
 	0x20067a bl 200510 <LED_On>
-	0x20067e mov.w r0, #1048576@ 0x100000
+	0x20067e mov.w r0, #1048576
 	0x200684 subs r0, #1
 	0x200688 bne.n 200684 <main+0xb0>
 	0x20068a movs r0, #5
 	0x20068c bl 2004f4 <LED_Off>
-	0x200690 mov.w r0, #1048576@ 0x100000
+	0x200690 mov.w r0, #1048576
 	0x200694 subs r0, #1
 	0x200698 bne.n 200694 <main+0xc0>
 	0x20069a movs r0, #4
 	0x20069c bl 2006c2 <main+0xee>
-	0x2006a0 mov.w r0, #1048576@ 0x100000
+	0x2006a0 mov.w r0, #1048576
 	0x2006a4 subs r0, #1
 	0x2006a8 bne.n 2006a4 <main+0xd0>
 	0x2006aa movs r0, #4
 	0x2006ac bl 2006cc <main+0xf8>
-	0x2006b0 mov.w r0, #1048576@ 0x100000
+	0x2006b0 mov.w r0, #1048576
 	0x2006b4 subs r0, #1
 	0x2006b8 bne.n 2006b4 <main+0xe0>
 	0x2006ba mov r0, r4
 	0x2006bc bl 2006fe <main+0x12a>
 	0x2006c0 b.n 200678 <main+0xa4>
-	0x2006c2 movw ip, #65049@ 0xfe19
-	0x2006c6 movt ip, #4127@ 0x101f
+	0x2006c2 movw ip, #65049
+	0x2006c6 movt ip, #4127
 	0x2006ca bx ip
-	0x2006cc movw ip, #65057@ 0xfe21
-	0x2006d0 movt ip, #4127@ 0x101f
+	0x2006cc movw ip, #65057
+	0x2006d0 movt ip, #4127
 	0x2006d4 bx ip
-	0x2006d6 movw ip, #65033@ 0xfe09
-	0x2006da movt ip, #4127@ 0x101f
+	0x2006d6 movw ip, #65033
+	0x2006da movt ip, #4127
 	0x2006de bx ip
-	0x2006e0 movw ip, #65041@ 0xfe11
-	0x2006e4 movt ip, #4127@ 0x101f
+	0x2006e0 movw ip, #65041
+	0x2006e4 movt ip, #4127
 	0x2006e8 bx ip
-	0x2006ea movw ip, #65073@ 0xfe31
-	0x2006ee movt ip, #4127@ 0x101f
+	0x2006ea movw ip, #65073
+	0x2006ee movt ip, #4127
 	0x2006f2 bx ip
-	0x2006f4 movw ip, #65081@ 0xfe39
-	0x2006f8 movt ip, #4127@ 0x101f
+	0x2006f4 movw ip, #65081
+	0x2006f8 movt ip, #4127
 	0x2006fc bx ip
-	0x2006fe movw ip, #65065@ 0xfe29
-	0x200702 movt ip, #4127@ 0x101f
+	0x2006fe movw ip, #65065
+	0x200702 movt ip, #4127
 	0x200706 bx ip
 ---------------------------
 0x200708 : Start Address: 0x200708 End Address: 0x200718
 
 	0x200708 vmrs r0, fpscr
-	0x20070c movw r1, #65535@ 0xffff
-	0x200710 movt r1, #960@ 0x3c0
+	0x20070c movw r1, #65535
+	0x200710 movt r1, #960
 	0x200714 bic.w r0, r0, r1
 	0x200718 vmsr fpscr, r0
 ---------------------------
@@ -350,72 +350,123 @@
 
 	0x20071c bx lr
 ---------------------------
-0x300000 : Start Address: 0x300000 End Address: 0x300012
+0x300000 : Start Address: 0x300000 End Address: 0x30001e
 
 	0x300000 push {r7, lr}
-	0x300002 sub sp, #8
+	0x300002 .short 0xb082
 	0x300004 add r7, sp, #0
-	0x300006 bl 300058 <crc32pseudo>
-	0x30000a str r0, [r7, #4]
-	0x30000e adds r7, #8
-	0x300010 mov sp, r7
-	0x300012 pop {r7, pc}
+	0x300006 .short 0x2300
+	0x300008 str r3, [r7, #4]
+	0x30000a .short 0xf000
+	0x30000c ldr.w r6, [r3, r8, lsl #3]
+	0x300010 ldr r2, [pc, #16]
+	0x300012 ldr r3, [r7, #4]
+	0x300014 str r3, [r2, #0]
+	0x300016 adds r7, #8
+	0x300018 mov sp, r7
+	0x30001a ldmia.w sp!, {r7, lr}
+	0x30001e b.w 300100 <getUltrasonicReading+0x4c>
 ---------------------------
-0x300014 : Start Address: 0x300014 End Address: 0x30001e
+0x300028 : Start Address: 0x300028 End Address: 0x300034
 
-	0x300014 push {r7, lr}
-	0x300016 add r7, sp, #0
-	0x300018 bl 300000 <application>
-	0x30001e pop {r7, pc}
+	0x300028 push {r7, lr}
+	0x30002a add r7, sp, #0
+	0x30002c bl 300000 <application>
+	0x300030 ldmia.w sp!, {r7, lr}
+	0x300034 b.w 300100 <getUltrasonicReading+0x4c>
 ---------------------------
-0x300020 : Start Address: 0x300020 End Address: 0x30004c
+0x300038 : Start Address: 0x300038 End Address: 0x300064
 
-	0x300020 push {r7}
-	0x300022 add r7, sp, #0
-	0x300024 ldr r3, [pc, #40]@ (300050 <rand_beebs+0x30>)
-	0x300026 ldr r3, [r3, #0]
-	0x300028 ldr.w r2, [pc, #40]@ 300054 <rand_beebs+0x34>
-	0x30002c mul.w r3, r2, r3
-	0x300030 add.w r3, r3, #12288@ 0x3000
-	0x300034 adds r3, #57@ 0x39
-	0x300036 bic.w r3, r3, #2147483648@ 0x80000000
-	0x30003a ldr r2, [pc, #20]@ (300050 <rand_beebs+0x30>)
-	0x30003c str r3, [r2, #0]
-	0x30003e ldr r3, [pc, #16]@ (300050 <rand_beebs+0x30>)
-	0x300040 ldr r3, [r3, #0]
-	0x300042 asrs r3, r3, #16
-	0x300044 mov r0, r3
-	0x300046 mov sp, r7
-	0x300048 ldr.w r7, [sp], #4
-	0x30004c bx lr
+	0x300038 push {r7, lr}
+	0x30003a sub sp, #20
+	0x30003c add r7, sp, #0
+	0x30003e str r0, [r7, #4]
+	0x300040 movs r3, #0
+	0x300042 str r3, [r7, #12]
+	0x300044 b.n 300050 <delay+0x18>
+	0x300046 bl 30010a <getUltrasonicReading+0x56>
+	0x30004a ldr r3, [r7, #12]
+	0x30004c adds r3, r3, #1
+	0x30004e str r3, [r7, #12]
+	0x300050 ldr r3, [r7, #12]
+	0x300052 ldr r2, [r7, #4]
+	0x300054 cmp r2, r3
+	0x300056 bhi.n 300046 <delay+0xe>
+	0x300058 bl 300114 <getUltrasonicReading+0x60>
+	0x30005c adds r7, #20
+	0x30005e mov sp, r7
+	0x300060 ldmia.w sp!, {r7, lr}
+	0x300064 b.w 300100 <getUltrasonicReading+0x4c>
 ---------------------------
-0x300058 : Start Address: 0x300058 End Address: 0x300096
+0x300068 : Start Address: 0x300068 End Address: 0x3000ac
 
-	0x300058 push {r4, r7, lr}
-	0x30005a sub sp, #12
-	0x30005c add r7, sp, #0
-	0x30005e mov.w r4, #4294967295
-	0x300062 movs r3, #0
-	0x300064 str r3, [r7, #4]
-	0x300066 b.n 300086 <crc32pseudo+0x2e>
-	0x300068 bl 300020 <rand_beebs>
-	0x30006c mov r3, r0
-	0x30006e uxtb r3, r3
-	0x300070 eors r3, r4
-	0x300072 uxtb r3, r3
-	0x300074 ldr r2, [pc, #32]@ (300098 <crc32pseudo+0x40>)
-	0x300076 ldr.w r2, [r2, r3, lsl #2]
-	0x30007a lsrs r3, r4, #8
-	0x30007c eor.w r4, r2, r3
-	0x300080 ldr r3, [r7, #4]
-	0x300082 adds r3, r3, #1
-	0x300084 str r3, [r7, #4]
-	0x300086 ldr r3, [r7, #4]
-	0x300088 cmp.w r3, #1024@ 0x400
-	0x30008c blt.n 300068 <crc32pseudo+0x10>
-	0x30008e mvns r3, r4
-	0x300090 mov r0, r3
-	0x300092 adds r7, #12
-	0x300094 mov sp, r7
-	0x300096 pop {r4, r7, pc}
+	0x300068 push {r7, lr}
+	0x30006a sub sp, #12
+	0x30006c add r7, sp, #0
+	0x30006e movs r3, #0
+	0x300070 str r3, [r7, #4]
+	0x300072 movs r3, #0
+	0x300074 str r3, [r7, #0]
+	0x300076 b.n 300094 <pulseIn+0x2c>
+	0x300078 bl 30010a <getUltrasonicReading+0x56>
+	0x30007c ldr r3, [pc, #48]
+	0x30007e ldr r3, [r3, #0]
+	0x300080 ldr r3, [r3, #16]
+	0x300082 lsrs r3, r3, #8
+	0x300084 and.w r3, r3, #1
+	0x300088 ldr r2, [r7, #4]
+	0x30008a add r3, r2
+	0x30008c str r3, [r7, #4]
+	0x30008e ldr r3, [r7, #0]
+	0x300090 adds r3, r3, #1
+	0x300092 str r3, [r7, #0]
+	0x300094 ldr r3, [r7, #0]
+	0x300096 cmp.w r3, #1000
+	0x30009a blt.n 300078 <pulseIn+0x10>
+	0x30009c bl 300114 <getUltrasonicReading+0x60>
+	0x3000a0 ldr r3, [r7, #4]
+	0x3000a2 mov r0, r3
+	0x3000a4 adds r7, #12
+	0x3000a6 mov sp, r7
+	0x3000a8 ldmia.w sp!, {r7, lr}
+	0x3000ac b.w 300100 <getUltrasonicReading+0x4c>
+---------------------------
+0x3000b4 : Start Address: 0x3000b4 End Address: 0x30011c
+
+	0x3000b4 push {r7, lr}
+	0x3000b6 sub sp, #8
+	0x3000b8 add r7, sp, #0
+	0x3000ba ldr r3, [pc, #64]
+	0x3000bc ldr r3, [r3, #0]
+	0x3000be movw r2, #256
+	0x3000c2 str r2, [r3, #24]
+	0x3000c4 movs r0, #2
+	0x3000c6 bl 300038 <delay>
+	0x3000ca ldr r3, [pc, #48]
+	0x3000cc ldr r3, [r3, #0]
+	0x3000ce movw r2, #256
+	0x3000d2 str r2, [r3, #40]
+	0x3000d4 movs r0, #5
+	0x3000d6 bl 300038 <delay>
+	0x3000da ldr r3, [pc, #32]
+	0x3000dc ldr r3, [r3, #0]
+	0x3000de movw r2, #256
+	0x3000e2 str r2, [r3, #24]
+	0x3000e4 bl 300068 <pulseIn>
+	0x3000e8 str r0, [r7, #4]
+	0x3000ea ldr r3, [r7, #4]
+	0x3000ec mov r0, r3
+	0x3000ee adds r7, #8
+	0x3000f0 mov sp, r7
+	0x3000f2 ldmia.w sp!, {r7, lr}
+	0x3000f6 b.w 300100 <getUltrasonicReading+0x4c>
+	0x300100 movw ip, #65113
+	0x300104 movt ip, #4127
+	0x300108 bx ip
+	0x30010a movw ip, #65097
+	0x30010e movt ip, #4127
+	0x300112 bx ip
+	0x300114 movw ip, #65105
+	0x300118 movt ip, #4127
+	0x30011c bx ip
 ---------------------------

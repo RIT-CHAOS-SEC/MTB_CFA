@@ -2,6 +2,7 @@ from architectures import *
 from os.path import exists
 import pickle
 from elftools.elf.elffile import ELFFile
+from keystone import *
 
 def read_file(file, arch_type):
     '''
@@ -118,3 +119,71 @@ def update_instruction(arch, elf_file_path, instr_addr, new_instruction_bytes):
         f.write(new_instruction_bytes)
         
         # print("Instruction updated successfully")
+
+def instr_to_binary_ARM(instr, arch):
+    
+    instr_addr = instr.addr
+    instruction = instr.reconstruct()
+
+    print(f"trying '{instruction}'")
+    debug = False
+    if instr.instr in arch.all_br_insts and instr.instr not in arch.return_instrs and instr.instr not in arch.indr_calls:
+
+        if ' ' in instr.arg:
+            instr.arg = instr.arg.split(' ')[0]
+        debug = True
+
+        target = int(instr.arg,16)
+        cur_addr = int(instr.addr,16)
+        offset = target-cur_addr # shows as -4 in python, but is correct in the ELF
+        instruction = instr.instr+f" #{offset}"
+        # print(instruction)
+
+    # Initialize Keystone Engine for ARM Cortex-M architecture
+    ks = Ks(KS_ARCH_ARM, KS_MODE_THUMB)
+
+    # Assemble the instruction
+    try:
+        encoding, _ = ks.asm(instruction)
+        print(f"ENCODING : {encoding}")
+    except KsError as e:
+        encoding = []
+        # print(f"Error")
+
+    hex_instr = ''.join(['{:02x}'.format(byte) for byte in encoding])
+    bin_instr = bytes.fromhex(hex_instr)
+    return bin_instr, hex_instr, debug
+
+def add_instruction_ARM(asm, cfg, patch, pg, mode_1_args=None):
+    if pg.mode >= 1:
+        loop_exit, idx = mode_1_args
+
+        if patch.type == 0:
+            asm.addr = hex(pg.base)
+    
+        if (asm.instr in cfg.arch.unconditional_br_instrs or asm.instr in cfg.arch.conditional_br_instrs) and idx != len(patch.instr)-1:
+            if asm.arg == 'loop_exit':
+                asm.arg = loop_exit
+            elif pg.mode == 2:
+                for i in range(0, len(patch.instr)):
+                    instr = patch.instr[i]
+                    if instr.prev_addr is not None:
+                        if instr.prev_addr[2:] in asm.arg:
+                            # print(f"in instr {asm.reconstruct()}: replacing {instr.prev_addr[2:]} with {instr.addr[2:]}")
+                            asm.arg = asm.arg.replace(instr.prev_addr[2:], instr.addr[2:])
+                            
+        bin_instr, hex_instr, debug = instr_to_binary_ARM(asm, cfg.arch)
+        # print(f"pg.mode = {pg.mode}\tasm = {asm.addr} {asm.reconstruct()}")
+        patch.instr[idx] = asm
+        patch.bin[idx] = bin_instr
+        patch.hex[idx] = hex_instr
+
+        if patch.type == 0:
+            # print(f"incrementing in pg.mode = {pg.mode}")
+            pg.base += int(len(hex_instr)/2)
+    else: 
+        patch.instr.append(asm)
+        patch.bin.append(b'')
+        patch.hex.append('')
+
+    return patch
