@@ -1,1 +1,3 @@
-# MTB_CFA
+# RAP-Track
+
+Repository for RAP-Track paper.
